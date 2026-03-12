@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { client } from '@/sanity/lib/client'
 
 const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.vercel.app'
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [posts, glossaryTerms] = await Promise.all([
@@ -33,6 +33,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/calculators/cap-rate`,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/calculators/cash-on-cash`,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/calculators/rental-cashflow`,
       changeFrequency: 'monthly',
       priority: 0.8,
     },

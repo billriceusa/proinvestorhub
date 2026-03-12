@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { CapRateCalculator } from '@/components/calculators/cap-rate-calculator'
-import { JsonLd, calculatorJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
   title: 'Cap Rate Calculator | Free Capitalization Rate Tool',
@@ -27,6 +27,32 @@ export default function CapRateCalculatorPage() {
             'Free capitalization rate calculator for real estate investors. Enter purchase price and operating income to compare deals.',
           url: `${baseUrl}/calculators/cap-rate`,
         })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', url: baseUrl },
+          { name: 'Calculators', url: `${baseUrl}/calculators` },
+          { name: 'Cap Rate Calculator', url: `${baseUrl}/calculators/cap-rate` },
+        ])}
+      />
+      <JsonLd
+        data={faqJsonLd([
+          {
+            question: 'What is a good cap rate for rental property?',
+            answer:
+              'A "good" cap rate depends on your market and strategy. In gateway cities like San Francisco or New York, 3-5% is typical. In secondary markets, 5-7% is common. Cash-flow-focused investors in the Midwest or South often target 7-10%.',
+          },
+          {
+            question: 'What is the cap rate formula?',
+            answer:
+              'Cap Rate = Net Operating Income (NOI) / Purchase Price × 100. NOI is your annual rental income minus all operating expenses (property taxes, insurance, maintenance, management) but excluding mortgage payments.',
+          },
+          {
+            question: 'Does cap rate include mortgage payments?',
+            answer:
+              'No. Cap rate measures the unlevered return on a property — it ignores how you finance the purchase. This makes it useful for comparing properties regardless of financing. Use cash-on-cash return to factor in your mortgage.',
+          },
+        ])}
       />
 
       {/* Breadcrumb */}

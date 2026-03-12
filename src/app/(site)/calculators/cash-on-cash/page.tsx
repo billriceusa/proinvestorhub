@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { CashOnCashCalculator } from '@/components/calculators/cash-on-cash-calculator'
-import { JsonLd, calculatorJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
   title: 'Cash-on-Cash Return Calculator | Free Investment Analysis Tool',
@@ -27,6 +27,32 @@ export default function CashOnCashPage() {
             'Free cash-on-cash return calculator for real estate investors. Factor in financing to see how your invested cash performs.',
           url: `${baseUrl}/calculators/cash-on-cash`,
         })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', url: baseUrl },
+          { name: 'Calculators', url: `${baseUrl}/calculators` },
+          { name: 'Cash-on-Cash Return', url: `${baseUrl}/calculators/cash-on-cash` },
+        ])}
+      />
+      <JsonLd
+        data={faqJsonLd([
+          {
+            question: 'What is a good cash-on-cash return?',
+            answer:
+              'Most investors target 8-12% cash-on-cash return as a baseline. Below 6% is considered below average unless you are in a high-appreciation market. Above 12% is excellent but should be verified carefully.',
+          },
+          {
+            question: 'What is the difference between cap rate and cash-on-cash return?',
+            answer:
+              'Cap rate measures the property\'s unlevered return (ignoring financing). Cash-on-cash return factors in your mortgage, showing the return on the actual cash you invested. Use cap rate to compare properties; use cash-on-cash to evaluate deals with specific financing.',
+          },
+          {
+            question: 'How does leverage affect cash-on-cash return?',
+            answer:
+              'Positive leverage occurs when the property cap rate exceeds your cost of debt, amplifying cash-on-cash return above the cap rate. Negative leverage occurs when interest rates are high relative to cap rate, reducing your return below an all-cash purchase.',
+          },
+        ])}
       />
 
       <nav className="text-sm text-text-muted mb-8">

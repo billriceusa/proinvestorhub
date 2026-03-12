@@ -7,7 +7,8 @@ import { POST_BY_SLUG_QUERY, POST_SLUGS_QUERY } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
 import { PortableText } from '@/components/portable-text'
 import type { PostDetail } from '@/sanity/lib/types'
-import { JsonLd, articleJsonLd } from '@/components/json-ld'
+import { JsonLd, articleJsonLd, breadcrumbJsonLd } from '@/components/json-ld'
+import { NewsletterSignup } from '@/components/newsletter-signup'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -73,6 +74,13 @@ export default async function PostPage({ params }: Props) {
           publishedAt: post.publishedAt || '',
           authorName: post.author?.name || 'ProInvestorHub',
         })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', url: baseUrl },
+          { name: 'Blog', url: `${baseUrl}/blog` },
+          { name: post.title || '', url: `${baseUrl}/blog/${post.slug}` },
+        ])}
       />
       <nav className="mb-8 text-sm text-text-muted">
         <Link href="/blog" className="hover:text-primary transition-colors">
@@ -163,6 +171,10 @@ export default async function PostPage({ params }: Props) {
           </div>
         </div>
       )}
+
+      <div className="mt-12">
+        <NewsletterSignup variant="card" />
+      </div>
     </article>
   )
 }

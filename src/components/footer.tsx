@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { NewsletterSignup } from '@/components/newsletter-signup'
 
 const footerLinks = {
   Learn: [
@@ -7,7 +8,10 @@ const footerLinks = {
     { name: 'Guides', href: '/guides' },
   ],
   Tools: [
-    { name: 'Calculators', href: '/calculators' },
+    { name: 'Cap Rate Calculator', href: '/calculators/cap-rate' },
+    { name: 'Cash-on-Cash Return', href: '/calculators/cash-on-cash' },
+    { name: 'Rental Cash Flow', href: '/calculators/rental-cashflow' },
+    { name: 'All Calculators', href: '/calculators' },
   ],
 }
 
@@ -17,7 +21,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-white">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-bold text-xs">
@@ -31,6 +35,9 @@ export function Footer() {
               Expert education and tools for real estate investors. Make smarter
               investment decisions backed by data and knowledge.
             </p>
+            <div className="mt-6">
+              <NewsletterSignup variant="inline" />
+            </div>
           </div>
 
           {Object.entries(footerLinks).map(([category, links]) => (

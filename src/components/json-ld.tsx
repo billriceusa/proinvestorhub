@@ -8,7 +8,7 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
 }
 
 const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.vercel.app'
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
 export function websiteJsonLd() {
   return {
@@ -126,5 +126,32 @@ export function calculatorJsonLd({
       price: '0',
       priceCurrency: 'USD',
     },
+  }
+}
+
+export function breadcrumbJsonLd(
+  items: Array<{ name: string; url: string }>
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  }
+}
+
+export function organizationJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'ProInvestorHub',
+    url: baseUrl,
+    description:
+      'Expert guides, calculators, and education for real estate investors.',
+    sameAs: [],
   }
 }

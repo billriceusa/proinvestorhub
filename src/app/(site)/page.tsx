@@ -4,7 +4,8 @@ import { sanityFetch } from '@/sanity/lib/live'
 import { POSTS_QUERY } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
 import type { PostSummary } from '@/sanity/lib/types'
-import { JsonLd, websiteJsonLd } from '@/components/json-ld'
+import { JsonLd, websiteJsonLd, organizationJsonLd } from '@/components/json-ld'
+import { NewsletterSignup } from '@/components/newsletter-signup'
 
 const features = [
   {
@@ -57,6 +58,7 @@ export default async function HomePage() {
   return (
     <>
       <JsonLd data={websiteJsonLd()} />
+      <JsonLd data={organizationJsonLd()} />
 
       {/* Hero */}
       <section className="bg-primary">
@@ -185,6 +187,17 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Newsletter CTA */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-xl px-6 lg:px-8">
+          <NewsletterSignup
+            variant="banner"
+            heading="Get Smarter About Real Estate Investing"
+            description="Weekly deal analysis frameworks, market insights, and investing strategies delivered to your inbox. Free, no spam, unsubscribe anytime."
+          />
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="bg-primary-dark">

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { RentalCashFlowCalculator } from '@/components/calculators/rental-cashflow-calculator'
-import { JsonLd, calculatorJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
   title: 'Rental Cash Flow Calculator | Monthly & Annual Projections',
@@ -27,6 +27,32 @@ export default function RentalCashFlowPage() {
             'Free rental cash flow calculator for real estate investors. Project monthly and annual net cash flow with detailed expense breakdowns.',
           url: `${baseUrl}/calculators/rental-cashflow`,
         })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', url: baseUrl },
+          { name: 'Calculators', url: `${baseUrl}/calculators` },
+          { name: 'Rental Cash Flow', url: `${baseUrl}/calculators/rental-cashflow` },
+        ])}
+      />
+      <JsonLd
+        data={faqJsonLd([
+          {
+            question: 'What is positive cash flow in real estate?',
+            answer:
+              'Positive cash flow means the property generates more rental income than it costs to own and operate (including mortgage, taxes, insurance, maintenance, and management). The property pays for itself and puts money in your pocket each month.',
+          },
+          {
+            question: 'How much cash flow should a rental property generate?',
+            answer:
+              'Many investors use the "$100 per unit per month" rule of thumb as a minimum. For a single-family rental, that means at least $100/month after all expenses. More experienced investors target $200-300+ per unit.',
+          },
+          {
+            question: 'What expenses should I include in a cash flow analysis?',
+            answer:
+              'Include property taxes, insurance, maintenance (5-10% of gross rent), property management (8-10%), vacancy (5-8%), utilities you pay, HOA fees, and mortgage payment (P&I). Budget for all expenses even if you self-manage.',
+          },
+        ])}
       />
 
       <nav className="text-sm text-text-muted mb-8">

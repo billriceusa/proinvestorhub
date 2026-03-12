@@ -8,7 +8,7 @@ import {
 } from '@/sanity/lib/queries'
 import { PortableText } from '@/components/portable-text'
 import type { GlossaryTermDetail } from '@/sanity/lib/types'
-import { JsonLd, glossaryJsonLd } from '@/components/json-ld'
+import { JsonLd, glossaryJsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 
 type Props = {
   params: Promise<{ term: string }>
@@ -66,6 +66,13 @@ export default async function GlossaryTermPage({ params }: Props) {
           definition: term.definition || '',
           url: `${baseUrl}/glossary/${term.slug}`,
         })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', url: baseUrl },
+          { name: 'Glossary', url: `${baseUrl}/glossary` },
+          { name: term.term || '', url: `${baseUrl}/glossary/${term.slug}` },
+        ])}
       />
       <nav className="mb-8 text-sm text-text-muted">
         <Link href="/glossary" className="hover:text-primary transition-colors">
