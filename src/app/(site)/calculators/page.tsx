@@ -19,15 +19,15 @@ const calculators = [
     title: 'Cash-on-Cash Return',
     description:
       'Measure the annual return on the actual cash you invest, factoring in financing.',
-    href: null,
-    status: 'coming-soon' as const,
+    href: '/calculators/cash-on-cash',
+    status: 'live' as const,
   },
   {
     title: 'Rental Cash Flow',
     description:
       'Project monthly and annual cash flow for rental properties with detailed expense breakdowns.',
-    href: null,
-    status: 'coming-soon' as const,
+    href: '/calculators/rental-cashflow',
+    status: 'live' as const,
   },
   {
     title: 'BRRRR Calculator',
