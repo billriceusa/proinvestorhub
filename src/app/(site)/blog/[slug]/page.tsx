@@ -7,6 +7,7 @@ import { POST_BY_SLUG_QUERY, POST_SLUGS_QUERY } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
 import { PortableText } from '@/components/portable-text'
 import type { PostDetail } from '@/sanity/lib/types'
+import { JsonLd, articleJsonLd } from '@/components/json-ld'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -56,8 +57,23 @@ export default async function PostPage({ params }: Props) {
 
   if (!post) notFound()
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.vercel.app'
+
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+      <JsonLd
+        data={articleJsonLd({
+          title: post.title || '',
+          description: post.excerpt || '',
+          url: `${baseUrl}/blog/${post.slug}`,
+          imageUrl: post.mainImage?.asset
+            ? urlFor(post.mainImage).width(1200).height(630).url()
+            : undefined,
+          publishedAt: post.publishedAt || '',
+          authorName: post.author?.name || 'ProInvestorHub',
+        })}
+      />
       <nav className="mb-8 text-sm text-text-muted">
         <Link href="/blog" className="hover:text-primary transition-colors">
           Blog

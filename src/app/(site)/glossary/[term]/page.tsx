@@ -8,6 +8,7 @@ import {
 } from '@/sanity/lib/queries'
 import { PortableText } from '@/components/portable-text'
 import type { GlossaryTermDetail } from '@/sanity/lib/types'
+import { JsonLd, glossaryJsonLd } from '@/components/json-ld'
 
 type Props = {
   params: Promise<{ term: string }>
@@ -54,8 +55,18 @@ export default async function GlossaryTermPage({ params }: Props) {
 
   if (!term) notFound()
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.vercel.app'
+
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+      <JsonLd
+        data={glossaryJsonLd({
+          term: term.term || '',
+          definition: term.definition || '',
+          url: `${baseUrl}/glossary/${term.slug}`,
+        })}
+      />
       <nav className="mb-8 text-sm text-text-muted">
         <Link href="/glossary" className="hover:text-primary transition-colors">
           Glossary

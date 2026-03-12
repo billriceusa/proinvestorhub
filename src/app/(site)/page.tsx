@@ -4,6 +4,7 @@ import { sanityFetch } from '@/sanity/lib/live'
 import { POSTS_QUERY } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
 import type { PostSummary } from '@/sanity/lib/types'
+import { JsonLd, websiteJsonLd } from '@/components/json-ld'
 
 const features = [
   {
@@ -55,6 +56,8 @@ export default async function HomePage() {
 
   return (
     <>
+      <JsonLd data={websiteJsonLd()} />
+
       {/* Hero */}
       <section className="bg-primary">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
