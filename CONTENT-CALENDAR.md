@@ -1,10 +1,40 @@
 # ProInvestorHub Content Calendar
 
-## Newsletter Cadence
+## Newsletter Infrastructure
+
+### Sending Process
+```bash
+# 1. Test send to yourself
+NEWSLETTER_SEND_SECRET=<secret> node scripts/send-newsletter.mjs --issue 1 --test you@example.com
+
+# 2. Review the email in your inbox
+
+# 3. Broadcast to all subscribers
+NEWSLETTER_SEND_SECRET=<secret> node scripts/send-newsletter.mjs --issue 1 --broadcast
+```
+
+### Configuration
 - **Frequency:** Weekly (Tuesday mornings)
 - **Template:** `src/emails/weekly-newsletter.tsx`
-- **Sender:** newsletter@proinvestorhub.com (once domain verified in Resend)
+- **Send Script:** `scripts/send-newsletter.mjs` (issue content defined inline)
+- **Send API:** `POST /api/newsletter/send` (auth: Bearer NEWSLETTER_SEND_SECRET)
+- **Sender:** Set via `RESEND_FROM_EMAIL` env var (verify domain in Resend first)
 - **Segment:** proinvestorhub-newsletter (`e36c758c-0a9c-4f45-ac94-e6c8a52a00a7`)
+
+### Environment Variables Needed
+| Variable | Where | Purpose |
+|----------|-------|---------|
+| `RESEND_API_KEY` | Vercel + local | Resend authentication |
+| `RESEND_SEGMENT_ID` | Vercel + local | Newsletter subscriber segment |
+| `RESEND_FROM_EMAIL` | Vercel + local | Sender address (verify domain first) |
+| `NEWSLETTER_SEND_SECRET` | Vercel + local | Auth for /api/newsletter/send endpoint |
+
+### Steps to Go Live
+1. **Verify domain in Resend:** Add DNS records for proinvestorhub.com in Resend dashboard
+2. **Set RESEND_FROM_EMAIL:** e.g., `Bill from ProInvestorHub <bill@proinvestorhub.com>`
+3. **Generate NEWSLETTER_SEND_SECRET:** Run `openssl rand -hex 32` and add to Vercel + .env.local
+4. **Add issue content** to `scripts/send-newsletter.mjs` issues object
+5. **Test send** to your email, review, then broadcast
 
 ## Newsletter Structure
 Each issue follows a consistent format:
