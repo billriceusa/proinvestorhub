@@ -25,21 +25,24 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true })
     }
 
-    const audienceId = process.env.RESEND_AUDIENCE_ID
+    const segmentIds = process.env.RESEND_SEGMENT_ID
+      ? [{ id: process.env.RESEND_SEGMENT_ID }]
+      : undefined
 
     const results = await Promise.allSettled([
-      audienceId
-        ? resend.contacts.create({
-            email,
-            audienceId,
-            unsubscribed: false,
-          })
-        : Promise.resolve(null),
+      resend.contacts.create({
+        email,
+        unsubscribed: false,
+        ...(segmentIds && { segments: segmentIds }),
+      }),
 
       resend.emails.send({
-        from: process.env.RESEND_FROM_EMAIL || 'ProInvestorHub <hello@proinvestorhub.com>',
+        from:
+          process.env.RESEND_FROM_EMAIL ||
+          'ProInvestorHub <onboarding@resend.dev>',
         to: email,
-        subject: 'Welcome to ProInvestorHub — Real Estate Investing, Demystified',
+        subject:
+          'Welcome to ProInvestorHub — Real Estate Investing, Demystified',
         react: WelcomeEmail(),
       }),
     ])
