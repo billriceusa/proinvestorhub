@@ -33,8 +33,8 @@ const calculators = [
     title: 'BRRRR Calculator',
     description:
       'Analyze Buy, Rehab, Rent, Refinance, Repeat deals to maximize your capital recycling.',
-    href: null,
-    status: 'coming-soon' as const,
+    href: '/calculators/brrrr',
+    status: 'live' as const,
   },
   {
     title: 'Fix & Flip Profit',

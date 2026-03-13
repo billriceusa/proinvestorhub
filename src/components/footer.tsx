@@ -11,6 +11,7 @@ const footerLinks = {
     { name: 'Cap Rate Calculator', href: '/calculators/cap-rate' },
     { name: 'Cash-on-Cash Return', href: '/calculators/cash-on-cash' },
     { name: 'Rental Cash Flow', href: '/calculators/rental-cashflow' },
+    { name: 'BRRRR Calculator', href: '/calculators/brrrr' },
     { name: 'All Calculators', href: '/calculators' },
   ],
 }
