@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { CalculatorCTA } from '@/components/calculator-cta'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -280,6 +281,8 @@ export function RentalCashFlowCalculator() {
                 : `This property is cash-flow negative by ${formatCurrency(Math.abs(results.monthlyCashFlow))}/mo. Consider raising rent, reducing expenses, or increasing your down payment.`}
             </div>
           )}
+
+          <CalculatorCTA context="rental-cashflow-calculator" />
         </div>
       </div>
     </div>

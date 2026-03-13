@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function CashOnCashPage() {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.vercel.app'
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">

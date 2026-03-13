@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { CalculatorCTA } from '@/components/calculator-cta'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -261,6 +262,8 @@ export function CapRateCalculator() {
               Cap Rate = NOI / Purchase Price &times; 100
             </p>
           </div>
+
+          <CalculatorCTA context="cap-rate-calculator" />
         </div>
       </div>
     </div>

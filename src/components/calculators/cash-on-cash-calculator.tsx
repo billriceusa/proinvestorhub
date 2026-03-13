@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { CalculatorCTA } from '@/components/calculator-cta'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -389,6 +390,8 @@ export function CashOnCashCalculator() {
               CoC Return = Annual Cash Flow / Total Cash Invested &times; 100
             </p>
           </div>
+
+          <CalculatorCTA context="cash-on-cash-calculator" />
         </div>
       </div>
     </div>

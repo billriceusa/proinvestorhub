@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { CalculatorCTA } from '@/components/calculator-cta'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -377,6 +378,8 @@ export function MortgageCalculator() {
                 : 'P&I = Principal + Interest'}
             </p>
           </div>
+
+          <CalculatorCTA context="mortgage-dscr-calculator" />
         </div>
       </div>
     </div>

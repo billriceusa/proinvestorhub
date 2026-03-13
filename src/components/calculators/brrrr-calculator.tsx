@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { CalculatorCTA } from '@/components/calculator-cta'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -656,6 +657,8 @@ export function BRRRRCalculator() {
                 BRRRR = Buy, Rehab, Rent, Refinance, Repeat
               </p>
             </div>
+
+            <CalculatorCTA context="brrrr-calculator" />
           </div>
         </div>
       </div>

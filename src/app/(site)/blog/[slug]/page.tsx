@@ -59,7 +59,7 @@ export default async function PostPage({ params }: Props) {
   if (!post) notFound()
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.vercel.app'
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 lg:px-8">

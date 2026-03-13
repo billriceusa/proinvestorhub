@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { CalculatorCTA } from '@/components/calculator-cta'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -403,6 +404,8 @@ export function FixFlipCalculator() {
               70% Rule: Max Price = ARV &times; 70% &minus; Rehab
             </p>
           </div>
+
+          <CalculatorCTA context="fix-flip-calculator" />
         </div>
       </div>
     </div>
