@@ -12,6 +12,8 @@ const footerLinks = {
     { name: 'Cash-on-Cash Return', href: '/calculators/cash-on-cash' },
     { name: 'Rental Cash Flow', href: '/calculators/rental-cashflow' },
     { name: 'BRRRR Calculator', href: '/calculators/brrrr' },
+    { name: 'Fix & Flip', href: '/calculators/fix-flip' },
+    { name: 'Mortgage / DSCR', href: '/calculators/mortgage' },
     { name: 'All Calculators', href: '/calculators' },
   ],
 }

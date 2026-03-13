@@ -40,15 +40,15 @@ const calculators = [
     title: 'Fix & Flip Profit',
     description:
       'Estimate rehab costs, holding costs, selling costs, and profit on fix-and-flip deals.',
-    href: null,
-    status: 'coming-soon' as const,
+    href: '/calculators/fix-flip',
+    status: 'live' as const,
   },
   {
     title: 'Mortgage / DSCR Payment',
     description:
       'Calculate monthly payments for conventional mortgages and DSCR investor loans.',
-    href: null,
-    status: 'coming-soon' as const,
+    href: '/calculators/mortgage',
+    status: 'live' as const,
   },
 ]
 
@@ -111,17 +111,17 @@ export default function CalculatorsPage() {
 
       <div className="mt-16 rounded-xl bg-primary/5 border border-primary/10 p-8 text-center">
         <h2 className="text-xl font-bold text-text">
-          Want to be notified when calculators launch?
+          Have a calculator idea?
         </h2>
         <p className="mt-2 text-text-muted">
-          We&apos;re building the best free calculator suite for real estate investors.
-          Check back soon!
+          We&apos;re always building new tools for real estate investors. Sign up
+          for our newsletter to stay in the loop.
         </p>
         <Link
           href="/blog"
           className="mt-6 inline-block rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-light transition-colors"
         >
-          Read Our Blog in the Meantime
+          Explore Our Blog &rarr;
         </Link>
       </div>
     </div>
