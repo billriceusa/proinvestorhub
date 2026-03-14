@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { render } from '@react-email/render'
 import { WeeklyNewsletter } from '@/emails/weekly-newsletter'
 
 function getResend() {
@@ -60,12 +61,14 @@ export async function POST(request: Request) {
       closingNote,
     })
 
+    const html = await render(emailContent)
+
     if (testEmail) {
       const { data, error: sendError } = await resend.emails.send({
         from: fromEmail,
         to: testEmail,
         subject: `[TEST] ProInvestorHub #${issueNumber || 1}: ${headline || 'This Week in Real Estate Investing'}`,
-        react: emailContent,
+        html,
       })
 
       if (sendError) {
@@ -92,7 +95,7 @@ export async function POST(request: Request) {
       from: fromEmail,
       to: `segment:${segmentId}`,
       subject: `ProInvestorHub #${issueNumber || 1}: ${headline || 'This Week in Real Estate Investing'}`,
-      react: emailContent,
+      html,
     })
 
     return NextResponse.json({
