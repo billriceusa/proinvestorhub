@@ -61,17 +61,22 @@ export async function POST(request: Request) {
     })
 
     if (testEmail) {
-      const result = await resend.emails.send({
+      const { data, error: sendError } = await resend.emails.send({
         from: fromEmail,
         to: testEmail,
         subject: `[TEST] ProInvestorHub #${issueNumber || 1}: ${headline || 'This Week in Real Estate Investing'}`,
         react: emailContent,
       })
 
+      if (sendError) {
+        console.error('[Newsletter Send] Resend error:', JSON.stringify(sendError))
+        return NextResponse.json({ error: 'Resend failed', detail: sendError }, { status: 500 })
+      }
+
       return NextResponse.json({
         success: true,
         mode: 'test',
-        result,
+        result: data,
       })
     }
 
@@ -96,9 +101,10 @@ export async function POST(request: Request) {
       result,
     })
   } catch (error) {
-    console.error('[Newsletter Send] Error:', error)
+    const message = error instanceof Error ? error.message : String(error)
+    console.error('[Newsletter Send] Error:', message)
     return NextResponse.json(
-      { error: 'Failed to send newsletter' },
+      { error: 'Failed to send newsletter', detail: message },
       { status: 500 }
     )
   }
