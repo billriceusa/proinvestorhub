@@ -2,7 +2,7 @@ import { defineQuery } from 'next-sanity'
 
 // ── Posts ──────────────────────────────────────────────
 export const POSTS_QUERY = defineQuery(/* groq */ `
-  *[_type == "post" && defined(slug.current)]
+  *[_type == "post" && defined(slug.current) && publishedAt <= now()]
   | order(publishedAt desc) [0...$limit] {
     _id,
     title,
@@ -45,7 +45,7 @@ export const POST_BY_SLUG_QUERY = defineQuery(/* groq */ `
 `)
 
 export const POST_SLUGS_QUERY = defineQuery(/* groq */ `
-  *[_type == "post" && defined(slug.current)]{ "slug": slug.current }
+  *[_type == "post" && defined(slug.current) && publishedAt <= now()]{ "slug": slug.current }
 `)
 
 // ── Categories ────────────────────────────────────────
@@ -100,7 +100,7 @@ export const GLOSSARY_TERMS_BY_CATEGORY_QUERY = defineQuery(/* groq */ `
 
 // Posts matching a category slug — used for "Related Articles" on glossary pages
 export const POSTS_BY_CATEGORY_SLUG_QUERY = defineQuery(/* groq */ `
-  *[_type == "post" && defined(slug.current) && $categorySlug in categories[]->slug.current]
+  *[_type == "post" && defined(slug.current) && publishedAt <= now() && $categorySlug in categories[]->slug.current]
   | order(publishedAt desc) [0...4] {
     _id,
     title,
