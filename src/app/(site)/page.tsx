@@ -6,6 +6,7 @@ import { urlFor } from '@/sanity/lib/image'
 import type { PostSummary } from '@/sanity/lib/types'
 import { JsonLd, websiteJsonLd, organizationJsonLd } from '@/components/json-ld'
 import { NewsletterSignup } from '@/components/newsletter-signup'
+import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
 
 const features = [
   {
@@ -122,6 +123,13 @@ export default async function HomePage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Lead Magnet CTA */}
+      <section className="py-20 bg-surface">
+        <div className="mx-auto max-w-xl px-6 lg:px-8">
+          <LeadMagnetCTA variant="card" />
         </div>
       </section>
 

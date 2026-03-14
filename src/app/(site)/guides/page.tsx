@@ -34,6 +34,42 @@ export default async function GuidesPage() {
         </p>
       </div>
 
+      {/* Best Cities Section */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-text">Best Cities by Strategy</h2>
+        <p className="mt-2 text-text-muted">
+          Data-driven rankings of the top markets for every major investing strategy.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { name: 'BRRRR', slug: 'brrrr', desc: 'Low entry, high ARV spread' },
+            { name: 'Cash Flow', slug: 'cash-flow', desc: 'High rent-to-price ratios' },
+            { name: 'House Hacking', slug: 'house-hacking', desc: 'Affordable multifamily' },
+            { name: 'Appreciation', slug: 'appreciation', desc: 'Population and job growth' },
+          ].map((s) => (
+            <Link
+              key={s.slug}
+              href={`/guides/best-cities/${s.slug}`}
+              className="group rounded-xl border border-border bg-white p-5 hover:shadow-lg hover:border-primary/40 transition-all"
+            >
+              <h3 className="font-semibold text-text group-hover:text-primary transition-colors">
+                Best {s.name} Markets
+              </h3>
+              <p className="mt-1 text-sm text-text-muted">{s.desc}</p>
+              <span className="mt-3 inline-flex items-center text-xs font-semibold text-primary">
+                View 15 cities &rarr;
+              </span>
+            </Link>
+          ))}
+        </div>
+        <Link
+          href="/guides/best-cities"
+          className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:text-primary-light transition-colors"
+        >
+          View all strategies &rarr;
+        </Link>
+      </section>
+
       {posts.length > 0 ? (
         <div className="mt-12 space-y-8">
           {posts.map((post) => (
