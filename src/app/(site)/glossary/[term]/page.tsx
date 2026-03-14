@@ -103,12 +103,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = term.category ? categoryLabels[term.category] || '' : ''
   const titleSuffix = category ? ` | ${category}` : ''
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
+  const ogImage = `${baseUrl}/api/og?title=${encodeURIComponent(term.term || '')}&category=${encodeURIComponent(category)}&type=glossary`
+
   return {
     title: `${term.term} — Definition & Guide for Real Estate Investors${titleSuffix}`,
     description: `${term.definition} Learn how ${term.term?.toLowerCase()} works in real estate investing with examples, related metrics, and free calculators.`,
     openGraph: {
       title: `${term.term} — Real Estate Investing Glossary | ProInvestorHub`,
       description: term.definition || '',
+      images: [{ url: ogImage, width: 1200, height: 630 }],
     },
   }
 }

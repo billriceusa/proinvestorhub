@@ -49,12 +49,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = data as PostDetail | null
   if (!post) return {}
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
+  const category = post.categories?.[0]?.title || ''
+  const ogImage = post.mainImage?.asset
+    ? urlFor(post.mainImage).width(1200).height(630).url()
+    : `${baseUrl}/api/og?title=${encodeURIComponent(post.title || '')}&category=${encodeURIComponent(category)}&type=article`
+
   return {
     title: post.seo?.metaTitle || post.title,
     description: post.seo?.metaDescription || post.excerpt,
-    openGraph: post.mainImage?.asset
-      ? { images: [{ url: urlFor(post.mainImage).width(1200).height(630).url() }] }
-      : undefined,
+    openGraph: { images: [{ url: ogImage, width: 1200, height: 630 }] },
   }
 }
 
