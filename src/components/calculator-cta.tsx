@@ -122,6 +122,18 @@ export function CalculatorCTA({
               key={offer.id}
               href={offer.href || '#'}
               className="block rounded-lg border border-accent/30 bg-accent/5 p-4 hover:bg-accent/10 transition-colors group"
+              onClick={() => {
+                if (typeof window !== 'undefined' && 'dataLayer' in window) {
+                  ;(window as unknown as { dataLayer: Record<string, unknown>[] }).dataLayer.push({
+                    event: 'cta_click',
+                    cta_type: offer.type,
+                    cta_id: offer.id,
+                    cta_text: offer.cta,
+                    cta_url: offer.href || '',
+                    cta_location: context || 'calculator',
+                  })
+                }
+              }}
             >
               <p className="text-sm font-semibold text-text group-hover:text-primary transition-colors">
                 {offer.heading}

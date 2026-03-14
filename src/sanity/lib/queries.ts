@@ -87,6 +87,30 @@ export const GLOSSARY_SLUGS_QUERY = defineQuery(/* groq */ `
   *[_type == "glossaryTerm" && defined(slug.current)]{ "slug": slug.current }
 `)
 
+// Glossary terms matching a category — used for "Related Terms" on blog posts
+export const GLOSSARY_TERMS_BY_CATEGORY_QUERY = defineQuery(/* groq */ `
+  *[_type == "glossaryTerm" && defined(slug.current) && category == $category]
+  | order(term asc) [0...6] {
+    _id,
+    term,
+    "slug": slug.current,
+    definition
+  }
+`)
+
+// Posts matching a category slug — used for "Related Articles" on glossary pages
+export const POSTS_BY_CATEGORY_SLUG_QUERY = defineQuery(/* groq */ `
+  *[_type == "post" && defined(slug.current) && $categorySlug in categories[]->slug.current]
+  | order(publishedAt desc) [0...4] {
+    _id,
+    title,
+    "slug": slug.current,
+    excerpt,
+    publishedAt,
+    categories[]->{ _id, title, "slug": slug.current }
+  }
+`)
+
 // ── Site Settings ─────────────────────────────────────
 export const SITE_SETTINGS_QUERY = defineQuery(/* groq */ `
   *[_type == "siteSettings"][0] {

@@ -3,12 +3,22 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { sanityFetch } from '@/sanity/lib/live'
-import { POST_BY_SLUG_QUERY, POST_SLUGS_QUERY } from '@/sanity/lib/queries'
+import { POST_BY_SLUG_QUERY, POST_SLUGS_QUERY, GLOSSARY_TERMS_BY_CATEGORY_QUERY } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
 import { PortableText } from '@/components/portable-text'
 import type { PostDetail } from '@/sanity/lib/types'
 import { JsonLd, articleJsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { NewsletterSignup } from '@/components/newsletter-signup'
+
+// Map post category slugs to glossary categories
+const postCategoryToGlossary: Record<string, string> = {
+  'deal-analysis': 'analysis',
+  financing: 'financing',
+  strategies: 'strategies',
+  'tax-legal': 'tax',
+  'getting-started': 'general',
+  markets: 'general',
+}
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -57,6 +67,15 @@ export default async function PostPage({ params }: Props) {
   const post = data as PostDetail | null
 
   if (!post) notFound()
+
+  // Fetch related glossary terms based on post's first category
+  const firstCatSlug = post.categories?.[0]?.slug || 'getting-started'
+  const glossaryCategory = postCategoryToGlossary[firstCatSlug] || 'general'
+  const { data: relatedTermsData } = await sanityFetch({
+    query: GLOSSARY_TERMS_BY_CATEGORY_QUERY,
+    params: { category: glossaryCategory },
+  })
+  const relatedTerms = (relatedTermsData as Array<{ _id: string; term: string; slug: string; definition: string }>) || []
 
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -170,6 +189,37 @@ export default async function PostPage({ params }: Props) {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Related glossary terms */}
+      {relatedTerms.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-xl font-bold text-text mb-4">Key Terms to Know</h2>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {relatedTerms.map((term) => (
+              <Link
+                key={term._id}
+                href={`/glossary/${term.slug}`}
+                className="rounded-lg border border-border bg-white p-4 hover:border-primary/30 hover:shadow-md transition-all group"
+              >
+                <h3 className="font-semibold text-text group-hover:text-primary transition-colors">
+                  {term.term}
+                </h3>
+                <p className="mt-1 text-sm text-text-muted line-clamp-2">
+                  {term.definition}
+                </p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-4 text-center">
+            <Link
+              href="/glossary"
+              className="text-sm font-medium text-primary hover:text-primary-light transition-colors"
+            >
+              Browse all glossary terms &rarr;
+            </Link>
+          </div>
+        </section>
       )}
 
       <div className="mt-12">

@@ -1,6 +1,21 @@
+
+'use client'
+
 import { PortableText as PortableTextRenderer, type PortableTextComponents } from '@portabletext/react'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
+
+function trackCtaClick(href: string, text: string) {
+  if (typeof window !== 'undefined' && 'dataLayer' in window) {
+    ;(window as unknown as { dataLayer: Record<string, unknown>[] }).dataLayer.push({
+      event: 'cta_click',
+      cta_type: href.startsWith('http') ? 'outbound' : 'internal',
+      cta_url: href,
+      cta_text: text,
+      cta_location: 'content',
+    })
+  }
+}
 
 const components: PortableTextComponents = {
   types: {
@@ -50,6 +65,11 @@ const components: PortableTextComponents = {
         className="text-primary underline hover:text-primary-light transition-colors"
         target={value?.href?.startsWith('http') ? '_blank' : undefined}
         rel={value?.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+        onClick={() => {
+          if (value?.href) {
+            trackCtaClick(value.href, typeof children === 'string' ? children : value.href)
+          }
+        }}
       >
         {children}
       </a>

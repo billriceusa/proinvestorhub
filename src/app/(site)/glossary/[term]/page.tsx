@@ -5,6 +5,7 @@ import { sanityFetch } from '@/sanity/lib/live'
 import {
   GLOSSARY_TERM_BY_SLUG_QUERY,
   GLOSSARY_SLUGS_QUERY,
+  POSTS_BY_CATEGORY_SLUG_QUERY,
 } from '@/sanity/lib/queries'
 import { PortableText } from '@/components/portable-text'
 import type { GlossaryTermDetail } from '@/sanity/lib/types'
@@ -36,6 +37,17 @@ const categoryDescriptions: Record<string, string> = {
     'Tax strategies are one of the most powerful advantages of real estate investing. Proper structuring can save tens of thousands of dollars annually.',
   general:
     'These foundational concepts form the building blocks of real estate investing knowledge. Understanding them thoroughly is essential before analyzing your first deal.',
+}
+
+// Map glossary categories to post category slugs
+const glossaryCategoryToPostCategory: Record<string, string> = {
+  analysis: 'deal-analysis',
+  financing: 'financing',
+  strategies: 'strategies',
+  tax: 'tax-legal',
+  legal: 'tax-legal',
+  general: 'getting-started',
+  'property-types': 'getting-started',
 }
 
 const relatedCalculators: Record<string, Array<{ title: string; href: string; description: string }>> = {
@@ -117,6 +129,14 @@ export default async function GlossaryTermPage({ params }: Props) {
   const categoryLabel = categoryLabels[category] || 'Real Estate'
   const categoryDescription = categoryDescriptions[category] || ''
   const calculators = relatedCalculators[category] || relatedCalculators.general
+
+  // Fetch related articles by matching category
+  const postCategorySlug = glossaryCategoryToPostCategory[category] || 'getting-started'
+  const { data: relatedPostsData } = await sanityFetch({
+    query: POSTS_BY_CATEGORY_SLUG_QUERY,
+    params: { categorySlug: postCategorySlug },
+  })
+  const relatedPosts = (relatedPostsData as Array<{ _id: string; title: string; slug: string; excerpt: string; publishedAt: string }>) || []
 
   const hasBody = term.body && Array.isArray(term.body) && term.body.length > 0
 
@@ -274,6 +294,31 @@ export default async function GlossaryTermPage({ params }: Props) {
                 <p className="mt-1 text-sm text-text-muted line-clamp-2">
                   {related.definition}
                 </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Related articles */}
+      {relatedPosts.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-xl font-bold text-text mb-4">Related Articles</h2>
+          <div className="grid gap-3">
+            {relatedPosts.map((post) => (
+              <Link
+                key={post._id}
+                href={`/blog/${post.slug}`}
+                className="group rounded-lg border border-border bg-white p-4 hover:border-primary/30 hover:shadow-md transition-all"
+              >
+                <h3 className="font-semibold text-text group-hover:text-primary transition-colors">
+                  {post.title}
+                </h3>
+                {post.excerpt && (
+                  <p className="mt-1 text-sm text-text-muted line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                )}
               </Link>
             ))}
           </div>
