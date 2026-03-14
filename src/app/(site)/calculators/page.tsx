@@ -50,6 +50,27 @@ const calculators = [
     href: '/calculators/mortgage',
     status: 'live' as const,
   },
+  {
+    title: '1031 Exchange Tax Savings',
+    description:
+      'Calculate how much you save in taxes by doing a 1031 exchange instead of selling outright.',
+    href: '/calculators/1031-exchange',
+    status: 'live' as const,
+  },
+  {
+    title: 'Wholesale Deal Analyzer',
+    description:
+      'Calculate your maximum offer and assignment fee on wholesale deals using the 70% rule.',
+    href: '/calculators/wholesale',
+    status: 'live' as const,
+  },
+  {
+    title: 'STR Revenue Calculator',
+    description:
+      'Project revenue and cash flow for short-term rental properties with seasonality and expense modeling.',
+    href: '/calculators/str-revenue',
+    status: 'live' as const,
+  },
 ]
 
 export default function CalculatorsPage() {
