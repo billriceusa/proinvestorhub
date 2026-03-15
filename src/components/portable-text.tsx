@@ -4,6 +4,8 @@
 import { PortableText as PortableTextRenderer, type PortableTextComponents } from '@portabletext/react'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
+import { PartnerCTA } from '@/components/partner-cta'
+import type { BPVertical } from '@/lib/partner-links'
 
 function trackCtaClick(href: string, text: string) {
   if (typeof window !== 'undefined' && 'dataLayer' in window) {
@@ -38,6 +40,14 @@ const components: PortableTextComponents = {
         </figure>
       )
     },
+    partnerCta: ({ value }: { value: { vertical: BPVertical; heading?: string; description?: string } }) => (
+      <PartnerCTA
+        vertical={value.vertical}
+        placement="inline-cta"
+        heading={value.heading}
+        description={value.description}
+      />
+    ),
   },
   block: {
     h2: ({ children }) => (

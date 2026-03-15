@@ -6,6 +6,7 @@ import { sanityFetch } from '@/sanity/lib/live'
 import { POST_BY_SLUG_QUERY, POST_SLUGS_QUERY, GLOSSARY_TERMS_BY_CATEGORY_QUERY } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
 import { PortableText } from '@/components/portable-text'
+import { PartnerCTAGroup } from '@/components/partner-cta'
 import type { PostDetail } from '@/sanity/lib/types'
 import { JsonLd, articleJsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { NewsletterSignup } from '@/components/newsletter-signup'
@@ -194,6 +195,12 @@ export default async function PostPage({ params }: Props) {
           </div>
         </div>
       )}
+
+      {/* BiggerPockets partner CTAs */}
+      <PartnerCTAGroup
+        verticals={['lenders', 'agents', 'tax', 'property-managers']}
+        heading="Take the Next Step"
+      />
 
       {/* Related glossary terms */}
       {relatedTerms.length > 0 && (
