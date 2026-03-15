@@ -4,6 +4,7 @@ import { SanityLive } from '@/sanity/lib/live'
 import {
   GoogleTagManager,
   GoogleTagManagerNoscript,
+  GoogleAnalytics,
 } from '@/components/analytics'
 import './globals.css'
 
@@ -61,6 +62,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <GoogleTagManager />
+        <GoogleAnalytics />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
