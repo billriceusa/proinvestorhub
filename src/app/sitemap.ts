@@ -7,7 +7,7 @@ const baseUrl =
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [posts, glossaryTerms] = await Promise.all([
     client.fetch<Array<{ slug: string; publishedAt: string | null }>>(
-      `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) { "slug": slug.current, publishedAt }`
+      `*[_type == "post" && defined(slug.current) && publishedAt <= now()] | order(publishedAt desc) { "slug": slug.current, publishedAt }`
     ),
     client.fetch<Array<{ slug: string }>>(
       `*[_type == "glossaryTerm" && defined(slug.current)] { "slug": slug.current }`

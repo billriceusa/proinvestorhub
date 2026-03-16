@@ -23,7 +23,7 @@ export const POSTS_QUERY = defineQuery(/* groq */ `
 `)
 
 export const POST_BY_SLUG_QUERY = defineQuery(/* groq */ `
-  *[_type == "post" && slug.current == $slug][0] {
+  *[_type == "post" && slug.current == $slug && publishedAt <= now()][0] {
     _id,
     title,
     "slug": slug.current,
