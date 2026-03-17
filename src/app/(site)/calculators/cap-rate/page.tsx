@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Cap Rate Calculator | Free Capitalization Rate Tool',
   description:
     'Calculate the capitalization rate of any investment property instantly. Enter purchase price and operating income to compare deals and evaluate returns. Free, no sign-up required.',
+  alternates: { canonical: '/calculators/cap-rate' },
   openGraph: {
     title: 'Cap Rate Calculator | ProInvestorHub',
     description:

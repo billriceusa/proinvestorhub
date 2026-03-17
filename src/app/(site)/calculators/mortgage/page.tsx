@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Mortgage & DSCR Payment Calculator | Investment Property Loans',
   description:
     'Free mortgage calculator for real estate investors. Calculate monthly payments for conventional mortgages and DSCR investor loans. Includes DSCR ratio, cash flow analysis, and escrow breakdown.',
+  alternates: { canonical: '/calculators/mortgage' },
   openGraph: {
     title: 'Mortgage & DSCR Calculator | ProInvestorHub',
     description:

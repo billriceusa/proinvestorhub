@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Rental Cash Flow Calculator | Monthly & Annual Projections',
   description:
     'Project monthly and annual cash flow for rental properties. Enter rent, expenses, and mortgage to see your net cash flow instantly. Supports multi-unit properties.',
+  alternates: { canonical: '/calculators/rental-cashflow' },
   openGraph: {
     title: 'Rental Cash Flow Calculator | ProInvestorHub',
     description:

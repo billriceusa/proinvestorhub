@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { sanityFetch } from '@/sanity/lib/live'
@@ -7,6 +8,10 @@ import type { PostSummary } from '@/sanity/lib/types'
 import { JsonLd, websiteJsonLd, organizationJsonLd } from '@/components/json-ld'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 const features = [
   {

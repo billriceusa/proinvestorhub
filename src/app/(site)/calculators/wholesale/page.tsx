@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Wholesale Deal Analyzer | Free Real Estate Wholesale Calculator',
   description:
     'Analyze wholesale real estate deals instantly. Calculate your maximum offer, assignment fee, and end buyer profit using the 70% rule. Free, no sign-up required.',
+  alternates: { canonical: '/calculators/wholesale' },
   openGraph: {
     title: 'Wholesale Deal Analyzer | ProInvestorHub',
     description:

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Free Resources for Real Estate Investors',
   description:
     'Free downloadable tools, checklists, and templates for real estate investors. Analyze deals faster and make smarter investment decisions.',
+  alternates: { canonical: '/resources' },
   openGraph: {
     title: 'Free Resources for Real Estate Investors | ProInvestorHub',
     description:

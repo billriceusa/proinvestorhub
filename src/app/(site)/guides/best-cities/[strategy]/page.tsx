@@ -51,6 +51,7 @@ export async function generateMetadata({
   return {
     title,
     description: strategy.metaDescription,
+    alternates: { canonical: `/guides/best-cities/${slug}` },
     openGraph: {
       title,
       description: strategy.metaDescription,

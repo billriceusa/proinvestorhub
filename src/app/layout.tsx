@@ -42,9 +42,6 @@ export const metadata: Metadata = {
     description:
       'Expert guides, calculators, and education for real estate investors.',
   },
-  alternates: {
-    canonical: '/',
-  },
   verification: {
     google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || undefined,
   },

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: '1031 Exchange Calculator | Free Tax Savings Estimator',
   description:
     'Calculate how much you can save with a 1031 exchange. See capital gains tax, depreciation recapture, and state taxes deferred when you reinvest in a like-kind property. Free, no sign-up required.',
+  alternates: { canonical: '/calculators/1031-exchange' },
   openGraph: {
     title: '1031 Exchange Tax Savings Calculator | ProInvestorHub',
     description:

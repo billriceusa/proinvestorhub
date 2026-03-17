@@ -42,7 +42,7 @@ export async function POST(request: Request) {
 
     const fromEmail =
       process.env.RESEND_FROM_EMAIL ||
-      'ProInvestorHub <onboarding@resend.dev>'
+      'ProInvestorHub <noreply@proinvestorhub.com>'
 
     const emailContent = WeeklyNewsletter({
       issueNumber: issueNumber || 1,

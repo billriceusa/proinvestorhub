@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Real Estate Investing Glossary',
   description:
     'Every real estate investing term explained clearly — from cap rate to 1031 exchange, NOI to DSCR. The definitive glossary for investors.',
+  alternates: { canonical: '/glossary' },
 }
 
 export default async function GlossaryPage() {

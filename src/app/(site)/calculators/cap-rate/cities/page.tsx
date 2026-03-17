@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Cap Rates by City — 2026 Market Data for 50 US Markets | ProInvestorHub',
   description:
     'Compare average cap rates, median home prices, rents, and rent-to-price ratios across the top 50 US real estate investing markets. Sortable data for 2026.',
+  alternates: { canonical: '/calculators/cap-rate/cities' },
   openGraph: {
     title: 'Cap Rates by City — 2026 Market Data | ProInvestorHub',
     description:

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Blog',
   description:
     'Expert articles on real estate investing strategies, market analysis, deal analysis, and building wealth through property.',
+  alternates: { canonical: '/blog' },
 }
 
 export default async function BlogPage() {

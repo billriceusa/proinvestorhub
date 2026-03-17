@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Short-Term Rental Revenue Calculator | STR Income Estimator',
   description:
     'Estimate your Airbnb or VRBO rental income with this free STR revenue calculator. Factor in occupancy, nightly rate, cleaning fees, and all operating expenses to see your true net income.',
+  alternates: { canonical: '/calculators/str-revenue' },
   openGraph: {
     title: 'Short-Term Rental Revenue Calculator | ProInvestorHub',
     description:

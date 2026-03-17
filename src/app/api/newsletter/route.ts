@@ -39,7 +39,7 @@ export async function POST(request: Request) {
       resend.emails.send({
         from:
           process.env.RESEND_FROM_EMAIL ||
-          'ProInvestorHub <onboarding@resend.dev>',
+          'ProInvestorHub <noreply@proinvestorhub.com>',
         to: email,
         subject:
           'Welcome to ProInvestorHub — Real Estate Investing, Demystified',

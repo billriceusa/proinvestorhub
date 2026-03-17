@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Best Cities for Real Estate Investing in 2026 | ProInvestorHub',
   description:
     'Discover the best cities for BRRRR, cash flow, house hacking, and appreciation investing. Data-driven rankings for real estate investors.',
+  alternates: { canonical: '/guides/best-cities' },
   openGraph: {
     title: 'Best Cities for Real Estate Investing in 2026 | ProInvestorHub',
     description:

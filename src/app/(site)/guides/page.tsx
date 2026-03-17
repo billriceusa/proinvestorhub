@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Real Estate Investing Guides',
   description:
     'Comprehensive guides for real estate investors. Learn BRRRR, house hacking, short-term rentals, and more strategies to build wealth.',
+  alternates: { canonical: '/guides' },
 }
 
 export default async function GuidesPage() {

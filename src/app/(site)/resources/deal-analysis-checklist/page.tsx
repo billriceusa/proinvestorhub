@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Rental Property Deal Analysis Checklist',
   description:
     'A printable 7-section checklist covering every number you need to evaluate a rental property deal — from income analysis to go/no-go decision.',
+  alternates: { canonical: '/resources/deal-analysis-checklist' },
   openGraph: {
     title: 'Rental Property Deal Analysis Checklist | ProInvestorHub',
     description:

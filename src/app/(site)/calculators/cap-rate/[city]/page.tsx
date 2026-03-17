@@ -91,6 +91,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: { canonical: `/calculators/cap-rate/${slug}` },
     openGraph: {
       title,
       description,

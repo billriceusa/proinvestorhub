@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Fix & Flip Calculator | Estimate Rehab Profit & ROI',
   description:
     'Free fix and flip calculator for real estate investors. Estimate purchase price, rehab costs, holding costs, selling costs, and net profit. Includes the 70% rule check.',
+  alternates: { canonical: '/calculators/fix-flip' },
   openGraph: {
     title: 'Fix & Flip Calculator | ProInvestorHub',
     description:

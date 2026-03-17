@@ -109,6 +109,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${term.term} — Definition & Guide for Real Estate Investors${titleSuffix}`,
     description: `${term.definition} Learn how ${term.term?.toLowerCase()} works in real estate investing with examples, related metrics, and free calculators.`,
+    alternates: { canonical: `/glossary/${slug}` },
     openGraph: {
       title: `${term.term} — Real Estate Investing Glossary | ProInvestorHub`,
       description: term.definition || '',

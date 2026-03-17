@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'BRRRR Calculator | Analyze Buy, Rehab, Rent, Refinance, Repeat Deals',
   description:
     'Free BRRRR method calculator for real estate investors. Analyze purchase price, rehab costs, rental income, refinance terms, and cash-on-cash return. See if you can recycle all your capital.',
+  alternates: { canonical: '/calculators/brrrr' },
   openGraph: {
     title: 'BRRRR Calculator | ProInvestorHub',
     description:

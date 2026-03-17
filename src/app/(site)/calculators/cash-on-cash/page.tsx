@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Cash-on-Cash Return Calculator | Free Investment Analysis Tool',
   description:
     'Calculate your cash-on-cash return on rental properties. Factor in financing, down payment, and expenses to see how your invested cash performs. Free, no sign-up.',
+  alternates: { canonical: '/calculators/cash-on-cash' },
   openGraph: {
     title: 'Cash-on-Cash Return Calculator | ProInvestorHub',
     description:
