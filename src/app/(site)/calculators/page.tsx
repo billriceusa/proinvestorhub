@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Real Estate Investment Calculators',
   description:
     'Free calculators for real estate investors: cap rate, cash-on-cash return, BRRRR analysis, rental cash flow, fix-and-flip profit, and more.',
+  alternates: { canonical: '/calculators' },
 }
 
 const calculators = [
