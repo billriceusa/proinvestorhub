@@ -50,7 +50,7 @@ export default async function GuidesPage() {
           ].map((s) => (
             <Link
               key={s.slug}
-              href={`/guides/best-cities/${s.slug}`}
+              href={`/markets/${s.slug}`}
               className="group rounded-xl border border-border bg-white p-5 hover:shadow-lg hover:border-primary/40 transition-all"
             >
               <h3 className="font-semibold text-text group-hover:text-primary transition-colors">
@@ -58,13 +58,13 @@ export default async function GuidesPage() {
               </h3>
               <p className="mt-1 text-sm text-text-muted">{s.desc}</p>
               <span className="mt-3 inline-flex items-center text-xs font-semibold text-primary">
-                View 15 cities &rarr;
+                View 50 cities ranked &rarr;
               </span>
             </Link>
           ))}
         </div>
         <Link
-          href="/guides/best-cities"
+          href="/markets"
           className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:text-primary-light transition-colors"
         >
           View all strategies &rarr;

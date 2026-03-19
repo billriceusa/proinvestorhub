@@ -6,6 +6,7 @@ const footerLinks = {
     { name: 'Blog', href: '/blog' },
     { name: 'Glossary', href: '/glossary' },
     { name: 'Guides', href: '/guides' },
+    { name: 'Markets', href: '/markets' },
   ],
   Tools: [
     { name: 'Cap Rate Calculator', href: '/calculators/cap-rate' },
