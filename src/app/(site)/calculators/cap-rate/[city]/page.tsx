@@ -162,6 +162,10 @@ export default async function CityCapRatePage({
         <p className="mt-3 text-lg text-text-muted leading-7">
           2026 Market Overview for Real Estate Investors
         </p>
+        <p className="mt-1 text-xs text-text-light">
+          Last updated: March 2026 &bull; Sources: Census ACS, Zillow, Redfin,
+          county assessor
+        </p>
       </div>
 
       {/* Key Metrics Cards */}

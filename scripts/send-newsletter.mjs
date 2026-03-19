@@ -133,6 +133,48 @@ const issues = {
     closingNote:
       "DSCR loans removed the biggest barrier for scaling investors. Use our calculator to see if your next deal qualifies.",
   },
+
+  4: {
+    issueNumber: 4,
+    date: 'March 2026',
+    headline: 'We Analyzed Cap Rates in 50 US Markets — Here\'s What We Found',
+    previewText: 'Indianapolis is the only city that ranks top 5 for cash flow, BRRRR, AND house hacking.',
+    intro: "This week, we're sharing something different — original market research. We compiled cap rates, median prices, rents, vacancy rates, and property taxes across 50 US investment markets and built a scoring system that ranks each city for four different strategies. The results challenged some conventional wisdom.",
+    featuredArticle: {
+      title: '50-City Cap Rate Report 2026',
+      description:
+        "Free printable market data comparing cap rates, prices, rents, and strategy scores for 50 US markets. Indianapolis emerged as the only city ranking top 5 for cash flow, BRRRR, and house hacking. Detroit has the highest cap rates but property taxes eat the margins. Birmingham's 0.43% tax rate is the hidden gem.",
+      url: `${SITE_URL}/resources/cap-rate-report`,
+    },
+    articles: [
+      {
+        title: 'Best Cities for Cash Flow Investing in 2026',
+        description: 'The top 50 markets ranked by cash flow score — weighted by rent-to-price ratio, cap rate, vacancy, and property taxes.',
+        url: `${SITE_URL}/markets/cash-flow`,
+      },
+      {
+        title: 'Best Cities for the BRRRR Strategy in 2026',
+        description: 'The best BRRRR markets aren\'t the same as the best cash flow markets. Here\'s why, with data.',
+        url: `${SITE_URL}/markets/brrrr`,
+      },
+    ],
+    toolSpotlight: {
+      title: 'Cap Rate Calculator + 50 City Pages',
+      description:
+        "Every city in our report has a dedicated market data page with cap rate analysis, investor takeaways, and a quick-math NOI breakdown. Click any city to see the full picture, then use the calculator to run numbers on a specific property.",
+      url: `${SITE_URL}/calculators/cap-rate/cities`,
+    },
+    glossaryTerms: [
+      {
+        term: 'Rent-to-Price Ratio',
+        definition:
+          "Monthly rent divided by purchase price. Target 0.7% or higher for cash flow. A $200K property renting for $1,500/mo has a 0.75% ratio — a strong indicator of positive cash flow after expenses.",
+        url: `${SITE_URL}/glossary/rent-to-price-ratio`,
+      },
+    ],
+    closingNote:
+      "The best market for you depends on your strategy, not someone else's top-10 list. Use the data to find your fit.",
+  },
 }
 
 // ── Send ───────────────────────────────────────────────

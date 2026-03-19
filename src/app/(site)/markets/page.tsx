@@ -49,6 +49,9 @@ export default function MarketsHubPage() {
           all 50 major US investment markets for each strategy using a
           data-driven scoring system.
         </p>
+        <p className="mt-2 text-xs text-text-light">
+          Last updated: March 2026
+        </p>
       </div>
 
       {/* Strategy Cards */}

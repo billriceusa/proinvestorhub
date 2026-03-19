@@ -82,6 +82,10 @@ export default async function StrategyPage({
         <p className="mt-3 text-lg text-text-muted leading-7">
           {strategy.description}
         </p>
+        <p className="mt-2 text-xs text-text-light">
+          Last updated: March 2026 &bull; Data sources: Census ACS, Zillow,
+          Redfin, county assessors
+        </p>
       </div>
 
       {/* Hero Intro */}
