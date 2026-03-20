@@ -1,4 +1,5 @@
 import { cities, type CityCapRate } from './cap-rate-cities'
+import { getMarketCities, type MarketCity } from './market-queries'
 
 export type Strategy = {
   slug: string
@@ -220,13 +221,32 @@ export type CityWithScore = CityCapRate & {
 }
 
 /**
- * Returns all cities scored and sorted for a given strategy.
+ * Returns all cities scored and sorted for a given strategy (sync, hardcoded data).
+ * @deprecated Use fetchCitiesForStrategy() for Sanity-backed data.
  */
 export function getCitiesForStrategy(strategySlug: string): CityWithScore[] {
   const strategy = strategies.find((s) => s.slug === strategySlug)
   if (!strategy) return []
 
   return cities
+    .map((city) => ({
+      ...city,
+      score: strategy.scoreFn(city),
+    }))
+    .sort((a, b) => b.score - a.score)
+}
+
+/**
+ * Returns all cities scored and sorted for a given strategy.
+ * Fetches live data from Sanity with hardcoded fallback.
+ */
+export async function fetchCitiesForStrategy(strategySlug: string): Promise<CityWithScore[]> {
+  const strategy = strategies.find((s) => s.slug === strategySlug)
+  if (!strategy) return []
+
+  const marketCities = await getMarketCities()
+
+  return marketCities
     .map((city) => ({
       ...city,
       score: strategy.scoreFn(city),

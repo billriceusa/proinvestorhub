@@ -5,6 +5,7 @@ import { glossaryTerm } from './glossary-term'
 import { blockContent } from './block-content'
 import { siteSettings } from './site-settings'
 import { partnerCta } from './partner-cta'
+import { marketCity } from './market-city'
 
 export const schemaTypes = [
   post,
@@ -14,4 +15,5 @@ export const schemaTypes = [
   blockContent,
   siteSettings,
   partnerCta,
+  marketCity,
 ]

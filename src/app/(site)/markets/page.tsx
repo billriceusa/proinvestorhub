@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
-import { strategies, getCitiesForStrategy } from '@/data/market-strategies'
+import { strategies, fetchCitiesForStrategy } from '@/data/market-strategies'
+import { getDataFreshness } from '@/data/market-queries'
 
 export const metadata: Metadata = {
   title: 'Best Cities for Real Estate Investing 2026 — By Strategy | ProInvestorHub',
@@ -24,9 +25,23 @@ function formatCurrency(value: number): string {
   }).format(value)
 }
 
-export default function MarketsHubPage() {
+export default async function MarketsHubPage() {
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
+
+  const freshness = await getDataFreshness()
+  const lastUpdated = freshness.dataUpdatedAt
+    ? new Date(freshness.dataUpdatedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+    : 'March 2026'
+
+  // Pre-fetch all strategy rankings in parallel
+  const strategyRankings = await Promise.all(
+    strategies.map(async (s) => ({
+      slug: s.slug,
+      topCities: (await fetchCitiesForStrategy(s.slug)).slice(0, 5),
+    }))
+  )
+  const rankingsMap = Object.fromEntries(strategyRankings.map((r) => [r.slug, r.topCities]))
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
@@ -50,14 +65,14 @@ export default function MarketsHubPage() {
           data-driven scoring system.
         </p>
         <p className="mt-2 text-xs text-text-light">
-          Last updated: March 2026
+          Last updated: {lastUpdated}
         </p>
       </div>
 
       {/* Strategy Cards */}
       <div className="grid gap-8 sm:grid-cols-2 mb-16">
         {strategies.map((strategy) => {
-          const topCities = getCitiesForStrategy(strategy.slug).slice(0, 5)
+          const topCities = rankingsMap[strategy.slug] || []
           return (
             <Link
               key={strategy.slug}

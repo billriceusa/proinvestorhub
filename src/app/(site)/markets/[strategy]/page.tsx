@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation'
 import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { CalculatorCTA } from '@/components/calculator-cta'
 import { StrategyCitiesTable } from '@/components/strategy-cities-table'
-import { strategies, getCitiesForStrategy } from '@/data/market-strategies'
+import { strategies, fetchCitiesForStrategy } from '@/data/market-strategies'
+import { getDataFreshness } from '@/data/market-queries'
 
 export function generateStaticParams() {
   return strategies.map((s) => ({ strategy: s.slug }))
@@ -41,9 +42,20 @@ export default async function StrategyPage({
 
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
-  const scoredCities = getCitiesForStrategy(slug)
+  const [scoredCities, freshness] = await Promise.all([
+    fetchCitiesForStrategy(slug),
+    getDataFreshness(),
+  ])
   const topCities = scoredCities.slice(0, 10)
   const otherStrategies = strategies.filter((s) => s.slug !== slug)
+
+  // Format the "Last updated" date
+  const lastUpdated = freshness.dataUpdatedAt
+    ? new Date(freshness.dataUpdatedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+    : 'March 2026'
+  const sourcesList = freshness.dataSources.length > 0
+    ? freshness.dataSources.join(', ')
+    : 'Census ACS, Zillow, Redfin, county assessors'
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
@@ -83,8 +95,7 @@ export default async function StrategyPage({
           {strategy.description}
         </p>
         <p className="mt-2 text-xs text-text-light">
-          Last updated: March 2026 &bull; Data sources: Census ACS, Zillow,
-          Redfin, county assessors
+          Last updated: {lastUpdated} &bull; Data sources: {sourcesList}
         </p>
       </div>
 
