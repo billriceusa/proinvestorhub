@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { CalculatorCTA } from '@/components/calculator-cta'
 import { cities, getRelatedCities } from '@/data/cap-rate-cities'
+import { client } from '@/sanity/lib/client'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -118,6 +119,34 @@ export default async function CityCapRatePage({
     .filter(Boolean) as typeof cities
 
   const rank = cities.findIndex((c) => c.slug === slug) + 1
+
+  // Fetch neighborhood data from Sanity
+  type Neighborhood = { name: string; description: string; investorProfile: string }
+  let neighborhoods: Neighborhood[] = []
+  try {
+    const result = await client.fetch<{ neighborhoods?: Neighborhood[] } | null>(
+      `*[_type == "marketCity" && slug.current == $slug][0]{ neighborhoods }`,
+      { slug }
+    )
+    neighborhoods = result?.neighborhoods || []
+  } catch {
+    // Neighborhoods are optional — silently continue
+  }
+
+  const profileLabels: Record<string, string> = {
+    'cash-flow': 'Cash Flow',
+    brrrr: 'BRRRR',
+    'house-hacking': 'House Hacking',
+    appreciation: 'Appreciation',
+    mixed: 'Mixed Strategy',
+  }
+  const profileColors: Record<string, string> = {
+    'cash-flow': 'bg-emerald-100 text-emerald-700',
+    brrrr: 'bg-blue-100 text-blue-700',
+    'house-hacking': 'bg-purple-100 text-purple-700',
+    appreciation: 'bg-amber-100 text-amber-700',
+    mixed: 'bg-gray-100 text-gray-700',
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
@@ -315,6 +344,40 @@ export default async function CityCapRatePage({
               </p>
             </div>
           </section>
+
+          {/* Top Neighborhoods */}
+          {neighborhoods.length > 0 && (
+            <section>
+              <h2 className="text-2xl font-bold text-text">
+                Top Neighborhoods for Investors
+              </h2>
+              <p className="mt-2 text-sm text-text-muted">
+                Where to focus your search in {city.city}, {city.state}:
+              </p>
+              <div className="mt-4 space-y-3">
+                {neighborhoods.map((hood, i) => (
+                  <div
+                    key={i}
+                    className="rounded-xl border border-border bg-white p-5 shadow-sm"
+                  >
+                    <div className="flex items-center gap-3">
+                      <h3 className="font-semibold text-text">{hood.name}</h3>
+                      {hood.investorProfile && (
+                        <span
+                          className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${profileColors[hood.investorProfile] || 'bg-gray-100 text-gray-700'}`}
+                        >
+                          {profileLabels[hood.investorProfile] || hood.investorProfile}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-2 text-sm text-text-muted leading-6">
+                      {hood.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Quick Math */}
           <section>

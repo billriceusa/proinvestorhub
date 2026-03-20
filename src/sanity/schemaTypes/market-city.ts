@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity'
+import { defineType, defineField, defineArrayMember } from 'sanity'
 import { PinIcon } from '@sanity/icons'
 
 export const marketCity = defineType({
@@ -90,6 +90,40 @@ export const marketCity = defineType({
       rows: 4,
       description: 'Editorial summary for this market',
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'neighborhoods',
+      title: 'Top Neighborhoods',
+      type: 'array',
+      description: 'Key neighborhoods for real estate investors in this market',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          name: 'neighborhood',
+          fields: [
+            defineField({ name: 'name', title: 'Name', type: 'string', validation: (rule) => rule.required() }),
+            defineField({ name: 'description', title: 'Description', type: 'text', rows: 2, description: 'Why this neighborhood matters for investors' }),
+            defineField({
+              name: 'investorProfile',
+              title: 'Best For',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'Cash Flow', value: 'cash-flow' },
+                  { title: 'BRRRR', value: 'brrrr' },
+                  { title: 'House Hacking', value: 'house-hacking' },
+                  { title: 'Appreciation', value: 'appreciation' },
+                  { title: 'Mixed', value: 'mixed' },
+                ],
+                layout: 'dropdown',
+              },
+            }),
+          ],
+          preview: {
+            select: { title: 'name', subtitle: 'investorProfile' },
+          },
+        }),
+      ],
     }),
     defineField({
       name: 'dataUpdatedAt',

@@ -6,6 +6,7 @@ import { CalculatorCTA } from '@/components/calculator-cta'
 import { StrategyCitiesTable } from '@/components/strategy-cities-table'
 import { strategies, fetchCitiesForStrategy } from '@/data/market-strategies'
 import { getDataFreshness } from '@/data/market-queries'
+import { DownloadPDF } from '@/components/download-pdf'
 
 export function generateStaticParams() {
   return strategies.map((s) => ({ strategy: s.slug }))
@@ -97,6 +98,9 @@ export default async function StrategyPage({
         <p className="mt-2 text-xs text-text-light">
           Last updated: {lastUpdated} &bull; Data sources: {sourcesList}
         </p>
+        <div className="mt-4">
+          <DownloadPDF label={`Download ${strategy.shortTitle} Rankings PDF`} />
+        </div>
       </div>
 
       {/* Hero Intro */}

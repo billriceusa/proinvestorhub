@@ -52,6 +52,16 @@ export function StrategyCitiesTable({
     return arr
   }, [cities, sortKey, sortDir])
 
+  function trackEvent(action: string, detail: Record<string, unknown>) {
+    if (typeof window !== 'undefined' && 'dataLayer' in window) {
+      ;(window as unknown as { dataLayer: Record<string, unknown>[] }).dataLayer.push({
+        event: 'markets_interaction',
+        action,
+        ...detail,
+      })
+    }
+  }
+
   function handleSort(key: SortKey) {
     if (key === sortKey) {
       setSortDir((d) => (d === 'desc' ? 'asc' : 'desc'))
@@ -59,6 +69,7 @@ export function StrategyCitiesTable({
       setSortKey(key)
       setSortDir(key === 'city' ? 'asc' : 'desc')
     }
+    trackEvent('table_sort', { sort_column: key })
   }
 
   function SortIcon({ col }: { col: SortKey }) {
@@ -127,6 +138,7 @@ export function StrategyCitiesTable({
                   <Link
                     href={`/calculators/cap-rate/${city.slug}`}
                     className="font-medium text-text hover:text-primary transition-colors"
+                    onClick={() => trackEvent('city_click', { city: city.city, state: city.state, rank: i + 1 })}
                   >
                     {city.city}, {city.state}
                   </Link>

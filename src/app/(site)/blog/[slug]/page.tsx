@@ -10,6 +10,7 @@ import { PartnerCTAGroup } from '@/components/partner-cta'
 import type { PostDetail } from '@/sanity/lib/types'
 import { JsonLd, articleJsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { NewsletterSignup } from '@/components/newsletter-signup'
+import { RelatedMarkets } from '@/components/related-markets'
 
 // Map post category slugs to glossary categories
 const postCategoryToGlossary: Record<string, string> = {
@@ -175,6 +176,18 @@ export default async function PostPage({ params }: Props) {
         <div className="mt-10">
           <PortableText value={post.body} />
         </div>
+      )}
+
+      {/* Related Markets — scans post text for city mentions */}
+      {post.body && (
+        <RelatedMarkets
+          bodyText={
+            (post.body as Array<{ _type: string; children?: Array<{ text?: string }> }>)
+              .filter((b) => b._type === 'block')
+              .flatMap((b) => b.children?.map((c) => c.text || '') || [])
+              .join(' ')
+          }
+        />
       )}
 
       {post.author?.bio && (
