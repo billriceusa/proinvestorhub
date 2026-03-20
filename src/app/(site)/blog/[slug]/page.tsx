@@ -11,6 +11,7 @@ import type { PostDetail } from '@/sanity/lib/types'
 import { JsonLd, articleJsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 import { RelatedMarkets } from '@/components/related-markets'
+import { ToolRecommendations } from '@/components/tool-recommendations'
 
 // Map post category slugs to glossary categories
 const postCategoryToGlossary: Record<string, string> = {
@@ -20,6 +21,16 @@ const postCategoryToGlossary: Record<string, string> = {
   'tax-legal': 'tax',
   'getting-started': 'general',
   markets: 'general',
+}
+
+// Map post category slugs to tool recommendation contexts
+const postCategoryToToolContext: Record<string, string> = {
+  'deal-analysis': 'deal-analysis',
+  financing: 'deal-analysis',
+  strategies: 'deal-analysis',
+  'tax-legal': 'tax-legal',
+  'getting-started': 'getting-started',
+  markets: 'cash-flow',
 }
 
 type Props = {
@@ -214,6 +225,13 @@ export default async function PostPage({ params }: Props) {
       <PartnerCTAGroup
         verticals={['lenders', 'agents', 'tax', 'property-managers']}
         heading="Take the Next Step"
+      />
+
+      {/* Tool Recommendations */}
+      <ToolRecommendations
+        context={postCategoryToToolContext[firstCatSlug] || 'deal-analysis'}
+        heading="Investor Tools We Recommend"
+        placement="blog-bottom"
       />
 
       {/* Related glossary terms */}

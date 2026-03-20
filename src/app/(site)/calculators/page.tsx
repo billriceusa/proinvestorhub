@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { ToolRecommendations } from '@/components/tool-recommendations'
 
 export const metadata: Metadata = {
   title: 'Real Estate Investment Calculators',
@@ -130,6 +131,12 @@ export default function CalculatorsPage() {
           )
         })}
       </div>
+
+      <ToolRecommendations
+        tools={['dealcheck', 'baselane', 'rentredi', 'landlord-studio']}
+        heading="Tools That Pair with Our Calculators"
+        placement="calculators-hub"
+      />
 
       <div className="mt-16 rounded-xl bg-primary/5 border border-primary/10 p-8 text-center">
         <h2 className="text-xl font-bold text-text">

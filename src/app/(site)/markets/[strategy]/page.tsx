@@ -7,6 +7,7 @@ import { StrategyCitiesTable } from '@/components/strategy-cities-table'
 import { strategies, fetchCitiesForStrategy } from '@/data/market-strategies'
 import { getDataFreshness } from '@/data/market-queries'
 import { DownloadPDF } from '@/components/download-pdf'
+import { ToolRecommendations } from '@/components/tool-recommendations'
 
 export function generateStaticParams() {
   return strategies.map((s) => ({ strategy: s.slug }))
@@ -237,6 +238,13 @@ export default async function StrategyPage({
               ))}
             </div>
           </section>
+
+          {/* Tool Recommendations */}
+          <ToolRecommendations
+            context={slug === 'cash-flow' || slug === 'brrrr' ? slug : 'deal-analysis'}
+            heading="Investor Tools We Recommend"
+            placement="markets-bottom"
+          />
         </div>
 
         {/* Sidebar */}
