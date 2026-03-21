@@ -29,7 +29,7 @@ export interface ContentPlan {
 
 export interface ArticleSection {
   text: string;
-  style: "normal" | "h2" | "h3" | "h4" | "blockquote";
+  style: "normal" | "h2" | "h3" | "h4" | "blockquote" | "table";
 }
 
 export interface GeneratedArticle {

@@ -6,6 +6,7 @@ import { blockContent } from './block-content'
 import { siteSettings } from './site-settings'
 import { partnerCta } from './partner-cta'
 import { marketCity } from './market-city'
+import { simpleTable } from './simple-table'
 
 export const schemaTypes = [
   post,
@@ -16,4 +17,5 @@ export const schemaTypes = [
   siteSettings,
   partnerCta,
   marketCity,
+  simpleTable,
 ]

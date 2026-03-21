@@ -182,11 +182,12 @@ Respond with valid JSON matching this structure:
     { "text": "Section Heading", "style": "h2" },
     { "text": "Subsection heading", "style": "h3" },
     { "text": "Body paragraph text...", "style": "normal" },
+    { "text": "| Feature | Option A | Option B |\\n|---|---|---|\\n| Rate | 10% | 7% |", "style": "table" },
     ...
   ]
 }
 
-Write the FULL article with all sections. Each "sections" entry is one paragraph or heading. Use "h2" for main sections, "h3" for subsections, and "normal" for body paragraphs. Include at least 15-25 sections for a complete article.`;
+Write the FULL article with all sections. Each "sections" entry is one paragraph or heading. Use "h2" for main sections, "h3" for subsections, "normal" for body paragraphs, and "table" for comparison/data tables. For tables, use markdown table syntax with pipe-delimited columns and a separator row (e.g. "| Header1 | Header2 |\\n|---|---|\\n| Cell1 | Cell2 |"). Include at least 15-25 sections for a complete article.`;
 
   const client = getAnthropicClient();
   const response = await client.messages.create({
@@ -215,23 +216,55 @@ Write the FULL article with all sections. Each "sections" entry is one paragraph
   };
 }
 
+function parseMarkdownTable(text: string): { rows: { _key: string; cells: string[] }[] } | null {
+  const lines = text.split("\n").filter((l) => l.trim());
+  if (lines.length < 2) return null;
+  // Check that lines contain pipe-delimited content
+  if (!lines[0].includes("|")) return null;
+
+  const parseRow = (line: string): string[] =>
+    line.split("|").map((c) => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length);
+
+  const rows: { _key: string; cells: string[] }[] = [];
+  for (const line of lines) {
+    // Skip separator rows like |---|---|
+    if (/^\|?[\s-:|]+\|?$/.test(line)) continue;
+    rows.push({ _key: randomKey(), cells: parseRow(line) });
+  }
+  return rows.length >= 1 ? { rows } : null;
+}
+
 export function sectionsToPortableText(
   sections: ArticleSection[]
 ): Record<string, unknown>[] {
-  return sections.map((section) => ({
-    _type: "block",
-    _key: randomKey(),
-    style: section.style,
-    markDefs: [],
-    children: [
-      {
-        _type: "span",
-        _key: randomKey(),
-        text: section.text,
-        marks: [],
-      },
-    ],
-  }));
+  return sections.map((section) => {
+    // Handle explicit table style or detect markdown table syntax
+    if (section.style === "table" || (section.text.includes("|") && section.text.includes("\n") && section.text.split("\n").filter((l) => l.trim()).length >= 2)) {
+      const table = parseMarkdownTable(section.text);
+      if (table) {
+        return {
+          _type: "simpleTable",
+          _key: randomKey(),
+          rows: table.rows,
+        };
+      }
+    }
+
+    return {
+      _type: "block",
+      _key: randomKey(),
+      style: section.style === "table" ? "normal" : section.style,
+      markDefs: [],
+      children: [
+        {
+          _type: "span",
+          _key: randomKey(),
+          text: section.text,
+          marks: [],
+        },
+      ],
+    };
+  });
 }
 
 function randomKey(): string {

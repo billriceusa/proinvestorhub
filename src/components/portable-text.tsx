@@ -48,6 +48,32 @@ const components: PortableTextComponents = {
         description={value.description}
       />
     ),
+    simpleTable: ({ value }: { value: { rows: { _key: string; cells: string[] }[] } }) => {
+      if (!value?.rows?.length) return null
+      const [headerRow, ...bodyRows] = value.rows
+      return (
+        <div className="my-6 overflow-x-auto rounded-lg border border-border">
+          <table className="w-full text-sm text-left">
+            <thead className="bg-surface-alt text-text font-semibold">
+              <tr>
+                {headerRow.cells.map((cell, i) => (
+                  <th key={i} className="px-4 py-3 whitespace-nowrap">{cell}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="text-text-muted">
+              {bodyRows.map((row) => (
+                <tr key={row._key} className="border-t border-border">
+                  {row.cells.map((cell, i) => (
+                    <td key={i} className="px-4 py-3">{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+    },
   },
   block: {
     h2: ({ children }) => (
