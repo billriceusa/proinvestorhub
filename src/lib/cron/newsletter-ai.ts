@@ -71,6 +71,7 @@ Newsletter Context:
 - Tone: direct, practical, data-driven — never salesy or generic
 - Every tip should include specific numbers, formulas, deal examples, or frameworks the reader can use TODAY
 - The newsletter should feel like getting investing advice from the smartest person at a local REIA meeting who also happens to be generous with their knowledge
+- You may use fictional examples and hypothetical scenarios to illustrate concepts (e.g., "Let's say you find a duplex listed at $250K..."), but NEVER present them as real personal experiences. Do not write "I once bought..." or "A client of mine..." unless it is a verified true story. We do not lie.
 
 IMPORTANT: You must respond with ONLY valid JSON. No markdown, no code fences, no explanation — just the JSON object.`;
 
