@@ -156,8 +156,11 @@ export default async function PostPage({ params }: Props) {
         )}
         <div>
           {post.author && (
-            <p className="text-sm font-medium text-text">{post.author.name}</p>
+            <Link href="/authors/bill-rice" className="text-sm font-medium text-text hover:text-primary transition-colors">
+              {post.author.name}
+            </Link>
           )}
+          <p className="text-xs text-text-light">30+ years in mortgage lending</p>
           {post.publishedAt && (
             <p className="text-xs text-text-muted">
               {new Date(post.publishedAt).toLocaleDateString('en-US', {
@@ -201,9 +204,9 @@ export default async function PostPage({ params }: Props) {
         />
       )}
 
-      {post.author?.bio && (
+      {post.author && (
         <div className="mt-16 rounded-xl border border-border bg-white p-6">
-          <div className="flex items-center gap-4">
+          <div className="flex items-start gap-4">
             {post.author.image && (
               <Image
                 src={urlFor(post.author.image).width(56).height(56).url()}
@@ -213,9 +216,27 @@ export default async function PostPage({ params }: Props) {
                 className="rounded-full"
               />
             )}
-            <div>
-              <p className="font-semibold text-text">{post.author.name}</p>
-              <p className="text-sm text-text-muted">{post.author.bio}</p>
+            <div className="flex-1">
+              <Link href="/authors/bill-rice" className="font-semibold text-text hover:text-primary transition-colors">
+                {post.author.name}
+              </Link>
+              <p className="text-xs text-primary font-medium mt-0.5">30+ years in mortgage lending &middot; BRSG Founder</p>
+              {post.author.bio && (
+                <p className="text-sm text-text-muted mt-2">{post.author.bio}</p>
+              )}
+              <div className="mt-3 flex items-center gap-4">
+                <Link href="/authors/bill-rice" className="text-xs font-medium text-primary hover:text-primary-light transition-colors">
+                  View all articles &rarr;
+                </Link>
+                <a
+                  href="https://linkedin.com/in/billrice"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-medium text-text-muted hover:text-primary transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </div>

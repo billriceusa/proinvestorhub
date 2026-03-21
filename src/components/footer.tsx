@@ -8,6 +8,7 @@ const footerLinks = {
     { name: 'Glossary', href: '/glossary' },
     { name: 'Guides', href: '/guides' },
     { name: 'Markets', href: '/markets' },
+    { name: 'About', href: '/about' },
   ],
   Tools: [
     { name: 'Cap Rate Calculator', href: '/calculators/cap-rate' },

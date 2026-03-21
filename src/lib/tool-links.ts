@@ -4,7 +4,7 @@
  * No affiliate IDs until 10K uniques/month threshold.
  */
 
-export type ToolSlug = 'dealcheck' | 'baselane' | 'rentredi' | 'landlord-studio'
+export type ToolSlug = 'dealcheck' | 'baselane' | 'rentredi' | 'landlord-studio' | 'stessa' | 'kiavi' | 'buildium' | 'roofstock'
 
 export type ToolConfig = {
   name: string
@@ -74,6 +74,65 @@ export const TOOLS: Record<ToolSlug, ToolConfig> = {
       'tax-legal',
       'property-management',
       'deal-analysis',
+    ],
+  },
+  stessa: {
+    name: 'Stessa',
+    url: 'https://www.stessa.com',
+    campaign: 'tool-stessa',
+    tagline: 'Free rental property accounting',
+    description:
+      'Automated income and expense tracking for rental properties. Real-time cash flow dashboards, tax-ready reports, and portfolio-level insights — free for landlords.',
+    contexts: [
+      'rental-cashflow',
+      'tax-legal',
+      'property-management',
+      'cash-flow',
+      'getting-started',
+    ],
+  },
+  kiavi: {
+    name: 'Kiavi',
+    url: 'https://www.kiavi.com',
+    campaign: 'tool-kiavi',
+    tagline: 'Hard money & bridge loans for investors',
+    description:
+      'Fast financing for fix-and-flip and rental property investments. Bridge loans, rental loans, and new construction financing designed for real estate investors.',
+    contexts: [
+      'brrrr',
+      'fix-flip',
+      'financing',
+      'mortgage',
+      'hard-money',
+    ],
+  },
+  buildium: {
+    name: 'Buildium',
+    url: 'https://www.buildium.com',
+    campaign: 'tool-buildium',
+    tagline: 'Professional property management',
+    description:
+      'All-in-one property management platform with accounting, tenant screening, maintenance tracking, and owner portals. Built for growing portfolios.',
+    contexts: [
+      'property-management',
+      'rental-cashflow',
+      'scaling',
+      'cash-flow',
+    ],
+  },
+  roofstock: {
+    name: 'Roofstock',
+    url: 'https://www.roofstock.com',
+    campaign: 'tool-roofstock',
+    tagline: 'Buy turnkey rental properties',
+    description:
+      'Marketplace for buying and selling single-family rental properties. Find tenant-occupied, cash-flowing properties with inspection reports and financial projections.',
+    contexts: [
+      'getting-started',
+      'rental-cashflow',
+      'market-analysis',
+      'cash-flow',
+      'buy-and-hold',
     ],
   },
 }

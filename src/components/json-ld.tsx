@@ -55,6 +55,9 @@ export function articleJsonLd({
     author: {
       '@type': 'Person',
       name: authorName,
+      url: `${baseUrl}/authors/bill-rice`,
+      jobTitle: 'Real Estate Investor & Mortgage Lending Veteran',
+      sameAs: ['https://linkedin.com/in/billrice'],
     },
     publisher: {
       '@type': 'Organization',
@@ -152,6 +155,37 @@ export function organizationJsonLd() {
     url: baseUrl,
     description:
       'Expert guides, calculators, and education for real estate investors.',
+    founder: {
+      '@type': 'Person',
+      name: 'Bill Rice',
+      url: `${baseUrl}/authors/bill-rice`,
+    },
     sameAs: [],
+  }
+}
+
+export function personJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Bill Rice',
+    url: `${baseUrl}/authors/bill-rice`,
+    jobTitle: 'Real Estate Investor & Mortgage Lending Veteran',
+    description:
+      'Bill Rice has 30+ years of experience in mortgage lending. He founded ProInvestorHub to share real estate investing education, tools, and market analysis.',
+    sameAs: ['https://linkedin.com/in/billrice'],
+    worksFor: {
+      '@type': 'Organization',
+      name: 'ProInvestorHub',
+      url: baseUrl,
+    },
+    knowsAbout: [
+      'Real Estate Investing',
+      'Mortgage Lending',
+      'Cap Rate Analysis',
+      'BRRRR Strategy',
+      'Real Estate Finance',
+      'Investment Property Analysis',
+    ],
   }
 }
