@@ -198,7 +198,6 @@ Respond with ONLY this JSON structure (no markdown, no code fences):
     system: NEWSLETTER_SYSTEM,
     messages: [
       { role: "user", content: prompt },
-      { role: "assistant", content: "{" },
     ],
   });
 
@@ -207,8 +206,8 @@ Respond with ONLY this JSON structure (no markdown, no code fences):
     throw new Error("No text response from Claude for newsletter generation");
   }
 
-  // Prepend the "{" we used as prefill, strip any markdown fences
-  let jsonText = ("{" + textBlock.text).trim();
+  // Strip any markdown fences
+  let jsonText = textBlock.text.trim();
   if (jsonText.startsWith("```")) {
     jsonText = jsonText.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
   }
