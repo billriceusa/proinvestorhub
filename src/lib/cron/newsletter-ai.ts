@@ -193,11 +193,12 @@ Respond with ONLY this JSON structure (no markdown, no code fences):
 
   const response = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 4096,
+    max_tokens: 8192,
     temperature: 0.75,
     system: NEWSLETTER_SYSTEM,
     messages: [
       { role: "user", content: prompt },
+      { role: "assistant", content: "{" },
     ],
   });
 
@@ -206,8 +207,8 @@ Respond with ONLY this JSON structure (no markdown, no code fences):
     throw new Error("No text response from Claude for newsletter generation");
   }
 
-  // Strip markdown code fences if present
-  let jsonText = textBlock.text.trim();
+  // Prepend the "{" we used as prefill, strip any markdown fences
+  let jsonText = ("{" + textBlock.text).trim();
   if (jsonText.startsWith("```")) {
     jsonText = jsonText.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
   }
