@@ -1,7 +1,9 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, Fragment } from 'react'
 import { CalculatorCTA } from '@/components/calculator-cta'
+import { CalculatorActions } from '@/components/calculators/calculator-actions'
+import { useCalculatorState } from '@/lib/use-calculator-state'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -29,8 +31,71 @@ function calculateMonthlyPayment(
 
 type LoanType = 'conventional' | 'dscr'
 
+interface AmortizationRow {
+  month: number
+  payment: number
+  principal: number
+  interest: number
+  balance: number
+}
+
+interface YearlySummary {
+  year: number
+  totalPayment: number
+  totalPrincipal: number
+  totalInterest: number
+  endBalance: number
+  months: AmortizationRow[]
+}
+
+function buildAmortizationSchedule(
+  loanAmount: number,
+  annualRate: number,
+  termYears: number,
+  monthlyPayment: number
+): YearlySummary[] {
+  if (loanAmount <= 0 || annualRate <= 0 || termYears <= 0 || monthlyPayment <= 0) return []
+
+  const monthlyRate = annualRate / 100 / 12
+  const totalMonths = termYears * 12
+  let balance = loanAmount
+  const years: YearlySummary[] = []
+  let currentYear: AmortizationRow[] = []
+
+  for (let m = 1; m <= totalMonths && balance > 0.01; m++) {
+    const interest = balance * monthlyRate
+    const principal = Math.min(monthlyPayment - interest, balance)
+    balance = balance - principal
+
+    currentYear.push({
+      month: m,
+      payment: principal + interest,
+      principal,
+      interest,
+      balance: Math.max(0, balance),
+    })
+
+    if (m % 12 === 0 || m === totalMonths) {
+      const year = Math.ceil(m / 12)
+      years.push({
+        year,
+        totalPayment: currentYear.reduce((s, r) => s + r.payment, 0),
+        totalPrincipal: currentYear.reduce((s, r) => s + r.principal, 0),
+        totalInterest: currentYear.reduce((s, r) => s + r.interest, 0),
+        endBalance: currentYear[currentYear.length - 1].balance,
+        months: currentYear,
+      })
+      currentYear = []
+    }
+  }
+
+  return years
+}
+
 export function MortgageCalculator() {
   const [loanType, setLoanType] = useState<LoanType>('conventional')
+  const [showAmortization, setShowAmortization] = useState(false)
+  const [expandedYear, setExpandedYear] = useState<number | null>(null)
 
   // Shared
   const [propertyPrice, setPropertyPrice] = useState('')
@@ -49,6 +114,22 @@ export function MortgageCalculator() {
   const [vacancyRate, setVacancyRate] = useState('5')
   const [annualMaintenance, setAnnualMaintenance] = useState('')
   const [annualManagement, setAnnualManagement] = useState('')
+
+  useCalculatorState({
+    loanType: setLoanType as (v: string) => void,
+    propertyPrice: setPropertyPrice,
+    downPaymentPercent: setDownPaymentPercent,
+    interestRate: setInterestRate,
+    loanTerm: setLoanTerm,
+    annualTax: setAnnualTax,
+    annualInsurance: setAnnualInsurance,
+    monthlyPMI: setMonthlyPMI,
+    monthlyHOA: setMonthlyHOA,
+    monthlyRent: setMonthlyRent,
+    vacancyRate: setVacancyRate,
+    annualMaintenance: setAnnualMaintenance,
+    annualManagement: setAnnualManagement,
+  })
 
   const results = useMemo(() => {
     const price = parseCurrencyInput(propertyPrice)
@@ -106,12 +187,24 @@ export function MortgageCalculator() {
     monthlyRent, vacancyRate, annualMaintenance, annualManagement,
   ])
 
+  const amortization = useMemo(
+    () =>
+      buildAmortizationSchedule(
+        results.loanAmount,
+        Number(interestRate),
+        Number(loanTerm) || 30,
+        results.monthlyPI
+      ),
+    [results.loanAmount, interestRate, loanTerm, results.monthlyPI]
+  )
+
   const hasInput = results.price > 0
 
   return (
+    <>
     <div className="grid gap-8 lg:grid-cols-5">
       {/* Input Panel */}
-      <div className="lg:col-span-3 space-y-8">
+      <div className="lg:col-span-3 space-y-8 print:hidden">
         {/* Loan Type Toggle */}
         <div>
           <label className="block text-sm font-semibold text-text uppercase tracking-wide mb-3">
@@ -274,6 +367,26 @@ export function MortgageCalculator() {
             {loanType === 'dscr' ? 'DSCR Loan Analysis' : 'Payment Summary'}
           </h2>
 
+          <CalculatorActions
+            calculatorPath="/calculators/mortgage"
+            calculatorName="Mortgage Calculator"
+            params={{
+              loanType,
+              propertyPrice,
+              downPaymentPercent,
+              interestRate,
+              loanTerm,
+              annualTax,
+              annualInsurance,
+              monthlyPMI,
+              monthlyHOA,
+              monthlyRent,
+              vacancyRate,
+              annualMaintenance,
+              annualManagement,
+            }}
+          />
+
           {/* Main Metric */}
           <div className="mt-6 text-center">
             <p className="text-sm text-text-muted">Total Monthly Payment</p>
@@ -383,6 +496,135 @@ export function MortgageCalculator() {
         </div>
       </div>
     </div>
+
+    {/* Amortization Schedule */}
+    {hasInput && amortization.length > 0 && (
+      <div className="mt-12 print:mt-8">
+        <button
+          onClick={() => setShowAmortization(!showAmortization)}
+          className="flex items-center gap-2 text-lg font-semibold text-text hover:text-primary transition-colors print:hidden"
+        >
+          <svg
+            className={`h-5 w-5 transition-transform ${showAmortization ? 'rotate-90' : ''}`}
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+          Amortization Schedule
+        </button>
+
+        {showAmortization && (
+          <div className="mt-6 space-y-6">
+            {/* Visual Chart — Principal vs Interest by Year */}
+            <div>
+              <h3 className="text-sm font-semibold text-text uppercase tracking-wide mb-4">
+                Principal vs Interest Over Time
+              </h3>
+              <div className="space-y-1.5">
+                {amortization.map((yr) => {
+                  const total = yr.totalPrincipal + yr.totalInterest
+                  const principalPct = total > 0 ? (yr.totalPrincipal / total) * 100 : 0
+                  return (
+                    <div key={yr.year} className="flex items-center gap-2 text-xs">
+                      <span className="w-8 text-right text-text-light tabular-nums">
+                        Y{yr.year}
+                      </span>
+                      <div className="flex-1 flex h-5 rounded overflow-hidden bg-gray-100">
+                        <div
+                          className="bg-primary transition-all"
+                          style={{ width: `${principalPct}%` }}
+                          title={`Principal: ${formatCurrency(yr.totalPrincipal)}`}
+                        />
+                        <div
+                          className="bg-accent transition-all"
+                          style={{ width: `${100 - principalPct}%` }}
+                          title={`Interest: ${formatCurrency(yr.totalInterest)}`}
+                        />
+                      </div>
+                      <span className="w-20 text-right text-text-muted tabular-nums">
+                        {formatCurrency(yr.endBalance)}
+                      </span>
+                    </div>
+                  )
+                })}
+              </div>
+              <div className="mt-3 flex gap-4 text-xs text-text-muted">
+                <span className="flex items-center gap-1.5">
+                  <span className="inline-block h-3 w-3 rounded bg-primary" /> Principal
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="inline-block h-3 w-3 rounded bg-accent" /> Interest
+                </span>
+                <span className="ml-auto">Balance →</span>
+              </div>
+            </div>
+
+            {/* Yearly Table */}
+            <div className="overflow-x-auto rounded-lg border border-border">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface text-left">
+                    <th className="px-4 py-3 font-semibold text-text">Year</th>
+                    <th className="px-4 py-3 font-semibold text-text text-right">Payment</th>
+                    <th className="px-4 py-3 font-semibold text-text text-right">Principal</th>
+                    <th className="px-4 py-3 font-semibold text-text text-right">Interest</th>
+                    <th className="px-4 py-3 font-semibold text-text text-right">Balance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {amortization.map((yr) => (
+                    <Fragment key={yr.year}>
+                      <tr
+                        className="border-t border-border hover:bg-surface/50 cursor-pointer print:cursor-default"
+                        onClick={() =>
+                          setExpandedYear(expandedYear === yr.year ? null : yr.year)
+                        }
+                      >
+                        <td className="px-4 py-2.5 font-medium text-text">
+                          <span className="inline-flex items-center gap-1">
+                            <svg
+                              className={`h-3.5 w-3.5 text-text-light transition-transform print:hidden ${expandedYear === yr.year ? 'rotate-90' : ''}`}
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth="2"
+                              stroke="currentColor"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                            Year {yr.year}
+                          </span>
+                        </td>
+                        <td className="px-4 py-2.5 text-right tabular-nums">{formatCurrency(yr.totalPayment)}</td>
+                        <td className="px-4 py-2.5 text-right tabular-nums text-primary font-medium">{formatCurrency(yr.totalPrincipal)}</td>
+                        <td className="px-4 py-2.5 text-right tabular-nums text-text-muted">{formatCurrency(yr.totalInterest)}</td>
+                        <td className="px-4 py-2.5 text-right tabular-nums font-medium">{formatCurrency(yr.endBalance)}</td>
+                      </tr>
+                      {expandedYear === yr.year &&
+                        yr.months.map((m) => (
+                          <tr
+                            key={m.month}
+                            className="border-t border-border/50 bg-surface/30 text-xs"
+                          >
+                            <td className="px-4 py-1.5 pl-10 text-text-muted">Month {m.month}</td>
+                            <td className="px-4 py-1.5 text-right tabular-nums text-text-muted">{formatCurrency(m.payment)}</td>
+                            <td className="px-4 py-1.5 text-right tabular-nums text-primary/70">{formatCurrency(m.principal)}</td>
+                            <td className="px-4 py-1.5 text-right tabular-nums text-text-light">{formatCurrency(m.interest)}</td>
+                            <td className="px-4 py-1.5 text-right tabular-nums text-text-muted">{formatCurrency(m.balance)}</td>
+                          </tr>
+                        ))}
+                    </Fragment>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </div>
+    )}
+    </>
   )
 }
 

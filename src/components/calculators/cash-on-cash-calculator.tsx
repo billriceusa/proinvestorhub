@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import { CalculatorCTA } from '@/components/calculator-cta'
+import { CalculatorActions } from '@/components/calculators/calculator-actions'
+import { useCalculatorState } from '@/lib/use-calculator-state'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -72,6 +74,22 @@ export function CashOnCashCalculator() {
   const [maintenance, setMaintenance] = useState('')
   const [management, setManagement] = useState('')
   const [otherExpenses, setOtherExpenses] = useState('')
+
+  useCalculatorState({
+    purchasePrice: setPurchasePrice,
+    downPaymentPercent: setDownPaymentPercent,
+    closingCosts: setClosingCosts,
+    rehabCosts: setRehabCosts,
+    interestRate: setInterestRate,
+    loanTerm: setLoanTerm,
+    monthlyRent: setMonthlyRent,
+    vacancy: setVacancy,
+    propertyTax: setPropertyTax,
+    insurance: setInsurance,
+    maintenance: setMaintenance,
+    management: setManagement,
+    otherExpenses: setOtherExpenses,
+  })
 
   const results = useMemo(() => {
     const price = parseCurrencyInput(purchasePrice)
@@ -145,7 +163,7 @@ export function CashOnCashCalculator() {
 
   return (
     <div className="grid gap-8 lg:grid-cols-5">
-      <div className="lg:col-span-3 space-y-8">
+      <div className="lg:col-span-3 space-y-8 print:hidden">
         {/* Purchase & Financing */}
         <fieldset>
           <legend className="text-sm font-semibold text-text uppercase tracking-wide">
@@ -314,6 +332,26 @@ export function CashOnCashCalculator() {
           <h2 className="text-sm font-semibold text-text uppercase tracking-wide">
             Results
           </h2>
+
+          <CalculatorActions
+            calculatorPath="/calculators/cash-on-cash"
+            calculatorName="Cash-on-Cash Calculator"
+            params={{
+              purchasePrice,
+              downPaymentPercent,
+              closingCosts,
+              rehabCosts,
+              interestRate,
+              loanTerm,
+              monthlyRent,
+              vacancy,
+              propertyTax,
+              insurance,
+              maintenance,
+              management,
+              otherExpenses,
+            }}
+          />
 
           <div className="mt-6 text-center">
             <p className="text-sm text-text-muted">Cash-on-Cash Return</p>

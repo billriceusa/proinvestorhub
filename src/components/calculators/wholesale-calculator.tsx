@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import { CalculatorCTA } from '@/components/calculator-cta'
+import { CalculatorActions } from '@/components/calculators/calculator-actions'
+import { useCalculatorState } from '@/lib/use-calculator-state'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -58,6 +60,15 @@ export function WholesaleCalculator() {
   const [closingCostPct, setClosingCostPct] = useState('3')
   const [holdingCosts, setHoldingCosts] = useState('5,000')
 
+  useCalculatorState({
+    arv: setArv,
+    rehabCost: setRehabCost,
+    assignmentFee: setAssignmentFee,
+    investorDiscount: setInvestorDiscount,
+    closingCostPct: setClosingCostPct,
+    holdingCosts: setHoldingCosts,
+  })
+
   const results = useMemo(() => {
     const arvVal = parseCurrencyInput(arv)
     const rehab = parseCurrencyInput(rehabCost)
@@ -92,7 +103,7 @@ export function WholesaleCalculator() {
   return (
     <div className="grid gap-8 lg:grid-cols-5">
       {/* Input Panel */}
-      <div className="lg:col-span-3 space-y-8">
+      <div className="lg:col-span-3 space-y-8 print:hidden">
         {/* Deal Details */}
         <fieldset>
           <legend className="text-sm font-semibold text-text uppercase tracking-wide">
@@ -196,6 +207,19 @@ export function WholesaleCalculator() {
           <h2 className="text-sm font-semibold text-text uppercase tracking-wide">
             Results
           </h2>
+
+          <CalculatorActions
+            calculatorPath="/calculators/wholesale"
+            calculatorName="Wholesale Calculator"
+            params={{
+              arv,
+              rehabCost,
+              assignmentFee,
+              investorDiscount,
+              closingCostPct,
+              holdingCosts,
+            }}
+          />
 
           {/* Your Maximum Offer */}
           <div className="mt-6 text-center">

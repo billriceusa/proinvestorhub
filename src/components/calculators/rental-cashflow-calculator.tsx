@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import { CalculatorCTA } from '@/components/calculator-cta'
+import { CalculatorActions } from '@/components/calculators/calculator-actions'
+import { useCalculatorState } from '@/lib/use-calculator-state'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -30,6 +32,19 @@ export function RentalCashFlowCalculator() {
   const [hoa, setHoa] = useState('')
   const [otherExpenses, setOtherExpenses] = useState('')
   const [mortgagePayment, setMortgagePayment] = useState('')
+
+  useCalculatorState({
+    otherIncome: setOtherIncome,
+    vacancy: setVacancy,
+    propertyTax: setPropertyTax,
+    insurance: setInsurance,
+    maintenance: setMaintenance,
+    management: setManagement,
+    utilities: setUtilities,
+    hoa: setHoa,
+    otherExpenses: setOtherExpenses,
+    mortgagePayment: setMortgagePayment,
+  })
 
   function addUnit() {
     setUnits((prev) => [
@@ -104,7 +119,7 @@ export function RentalCashFlowCalculator() {
 
   return (
     <div className="grid gap-8 lg:grid-cols-5">
-      <div className="lg:col-span-3 space-y-8">
+      <div className="lg:col-span-3 space-y-8 print:hidden">
         {/* Rental Income */}
         <fieldset>
           <legend className="text-sm font-semibold text-text uppercase tracking-wide">
@@ -214,6 +229,23 @@ export function RentalCashFlowCalculator() {
           <h2 className="text-sm font-semibold text-text uppercase tracking-wide">
             Cash Flow Summary
           </h2>
+
+          <CalculatorActions
+            calculatorPath="/calculators/rental-cashflow"
+            calculatorName="Rental Cash Flow Calculator"
+            params={{
+              otherIncome,
+              vacancy,
+              propertyTax,
+              insurance,
+              maintenance,
+              management,
+              utilities,
+              hoa,
+              otherExpenses,
+              mortgagePayment,
+            }}
+          />
 
           <div className="mt-6 grid grid-cols-2 gap-4 text-center">
             <div className={`rounded-lg p-4 ${cashFlowPositive ? 'bg-emerald-50' : 'bg-red-50'}`}>

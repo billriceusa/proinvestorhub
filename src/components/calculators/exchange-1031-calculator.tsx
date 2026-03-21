@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import { CalculatorCTA } from '@/components/calculator-cta'
+import { CalculatorActions } from '@/components/calculators/calculator-actions'
+import { useCalculatorState } from '@/lib/use-calculator-state'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -64,6 +66,19 @@ export function Exchange1031Calculator() {
   const [customCapGainsRate, setCustomCapGainsRate] = useState('')
   const [stateTaxRate, setStateTaxRate] = useState('5')
   const [replacementPrice, setReplacementPrice] = useState('')
+
+  useCalculatorState({
+    salePrice: setSalePrice,
+    purchasePrice: setPurchasePrice,
+    accumulatedDepreciation: setAccumulatedDepreciation,
+    sellingCostsPercent: setSellingCostsPercent,
+    sellingCostsMode: setSellingCostsMode as (v: string) => void,
+    sellingCostsDollar: setSellingCostsDollar,
+    capGainsOption: setCapGainsOption as (v: string) => void,
+    customCapGainsRate: setCustomCapGainsRate,
+    stateTaxRate: setStateTaxRate,
+    replacementPrice: setReplacementPrice,
+  })
 
   const results = useMemo(() => {
     const sale = parseCurrencyInput(salePrice)
@@ -143,7 +158,7 @@ export function Exchange1031Calculator() {
   return (
     <div className="grid gap-8 lg:grid-cols-5">
       {/* Input Panel */}
-      <div className="lg:col-span-3 space-y-8">
+      <div className="lg:col-span-3 space-y-8 print:hidden">
         {/* Property Sale */}
         <fieldset>
           <legend className="text-sm font-semibold text-text uppercase tracking-wide">
@@ -345,6 +360,23 @@ export function Exchange1031Calculator() {
           <h2 className="text-sm font-semibold text-text uppercase tracking-wide">
             Tax Savings
           </h2>
+
+          <CalculatorActions
+            calculatorPath="/calculators/1031-exchange"
+            calculatorName="1031 Exchange Calculator"
+            params={{
+              salePrice,
+              purchasePrice,
+              accumulatedDepreciation,
+              sellingCostsPercent,
+              sellingCostsMode,
+              sellingCostsDollar,
+              capGainsOption,
+              customCapGainsRate,
+              stateTaxRate,
+              replacementPrice,
+            }}
+          />
 
           {/* Big Number */}
           <div className="mt-6 text-center">

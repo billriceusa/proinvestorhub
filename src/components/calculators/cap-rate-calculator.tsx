@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import { CalculatorCTA } from '@/components/calculator-cta'
+import { CalculatorActions } from '@/components/calculators/calculator-actions'
+import { useCalculatorState } from '@/lib/use-calculator-state'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -68,6 +70,17 @@ export function CapRateCalculator() {
   const [management, setManagement] = useState('')
   const [otherExpenses, setOtherExpenses] = useState('')
 
+  useCalculatorState({
+    purchasePrice: setPurchasePrice,
+    grossRent: setGrossRent,
+    vacancy: setVacancy,
+    propertyTax: setPropertyTax,
+    insurance: setInsurance,
+    maintenance: setMaintenance,
+    management: setManagement,
+    otherExpenses: setOtherExpenses,
+  })
+
   const results = useMemo(() => {
     const price = parseCurrencyInput(purchasePrice)
     const annualGrossRent = parseCurrencyInput(grossRent)
@@ -111,7 +124,7 @@ export function CapRateCalculator() {
   return (
     <div className="grid gap-8 lg:grid-cols-5">
       {/* Input Panel */}
-      <div className="lg:col-span-3 space-y-8">
+      <div className="lg:col-span-3 space-y-8 print:hidden">
         {/* Property */}
         <fieldset>
           <legend className="text-sm font-semibold text-text uppercase tracking-wide">
@@ -211,6 +224,21 @@ export function CapRateCalculator() {
           <h2 className="text-sm font-semibold text-text uppercase tracking-wide">
             Results
           </h2>
+
+          <CalculatorActions
+            calculatorPath="/calculators/cap-rate"
+            calculatorName="Cap Rate Calculator"
+            params={{
+              purchasePrice,
+              grossRent,
+              vacancy,
+              propertyTax,
+              insurance,
+              maintenance,
+              management,
+              otherExpenses,
+            }}
+          />
 
           {/* Cap Rate */}
           <div className="mt-6 text-center">

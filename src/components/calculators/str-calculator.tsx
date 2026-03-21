@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import { CalculatorCTA } from '@/components/calculator-cta'
+import { CalculatorActions } from '@/components/calculators/calculator-actions'
+import { useCalculatorState } from '@/lib/use-calculator-state'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -75,6 +77,23 @@ export function STRCalculator() {
   const [propertyTax, setPropertyTax] = useState('')
   const [maintenance, setMaintenance] = useState('')
   const [furnishingCost, setFurnishingCost] = useState('')
+
+  useCalculatorState({
+    nightlyRate: setNightlyRate,
+    occupancy: setOccupancy,
+    bedrooms: setBedrooms,
+    cleaningFee: setCleaningFee,
+    avgStayLength: setAvgStayLength,
+    cleaningCost: setCleaningCost,
+    platformFees: setPlatformFees,
+    managementFee: setManagementFee,
+    utilities: setUtilities,
+    supplies: setSupplies,
+    insurance: setInsurance,
+    propertyTax: setPropertyTax,
+    maintenance: setMaintenance,
+    furnishingCost: setFurnishingCost,
+  })
 
   const results = useMemo(() => {
     const rate = parseCurrencyInput(nightlyRate)
@@ -187,7 +206,7 @@ export function STRCalculator() {
   return (
     <div className="grid gap-8 lg:grid-cols-5">
       {/* Input Panel */}
-      <div className="lg:col-span-3 space-y-8">
+      <div className="lg:col-span-3 space-y-8 print:hidden">
         {/* Property */}
         <fieldset>
           <legend className="text-sm font-semibold text-text uppercase tracking-wide">
@@ -392,6 +411,27 @@ export function STRCalculator() {
           <h2 className="text-sm font-semibold text-text uppercase tracking-wide">
             Results
           </h2>
+
+          <CalculatorActions
+            calculatorPath="/calculators/str-revenue"
+            calculatorName="STR Revenue Calculator"
+            params={{
+              nightlyRate,
+              occupancy,
+              bedrooms,
+              cleaningFee,
+              avgStayLength,
+              cleaningCost,
+              platformFees,
+              managementFee,
+              utilities,
+              supplies,
+              insurance,
+              propertyTax,
+              maintenance,
+              furnishingCost,
+            }}
+          />
 
           {/* Monthly Net Income */}
           <div className="mt-6 text-center">

@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import { CalculatorCTA } from '@/components/calculator-cta'
+import { CalculatorActions } from '@/components/calculators/calculator-actions'
+import { useCalculatorState } from '@/lib/use-calculator-state'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -67,6 +69,30 @@ export function BRRRRCalculator() {
   const [refiRate, setRefiRate] = useState('7')
   const [refiTerm, setRefiTerm] = useState('30')
   const [refiClosingCostPercent, setRefiClosingCostPercent] = useState('2')
+
+  useCalculatorState({
+    purchasePrice: setPurchasePrice,
+    closingCostPercent: setClosingCostPercent,
+    purchaseFinancing: setPurchaseFinancing as (v: string) => void,
+    purchaseLoanAmount: setPurchaseLoanAmount,
+    purchaseLoanRate: setPurchaseLoanRate,
+    purchaseLoanTermMonths: setPurchaseLoanTermMonths,
+    rehabCost: setRehabCost,
+    rehabDurationMonths: setRehabDurationMonths,
+    holdingCostsMonthly: setHoldingCostsMonthly,
+    monthlyRent: setMonthlyRent,
+    vacancyRate: setVacancyRate,
+    propertyTax: setPropertyTax,
+    insurance: setInsurance,
+    maintenance: setMaintenance,
+    managementFee: setManagementFee,
+    otherExpenses: setOtherExpenses,
+    arv: setArv,
+    refiLtv: setRefiLtv,
+    refiRate: setRefiRate,
+    refiTerm: setRefiTerm,
+    refiClosingCostPercent: setRefiClosingCostPercent,
+  })
 
   const results = useMemo(() => {
     const price = parseCurrencyInput(purchasePrice)
@@ -221,7 +247,7 @@ export function BRRRRCalculator() {
 
       <div className="grid gap-8 lg:grid-cols-5">
         {/* Input Panel */}
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-3 print:hidden">
           {step === 'buy' && (
             <div className="space-y-6">
               <h2 className="text-xl font-bold text-text">
@@ -566,6 +592,34 @@ export function BRRRRCalculator() {
             <h2 className="text-sm font-semibold text-text uppercase tracking-wide">
               BRRRR Summary
             </h2>
+
+            <CalculatorActions
+              calculatorPath="/calculators/brrrr"
+              calculatorName="BRRRR Calculator"
+              params={{
+                purchasePrice,
+                closingCostPercent,
+                purchaseFinancing,
+                purchaseLoanAmount,
+                purchaseLoanRate,
+                purchaseLoanTermMonths,
+                rehabCost,
+                rehabDurationMonths,
+                holdingCostsMonthly,
+                monthlyRent,
+                vacancyRate,
+                propertyTax,
+                insurance,
+                maintenance,
+                managementFee,
+                otherExpenses,
+                arv,
+                refiLtv,
+                refiRate,
+                refiTerm,
+                refiClosingCostPercent,
+              }}
+            />
 
             {/* Key Metric */}
             <div className="mt-6 text-center">

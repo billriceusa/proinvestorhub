@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import { CalculatorCTA } from '@/components/calculator-cta'
+import { CalculatorActions } from '@/components/calculators/calculator-actions'
+import { useCalculatorState } from '@/lib/use-calculator-state'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -80,6 +82,22 @@ export function FixFlipCalculator() {
   const [agentCommission, setAgentCommission] = useState('6')
   const [closingCostSell, setClosingCostSell] = useState('1.5')
 
+  useCalculatorState({
+    purchasePrice: setPurchasePrice,
+    closingCostBuy: setClosingCostBuy,
+    arv: setArv,
+    rehabCost: setRehabCost,
+    contingency: setContingency,
+    holdingMonths: setHoldingMonths,
+    monthlyLoanPayment: setMonthlyLoanPayment,
+    monthlyTaxes: setMonthlyTaxes,
+    monthlyInsurance: setMonthlyInsurance,
+    monthlyUtilities: setMonthlyUtilities,
+    monthlyOther: setMonthlyOther,
+    agentCommission: setAgentCommission,
+    closingCostSell: setClosingCostSell,
+  })
+
   const results = useMemo(() => {
     const price = parseCurrencyInput(purchasePrice)
     const afterRepairValue = parseCurrencyInput(arv)
@@ -155,7 +173,7 @@ export function FixFlipCalculator() {
   return (
     <div className="grid gap-8 lg:grid-cols-5">
       {/* Input Panel */}
-      <div className="lg:col-span-3 space-y-8">
+      <div className="lg:col-span-3 space-y-8 print:hidden">
         {/* Acquisition */}
         <fieldset>
           <legend className="text-sm font-semibold text-text uppercase tracking-wide">
@@ -312,6 +330,26 @@ export function FixFlipCalculator() {
           <h2 className="text-sm font-semibold text-text uppercase tracking-wide">
             Flip Profit Analysis
           </h2>
+
+          <CalculatorActions
+            calculatorPath="/calculators/fix-flip"
+            calculatorName="Fix & Flip Calculator"
+            params={{
+              purchasePrice,
+              closingCostBuy,
+              arv,
+              rehabCost,
+              contingency,
+              holdingMonths,
+              monthlyLoanPayment,
+              monthlyTaxes,
+              monthlyInsurance,
+              monthlyUtilities,
+              monthlyOther,
+              agentCommission,
+              closingCostSell,
+            }}
+          />
 
           {/* Main Metric */}
           <div className="mt-6 text-center">
