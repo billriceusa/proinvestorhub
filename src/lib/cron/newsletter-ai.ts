@@ -1,13 +1,13 @@
-import OpenAI from "openai";
+import Anthropic from "@anthropic-ai/sdk";
 import type { NewsletterPlan } from "@/data/newsletter-calendar";
 import type { EducationTopic } from "@/data/newsletter-education";
 
-function getOpenAIClient(): OpenAI {
-  const apiKey = process.env.OPENAI_API_KEY;
+function getAnthropicClient(): Anthropic {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
-    throw new Error("OPENAI_API_KEY environment variable is not set");
+    throw new Error("ANTHROPIC_API_KEY environment variable is not set");
   }
-  return new OpenAI({ apiKey });
+  return new Anthropic({ apiKey });
 }
 
 export interface RecentPost {
@@ -70,7 +70,9 @@ Newsletter Context:
 - Goal: deliver weekly value that keeps readers engaged, drives traffic to proinvestorhub.com blog content and calculators, and positions ProInvestorHub as the go-to resource for real estate investing education
 - Tone: direct, practical, data-driven — never salesy or generic
 - Every tip should include specific numbers, formulas, deal examples, or frameworks the reader can use TODAY
-- The newsletter should feel like getting investing advice from the smartest person at a local REIA meeting who also happens to be generous with their knowledge`;
+- The newsletter should feel like getting investing advice from the smartest person at a local REIA meeting who also happens to be generous with their knowledge
+
+IMPORTANT: You must respond with ONLY valid JSON. No markdown, no code fences, no explanation — just the JSON object.`;
 
 export async function generateNewsletterContent(
   plan: NewsletterPlan | null,
@@ -79,7 +81,7 @@ export async function generateNewsletterContent(
   weekLabel: string,
   educationTopic: EducationTopic
 ): Promise<NewsletterContent> {
-  const client = getOpenAIClient();
+  const client = getAnthropicClient();
 
   const postsContext = recentPosts
     .map(
@@ -142,7 +144,7 @@ ${weekLabel}
 10. Closing note: 1-2 sentence personal sign-off
 11. CTA: text for the main call-to-action button (drives to calculators or guides on proinvestorhub.com)
 
-Respond with valid JSON:
+Respond with ONLY this JSON structure (no markdown, no code fences):
 {
   "subject": "Subject line here",
   "previewText": "Preview text here",
@@ -188,18 +190,26 @@ Respond with valid JSON:
   "ctaUrl": "${siteUrl}/calculators?utm_source=proinvestorhub&utm_medium=email&utm_campaign=weekly-newsletter&utm_content=${weekLabel}"
 }`;
 
-  const response = await client.chat.completions.create({
-    model: "gpt-4o",
+  const response = await client.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 4096,
+    temperature: 0.75,
+    system: NEWSLETTER_SYSTEM,
     messages: [
-      { role: "system", content: NEWSLETTER_SYSTEM },
       { role: "user", content: prompt },
     ],
-    temperature: 0.75,
-    response_format: { type: "json_object" },
   });
 
-  const content = response.choices[0]?.message?.content;
-  if (!content) throw new Error("No response from AI for newsletter generation");
+  const textBlock = response.content.find((block) => block.type === "text");
+  if (!textBlock || textBlock.type !== "text") {
+    throw new Error("No text response from Claude for newsletter generation");
+  }
 
-  return JSON.parse(content) as NewsletterContent;
+  // Strip markdown code fences if present
+  let jsonText = textBlock.text.trim();
+  if (jsonText.startsWith("```")) {
+    jsonText = jsonText.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+  }
+
+  return JSON.parse(jsonText) as NewsletterContent;
 }
