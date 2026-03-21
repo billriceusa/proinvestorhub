@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const navigation = [
+  { name: 'Start Here', href: '/start-here', accent: true },
   { name: 'Blog', href: '/blog' },
   { name: 'Calculators', href: '/calculators' },
   { name: 'Markets', href: '/markets' },
@@ -31,7 +32,11 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-text-muted hover:text-primary transition-colors"
+              className={
+                item.accent
+                  ? 'text-sm font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full hover:bg-accent/20 transition-colors'
+                  : 'text-sm font-medium text-text-muted hover:text-primary transition-colors'
+              }
             >
               {item.name}
             </Link>

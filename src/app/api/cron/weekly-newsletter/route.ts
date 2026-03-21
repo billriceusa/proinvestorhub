@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "next-sanity";
 import { Resend } from "resend";
 import { NEWSLETTER_CALENDAR } from "@/data/newsletter-calendar";
+import { getEducationTopicForWeek } from "@/data/newsletter-education";
 import {
   generateNewsletterContent,
   type RecentPost,
@@ -199,6 +200,11 @@ export async function GET(request: Request) {
     );
   }
 
+  const educationTopic = getEducationTopicForWeek(weekDates.weekNumber);
+  console.log(
+    `[Newsletter] Education topic: "${educationTopic.topic}" (Phase ${educationTopic.phase}: ${educationTopic.phaseTitle}, Week ${educationTopic.week}/24)`
+  );
+
   let content: NewsletterContent;
   try {
     console.log("[Newsletter] Generating newsletter content with AI...");
@@ -206,7 +212,8 @@ export async function GET(request: Request) {
       plan ?? null,
       recentPosts,
       siteUrl,
-      weekDates.weekLabel
+      weekDates.weekLabel,
+      educationTopic
     );
     console.log(`[Newsletter] Generated: "${content.subject}"`);
   } catch (err) {
@@ -307,6 +314,10 @@ export async function GET(request: Request) {
     broadcastId: broadcastId || null,
     featuredArticle: content.featuredArticle,
     quickTips: content.quickTips.map((t) => t.title),
+    newsHeadlines: content.newsUpdate.items.map((n) => n.title),
+    educationTopic: content.education.topic,
+    educationPhase: content.education.phase,
+    educationWeek: content.education.weekNumber,
     industryInsight: content.industryInsight.headline,
     errors,
   };
@@ -378,6 +389,10 @@ function buildReportHtml(
     broadcastId: string | null;
     featuredArticle: { title: string; slug: string };
     quickTips: string[];
+    newsHeadlines: string[];
+    educationTopic: string;
+    educationPhase: string;
+    educationWeek: number;
     industryInsight: string;
     errors: string[];
   },
@@ -413,8 +428,14 @@ function buildReportHtml(
     <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Featured</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${report.featuredArticle.title}</td></tr>
   </table>
 
+  <h3 style="margin: 0 0 8px; font-size: 16px;">News Headlines</h3>
+  <ul style="margin: 0 0 20px; padding-left: 20px;">${report.newsHeadlines.map((h) => `<li>${h}</li>`).join("")}</ul>
+
   <h3 style="margin: 0 0 8px; font-size: 16px;">Quick Tips Included</h3>
   <ul style="margin: 0 0 20px; padding-left: 20px;">${tipsHtml}</ul>
+
+  <h3 style="margin: 0 0 8px; font-size: 16px;">Education</h3>
+  <p style="margin: 0 0 20px;">Week ${report.educationWeek}: ${report.educationTopic} (${report.educationPhase})</p>
 
   <h3 style="margin: 0 0 8px; font-size: 16px;">Market Insight</h3>
   <p style="margin: 0 0 20px;">${report.industryInsight}</p>

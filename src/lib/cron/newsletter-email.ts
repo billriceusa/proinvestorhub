@@ -10,6 +10,18 @@ export function buildNewsletterHtml(
     .map((p) => `<p style="margin: 0 0 16px 0; line-height: 1.7;">${p}</p>`)
     .join("");
 
+  const newsItemsHtml = content.newsUpdate.items
+    .map(
+      (item, i) => `
+        <tr>
+          <td style="padding: 14px 20px; ${i < content.newsUpdate.items.length - 1 ? "border-bottom: 1px solid #fde68a;" : ""}">
+            <p style="margin: 0 0 4px 0; font-weight: 700; color: #92400e; font-size: 15px;">${item.title}</p>
+            <p style="margin: 0; color: #78350f; line-height: 1.6; font-size: 14px;">${item.body}</p>
+          </td>
+        </tr>`
+    )
+    .join("");
+
   const tipsHtml = content.quickTips
     .map(
       (tip, i) => `
@@ -21,6 +33,22 @@ export function buildNewsletterHtml(
         </tr>`
     )
     .join("");
+
+  const educationBodyHtml = content.education.body
+    .split("\n\n")
+    .map((p) => `<p style="margin: 0 0 14px 0; color: #374151; line-height: 1.7; font-size: 15px;">${p}</p>`)
+    .join("");
+
+  const educationLinksHtml = [
+    ...content.education.relatedGlossaryTerms.map(
+      (t) => `<a href="${siteUrl}/glossary/${t.slug}" style="display: inline-block; background-color: #e0f2e9; color: #1B4D3E; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: 600; margin: 4px 4px 4px 0;">${t.term}</a>`
+    ),
+    ...content.education.relatedCalculators.map(
+      (c) => `<a href="${siteUrl}${c.href}" style="display: inline-block; background-color: #fef3c7; color: #92400e; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: 600; margin: 4px 4px 4px 0;">${c.name} calculator</a>`
+    ),
+  ].join("");
+
+  const progressPercent = Math.round((content.education.weekNumber / content.education.totalWeeks) * 100);
 
   const digestHtml = content.weeklyDigest
     .map(
@@ -87,6 +115,27 @@ export function buildNewsletterHtml(
             </td>
           </tr>
 
+          <!-- News Update -->
+          <tr>
+            <td style="padding: 0 32px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-radius: 10px; overflow: hidden; border: 1px solid #fde68a;">
+                <tr>
+                  <td style="background-color: #D4A843; padding: 14px 20px;">
+                    <p style="margin: 0; color: #ffffff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">${content.newsUpdate.headline}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color: #fffbeb;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      ${newsItemsHtml}
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Featured Article -->
           <tr>
             <td style="padding: 0 32px 32px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f0faf5; border-radius: 10px; overflow: hidden; border: 1px solid #b8e0cf;">
@@ -108,6 +157,7 @@ export function buildNewsletterHtml(
             </td>
           </tr>
 
+          <!-- Quick Tips -->
           <tr>
             <td style="padding: 0 32px 32px;">
               <h2 style="margin: 0 0 4px 0; font-size: 18px; color: #111827;">Investor Tips From the Field</h2>
@@ -118,6 +168,75 @@ export function buildNewsletterHtml(
             </td>
           </tr>
 
+          <!-- RE Investing 101 — Education Section -->
+          <tr>
+            <td style="padding: 0 32px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-radius: 10px; overflow: hidden; border: 1px solid #b8e0cf;">
+                <tr>
+                  <td style="background: linear-gradient(135deg, #1B4D3E 0%, #2d7d5f 100%); padding: 14px 20px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>
+                          <p style="margin: 0; color: #ffffff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">RE Investing 101</p>
+                          <p style="margin: 4px 0 0 0; color: rgba(255,255,255,0.8); font-size: 12px;">Phase ${content.education.weekNumber <= 4 ? 1 : content.education.weekNumber <= 8 ? 2 : content.education.weekNumber <= 12 ? 3 : content.education.weekNumber <= 16 ? 4 : content.education.weekNumber <= 20 ? 5 : 6}: ${content.education.phase} — Week ${content.education.weekNumber} of ${content.education.totalWeeks}</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 20px; background-color: #f0faf5;">
+                    <h3 style="margin: 0 0 16px 0; font-size: 18px; color: #111827; line-height: 1.3;">${content.education.topic}</h3>
+                    ${educationBodyHtml}
+
+                    <!-- Key Takeaway -->
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin: 16px 0;">
+                      <tr>
+                        <td style="background-color: #1B4D3E; border-radius: 8px; padding: 16px 20px;">
+                          <p style="margin: 0 0 4px 0; color: #D4A843; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Key Takeaway</p>
+                          <p style="margin: 0; color: #ffffff; font-size: 15px; line-height: 1.6; font-weight: 500;">${content.education.keyTakeaway}</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Practice Prompt -->
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin: 16px 0 0 0;">
+                      <tr>
+                        <td style="background-color: #e0f2e9; border-radius: 8px; padding: 14px 20px; border: 1px dashed #1B4D3E;">
+                          <p style="margin: 0 0 4px 0; color: #1B4D3E; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Practice This Week</p>
+                          <p style="margin: 0; color: #1B4D3E; font-size: 14px; line-height: 1.6;">${content.education.practicePrompt}</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    ${educationLinksHtml ? `
+                    <!-- Related Resources -->
+                    <div style="margin-top: 16px;">
+                      <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Related Resources</p>
+                      ${educationLinksHtml}
+                    </div>` : ""}
+
+                    <!-- Progress Bar -->
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top: 20px;">
+                      <tr>
+                        <td>
+                          <p style="margin: 0 0 6px 0; color: #6b7280; font-size: 12px;">Your progress: Week ${content.education.weekNumber} of ${content.education.totalWeeks}</p>
+                          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #d1d5db; border-radius: 4px; height: 8px;">
+                            <tr>
+                              <td style="width: ${progressPercent}%; background-color: #1B4D3E; border-radius: 4px; height: 8px; font-size: 1px;">&nbsp;</td>
+                              <td style="font-size: 1px;">&nbsp;</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Market Insight -->
           <tr>
             <td style="padding: 0 32px 32px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-left: 4px solid #D4A843; padding-left: 0;">
@@ -135,6 +254,7 @@ export function buildNewsletterHtml(
           ${
             content.weeklyDigest.length > 0
               ? `
+          <!-- Weekly Digest -->
           <tr>
             <td style="padding: 0 32px 32px;">
               <h2 style="margin: 0 0 12px 0; font-size: 18px; color: #111827;">This Week on the Blog</h2>
@@ -146,6 +266,7 @@ export function buildNewsletterHtml(
               : ""
           }
 
+          <!-- CTA -->
           <tr>
             <td style="padding: 0 32px 32px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #1B4D3E 0%, #2d7d5f 100%); border-radius: 10px;">
@@ -160,6 +281,7 @@ export function buildNewsletterHtml(
             </td>
           </tr>
 
+          <!-- Closing -->
           <tr>
             <td style="padding: 0 32px 24px;">
               <p style="margin: 0 0 6px 0; color: #374151; font-size: 15px; line-height: 1.6;">${content.closingNote}</p>
@@ -167,6 +289,7 @@ export function buildNewsletterHtml(
             </td>
           </tr>
 
+          <!-- Footer -->
           <tr>
             <td style="background-color: #f9fafb; padding: 24px 32px; border-top: 1px solid #e5e7eb;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
@@ -174,6 +297,7 @@ export function buildNewsletterHtml(
                   <td style="text-align: center;">
                     <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 13px;">
                       <a href="${siteUrl}" style="color: #1B4D3E; text-decoration: none; font-weight: 600;">ProInvestorHub</a> &nbsp;|&nbsp;
+                      <a href="${siteUrl}/start-here" style="color: #6b7280; text-decoration: none;">Start Here</a> &nbsp;|&nbsp;
                       <a href="${siteUrl}/blog" style="color: #6b7280; text-decoration: none;">Blog</a> &nbsp;|&nbsp;
                       <a href="${siteUrl}/guides" style="color: #6b7280; text-decoration: none;">Guides</a> &nbsp;|&nbsp;
                       <a href="${siteUrl}/glossary" style="color: #6b7280; text-decoration: none;">Glossary</a> &nbsp;|&nbsp;

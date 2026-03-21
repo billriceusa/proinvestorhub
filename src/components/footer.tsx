@@ -3,6 +3,7 @@ import { NewsletterSignup } from '@/components/newsletter-signup'
 
 const footerLinks = {
   Learn: [
+    { name: 'Start Here', href: '/start-here' },
     { name: 'Blog', href: '/blog' },
     { name: 'Glossary', href: '/glossary' },
     { name: 'Guides', href: '/guides' },
