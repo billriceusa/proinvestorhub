@@ -1,49 +1,42 @@
 # ProInvestorHub Content Calendar
 
-## Newsletter Infrastructure
+## Newsletter Infrastructure (LIVE)
 
-### Sending Process
-```bash
-# 1. Test send to yourself
-NEWSLETTER_SEND_SECRET=<secret> node scripts/send-newsletter.mjs --issue 1 --test you@example.com
+### How It Works
+The newsletter is fully automated via a Vercel cron job:
+- **Cron:** Runs every Sunday at 8am UTC (`/api/cron/weekly-newsletter`)
+- **AI:** Claude Sonnet 4.6 generates all content (via Anthropic SDK)
+- **Preview:** Sent to bill@billricestrategy.com for review
+- **Broadcast:** Scheduled to subscribers via Resend every Tuesday 2pm UTC
+- **Archive:** Each issue committed to GitHub (`data/newsletter-archive/`)
 
-# 2. Review the email in your inbox
+### Newsletter Sections
+1. **Personal Intro** — Bill's weekly commentary on markets
+2. **Real Estate News & Lending Update** — 3-4 current market news items
+3. **Featured Article** — Best blog post of the week
+4. **Investor Tips From the Field** — 3 exclusive tips (newsletter only)
+5. **RE Investing 101** — Progressive education (24-week curriculum, 6 phases)
+6. **Market Insight** — Timely data point or trend
+7. **Weekly Blog Digest** — One-liners for each new post
+8. **CTA** — Drive to calculators/guides
+9. **Closing Note** — Personal sign-off from Bill
 
-# 3. Broadcast to all subscribers
-NEWSLETTER_SEND_SECRET=<secret> node scripts/send-newsletter.mjs --issue 1 --broadcast
-```
+### Education Curriculum (24 Weeks, Cyclical)
+- Phase 1 (Wk 1-4): Foundations — cap rate, cash-on-cash, NOI, 1% rule
+- Phase 2 (Wk 5-8): Deal Analysis — 50% rule, DSCR, pro forma, comps
+- Phase 3 (Wk 9-12): Strategies — BRRRR, house hacking, cash flow vs appreciation, fix & flip
+- Phase 4 (Wk 13-16): Financing — conventional vs DSCR, private money, seller financing, leverage
+- Phase 5 (Wk 17-20): Advanced — IRR, cost segregation, 1031 exchanges, RE pro status
+- Phase 6 (Wk 21-24): Portfolio — scaling, portfolio analysis, entity structures, wealth building
 
-### Configuration
-- **Frequency:** Weekly (Tuesday mornings)
-- **Template:** `src/emails/weekly-newsletter.tsx`
-- **Send Script:** `scripts/send-newsletter.mjs` (issue content defined inline)
-- **Send API:** `POST /api/newsletter/send` (auth: Bearer NEWSLETTER_SEND_SECRET)
-- **Sender:** Set via `RESEND_FROM_EMAIL` env var (verify domain in Resend first)
-- **Segment:** proinvestorhub-newsletter (`e36c758c-0a9c-4f45-ac94-e6c8a52a00a7`)
-
-### Environment Variables Needed
-| Variable | Where | Purpose |
-|----------|-------|---------|
-| `RESEND_API_KEY` | Vercel + local | Resend authentication |
-| `RESEND_SEGMENT_ID` | Vercel + local | Newsletter subscriber segment |
-| `RESEND_FROM_EMAIL` | Vercel + local | Sender address (verify domain first) |
-| `NEWSLETTER_SEND_SECRET` | Vercel + local | Auth for /api/newsletter/send endpoint |
-
-### Steps to Go Live
-1. **Verify domain in Resend:** Add DNS records for proinvestorhub.com in Resend dashboard
-2. **Set RESEND_FROM_EMAIL:** e.g., `Bill from ProInvestorHub <bill@proinvestorhub.com>`
-3. **Generate NEWSLETTER_SEND_SECRET:** Run `openssl rand -hex 32` and add to Vercel + .env.local
-4. **Add issue content** to `scripts/send-newsletter.mjs` issues object
-5. **Test send** to your email, review, then broadcast
-
-## Newsletter Structure
-Each issue follows a consistent format:
-1. **Headline** — One compelling hook for the week
-2. **Featured Article** — Deep-dive blog post (link to site)
-3. **Also This Week** — 1-2 shorter articles or glossary links
-4. **Tool Spotlight** — Rotate through calculators with use-case tips
-5. **Term of the Week** — Glossary term with definition
-6. **Closing Note** — Personal sign-off from Bill
+### Key Env Vars (all on Vercel)
+| Variable | Purpose |
+|----------|---------|
+| `ANTHROPIC_API_KEY` | Claude AI for newsletter generation |
+| `RESEND_API_KEY` | Email delivery |
+| `RESEND_AUDIENCE_ID` | Broadcast audience |
+| `RESEND_FROM_EMAIL` | Sender address |
+| `CRON_SECRET` | Cron job auth |
 
 ---
 
@@ -218,29 +211,61 @@ Each issue follows a consistent format:
 
 ---
 
-## Ongoing Content Ideas (Post-Launch)
+## Completed (March 21, 2026)
 
-### Blog Posts (Backlog)
-- "How to Build a Real Estate Portfolio from Scratch"
-- "Seller Financing: The Creative Deal Structure Most Investors Miss"
-- "Property Management: DIY vs. Hiring a Manager"
-- "How to Use the BRRRR Calculator to Vet Deals Faster"
-- "FHA Loans for Investors: The House Hacker's Secret Weapon"
-- "Understanding Cap Rate Compression: What It Means for Your Portfolio"
-- "Real Estate vs. Stocks: A Data-Driven Comparison"
-- "How to Find Off-Market Deals in Any Market"
-- "The Ultimate Guide to Tenant Screening"
-- "Hard Money vs. DSCR Loans: Which Is Right for Your Deal?"
+### Blog Posts — All 10 Published
+- [x] "How to Build a Real Estate Portfolio from Scratch"
+- [x] "Seller Financing: The Creative Deal Structure Most Investors Miss"
+- [x] "Property Management: DIY vs. Hiring a Manager"
+- [x] "How to Use the BRRRR Calculator to Vet Deals Faster"
+- [x] "FHA Loans for Investors: The House Hacker's Secret Weapon"
+- [x] "Understanding Cap Rate Compression: What It Means for Your Portfolio"
+- [x] "Real Estate vs. Stocks: A Data-Driven Comparison"
+- [x] "How to Find Off-Market Deals in Any Market"
+- [x] "The Ultimate Guide to Tenant Screening"
+- [x] "Hard Money vs. DSCR Loans: Which Is Right for Your Deal?"
 
-### Glossary Expansion
-- Add rich body content (explanations, examples, related terms) to all 98 glossary terms
-- Target: Each term becomes a mini-article (500-800 words) for long-tail SEO
+### Glossary Expansion — Done
+- [x] All 150 glossary terms have rich body content (500-800 words each)
 
-### Calculator Enhancements
-- Amortization schedule visualization
-- PDF export for all calculators
-- Save/share deal analysis links
-- Comparison mode (side-by-side deals)
+### Calculator Enhancements — All Done
+- [x] Amortization schedule visualization (mortgage calculator)
+- [x] PDF export for all 9 calculators
+- [x] Save/share deal analysis links (all 9 calculators)
+- [x] Comparison mode — side-by-side deals at `/calculators/compare`
+
+### E-E-A-T & Author Pages — Done
+- [x] `/about` — Bill Rice bio, 30+ years lending, BRSG, why he built the site
+- [x] `/authors/bill-rice` — Author profile with all articles, credentials, LinkedIn
+- [x] JSON-LD Person schema on all articles with sameAs/URL
+- [x] Blog post author sections link to profile with credentials
+- [x] `/start-here` — 4-step learning roadmap, 24-week curriculum preview, FAQ
+
+### Affiliate Expansion — Done
+- [x] 8 tools with UTM tracking: DealCheck, Baselane, RentRedi, Landlord Studio, Stessa, Kiavi, Buildium, Roofstock
+- [x] Contextual placement across calculators and blog posts
+
+### Infrastructure — Done
+- [x] All AI migrated from OpenAI to Claude (Anthropic SDK)
+- [x] Sanity write token regenerated
+- [x] Google Search Console verified
+- [x] Bing Webmaster set up
+- [x] All Vercel env vars configured
+
+---
+
+## Deferred
+
+- **Google Analytics/Search Console API integration** — blocked by GCP org policy (daily performance + SEO audit crons)
+- **Affiliate monetization** — add affiliate IDs once traffic justifies partnerships
+
+## Future Ideas
+
+- Email drip sequences for new subscribers
+- Interactive deal analysis worksheets
+- Community/comments on blog posts
+- Video content integration
+- Additional blog content beyond initial 10
 
 ## SEO Strategy Notes
 - Every blog post should link to 2-3 glossary terms and 1 calculator
