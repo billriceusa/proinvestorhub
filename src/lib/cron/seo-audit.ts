@@ -1,4 +1,4 @@
-import OpenAI from "openai";
+import Anthropic from "@anthropic-ai/sdk";
 import type {
   GoogleUpdateSummary,
   AuditFinding,
@@ -6,12 +6,24 @@ import type {
   BacklogItem,
 } from "./types";
 
-function getOpenAIClient(): OpenAI {
-  const apiKey = process.env.OPENAI_API_KEY;
+function getAnthropicClient(): Anthropic {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
-    throw new Error("OPENAI_API_KEY environment variable is not set");
+    throw new Error("ANTHROPIC_API_KEY environment variable is not set");
   }
-  return new OpenAI({ apiKey });
+  return new Anthropic({ apiKey });
+}
+
+function extractJson(response: Anthropic.Message): string {
+  const textBlock = response.content.find((block) => block.type === "text");
+  if (!textBlock || textBlock.type !== "text") {
+    throw new Error("No text response from Claude");
+  }
+  let text = textBlock.text.trim();
+  if (text.startsWith("```")) {
+    text = text.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+  }
+  return text;
 }
 
 export interface SiteSnapshot {
@@ -56,15 +68,14 @@ Your job is to:
 4. Generate actionable, prioritized recommendations`;
 
 export async function researchGoogleUpdates(): Promise<GoogleUpdateSummary[]> {
-  const client = getOpenAIClient();
+  const client = getAnthropicClient();
 
-  const response = await client.chat.completions.create({
-    model: "gpt-4o",
+  const response = await client.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 4096,
+    temperature: 0.3,
+    system: AUDIT_SYSTEM,
     messages: [
-      {
-        role: "system",
-        content: AUDIT_SYSTEM,
-      },
       {
         role: "user",
         content: `Research and summarize the most recent and relevant Google Search updates that could affect an SEO-driven real estate education site like ours. Include:
@@ -80,7 +91,7 @@ export async function researchGoogleUpdates(): Promise<GoogleUpdateSummary[]> {
 
 For each update, assess its specific relevance to a real estate investing education site with named author, original content, and financial calculators.
 
-Respond with valid JSON:
+Respond with ONLY valid JSON (no markdown, no code fences):
 {
   "updates": [
     {
@@ -96,14 +107,9 @@ Respond with valid JSON:
 Include 4-8 updates, prioritized by relevance to our site.`,
       },
     ],
-    temperature: 0.3,
-    response_format: { type: "json_object" },
   });
 
-  const content = response.choices[0]?.message?.content;
-  if (!content) throw new Error("No response from AI for Google updates research");
-
-  const parsed = JSON.parse(content) as { updates: GoogleUpdateSummary[] };
+  const parsed = JSON.parse(extractJson(response)) as { updates: GoogleUpdateSummary[] };
   return parsed.updates;
 }
 
@@ -118,7 +124,7 @@ export async function auditSite(
   contentStrategyUpdates: string[];
   summary: string;
 }> {
-  const client = getOpenAIClient();
+  const client = getAnthropicClient();
 
   const existingBacklogContext = existingBacklog
     ? `\n## Existing Backlog (${existingBacklog.items.filter((i) => i.status === "open").length} open items)
@@ -136,13 +142,12 @@ ${existingBacklog.items
     )
     .join("\n");
 
-  const response = await client.chat.completions.create({
-    model: "gpt-4o",
+  const response = await client.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 8192,
+    temperature: 0.4,
+    system: AUDIT_SYSTEM,
     messages: [
-      {
-        role: "system",
-        content: AUDIT_SYSTEM,
-      },
       {
         role: "user",
         content: `Perform a comprehensive SEO audit of our site based on the current snapshot and recent Google updates.
@@ -209,17 +214,14 @@ Respond with valid JSON:
   "summary": "3-5 paragraph executive summary of audit results, key risks, and top priorities"
 }
 
-Include 8-15 findings across different categories. Prioritize actionable items. The overallScore should be 0-100 reflecting overall SEO health.`,
+Include 8-15 findings across different categories. Prioritize actionable items. The overallScore should be 0-100 reflecting overall SEO health.
+
+Respond with ONLY valid JSON (no markdown, no code fences).`,
       },
     ],
-    temperature: 0.4,
-    response_format: { type: "json_object" },
   });
 
-  const content = response.choices[0]?.message?.content;
-  if (!content) throw new Error("No response from AI for site audit");
-
-  return JSON.parse(content) as {
+  return JSON.parse(extractJson(response)) as {
     findings: AuditFinding[];
     overallScore: number;
     strategyRecommendations: string[];

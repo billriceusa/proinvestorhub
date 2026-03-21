@@ -1,4 +1,4 @@
-import OpenAI from "openai";
+import Anthropic from "@anthropic-ai/sdk";
 import type { ContentBrief } from "@/data/editorial-calendar";
 import type {
   ContentPlan,
@@ -7,12 +7,24 @@ import type {
   ArticleSection,
 } from "./types";
 
-function getOpenAIClient(): OpenAI {
-  const apiKey = process.env.OPENAI_API_KEY;
+function getAnthropicClient(): Anthropic {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
-    throw new Error("OPENAI_API_KEY environment variable is not set");
+    throw new Error("ANTHROPIC_API_KEY environment variable is not set");
   }
-  return new OpenAI({ apiKey });
+  return new Anthropic({ apiKey });
+}
+
+function extractJson(response: Anthropic.Message): string {
+  const textBlock = response.content.find((block) => block.type === "text");
+  if (!textBlock || textBlock.type !== "text") {
+    throw new Error("No text response from Claude");
+  }
+  let text = textBlock.text.trim();
+  if (text.startsWith("```")) {
+    text = text.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+  }
+  return text;
 }
 
 const SYSTEM_CONTEXT = `You are the AI content strategist for ProInvestorHub (proinvestorhub.com), an SEO-driven education site that helps real estate investors make smarter decisions through expert guides, calculators, and market analysis.
@@ -114,21 +126,18 @@ Respond with valid JSON matching this structure exactly:
   "calendarNotes": "Summary of calendar decisions and reasoning"
 }`;
 
-  const client = getOpenAIClient();
-  const response = await client.chat.completions.create({
-    model: "gpt-4o",
-    messages: [
-      { role: "system", content: SYSTEM_CONTEXT },
-      { role: "user", content: prompt },
-    ],
+  const client = getAnthropicClient();
+  const response = await client.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 8192,
     temperature: 0.7,
-    response_format: { type: "json_object" },
+    system: SYSTEM_CONTEXT,
+    messages: [
+      { role: "user", content: prompt + "\n\nRespond with ONLY valid JSON (no markdown, no code fences)." },
+    ],
   });
 
-  const content = response.choices[0]?.message?.content;
-  if (!content) throw new Error("No response from AI for content planning");
-
-  return JSON.parse(content) as ContentPlan;
+  return JSON.parse(extractJson(response)) as ContentPlan;
 }
 
 export async function writeArticle(
@@ -179,23 +188,18 @@ Respond with valid JSON matching this structure:
 
 Write the FULL article with all sections. Each "sections" entry is one paragraph or heading. Use "h2" for main sections, "h3" for subsections, and "normal" for body paragraphs. Include at least 15-25 sections for a complete article.`;
 
-  const client = getOpenAIClient();
-  const response = await client.chat.completions.create({
-    model: "gpt-4o",
-    messages: [
-      {
-        role: "system",
-        content: `${SYSTEM_CONTEXT}\n\nYou are now writing as Bill Rice. Write with authority, specificity, and real-world experience. Include actual numbers, deal analysis examples, formulas, and frameworks — not vague advice. Every paragraph should teach something actionable.`,
-      },
-      { role: "user", content: prompt },
-    ],
+  const client = getAnthropicClient();
+  const response = await client.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 8192,
     temperature: 0.8,
-    max_tokens: 8000,
-    response_format: { type: "json_object" },
+    system: `${SYSTEM_CONTEXT}\n\nYou are now writing as Bill Rice. Write with authority, specificity, and practical examples. Include actual numbers, deal analysis examples, formulas, and frameworks — not vague advice. Every paragraph should teach something actionable. You may use fictional examples and hypothetical scenarios but NEVER present them as real personal experiences.`,
+    messages: [
+      { role: "user", content: prompt + "\n\nRespond with ONLY valid JSON (no markdown, no code fences)." },
+    ],
   });
 
-  const content = response.choices[0]?.message?.content;
-  if (!content) throw new Error(`No response from AI for article: ${brief.title}`);
+  const content = extractJson(response);
 
   const parsed = JSON.parse(content) as {
     excerpt: string;
