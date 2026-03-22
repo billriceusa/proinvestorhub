@@ -65,6 +65,46 @@ export const post = defineType({
       type: 'blockContent',
     }),
     defineField({
+      name: 'sources',
+      title: 'Sources & References',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          name: 'source',
+          title: 'Source',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Source Title',
+              type: 'string',
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'url',
+              title: 'URL',
+              type: 'url',
+              validation: (rule) =>
+                rule.uri({ scheme: ['http', 'https'] }),
+            }),
+            defineField({
+              name: 'publisher',
+              title: 'Publisher / Organization',
+              type: 'string',
+            }),
+            defineField({
+              name: 'dateAccessed',
+              title: 'Date Accessed',
+              type: 'date',
+            }),
+          ],
+          preview: {
+            select: { title: 'title', subtitle: 'publisher' },
+          },
+        }),
+      ],
+    }),
+    defineField({
       name: 'seo',
       title: 'SEO',
       type: 'object',

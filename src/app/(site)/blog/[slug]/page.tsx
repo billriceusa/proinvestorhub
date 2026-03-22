@@ -204,6 +204,34 @@ export default async function PostPage({ params }: Props) {
         />
       )}
 
+      {post.sources && post.sources.length > 0 && (
+        <section className="mt-10 border-t border-border pt-6">
+          <h2 className="text-lg font-semibold text-text mb-3">Sources</h2>
+          <ol className="list-decimal pl-6 space-y-2 text-sm text-text-muted">
+            {post.sources.map((source, i) => (
+              <li key={i}>
+                {source.url ? (
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline hover:text-primary-light transition-colors"
+                  >
+                    {source.title}
+                  </a>
+                ) : (
+                  <span>{source.title}</span>
+                )}
+                {source.publisher && <span> — {source.publisher}</span>}
+                {source.dateAccessed && (
+                  <span className="text-text-light"> (accessed {source.dateAccessed})</span>
+                )}
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
       {post.author && (
         <div className="mt-16 rounded-xl border border-border bg-white p-6">
           <div className="flex items-start gap-4">

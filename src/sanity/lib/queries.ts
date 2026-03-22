@@ -40,6 +40,7 @@ export const POST_BY_SLUG_QUERY = defineQuery(/* groq */ `
     },
     author->{ name, "slug": slug.current, image, bio },
     categories[]->{ _id, title, "slug": slug.current },
+    sources[]{ title, url, publisher, dateAccessed },
     seo
   }
 `)

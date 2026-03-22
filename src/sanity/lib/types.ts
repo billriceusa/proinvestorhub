@@ -15,8 +15,16 @@ export type PostSummary = {
   categories: Array<{ _id: string; title: string | null; slug: string | null }> | null
 }
 
+export type SourceReference = {
+  title: string
+  url: string | null
+  publisher: string | null
+  dateAccessed: string | null
+}
+
 export type PostDetail = PostSummary & {
   body: SanityImage
+  sources: SourceReference[] | null
   seo: { metaTitle: string | null; metaDescription: string | null } | null
   author: {
     name: string | null
