@@ -7,6 +7,12 @@ import { urlFor } from '@/sanity/lib/image'
 import { PartnerCTA } from '@/components/partner-cta'
 import type { BPVertical } from '@/lib/partner-links'
 
+/** Extract plain text from a Portable Text block's span children */
+function blockToText(value: { children?: { text?: string }[] }): string {
+  if (!value?.children) return ''
+  return value.children.map(c => c.text ?? '').join('')
+}
+
 function trackCtaClick(href: string, text: string) {
   if (typeof window !== 'undefined' && 'dataLayer' in window) {
     ;(window as unknown as { dataLayer: Record<string, unknown>[] }).dataLayer.push({
@@ -88,11 +94,60 @@ const components: PortableTextComponents = {
     normal: ({ children }) => (
       <p className="text-base leading-7 text-text-muted mb-4">{children}</p>
     ),
-    blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-primary pl-4 italic text-text-muted my-6">
-        {children}
-      </blockquote>
-    ),
+    blockquote: ({ children, value }) => {
+      const text = blockToText(value as { children?: { text?: string }[] })
+
+      // Detect checklist patterns: ☐, ✓, ✔ markers
+      if (/[☐✓✔]/.test(text)) {
+        // Split on each checklist marker, keeping the marker with its text
+        const parts = text.split(/(?=[☐✓✔])/).filter(Boolean)
+        const checkItems: string[] = []
+        let leadingText = ''
+        let trailingText = ''
+
+        for (const part of parts) {
+          const trimmed = part.replace(/\s*\|\s*$/, '').trim()
+          if (/^[☐✓✔]/.test(trimmed)) {
+            // Check if trailing non-checklist text is appended to the last item
+            const match = trimmed.match(/^([☐✓✔][^.?]*[.?])\s*((?:If|When|Note|Once)\b[\s\S]*)$/)
+            if (match) {
+              checkItems.push(match[1].trim())
+              trailingText = match[2].trim()
+            } else {
+              checkItems.push(trimmed)
+            }
+          } else if (checkItems.length === 0) {
+            leadingText = trimmed
+          } else {
+            trailingText = trimmed
+          }
+        }
+
+        if (checkItems.length > 1) {
+          return (
+            <blockquote className="border-l-4 border-primary pl-4 text-text-muted my-6">
+              {leadingText && (
+                <p className="font-semibold mb-2">{leadingText}</p>
+              )}
+              <ul className="list-none space-y-2 p-0 m-0">
+                {checkItems.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+              {trailingText && (
+                <p className="mt-3 text-sm italic">{trailingText}</p>
+              )}
+            </blockquote>
+          )
+        }
+      }
+
+      return (
+        <blockquote className="border-l-4 border-primary pl-4 italic text-text-muted my-6">
+          {children}
+        </blockquote>
+      )
+    },
   },
   marks: {
     link: ({ children, value }) => (
