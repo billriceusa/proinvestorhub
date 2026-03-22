@@ -100,6 +100,14 @@ export async function publishArticle(
       metaDescription: article.seoDescription,
     },
     body: sectionsToPortableText(article.sections),
+    sources: (article.sources || []).map((s) => ({
+      _type: "source",
+      _key: randomKey(),
+      title: s.title,
+      url: s.url,
+      publisher: s.publisher,
+      dateAccessed: new Date().toISOString().split("T")[0],
+    })),
   };
 
   await client.createOrReplace(doc);

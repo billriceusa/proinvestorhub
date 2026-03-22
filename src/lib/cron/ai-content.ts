@@ -5,6 +5,7 @@ import type {
   WeeklyBrief,
   GeneratedArticle,
   ArticleSection,
+  ArticleSourceReference,
 } from "./types";
 
 function getAnthropicClient(): Anthropic {
@@ -171,6 +172,22 @@ export async function writeArticle(
 - Include practical templates, checklists, deal analysis frameworks, or formulas the reader can use immediately
 - Tone: authoritative, direct, data-driven — like a seasoned investor mentoring a newcomer
 
+## External Source Citation Requirements
+- For every statistical claim, market data point, rate benchmark, or regulatory reference, cite the authoritative source with an inline link
+- Target 5-10 external source links per article minimum
+- Weave citations naturally into the text (e.g., "According to the Federal Reserve..." or "...per the National Association of Realtors")
+- ALWAYS cite the original primary source, not a secondary aggregator
+- Approved source categories (prefer in this order):
+  1. Government data: Federal Reserve (FRED), Census Bureau, BLS, HUD, FHFA, IRS publications
+  2. GSE data: Fannie Mae, Freddie Mac housing surveys and reports
+  3. Industry associations: NAR (nar.realtor), MBA, NAHB
+  4. Academic/research: Harvard Joint Center for Housing Studies, Urban Institute Housing Finance
+  5. Market data providers: Zillow Research, Redfin Data Center, CoreLogic, ATTOM Data
+  6. Legal/regulatory: State landlord-tenant statutes, IRS.gov, CFPB
+  7. Reputable financial media: Wall Street Journal, Bloomberg (for timely data only)
+- For each "normal" paragraph that cites a source, include a "links" array with objects containing "text" (the exact anchor text as it appears in the paragraph) and "href" (the full URL)
+- IMPORTANT: The "text" value must be an exact substring of the section "text" — it will be matched using indexOf()
+
 Respond with valid JSON matching this structure:
 {
   "excerpt": "2-3 sentence compelling excerpt for the post listing (under 200 chars)",
@@ -180,19 +197,22 @@ Respond with valid JSON matching this structure:
   "sections": [
     { "text": "Opening paragraph text...", "style": "normal" },
     { "text": "Section Heading", "style": "h2" },
-    { "text": "Subsection heading", "style": "h3" },
-    { "text": "Body paragraph text...", "style": "normal" },
+    { "text": "According to the Federal Reserve, current 30-year mortgage rates...", "style": "normal", "links": [{"text": "Federal Reserve", "href": "https://fred.stlouisfed.org/series/MORTGAGE30US"}] },
     { "text": "| Feature | Option A | Option B |\\n|---|---|---|\\n| Rate | 10% | 7% |", "style": "table" },
+    ...
+  ],
+  "sources": [
+    { "title": "30-Year Fixed Rate Mortgage Average", "url": "https://fred.stlouisfed.org/series/MORTGAGE30US", "publisher": "Federal Reserve Bank of St. Louis" },
     ...
   ]
 }
 
-Write the FULL article with all sections. Each "sections" entry is one paragraph or heading. Use "h2" for main sections, "h3" for subsections, "normal" for body paragraphs, and "table" for comparison/data tables. For tables, use markdown table syntax with pipe-delimited columns and a separator row (e.g. "| Header1 | Header2 |\\n|---|---|\\n| Cell1 | Cell2 |"). Include at least 15-25 sections for a complete article.`;
+Write the FULL article with all sections. Each "sections" entry is one paragraph or heading. Use "h2" for main sections, "h3" for subsections, "normal" for body paragraphs, and "table" for comparison/data tables. For tables, use markdown table syntax with pipe-delimited columns and a separator row (e.g. "| Header1 | Header2 |\\n|---|---|\\n| Cell1 | Cell2 |"). Include at least 15-25 sections for a complete article. Include a "sources" array at the end listing all external sources referenced in the article.`;
 
   const client = getAnthropicClient();
   const response = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 8192,
+    max_tokens: 12288,
     temperature: 0.8,
     system: `${SYSTEM_CONTEXT}\n\nYou are now writing as Bill Rice. Write with authority, specificity, and practical examples. Include actual numbers, deal analysis examples, formulas, and frameworks — not vague advice. Every paragraph should teach something actionable. You may use fictional examples and hypothetical scenarios but NEVER present them as real personal experiences.`,
     messages: [
@@ -208,11 +228,13 @@ Write the FULL article with all sections. Each "sections" entry is one paragraph
     seoDescription: string;
     contentType: "pillar" | "cluster";
     sections: ArticleSection[];
+    sources?: ArticleSourceReference[];
   };
 
   return {
     brief,
     ...parsed,
+    sources: parsed.sources || [],
   };
 }
 
@@ -248,6 +270,76 @@ export function sectionsToPortableText(
           rows: table.rows,
         };
       }
+    }
+
+    // If the section has inline links, split text into spans with markDefs
+    if (section.links && section.links.length > 0) {
+      const markDefs: Record<string, unknown>[] = [];
+      const children: Record<string, unknown>[] = [];
+      let cursor = 0;
+
+      // Resolve each link's position using indexOf (more reliable than startOffset)
+      const resolvedLinks = section.links
+        .map((link) => {
+          const idx = section.text.indexOf(link.text);
+          return idx >= 0 ? { ...link, start: idx, end: idx + link.text.length } : null;
+        })
+        .filter((l): l is NonNullable<typeof l> => l !== null)
+        .sort((a, b) => a.start - b.start);
+
+      for (const link of resolvedLinks) {
+        // Skip overlapping links
+        if (link.start < cursor) continue;
+
+        // Text before this link
+        if (link.start > cursor) {
+          children.push({
+            _type: "span",
+            _key: randomKey(),
+            text: section.text.slice(cursor, link.start),
+            marks: [],
+          });
+        }
+
+        // The linked span
+        const markKey = randomKey();
+        markDefs.push({ _type: "link", _key: markKey, href: link.href });
+        children.push({
+          _type: "span",
+          _key: randomKey(),
+          text: link.text,
+          marks: [markKey],
+        });
+        cursor = link.end;
+      }
+
+      // Remaining text after last link
+      if (cursor < section.text.length) {
+        children.push({
+          _type: "span",
+          _key: randomKey(),
+          text: section.text.slice(cursor),
+          marks: [],
+        });
+      }
+
+      // Fallback if no links resolved (e.g., all text mismatches)
+      if (children.length === 0) {
+        children.push({
+          _type: "span",
+          _key: randomKey(),
+          text: section.text,
+          marks: [],
+        });
+      }
+
+      return {
+        _type: "block",
+        _key: randomKey(),
+        style: section.style === "table" ? "normal" : section.style,
+        markDefs,
+        children,
+      };
     }
 
     return {

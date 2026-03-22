@@ -27,9 +27,21 @@ export interface ContentPlan {
   calendarNotes: string;
 }
 
+export interface InlineLink {
+  text: string;
+  href: string;
+}
+
+export interface ArticleSourceReference {
+  title: string;
+  url: string;
+  publisher: string;
+}
+
 export interface ArticleSection {
   text: string;
   style: "normal" | "h2" | "h3" | "h4" | "blockquote" | "table";
+  links?: InlineLink[];
 }
 
 export interface GeneratedArticle {
@@ -38,6 +50,7 @@ export interface GeneratedArticle {
   seoTitle: string;
   seoDescription: string;
   sections: ArticleSection[];
+  sources: ArticleSourceReference[];
   contentType: "pillar" | "cluster";
 }
 
