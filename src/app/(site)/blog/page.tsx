@@ -39,15 +39,16 @@ export default async function BlogPage() {
       {categories.length > 0 && (
         <div className="mt-8 flex flex-wrap gap-2">
           {categories.map((cat) => (
-            <span
+            <Link
               key={cat._id}
-              className="rounded-full border border-border bg-white px-4 py-1.5 text-xs font-medium text-text-muted"
+              href={`/blog/category/${cat.slug}`}
+              className="rounded-full border border-border bg-white px-4 py-1.5 text-xs font-medium text-text-muted hover:border-primary/40 hover:text-primary transition-all"
             >
               {cat.title}
               {cat.postCount > 0 && (
                 <span className="ml-1.5 text-text-light">({cat.postCount})</span>
               )}
-            </span>
+            </Link>
           ))}
         </div>
       )}

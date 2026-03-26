@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next'
 import { client } from '@/sanity/lib/client'
 import { strategies } from '@/data/market-strategies'
 import { cities } from '@/data/cap-rate-cities'
+import { getStatesList } from '@/data/city-strategy-helpers'
+import { categoryHubContent } from '@/data/category-content'
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -147,6 +149,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/calculators/cap-rate/${c.slug}`,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
+    })),
+    // City x Strategy pages (208 pages)
+    ...strategies.flatMap((s) =>
+      cities.map((c) => ({
+        url: `${baseUrl}/markets/${s.slug}/${c.slug}`,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      }))
+    ),
+    // State pages
+    {
+      url: `${baseUrl}/markets/states`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    ...getStatesList().map((state) => ({
+      url: `${baseUrl}/markets/states/${state.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+    // Blog category hub pages
+    ...categoryHubContent.map((cat) => ({
+      url: `${baseUrl}/blog/category/${cat.slug}`,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
     })),
   ]
 

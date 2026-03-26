@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { sanityFetch } from '@/sanity/lib/live'
-import { POST_BY_SLUG_QUERY, POST_SLUGS_QUERY, GLOSSARY_TERMS_BY_CATEGORY_QUERY } from '@/sanity/lib/queries'
+import { POST_BY_SLUG_QUERY, POST_SLUGS_QUERY, GLOSSARY_TERMS_BY_CATEGORY_QUERY, GLOSSARY_TERMS_SLIM_QUERY } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
 import { PortableText } from '@/components/portable-text'
 import { PartnerCTAGroup } from '@/components/partner-cta'
@@ -12,6 +12,7 @@ import { JsonLd, articleJsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 import { RelatedMarkets } from '@/components/related-markets'
 import { ToolRecommendations } from '@/components/tool-recommendations'
+import { GlossaryProvider } from '@/lib/glossary-linker'
 
 // Map post category slugs to glossary categories
 const postCategoryToGlossary: Record<string, string> = {
@@ -95,6 +96,12 @@ export default async function PostPage({ params }: Props) {
   })
   const relatedTerms = (relatedTermsData as Array<{ _id: string; term: string; slug: string; definition: string }>) || []
 
+  // Fetch all glossary terms for auto-linking in body text
+  const { data: allGlossaryData } = await sanityFetch({
+    query: GLOSSARY_TERMS_SLIM_QUERY,
+  })
+  const glossaryTermsForLinking = (allGlossaryData as Array<{ term: string; slug: string }>) || []
+
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
@@ -130,12 +137,13 @@ export default async function PostPage({ params }: Props) {
       {post.categories && post.categories.length > 0 && (
         <div className="flex gap-2 mb-4">
           {post.categories.map((cat) => (
-            <span
+            <Link
               key={cat._id}
-              className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+              href={`/blog/category/${cat.slug}`}
+              className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary hover:bg-primary/20 transition-colors"
             >
               {cat.title}
-            </span>
+            </Link>
           ))}
         </div>
       )}
@@ -188,7 +196,9 @@ export default async function PostPage({ params }: Props) {
 
       {post.body && (
         <div className="mt-10">
-          <PortableText value={post.body} />
+          <GlossaryProvider terms={glossaryTermsForLinking}>
+            <PortableText value={post.body} enableGlossaryLinks />
+          </GlossaryProvider>
         </div>
       )}
 

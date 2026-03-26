@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { CalculatorCTA } from '@/components/calculator-cta'
 import { cities, getRelatedCities } from '@/data/cap-rate-cities'
+import { strategies } from '@/data/market-strategies'
 import { client } from '@/sanity/lib/client'
 
 function formatCurrency(value: number): string {
@@ -512,6 +513,28 @@ export default async function CityCapRatePage({
             >
               View All 50 Markets &rarr;
             </Link>
+          </div>
+
+          {/* Strategy Rankings */}
+          <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
+            <h3 className="text-sm font-semibold text-text uppercase tracking-wide">
+              Strategy Rankings
+            </h3>
+            <div className="mt-4 space-y-3">
+              {strategies.map((s) => {
+                const score = s.scoreFn(city)
+                return (
+                  <Link
+                    key={s.slug}
+                    href={`/markets/${s.slug}/${city.slug}`}
+                    className="flex items-center justify-between rounded-lg border border-border/50 px-4 py-3 text-sm font-medium text-text hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all"
+                  >
+                    <span>{s.shortTitle}</span>
+                    <span className="font-bold text-primary">{score.toFixed(1)}</span>
+                  </Link>
+                )
+              })}
+            </div>
           </div>
 
           {/* Newsletter */}

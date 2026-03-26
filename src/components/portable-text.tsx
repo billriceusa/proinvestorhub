@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
 import { PartnerCTA } from '@/components/partner-cta'
 import type { BPVertical } from '@/lib/partner-links'
+import { useGlossaryLinker } from '@/lib/glossary-linker'
 
 /** Extract plain text from a Portable Text block's span children */
 function blockToText(value: { children?: { text?: string }[] }): string {
@@ -181,7 +182,49 @@ const components: PortableTextComponents = {
   },
 }
 
+function GlossaryNormal({ children }: { children?: React.ReactNode }) {
+  const autoLink = useGlossaryLinker()
+
+  // Process children to auto-link glossary terms in plain text spans
+  const processed = processChildren(children, autoLink)
+
+  return (
+    <p className="text-base leading-7 text-text-muted mb-4">{processed}</p>
+  )
+}
+
+function processChildren(
+  children: React.ReactNode,
+  autoLink: (text: string) => React.ReactNode
+): React.ReactNode {
+  if (!children) return children
+  if (typeof children === 'string') return autoLink(children)
+  if (Array.isArray(children)) {
+    return children.map((child, i) => {
+      if (typeof child === 'string') {
+        return <span key={i}>{autoLink(child)}</span>
+      }
+      return child
+    })
+  }
+  return children
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function PortableText({ value }: { value: any }) {
+export function PortableText({ value, enableGlossaryLinks = false }: { value: any; enableGlossaryLinks?: boolean }) {
+  if (enableGlossaryLinks) {
+    const blockDefs = components.block as Record<string, unknown>
+    const glossaryComponents: PortableTextComponents = {
+      ...components,
+      block: {
+        h2: blockDefs.h2,
+        h3: blockDefs.h3,
+        h4: blockDefs.h4,
+        blockquote: blockDefs.blockquote,
+        normal: GlossaryNormal,
+      } as PortableTextComponents['block'],
+    }
+    return <PortableTextRenderer value={value} components={glossaryComponents} />
+  }
   return <PortableTextRenderer value={value} components={components} />
 }

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { strategies, fetchCitiesForStrategy } from '@/data/market-strategies'
 import { getDataFreshness } from '@/data/market-queries'
+import { getStatesList, getStateAverages } from '@/data/city-strategy-helpers'
 
 export const metadata: Metadata = {
   title: 'Best Cities for Real Estate Investing 2026 — By Strategy | ProInvestorHub',
@@ -144,6 +145,27 @@ export default async function MarketsHubPage() {
           </Link>
           .
         </p>
+      </section>
+
+      {/* Browse by State */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-text mb-2">Browse by State</h2>
+        <p className="text-text-muted mb-6">
+          Explore investment markets organized by state — compare cities, cap
+          rates, and strategy rankings within each state.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {getStatesList().map((state) => (
+            <Link
+              key={state.slug}
+              href={`/markets/states/${state.slug}`}
+              className="rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-text hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all"
+            >
+              {state.name}{' '}
+              <span className="text-text-light">({state.cities.length})</span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* Bottom CTA */}

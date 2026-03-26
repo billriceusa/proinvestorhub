@@ -148,7 +148,7 @@ export default async function StrategyPage({
                             {i + 1}
                           </span>
                           <Link
-                            href={`/calculators/cap-rate/${city.slug}`}
+                            href={`/markets/${slug}/${city.slug}`}
                             className="text-lg font-bold text-text hover:text-primary transition-colors"
                           >
                             {city.city}, {city.state}

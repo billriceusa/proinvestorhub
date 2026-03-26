@@ -88,6 +88,15 @@ export const GLOSSARY_SLUGS_QUERY = defineQuery(/* groq */ `
   *[_type == "glossaryTerm" && defined(slug.current)]{ "slug": slug.current }
 `)
 
+// All glossary terms (slim) — used for auto-linking in blog posts
+export const GLOSSARY_TERMS_SLIM_QUERY = defineQuery(/* groq */ `
+  *[_type == "glossaryTerm" && defined(slug.current)]
+  | order(length(term) desc) {
+    term,
+    "slug": slug.current
+  }
+`)
+
 // Glossary terms matching a category — used for "Related Terms" on blog posts
 export const GLOSSARY_TERMS_BY_CATEGORY_QUERY = defineQuery(/* groq */ `
   *[_type == "glossaryTerm" && defined(slug.current) && category == $category]
@@ -108,6 +117,27 @@ export const POSTS_BY_CATEGORY_SLUG_QUERY = defineQuery(/* groq */ `
     "slug": slug.current,
     excerpt,
     publishedAt,
+    categories[]->{ _id, title, "slug": slug.current }
+  }
+`)
+
+// Posts by category (all, for hub pages)
+export const POSTS_BY_CATEGORY_SLUG_ALL_QUERY = defineQuery(/* groq */ `
+  *[_type == "post" && defined(slug.current) && publishedAt <= now() && $categorySlug in categories[]->slug.current]
+  | order(publishedAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    excerpt,
+    publishedAt,
+    mainImage {
+      asset->{
+        _id,
+        url,
+        metadata { lqip, dimensions }
+      },
+      alt
+    },
     categories[]->{ _id, title, "slug": slug.current }
   }
 `)

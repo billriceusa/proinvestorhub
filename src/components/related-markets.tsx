@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { cities } from '@/data/cap-rate-cities'
+import { getBestStrategyForCity } from '@/data/city-strategy-helpers'
 
 /**
  * Scans post body text for city name mentions and shows relevant market links.
@@ -17,8 +18,11 @@ export function RelatedMarkets({ bodyText }: { bodyText: string }) {
 
   if (mentioned.length < 2) return null
 
-  // Show max 6 cities
-  const display = mentioned.slice(0, 6)
+  // Show max 6 cities with best strategy
+  const display = mentioned.slice(0, 6).map((city) => {
+    const best = getBestStrategyForCity(city)
+    return { ...city, bestStrategy: best.strategy, bestScore: best.score }
+  })
 
   return (
     <section className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-6">
@@ -30,18 +34,28 @@ export function RelatedMarkets({ bodyText }: { bodyText: string }) {
       </p>
       <div className="mt-4 grid gap-2 sm:grid-cols-2">
         {display.map((city) => (
-          <Link
+          <div
             key={city.slug}
-            href={`/calculators/cap-rate/${city.slug}`}
-            className="flex items-center justify-between rounded-lg border border-border/50 bg-white px-4 py-2.5 text-sm hover:border-primary/40 hover:shadow-sm transition-all"
+            className="flex items-center justify-between rounded-lg border border-border/50 bg-white px-4 py-2.5 text-sm"
           >
-            <span className="font-medium text-text">
-              {city.city}, {city.state}
-            </span>
+            <div className="flex items-center gap-2">
+              <Link
+                href={`/calculators/cap-rate/${city.slug}`}
+                className="font-medium text-text hover:text-primary transition-colors"
+              >
+                {city.city}, {city.state}
+              </Link>
+              <Link
+                href={`/markets/${city.bestStrategy.slug}/${city.slug}`}
+                className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary hover:bg-primary/20 transition-colors"
+              >
+                {city.bestStrategy.shortTitle}
+              </Link>
+            </div>
             <span className="text-xs text-text-muted tabular-nums">
               {city.avgCapRate.toFixed(1)}% cap
             </span>
-          </Link>
+          </div>
         ))}
       </div>
       <div className="mt-4 flex flex-wrap gap-2">
