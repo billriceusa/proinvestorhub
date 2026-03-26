@@ -8,11 +8,12 @@ import { CityStrategyComparison } from '@/components/city-strategy-comparison'
 import { strategies } from '@/data/market-strategies'
 import { cities } from '@/data/cap-rate-cities'
 import {
-  getCityForStrategyPage,
+  fetchCityForStrategyPage,
   generateCityStrategyFAQs,
-  getAllStrategyScores,
+  fetchAllStrategyScores,
   stateMetadata,
 } from '@/data/city-strategy-helpers'
+import { getDataFreshness } from '@/data/market-queries'
 
 export function generateStaticParams() {
   return strategies.flatMap((s) =>
@@ -56,15 +57,24 @@ export default async function CityStrategyPage({
   const strategy = strategies.find((s) => s.slug === strategySlug)
   if (!strategy) notFound()
 
-  const data = getCityForStrategyPage(strategySlug, citySlug)
+  const [data, freshness] = await Promise.all([
+    fetchCityForStrategyPage(strategySlug, citySlug),
+    getDataFreshness(),
+  ])
   if (!data) notFound()
 
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
   const cityName = `${data.city}, ${data.state}`
   const otherStrategies = strategies.filter((s) => s.slug !== strategySlug)
-  const allScores = getAllStrategyScores(data)
+  const allScores = await fetchAllStrategyScores(citySlug)
   const faqs = generateCityStrategyFAQs(strategy, data, data.score, data.rank)
+  const lastUpdated = freshness.dataUpdatedAt
+    ? new Date(freshness.dataUpdatedAt).toLocaleDateString('en-US', {
+        month: 'long',
+        year: 'numeric',
+      })
+    : 'March 2026'
   const stateInfo = stateMetadata[data.state]
 
   // Strategy-specific key metrics
@@ -144,6 +154,9 @@ export default async function CityStrategyPage({
           Data-driven {strategy.shortTitle.toLowerCase()} analysis for{' '}
           {cityName} — score breakdown, key investment metrics, and how it
           compares to other markets.
+        </p>
+        <p className="mt-2 text-xs text-text-light">
+          Last updated: {lastUpdated}
         </p>
       </div>
 

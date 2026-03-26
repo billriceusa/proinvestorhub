@@ -20,12 +20,35 @@ export async function GET(request: Request) {
 
     // Trigger on-demand revalidation for markets pages
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
+    // Revalidate strategy pages, state pages, and markets hub
     const revalidatePaths = [
+      '/markets',
       '/markets/cash-flow',
       '/markets/brrrr',
       '/markets/house-hacking',
       '/markets/appreciation',
+      '/markets/states',
     ]
+
+    // Also revalidate all state detail pages
+    const { getStatesList } = await import('@/data/city-strategy-helpers')
+    for (const state of getStatesList()) {
+      revalidatePaths.push(`/markets/states/${state.slug}`)
+    }
+
+    // Revalidate city x strategy pages (all 208)
+    const { cities } = await import('@/data/cap-rate-cities')
+    const strategySlugs = ['cash-flow', 'brrrr', 'house-hacking', 'appreciation']
+    for (const s of strategySlugs) {
+      for (const c of cities) {
+        revalidatePaths.push(`/markets/${s}/${c.slug}`)
+      }
+    }
+
+    // Also revalidate cap rate city pages (they now show strategy scores)
+    for (const c of cities) {
+      revalidatePaths.push(`/calculators/cap-rate/${c.slug}`)
+    }
     for (const path of revalidatePaths) {
       try {
         await fetch(`${baseUrl}/api/revalidate?path=${encodeURIComponent(path)}&secret=${cronSecret}`)

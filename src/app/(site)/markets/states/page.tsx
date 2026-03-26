@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
-import { getStatesList, getStateAverages } from '@/data/city-strategy-helpers'
+import { fetchStatesList, getStateAverages } from '@/data/city-strategy-helpers'
 
 export const metadata: Metadata = {
   title: 'Best States for Real Estate Investing 2026 | ProInvestorHub',
@@ -21,10 +21,10 @@ const usd = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 0,
 })
 
-export default function StatesHubPage() {
+export default async function StatesHubPage() {
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
-  const states = getStatesList()
+  const states = await fetchStatesList()
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">

@@ -6,12 +6,15 @@ import { CalculatorCTA } from '@/components/calculator-cta'
 import { strategies } from '@/data/market-strategies'
 import {
   getStatesList,
+  fetchStatesList,
   getStateAverages,
   getBestStrategyForCity,
   generateStateFAQs,
   stateMetadata,
 } from '@/data/city-strategy-helpers'
+import { getDataFreshness } from '@/data/market-queries'
 
+// Hardcoded list for generateStaticParams (just needs slugs, not live data)
 const statesList = getStatesList()
 
 export function generateStaticParams() {
@@ -50,13 +53,25 @@ export default async function StateDetailPage({
   params: Promise<{ state: string }>
 }) {
   const { state: stateSlug } = await params
-  const state = statesList.find((s) => s.slug === stateSlug)
+
+  // Fetch live data from Sanity (falls back to hardcoded)
+  const [liveStates, freshness] = await Promise.all([
+    fetchStatesList(),
+    getDataFreshness(),
+  ])
+  const state = liveStates.find((s) => s.slug === stateSlug)
   if (!state) notFound()
 
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
   const avgs = getStateAverages(state.cities)
   const faqs = generateStateFAQs(state.name, state.cities)
+  const lastUpdated = freshness.dataUpdatedAt
+    ? new Date(freshness.dataUpdatedAt).toLocaleDateString('en-US', {
+        month: 'long',
+        year: 'numeric',
+      })
+    : 'March 2026'
 
   // Compute best strategy for each city
   const citiesWithStrategy = state.cities
@@ -131,6 +146,9 @@ export default async function StateDetailPage({
           {' '}with detailed investment metrics.
           {dominantStrategy &&
             ` Most cities here score highest for ${dominantStrategy.shortTitle.toLowerCase()} investing.`}
+        </p>
+        <p className="mt-2 text-xs text-text-light">
+          Last updated: {lastUpdated}
         </p>
       </div>
 

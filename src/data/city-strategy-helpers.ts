@@ -4,6 +4,7 @@ import {
   type Strategy,
   type CityWithScore,
 } from './market-strategies'
+import { getMarketCities } from './market-queries'
 
 // ---------------------------------------------------------------------------
 // State metadata
@@ -469,6 +470,82 @@ export function generateCityStrategyFAQs(
   }
 
   return faqs
+}
+
+// ---------------------------------------------------------------------------
+// Async (Sanity-backed) variants — use these in page rendering
+// ---------------------------------------------------------------------------
+
+/**
+ * Async version of getCityForStrategyPage that fetches live data from Sanity.
+ * Falls back to hardcoded data if Sanity is unavailable.
+ */
+export async function fetchCityForStrategyPage(
+  strategySlug: string,
+  citySlug: string
+): Promise<CityStrategyData | null> {
+  const strategy = strategies.find((s) => s.slug === strategySlug)
+  if (!strategy) return null
+
+  const liveCities = await getMarketCities()
+
+  const allScored = liveCities
+    .map((c) => ({ ...c, score: strategy.scoreFn(c) }))
+    .sort((a, b) => b.score - a.score)
+
+  const idx = allScored.findIndex((c) => c.slug === citySlug)
+  if (idx === -1) return null
+
+  const city = allScored[idx]
+  const start = Math.max(0, idx - 3)
+  const end = Math.min(allScored.length, idx + 4)
+  const nearbyRanked = allScored
+    .slice(start, end)
+    .filter((c) => c.slug !== citySlug)
+
+  return {
+    ...city,
+    rank: idx + 1,
+    breakdown: getScoreBreakdown(strategy, city),
+    nearbyRanked,
+  }
+}
+
+/**
+ * Async version of getStatesList that fetches live data from Sanity.
+ */
+export async function fetchStatesList(): Promise<
+  Array<StateInfo & { cities: CityCapRate[] }>
+> {
+  const liveCities = await getMarketCities()
+  const map = new Map<string, CityCapRate[]>()
+  for (const city of liveCities) {
+    const list = map.get(city.state) ?? []
+    list.push(city)
+    map.set(city.state, list)
+  }
+  return Array.from(map.entries())
+    .map(([abbr, stateCities]) => ({
+      ...(stateMetadata[abbr] ?? {
+        name: abbr,
+        slug: abbr.toLowerCase(),
+        abbreviation: abbr,
+      }),
+      cities: stateCities,
+    }))
+    .sort((a, b) => b.cities.length - a.cities.length)
+}
+
+/**
+ * Async version of getAllStrategyScores that fetches live data from Sanity.
+ */
+export async function fetchAllStrategyScores(
+  citySlug: string
+): Promise<Array<{ strategy: Strategy; score: number }>> {
+  const liveCities = await getMarketCities()
+  const city = liveCities.find((c) => c.slug === citySlug)
+  if (!city) return []
+  return strategies.map((s) => ({ strategy: s, score: s.scoreFn(city) }))
 }
 
 export function generateStateFAQs(
