@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { lenders, getLenderBySlug, formatCurrency } from '@/data/lenders'
 import { loanTypes } from '@/data/loan-types'
+import { LenderOutboundLink } from '@/components/lender-outbound-link'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -325,14 +326,16 @@ export default async function LenderProfilePage({ params }: Props) {
               <p className="text-xs text-text-muted mb-4">
                 Visit {lender.name} to apply or get pre-qualified.
               </p>
-              <a
-                href={lender.website}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
+              <LenderOutboundLink
+                websiteUrl={lender.website}
+                lenderName={lender.name}
+                lenderSlug={lender.slug}
+                placement="profile-cta"
+                editorRating={lender.editorRating}
                 className="inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white hover:bg-primary-light transition-colors"
               >
                 Visit {lender.name}
-              </a>
+              </LenderOutboundLink>
               <p className="mt-3 text-xs text-text-light">
                 External link &middot; ProInvestorHub does not receive your information
               </p>

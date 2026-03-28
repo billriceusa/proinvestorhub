@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import type { LenderData } from '@/data/lenders'
 import { formatCurrency } from '@/data/lenders'
+import { LenderOutboundLink } from '@/components/lender-outbound-link'
 import { loanTypes } from '@/data/loan-types'
 import { usStates } from '@/data/us-states'
 
@@ -468,13 +469,25 @@ export function LenderFinder({ allLenders }: { allLenders: LenderData[] }) {
                     </div>
                   )}
 
-                  <div className="mt-4 flex gap-3">
+                  <div className="mt-4 flex flex-wrap gap-3">
                     <Link
                       href={`/lenders/reviews/${lender.slug}`}
                       className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-light transition-colors"
                     >
                       Full Review
                     </Link>
+                    <LenderOutboundLink
+                      websiteUrl={lender.website}
+                      lenderName={lender.name}
+                      lenderSlug={lender.slug}
+                      placement="finder-result"
+                      loanType={scenario.loanType || undefined}
+                      state={scenario.state || undefined}
+                      editorRating={lender.editorRating}
+                      className="rounded-lg border border-primary px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
+                    >
+                      Visit Website
+                    </LenderOutboundLink>
                     <Link
                       href="/lenders/compare"
                       className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-text hover:border-primary/40 hover:text-primary transition-colors"

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import type { LenderData } from '@/data/lenders'
 import { formatCurrency } from '@/data/lenders'
+import { LenderOutboundLink } from '@/components/lender-outbound-link'
 
 const experienceLabels: Record<string, string> = {
   none: 'No experience required',
@@ -229,17 +230,28 @@ export function LenderComparison({ allLenders }: { allLenders: LenderData[] }) {
         </div>
       )}
 
-      {/* View Full Reviews */}
+      {/* View Full Reviews & Visit Links */}
       {selectedLenders.length >= 2 && (
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6 space-y-3">
           {selectedLenders.map((lender) => (
-            <Link
-              key={lender.slug}
-              href={`/lenders/reviews/${lender.slug}`}
-              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-light transition-colors"
-            >
-              Full {lender.name} Review &rarr;
-            </Link>
+            <div key={lender.slug} className="flex flex-wrap items-center gap-3">
+              <Link
+                href={`/lenders/reviews/${lender.slug}`}
+                className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-light transition-colors"
+              >
+                Full {lender.name} Review &rarr;
+              </Link>
+              <LenderOutboundLink
+                websiteUrl={lender.website}
+                lenderName={lender.name}
+                lenderSlug={lender.slug}
+                placement="comparison-table"
+                editorRating={lender.editorRating}
+                className="rounded-lg border border-primary px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
+              >
+                Visit {lender.name}
+              </LenderOutboundLink>
+            </div>
           ))}
         </div>
       )}
