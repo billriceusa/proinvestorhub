@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Suspense } from 'react'
 import { sanityFetch } from '@/sanity/lib/live'
 import { POSTS_QUERY } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
@@ -49,7 +50,7 @@ const features = [
   },
 ]
 
-export default async function HomePage() {
+async function LatestPosts() {
   let posts: PostSummary[] = []
   try {
     const { data: rawPosts } = await sanityFetch({
@@ -61,6 +62,72 @@ export default async function HomePage() {
     // Sanity not configured yet
   }
 
+  if (posts.length === 0) return null
+
+  return (
+    <section className="py-20 bg-surface">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          <h2 className="text-3xl font-bold text-text">Latest Articles</h2>
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-primary hover:text-primary-light transition-colors"
+          >
+            View all &rarr;
+          </Link>
+        </div>
+
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
+          {posts.map((post) => (
+            <Link
+              key={post._id}
+              href={`/blog/${post.slug}`}
+              className="group overflow-hidden rounded-xl border border-border bg-white hover:shadow-lg transition-all"
+            >
+              {post.mainImage?.asset && (
+                <div className="aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={urlFor(post.mainImage).width(600).height(338).url()}
+                    alt={post.mainImage.alt || post.title || ''}
+                    width={600}
+                    height={338}
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                {post.categories && post.categories.length > 0 && (
+                  <span className="text-xs font-medium text-primary uppercase tracking-wide">
+                    {post.categories[0].title}
+                  </span>
+                )}
+                <h3 className="mt-2 text-lg font-semibold text-text group-hover:text-primary transition-colors">
+                  {post.title}
+                </h3>
+                {post.excerpt && (
+                  <p className="mt-2 text-sm text-text-muted line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                )}
+                {post.publishedAt && (
+                  <p className="mt-4 text-xs text-text-light">
+                    {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </p>
+                )}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default function HomePage() {
   return (
     <>
       <JsonLd data={websiteJsonLd()} />
@@ -138,68 +205,10 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Latest Posts */}
-      {posts.length > 0 && (
-        <section className="py-20 bg-surface">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="flex items-center justify-between">
-              <h2 className="text-3xl font-bold text-text">Latest Articles</h2>
-              <Link
-                href="/blog"
-                className="text-sm font-medium text-primary hover:text-primary-light transition-colors"
-              >
-                View all &rarr;
-              </Link>
-            </div>
-
-            <div className="mt-10 grid gap-8 md:grid-cols-3">
-              {posts.map((post) => (
-                <Link
-                  key={post._id}
-                  href={`/blog/${post.slug}`}
-                  className="group overflow-hidden rounded-xl border border-border bg-white hover:shadow-lg transition-all"
-                >
-                  {post.mainImage?.asset && (
-                    <div className="aspect-[16/9] overflow-hidden">
-                      <Image
-                        src={urlFor(post.mainImage).width(600).height(338).url()}
-                        alt={post.mainImage.alt || post.title || ''}
-                        width={600}
-                        height={338}
-                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  )}
-                  <div className="p-6">
-                    {post.categories && post.categories.length > 0 && (
-                      <span className="text-xs font-medium text-primary uppercase tracking-wide">
-                        {post.categories[0].title}
-                      </span>
-                    )}
-                    <h3 className="mt-2 text-lg font-semibold text-text group-hover:text-primary transition-colors">
-                      {post.title}
-                    </h3>
-                    {post.excerpt && (
-                      <p className="mt-2 text-sm text-text-muted line-clamp-2">
-                        {post.excerpt}
-                      </p>
-                    )}
-                    {post.publishedAt && (
-                      <p className="mt-4 text-xs text-text-light">
-                        {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })}
-                      </p>
-                    )}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Latest Posts — streamed independently so hero paints immediately */}
+      <Suspense>
+        <LatestPosts />
+      </Suspense>
 
       {/* Newsletter CTA */}
       <section className="py-20 bg-white">
