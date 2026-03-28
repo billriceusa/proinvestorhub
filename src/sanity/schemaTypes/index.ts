@@ -7,6 +7,8 @@ import { siteSettings } from './site-settings'
 import { partnerCta } from './partner-cta'
 import { marketCity } from './market-city'
 import { simpleTable } from './simple-table'
+import { loanType } from './loan-type'
+import { lender } from './lender'
 
 export const schemaTypes = [
   post,
@@ -18,4 +20,6 @@ export const schemaTypes = [
   partnerCta,
   marketCity,
   simpleTable,
+  loanType,
+  lender,
 ]

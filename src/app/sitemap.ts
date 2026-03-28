@@ -4,6 +4,9 @@ import { strategies } from '@/data/market-strategies'
 import { cities } from '@/data/cap-rate-cities'
 import { getStatesList } from '@/data/city-strategy-helpers'
 import { categoryHubContent } from '@/data/category-content'
+import { loanTypes } from '@/data/loan-types'
+import { lenders } from '@/data/lenders'
+import { usStates } from '@/data/us-states'
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -175,6 +178,42 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     })),
+    // ── Lender Directory ──────────────────────────────
+    {
+      url: `${baseUrl}/lenders`,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/lenders/compare`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/lenders/finder`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    // Loan type pages (12)
+    ...loanTypes.map((lt) => ({
+      url: `${baseUrl}/lenders/${lt.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+    // Lender review pages (20+)
+    ...lenders.map((l) => ({
+      url: `${baseUrl}/lenders/reviews/${l.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+    // State × Loan type pages (600)
+    ...loanTypes.flatMap((lt) =>
+      usStates.map((state) => ({
+        url: `${baseUrl}/lenders/${lt.slug}/${state.slug}`,
+        changeFrequency: 'monthly' as const,
+        priority: 0.5,
+      }))
+    ),
   ]
 
   const postPages: MetadataRoute.Sitemap = (posts ?? []).map((post) => ({

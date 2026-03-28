@@ -10,6 +10,14 @@ const footerLinks = {
     { name: 'Markets', href: '/markets' },
     { name: 'About', href: '/about' },
   ],
+  Financing: [
+    { name: 'Lender Directory', href: '/lenders' },
+    { name: 'DSCR Lenders', href: '/lenders/dscr-loans' },
+    { name: 'Hard Money Lenders', href: '/lenders/hard-money-loans' },
+    { name: 'Fix & Flip Lenders', href: '/lenders/fix-and-flip-loans' },
+    { name: 'Bridge Lenders', href: '/lenders/bridge-loans' },
+    { name: 'Portfolio Lenders', href: '/lenders/portfolio-loans' },
+  ],
   Tools: [
     { name: 'Cap Rate Calculator', href: '/calculators/cap-rate' },
     { name: 'Cash-on-Cash Return', href: '/calculators/cash-on-cash' },
@@ -27,7 +35,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-white">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-bold text-xs">

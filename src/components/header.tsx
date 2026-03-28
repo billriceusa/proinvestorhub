@@ -1,17 +1,95 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
-const navigation = [
+type NavItem =
+  | { name: string; href: string; accent?: boolean }
+  | { name: string; children: Array<{ name: string; href: string; description?: string }> }
+
+const navigation: NavItem[] = [
   { name: 'Start Here', href: '/start-here', accent: true },
-  { name: 'Blog', href: '/blog' },
   { name: 'Calculators', href: '/calculators' },
+  { name: 'Lenders', href: '/lenders' },
   { name: 'Markets', href: '/markets' },
+  {
+    name: 'Learn',
+    children: [
+      { name: 'Blog', href: '/blog', description: 'Articles & guides' },
+      { name: 'Glossary', href: '/glossary', description: 'A–Z investor terms' },
+      { name: 'Guides', href: '/guides', description: 'Strategy deep dives' },
+    ],
+  },
+  { name: 'About', href: '/about' },
+]
+
+// All items flattened for mobile menu
+const mobileNavigation = [
+  { name: 'Start Here', href: '/start-here' },
+  { name: 'Calculators', href: '/calculators' },
+  { name: 'Lenders', href: '/lenders' },
+  { name: 'Markets', href: '/markets' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Glossary', href: '/glossary' },
   { name: 'Guides', href: '/guides' },
   { name: 'About', href: '/about' },
 ]
+
+function DropdownMenu({ item }: { item: Extract<NavItem, { children: unknown[] }> }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-primary transition-colors"
+      >
+        {item.name}
+        <svg
+          className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="2"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+
+      {open && (
+        <div className="absolute right-0 top-full mt-2 w-52 rounded-xl border border-border bg-white py-2 shadow-lg z-50">
+          {item.children.map((child) => (
+            <Link
+              key={child.href}
+              href={child.href}
+              className="block px-4 py-2.5 hover:bg-surface transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              <span className="text-sm font-medium text-text">{child.name}</span>
+              {child.description && (
+                <span className="block text-xs text-text-light mt-0.5">
+                  {child.description}
+                </span>
+              )}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -29,19 +107,23 @@ export function Header() {
         </Link>
 
         <div className="hidden md:flex md:items-center md:gap-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={
-                item.accent
-                  ? 'text-sm font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full hover:bg-accent/20 transition-colors'
-                  : 'text-sm font-medium text-text-muted hover:text-primary transition-colors'
-              }
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navigation.map((item) =>
+            'children' in item ? (
+              <DropdownMenu key={item.name} item={item} />
+            ) : (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={
+                  item.accent
+                    ? 'text-sm font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full hover:bg-accent/20 transition-colors'
+                    : 'text-sm font-medium text-text-muted hover:text-primary transition-colors'
+                }
+              >
+                {item.name}
+              </Link>
+            )
+          )}
         </div>
 
         <button
@@ -77,7 +159,7 @@ export function Header() {
       {mobileOpen && (
         <div className="md:hidden border-t border-border">
           <div className="space-y-1 px-6 py-4">
-            {navigation.map((item) => (
+            {mobileNavigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}

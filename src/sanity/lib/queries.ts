@@ -142,6 +142,149 @@ export const POSTS_BY_CATEGORY_SLUG_ALL_QUERY = defineQuery(/* groq */ `
   }
 `)
 
+// ── Loan Types ───────────────────────────────────────
+export const LOAN_TYPES_QUERY = defineQuery(/* groq */ `
+  *[_type == "loanType" && defined(slug.current)]
+  | order(sortOrder asc) {
+    _id,
+    name,
+    "slug": slug.current,
+    shortName,
+    category,
+    description,
+    typicalRateRange,
+    typicalLtvRange,
+    typicalTermRange,
+    typicalMinCredit,
+    bestFor,
+    pros,
+    cons,
+    relatedStrategies,
+    relatedCalculator,
+    sortOrder,
+    seo
+  }
+`)
+
+export const LOAN_TYPE_BY_SLUG_QUERY = defineQuery(/* groq */ `
+  *[_type == "loanType" && slug.current == $slug][0] {
+    _id,
+    name,
+    "slug": slug.current,
+    shortName,
+    category,
+    description,
+    body,
+    typicalRateRange,
+    typicalLtvRange,
+    typicalTermRange,
+    typicalMinCredit,
+    bestFor,
+    pros,
+    cons,
+    faqs[]{ question, answer },
+    relatedStrategies,
+    relatedCalculator,
+    seo
+  }
+`)
+
+export const LOAN_TYPE_SLUGS_QUERY = defineQuery(/* groq */ `
+  *[_type == "loanType" && defined(slug.current)]{ "slug": slug.current }
+`)
+
+// ── Lenders ──────────────────────────────────────────
+export const LENDERS_QUERY = defineQuery(/* groq */ `
+  *[_type == "lender" && defined(slug.current)]
+  | order(editorRating desc) {
+    _id,
+    name,
+    "slug": slug.current,
+    logo { asset->{ _id, url }, alt },
+    website,
+    description,
+    loanTypes[]->{ _id, name, "slug": slug.current, shortName },
+    minRate,
+    maxRate,
+    maxLtv,
+    minCreditScore,
+    minLoanAmount,
+    maxLoanAmount,
+    speedToClose,
+    nationwide,
+    propertyTypes,
+    experienceRequired,
+    bestForTags,
+    pros,
+    cons,
+    editorRating,
+    featured
+  }
+`)
+
+export const LENDER_BY_SLUG_QUERY = defineQuery(/* groq */ `
+  *[_type == "lender" && slug.current == $slug][0] {
+    _id,
+    name,
+    "slug": slug.current,
+    logo { asset->{ _id, url }, alt },
+    website,
+    founded,
+    headquarters,
+    description,
+    loanTypes[]->{ _id, name, "slug": slug.current, shortName },
+    minRate,
+    maxRate,
+    maxLtv,
+    minCreditScore,
+    minLoanAmount,
+    maxLoanAmount,
+    originationFee,
+    speedToClose,
+    statesServed,
+    nationwide,
+    propertyTypes,
+    experienceRequired,
+    allowsLlc,
+    interestOnlyAvailable,
+    prepaymentPenalty,
+    foreignNational,
+    bestForTags,
+    editorialReview,
+    pros,
+    cons,
+    editorRating,
+    featured,
+    affiliateUrl,
+    seo
+  }
+`)
+
+export const LENDER_SLUGS_QUERY = defineQuery(/* groq */ `
+  *[_type == "lender" && defined(slug.current)]{ "slug": slug.current }
+`)
+
+export const LENDERS_BY_LOAN_TYPE_QUERY = defineQuery(/* groq */ `
+  *[_type == "lender" && defined(slug.current) && $loanTypeId in loanTypes[]._ref]
+  | order(editorRating desc) {
+    _id,
+    name,
+    "slug": slug.current,
+    logo { asset->{ _id, url }, alt },
+    description,
+    minRate,
+    maxRate,
+    maxLtv,
+    minCreditScore,
+    speedToClose,
+    nationwide,
+    experienceRequired,
+    bestForTags,
+    editorRating,
+    featured
+  }
+`)
+
 // ── Site Settings ─────────────────────────────────────
 export const SITE_SETTINGS_QUERY = defineQuery(/* groq */ `
   *[_type == "siteSettings"][0] {

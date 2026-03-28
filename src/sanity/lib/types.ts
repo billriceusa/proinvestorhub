@@ -59,3 +59,76 @@ export type GlossaryTermDetail = GlossaryTermSummary & {
     definition: string | null
   }> | null
 }
+
+// ── Loan Types ───────────────────────────────────────
+export type LoanTypeSummary = {
+  _id: string
+  name: string | null
+  slug: string | null
+  shortName: string | null
+  category: string | null
+  description: string | null
+  typicalRateRange: string | null
+  typicalLtvRange: string | null
+  typicalTermRange: string | null
+  typicalMinCredit: string | null
+  bestFor: string[] | null
+  pros: string[] | null
+  cons: string[] | null
+  relatedStrategies: string[] | null
+  relatedCalculator: string | null
+  sortOrder: number | null
+  seo: { metaTitle: string | null; metaDescription: string | null } | null
+}
+
+export type LoanTypeDetail = LoanTypeSummary & {
+  body: SanityImage
+  faqs: Array<{ question: string; answer: string }> | null
+}
+
+// ── Lenders ──────────────────────────────────────────
+export type LenderLoanTypeRef = {
+  _id: string
+  name: string | null
+  slug: string | null
+  shortName: string | null
+}
+
+export type LenderSummary = {
+  _id: string
+  name: string | null
+  slug: string | null
+  logo: { asset: { _id: string; url: string } | null; alt: string | null } | null
+  website: string | null
+  description: string | null
+  loanTypes: LenderLoanTypeRef[] | null
+  minRate: number | null
+  maxRate: number | null
+  maxLtv: number | null
+  minCreditScore: number | null
+  minLoanAmount: number | null
+  maxLoanAmount: number | null
+  speedToClose: string | null
+  nationwide: boolean | null
+  propertyTypes: string[] | null
+  experienceRequired: string | null
+  bestForTags: string[] | null
+  pros: string[] | null
+  cons: string[] | null
+  editorRating: number | null
+  featured: boolean | null
+}
+
+export type LenderDetail = LenderSummary & {
+  founded: number | null
+  headquarters: string | null
+  originationFee: string | null
+  statesServed: string[] | null
+  allowsLlc: boolean | null
+  interestOnlyAvailable: boolean | null
+  prepaymentPenalty: string | null
+  foreignNational: boolean | null
+  editorialReview: SanityImage
+  affiliateUrl: string | null
+  seo: { metaTitle: string | null; metaDescription: string | null } | null
+}

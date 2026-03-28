@@ -370,6 +370,40 @@ export default async function CityStrategyPage({
             </div>
           </div>
 
+          {/* Find Financing */}
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 shadow-sm">
+            <h3 className="text-sm font-semibold text-text uppercase tracking-wide">
+              Find Financing
+            </h3>
+            <p className="mt-2 text-xs text-text-muted">
+              Compare lenders for your {data.city} investment
+            </p>
+            <div className="mt-4 space-y-3">
+              {stateInfo && (
+                <Link
+                  href={`/lenders/dscr-loans/${stateInfo.slug}`}
+                  className="block rounded-lg border border-primary/20 bg-white px-4 py-3 text-sm font-medium text-text hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all"
+                >
+                  DSCR Lenders in {stateInfo.name}
+                </Link>
+              )}
+              {stateInfo && (
+                <Link
+                  href={`/lenders/hard-money-loans/${stateInfo.slug}`}
+                  className="block rounded-lg border border-primary/20 bg-white px-4 py-3 text-sm font-medium text-text hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all"
+                >
+                  Hard Money in {stateInfo.name}
+                </Link>
+              )}
+              <Link
+                href="/lenders"
+                className="block rounded-lg border border-primary/20 bg-white px-4 py-3 text-sm font-medium text-primary hover:border-primary/40 hover:shadow-sm transition-all"
+              >
+                Full Lender Directory &rarr;
+              </Link>
+            </div>
+          </div>
+
           {/* Other Strategies */}
           <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
             <h3 className="text-sm font-semibold text-text uppercase tracking-wide">
