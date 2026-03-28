@@ -230,14 +230,16 @@ export function LenderComparison({ allLenders }: { allLenders: LenderData[] }) {
         </div>
       )}
 
-      {/* View Full Reviews & Visit Links */}
+      {/* Per-lender CTAs aligned under columns */}
       {selectedLenders.length >= 2 && (
-        <div className="mt-6 space-y-3">
+        <div className="mt-6 grid gap-4" style={{ gridTemplateColumns: `12rem repeat(${selectedLenders.length}, minmax(200px, 1fr))` }}>
+          {/* Empty cell for the label column */}
+          <div />
           {selectedLenders.map((lender) => (
-            <div key={lender.slug} className="flex flex-wrap items-center gap-3">
+            <div key={lender.slug} className="flex flex-col gap-2">
               <Link
                 href={`/lenders/reviews/${lender.slug}`}
-                className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-light transition-colors"
+                className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-light transition-colors text-center"
               >
                 Full {lender.name} Review &rarr;
               </Link>
@@ -247,7 +249,7 @@ export function LenderComparison({ allLenders }: { allLenders: LenderData[] }) {
                 lenderSlug={lender.slug}
                 placement="comparison-table"
                 editorRating={lender.editorRating}
-                className="rounded-lg border border-primary px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
+                className="rounded-lg border border-primary px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary/5 transition-colors text-center"
               >
                 Visit {lender.name}
               </LenderOutboundLink>
