@@ -254,18 +254,97 @@ The newsletter is fully automated via a Vercel cron job:
 
 ---
 
+## Lender Directory (SHIPPED March 28, 2026)
+
+### What's Live
+- [x] `/lenders` hub — 12 loan types, 20 curated lenders, comparison table, FAQs
+- [x] `/lenders/[loanType]` — 12 loan type guide pages with filtered lender listings
+- [x] `/lenders/reviews/[slug]` — 20 individual lender profiles with editorial reviews
+- [x] `/lenders/[loanType]/[state]` — 600 programmatic state × loan type pages
+- [x] `/lenders/compare` — Side-by-side comparison tool (select 2-3 lenders)
+- [x] `/lenders/finder` — Interactive scenario matcher (credit, experience, strategy)
+- [x] UTM tracking on all outbound lender links (partners see proinvestorhub referral)
+- [x] GA4 `lender_cta_click` event on all outbound CTAs
+- [x] Sanity schemas + seed script — all data editable in Studio
+- [x] Nav consolidated: Blog/Glossary/Guides under "Learn" dropdown, Lenders top-level
+
+---
+
+## Lender Directory Backlog
+
+### High Priority — Revenue & Traffic
+
+- [ ] **Lender-vs-lender comparison pages** (`/lenders/compare/kiavi-vs-lima-one`)
+  - Programmatic head-to-head pages for meaningful lender pairings
+  - Captures branded search: "Kiavi vs Lima One" — no one owns these keywords
+  - ~50-100 pages, mostly templated from existing structured data
+
+- [ ] **"Best lenders for [strategy]" pages** (`/lenders/best-for/brrrr`, `/lenders/best-for/first-time-investor`)
+  - 8-10 pages targeting strategy-specific financing queries
+  - "best lenders for BRRRR strategy", "loans for first-time real estate investors"
+  - Filter existing lender data by bestForTags
+
+- [ ] **Blog content linking to lender directory**
+  - Update existing financing articles (DSCR, hard money) to link to directory pages
+  - Write 3-4 new financing comparison articles that feed into directory
+  - Newsletter Phase 4 (Financing) should reference directory
+
+- [ ] **Direct lender affiliate relationships**
+  - Kiavi affiliate link already exists in tool-links.ts
+  - Reach out to Lima One, RCN Capital, New Silver — all have affiliate programs
+  - Swap `affiliateUrl` into lender profiles as partnerships are established
+
+### Medium Priority — Engagement & Conversion
+
+- [ ] **Homepage update**
+  - Add "Find Your Lender" CTA to hero alongside "Try Our Calculators"
+  - Update tagline to mention financing/lender directory
+  - Add lender directory section below fold
+
+- [ ] **Email drip for lender directory visitors**
+  - Lead magnet: "Investor Financing Cheat Sheet" (PDF comparing all loan types)
+  - Downloadable from `/lenders` hub, gates with email
+  - 5-email drip sequence on financing education → drives back to directory
+
+- [ ] **Lender directory newsletter integration**
+  - Add "Financing Update" section to weekly newsletter
+  - Highlight a lender of the week or rate changes
+  - Drive newsletter subscribers back to directory
+
+- [ ] **User reviews / testimonials**
+  - Add `reviews` array to lender Sanity schema
+  - Start with your own network — investors you know who use these lenders
+  - Social proof dramatically increases outbound click-through
+
+### Lower Priority — Scale & Polish
+
+- [ ] **Lender logo images in Sanity**
+  - Upload logos for all 20 lenders through Sanity Studio
+  - Display on cards, profile pages, and comparison tables
+
+- [ ] **Rate monitoring / freshness cron**
+  - Cron job that flags lender data older than 90 days
+  - Add `lastVerified` field to lender schema
+  - Rates change — stale data hurts credibility
+
+- [ ] **City-level lender pages** (`/lenders/hard-money/texas/houston`)
+  - City-level pages for top 50 markets
+  - Cross-link with existing market city pages
+  - Captures "[loan type] lenders in [city]" local search
+
+- [ ] **Interactive rate comparison chart**
+  - Visual chart showing rate ranges across all lenders for a loan type
+  - Embedded on loan type pages
+  - More engaging than tables for visual learners
+
+---
+
 ## Deferred
 
 - **Google Analytics/Search Console API integration** — blocked by GCP org policy (daily performance + SEO audit crons)
 - **Affiliate monetization** — add affiliate IDs once traffic justifies partnerships
-
-## Future Ideas
-
-- Email drip sequences for new subscribers
-- Interactive deal analysis worksheets
-- Community/comments on blog posts
 - Video content integration
-- Additional blog content beyond initial 10
+- Community/comments on blog posts
 
 ## SEO Strategy Notes
 - Every blog post should link to 2-3 glossary terms and 1 calculator
@@ -273,3 +352,4 @@ The newsletter is fully automated via a Vercel cron job:
 - Target 1 primary keyword + 2-3 secondary keywords per post
 - Meta descriptions should include a call-to-action ("Free calculator included")
 - Internal linking between related content is critical for authority building
+- Lender directory pages should link to related calculators, glossary terms, and market pages

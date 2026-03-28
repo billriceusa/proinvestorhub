@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { lenders, getLenderBySlug, formatCurrency } from '@/data/lenders'
 import { loanTypes } from '@/data/loan-types'
+import { getComparisonsForLender } from '@/data/lender-comparisons'
 import { LenderOutboundLink } from '@/components/lender-outbound-link'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -244,6 +245,35 @@ export default async function LenderProfilePage({ params }: Props) {
               ))}
             </div>
           </section>
+
+          {/* Compare With Other Lenders */}
+          {(() => {
+            const comparisons = getComparisonsForLender(lender.slug)
+            if (comparisons.length === 0) return null
+            return (
+              <section className="mb-10">
+                <h2 className="text-xl font-bold text-text mb-4">
+                  Compare {lender.name}
+                </h2>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {comparisons.map((c) => {
+                    const otherName = c.lenderA === lender.slug
+                      ? lenders.find((l) => l.slug === c.lenderB)?.name || c.lenderB
+                      : lenders.find((l) => l.slug === c.lenderA)?.name || c.lenderA
+                    return (
+                      <Link
+                        key={c.slug}
+                        href={`/lenders/compare/${c.slug}`}
+                        className="rounded-lg border border-border bg-white px-4 py-3 text-sm font-medium text-text hover:border-primary/40 hover:text-primary hover:shadow-sm transition-all"
+                      >
+                        {lender.name} vs {otherName}
+                      </Link>
+                    )
+                  })}
+                </div>
+              </section>
+            )
+          })()}
         </div>
 
         {/* Sidebar */}

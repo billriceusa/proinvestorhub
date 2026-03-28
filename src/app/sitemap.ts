@@ -7,6 +7,7 @@ import { categoryHubContent } from '@/data/category-content'
 import { loanTypes } from '@/data/loan-types'
 import { lenders } from '@/data/lenders'
 import { usStates } from '@/data/us-states'
+import { lenderComparisons } from '@/data/lender-comparisons'
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -203,6 +204,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Lender review pages (20+)
     ...lenders.map((l) => ({
       url: `${baseUrl}/lenders/reviews/${l.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+    // Lender-vs-lender comparison pages
+    ...lenderComparisons.map((c) => ({
+      url: `${baseUrl}/lenders/compare/${c.slug}`,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),

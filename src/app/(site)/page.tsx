@@ -18,7 +18,7 @@ const features = [
   {
     title: 'Investment Calculators',
     description:
-      'Cap rate, cash-on-cash return, BRRRR, and more. Free tools to analyze any deal in seconds.',
+      'Cap rate, cash-on-cash return, BRRRR, fix-and-flip, and more. Free tools to analyze any deal in seconds.',
     href: '/calculators',
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
@@ -27,24 +27,35 @@ const features = [
     ),
   },
   {
-    title: 'Expert Guides',
+    title: 'Lender Directory',
     description:
-      'Deep-dive strategies for BRRRR, house hacking, short-term rentals, and building wealth through real estate.',
-    href: '/guides',
+      'Compare DSCR, hard money, bridge, and fix-and-flip lenders side by side. Rates, LTV, and honest reviews.',
+    href: '/lenders',
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21" />
       </svg>
     ),
   },
   {
-    title: 'Investor Glossary',
+    title: 'Market Rankings',
     description:
-      'Every term you need to know explained clearly — from cap rate to 1031 exchange, NOI to DSCR.',
-    href: '/glossary',
+      'Data-driven rankings of 50 US markets for cash flow, BRRRR, house hacking, and appreciation strategies.',
+    href: '/markets',
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Expert Guides & Glossary',
+    description:
+      'Deep-dive strategies, 150+ investor terms, and educational content from a 30-year lending veteran.',
+    href: '/guides',
+    icon: (
+      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
       </svg>
     ),
   },
@@ -144,7 +155,7 @@ export default function HomePage() {
               Smart Real Estate Investing Starts Here
             </h1>
             <p className="mt-6 text-lg leading-8 text-white/80">
-              Free calculators, expert guides, and an investor glossary — everything you need to analyze deals, learn strategies, and build wealth through real estate.
+              Free calculators, a curated lender directory, expert guides, and 50-market analysis — everything you need to analyze deals, find financing, and build wealth through real estate.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
@@ -152,6 +163,12 @@ export default function HomePage() {
                 className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-primary-dark shadow-sm hover:bg-accent-light transition-colors"
               >
                 Try Our Calculators
+              </Link>
+              <Link
+                href="/lenders/finder"
+                className="rounded-lg bg-white/10 px-6 py-3 text-sm font-semibold text-white border border-white/20 hover:bg-white/20 transition-colors"
+              >
+                Find Your Lender
               </Link>
               <Link
                 href="/blog"
@@ -176,7 +193,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
               <Link
                 key={feature.title}
@@ -228,9 +245,9 @@ export default function HomePage() {
             Ready to Make Smarter Investment Decisions?
           </h2>
           <p className="mt-4 text-white/70 max-w-xl mx-auto">
-            Start with our free calculators and guides. No sign-up required.
+            Analyze deals, find financing, and learn strategies — all free, no sign-up required.
           </p>
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/calculators"
               className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-primary-dark hover:bg-accent-light transition-colors"
@@ -238,10 +255,16 @@ export default function HomePage() {
               Explore Calculators
             </Link>
             <Link
-              href="/glossary"
+              href="/lenders"
               className="rounded-lg border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
             >
-              Browse Glossary
+              Browse Lender Directory
+            </Link>
+            <Link
+              href="/markets"
+              className="rounded-lg border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+            >
+              View Market Rankings
             </Link>
           </div>
         </div>
