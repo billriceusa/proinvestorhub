@@ -31,11 +31,11 @@ function ref(id: string) {
 }
 
 const PILLAR_CATEGORY_MAP: Record<string, string> = {
-  "Investment Strategies": "cat-investment-strategies",
-  "Market Analysis": "cat-market-analysis",
+  "Investment Strategies": "cat-strategies",
+  "Market Analysis": "cat-markets",
   "Financing & Deals": "cat-financing",
-  "Property Management": "cat-property-management",
-  "Tools & Calculators": "cat-tools",
+  "Property Management": "cat-analysis",
+  "Tools & Calculators": "cat-analysis",
 };
 
 export async function getExistingPostSlugs(): Promise<string[]> {
@@ -78,7 +78,7 @@ export async function publishArticle(
   }
 
   const categoryId =
-    PILLAR_CATEGORY_MAP[article.brief.pillar] || "cat-investment-strategies";
+    PILLAR_CATEGORY_MAP[article.brief.pillar] || "cat-strategies";
 
   const publishedAt = new Date(
     article.brief.publishDate + "T09:00:00Z"
