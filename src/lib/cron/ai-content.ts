@@ -57,7 +57,7 @@ Content Rules:
 - Every post has a unique angle NOT covered on BiggerPockets, Investopedia, or REtipster
 - All content is authored by Bill Rice with 20+ years of real estate and business experience
 - Posts are 2,000-3,500 words with practical, actionable advice
-- Tone: authoritative but approachable, data-driven, like a seasoned investor mentoring a newcomer`;
+- Tone: authoritative but approachable, data-driven, practical and actionable`;
 
 export async function analyzeAndPlan(
   existingPostSlugs: string[],
@@ -170,7 +170,7 @@ export async function writeArticle(
 - Naturally incorporate the primary keyword 3-5 times and secondary keywords 1-2 times each
 - Reference internal links naturally within the content (mention the topic, readers can find the link)
 - Include practical templates, checklists, deal analysis frameworks, or formulas the reader can use immediately
-- Tone: authoritative, direct, data-driven — like a seasoned investor mentoring a newcomer
+- Tone: authoritative, direct, data-driven — practical and actionable
 
 ## External Source Citation Requirements
 - For every statistical claim, market data point, rate benchmark, or regulatory reference, cite the authoritative source with an inline link
@@ -214,7 +214,7 @@ Write the FULL article with all sections. Each "sections" entry is one paragraph
     model: "claude-sonnet-4-6",
     max_tokens: 12288,
     temperature: 0.8,
-    system: `${SYSTEM_CONTEXT}\n\nYou are now writing as Bill Rice. Write with authority, specificity, and practical examples. Include actual numbers, deal analysis examples, formulas, and frameworks — not vague advice. Every paragraph should teach something actionable. You may use fictional examples and hypothetical scenarios but NEVER present them as real personal experiences.`,
+    system: `${SYSTEM_CONTEXT}\n\nYou are now writing as Bill Rice. Write with authority and specificity. Use clearly hypothetical deal analysis examples, publicly sourced data with citations, and actionable frameworks. Every paragraph should teach something actionable.\n\nCRITICAL CONTENT INTEGRITY: NEVER fabricate personal experiences, anecdotes, or case studies attributed to Bill Rice. NEVER write "I did X", "A client of mine...", "I've seen..." followed by invented specifics. NEVER invent dollar amounts, penalties, or statistics without a linked source. Use hypothetical framing ("Let's say...", "Consider a scenario...") or general patterns ("Many investors find..."). Fabricated experiences are LIES that destroy credibility.`,
     messages: [
       { role: "user", content: prompt + "\n\nRespond with ONLY valid JSON (no markdown, no code fences)." },
     ],
