@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PrintButton } from './print-button'
+import { GatedContent } from '@/components/gated-content'
 
 export const metadata: Metadata = {
   title: 'Rental Property Deal Analysis Checklist',
@@ -149,6 +150,7 @@ export default function DealAnalysisChecklistPage() {
             </ul>
           </section>
 
+          <GatedContent previewHeight="400px">
           {/* Section 3: Expense Analysis */}
           <section>
             <SectionHeading
@@ -287,6 +289,7 @@ export default function DealAnalysisChecklistPage() {
               </div>
             </div>
           </section>
+          </GatedContent>
         </div>
 
         {/* Print-only footer */}

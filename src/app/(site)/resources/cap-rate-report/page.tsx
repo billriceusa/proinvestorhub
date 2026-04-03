@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { cities } from '@/data/cap-rate-cities'
 import { strategies, getCitiesForStrategy } from '@/data/market-strategies'
 import { PrintButton } from '../deal-analysis-checklist/print-button'
+import { GatedContent } from '@/components/gated-content'
 
 export const metadata: Metadata = {
   title: '50-City Cap Rate Report 2026 — Free Market Data',
@@ -105,6 +106,7 @@ export default function CapRateReportPage() {
         </div>
       </section>
 
+      <GatedContent previewHeight="500px">
       {/* Full 50-City Table */}
       <section className="mb-12 print:mb-8">
         <h2 className="text-xl font-bold text-text mb-4 print:text-lg">
@@ -265,6 +267,8 @@ export default function CapRateReportPage() {
           </ul>
         </div>
       </section>
+
+      </GatedContent>
 
       {/* Footer */}
       <div className="text-center text-xs text-text-light border-t border-border pt-6 print:pt-4">
