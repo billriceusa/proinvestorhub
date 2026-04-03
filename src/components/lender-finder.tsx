@@ -7,6 +7,7 @@ import { formatCurrency } from '@/data/lenders'
 import { LenderOutboundLink } from '@/components/lender-outbound-link'
 import { loanTypes } from '@/data/loan-types'
 import { usStates } from '@/data/us-states'
+import { trackLenderFinderCapture, trackLenderFinderSkip } from '@/lib/tracking'
 
 type Scenario = {
   creditScore: string
@@ -180,9 +181,13 @@ function matchAndScore(lender: LenderData, scenario: Scenario): { matches: boole
 export function LenderFinder({ allLenders }: { allLenders: LenderData[] }) {
   const [scenario, setScenario] = useState<Scenario>(defaultScenario)
   const [showResults, setShowResults] = useState(false)
+  const [showEmailGate, setShowEmailGate] = useState(false)
+  const [firstName, setFirstName] = useState('')
+  const [email, setEmail] = useState('')
+  const [emailStatus, setEmailStatus] = useState<'idle' | 'loading' | 'error'>('idle')
 
-  const results = useMemo(() => {
-    if (!showResults) return []
+  // Compute results whenever scenario changes (but only display when showResults is true)
+  const computedResults = useMemo(() => {
     return allLenders
       .map((lender) => ({
         lender,
@@ -190,23 +195,78 @@ export function LenderFinder({ allLenders }: { allLenders: LenderData[] }) {
       }))
       .filter((r) => r.matches)
       .sort((a, b) => b.score - a.score)
-  }, [allLenders, scenario, showResults])
+  }, [allLenders, scenario])
+
+  const results = showResults ? computedResults : []
 
   const hasFilters = Object.values(scenario).some((v) => v !== '')
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    // Show email gate instead of results directly
+    setShowEmailGate(true)
+    setShowResults(false)
+  }
+
+  async function handleEmailSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    if (!email || !firstName) return
+
+    setEmailStatus('loading')
+
+    const topMatches = computedResults.slice(0, 3).map(({ lender }) => ({
+      name: lender.name,
+      slug: lender.slug,
+      editorRating: lender.editorRating,
+      minRate: lender.minRate,
+      maxRate: lender.maxRate,
+      maxLtv: lender.maxLtv,
+      speedToClose: lender.speedToClose,
+    }))
+
+    try {
+      const res = await fetch('/api/lender-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName,
+          email,
+          scenario,
+          topMatches,
+        }),
+      })
+
+      if (res.ok) {
+        trackLenderFinderCapture(email.split('@')[1] || '', scenario)
+        setShowEmailGate(false)
+        setShowResults(true)
+      } else {
+        setEmailStatus('error')
+      }
+    } catch {
+      setEmailStatus('error')
+    }
+  }
+
+  function handleSkip() {
+    trackLenderFinderSkip(scenario)
+    setShowEmailGate(false)
     setShowResults(true)
   }
 
   function handleReset() {
     setScenario(defaultScenario)
     setShowResults(false)
+    setShowEmailGate(false)
+    setFirstName('')
+    setEmail('')
+    setEmailStatus('idle')
   }
 
   function updateField(field: keyof Scenario, value: string) {
     setScenario((prev) => ({ ...prev, [field]: value }))
     setShowResults(false)
+    setShowEmailGate(false)
   }
 
   return (
@@ -360,6 +420,69 @@ export function LenderFinder({ allLenders }: { allLenders: LenderData[] }) {
           )}
         </div>
       </form>
+
+      {/* Email Gate */}
+      {showEmailGate && (
+        <div className="rounded-xl border border-primary/20 bg-white p-8 shadow-md mb-8">
+          <div className="max-w-md mx-auto text-center">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+            </div>
+            <h2 className="text-xl font-bold text-text">
+              We Found {computedResults.length} Matching Lender{computedResults.length !== 1 ? 's' : ''}
+            </h2>
+            <p className="mt-2 text-sm text-text-muted">
+              Enter your name and email to see your personalized results. We&apos;ll also send you a summary to reference later.
+            </p>
+
+            <form onSubmit={handleEmailSubmit} className="mt-6 space-y-3">
+              <input
+                type="text"
+                required
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="First name"
+                className="w-full rounded-lg border border-border px-4 py-3 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+              />
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
+                className="w-full rounded-lg border border-border px-4 py-3 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+              />
+              <button
+                type="submit"
+                disabled={emailStatus === 'loading'}
+                className="w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-light transition-colors disabled:opacity-60"
+              >
+                {emailStatus === 'loading' ? 'Loading...' : 'See My Matches'}
+              </button>
+            </form>
+
+            {emailStatus === 'error' && (
+              <p className="mt-2 text-xs text-red-500">
+                Something went wrong. Please try again.
+              </p>
+            )}
+
+            <p className="mt-3 text-xs text-text-light">
+              We&apos;ll also subscribe you to our weekly investor newsletter. No spam, unsubscribe anytime.
+            </p>
+
+            <button
+              type="button"
+              onClick={handleSkip}
+              className="mt-4 text-xs text-text-light hover:text-text-muted transition-colors underline decoration-text-light/40"
+            >
+              Skip, just show results
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Results */}
       {showResults && (

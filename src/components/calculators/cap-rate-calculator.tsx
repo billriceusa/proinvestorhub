@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { CalculatorCTA } from '@/components/calculator-cta'
+import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
 
@@ -291,7 +291,15 @@ export function CapRateCalculator() {
             </p>
           </div>
 
-          <CalculatorCTA context="cap-rate-calculator" />
+          <SaveResultsCTA
+            calculatorName="Cap Rate Calculator"
+            context="cap-rate-calculator"
+            results={{
+              'Cap Rate': `${results.capRate.toFixed(2)}%`,
+              'NOI': formatCurrency(results.noi),
+              'Expense Ratio': `${results.expenseRatio.toFixed(1)}%`,
+            }}
+          />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ToolRecommendations } from '@/components/tool-recommendations'
+import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
 
 export const metadata: Metadata = {
   title: 'Real Estate Investment Calculators',
@@ -147,7 +148,11 @@ export default function CalculatorsPage() {
         placement="calculators-hub"
       />
 
-      <div className="mt-16 rounded-xl bg-primary/5 border border-primary/10 p-8 text-center">
+      <div className="mt-16">
+        <LeadMagnetCTA variant="card" />
+      </div>
+
+      <div className="mt-8 rounded-xl bg-primary/5 border border-primary/10 p-8 text-center">
         <h2 className="text-xl font-bold text-text">
           Have a calculator idea?
         </h2>

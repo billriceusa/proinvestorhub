@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { CalculatorCTA } from '@/components/calculator-cta'
+import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
 import { StrategyCitiesTable } from '@/components/strategy-cities-table'
 import { strategies, fetchCitiesForStrategy } from '@/data/market-strategies'
 import { getDataFreshness } from '@/data/market-queries'
@@ -298,9 +299,9 @@ export default async function StrategyPage({
             </Link>
           </div>
 
-          {/* Newsletter CTA */}
+          {/* Lead Magnet CTA */}
           <div className="sticky top-24">
-            <CalculatorCTA context={`markets-${slug}`} />
+            <LeadMagnetCTA variant="card" />
           </div>
         </div>
       </div>

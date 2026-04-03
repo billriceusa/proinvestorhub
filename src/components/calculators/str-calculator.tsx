@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { CalculatorCTA } from '@/components/calculator-cta'
+import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
 
@@ -514,7 +514,16 @@ export function STRCalculator() {
             </p>
           </div>
 
-          <CalculatorCTA context="str-revenue-calculator" />
+          <SaveResultsCTA
+            calculatorName="STR Revenue Calculator"
+            context="str-revenue-calculator"
+            results={{
+              'Monthly Net Income': formatCurrency(Math.round(results.monthlyNet)),
+              'Annual NOI': formatCurrency(Math.round(results.noi)),
+              'Gross Revenue': formatCurrency(Math.round(results.totalGrossRevenue)),
+              'Expense Ratio': `${results.expenseRatio.toFixed(1)}%`,
+            }}
+          />
         </div>
       </div>
     </div>

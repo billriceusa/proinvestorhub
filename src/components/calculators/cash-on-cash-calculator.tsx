@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { CalculatorCTA } from '@/components/calculator-cta'
+import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
 
@@ -429,7 +429,16 @@ export function CashOnCashCalculator() {
             </p>
           </div>
 
-          <CalculatorCTA context="cash-on-cash-calculator" />
+          <SaveResultsCTA
+            calculatorName="Cash-on-Cash Calculator"
+            context="cash-on-cash-calculator"
+            results={{
+              'Cash-on-Cash Return': `${results.cashOnCash.toFixed(2)}%`,
+              'Monthly Cash Flow': formatCurrency(results.monthlyCashFlow),
+              'Annual Cash Flow': formatCurrency(results.annualCashFlow),
+              'NOI': formatCurrency(results.noi),
+            }}
+          />
         </div>
       </div>
     </div>

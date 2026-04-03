@@ -83,12 +83,16 @@ const components: PortableTextComponents = {
     },
   },
   block: {
-    h2: ({ children }) => (
-      <h2 className="text-2xl font-bold text-text mt-10 mb-4">{children}</h2>
-    ),
-    h3: ({ children }) => (
-      <h3 className="text-xl font-semibold text-text mt-8 mb-3">{children}</h3>
-    ),
+    h2: ({ children, value }) => {
+      const text = blockToText(value as { children?: { text?: string }[] })
+      const id = text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
+      return <h2 id={id} className="text-2xl font-bold text-text mt-10 mb-4 scroll-mt-24">{children}</h2>
+    },
+    h3: ({ children, value }) => {
+      const text = blockToText(value as { children?: { text?: string }[] })
+      const id = text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
+      return <h3 id={id} className="text-xl font-semibold text-text mt-8 mb-3 scroll-mt-24">{children}</h3>
+    },
     h4: ({ children }) => (
       <h4 className="text-lg font-semibold text-text mt-6 mb-2">{children}</h4>
     ),

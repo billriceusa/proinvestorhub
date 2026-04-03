@@ -66,7 +66,7 @@ async function LatestPosts() {
   try {
     const { data: rawPosts } = await sanityFetch({
       query: POSTS_QUERY,
-      params: { limit: 3 },
+      params: { limit: 3, offset: 0 },
     })
     posts = (rawPosts || []) as PostSummary[]
   } catch {

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { NewsletterSignup } from '@/components/newsletter-signup'
+import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
 import { JsonLd } from '@/components/json-ld'
 import { EDUCATION_CURRICULUM, EDUCATION_PHASES } from '@/data/newsletter-education'
 
@@ -210,6 +211,13 @@ export default function StartHerePage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Lead Magnet CTA */}
+      <section className="py-12 bg-white">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <LeadMagnetCTA variant="card" />
         </div>
       </section>
 

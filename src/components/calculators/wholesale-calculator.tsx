@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { CalculatorCTA } from '@/components/calculator-cta'
+import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
 
@@ -279,7 +279,16 @@ export function WholesaleCalculator() {
             </p>
           </div>
 
-          <CalculatorCTA context="wholesale-calculator" />
+          <SaveResultsCTA
+            calculatorName="Wholesale Calculator"
+            context="wholesale-calculator"
+            results={{
+              'Your Max Offer': formatCurrency(Math.max(results.yourMaxOffer, 0)),
+              'Assignment Fee': formatCurrency(results.fee),
+              'End Buyer Profit': formatCurrency(results.endBuyerProfit),
+              'End Buyer ROI': `${results.endBuyerROI.toFixed(1)}%`,
+            }}
+          />
         </div>
       </div>
     </div>

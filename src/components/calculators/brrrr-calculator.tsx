@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { CalculatorCTA } from '@/components/calculator-cta'
+import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
 
@@ -712,7 +712,16 @@ export function BRRRRCalculator() {
               </p>
             </div>
 
-            <CalculatorCTA context="brrrr-calculator" />
+            <SaveResultsCTA
+              calculatorName="BRRRR Calculator"
+              context="brrrr-calculator"
+              results={{
+                'Cash-on-Cash Return': results.infiniteReturn ? 'Infinite' : `${results.cashOnCash.toFixed(1)}%`,
+                'Monthly Cash Flow': formatCurrency(results.monthlyCashFlow),
+                'Cash Left in Deal': formatCurrency(results.cashLeftInDeal),
+                'Equity': formatCurrency(results.equity),
+              }}
+            />
           </div>
         </div>
       </div>

@@ -9,10 +9,11 @@ import { PortableText } from '@/components/portable-text'
 import { PartnerCTAGroup } from '@/components/partner-cta'
 import type { PostDetail } from '@/sanity/lib/types'
 import { JsonLd, articleJsonLd, breadcrumbJsonLd } from '@/components/json-ld'
-import { NewsletterSignup } from '@/components/newsletter-signup'
+import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
 import { RelatedMarkets } from '@/components/related-markets'
 import { ToolRecommendations } from '@/components/tool-recommendations'
 import { GlossaryProvider } from '@/lib/glossary-linker'
+import { TableOfContents, extractTocItems } from '@/components/table-of-contents'
 
 // Map post category slugs to glossary categories
 const postCategoryToGlossary: Record<string, string> = {
@@ -195,12 +196,55 @@ export default async function PostPage({ params }: Props) {
       )}
 
       {post.body && (
-        <div className="mt-10">
-          <GlossaryProvider terms={glossaryTermsForLinking}>
-            <PortableText value={post.body} enableGlossaryLinks />
-          </GlossaryProvider>
+        <div className="mt-8">
+          <TableOfContents
+            items={extractTocItems(
+              post.body as Array<{ _type: string; style?: string; children?: Array<{ text?: string }> }>
+            )}
+          />
         </div>
       )}
+
+      {post.body && (() => {
+        const bodyBlocks = post.body as Array<{ _type: string; style?: string; _key: string }>
+        const h2Indices = bodyBlocks
+          .map((block, i) => (block._type === 'block' && block.style === 'h2' ? i : -1))
+          .filter((i) => i >= 0)
+
+        // Insert CTA after the 3rd H2's content section (or after the last H2 if fewer than 3)
+        const insertAfterIndex = h2Indices.length >= 3
+          ? (h2Indices[3] ?? bodyBlocks.length) // Insert before 4th H2 (after 3rd section)
+          : null
+
+        if (insertAfterIndex !== null && insertAfterIndex > 0) {
+          const bodyBefore = bodyBlocks.slice(0, insertAfterIndex)
+          const bodyAfter = bodyBlocks.slice(insertAfterIndex)
+
+          return (
+            <div className="mt-10">
+              <GlossaryProvider terms={glossaryTermsForLinking}>
+                <PortableText value={bodyBefore} enableGlossaryLinks />
+              </GlossaryProvider>
+
+              <div className="my-10">
+                <LeadMagnetCTA variant="card" />
+              </div>
+
+              <GlossaryProvider terms={glossaryTermsForLinking}>
+                <PortableText value={bodyAfter} enableGlossaryLinks />
+              </GlossaryProvider>
+            </div>
+          )
+        }
+
+        return (
+          <div className="mt-10">
+            <GlossaryProvider terms={glossaryTermsForLinking}>
+              <PortableText value={post.body} enableGlossaryLinks />
+            </GlossaryProvider>
+          </div>
+        )
+      })()}
 
       {/* Related Markets — scans post text for city mentions */}
       {post.body && (
@@ -325,7 +369,7 @@ export default async function PostPage({ params }: Props) {
       )}
 
       <div className="mt-12">
-        <NewsletterSignup variant="card" />
+        <LeadMagnetCTA variant="card" />
       </div>
     </article>
   )

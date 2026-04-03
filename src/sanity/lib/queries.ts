@@ -1,9 +1,13 @@
 import { defineQuery } from 'next-sanity'
 
 // ── Posts ──────────────────────────────────────────────
+export const POSTS_COUNT_QUERY = defineQuery(/* groq */ `
+  count(*[_type == "post" && defined(slug.current) && publishedAt <= now()])
+`)
+
 export const POSTS_QUERY = defineQuery(/* groq */ `
   *[_type == "post" && defined(slug.current) && publishedAt <= now()]
-  | order(publishedAt desc) [0...$limit] {
+  | order(publishedAt desc) [$offset...$offset + $limit] {
     _id,
     title,
     "slug": slug.current,

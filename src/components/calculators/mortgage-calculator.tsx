@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo, Fragment } from 'react'
-import { CalculatorCTA } from '@/components/calculator-cta'
+import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
 
@@ -492,7 +492,16 @@ export function MortgageCalculator() {
             </p>
           </div>
 
-          <CalculatorCTA context="mortgage-dscr-calculator" />
+          <SaveResultsCTA
+            calculatorName="Mortgage Calculator"
+            context="mortgage-dscr-calculator"
+            results={{
+              'Monthly Payment': formatCurrency(results.totalMonthlyPayment),
+              'Loan Amount': formatCurrency(results.loanAmount),
+              'Total Interest': formatCurrency(results.totalInterest),
+              ...(loanType === 'dscr' && results.dscr > 0 ? { 'DSCR': `${results.dscr.toFixed(2)}x` } : {}),
+            }}
+          />
         </div>
       </div>
     </div>

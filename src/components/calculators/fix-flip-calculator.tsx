@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { CalculatorCTA } from '@/components/calculator-cta'
+import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
 
@@ -443,7 +443,16 @@ export function FixFlipCalculator() {
             </p>
           </div>
 
-          <CalculatorCTA context="fix-flip-calculator" />
+          <SaveResultsCTA
+            calculatorName="Fix & Flip Calculator"
+            context="fix-flip-calculator"
+            results={{
+              'Net Profit': formatCurrency(results.profit),
+              'ROI': `${results.roi.toFixed(1)}%`,
+              'Profit / Month': formatCurrency(results.profitPerMonth),
+              'Total Costs': formatCurrency(results.totalCosts),
+            }}
+          />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { CalculatorCTA } from '@/components/calculator-cta'
+import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
 
@@ -314,7 +314,16 @@ export function RentalCashFlowCalculator() {
             </div>
           )}
 
-          <CalculatorCTA context="rental-cashflow-calculator" />
+          <SaveResultsCTA
+            calculatorName="Rental Cash Flow Calculator"
+            context="rental-cashflow-calculator"
+            results={{
+              'Monthly Cash Flow': formatCurrency(results.monthlyCashFlow),
+              'Annual Cash Flow': formatCurrency(results.annualCashFlow),
+              'Monthly NOI': formatCurrency(results.monthlyNOI),
+              'Annual NOI': formatCurrency(results.annualNOI),
+            }}
+          />
         </div>
       </div>
     </div>

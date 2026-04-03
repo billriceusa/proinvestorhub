@@ -124,6 +124,12 @@ export function Header() {
               </Link>
             )
           )}
+          <Link
+            href="/lenders/finder"
+            className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-light transition-colors"
+          >
+            Find a Lender
+          </Link>
         </div>
 
         <button
@@ -169,6 +175,13 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="/lenders/finder"
+              className="block mt-4 rounded-lg bg-primary px-4 py-3 text-center text-sm font-semibold text-white hover:bg-primary-light transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              Find a Lender
+            </Link>
           </div>
         </div>
       )}

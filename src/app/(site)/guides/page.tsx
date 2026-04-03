@@ -18,7 +18,7 @@ export default async function GuidesPage() {
   try {
     const { data: rawPosts } = await sanityFetch({
       query: POSTS_QUERY,
-      params: { limit: 50 },
+      params: { limit: 50, offset: 0 },
     })
     posts = (rawPosts || []) as PostSummary[]
   } catch {

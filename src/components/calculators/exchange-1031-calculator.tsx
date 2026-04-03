@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { CalculatorCTA } from '@/components/calculator-cta'
+import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
 
@@ -484,7 +484,16 @@ export function Exchange1031Calculator() {
             </p>
           </div>
 
-          <CalculatorCTA context="1031-exchange-calculator" />
+          <SaveResultsCTA
+            calculatorName="1031 Exchange Calculator"
+            context="1031-exchange-calculator"
+            results={{
+              'Tax Deferred': formatCurrency(results.taxSavings),
+              'Tax Without 1031': formatCurrency(results.totalTaxWithout),
+              'Tax With 1031': formatCurrency(results.totalTaxWith),
+              'Capital Gain': formatCurrency(results.capitalGain),
+            }}
+          />
         </div>
       </div>
     </div>
