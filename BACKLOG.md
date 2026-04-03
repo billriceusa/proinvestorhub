@@ -9,15 +9,11 @@
 ## P0 — Do Next
 
 ### Conversion & Lead Capture
-- [ ] Sticky scroll-triggered CTA bar — fixed bottom bar appears after 40% scroll on blog posts and calculator pages, compact email form, dismissable via sessionStorage, hides when footer visible
 - [ ] Exit-intent modal — mouse-toward-top (desktop) + rapid scroll-up (mobile) triggers lead magnet offer, localStorage 7-day cooldown after dismiss or submit
-- [ ] Resource gating — blur sections 3-7 of Deal Analysis Checklist behind email capture, show first 2 sections free, check localStorage for prior conversion to auto-unlock
-- [ ] Cap rate report email gate — `/resources/cap-rate-report` is fully public, add same partial-gate pattern as checklist
 - [ ] Email segmentation at signup — add one qualifying question ("What's your experience level?") to newsletter signup flow, store as Resend contact metadata, branch drip sequences
 
 ### Email Automation
-- [ ] 5-email drip sequence templates — day 1 (calculators), day 3 (first deal), day 5 (financing), day 7 (markets), day 10 (strategy). React Email in `src/emails/drip-*.tsx`, follows WelcomeEmail pattern
-- [ ] Connect drip to Resend automation — configure sequences in Resend dashboard triggered by contact creation
+- [ ] Connect drip to Resend automation — configure 5-email sequences in Resend dashboard triggered by contact creation (templates already built in `src/emails/drip-*.tsx`)
 
 ---
 
@@ -70,3 +66,6 @@
 - [x] **2026-04-03** Table of Contents — auto-generated from H2/H3 headings, collapsible on mobile, anchor IDs with scroll offset
 - [x] **2026-04-03** Blog pagination — 12 posts per page with server-rendered Previous/Next/page numbers
 - [x] **2026-04-03** Tracking utility — `src/lib/tracking.ts` with typed GTM helpers for all lead capture and CTA events
+- [x] **2026-04-03** 5-email drip sequence — day 1 (calculators), day 3 (first deal), day 5 (financing), day 7 (markets), day 10 (strategy) in `src/emails/drip-*.tsx`
+- [x] **2026-04-03** Resource gating — Deal Analysis Checklist (sections 3-7) and Cap Rate Report (data table + rankings) gated behind email capture with localStorage unlock
+- [x] **2026-04-03** Sticky scroll-triggered CTA bar — fixed bottom bar after 40% scroll, compact email form, dismissable per session, responsive desktop/mobile
