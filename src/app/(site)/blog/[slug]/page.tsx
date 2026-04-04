@@ -13,7 +13,8 @@ import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
 import { RelatedMarkets } from '@/components/related-markets'
 import { ToolRecommendations } from '@/components/tool-recommendations'
 import { GlossaryProvider } from '@/lib/glossary-linker'
-import { TableOfContents, extractTocItems } from '@/components/table-of-contents'
+import { TableOfContents } from '@/components/table-of-contents'
+import { extractTocItems } from '@/lib/toc-utils'
 
 // Map post category slugs to glossary categories
 const postCategoryToGlossary: Record<string, string> = {
