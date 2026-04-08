@@ -132,61 +132,41 @@ async function sendPreviewEmail(
 }
 
 async function scheduleBroadcast(
+  resend: Resend,
   audienceId: string,
   fromEmail: string,
   subject: string,
   html: string,
   scheduledAt: string
 ): Promise<{ success: boolean; broadcastId?: string; error?: string }> {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return { success: false, error: "RESEND_API_KEY not set" };
-  }
-
-  const headers = {
-    Authorization: `Bearer ${apiKey}`,
-    "Content-Type": "application/json",
-  };
-
-  // Step 1: Create the broadcast
-  const createRes = await fetch("https://api.resend.com/broadcasts", {
-    method: "POST",
-    headers,
-    body: JSON.stringify({
-      audience_id: audienceId,
-      from: fromEmail,
-      subject,
-      html,
-      name: `Weekly Newsletter — ${scheduledAt.split("T")[0]}`,
-    }),
+  // Step 1: Create the broadcast via SDK
+  const { data: createData, error: createError } = await resend.broadcasts.create({
+    audienceId,
+    from: fromEmail,
+    subject,
+    html,
+    name: `Weekly Newsletter — ${scheduledAt.split("T")[0]}`,
   });
 
-  if (!createRes.ok) {
-    const body = await createRes.text();
+  if (createError || !createData) {
     return {
       success: false,
-      error: `Broadcast create returned ${createRes.status}: ${body}`,
+      error: `Broadcast create failed: ${JSON.stringify(createError)}`,
     };
   }
 
-  const { id: broadcastId } = (await createRes.json()) as { id: string };
+  const broadcastId = createData.id;
 
-  // Step 2: Schedule the send
-  const sendRes = await fetch(
-    `https://api.resend.com/broadcasts/${broadcastId}/send`,
-    {
-      method: "POST",
-      headers,
-      body: JSON.stringify({ scheduled_at: scheduledAt }),
-    }
-  );
+  // Step 2: Schedule the send via SDK
+  const { error: sendError } = await resend.broadcasts.send(broadcastId, {
+    scheduledAt,
+  });
 
-  if (!sendRes.ok) {
-    const body = await sendRes.text();
+  if (sendError) {
     return {
       success: false,
       broadcastId,
-      error: `Broadcast send returned ${sendRes.status}: ${body}`,
+      error: `Broadcast send failed: ${JSON.stringify(sendError)}`,
     };
   }
 
@@ -295,7 +275,9 @@ export async function GET(request: Request) {
       console.log(
         `[Newsletter] Scheduling broadcast to audience ${audienceId} for ${scheduledAt}`
       );
+      const resend = new Resend(resendApiKey);
       const result = await scheduleBroadcast(
+        resend,
         audienceId,
         fromEmail,
         content.subject,
