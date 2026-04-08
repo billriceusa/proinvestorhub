@@ -1,6 +1,7 @@
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { StickyCTA } from '@/components/sticky-cta'
+import { ExitIntentModal } from '@/components/exit-intent-modal'
 
 export default function SiteLayout({
   children,
@@ -13,6 +14,7 @@ export default function SiteLayout({
       <main className="flex-1">{children}</main>
       <Footer />
       <StickyCTA />
+      <ExitIntentModal />
     </div>
   )
 }
