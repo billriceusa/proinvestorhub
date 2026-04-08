@@ -13,7 +13,7 @@ const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [posts, glossaryTerms, newsletterIssues] = await Promise.all([
+  const [posts, glossaryTerms, newsletterIssues, guidePages] = await Promise.all([
     client.fetch<Array<{ slug: string; publishedAt: string | null }>>(
       `*[_type == "post" && defined(slug.current) && publishedAt <= now()] | order(publishedAt desc) { "slug": slug.current, publishedAt }`
     ),
@@ -22,6 +22,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ),
     client.fetch<Array<{ slug: string; publishedAt: string | null }>>(
       `*[_type == "newsletterIssue" && defined(slug.current)] | order(publishedAt desc) { "slug": slug.current, publishedAt }`
+    ),
+    client.fetch<Array<{ slug: string; publishedAt: string | null }>>(
+      `*[_type == "guide" && defined(slug.current)] | order(publishedAt desc) { "slug": slug.current, publishedAt }`
     ),
   ])
 
@@ -255,5 +258,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ]
 
-  return [...staticPages, ...postPages, ...glossaryPages, ...newsletterPages]
+  const guidePageEntries: MetadataRoute.Sitemap = (guidePages ?? []).map((g) => ({
+    url: `${baseUrl}/guides/${g.slug}`,
+    lastModified: g.publishedAt ? new Date(g.publishedAt) : undefined,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  return [...staticPages, ...postPages, ...glossaryPages, ...newsletterPages, ...guidePageEntries]
 }

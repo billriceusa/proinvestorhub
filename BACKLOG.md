@@ -22,8 +22,8 @@
 ### Content System
 - [x] Learning callout Sanity schema — new `callout` block type (key-concept, pro-tip, warning, example) with Lucide icons + colored left border in portable-text renderer
 - [x] Sanity `inlineCta` block type — editors can place lead-magnet, newsletter, calculator, or lender-finder CTAs anywhere in article body
-- [ ] Guides as distinct content type — create Sanity `guide` schema (longer than posts, multi-section, own template), replace the hollow `/guides` redirect with real guide pages
-- [ ] Strategy comparison content — "BRRRR vs Buy-and-Hold", "House Hacking vs Cash Flow Investing" etc. High-intent search terms with no existing content
+- [x] Guides as distinct content type — Sanity `guide` schema with difficulty, guideType, keyTakeaways, own template at `/guides/[slug]`, refactored listing page
+- [x] Strategy comparison content — 6 comparison guides (BRRRR vs Buy-and-Hold, House Hacking vs Rental, etc.) via AI generation endpoint
 - [x] Blog category page pagination — `/blog/category/[slug]` paginated at 12 posts per page
 
 ### SEO & Schema

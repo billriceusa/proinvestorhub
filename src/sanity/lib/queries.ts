@@ -314,6 +314,44 @@ export const LENDERS_BY_LOAN_TYPE_QUERY = defineQuery(/* groq */ `
   }
 `)
 
+// ── Guides ────────────────────────────────────────────
+export const GUIDES_QUERY = defineQuery(/* groq */ `
+  *[_type == "guide" && defined(slug.current) && publishedAt <= now()]
+  | order(publishedAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    publishedAt,
+    excerpt,
+    difficulty,
+    guideType,
+    keyTakeaways
+  }
+`)
+
+export const GUIDE_BY_SLUG_QUERY = defineQuery(/* groq */ `
+  *[_type == "guide" && slug.current == $slug && publishedAt <= now()][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    author->{ name, "slug": slug.current, image },
+    publishedAt,
+    excerpt,
+    difficulty,
+    guideType,
+    keyTakeaways,
+    body,
+    sources,
+    categories[]->{ _id, title, "slug": slug.current },
+    seo
+  }
+`)
+
+export const GUIDE_SLUGS_QUERY = defineQuery(/* groq */ `
+  *[_type == "guide" && defined(slug.current)]
+  | order(publishedAt desc) { "slug": slug.current }
+`)
+
 // ── Newsletter Archive ────────────────────────────────
 export const NEWSLETTER_ISSUES_COUNT_QUERY = defineQuery(/* groq */ `
   count(*[_type == "newsletterIssue" && defined(slug.current)])
