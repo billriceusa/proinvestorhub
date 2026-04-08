@@ -21,19 +21,19 @@
 
 ### Content System
 - [x] Learning callout Sanity schema — new `callout` block type (key-concept, pro-tip, warning, example) with Lucide icons + colored left border in portable-text renderer
-- [ ] Sanity `inlineCta` block type — let editors manually place CTAs (lead-magnet, newsletter, calculator, lender-finder) anywhere in article body via CMS
+- [x] Sanity `inlineCta` block type — editors can place lead-magnet, newsletter, calculator, or lender-finder CTAs anywhere in article body
 - [ ] Guides as distinct content type — create Sanity `guide` schema (longer than posts, multi-section, own template), replace the hollow `/guides` redirect with real guide pages
 - [ ] Strategy comparison content — "BRRRR vs Buy-and-Hold", "House Hacking vs Cash Flow Investing" etc. High-intent search terms with no existing content
 - [x] Blog category page pagination — `/blog/category/[slug]` paginated at 12 posts per page
 
 ### SEO & Schema
 - [x] FAQ schema on blog posts — `FAQPage` JSON-LD auto-extracted from H2/H3 headings containing "?" with following paragraph text as answers
-- [ ] HowTo schema on guide/how-to content — "how to analyze a rental property" type queries
+- [x] HowTo schema on guide/how-to content — auto-detects step patterns in blog posts, adds HowTo JSON-LD
 - [ ] Site-wide search — global search across blog, glossary, lenders, markets. Add search bar to header. Update `WebSite` SearchAction to point to real search page instead of `/glossary?q=`
 
 ### Engagement
 - [ ] City page calculator embeds — pre-fill cap rate calculator with city's median home price and rent data, creates natural "Save My Results" capture point
-- [ ] Start-here sticky sidebar nav — reuse ToC pattern for the 4-step + curriculum sections on the long start-here page
+- [x] Start-here sticky step nav — horizontal sticky nav bar with numbered steps, scroll-aware active highlighting
 - [ ] Calculator embed codes — "Put this calculator on your site" widget with backlink attribution for passive link building
 
 ---
@@ -78,3 +78,6 @@
 - [x] **2026-04-08** FAQ schema on blog posts — auto-extracts Q&A from headings with "?", adds FAQPage JSON-LD (2+ FAQs required)
 - [x] **2026-04-08** Blog category pagination — 12 posts per page with Pagination component
 - [x] **2026-04-08** Callout block type — key-concept, pro-tip, warning, example with Lucide icons + colored borders in Sanity + portable text
+- [x] **2026-04-08** InlineCta block type — lead-magnet, newsletter, calculator, lender-finder CTAs placeable anywhere in article body
+- [x] **2026-04-08** HowTo schema — auto-detects step patterns (Step 1:, 1., First,) in blog posts, adds HowTo JSON-LD
+- [x] **2026-04-08** Start Here sticky nav — horizontal step progress bar with scroll-aware active state

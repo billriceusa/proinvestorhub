@@ -5,6 +5,9 @@ import { PortableText as PortableTextRenderer, type PortableTextComponents } fro
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
 import { PartnerCTA } from '@/components/partner-cta'
+import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
+import { NewsletterSignup } from '@/components/newsletter-signup'
+import { CalculatorCTA } from '@/components/calculator-cta'
 import type { BPVertical } from '@/lib/partner-links'
 import { useGlossaryLinker } from '@/lib/glossary-linker'
 
@@ -101,6 +104,52 @@ const components: PortableTextComponents = {
           <p className="text-sm text-text leading-relaxed">{value.body}</p>
         </div>
       )
+    },
+    inlineCta: ({ value }: { value: { ctaType: string; heading?: string; description?: string } }) => {
+      switch (value.ctaType) {
+        case 'lead-magnet':
+          return (
+            <div className="my-8">
+              <LeadMagnetCTA variant="card" heading={value.heading} description={value.description} />
+            </div>
+          )
+        case 'newsletter':
+          return (
+            <div className="my-8">
+              <NewsletterSignup variant="card" heading={value.heading} description={value.description} source="inline-cta" />
+            </div>
+          )
+        case 'calculator':
+          return (
+            <div className="my-8">
+              <CalculatorCTA context="inline-cta" />
+            </div>
+          )
+        case 'lender-finder':
+          return (
+            <div className="my-8">
+              <a
+                href="/lenders/finder"
+                className="block rounded-xl border border-border bg-white p-6 shadow-sm transition-all hover:border-primary/40 hover:shadow-md"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0">
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-bold text-text">{value.heading || 'Find the Right Lender'}</p>
+                    <p className="text-sm text-text-muted">{value.description || 'Match with investor-friendly lenders based on your deal type, experience, and property.'}</p>
+                  </div>
+                </div>
+                <p className="text-sm font-semibold text-primary">Try the Lender Finder &rarr;</p>
+              </a>
+            </div>
+          )
+        default:
+          return null
+      }
     },
     simpleTable: ({ value }: { value: { rows: { _key: string; cells: string[] }[] } }) => {
       if (!value?.rows?.length) return null

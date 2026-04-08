@@ -4,6 +4,7 @@ import { NewsletterSignup } from '@/components/newsletter-signup'
 import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
 import { JsonLd } from '@/components/json-ld'
 import { EDUCATION_CURRICULUM, EDUCATION_PHASES } from '@/data/newsletter-education'
+import { StartHereNav } from '@/components/start-here-nav'
 
 export const metadata: Metadata = {
   title: 'Start Here — Your Real Estate Investing Roadmap | ProInvestorHub',
@@ -104,8 +105,10 @@ export default function StartHerePage() {
         </div>
       </section>
 
+      <StartHereNav />
+
       {/* Step 1: Learn the Language */}
-      <section className="py-20 bg-white">
+      <section id="learn-the-language" className="py-20 bg-white scroll-mt-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex items-start gap-6">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-white font-bold text-lg">
@@ -143,7 +146,7 @@ export default function StartHerePage() {
       </section>
 
       {/* Step 2: Understand the Numbers */}
-      <section className="py-20 bg-surface">
+      <section id="understand-the-numbers" className="py-20 bg-surface scroll-mt-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex items-start gap-6">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-white font-bold text-lg">
@@ -180,7 +183,7 @@ export default function StartHerePage() {
       </section>
 
       {/* Step 3: Learn the Strategies */}
-      <section className="py-20 bg-white">
+      <section id="learn-the-strategies" className="py-20 bg-white scroll-mt-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex items-start gap-6">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-white font-bold text-lg">
@@ -222,7 +225,7 @@ export default function StartHerePage() {
       </section>
 
       {/* Step 4: Study Real Markets */}
-      <section className="py-20 bg-surface">
+      <section id="study-real-markets" className="py-20 bg-surface scroll-mt-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex items-start gap-6">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-white font-bold text-lg">
@@ -260,7 +263,7 @@ export default function StartHerePage() {
       </section>
 
       {/* Newsletter Education — 24-Week Curriculum */}
-      <section className="py-20 bg-primary-dark">
+      <section id="24-week-curriculum" className="py-20 bg-primary-dark scroll-mt-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <p className="text-sm font-medium text-accent tracking-wide uppercase">Free 24-Week Program</p>
@@ -361,7 +364,7 @@ export default function StartHerePage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-surface">
+      <section id="faq" className="py-20 bg-surface scroll-mt-16">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-text text-center sm:text-3xl">
             Common Beginner Questions

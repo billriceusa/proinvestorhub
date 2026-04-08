@@ -8,8 +8,9 @@ import { urlFor } from '@/sanity/lib/image'
 import { PortableText } from '@/components/portable-text'
 import { PartnerCTAGroup } from '@/components/partner-cta'
 import type { PostDetail } from '@/sanity/lib/types'
-import { JsonLd, articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { JsonLd, articleJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
 import { extractFaqFromBody } from '@/lib/faq-extract'
+import { extractHowToSteps } from '@/lib/howto-extract'
 import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
 import { RelatedMarkets } from '@/components/related-markets'
 import { ToolRecommendations } from '@/components/tool-recommendations'
@@ -132,6 +133,18 @@ export default async function PostPage({ params }: Props) {
       {(() => {
         const faqs = extractFaqFromBody(post.body || [])
         return faqs.length >= 2 ? <JsonLd data={faqJsonLd(faqs)} /> : null
+      })()}
+      {(() => {
+        const steps = extractHowToSteps(post.body || [])
+        return steps ? (
+          <JsonLd
+            data={howToJsonLd({
+              name: post.title || '',
+              description: post.excerpt || '',
+              steps,
+            })}
+          />
+        ) : null
       })()}
       <nav className="mb-8 text-sm text-text-muted">
         <Link href="/blog" className="hover:text-primary transition-colors">

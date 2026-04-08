@@ -11,6 +11,7 @@ import { loanType } from './loan-type'
 import { lender } from './lender'
 import { newsletterIssue } from './newsletter-issue'
 import { callout } from './callout'
+import { inlineCta } from './inline-cta'
 
 export const schemaTypes = [
   post,
@@ -26,4 +27,5 @@ export const schemaTypes = [
   lender,
   newsletterIssue,
   callout,
+  inlineCta,
 ]
