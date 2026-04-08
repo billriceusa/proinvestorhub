@@ -132,45 +132,71 @@ async function sendPreviewEmail(
 }
 
 async function scheduleBroadcast(
-  resend: Resend,
   audienceId: string,
   fromEmail: string,
   subject: string,
   html: string,
   scheduledAt: string
 ): Promise<{ success: boolean; broadcastId?: string; error?: string }> {
-  // Step 1: Create the broadcast via SDK
-  const { data: createData, error: createError } = await resend.broadcasts.create({
-    audienceId,
-    from: fromEmail,
-    subject,
-    html,
-    name: `Weekly Newsletter — ${scheduledAt.split("T")[0]}`,
-  });
+  const apiKey = process.env.RESEND_API_KEY!;
+  const resendClient = new Resend(apiKey);
 
-  if (createError || !createData) {
+  console.log(
+    `[Newsletter] Sending newsletter: audience=${audienceId} html=${html.length} bytes`
+  );
+
+  // Fetch all contacts from audience
+  const { data: contactsData, error: contactsError } =
+    await resendClient.contacts.list({ audienceId });
+
+  if (contactsError || !contactsData) {
     return {
       success: false,
-      error: `Broadcast create failed: ${JSON.stringify(createError)}`,
+      error: `Failed to list contacts: ${JSON.stringify(contactsError)}`,
     };
   }
 
-  const broadcastId = createData.id;
+  const contacts = contactsData.data.filter((c) => !c.unsubscribed);
+  console.log(`[Newsletter] Sending to ${contacts.length} active contacts`);
 
-  // Step 2: Schedule the send via SDK
-  const { error: sendError } = await resend.broadcasts.send(broadcastId, {
-    scheduledAt,
-  });
-
-  if (sendError) {
-    return {
-      success: false,
-      broadcastId,
-      error: `Broadcast send failed: ${JSON.stringify(sendError)}`,
-    };
+  if (contacts.length === 0) {
+    return { success: true, broadcastId: "no-contacts" };
   }
 
-  return { success: true, broadcastId };
+  // Send to each contact individually, scheduled for Tuesday
+  const results = await Promise.allSettled(
+    contacts.map((contact) =>
+      resendClient.emails.send({
+        from: fromEmail,
+        to: contact.email,
+        subject,
+        html,
+        scheduledAt,
+      })
+    )
+  );
+
+  const succeeded = results.filter((r) => r.status === "fulfilled").length;
+  const failed = results.filter((r) => r.status === "rejected");
+
+  if (failed.length > 0) {
+    console.error(
+      "[Newsletter] Some sends failed:",
+      failed.map((r) => (r as PromiseRejectedResult).reason)
+    );
+  }
+
+  console.log(
+    `[Newsletter] Sent ${succeeded}/${contacts.length} emails, scheduled for ${scheduledAt}`
+  );
+
+  return {
+    success: failed.length === 0,
+    broadcastId: `individual-${succeeded}-of-${contacts.length}`,
+    ...(failed.length > 0 && {
+      error: `${failed.length}/${contacts.length} sends failed`,
+    }),
+  };
 }
 
 export async function GET(request: Request) {
@@ -275,9 +301,7 @@ export async function GET(request: Request) {
       console.log(
         `[Newsletter] Scheduling broadcast to audience ${audienceId} for ${scheduledAt}`
       );
-      const resend = new Resend(resendApiKey);
       const result = await scheduleBroadcast(
-        resend,
         audienceId,
         fromEmail,
         content.subject,
