@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { WholesaleCalculator } from '@/components/calculators/wholesale-calculator'
+import { CalculatorEmbed } from '@/components/calculator-embed'
 import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
@@ -92,6 +93,10 @@ export default function WholesalCalculatorPage() {
 
       {/* Calculator */}
       <WholesaleCalculator />
+
+      <div className="mt-6 max-w-3xl">
+        <CalculatorEmbed calculatorName="Wholesale Deal Analyzer" calculatorPath="/calculators/wholesale" />
+      </div>
 
       {/* Educational Content */}
       <section className="mt-16 max-w-3xl">

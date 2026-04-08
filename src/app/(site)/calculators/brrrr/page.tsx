@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BRRRRCalculator } from '@/components/calculators/brrrr-calculator'
+import { CalculatorEmbed } from '@/components/calculator-embed'
 import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
@@ -84,6 +85,10 @@ export default function BRRRRCalculatorPage() {
 
       {/* Calculator */}
       <BRRRRCalculator />
+
+      <div className="mt-6 max-w-3xl">
+        <CalculatorEmbed calculatorName="BRRRR Calculator" calculatorPath="/calculators/brrrr" />
+      </div>
 
       {/* Educational Content */}
       <section className="mt-16 max-w-3xl">

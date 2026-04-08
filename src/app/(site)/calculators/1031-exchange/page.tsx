@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Exchange1031Calculator } from '@/components/calculators/exchange-1031-calculator'
+import { CalculatorEmbed } from '@/components/calculator-embed'
 import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
@@ -87,6 +88,10 @@ export default function Exchange1031CalculatorPage() {
 
       {/* Calculator */}
       <Exchange1031Calculator />
+
+      <div className="mt-6 max-w-3xl">
+        <CalculatorEmbed calculatorName="1031 Exchange Calculator" calculatorPath="/calculators/1031-exchange" />
+      </div>
 
       {/* Educational Content */}
       <section className="mt-16 max-w-3xl">

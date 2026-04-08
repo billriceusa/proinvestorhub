@@ -48,7 +48,7 @@ export default async function BillRiceAuthorPage() {
               <h1 className="text-3xl font-bold text-white sm:text-4xl">Bill Rice</h1>
               <p className="mt-2 text-accent font-medium">Founder &amp; Author, ProInvestorHub</p>
               <p className="mt-4 text-white/80 max-w-2xl leading-7">
-                Real estate investor, mortgage lending veteran with 30+ years of experience, and founder of BRSG. I built ProInvestorHub to document my investing journey and share the tools and knowledge I wish I had starting out.
+                Real estate investor, mortgage lending veteran with 30+ years of experience, former AFOSI Special Agent, and founder of BRSG. I built ProInvestorHub to document my investing journey and share the tools and knowledge I wish I had starting out.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/90">
@@ -60,6 +60,17 @@ export default async function BillRiceAuthorPage() {
                 <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/90">
                   Real Estate Investor
                 </span>
+                <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/90">
+                  AFOSI Special Agent (Ret.)
+                </span>
+                <a
+                  href="https://billrice.com/about"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/90 hover:bg-white/20 transition-colors"
+                >
+                  Full Bio
+                </a>
                 <a
                   href="https://linkedin.com/in/billrice"
                   target="_blank"

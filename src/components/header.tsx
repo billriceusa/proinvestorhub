@@ -35,6 +35,7 @@ const mobileNavigation = [
   { name: 'Glossary', href: '/glossary' },
   { name: 'Guides', href: '/guides' },
   { name: 'About', href: '/about' },
+  { name: 'Search', href: '/search' },
 ]
 
 function DropdownMenu({ item }: { item: Extract<NavItem, { children: unknown[] }> }) {
@@ -126,6 +127,15 @@ export function Header() {
               </Link>
             )
           )}
+          <Link
+            href="/search"
+            className="p-2 text-text-muted hover:text-primary transition-colors"
+            aria-label="Search"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </Link>
           <Link
             href="/lenders/finder"
             className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-light transition-colors"

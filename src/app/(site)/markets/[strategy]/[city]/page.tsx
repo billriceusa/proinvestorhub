@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { JsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { encodeCalculatorState } from '@/lib/calculator-utils'
 import { CalculatorCTA } from '@/components/calculator-cta'
 import { StrategyScoreBreakdown } from '@/components/strategy-score-breakdown'
 import { CityStrategyComparison } from '@/components/city-strategy-comparison'
@@ -293,10 +294,25 @@ export default async function CityStrategyPage({
               Run Your Own Numbers for {data.city}
             </h2>
             <p className="mt-2 text-text-muted">
-              Use our free calculators to analyze specific deals in {cityName}{' '}
-              with your actual numbers.
+              Use our free calculators pre-filled with {cityName} market data,
+              or adjust the numbers for your specific deal.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                href={`/calculators/cap-rate?s=${encodeCalculatorState({
+                  purchasePrice: data.medianHomePrice,
+                  grossRent: data.medianRent * 12,
+                  vacancy: data.vacancyRate,
+                  propertyTax: Math.round(data.medianHomePrice * data.propertyTaxRate / 100),
+                  insurance: Math.round(data.medianHomePrice * 0.005),
+                  maintenance: Math.round(data.medianHomePrice * 0.015),
+                  management: Math.round(data.medianRent * 12 * 0.1),
+                  otherExpenses: 0,
+                })}`}
+                className="rounded-lg bg-accent px-5 py-2.5 text-sm font-bold text-primary-dark hover:bg-accent-light transition-colors"
+              >
+                Cap Rate Calculator ({data.city} Data)
+              </Link>
               {strategy.relatedCalculators.map((calc) => (
                 <Link
                   key={calc.href}

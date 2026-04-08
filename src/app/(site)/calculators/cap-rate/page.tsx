@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { CapRateCalculator } from '@/components/calculators/cap-rate-calculator'
+import { CalculatorEmbed } from '@/components/calculator-embed'
 import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
 import { cities } from '@/data/cap-rate-cities'
 
@@ -80,6 +81,10 @@ export default function CapRateCalculatorPage() {
 
       {/* Calculator */}
       <CapRateCalculator />
+
+      <div className="mt-6 max-w-3xl">
+        <CalculatorEmbed calculatorName="Cap Rate Calculator" calculatorPath="/calculators/cap-rate" />
+      </div>
 
       {/* Educational Content */}
       <section className="mt-16 max-w-3xl">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { STRCalculator } from '@/components/calculators/str-calculator'
+import { CalculatorEmbed } from '@/components/calculator-embed'
 import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
@@ -86,6 +87,10 @@ export default function STRRevenueCalculatorPage() {
 
       {/* Calculator */}
       <STRCalculator />
+
+      <div className="mt-6 max-w-3xl">
+        <CalculatorEmbed calculatorName="Short-Term Rental Calculator" calculatorPath="/calculators/str-revenue" />
+      </div>
 
       {/* Educational Content */}
       <section className="mt-16 max-w-3xl">

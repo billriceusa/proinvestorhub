@@ -27,7 +27,9 @@ export default function AboutPage() {
               Built by a Lending Veteran Who Loves Real Estate Investing
             </h1>
             <p className="mt-6 text-lg leading-8 text-white/80">
-              I&apos;m Bill Rice. I&apos;ve spent 30+ years in the mortgage lending industry, and I built ProInvestorHub as a way to document what I&apos;m learning about real estate investing — and share it with everyone.
+              I&apos;m{' '}
+              <a href="https://billrice.com/about" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-accent transition-colors">Bill Rice</a>.
+              I&apos;ve spent 30+ years in the mortgage lending industry, and I built ProInvestorHub as a way to document what I&apos;m learning about real estate investing — and share it with everyone.
             </p>
           </div>
         </div>
@@ -83,6 +85,17 @@ export default function AboutPage() {
               <h3 className="mt-4 text-base font-semibold text-text">30+ Years in Mortgage Lending</h3>
               <p className="mt-2 text-sm text-text-muted">
                 Three decades of experience in mortgage origination, underwriting, and financial services — seeing deals from the lender&apos;s perspective.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border p-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                </svg>
+              </div>
+              <h3 className="mt-4 text-base font-semibold text-text">AFOSI Special Agent</h3>
+              <p className="mt-2 text-sm text-text-muted">
+                Former Special Agent with the U.S. Air Force Office of Special Investigations (AFOSI). Air Force Academy graduate (B.S., 1992).
               </p>
             </div>
             <div className="rounded-xl border border-border p-6">
@@ -165,7 +178,7 @@ export default function AboutPage() {
           <NewsletterSignup
             variant="banner"
             heading="Join the Weekly Newsletter"
-            description="Market news, education, and deal analysis tips from someone who's been in lending for 30+ years. Free, no spam."
+            description="Market news, education, and deal analysis tips from the publisher of The Lead Brief who's been in lending for 30+ years. Free, no spam."
           />
         </div>
       </section>

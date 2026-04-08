@@ -29,12 +29,12 @@
 ### SEO & Schema
 - [x] FAQ schema on blog posts — `FAQPage` JSON-LD auto-extracted from H2/H3 headings containing "?" with following paragraph text as answers
 - [x] HowTo schema on guide/how-to content — auto-detects step patterns in blog posts, adds HowTo JSON-LD
-- [ ] Site-wide search — global search across blog, glossary, lenders, markets. Add search bar to header. Update `WebSite` SearchAction to point to real search page instead of `/glossary?q=`
+- [x] Site-wide search — `/search` page querying blog, glossary, newsletter. Search icon in header. WebSite SearchAction updated.
 
 ### Engagement
-- [ ] City page calculator embeds — pre-fill cap rate calculator with city's median home price and rent data, creates natural "Save My Results" capture point
+- [x] City page calculator embeds — pre-filled cap rate calculator link with city's median home price, rent, vacancy, tax data
 - [x] Start-here sticky step nav — horizontal sticky nav bar with numbered steps, scroll-aware active highlighting
-- [ ] Calculator embed codes — "Put this calculator on your site" widget with backlink attribution for passive link building
+- [x] Calculator embed codes — collapsible embed code generator on all 9 calculators with iframe snippet + attribution backlink
 
 ---
 
@@ -81,3 +81,6 @@
 - [x] **2026-04-08** InlineCta block type — lead-magnet, newsletter, calculator, lender-finder CTAs placeable anywhere in article body
 - [x] **2026-04-08** HowTo schema — auto-detects step patterns (Step 1:, 1., First,) in blog posts, adds HowTo JSON-LD
 - [x] **2026-04-08** Start Here sticky nav — horizontal step progress bar with scroll-aware active state
+- [x] **2026-04-08** Site-wide search — /search page, header search icon, WebSite SearchAction updated
+- [x] **2026-04-08** City calculator pre-fill — cap rate calculator links on city pages with median price, rent, vacancy, tax data
+- [x] **2026-04-08** Calculator embed codes — collapsible iframe snippet generator on all 9 calculators with attribution backlink

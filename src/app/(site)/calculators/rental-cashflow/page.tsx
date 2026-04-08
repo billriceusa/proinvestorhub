@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { RentalCashFlowCalculator } from '@/components/calculators/rental-cashflow-calculator'
+import { CalculatorEmbed } from '@/components/calculator-embed'
 import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
@@ -76,6 +77,10 @@ export default function RentalCashFlowPage() {
       </div>
 
       <RentalCashFlowCalculator />
+
+      <div className="mt-6 max-w-3xl">
+        <CalculatorEmbed calculatorName="Rental Cash Flow Calculator" calculatorPath="/calculators/rental-cashflow" />
+      </div>
 
       <section className="mt-16 max-w-3xl">
         <h2 className="text-2xl font-bold text-text">

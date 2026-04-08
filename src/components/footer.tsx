@@ -78,6 +78,18 @@ export function Footer() {
           <p className="text-center text-xs text-text-light">
             &copy; {year} ProInvestorHub. All rights reserved.
           </p>
+          <p className="mt-2 text-center text-xs text-text-light">
+            A{' '}
+            <a
+              href="https://billrice.com/about"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-muted hover:text-primary transition-colors underline"
+            >
+              Bill Rice
+            </a>{' '}
+            project.
+          </p>
         </div>
       </div>
     </footer>
