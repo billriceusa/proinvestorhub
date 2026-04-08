@@ -1,11 +1,5 @@
 import type { NewsletterContent } from "./newsletter-ai";
-
-function paragraphs(text: string, style: string): string {
-  return text
-    .split("\n\n")
-    .map((p) => `<p style="${style}">${p}</p>`)
-    .join("");
-}
+import { markdownToEmailHtml } from "@/lib/markdown";
 
 export function buildNewsletterHtml(
   content: NewsletterContent,
@@ -13,22 +7,22 @@ export function buildNewsletterHtml(
   weekLabel: string,
   archiveSlug?: string
 ): string {
-  const introHtml = paragraphs(
+  const introHtml = markdownToEmailHtml(
     content.personalIntro,
     "margin: 0 0 16px 0; line-height: 1.7; color: #374151; font-size: 16px;"
   );
 
-  const mainBodyHtml = paragraphs(
+  const mainBodyHtml = markdownToEmailHtml(
     content.mainSection.body,
     "margin: 0 0 16px 0; line-height: 1.7; color: #374151; font-size: 15px;"
   );
 
-  const secondaryBodyHtml = paragraphs(
+  const secondaryBodyHtml = markdownToEmailHtml(
     content.secondarySection.body,
     "margin: 0 0 14px 0; line-height: 1.7; color: #374151; font-size: 15px;"
   );
 
-  const partnerBodyHtml = paragraphs(
+  const partnerBodyHtml = markdownToEmailHtml(
     content.featuredPartner.body,
     "margin: 0 0 12px 0; line-height: 1.6; color: #374151; font-size: 14px;"
   );
