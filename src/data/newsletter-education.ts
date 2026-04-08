@@ -396,3 +396,12 @@ export function getEducationTopicForWeek(weekNumber: number): EducationTopic {
   const index = ((weekNumber - 1) % EDUCATION_CURRICULUM.length + EDUCATION_CURRICULUM.length) % EDUCATION_CURRICULUM.length;
   return EDUCATION_CURRICULUM[index];
 }
+
+export function getEducationCandidates(weekNumber: number, count: number = 3): EducationTopic[] {
+  const candidates: EducationTopic[] = [];
+  for (let i = 0; i < count; i++) {
+    const index = ((weekNumber - 1 + i) % EDUCATION_CURRICULUM.length + EDUCATION_CURRICULUM.length) % EDUCATION_CURRICULUM.length;
+    candidates.push(EDUCATION_CURRICULUM[index]);
+  }
+  return candidates;
+}

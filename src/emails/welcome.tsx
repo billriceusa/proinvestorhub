@@ -31,9 +31,11 @@ export function WelcomeEmail() {
           <Section style={heroSection}>
             <Heading style={h1}>Welcome to Smarter Investing</Heading>
             <Text style={paragraph}>
-              You&apos;re in. Every week, we&apos;ll send you the insights,
-              frameworks, and market analysis that serious real estate investors
-              use to find better deals and build lasting wealth.
+              You&apos;re in. Every Tuesday, I share what I&apos;m learning
+              about real estate investing — deals I&apos;m analyzing, market
+              data that caught my eye, and the frameworks I find most useful.
+              Think of it as notes from a fellow investor who happens to have
+              30 years in mortgage lending.
             </Text>
           </Section>
 

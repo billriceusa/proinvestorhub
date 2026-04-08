@@ -164,13 +164,16 @@ export async function writeArticle(
 - Calculators: /calculators/cap-rate, /calculators/cash-flow, /calculators/roi, /calculators/rehab-estimator
 
 ## Writing Requirements
-- Write as Bill Rice, 20+ year real estate and business veteran, sharing real experience
+- Write as Bill Rice — 30+ year mortgage lending veteran, active real estate investor who is still learning and building his portfolio
+- Lending/financing topics: speak with earned authority from 30 years in the mortgage industry
+- Investing strategy topics: speak as a curious, experienced-but-still-learning practitioner sharing discoveries and frameworks he finds useful
+- Use language like "I've found" and "what I've seen work" rather than "you must" and "the secret is"
+- Tone: collegial, practical, data-driven — sharing what works, not lecturing from above
 - 2,000-3,500 words of substantive, actionable content
 - Use specific numbers, examples, case studies, and frameworks — not generic advice
 - Naturally incorporate the primary keyword 3-5 times and secondary keywords 1-2 times each
 - Reference internal links naturally within the content (mention the topic, readers can find the link)
 - Include practical templates, checklists, deal analysis frameworks, or formulas the reader can use immediately
-- Tone: authoritative, direct, data-driven — practical and actionable
 
 ## External Source Citation Requirements
 - For every statistical claim, market data point, rate benchmark, or regulatory reference, cite the authoritative source with an inline link

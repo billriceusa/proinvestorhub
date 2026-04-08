@@ -2,14 +2,15 @@ import { NextResponse } from "next/server";
 import { createClient } from "next-sanity";
 import { Resend } from "resend";
 import { NEWSLETTER_CALENDAR } from "@/data/newsletter-calendar";
-import { getEducationTopicForWeek } from "@/data/newsletter-education";
+import { getEducationCandidates } from "@/data/newsletter-education";
+import { lenders } from "@/data/lenders";
 import {
   generateNewsletterContent,
   type RecentPost,
   type NewsletterContent,
 } from "@/lib/cron/newsletter-ai";
 import { buildNewsletterHtml } from "@/lib/cron/newsletter-email";
-import { commitFilesToGitHub } from "@/lib/cron/git-commit";
+import { publishNewsletterIssue } from "@/lib/cron/sanity-publish";
 
 export const maxDuration = 300;
 export const dynamic = "force-dynamic";
@@ -61,7 +62,10 @@ function getWeekDates(): {
 
   const startOfYear = new Date(now.getFullYear(), 0, 1);
   const weekNumber = Math.ceil(
-    ((now.getTime() - startOfYear.getTime()) / 86400000 + startOfYear.getDay() + 1) / 7
+    ((now.getTime() - startOfYear.getTime()) / 86400000 +
+      startOfYear.getDay() +
+      1) /
+      7
   );
 
   return {
@@ -131,23 +135,16 @@ async function sendPreviewEmail(
   return { success: true };
 }
 
-async function scheduleBroadcast(
+async function sendToContacts(
+  resend: Resend,
   audienceId: string,
   fromEmail: string,
   subject: string,
   html: string,
   scheduledAt: string
 ): Promise<{ success: boolean; broadcastId?: string; error?: string }> {
-  const apiKey = process.env.RESEND_API_KEY!;
-  const resendClient = new Resend(apiKey);
-
-  console.log(
-    `[Newsletter] Sending newsletter: audience=${audienceId} html=${html.length} bytes`
-  );
-
-  // Fetch all contacts from audience
   const { data: contactsData, error: contactsError } =
-    await resendClient.contacts.list({ audienceId });
+    await resend.contacts.list({ audienceId });
 
   if (contactsError || !contactsData) {
     return {
@@ -163,10 +160,9 @@ async function scheduleBroadcast(
     return { success: true, broadcastId: "no-contacts" };
   }
 
-  // Send to each contact individually, scheduled for Tuesday
   const results = await Promise.allSettled(
     contacts.map((contact) =>
-      resendClient.emails.send({
+      resend.emails.send({
         from: fromEmail,
         to: contact.email,
         subject,
@@ -185,10 +181,6 @@ async function scheduleBroadcast(
       failed.map((r) => (r as PromiseRejectedResult).reason)
     );
   }
-
-  console.log(
-    `[Newsletter] Sent ${succeeded}/${contacts.length} emails, scheduled for ${scheduledAt}`
-  );
 
   return {
     success: failed.length === 0,
@@ -214,25 +206,27 @@ export async function GET(request: Request) {
     `[Newsletter] Starting run for week of ${weekDates.weekLabel}, send date: ${weekDates.tuesday}`
   );
 
+  // Fetch recent blog posts
   const recentPosts = await fetchRecentPosts();
   console.log(`[Newsletter] Found ${recentPosts.length} recent posts`);
 
+  // Optional theme from calendar
   const plan = findCurrentPlan(weekDates.tuesday);
   if (plan) {
-    console.log(
-      `[Newsletter] Found calendar plan: "${plan.theme}" (${plan.focusVertical})`
-    );
-  } else {
-    console.log(
-      "[Newsletter] No calendar plan found — AI will research and create theme"
-    );
+    console.log(`[Newsletter] Calendar plan: "${plan.theme}"`);
   }
 
-  const educationTopic = getEducationTopicForWeek(weekDates.weekNumber);
+  // Education candidates (3 options for AI to choose from)
+  const educationCandidates = getEducationCandidates(weekDates.weekNumber, 3);
   console.log(
-    `[Newsletter] Education topic: "${educationTopic.topic}" (Phase ${educationTopic.phase}: ${educationTopic.phaseTitle}, Week ${educationTopic.week}/24)`
+    `[Newsletter] Education candidates: ${educationCandidates.map((t) => `"${t.topic}"`).join(", ")}`
   );
 
+  // Featured lender (rotation)
+  const featuredLender = lenders[weekDates.weekNumber % lenders.length];
+  console.log(`[Newsletter] Featured lender: ${featuredLender.name}`);
+
+  // Generate content
   let content: NewsletterContent;
   try {
     console.log("[Newsletter] Generating newsletter content with AI...");
@@ -241,9 +235,12 @@ export async function GET(request: Request) {
       recentPosts,
       siteUrl,
       weekDates.weekLabel,
-      educationTopic
+      educationCandidates,
+      featuredLender
     );
-    console.log(`[Newsletter] Generated: "${content.subject}"`);
+    console.log(
+      `[Newsletter] Generated: "${content.subject}" (main: ${content.mainSection.type})`
+    );
   } catch (err) {
     const msg = `Newsletter content generation failed: ${err instanceof Error ? err.message : err}`;
     console.error(msg);
@@ -253,21 +250,43 @@ export async function GET(request: Request) {
     );
   }
 
+  // Build HTML email
+  const archiveSlug = weekDates.weekLabel;
   const newsletterHtml = buildNewsletterHtml(
     content,
     siteUrl,
-    weekDates.weekLabel
+    weekDates.weekLabel,
+    archiveSlug
   );
   console.log(
     `[Newsletter] Built HTML email (${(newsletterHtml.length / 1024).toFixed(1)} KB)`
   );
 
+  // Publish to Sanity for web archive
+  try {
+    const { slug } = await publishNewsletterIssue(
+      content,
+      newsletterHtml,
+      weekDates.weekLabel,
+      weekDates.weekNumber
+    );
+    console.log(`[Newsletter] Published to Sanity: /newsletter/${slug}`);
+  } catch (err) {
+    const msg = `Sanity publish failed: ${err instanceof Error ? err.message : err}`;
+    console.error(msg);
+    errors.push(msg);
+  }
+
+  // Send preview + schedule delivery
   const resendApiKey = process.env.RESEND_API_KEY;
   const fromEmail =
-    process.env.RESEND_FROM_EMAIL || "ProInvestorHub <noreply@proinvestorhub.com>";
+    process.env.RESEND_FROM_EMAIL ||
+    "ProInvestorHub <noreply@proinvestorhub.com>";
 
   if (resendApiKey) {
     const resend = new Resend(resendApiKey);
+
+    // Preview to Bill
     try {
       const preview = await sendPreviewEmail(
         resend,
@@ -278,114 +297,54 @@ export async function GET(request: Request) {
       if (preview.success) {
         console.log(`[Newsletter] Preview sent to ${REVIEW_EMAIL}`);
       } else {
-        const msg = `Preview email failed: ${preview.error}`;
-        console.error(msg);
-        errors.push(msg);
+        errors.push(`Preview email failed: ${preview.error}`);
       }
     } catch (err) {
-      const msg = `Preview email error: ${err instanceof Error ? err.message : err}`;
-      console.error(msg);
-      errors.push(msg);
+      errors.push(
+        `Preview email error: ${err instanceof Error ? err.message : err}`
+      );
     }
-  } else {
-    console.warn("[Newsletter] RESEND_API_KEY not set — skipping preview email");
-    errors.push("RESEND_API_KEY not set — preview email not sent");
-  }
 
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
-  let broadcastId: string | undefined;
-
-  if (resendApiKey && audienceId) {
-    try {
-      const scheduledAt = `${weekDates.tuesday}T14:00:00.000Z`;
-      console.log(
-        `[Newsletter] Scheduling broadcast to audience ${audienceId} for ${scheduledAt}`
-      );
-      const result = await scheduleBroadcast(
-        audienceId,
-        fromEmail,
-        content.subject,
-        newsletterHtml,
-        scheduledAt
-      );
-      if (result.success) {
-        broadcastId = result.broadcastId;
-        console.log(
-          `[Newsletter] Broadcast scheduled: ${broadcastId}`
+    // Schedule delivery to subscribers
+    const audienceId = process.env.RESEND_AUDIENCE_ID;
+    if (audienceId) {
+      try {
+        const scheduledAt = `${weekDates.tuesday}T14:00:00.000Z`;
+        const result = await sendToContacts(
+          resend,
+          audienceId,
+          fromEmail,
+          content.subject,
+          newsletterHtml,
+          scheduledAt
         );
-      } else {
-        const msg = `Broadcast scheduling failed: ${result.error}`;
-        console.error(msg);
-        errors.push(msg);
+        if (result.success) {
+          console.log(`[Newsletter] Scheduled: ${result.broadcastId}`);
+        } else {
+          errors.push(`Send failed: ${result.error}`);
+        }
+      } catch (err) {
+        errors.push(
+          `Send error: ${err instanceof Error ? err.message : err}`
+        );
       }
-    } catch (err) {
-      const msg = `Broadcast error: ${err instanceof Error ? err.message : err}`;
-      console.error(msg);
-      errors.push(msg);
+    } else {
+      errors.push("RESEND_AUDIENCE_ID not set");
     }
-  } else {
-    const msg = audienceId
-      ? "RESEND_API_KEY not set — broadcast not scheduled"
-      : "RESEND_AUDIENCE_ID not set — broadcast not scheduled";
-    console.warn(`[Newsletter] ${msg}`);
-    errors.push(msg);
-  }
 
-  const reportData = {
-    runDate: new Date().toISOString(),
-    weekOf: weekDates.weekLabel,
-    sendDate: weekDates.tuesday,
-    theme: plan?.theme || "AI-generated",
-    focusVertical: plan?.focusVertical || "AI-selected",
-    subject: content.subject,
-    previewText: content.previewText,
-    broadcastId: broadcastId || null,
-    featuredArticle: content.featuredArticle,
-    quickTips: content.quickTips.map((t) => t.title),
-    newsHeadlines: content.newsUpdate.items.map((n) => n.title),
-    educationTopic: content.education.topic,
-    educationPhase: content.education.phase,
-    educationWeek: content.education.weekNumber,
-    industryInsight: content.industryInsight.headline,
-    errors,
-  };
-
-  try {
-    await commitFilesToGitHub(
-      [
-        {
-          path: `data/newsletter-archive/${weekDates.weekLabel}.json`,
-          content: JSON.stringify(reportData, null, 2),
-        },
-        {
-          path: `data/newsletter-archive/${weekDates.weekLabel}.html`,
-          content: newsletterHtml,
-        },
-      ],
-      `chore(newsletter): weekly newsletter — ${weekDates.weekLabel}\n\nSubject: ${content.subject}\nTheme: ${plan?.theme || "AI-generated"}\nScheduled for: ${weekDates.tuesday}`
-    );
-    console.log("[Newsletter] Committed newsletter archive to GitHub");
-  } catch (err) {
-    const msg = `GitHub commit failed: ${err instanceof Error ? err.message : err}`;
-    console.error(msg);
-    errors.push(msg);
-  }
-
-  if (resendApiKey) {
+    // Send report email
     try {
-      const resend = new Resend(resendApiKey);
       await resend.emails.send({
         from: fromEmail,
         to: REVIEW_EMAIL,
         subject: `Newsletter Report — ${weekDates.weekLabel}`,
-        html: buildReportHtml(reportData, weekDates),
+        html: buildReportHtml(content, weekDates, errors),
       });
-      console.log(`[Newsletter] Report email sent to ${REVIEW_EMAIL}`);
     } catch (err) {
-      const msg = `Report email failed: ${err instanceof Error ? err.message : err}`;
-      console.error(msg);
-      errors.push(msg);
+      console.error("Report email failed:", err);
     }
+  } else {
+    errors.push("RESEND_API_KEY not set");
   }
 
   const duration = Date.now() - startTime;
@@ -398,7 +357,8 @@ export async function GET(request: Request) {
     duration,
     weekOf: weekDates.weekLabel,
     subject: content.subject,
-    broadcastId,
+    mainType: content.mainSection.type,
+    featuredLender: content.featuredPartner.lenderName,
     previewSentTo: REVIEW_EMAIL,
     scheduledFor: weekDates.tuesday,
     errors,
@@ -406,73 +366,46 @@ export async function GET(request: Request) {
 }
 
 function buildReportHtml(
-  report: {
-    runDate: string;
-    weekOf: string;
-    sendDate: string;
-    theme: string;
-    focusVertical: string;
-    subject: string;
-    previewText: string;
-    broadcastId: string | null;
-    featuredArticle: { title: string; slug: string };
-    quickTips: string[];
-    newsHeadlines: string[];
-    educationTopic: string;
-    educationPhase: string;
-    educationWeek: number;
-    industryInsight: string;
-    errors: string[];
-  },
-  weekDates: { tuesday: string; weekLabel: string }
+  content: NewsletterContent,
+  weekDates: { tuesday: string; weekLabel: string },
+  errors: string[]
 ): string {
-  const tipsHtml = report.quickTips
-    .map((t) => `<li style="margin-bottom: 4px;">${t}</li>`)
-    .join("");
-
   const errorsHtml =
-    report.errors.length > 0
+    errors.length > 0
       ? `<div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 16px; margin-top: 20px;">
           <h3 style="color: #dc2626; margin: 0 0 8px;">Issues</h3>
-          <ul style="margin: 0; padding-left: 20px;">${report.errors.map((e) => `<li>${e}</li>`).join("")}</ul>
+          <ul style="margin: 0; padding-left: 20px;">${errors.map((e) => `<li>${e}</li>`).join("")}</ul>
         </div>`
       : "";
+
+  const blogList = content.blogHighlights
+    .map((b) => `<li>${b.title}</li>`)
+    .join("");
 
   return `<!DOCTYPE html>
 <html><head><meta charset="utf-8"></head>
 <body style="font-family: -apple-system, sans-serif; color: #1f2937; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="background: linear-gradient(135deg, #1B4D3E, #2d7d5f); color: white; padding: 24px; border-radius: 12px; margin-bottom: 20px;">
     <h1 style="margin: 0 0 4px; font-size: 22px;">Newsletter Report</h1>
-    <p style="margin: 0; opacity: 0.9; font-size: 14px;">ProInvestorHub — Week of ${report.weekOf}</p>
+    <p style="margin: 0; opacity: 0.9; font-size: 14px;">ProInvestorHub — Week of ${weekDates.weekLabel}</p>
   </div>
 
   <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-    <tr><td style="padding: 8px 0; font-weight: 600; width: 140px;">Subject</td><td style="padding: 8px 0;">${report.subject}</td></tr>
-    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Preview</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${report.previewText}</td></tr>
-    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Theme</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${report.theme}</td></tr>
-    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Vertical</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${report.focusVertical}</td></tr>
-    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Send Date</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${weekDates.tuesday} at 9:00 AM ET</td></tr>
-    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Broadcast ID</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${report.broadcastId || "Not scheduled"}</td></tr>
-    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Featured</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${report.featuredArticle.title}</td></tr>
+    <tr><td style="padding: 8px 0; font-weight: 600; width: 140px;">Subject</td><td style="padding: 8px 0;">${content.subject}</td></tr>
+    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Preview</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${content.previewText}</td></tr>
+    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Main Section</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${content.mainSection.type}: ${content.mainSection.title}</td></tr>
+    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Secondary</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${content.secondarySection.type}: ${content.secondarySection.title}</td></tr>
+    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Partner</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${content.featuredPartner.lenderName}</td></tr>
+    <tr><td style="padding: 8px 0; font-weight: 600; border-top: 1px solid #e5e7eb;">Send Date</td><td style="padding: 8px 0; border-top: 1px solid #e5e7eb;">${weekDates.tuesday} at 2 PM UTC</td></tr>
   </table>
 
-  <h3 style="margin: 0 0 8px; font-size: 16px;">News Headlines</h3>
-  <ul style="margin: 0 0 20px; padding-left: 20px;">${report.newsHeadlines.map((h) => `<li>${h}</li>`).join("")}</ul>
+  ${blogList ? `<h3 style="margin: 0 0 8px; font-size: 16px;">Blog Highlights</h3><ul style="margin: 0 0 20px; padding-left: 20px;">${blogList}</ul>` : ""}
 
-  <h3 style="margin: 0 0 8px; font-size: 16px;">Quick Tips Included</h3>
-  <ul style="margin: 0 0 20px; padding-left: 20px;">${tipsHtml}</ul>
-
-  <h3 style="margin: 0 0 8px; font-size: 16px;">Education</h3>
-  <p style="margin: 0 0 20px;">Week ${report.educationWeek}: ${report.educationTopic} (${report.educationPhase})</p>
-
-  <h3 style="margin: 0 0 8px; font-size: 16px;">Market Insight</h3>
-  <p style="margin: 0 0 20px;">${report.industryInsight}</p>
-
-  <p style="color: #6b7280; font-size: 13px;">A preview copy of the newsletter was sent separately. Reply to this email with any changes needed before Tuesday.</p>
+  <p style="color: #6b7280; font-size: 13px;">A preview copy was sent separately. Reply to this email with any changes before Tuesday.</p>
 
   ${errorsHtml}
 
   <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0 12px;">
-  <p style="color: #9ca3af; font-size: 11px;">Generated by the ProInvestorHub newsletter cron job at ${report.runDate}</p>
+  <p style="color: #9ca3af; font-size: 11px;">Generated by ProInvestorHub newsletter cron at ${new Date().toISOString()}</p>
 </body></html>`;
 }

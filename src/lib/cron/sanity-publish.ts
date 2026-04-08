@@ -1,5 +1,6 @@
 import { createClient } from "next-sanity";
 import type { GeneratedArticle } from "./types";
+import type { NewsletterContent } from "./newsletter-ai";
 import { sectionsToPortableText } from "./ai-content";
 
 function getSanityWriteClient() {
@@ -114,4 +115,37 @@ export async function publishArticle(
   console.log(`Published: ${article.brief.title}`);
 
   return { id: postId, slug: article.brief.slug };
+}
+
+export async function publishNewsletterIssue(
+  content: NewsletterContent,
+  html: string,
+  weekLabel: string,
+  issueNumber: number
+): Promise<{ id: string; slug: string }> {
+  const client = getSanityWriteClient();
+  const slug = weekLabel;
+  const docId = `newsletter-${slug}`;
+
+  const doc = {
+    _id: docId,
+    _type: "newsletterIssue" as const,
+    issueNumber,
+    subject: content.subject,
+    slug: { _type: "slug" as const, current: slug },
+    publishedAt: new Date(weekLabel + "T09:00:00Z").toISOString(),
+    previewText: content.previewText,
+    excerpt: content.personalIntro.substring(0, 200),
+    contentJson: JSON.stringify(content),
+    emailHtml: html,
+    seo: {
+      metaTitle: `${content.subject} | ProInvestorHub Newsletter`,
+      metaDescription: content.previewText,
+    },
+  };
+
+  await client.createOrReplace(doc);
+  console.log(`Published newsletter: ${content.subject} → /newsletter/${slug}`);
+
+  return { id: docId, slug };
 }

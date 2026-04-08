@@ -16,6 +16,7 @@ const navigation: NavItem[] = [
     name: 'Learn',
     children: [
       { name: 'Blog', href: '/blog', description: 'Articles & guides' },
+      { name: 'Newsletter', href: '/newsletter', description: 'Weekly insights archive' },
       { name: 'Glossary', href: '/glossary', description: 'A–Z investor terms' },
       { name: 'Guides', href: '/guides', description: 'Strategy deep dives' },
     ],
@@ -30,6 +31,7 @@ const mobileNavigation = [
   { name: 'Lenders', href: '/lenders' },
   { name: 'Markets', href: '/markets' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Newsletter', href: '/newsletter' },
   { name: 'Glossary', href: '/glossary' },
   { name: 'Guides', href: '/guides' },
   { name: 'About', href: '/about' },

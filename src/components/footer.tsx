@@ -5,6 +5,7 @@ const footerLinks = {
   Learn: [
     { name: 'Start Here', href: '/start-here' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Newsletter', href: '/newsletter' },
     { name: 'Glossary', href: '/glossary' },
     { name: 'Guides', href: '/guides' },
     { name: 'Markets', href: '/markets' },

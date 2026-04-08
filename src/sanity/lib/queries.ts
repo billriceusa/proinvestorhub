@@ -289,6 +289,51 @@ export const LENDERS_BY_LOAN_TYPE_QUERY = defineQuery(/* groq */ `
   }
 `)
 
+// ── Newsletter Archive ────────────────────────────────
+export const NEWSLETTER_ISSUES_COUNT_QUERY = defineQuery(/* groq */ `
+  count(*[_type == "newsletterIssue" && defined(slug.current)])
+`)
+
+export const NEWSLETTER_ISSUES_QUERY = defineQuery(/* groq */ `
+  *[_type == "newsletterIssue" && defined(slug.current)]
+  | order(publishedAt desc) [$offset...$offset + $limit] {
+    _id,
+    issueNumber,
+    subject,
+    "slug": slug.current,
+    publishedAt,
+    excerpt
+  }
+`)
+
+export const NEWSLETTER_ISSUE_BY_SLUG_QUERY = defineQuery(/* groq */ `
+  *[_type == "newsletterIssue" && slug.current == $slug][0] {
+    _id,
+    issueNumber,
+    subject,
+    "slug": slug.current,
+    publishedAt,
+    previewText,
+    excerpt,
+    contentJson,
+    seo
+  }
+`)
+
+export const NEWSLETTER_ISSUE_SLUGS_QUERY = defineQuery(/* groq */ `
+  *[_type == "newsletterIssue" && defined(slug.current)]
+  | order(publishedAt desc) { "slug": slug.current }
+`)
+
+export const NEWSLETTER_ISSUE_NEIGHBORS_QUERY = defineQuery(/* groq */ `
+  {
+    "prev": *[_type == "newsletterIssue" && publishedAt < $publishedAt]
+      | order(publishedAt desc)[0] { "slug": slug.current, subject },
+    "next": *[_type == "newsletterIssue" && publishedAt > $publishedAt]
+      | order(publishedAt asc)[0] { "slug": slug.current, subject }
+  }
+`)
+
 // ── Site Settings ─────────────────────────────────────
 export const SITE_SETTINGS_QUERY = defineQuery(/* groq */ `
   *[_type == "siteSettings"][0] {
