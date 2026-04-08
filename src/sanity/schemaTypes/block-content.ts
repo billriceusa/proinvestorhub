@@ -61,5 +61,6 @@ export const blockContent = defineType({
     }),
     defineArrayMember({ type: 'partnerCta' }),
     defineArrayMember({ type: 'simpleTable' }),
+    defineArrayMember({ type: 'callout' }),
   ],
 })

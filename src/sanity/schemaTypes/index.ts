@@ -10,6 +10,7 @@ import { simpleTable } from './simple-table'
 import { loanType } from './loan-type'
 import { lender } from './lender'
 import { newsletterIssue } from './newsletter-issue'
+import { callout } from './callout'
 
 export const schemaTypes = [
   post,
@@ -24,4 +25,5 @@ export const schemaTypes = [
   loanType,
   lender,
   newsletterIssue,
+  callout,
 ]

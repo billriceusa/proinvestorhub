@@ -55,6 +55,53 @@ const components: PortableTextComponents = {
         description={value.description}
       />
     ),
+    callout: ({ value }: { value: { type: string; title?: string; body: string } }) => {
+      const config: Record<string, { border: string; bg: string; iconColor: string; defaultTitle: string; icon: string }> = {
+        'key-concept': {
+          border: 'border-l-primary',
+          bg: 'bg-emerald-50',
+          iconColor: 'text-primary',
+          defaultTitle: 'Key Concept',
+          icon: 'M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18',
+        },
+        'pro-tip': {
+          border: 'border-l-accent',
+          bg: 'bg-amber-50',
+          iconColor: 'text-amber-600',
+          defaultTitle: 'Pro Tip',
+          icon: 'M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z',
+        },
+        warning: {
+          border: 'border-l-red-500',
+          bg: 'bg-red-50',
+          iconColor: 'text-red-500',
+          defaultTitle: 'Warning',
+          icon: 'M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z',
+        },
+        example: {
+          border: 'border-l-blue-500',
+          bg: 'bg-blue-50',
+          iconColor: 'text-blue-500',
+          defaultTitle: 'Example',
+          icon: 'M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z',
+        },
+      }
+
+      const c = config[value.type] || config['key-concept']
+      const title = value.title || c.defaultTitle
+
+      return (
+        <div className={`my-6 rounded-lg border-l-4 ${c.border} ${c.bg} p-4 sm:p-5`}>
+          <div className="flex items-center gap-2 mb-2">
+            <svg className={`h-5 w-5 shrink-0 ${c.iconColor}`} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d={c.icon} />
+            </svg>
+            <p className={`text-sm font-bold uppercase tracking-wide ${c.iconColor}`}>{title}</p>
+          </div>
+          <p className="text-sm text-text leading-relaxed">{value.body}</p>
+        </div>
+      )
+    },
     simpleTable: ({ value }: { value: { rows: { _key: string; cells: string[] }[] } }) => {
       if (!value?.rows?.length) return null
       const [headerRow, ...bodyRows] = value.rows

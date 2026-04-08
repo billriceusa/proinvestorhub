@@ -4,7 +4,8 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { sanityFetch } from '@/sanity/lib/live'
 import {
-  POSTS_BY_CATEGORY_SLUG_ALL_QUERY,
+  POSTS_BY_CATEGORY_PAGINATED_QUERY,
+  POSTS_BY_CATEGORY_COUNT_QUERY,
   GLOSSARY_TERMS_BY_CATEGORY_QUERY,
 } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
@@ -15,7 +16,10 @@ import {
 } from '@/components/json-ld'
 import { CalculatorCTA } from '@/components/calculator-cta'
 import { NewsletterSignup } from '@/components/newsletter-signup'
+import { Pagination } from '@/components/pagination'
 import { categoryHubContent } from '@/data/category-content'
+
+const POSTS_PER_PAGE = 12
 
 export function generateStaticParams() {
   return categoryHubContent.map((c) => ({ slug: c.slug }))
@@ -43,19 +47,29 @@ export async function generateMetadata({
 
 export default async function CategoryHubPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>
+  searchParams: Promise<{ page?: string }>
 }) {
   const { slug } = await params
+  const { page: pageParam } = await searchParams
+  const currentPage = Math.max(1, parseInt(pageParam || '1', 10) || 1)
   const category = categoryHubContent.find((c) => c.slug === slug)
   if (!category) notFound()
 
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
-  const [postsResult, glossaryResult] = await Promise.all([
+  const offset = (currentPage - 1) * POSTS_PER_PAGE
+
+  const [postsResult, countResult, glossaryResult] = await Promise.all([
     sanityFetch({
-      query: POSTS_BY_CATEGORY_SLUG_ALL_QUERY,
+      query: POSTS_BY_CATEGORY_PAGINATED_QUERY,
+      params: { categorySlug: slug, offset, limit: POSTS_PER_PAGE },
+    }),
+    sanityFetch({
+      query: POSTS_BY_CATEGORY_COUNT_QUERY,
       params: { categorySlug: slug },
     }),
     sanityFetch({
@@ -65,6 +79,8 @@ export default async function CategoryHubPage({
   ])
 
   const posts = postsResult.data ?? []
+  const totalCount = (countResult.data as number) || 0
+  const totalPages = Math.ceil(totalCount / POSTS_PER_PAGE)
   const glossaryTerms = glossaryResult.data ?? []
 
   return (
@@ -103,7 +119,7 @@ export default async function CategoryHubPage({
           {category.title}
         </h1>
         <p className="mt-2 text-sm text-text-muted">
-          {posts.length} {posts.length === 1 ? 'article' : 'articles'}
+          {totalCount} {totalCount === 1 ? 'article' : 'articles'}
         </p>
       </div>
 
@@ -172,6 +188,15 @@ export default async function CategoryHubPage({
               </div>
             )}
           </section>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              basePath={`/blog/category/${slug}`}
+            />
+          )}
 
           {/* FAQ */}
           <section>

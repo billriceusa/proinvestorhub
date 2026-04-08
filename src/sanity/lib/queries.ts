@@ -126,6 +126,31 @@ export const POSTS_BY_CATEGORY_SLUG_QUERY = defineQuery(/* groq */ `
 `)
 
 // Posts by category (all, for hub pages)
+export const POSTS_BY_CATEGORY_COUNT_QUERY = defineQuery(/* groq */ `
+  count(*[_type == "post" && defined(slug.current) && publishedAt <= now() && $categorySlug in categories[]->slug.current])
+`)
+
+export const POSTS_BY_CATEGORY_PAGINATED_QUERY = defineQuery(/* groq */ `
+  *[_type == "post" && defined(slug.current) && publishedAt <= now() && $categorySlug in categories[]->slug.current]
+  | order(publishedAt desc) [$offset...$offset + $limit] {
+    _id,
+    title,
+    "slug": slug.current,
+    excerpt,
+    publishedAt,
+    mainImage {
+      asset->{
+        _id,
+        url,
+        metadata { lqip, dimensions }
+      },
+      alt
+    },
+    author->{ name, "slug": slug.current },
+    categories[]->{ _id, title, "slug": slug.current }
+  }
+`)
+
 export const POSTS_BY_CATEGORY_SLUG_ALL_QUERY = defineQuery(/* groq */ `
   *[_type == "post" && defined(slug.current) && publishedAt <= now() && $categorySlug in categories[]->slug.current]
   | order(publishedAt desc) {

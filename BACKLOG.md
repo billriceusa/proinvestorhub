@@ -20,14 +20,14 @@
 ## P1 — Soon
 
 ### Content System
-- [ ] Learning callout Sanity schema — new `callout` block type (key-concept, pro-tip, warning, example) with Lucide icons + colored left border in portable-text renderer
+- [x] Learning callout Sanity schema — new `callout` block type (key-concept, pro-tip, warning, example) with Lucide icons + colored left border in portable-text renderer
 - [ ] Sanity `inlineCta` block type — let editors manually place CTAs (lead-magnet, newsletter, calculator, lender-finder) anywhere in article body via CMS
 - [ ] Guides as distinct content type — create Sanity `guide` schema (longer than posts, multi-section, own template), replace the hollow `/guides` redirect with real guide pages
 - [ ] Strategy comparison content — "BRRRR vs Buy-and-Hold", "House Hacking vs Cash Flow Investing" etc. High-intent search terms with no existing content
-- [ ] Blog category page pagination — `/blog/category/[slug]` likely loads all posts without pagination, apply same fix as blog hub
+- [x] Blog category page pagination — `/blog/category/[slug]` paginated at 12 posts per page
 
 ### SEO & Schema
-- [ ] FAQ schema on blog posts — add `FAQPage` JSON-LD to articles that contain FAQ-style H2/H3 sections, missed featured snippet opportunity
+- [x] FAQ schema on blog posts — `FAQPage` JSON-LD auto-extracted from H2/H3 headings containing "?" with following paragraph text as answers
 - [ ] HowTo schema on guide/how-to content — "how to analyze a rental property" type queries
 - [ ] Site-wide search — global search across blog, glossary, lenders, markets. Add search bar to header. Update `WebSite` SearchAction to point to real search page instead of `/glossary?q=`
 
@@ -75,3 +75,6 @@
 - [x] **2026-04-08** Newsletter archive on web — `/newsletter` listing + `/newsletter/[slug]` individual issues, Sanity `newsletterIssue` schema, sitemap, nav links
 - [x] **2026-04-08** Newsletter restructured — 6 sections, 2000 word max, AI decides trends vs education mix, featured lending partner rotation, 1-2 blog CTAs
 - [x] **2026-04-08** Voice refinement — lending veteran + curious RE investing peer, collegial tone across newsletter AI, blog content AI, and welcome email
+- [x] **2026-04-08** FAQ schema on blog posts — auto-extracts Q&A from headings with "?", adds FAQPage JSON-LD (2+ FAQs required)
+- [x] **2026-04-08** Blog category pagination — 12 posts per page with Pagination component
+- [x] **2026-04-08** Callout block type — key-concept, pro-tip, warning, example with Lucide icons + colored borders in Sanity + portable text
