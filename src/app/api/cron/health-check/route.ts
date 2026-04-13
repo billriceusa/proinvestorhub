@@ -1,0 +1,195 @@
+import { NextResponse } from "next/server";
+import { createClient } from "next-sanity";
+import { Resend } from "resend";
+
+export const maxDuration = 60;
+export const dynamic = "force-dynamic";
+
+const ALERT_EMAIL = "bill@billricestrategy.com";
+
+type HealthCheck = {
+  name: string;
+  ok: boolean;
+  detail: string;
+  lastSeen?: string;
+  ageDays?: number;
+};
+
+function getSanityClient() {
+  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+  const token = (
+    process.env.SANITY_API_TOKEN || process.env.SANITY_API_WRITE_TOKEN || ""
+  ).trim();
+  if (!projectId || !token) {
+    throw new Error("Missing NEXT_PUBLIC_SANITY_PROJECT_ID or SANITY_API_TOKEN");
+  }
+  return createClient({
+    projectId,
+    dataset,
+    apiVersion: "2026-03-14",
+    token,
+    useCdn: false,
+  });
+}
+
+function daysBetween(fromIso: string, to: Date): number {
+  const from = new Date(fromIso).getTime();
+  return Math.round((to.getTime() - from) / 86400000);
+}
+
+async function checkWeeklyContent(client: ReturnType<typeof getSanityClient>, now: Date): Promise<HealthCheck> {
+  const latest = await client.fetch<{ _createdAt: string; title: string } | null>(
+    `*[_type == "post"] | order(_createdAt desc)[0]{ _createdAt, title }`
+  );
+  if (!latest) {
+    return { name: "Weekly content", ok: false, detail: "No posts exist in Sanity" };
+  }
+  const age = daysBetween(latest._createdAt, now);
+  const ok = age <= 10;
+  return {
+    name: "Weekly content",
+    ok,
+    detail: ok
+      ? `Latest post "${latest.title}" created ${age}d ago`
+      : `Latest post was ${age}d ago — weekly cron may have failed. Title: "${latest.title}"`,
+    lastSeen: latest._createdAt,
+    ageDays: age,
+  };
+}
+
+async function checkNewsletter(client: ReturnType<typeof getSanityClient>, now: Date): Promise<HealthCheck> {
+  const latest = await client.fetch<{ _updatedAt: string; subject: string } | null>(
+    `*[_type == "newsletterIssue"] | order(_updatedAt desc)[0]{ _updatedAt, subject }`
+  );
+  if (!latest) {
+    return { name: "Newsletter", ok: false, detail: "No newsletter issues exist" };
+  }
+  const age = daysBetween(latest._updatedAt, now);
+  const ok = age <= 9;
+  return {
+    name: "Newsletter",
+    ok,
+    detail: ok
+      ? `Latest issue "${latest.subject}" updated ${age}d ago`
+      : `Latest newsletter was ${age}d ago — weekly newsletter cron may have failed`,
+    lastSeen: latest._updatedAt,
+    ageDays: age,
+  };
+}
+
+async function checkMarketData(client: ReturnType<typeof getSanityClient>, now: Date): Promise<HealthCheck> {
+  const latest = await client.fetch<{ dataUpdatedAt: string; city: string } | null>(
+    `*[_type == "marketCity" && defined(dataUpdatedAt)] | order(dataUpdatedAt desc)[0]{ dataUpdatedAt, city }`
+  );
+  if (!latest) {
+    return { name: "Market data", ok: false, detail: "No marketCity docs have dataUpdatedAt" };
+  }
+  const age = daysBetween(latest.dataUpdatedAt, now);
+  const ok = age <= 35;
+  return {
+    name: "Market data",
+    ok,
+    detail: ok
+      ? `Latest refresh (${latest.city}) was ${age}d ago`
+      : `Market data is ${age}d old — monthly refresh-markets cron may have failed`,
+    lastSeen: latest.dataUpdatedAt,
+    ageDays: age,
+  };
+}
+
+async function checkFuturePipeline(client: ReturnType<typeof getSanityClient>, now: Date): Promise<HealthCheck> {
+  const nowIso = now.toISOString();
+  const count = await client.fetch<number>(
+    `count(*[_type == "post" && publishedAt > $now])`,
+    { now: nowIso }
+  );
+  const ok = count >= 3;
+  return {
+    name: "Future content pipeline",
+    ok,
+    detail: ok
+      ? `${count} posts scheduled for the future`
+      : `Only ${count} posts scheduled ahead — pipeline is running dry`,
+  };
+}
+
+function buildAlertEmail(checks: HealthCheck[], now: Date): string {
+  const failing = checks.filter((c) => !c.ok);
+  const rows = checks
+    .map(
+      (c) => `
+      <tr>
+        <td style="padding: 10px 12px; border-bottom: 1px solid #e5e7eb; font-weight: 600;">
+          <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: ${c.ok ? "#10b981" : "#dc2626"}; margin-right: 8px;"></span>${c.name}
+        </td>
+        <td style="padding: 10px 12px; border-bottom: 1px solid #e5e7eb; color: ${c.ok ? "#1f2937" : "#991b1b"};">${c.detail}</td>
+      </tr>`
+    )
+    .join("");
+
+  const bannerColor = failing.length > 0 ? "#dc2626" : "#166534";
+  const bannerLabel =
+    failing.length > 0
+      ? `${failing.length} cron health check${failing.length > 1 ? "s" : ""} failing`
+      : "All automations healthy";
+
+  return `<!DOCTYPE html>
+<html><head><meta charset="utf-8"></head>
+<body style="font-family: -apple-system, sans-serif; color: #1f2937; max-width: 640px; margin: 0 auto; padding: 20px;">
+  <div style="background: linear-gradient(135deg, ${bannerColor}, #1B4D3E); color: white; padding: 24px; border-radius: 12px; margin-bottom: 20px;">
+    <h1 style="margin: 0 0 4px; font-size: 22px;">ProInvestorHub Cron Health</h1>
+    <p style="margin: 0; opacity: 0.95;">${bannerLabel}</p>
+    <p style="margin: 8px 0 0; opacity: 0.7; font-size: 13px;">${now.toISOString()}</p>
+  </div>
+  <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb;">
+    ${rows}
+  </table>
+  <p style="color: #9ca3af; font-size: 12px; margin-top: 24px;">This alert fires daily at 13:00 UTC. You only receive an email when something is failing.</p>
+</body></html>`;
+}
+
+export async function GET(request: Request) {
+  const authHeader = request.headers.get("authorization");
+  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const now = new Date();
+  const client = getSanityClient();
+
+  const checks = await Promise.all([
+    checkWeeklyContent(client, now),
+    checkNewsletter(client, now),
+    checkMarketData(client, now),
+    checkFuturePipeline(client, now),
+  ]);
+
+  const failing = checks.filter((c) => !c.ok);
+
+  if (failing.length > 0) {
+    const apiKey = process.env.RESEND_API_KEY;
+    const fromEmail =
+      process.env.RESEND_FROM_EMAIL ||
+      "ProInvestorHub <noreply@proinvestorhub.com>";
+    if (apiKey) {
+      try {
+        const resend = new Resend(apiKey);
+        await resend.emails.send({
+          from: fromEmail,
+          to: ALERT_EMAIL,
+          subject: `[ALERT] ${failing.length} ProInvestorHub cron${failing.length > 1 ? "s" : ""} failing`,
+          html: buildAlertEmail(checks, now),
+        });
+      } catch (err) {
+        console.error("[Health] Failed to send alert email:", err);
+      }
+    }
+  }
+
+  return NextResponse.json({
+    ok: failing.length === 0,
+    checks,
+    timestamp: now.toISOString(),
+  });
+}

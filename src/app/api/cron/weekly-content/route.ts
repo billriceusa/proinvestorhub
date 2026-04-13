@@ -96,7 +96,15 @@ export async function GET(request: Request) {
         weekDates
       );
       analysis = plan.analysis;
-      briefs = plan.briefs;
+      const dayToDate: Record<string, string> = {
+        Mon: weekDates.monday,
+        Wed: weekDates.wednesday,
+        Fri: weekDates.friday,
+      };
+      briefs = plan.briefs.map((b) => ({
+        ...b,
+        publishDate: dayToDate[b.day] ?? b.publishDate,
+      }));
       nextWeekPlan = plan.calendarNotes;
       console.log(`[Planning] Created plan with ${briefs.length} briefs`);
     } catch (err) {

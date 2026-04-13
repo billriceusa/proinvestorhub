@@ -6,6 +6,7 @@
     { "path": "/api/cron/seo-audit", "schedule": "0 10 * * 3" },
     { "path": "/api/cron/send-drip", "schedule": "0 11 * * *" },
     { "path": "/api/cron/daily-performance", "schedule": "0 12 * * *" },
-    { "path": "/api/cron/refresh-markets", "schedule": "0 10 1 * *" }
+    { "path": "/api/cron/refresh-markets", "schedule": "0 10 1 * *" },
+    { "path": "/api/cron/health-check", "schedule": "0 13 * * *" }
   ]
 }
