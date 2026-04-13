@@ -207,7 +207,9 @@ async function fetchFredHomePrice(
 function getSanityWriteClient() {
   const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
   const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
-  const token = process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_API_TOKEN
+  const token = (
+    process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_API_TOKEN || ''
+  ).trim()
 
   if (!projectId || !token) {
     throw new Error('Missing NEXT_PUBLIC_SANITY_PROJECT_ID or SANITY_API_WRITE_TOKEN')
