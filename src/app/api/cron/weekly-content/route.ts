@@ -8,6 +8,7 @@ import {
   publishArticle,
 } from "@/lib/cron/sanity-publish";
 import { commitFilesToGitHub } from "@/lib/cron/git-commit";
+import { recordCronRun } from "@/lib/cron/heartbeat";
 import { sendWeeklyReport } from "@/lib/cron/notify";
 import type {
   WeeklyReport,
@@ -237,6 +238,19 @@ export async function GET(request: Request) {
 
   const success =
     !fatalError && articlesFailed.length === 0 && articlesCreated.length > 0;
+
+  await recordCronRun({
+    name: "weekly-content",
+    status: fatalError
+      ? "failed"
+      : articlesFailed.length > 0 || articlesCreated.length === 0
+        ? "partial"
+        : "ok",
+    detail: fatalError
+      ? fatalError
+      : `created=${articlesCreated.length} skipped=${articlesSkipped.length} failed=${articlesFailed.length}`,
+    durationMs: duration,
+  });
 
   return NextResponse.json({
     success,

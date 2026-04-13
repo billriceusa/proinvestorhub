@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "next-sanity";
 import { Resend } from "resend";
+import { recordCronRun, type CronName } from "@/lib/cron/heartbeat";
 
 export const maxDuration = 60;
 export const dynamic = "force-dynamic";
@@ -98,6 +99,61 @@ async function checkMarketData(client: ReturnType<typeof getSanityClient>, now: 
   };
 }
 
+const CRON_STALENESS: Record<CronName, { maxDays: number; label: string }> = {
+  "weekly-content": { maxDays: 8, label: "Weekly content cron" },
+  "weekly-newsletter": { maxDays: 8, label: "Weekly newsletter cron" },
+  "daily-performance": { maxDays: 2, label: "Daily performance cron" },
+  "send-drip": { maxDays: 2, label: "Send-drip cron" },
+  "seo-audit": { maxDays: 8, label: "SEO audit cron" },
+  "refresh-markets": { maxDays: 35, label: "Refresh-markets cron" },
+  "health-check": { maxDays: 2, label: "Health-check cron" },
+};
+
+async function checkCronHeartbeats(
+  client: ReturnType<typeof getSanityClient>,
+  now: Date
+): Promise<HealthCheck[]> {
+  const heartbeats = await client.fetch<
+    { name: CronName; status: string; ranAt: string; detail: string }[]
+  >(`*[_type == "cronHeartbeat"]{ name, status, ranAt, detail }`);
+  const byName = new Map(heartbeats.map((h) => [h.name, h]));
+  const results: HealthCheck[] = [];
+  const cronsToCheck: CronName[] = [
+    "weekly-content",
+    "weekly-newsletter",
+    "daily-performance",
+    "send-drip",
+    "seo-audit",
+    "refresh-markets",
+  ];
+  for (const name of cronsToCheck) {
+    const { maxDays, label } = CRON_STALENESS[name];
+    const hb = byName.get(name);
+    if (!hb) {
+      results.push({
+        name: label,
+        ok: false,
+        detail: `No heartbeat recorded yet — cron has never run or can't write to Sanity`,
+      });
+      continue;
+    }
+    const age = daysBetween(hb.ranAt, now);
+    const stale = age > maxDays;
+    const failed = hb.status === "failed";
+    const ok = !stale && !failed;
+    let detail: string;
+    if (stale) {
+      detail = `Last run ${age}d ago (threshold ${maxDays}d) — cron may have stopped firing. Last status: ${hb.status}`;
+    } else if (failed) {
+      detail = `Last run failed ${age}d ago: ${hb.detail?.slice(0, 200) || "(no detail)"}`;
+    } else {
+      detail = `Last run ${age}d ago [${hb.status}]: ${hb.detail?.slice(0, 120) || ""}`;
+    }
+    results.push({ name: label, ok, detail, lastSeen: hb.ranAt, ageDays: age });
+  }
+  return results;
+}
+
 async function checkFuturePipeline(client: ReturnType<typeof getSanityClient>, now: Date): Promise<HealthCheck> {
   const nowIso = now.toISOString();
   const count = await client.fetch<number>(
@@ -155,16 +211,21 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  const startTime = Date.now();
   const now = new Date();
   const client = getSanityClient();
 
-  const checks = await Promise.all([
-    checkWeeklyContent(client, now),
-    checkNewsletter(client, now),
-    checkMarketData(client, now),
-    checkFuturePipeline(client, now),
+  const [contentChecks, heartbeatChecks] = await Promise.all([
+    Promise.all([
+      checkWeeklyContent(client, now),
+      checkNewsletter(client, now),
+      checkMarketData(client, now),
+      checkFuturePipeline(client, now),
+    ]),
+    checkCronHeartbeats(client, now),
   ]);
 
+  const checks = [...contentChecks, ...heartbeatChecks];
   const failing = checks.filter((c) => !c.ok);
 
   if (failing.length > 0) {
@@ -186,6 +247,13 @@ export async function GET(request: Request) {
       }
     }
   }
+
+  await recordCronRun({
+    name: "health-check",
+    status: failing.length === 0 ? "ok" : "partial",
+    detail: failing.length === 0 ? "all checks passing" : `${failing.length} failing`,
+    durationMs: Date.now() - startTime,
+  });
 
   return NextResponse.json({
     ok: failing.length === 0,

@@ -13,6 +13,7 @@ import { newsletterIssue } from './newsletter-issue'
 import { callout } from './callout'
 import { inlineCta } from './inline-cta'
 import { guide } from './guide'
+import { cronHeartbeat } from './cron-heartbeat'
 
 export const schemaTypes = [
   post,
@@ -30,4 +31,5 @@ export const schemaTypes = [
   callout,
   inlineCta,
   guide,
+  cronHeartbeat,
 ]

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { refreshMarketData } from '@/lib/cron/refresh-market-data'
+import { recordCronRun } from '@/lib/cron/heartbeat'
 import { Resend } from 'resend'
 
 export const maxDuration = 300
@@ -15,6 +16,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
+  const startTime = Date.now()
   try {
     const result = await refreshMarketData()
 
@@ -83,6 +85,13 @@ export async function GET(request: Request) {
       })
     }
 
+    await recordCronRun({
+      name: 'refresh-markets',
+      status: result.errors.length > 0 ? 'partial' : 'ok',
+      detail: `updated=${result.citiesUpdated} skipped=${result.citiesSkipped} errors=${result.errors.length}`,
+      durationMs: Date.now() - startTime,
+    })
+
     return NextResponse.json({
       success: true,
       ...result,
@@ -90,6 +99,12 @@ export async function GET(request: Request) {
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err)
     console.error('Market data refresh failed:', message)
+    await recordCronRun({
+      name: 'refresh-markets',
+      status: 'failed',
+      detail: message,
+      durationMs: Date.now() - startTime,
+    })
     return NextResponse.json({ success: false, error: message }, { status: 500 })
   }
 }
