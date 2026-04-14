@@ -7,6 +7,12 @@ import {
   type PerformanceAnalysis,
 } from "@/lib/cron/performance-ai";
 import { recordCronRun } from "@/lib/cron/heartbeat";
+import {
+  fetchPerformanceBacklog,
+  mergeRecommendations,
+  serializeBacklog,
+} from "@/lib/cron/performance-backlog";
+import { commitFilesToGitHub } from "@/lib/cron/git-commit";
 
 export const maxDuration = 300;
 export const dynamic = "force-dynamic";
@@ -102,6 +108,44 @@ export async function GET(request: Request) {
     };
   }
 
+  let backlogChanged = false;
+  let backlogItemCount = 0;
+  if (analysis.recommendations.length > 0) {
+    try {
+      const existingBacklog = await fetchPerformanceBacklog();
+      const { backlog, changed } = mergeRecommendations(
+        existingBacklog,
+        analysis.recommendations,
+        reportDate
+      );
+      backlogChanged = changed;
+      backlogItemCount = backlog.items.filter((i) => i.status === "open").length;
+
+      if (changed) {
+        await commitFilesToGitHub(
+          [
+            {
+              path: "data/performance-backlog.json",
+              content: serializeBacklog(backlog),
+            },
+          ],
+          `chore(perf): update performance backlog — ${reportDate}\n\n${
+            backlog.items.filter((i) => i.lastSeen === reportDate).length
+          } items touched today, ${backlogItemCount} open total.`
+        );
+        console.log(
+          `[Performance] Backlog updated and committed (${backlogItemCount} open items)`
+        );
+      } else {
+        console.log("[Performance] Backlog unchanged — skipping commit");
+      }
+    } catch (err) {
+      const msg = `Backlog update failed: ${err instanceof Error ? err.message : err}`;
+      console.error(msg);
+      errors.push(msg);
+    }
+  }
+
   const resendApiKey = process.env.RESEND_API_KEY;
   if (resendApiKey) {
     try {
@@ -149,6 +193,8 @@ export async function GET(request: Request) {
     gscAvailable: gsc.available,
     insightsCount: analysis.insights.length,
     recommendationsCount: analysis.recommendations.length,
+    backlogChanged,
+    backlogOpenCount: backlogItemCount,
     errors,
   });
 }
