@@ -1,0 +1,71 @@
+{
+  "lastUpdated": "2026-04-14T17:47:52.139Z",
+  "items": [
+    {
+      "id": "8fcac82ef6e4",
+      "title": "Exclude Internal/Developer Traffic via GA4 Filter to Get Accurate Baseline",
+      "description": "Create an internal traffic filter in GA4 (Admin > Data Streams > Configure Tag Settings > Define Internal Traffic) using your office/developer IP ranges. Additionally, create a GA4 segment excluding sessions from tagassistant.google.com referral source. This will prevent Tag Manager QA sessions from inflating your metrics and give you an accurate picture of real user behavior. Also add a filter to exclude your own direct visits by IP.",
+      "expectedImpact": "Accurate session and engagement data; likely reveals true daily organic sessions are closer to 0–2/day, enabling honest baseline measurement for growth tracking.",
+      "priority": "high",
+      "firstSeen": "2026-04-14",
+      "lastSeen": "2026-04-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "8190ff80ae05",
+      "title": "Rewrite Meta Titles and Descriptions for Top-Positioned Blog Pages to Drive CTR",
+      "description": "Three blog pages are ranking in positions 2–5 (BRRRR guide at 5.9, beginners guide at 4.7, investor-friendly agent guide at 4.0, BRRRR best cities at 2.0) but generating zero clicks. Audit each page's current meta title and description in Google Search Console's URL Inspection tool. Rewrite titles to include the exact query match plus a compelling differentiator (e.g., 'BRRRR Method Complete Guide 2026: Step-by-Step with Real Numbers'). Keep titles under 60 characters and descriptions under 155 characters. Add schema markup (Article or HowTo) to improve SERP appearance. Test changes and monitor CTR weekly in GSC.",
+      "expectedImpact": "Even a 2–3% CTR on position 2–5 pages with modest impression volume could generate 5–15 additional organic clicks per week — a significant improvement from the current zero baseline.",
+      "priority": "high",
+      "firstSeen": "2026-04-14",
+      "lastSeen": "2026-04-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "83104d7b2dae",
+      "title": "Build Dedicated, Content-Rich Landing Pages Around Calculator Keywords to Escape Page 8+",
+      "description": "The cap rate calculator page (pos 104) and cash-on-cash calculator (pos 83) are ranking too low to generate any traffic. The keyword cluster around 'cap rate calculator' has 20+ impressions/week — meaningful for an early-stage site. Expand each calculator page to include: (1) a fully functional embedded calculator above the fold, (2) a 1,500–2,000 word guide explaining the formula, how to interpret results, and real examples with numbers, (3) an FAQ section targeting long-tail variants like 'cap rate calculator excel' and 'cap rate spreadsheet', (4) internal links from the top-performing blog posts. Submit URLs for indexing via GSC after updates.",
+      "expectedImpact": "Moving calculator pages from position 83–104 to position 20–40 within 60–90 days is realistic with content expansion; breaking into top 20 could yield first organic calculator clicks.",
+      "priority": "high",
+      "firstSeen": "2026-04-14",
+      "lastSeen": "2026-04-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "8e505a9bda7b",
+      "title": "Investigate and Fix the BRRRR Best Cities Page CTR Failure at Position 2",
+      "description": "A position 2 ranking that generates zero clicks is a red flag requiring immediate investigation. Steps: (1) In GSC, check the exact query triggering this ranking and its impression count — if impressions are 1–2, the query volume may simply be near zero. (2) Search the query manually in an incognito browser to see what SERP features (featured snippets, People Also Ask, local packs) are above position 2. (3) If a featured snippet is capturing all clicks, restructure the page content to target the snippet format (add a concise 40–60 word definition or table at the top of the page). (4) If the query volume is genuinely low, identify related higher-volume queries and optimize the page toward those instead.",
+      "expectedImpact": "If a featured snippet is the issue, winning it could deliver the majority of clicks for that query. If query volume is the issue, redirecting optimization effort saves time and focuses on higher-opportunity terms.",
+      "priority": "high",
+      "firstSeen": "2026-04-14",
+      "lastSeen": "2026-04-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "732ff13baa38",
+      "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
+      "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
+      "expectedImpact": "Improved calculator page authority and rankings within 30–60 days; also increases pages-per-session and reduces bounce rate by giving engaged readers a clear next step.",
+      "priority": "medium",
+      "firstSeen": "2026-04-14",
+      "lastSeen": "2026-04-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "fb177dad4da5",
+      "title": "Establish a Content Publishing Cadence of 2–3 Posts Per Week to Build Topical Authority",
+      "description": "The site currently has a thin content footprint — approximately 10–15 blog posts visible in the traffic data. Google's topical authority model rewards sites that comprehensively cover a subject area. Prioritize publishing content in the following clusters based on existing keyword data: (1) Cap rate content — 'average cap rate by city 2026,' 'what is a good cap rate,' 'cap rate vs cash-on-cash return'; (2) BRRRR content — 'BRRRR method calculator,' 'BRRRR deal analysis example,' 'BRRRR refinance requirements'; (3) Beginner investing — 'how to analyze a rental property,' 'real estate investing terms glossary.' Target 1,000–2,000 words per post with original data or examples. Use the existing newsletter infrastructure to distribute new content.",
+      "expectedImpact": "Consistent publishing over 60–90 days should expand impression volume from ~16/day to 50–100+/day and begin generating first consistent organic clicks as topical clusters reach critical mass.",
+      "priority": "medium",
+      "firstSeen": "2026-04-14",
+      "lastSeen": "2026-04-14",
+      "timesRepeated": 1,
+      "status": "open"
+    }
+  ]
+}
