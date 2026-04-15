@@ -144,7 +144,7 @@ ${existingBacklog.items
 
   const response = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 8192,
+    max_tokens: 16384,
     temperature: 0.4,
     system: AUDIT_SYSTEM,
     messages: [
