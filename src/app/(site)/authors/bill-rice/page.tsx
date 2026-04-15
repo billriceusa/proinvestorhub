@@ -48,7 +48,7 @@ export default async function BillRiceAuthorPage() {
               <h1 className="text-3xl font-bold text-white sm:text-4xl">Bill Rice</h1>
               <p className="mt-2 text-accent font-medium">Founder &amp; Author, ProInvestorHub</p>
               <p className="mt-4 text-white/80 max-w-2xl leading-7">
-                Real estate investor, mortgage lending veteran with 30+ years of experience, former AFOSI Special Agent, and founder of BRSG. I built ProInvestorHub to document my investing journey and share the tools and knowledge I wish I had starting out.
+                Real estate investor and mortgage lending veteran with 30+ years of experience. Former AFOSI Special Agent. Employee #7 at DeepGreen Bank; built EquityOnline at Quicken Loans. Founder of Kaleidico (where I&apos;m CRO post-acquisition), Bill Rice Strategy Group, and Verified Vector. Owned and operated Velocity Lending (DTC mortgage lender) 2016-2018. Author of The Lead Buyer&apos;s Playbook. I built ProInvestorHub to document my investing journey and share the tools and knowledge I wish I had starting out.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/90">
