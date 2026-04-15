@@ -142,7 +142,7 @@ ${existingBacklog.items
     )
     .join("\n");
 
-  const response = await client.messages.create({
+  const response = await client.messages.stream({
     model: "claude-sonnet-4-6",
     max_tokens: 32000,
     temperature: 0.4,
@@ -221,11 +221,13 @@ Respond with ONLY valid JSON (no markdown, no code fences).`,
     ],
   });
 
+  const finalMessage = await response.finalMessage();
+
   console.log(
-    `[SEO Audit] auditSite response: stop_reason=${response.stop_reason}, input_tokens=${response.usage.input_tokens}, output_tokens=${response.usage.output_tokens}`
+    `[SEO Audit] auditSite response: stop_reason=${finalMessage.stop_reason}, input_tokens=${finalMessage.usage.input_tokens}, output_tokens=${finalMessage.usage.output_tokens}`
   );
 
-  return JSON.parse(extractJson(response)) as {
+  return JSON.parse(extractJson(finalMessage)) as {
     findings: AuditFinding[];
     overallScore: number;
     strategyRecommendations: string[];
