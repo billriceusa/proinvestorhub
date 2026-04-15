@@ -144,7 +144,7 @@ ${existingBacklog.items
 
   const response = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 16384,
+    max_tokens: 32000,
     temperature: 0.4,
     system: AUDIT_SYSTEM,
     messages: [
@@ -220,6 +220,10 @@ Respond with ONLY valid JSON (no markdown, no code fences).`,
       },
     ],
   });
+
+  console.log(
+    `[SEO Audit] auditSite response: stop_reason=${response.stop_reason}, input_tokens=${response.usage.input_tokens}, output_tokens=${response.usage.output_tokens}`
+  );
 
   return JSON.parse(extractJson(response)) as {
     findings: AuditFinding[];
