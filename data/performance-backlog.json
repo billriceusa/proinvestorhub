@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-14T17:47:52.139Z",
+  "lastUpdated": "2026-04-15T12:02:25.981Z",
   "items": [
     {
       "id": "8fcac82ef6e4",
@@ -46,6 +46,39 @@
       "status": "open"
     },
     {
+      "id": "ab88db3840e1",
+      "title": "Aggressively optimize the cap rate calculator page to target positions 1–20",
+      "description": "The /calculators/cap-rate page is receiving the most impression volume of any calculator page but ranks at position 88. Immediate actions: (1) Rewrite the H1 to exactly match 'Cap Rate Calculator' — the highest-impression query at 3 impressions. (2) Add a 500–800 word explanatory section below the calculator covering cap rate formula, what a good cap rate is by market, and worked examples — this signals content depth to Google. (3) Build 2–3 internal links from the BRRRR guide and rental property ROI articles to the calculator page using anchor text 'cap rate calculator.' (4) Add FAQ schema markup targeting 'what is a good cap rate,' 'how to calculate cap rate,' and 'cap rate vs cash on cash.' (5) Ensure the page loads in under 2 seconds on mobile. Target: move from position 88 to position 20–40 within 60 days, which would generate first real organic clicks.",
+      "expectedImpact": "Moving from position 88 to position 20–30 for 'cap rate calculator' (3 impressions/day currently) could generate 5–15 organic clicks per day given typical CTR curves, representing the site's first meaningful organic traffic.",
+      "priority": "high",
+      "firstSeen": "2026-04-15",
+      "lastSeen": "2026-04-15",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "8eaf16d2e6cd",
+      "title": "Diagnose and fix why top-ranked blog pages (pos 2–6) generate zero clicks",
+      "description": "Three pages rank in positions 2–6 in GSC but produce zero clicks: /blog/how-to-find-an-investor-friendly-real-estate-agent-2026 (pos 4.0), /blog/real-estate-investing-beginners-guide-2026 (pos 4.7), and /blog/brrrr-method-complete-guide (pos 5.9). Steps: (1) Pull the exact queries driving these impressions in GSC — if query volume is <10/month, the positions are real but the opportunity is tiny. (2) Rewrite meta titles to be more click-compelling: add numbers, years, and benefit statements (e.g., 'BRRRR Method: Complete Step-by-Step Guide for 2026 Investors'). (3) Rewrite meta descriptions to include a clear value proposition and call-to-action within 155 characters. (4) Check if these pages are ranking for navigational queries (e.g., branded terms) that will never convert to clicks from non-branded users. (5) If query volume is confirmed low, pivot content to target higher-volume variants identified via Ahrefs or Semrush.",
+      "expectedImpact": "If even one of these pages converts its position-2–6 ranking to clicks at a 10–20% CTR, and the underlying query has 50+ monthly searches, the site could gain 5–10 daily organic clicks from existing rankings alone.",
+      "priority": "high",
+      "firstSeen": "2026-04-15",
+      "lastSeen": "2026-04-15",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "3d18e9763d9c",
+      "title": "Implement on-page engagement improvements to reverse the 82% bounce rate",
+      "description": "The 82.14% bounce rate and 122.7-second average session duration indicate users are not finding immediate value. Specific actions by page type: (1) Homepage (11 views, highest traffic): Add a prominent 'Start Here' section with 3 clear pathways — 'I want to flip houses,' 'I want rental income,' 'I want to BRRRR' — each linking to a dedicated guide. Add the cap rate and cash-on-cash calculators above the fold. (2) Blog posts: Add a sticky table of contents on all long-form guides to encourage scroll depth. Add internal links to related calculators within the first 300 words of every investing guide. (3) Add a related posts widget at the bottom of every blog post showing 3 topically relevant articles. (4) Test adding a lead magnet (free deal analyzer spreadsheet) as an exit-intent popup to capture emails before users bounce. Target: reduce bounce rate below 70% within 30 days.",
+      "expectedImpact": "Reducing bounce rate from 82% to 70% and increasing session duration back toward 169 seconds would improve Google's behavioral signals for these pages, potentially supporting ranking improvements for the blog posts currently stuck at positions 4–6.",
+      "priority": "high",
+      "firstSeen": "2026-04-15",
+      "lastSeen": "2026-04-15",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -64,6 +97,39 @@
       "priority": "medium",
       "firstSeen": "2026-04-14",
       "lastSeen": "2026-04-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "b93f5ff58911",
+      "title": "Build a systematic internal linking structure connecting calculators to blog content",
+      "description": "The site has a clear content architecture (blog guides + calculators + lender reviews) but these silos appear disconnected based on the traffic data — calculator pages get impressions but no visits, while blog pages get visits but no engagement depth. Actions: (1) Create a content map linking every blog post to its most relevant calculator (e.g., BRRRR guide → BRRRR calculator, rental property guide → cap rate + cash-on-cash calculators). (2) Add contextual inline CTAs within blog content: 'Use our free Cap Rate Calculator to run these numbers on your next deal.' (3) Add a 'Tools Used in This Guide' section at the top of each blog post. (4) Ensure the /calculators hub page links to all individual calculators with descriptive anchor text. (5) Add breadcrumb schema to all pages. This will distribute link equity from blog content (which has some ranking traction) to calculator pages (which need authority).",
+      "expectedImpact": "Improved internal linking should help calculator pages inherit authority from ranking blog posts, potentially moving cap rate and cash-on-cash calculators from positions 80–95 to positions 40–60 within 45 days.",
+      "priority": "medium",
+      "firstSeen": "2026-04-15",
+      "lastSeen": "2026-04-15",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "fc8a3a71c56e",
+      "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
+      "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
+      "expectedImpact": "Resolving URL canonicalization consolidates all link equity and crawl signals to a single domain version, which can meaningfully improve rankings for pages currently split across www and non-www.",
+      "priority": "medium",
+      "firstSeen": "2026-04-15",
+      "lastSeen": "2026-04-15",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "17e1a5011f99",
+      "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
+      "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
+      "expectedImpact": "A well-executed cap rate by city data page targeting 20–30 city-specific long-tail queries could generate 50–200 organic sessions per month within 90 days, while also improving the authority of the /calculators/cap-rate page through internal linking.",
+      "priority": "low",
+      "firstSeen": "2026-04-15",
+      "lastSeen": "2026-04-15",
       "timesRepeated": 1,
       "status": "open"
     }
