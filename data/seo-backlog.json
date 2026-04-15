@@ -1,4 +1,319 @@
 {
-  "lastUpdated": "2026-04-15T12:53:29.502Z",
-  "items": []
+  "lastUpdated": "2026-04-15T13:01:52.968Z",
+  "items": [
+    {
+      "id": "finding-001",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 1,
+      "category": "content-quality",
+      "severity": "critical",
+      "title": "90+ Posts Missing Featured Images — Visual Authority and CTR at Risk",
+      "description": "Approximately 84 posts are confirmed missing featured images based on the snapshot. In a YMYL financial vertical, the absence of images signals low editorial investment to both users and Google's quality raters. Open Graph image tags will fall back to a site-level default (if configured) or render blank in social previews, directly reducing click-through rates from social and discovery surfaces. The March 2025 Core Update's heightened E-E-A-T scrutiny means raters evaluating pages without visual content markers may score them lower on 'effort and originality' dimensions. Additionally, posts without images cannot leverage Google Discover, which is a significant traffic channel for financial education content and requires a high-quality image of at least 1200px width.",
+      "recommendation": "Prioritize image creation in this order: (1) Posts with highest organic impressions per Google Search Console — add original charts, infographics, or annotated screenshots showing real investor scenarios. (2) All 10 most recent posts (the ones listed in the snapshot) since they are actively being crawled and indexed. (3) Remaining backlog in bulk. For each image: use descriptive, keyword-rich file names (e.g., cap-rate-calculation-example-2025.webp), include alt text that describes the image content naturally, ensure minimum 1200x630px for OG and Discover eligibility, and serve in WebP format via Next.js Image component with proper width/height props to prevent CLS. Do not use generic stock photos — use annotated financial charts, deal analysis screenshots, or custom infographics that demonstrate Bill Rice's first-hand experience with real numbers.",
+      "effort": "large",
+      "affectedPages": [
+        "/blog/build-passive-income-real-estate-roadmap",
+        "/blog/seller-concessions-creative-deal-structuring",
+        "/blog/how-to-refinance-investment-property",
+        "/blog/real-estate-liability-protection-guide",
+        "/blog/appreciation-vs-cash-flow-strategy",
+        "/blog/working-with-real-estate-agent-investor",
+        "/blog/bridge-loans-real-estate-investors",
+        "/blog/how-to-analyze-wholesale-deal",
+        "/blog/home-warranty-vs-landlord-insurance",
+        "/blog/out-of-state-real-estate-investing-guide"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-002",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 2,
+      "category": "technical-seo",
+      "severity": "high",
+      "title": "5 Posts Missing SEO Meta Titles and Descriptions — Direct Indexing and CTR Impact",
+      "description": "Five posts are confirmed missing SEO meta tags (title and description). Missing meta titles cause Google to auto-generate titles from page content, which frequently results in truncated, keyword-poor, or misleading SERP titles. Missing meta descriptions reduce click-through rates by 5–15% on average as Google pulls arbitrary page snippets. For YMYL financial content, auto-generated titles may omit trust signals (e.g., author name, year, credential references) that influence user click decisions. The affected slugs include high-value commercial-intent topics: DSCR loans, financial advisor guidance, real estate CPA, and property management — all of which are competitive, high-CPM keyword clusters where SERP presentation is critical.",
+      "recommendation": "Immediately add unique meta titles (50–60 characters) and meta descriptions (140–160 characters) to all 5 affected posts via Sanity.io CMS. Title formula for financial guides: '[Primary Keyword]: [Benefit or Qualifier] | ProInvestorHub'. Description formula: Lead with the user's problem, include primary keyword naturally, add a trust signal (e.g., 'Expert guide by Bill Rice'). Specific recommendations: (1) dscr-loans-explained-complete-guide: Title: 'DSCR Loans Explained: Complete Guide for Investors (2026)' — Description: 'Learn how DSCR loans work, qualification requirements, and when to use them. Expert real estate financing guide by Bill Rice.' (2) do-you-need-a-financial-advisor: Title: 'Do Real Estate Investors Need a Financial Advisor?' — Description: 'Discover when hiring a financial advisor adds value for real estate investors vs. when to skip it. Practical guidance from 20+ years of investing experience.' After publishing, submit affected URLs via Google Search Console URL Inspection for priority re-crawl.",
+      "effort": "small",
+      "affectedPages": [
+        "/blog/how-to-find-an-investor-friendly-real-estate-agent-2026",
+        "/blog/dscr-loans-explained-complete-guide-real-estate-investors-2026",
+        "/blog/do-you-need-a-financial-advisor-for-real-estate-investing",
+        "/blog/how-to-find-a-real-estate-cpa-investors-guide-to-tax-professionals",
+        "/blog/when-should-you-hire-a-property-manager-guide-for-real-estate-investors"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-003",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 2,
+      "category": "e-e-a-t",
+      "severity": "high",
+      "title": "First-Hand Experience Signals Absent from Glossary and Calculator Pages",
+      "description": "The March 2025 Core Update and the integrated Helpful Content System place maximum weight on demonstrable first-hand experience, particularly for YMYL financial content. Glossary definitions (150 terms) and calculator pages risk being evaluated as 'thin' or 'people-pleasing' content if they contain only textbook-style definitions and formula displays without real-world investor commentary. Google's quality raters are explicitly instructed to look for evidence that the author has personally used the strategies, tools, or concepts described. A cap rate calculator that shows the formula without contextual guidance — such as 'In my experience analyzing deals in the Midwest, cap rates below 5% in Class B markets rarely pencil out for cash flow investors' — fails the experience dimension regardless of technical accuracy.",
+      "recommendation": "Conduct a content audit of all 150 glossary terms and all calculator pages. For each, add a clearly labeled 'Investor Insight' or 'Bill's Take' section (minimum 75–150 words) that includes: (1) A real-world scenario or deal example using the concept, with specific numbers where possible. (2) A common mistake investors make related to this term. (3) Current market context — e.g., for 'Cap Rate': 'As of mid-2025, cap rates in secondary Sunbelt markets have compressed to 5–6% for multifamily, making cash flow analysis more critical than ever.' Prioritize glossary terms that are also target keywords for blog posts (internal linking anchors). For calculators, add a 'How to Interpret Your Results' section with Bill's commentary on what good vs. concerning numbers look like in today's market. This directly addresses both the March 2025 Core Update E-E-A-T requirements and the Helpful Content System's people-first evaluation.",
+      "effort": "large",
+      "affectedPages": [
+        "/glossary",
+        "/calculators/cap-rate",
+        "/calculators/roi",
+        "/calculators/cash-flow",
+        "/calculators/brrrr"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-004",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 2,
+      "category": "structured-data",
+      "severity": "high",
+      "title": "FAQPage Schema Unlikely to Generate Rich Results — Semantic Value Needs Reframing",
+      "description": "Google's 2024 structured data policy updates significantly restricted FAQPage rich results, limiting them primarily to government and authoritative health sites in most markets. Commercial education sites in the real estate vertical are unlikely to receive FAQ rich result display in standard SERPs regardless of schema correctness. If the site's FAQPage schema was implemented primarily to capture rich result SERP features, that strategy is now largely obsolete. However, the schema still provides semantic value for Knowledge Graph entity understanding and may influence AI Overviews (formerly SGE) content sourcing. The risk is that maintaining FAQPage schema without visible rich results may create a false sense of structured data coverage while missing higher-value schema opportunities.",
+      "recommendation": "Do not remove FAQPage schema — it retains semantic and AI Overview sourcing value. However, reframe its strategic purpose: (1) Ensure every FAQ question/answer pair is genuinely useful and written for users, not keyword-stuffed for schema purposes. (2) Validate all FAQPage implementations in Google's Rich Results Test to confirm no markup errors that could trigger manual actions. (3) Shift primary structured data investment toward Article schema enrichment (add 'citation', 'mentions', 'about' properties), WebApplication schema optimization for calculators, and DefinedTerm schema for glossary entries — these have higher current rich result and Knowledge Graph value. (4) For calculator pages specifically, ensure WebApplication schema includes accurate 'applicationCategory' (set to 'FinanceApplication'), 'featureList', and 'offers' (free) properties. (5) Consider adding HowTo schema to step-by-step guide posts (e.g., 'How to Analyze a Wholesale Deal in 15 Minutes') — while HowTo rich results are deprioritized in standard results, they remain active in Google Assistant and voice search contexts.",
+      "effort": "medium",
+      "affectedPages": [
+        "/blog/*",
+        "/calculators/*",
+        "/glossary/*"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-005",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 2,
+      "category": "content-accuracy",
+      "severity": "high",
+      "title": "Market Data and Financial Benchmarks Require Freshness Indicators and Source Citations",
+      "description": "The expanded YMYL financial content guidelines (late 2024 Search Quality Evaluator Guidelines update) explicitly require that financial data cited in real estate investment content — including cap rate benchmarks by market, typical renovation cost ranges, rental yield averages, and mortgage rate references — include clear sourcing, publication dates, and freshness indicators. Posts like 'Cap Rates by City Comparison', 'Best Cash Flow Markets 2026', and 'How to Refinance an Investment Property' almost certainly contain specific numerical data that becomes stale within 6–12 months. Without visible 'Last Updated' dates and source citations, quality raters will score these pages lower on the 'Accuracy' and 'Trustworthiness' dimensions of E-E-A-T. Additionally, inaccurate financial data in a YMYL context creates legal and reputational risk.",
+      "recommendation": "Implement the following immediately: (1) Add visible 'Last Updated' dates to all posts containing market data, interest rate references, or financial benchmarks — display these prominently near the post date, not just in schema. (2) Audit all numerical claims in the 10 highest-traffic posts for current accuracy against authoritative sources (Federal Reserve, NAR, CoStar, Zillow Research, ATTOM Data). (3) Add inline source citations using a consistent format: 'According to [Source], as of [Month Year]...' (4) For calculator pages, add a methodology disclosure section explaining the formula used, its assumptions, and its limitations. Verify all calculator formulas: Cap Rate = NOI / Property Value; Cash-on-Cash = Annual Pre-Tax Cash Flow / Total Cash Invested; ROI = (Net Profit / Total Investment) × 100; BRRRR refinance equity = ARV × LTV - Rehab Costs - Purchase Price. (5) Create a quarterly content refresh schedule in Sanity.io for all posts containing market data, triggered by a content review workflow. (6) Add a site-wide disclaimer for financial content: 'This content is for educational purposes only and does not constitute financial, legal, or investment advice.'",
+      "effort": "medium",
+      "affectedPages": [
+        "/blog/cap-rates-by-city-comparison",
+        "/blog/best-cash-flow-markets-2026",
+        "/blog/how-to-refinance-investment-property",
+        "/blog/real-estate-market-cycle-investing",
+        "/blog/how-to-analyze-real-estate-market",
+        "/calculators/cap-rate",
+        "/calculators/roi",
+        "/calculators/cash-flow"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-006",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 2,
+      "category": "indexing",
+      "severity": "high",
+      "title": "Sitemap Contains 272 Entries vs. 264 Confirmed Content Pages — Orphan and Duplicate URL Risk",
+      "description": "The sitemap declares 272 URLs while the confirmed content inventory totals approximately 264 pages (108 blog posts + 150 glossary terms + 6 category pages = 264, plus homepage, about, calculators, and utility pages). The 8-URL discrepancy suggests either: (a) orphaned pages that exist in the sitemap but have no internal links pointing to them, (b) duplicate URLs with trailing slashes or parameter variants being submitted, (c) deprecated content that was removed from navigation but not from the sitemap, or (d) calculator and tool pages not accounted for in the content inventory. Orphan pages waste crawl budget and may be evaluated as thin content since they receive no PageRank flow from internal links. The December 2024 Spam Update's focus on content that 'mimics authoritative structure without genuine expertise' makes orphaned, unlinked pages a potential risk vector.",
+      "recommendation": "Perform a full crawl using Screaming Frog or Sitebulb: (1) Export all URLs in sitemap and compare against crawled URLs to identify any sitemap-only (orphaned) pages. (2) For any orphaned pages found: if content is valuable, add internal links from relevant pillar posts or the glossary index; if content is thin or outdated, add noindex or redirect to a canonical equivalent. (3) Audit for duplicate URL variants — ensure canonical tags are set correctly for any URLs accessible with/without trailing slashes, with/without www, and with/without query parameters. (4) Remove any deprecated or redirected URLs from the sitemap — sitemaps should only contain canonical, indexable URLs returning 200 status. (5) Verify the sitemap is dynamically generated by Next.js/Sanity and auto-updates when content is published or removed. (6) Submit the cleaned sitemap via Google Search Console and monitor the 'Discovered - currently not indexed' report for any pages Google is choosing not to index.",
+      "effort": "medium",
+      "affectedPages": [
+        "/sitemap.xml"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-007",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 2,
+      "category": "core-web-vitals",
+      "severity": "high",
+      "title": "Financial Calculators Are High-Risk for INP Failures Under New CWV Metric",
+      "description": "Interaction to Next Paint (INP) replaced FID as an official Core Web Vitals metric in March 2024, with a 'good' threshold of under 200ms. JavaScript-heavy interactive calculators — cap rate, ROI, cash flow, BRRRR — are the highest-risk page type on the site for INP failures. Each user input event (typing a number, selecting a dropdown, clicking 'Calculate') triggers a JavaScript computation and DOM update cycle. If these are not optimized, INP can easily exceed 200ms, particularly on mid-range Android devices and slower connections. Next.js 16's React Server Components architecture provides tools to minimize client-side JS, but calculators by nature require client-side interactivity. Third-party scripts (analytics, chat widgets, ad pixels) running on calculator pages compound INP risk by competing for the main thread.",
+      "recommendation": "Immediately run all calculator pages through PageSpeed Insights (mobile) and Chrome UX Report to get field data INP scores. Then implement: (1) Use React's useTransition or useDeferredValue hooks to mark calculator state updates as non-urgent, preventing input events from blocking the main thread. (2) Ensure calculator logic runs in a Web Worker if computations are complex, keeping the main thread free for rendering. (3) Audit and defer all non-critical third-party scripts on calculator pages using Next.js Script component with strategy='lazyOnload'. (4) Use Next.js dynamic imports with ssr:false for calculator components to prevent unnecessary server-side rendering overhead and reduce initial bundle size. (5) Implement code splitting so calculator-specific JavaScript is only loaded on calculator pages, not site-wide. (6) Test INP specifically on Moto G4 equivalent (Chrome DevTools throttling) to simulate real-world mobile conditions. Target: INP under 150ms for 'good' buffer. (7) Monitor CWV performance in Google Search Console's Core Web Vitals report monthly, segmented by page type.",
+      "effort": "medium",
+      "affectedPages": [
+        "/calculators/cap-rate",
+        "/calculators/roi",
+        "/calculators/cash-flow",
+        "/calculators/brrrr",
+        "/calculators/noi"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-008",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 3,
+      "category": "internal-linking",
+      "severity": "medium",
+      "title": "Pillar-Cluster Internal Link Architecture Needs Systematic Audit Across 108 Posts",
+      "description": "With 108 blog posts, 150 glossary terms, and 6 content pillars, the site has the raw material for a strong topical authority architecture. However, the November 2024 Core Update's recalibration toward topical authority over domain authority means that internal linking quality is now a primary signal for establishing niche expertise. If cluster posts (e.g., 'How to Analyze a Wholesale Deal') do not link back to their pillar page (e.g., 'Investment Strategies' or 'Wholesale Real Estate Beginners Guide'), and if glossary terms are not cross-linked from relevant blog posts, Google's crawlers cannot efficiently map the site's topical depth. Orphaned or weakly-linked content receives less PageRank flow and is evaluated in isolation rather than as part of a coherent expertise cluster.",
+      "recommendation": "Implement a systematic internal linking audit and build-out: (1) Map every blog post to its primary content pillar and ensure each post contains at least one contextual link back to its pillar page or primary cluster hub. (2) Identify the top 20 highest-traffic glossary terms and ensure each is linked from at least 5 relevant blog posts using the exact term as anchor text. (3) Create a 'Related Posts' or 'Continue Learning' section at the bottom of each post that links to 3–5 topically related posts within the same pillar. (4) For the BRRRR strategy cluster specifically (brrrr-method-complete-guide, how-to-use-brrrr-calculator, brrrr-rehab-cost-estimation), ensure all three link to each other and to the primary financing pillar. (5) Audit for 'link deserts' — posts with fewer than 3 internal inbound links — and prioritize adding links to these from higher-authority pages. (6) Use descriptive, keyword-rich anchor text for internal links (e.g., 'cap rate calculation methodology' rather than 'click here'). (7) Implement a Sanity.io content workflow that prompts editors to add internal links before publishing new posts.",
+      "effort": "medium",
+      "affectedPages": [
+        "/blog/brrrr-method-complete-guide",
+        "/blog/how-to-use-brrrr-calculator",
+        "/blog/brrrr-rehab-cost-estimation",
+        "/blog/real-estate-investing-beginners-guide-2026",
+        "/blog/house-flipping-complete-guide",
+        "/glossary"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-009",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 3,
+      "category": "e-e-a-t",
+      "severity": "medium",
+      "title": "Bill Rice's Credentials Not Surfaced Per-Page — YMYL Rater Visibility Gap",
+      "description": "The late 2024 YMYL financial content E-E-A-T rater guidance update explicitly requires that author credentials be prominently displayed on every content page, not just on a centralized author bio page. Quality raters evaluating individual blog posts or glossary entries may not navigate to the author page — they assess the page in isolation. If a rater lands on 'How to Calculate Cap Rate' and sees no visible author attribution with credentials, the page may be scored lower on 'Expertise' and 'Trustworthiness' dimensions regardless of content quality. The Person schema with sameAs links is valuable for machine-readable authority signals, but human raters need visible, on-page credential signals.",
+      "recommendation": "Implement the following per-page author authority signals: (1) Add a visible author byline to every blog post and glossary entry that includes: Bill Rice's name (linked to author bio page), a one-line credential summary ('20+ years real estate investing experience'), and the post publication and last-updated date. (2) Add a compact author card component at the bottom of every post (above comments/related posts) that includes: headshot, name, 2–3 credential bullets, and links to verifiable external profiles (LinkedIn, BiggerPockets, or similar). (3) Ensure the Article JSON-LD schema on every post includes 'author' with 'name', 'url' (linking to author bio), and 'sameAs' properties populated from the Person schema. (4) For posts covering legal or tax topics (real-estate-liability-protection-guide, how-to-find-a-real-estate-cpa-investors-guide), add a disclosure noting that Bill Rice is an experienced investor, not a licensed attorney or CPA, and recommend professional consultation — this actually strengthens E-E-A-T by demonstrating intellectual honesty. (5) Add a 'Fact-checked' or 'Reviewed by' line if any posts have been reviewed by a licensed professional (CPA, attorney, mortgage broker).",
+      "effort": "small",
+      "affectedPages": [
+        "/blog/*",
+        "/glossary/*"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-010",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 3,
+      "category": "content-quality",
+      "severity": "medium",
+      "title": "Duplicate Topic Coverage Risk — Multiple Posts Targeting Overlapping Keywords",
+      "description": "The post inventory reveals multiple posts that likely target overlapping or near-identical keyword clusters, creating cannibalization risk. Examples: 'dscr-loans-explained' and 'dscr-loans-explained-complete-guide-real-estate-investors-2026' and 'dscr-investor-financing-guide' appear to be three separate posts targeting DSCR loan keywords. Similarly, '1031-exchange-guide-defer-capital-gains-investment-property' and '1031-exchange-rules-complete-guide' are likely competing for the same '1031 exchange' queries. 'real-estate-investing-beginners-guide-2026' and 'buying-first-rental-property-complete-guide-2026' may overlap significantly. The Helpful Content System's continuous evaluation penalizes sites that produce multiple similar-format pages on the same topic without meaningful differentiation, interpreting it as a signal of search-engine-first content production.",
+      "recommendation": "Conduct a keyword cannibalization audit using Google Search Console (compare which URL ranks for each target keyword) and a content similarity analysis: (1) For each overlapping pair/group, designate one URL as the canonical 'pillar' post — typically the most comprehensive, highest-traffic, or most recently updated version. (2) For the DSCR cluster: consolidate dscr-loans-explained and dscr-investor-financing-guide into dscr-loans-explained-complete-guide-real-estate-investors-2026 via 301 redirects, then expand the surviving post to be the definitive DSCR resource. (3) For the 1031 exchange cluster: differentiate the two posts by angle — one focused on 'rules and requirements' (tax/legal angle) and one on 'strategy and timing' (investor decision angle) — or consolidate into one comprehensive guide. (4) For wholesale real estate: differentiate by audience stage — beginners guide vs. deal analysis tactics vs. building a buyers list. (5) After consolidation, update all internal links pointing to deprecated URLs to point to the canonical version. (6) Submit consolidated URLs via Google Search Console for re-crawl.",
+      "effort": "medium",
+      "affectedPages": [
+        "/blog/dscr-loans-explained",
+        "/blog/dscr-loans-explained-complete-guide-real-estate-investors-2026",
+        "/blog/dscr-investor-financing-guide",
+        "/blog/1031-exchange-guide-defer-capital-gains-investment-property",
+        "/blog/1031-exchange-rules-complete-guide",
+        "/blog/wholesale-real-estate-beginners-guide",
+        "/blog/real-estate-wholesaling-beginners-guide",
+        "/blog/seller-financing-guide",
+        "/blog/seller-financing-real-estate"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-011",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 3,
+      "category": "structured-data",
+      "severity": "medium",
+      "title": "WebApplication Schema on Calculator Pages Needs Property Completeness Audit",
+      "description": "WebApplication schema is one of the highest-value structured data implementations for calculator pages, supporting rich results and Knowledge Graph entity recognition. However, Google's 2024 structured data policy updates tightened enforcement against schema that inaccurately represents page content or omits required properties. Common gaps in WebApplication schema implementations include: missing 'applicationCategory' (should be 'FinanceApplication' for financial calculators), absent 'offers' property (required to indicate free access), missing 'featureList' describing calculator inputs/outputs, and 'operatingSystem' set incorrectly (web-based tools should use 'Web'). Any mismatch between schema properties and visible page content can now trigger manual actions under the stricter 2024 enforcement policy.",
+      "recommendation": "Audit all calculator page WebApplication schemas against this required property checklist: (1) '@type': 'WebApplication' — confirmed. (2) 'name': Descriptive calculator name (e.g., 'Cap Rate Calculator for Real Estate Investors'). (3) 'applicationCategory': 'FinanceApplication' — verify this is set correctly. (4) 'operatingSystem': 'Web' — for browser-based tools. (5) 'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' } — required to indicate free access. (6) 'featureList': Array of calculator features (e.g., ['Cap rate calculation', 'NOI input', 'Property value comparison', 'Market benchmark comparison']). (7) 'description': 150–300 character description matching the page's visible description. (8) 'screenshot': URL to a screenshot image of the calculator in use. (9) 'author': Reference to Bill Rice's Person schema. Validate all calculator schemas in Google's Rich Results Test after updates. Also add BreadcrumbList schema to calculator pages if not already present, ensuring it matches the visible breadcrumb UI exactly.",
+      "effort": "small",
+      "affectedPages": [
+        "/calculators/cap-rate",
+        "/calculators/roi",
+        "/calculators/cash-flow",
+        "/calculators/brrrr",
+        "/calculators/noi"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-012",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 3,
+      "category": "technical-seo",
+      "severity": "medium",
+      "title": "URL Slug Inconsistency — Year-Suffixed and Non-Year-Suffixed Variants Create Maintenance Debt",
+      "description": "The post inventory shows a mix of URL patterns: some posts use year suffixes (real-estate-investing-beginners-guide-2026, dscr-loans-explained-complete-guide-real-estate-investors-2026, buying-first-rental-property-complete-guide-2026, 5-real-estate-investing-strategies-beginners-2026, best-cash-flow-markets-2026) while the majority do not. Year-suffixed URLs create a significant maintenance problem: when 2027 arrives, these URLs will appear outdated in SERPs, reducing CTR. They also create a decision point — either update the URL (causing a redirect chain and potential ranking loss) or leave a 2026-dated URL ranking in 2027+ (damaging trust signals). Google's quality raters note publication and update dates as freshness signals, and a 2026-suffixed URL still ranking in 2028 sends a negative freshness signal.",
+      "recommendation": "Adopt a consistent URL strategy going forward: (1) For all new posts, use evergreen URL slugs without year suffixes (e.g., /blog/real-estate-investing-beginners-guide rather than /blog/real-estate-investing-beginners-guide-2026). Signal freshness through: visible 'Last Updated' dates in the content, Article schema 'dateModified' property, and annual content refresh cycles. (2) For existing year-suffixed posts: evaluate whether to migrate now or wait. If the posts are newly published and not yet ranking, migrate immediately to evergreen slugs and set up 301 redirects from the year-suffixed URLs. If posts are already ranking with the year-suffixed URL, leave them until the year changes, then migrate with 301 redirects and update all internal links. (3) Update the Sanity.io CMS slug generation to enforce evergreen URL patterns and flag year-suffixed slugs for editorial review before publication. (4) Document this URL convention in an internal SEO style guide to prevent future inconsistency.",
+      "effort": "small",
+      "affectedPages": [
+        "/blog/real-estate-investing-beginners-guide-2026",
+        "/blog/dscr-loans-explained-complete-guide-real-estate-investors-2026",
+        "/blog/buying-first-rental-property-complete-guide-2026",
+        "/blog/5-real-estate-investing-strategies-beginners-2026",
+        "/blog/best-cash-flow-markets-2026",
+        "/blog/how-to-find-an-investor-friendly-real-estate-agent-2026"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-013",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 3,
+      "category": "content-quality",
+      "severity": "medium",
+      "title": "AI-Generated Content Risk — Editorial Review Process Must Be Documented and Evidenced",
+      "description": "Google's ongoing AI-generated content enforcement escalation (2024–2025) does not prohibit AI-assisted content but requires meaningful human editorial oversight, original insight, and factual verification — especially for YMYL financial content. With 108 blog posts and 150 glossary terms, the volume suggests AI assistance was likely used in content production. If any content was published without thorough review by Bill Rice or another credentialed contributor, it is at risk under Google's quality rater evaluation. The financial accuracy requirement is particularly acute: AI models frequently hallucinate specific financial statistics, cite outdated market data, or present simplified formulas that omit important caveats (e.g., cap rate calculations that ignore vacancy rates or CapEx reserves).",
+      "recommendation": "Implement and document a formal editorial review process: (1) Create an 'Editorial Standards' page on the site (linked from footer) that describes the content creation and review process, Bill Rice's role in reviewing all financial content, and the site's commitment to accuracy. This page serves as evidence for Google's manual review teams. (2) In Sanity.io, add a required 'Editorial Review' field to every post that records: reviewer name, review date, and a checklist of verified items (financial formulas checked, market data sourced, personal experience added). (3) Conduct a retrospective accuracy audit of the 20 highest-traffic posts, prioritizing those with specific financial claims, market data, or investment strategy recommendations. (4) For any post where AI assistance was used, ensure Bill Rice has personally reviewed and enriched the content with original commentary, corrected any inaccuracies, and added real-world examples from his investing experience. (5) Add a visible 'Reviewed by Bill Rice' line with date to all posts that have completed editorial review. (6) Implement a 12-month content refresh cycle for all posts, with financial data posts on a 6-month cycle.",
+      "effort": "medium",
+      "affectedPages": [
+        "/blog/*",
+        "/glossary/*"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-014",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 4,
+      "category": "indexing",
+      "severity": "low",
+      "title": "robots.txt /api/ Disallow May Block Structured Data Rendering Verification",
+      "description": "The robots.txt correctly disallows /studio (Sanity CMS studio) and /api/ (API routes). However, if any Next.js API routes are used to serve dynamic structured data, OG image generation (e.g., Next.js og-image API routes), or sitemap generation, blocking /api/ from crawlers may prevent Googlebot from accessing these resources. More commonly, if the site uses API routes for server-side rendering of calculator results or dynamic content that is embedded in page responses, the disallow is harmless. However, OG image API routes (a common Next.js pattern using /api/og) being blocked means social crawlers (Facebook, Twitter/X, LinkedIn) cannot fetch dynamically generated OG images, causing social previews to fail for posts using this pattern.",
+      "recommendation": "Audit all /api/ routes in the Next.js application: (1) If /api/og or similar OG image generation routes exist, add a specific Allow rule for social media crawlers: 'User-agent: facebookexternalhit\\nAllow: /api/og' and similar for Twitterbot and LinkedInBot. Alternatively, migrate OG image generation to Next.js 13+ built-in opengraph-image.tsx file convention (which does not use /api/ routes and is not blocked). (2) If calculators use API routes for computation, verify these are not needed by Googlebot for page rendering — if the page renders correctly without the API call (i.e., the calculator UI is client-side only), the disallow is harmless. (3) Verify Sanity /studio disallow is working correctly by testing in Google Search Console's robots.txt tester. (4) Consider adding a crawl-delay directive for known aggressive crawlers if server load becomes a concern as the site grows.",
+      "effort": "small",
+      "affectedPages": [
+        "/robots.txt",
+        "/api/og",
+        "/api/*"
+      ],
+      "sourceAudit": "2026-04-15"
+    },
+    {
+      "id": "finding-015",
+      "createdAt": "2026-04-15T13:01:52.968Z",
+      "updatedAt": "2026-04-15T13:01:52.968Z",
+      "status": "open",
+      "priority": 4,
+      "category": "security",
+      "severity": "low",
+      "title": "Content Security Policy and Security Headers Audit Required for Vercel Deployment",
+      "description": "Vercel deployments do not automatically configure security headers beyond basic HTTPS. A missing or misconfigured Content Security Policy (CSP) can expose the site to XSS vulnerabilities, which — while primarily a security concern — also affects Google's Safe Browsing evaluation. Sites flagged by Google Safe Browsing receive a manual action that removes them from search results entirely. Additionally, missing security headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy) are increasingly evaluated by security-conscious users and enterprise tools. For a YMYL financial site handling user interactions (calculator inputs, potential future lead forms), security posture is directly tied to trust signals.",
+      "recommendation": "Implement security headers via next.config.js headers() configuration: (1) Add X-Content-Type-Options: nosniff to prevent MIME-type sniffing attacks. (2) Add X-Frame-Options: SAMEORIGIN to prevent clickjacking. (3) Add Referrer-Policy: strict-origin-when-cross-origin for privacy and security. (4) Add Permissions-Policy to disable unused browser features (camera, microphone, geolocation). (5) Implement a Content Security Policy — start with a report-only mode (Content-Security-Policy-Report-Only) to identify violations before enforcing. For a Next.js site with Sanity.io, the CSP must whitelist Sanity's CDN domains for image sources. (6) Verify HSTS is configured via Vercel's domain settings (Vercel handles this automatically for custom domains, but verify). (7) Run the site through securityheaders.com and Mozilla Observatory to get a baseline score and specific remediation guidance. (8) Audit all third-party scripts (analytics, chat, ad pixels) to ensure they are loaded from trusted sources and included in the CSP whitelist. Target: A or B rating on securityheaders.com.",
+      "effort": "small",
+      "affectedPages": [
+        "/",
+        "/blog/*",
+        "/calculators/*",
+        "/glossary/*"
+      ],
+      "sourceAudit": "2026-04-15"
+    }
+  ]
 }
