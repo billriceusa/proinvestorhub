@@ -1,0 +1,68 @@
+{
+  "runDate": "2026-04-15T10:04:02.048Z",
+  "googleUpdates": [
+    {
+      "updateName": "March 2025 Core Update",
+      "dateRange": "March 13 – March 27, 2025",
+      "impactSummary": "Google's March 2025 Core Update continued the multi-cycle effort to reward genuinely helpful, people-first content and demote sites that exist primarily to rank rather than serve users. Google confirmed this update refined signals around content depth, author credibility, and topical authority, with particular scrutiny on sites that aggregate or thin-out financial and educational content. Sites with strong E-E-A-T signals and original research recovered or gained visibility, while thin affiliate and AI-padded content saw further suppression.",
+      "relevanceToUs": "ProInvestorHub's named author (Bill Rice) with verifiable credentials and original financial calculator content is well-positioned for this update's E-E-A-T signals. However, any glossary or guide pages that lack sufficient depth, original data, or author attribution could be flagged as thin content. A full content depth audit of all glossary terms and beginner guides is warranted to ensure each page demonstrates genuine expertise rather than surface-level definitions.",
+      "actionRequired": true
+    },
+    {
+      "updateName": "Helpful Content System Integration into Core Algorithm",
+      "dateRange": "March 2024 Core Update (fully integrated as of March 5 – April 19, 2024); ongoing as embedded signal",
+      "impactSummary": "Google officially retired the standalone Helpful Content System classifier and folded its signals directly into the core ranking algorithm as of the March 2024 Core Update. This means helpfulness is no longer a separate periodic penalty but a continuous, page-level and site-level signal evaluated on every crawl. Content that demonstrates first-hand experience, satisfies search intent completely, and avoids SEO-first writing patterns is rewarded continuously rather than waiting for a dedicated update cycle.",
+      "relevanceToUs": "Because helpfulness is now always-on, ProInvestorHub cannot rely on periodic recovery windows. Every new page published — especially calculator landing pages, BRRRR guides, and glossary entries — must demonstrate first-hand real estate investing experience (Experience in E-E-A-T) from the moment of publication. Bill Rice's author bio and credentials must be consistently linked to all content pages, and any pages without clear author attribution or experiential signals should be treated as high-priority remediation items.",
+      "actionRequired": true
+    },
+    {
+      "updateName": "December 2024 Spam Update",
+      "dateRange": "December 19 – December 26, 2024",
+      "impactSummary": "Google's December 2024 Spam Update targeted scaled content abuse, site reputation abuse (parasite SEO), and expired domain abuse. Google explicitly called out sites that publish large volumes of low-quality content — including AI-generated content published without meaningful human review — to manipulate rankings. The update also cracked down on third-party content published on high-authority domains to exploit their ranking power.",
+      "relevanceToUs": "ProInvestorHub must ensure no guest posts, sponsored content, or third-party calculator embeds are published without full editorial review and clear disclosure. If the site uses any AI-assisted content drafting (even for glossary terms), each piece must show evidence of human expert review, factual verification, and original contribution. The site's Sanity.io CMS should enforce an editorial workflow that documents human review before publication to create an auditable content quality trail.",
+      "actionRequired": true
+    },
+    {
+      "updateName": "Search Quality Evaluator Guidelines Update — E-E-A-T and YMYL Refinements",
+      "dateRange": "Most recent public version: December 2024 (v1.3 equivalent); ongoing internal updates",
+      "impactSummary": "Google's Search Quality Evaluator Guidelines (SQEG) have continued to expand the definition of YMYL (Your Money or Your Life) content to explicitly include real estate investment advice, rental income strategies, and financial calculators used for investment decisions. The guidelines now place greater weight on the 'Experience' dimension of E-E-A-T, requiring content creators to demonstrate they have personally engaged in the activities they describe — not just researched them. Raters are instructed to look for verifiable author credentials, linked professional profiles, and evidence of real-world outcomes.",
+      "relevanceToUs": "Real estate investing content — including cap rate calculators, ROI guides, and BRRRR strategy explanations — is explicitly YMYL under current guidelines, meaning the bar for E-E-A-T is at its highest. Bill Rice's Person schema must link to verifiable external profiles (LinkedIn, industry publications, professional licenses if applicable). Every financial calculator must include methodology disclosures, formula citations, and disclaimers clarifying the tool is educational and not licensed financial advice. Missing any of these elements on YMYL pages creates direct quality rater downgrade risk.",
+      "actionRequired": true
+    },
+    {
+      "updateName": "AI-Generated Content Policy Enforcement and Scaled Content Abuse Clarification",
+      "dateRange": "Ongoing enforcement; policy clarified February 2023, enforcement escalated through 2024–2025 spam updates",
+      "impactSummary": "Google has clarified that AI-generated content is not inherently penalized, but content generated at scale without meaningful human oversight, original insight, or factual accuracy verification is treated as scaled content abuse — a manual action trigger. Google's systems are increasingly capable of detecting AI content patterns, particularly in financial and educational niches where templated phrasing, generic examples, and lack of specific data points are strong signals. The emphasis is on whether content adds original value, not on how it was produced.",
+      "relevanceToUs": "If ProInvestorHub uses AI tools to draft glossary definitions, guide sections, or calculator descriptions, each piece must be substantially rewritten by Bill Rice or a qualified editor to include specific real estate market data, personal investing examples, and original analysis. Generic AI phrasing like 'cap rate is an important metric for investors' without specific examples, current market benchmarks, or original commentary is a direct risk signal. A content authenticity review should be conducted on all pages published or updated in the last 12 months.",
+      "actionRequired": true
+    },
+    {
+      "updateName": "Structured Data and Rich Results Policy Updates — FAQPage and HowTo Restrictions",
+      "dateRange": "August 2023 (FAQPage restriction); ongoing rich results eligibility refinements through 2024",
+      "impactSummary": "Google significantly restricted FAQPage rich results in August 2023, limiting them to government and health websites in most cases, effectively removing FAQ rich results from the majority of commercial and educational sites. HowTo rich results were similarly restricted to desktop only and then further deprioritized. Google has continued to refine eligibility for Article, BreadcrumbList, and WebApplication schema, with increased scrutiny on whether structured data accurately reflects page content and whether WebApplication schema is used only for genuine interactive tools.",
+      "relevanceToUs": "ProInvestorHub's FAQPage schema on guide and glossary pages is unlikely to generate rich results under current policy, but the schema itself is not harmful and may still provide indirect signals. More critically, the WebApplication schema used for financial calculators (cap rate, ROI, cash flow) must accurately describe the tool's inputs, outputs, and purpose — any mismatch between schema markup and actual calculator functionality risks a structured data manual action. The Article schema with Bill Rice's Person schema as author is the highest-value structured data investment and should be validated on every content page.",
+      "actionRequired": true
+    },
+    {
+      "updateName": "Core Web Vitals 2024 Thresholds — INP Replaces FID",
+      "dateRange": "INP became an official Core Web Vital: March 12, 2024; ongoing PageSpeed Insights scoring updates",
+      "impactSummary": "Google officially replaced First Input Delay (FID) with Interaction to Next Paint (INP) as a Core Web Vital on March 12, 2024. INP measures the latency of all interactions on a page (clicks, taps, keyboard inputs) throughout the entire page lifecycle, not just the first interaction. The 'Good' threshold is under 200ms; 'Needs Improvement' is 200–500ms; 'Poor' is above 500ms. Sites with heavy JavaScript, client-side rendering, or interactive tools are most at risk of poor INP scores.",
+      "relevanceToUs": "ProInvestorHub's financial calculators (cap rate, ROI, cash flow) are interactive JavaScript tools that directly affect INP scores. If calculators use heavy client-side computation, unoptimized React state updates, or third-party script dependencies, INP scores on calculator pages could fall into the 'Needs Improvement' or 'Poor' range. Given the site is built on Next.js 16 with Vercel, React Server Components and dynamic imports should be used to defer non-critical calculator JavaScript. A CrUX (Chrome User Experience Report) audit of all calculator pages is essential to confirm real-user INP data meets the sub-200ms threshold.",
+      "actionRequired": true
+    },
+    {
+      "updateName": "November 2024 Core Update",
+      "dateRange": "November 11 – December 5, 2024",
+      "impactSummary": "The November 2024 Core Update was one of the broader updates of the year, with significant volatility observed in financial, health, and educational niches. Google confirmed the update continued to refine how it assesses content quality, topical authority, and the relationship between a site's overall quality signals and individual page rankings. Sites that had previously recovered from Helpful Content penalties saw mixed results, suggesting the integrated helpfulness signals were recalibrated.",
+      "relevanceToUs": "The extended rollout period (nearly four weeks) and volatility in financial education niches means ProInvestorHub should monitor Google Search Console performance data from November 2024 onward for any ranking shifts on high-value pages (calculator landing pages, BRRRR guides, cap rate content). If any pages lost significant impressions or clicks during this window, those pages should be prioritized for E-E-A-T enhancement, content depth review, and structured data validation before the next core update cycle.",
+      "actionRequired": true
+    }
+  ],
+  "overallScore": 0,
+  "findings": [],
+  "strategyRecommendations": [],
+  "contentStrategyUpdates": [],
+  "backlogItemsCreated": 0,
+  "backlogItemsResolved": 0,
+  "summary": ""
+}
