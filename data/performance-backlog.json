@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-16T12:02:40.798Z",
+  "lastUpdated": "2026-04-17T12:01:56.280Z",
   "items": [
     {
       "id": "8fcac82ef6e4",
@@ -112,6 +112,39 @@
       "status": "open"
     },
     {
+      "id": "66385d9e54de",
+      "title": "Fix HTTP/HTTPS and WWW/Non-WWW Canonical Fragmentation Immediately",
+      "description": "GSC is indexing at least 4 domain variants: http://proinvestorhub.com, https://proinvestorhub.com, https://www.proinvestorhub.com, and http://www.proinvestorhub.com. Steps: (1) Set a single canonical domain in Google Search Console under Settings > Change of Address if needed. (2) Implement 301 redirects at the server/CDN level from all non-canonical variants to https://proinvestorhub.com (non-www preferred, or choose www consistently). (3) Audit all internal links and sitemap.xml to ensure only the canonical variant is referenced. (4) Verify the fix in GSC Coverage report within 2 weeks. This is likely suppressing rankings across every page on the site.",
+      "expectedImpact": "Consolidating link equity and crawl signals to one canonical domain could lift rankings by 3–10 positions across all indexed pages within 4–8 weeks, potentially pushing lender reviews and the BRRRR guide into page 1 territory.",
+      "priority": "high",
+      "firstSeen": "2026-04-17",
+      "lastSeen": "2026-04-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "02da972de36c",
+      "title": "Aggressively Optimize the Cap Rate Calculator Page for Page-1 Rankings",
+      "description": "The /calculators/cap-rate page is currently ranking at position 68.4 but generating more impression volume than any other page (12+ query variants, ~18 impressions/week). Steps: (1) Audit the page against top 3 ranking cap rate calculators — ensure the calculator is functional, fast, and mobile-optimized. (2) Add a 600–800 word content section below the calculator covering 'what is a good cap rate,' 'cap rate by property type,' and 'cap rate vs cash-on-cash' to capture informational intent. (3) Add an FAQ schema block targeting exact queries like 'cap rate calculator excel' (offer a downloadable Excel version as a lead magnet). (4) Build 2–3 internal links to this page from the BRRRR guide and beginner's guide using anchor text 'cap rate calculator.' (5) Target a featured snippet for 'cap rate formula calculator' with a clearly formatted formula block.",
+      "expectedImpact": "Moving from position 68 to position 15–25 within 60 days is realistic with content depth improvements. Breaking into the top 10 for 'cap rate calculator' (3 impressions/week currently) could deliver 5–15 organic clicks/day given the query's search volume.",
+      "priority": "high",
+      "firstSeen": "2026-04-17",
+      "lastSeen": "2026-04-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "7b5998bb717f",
+      "title": "Investigate and Resolve the Session Duration Collapse",
+      "description": "Session duration dropped 36.3% to 107.7s, which is a warning sign that new users are not finding sufficient value on landing pages. Steps: (1) In GA4, segment sessions by new vs. returning users and compare duration — confirm new users are driving the drop. (2) Review the top landing pages (homepage, lender reviews, BRRRR guide) using heatmap tools (Hotjar free tier) to identify scroll depth and exit points. (3) Add a prominent 'related content' or 'next step' CTA block at the 50% scroll point on all blog pages linking to calculators. (4) Ensure the homepage has a clear value proposition above the fold with direct links to the 3 most popular tool/content categories. (5) Add estimated read time to blog posts to set user expectations and reduce premature exits.",
+      "expectedImpact": "Recovering session duration to 140–150s (midpoint between current and 90-day baseline) would signal improved content stickiness and support better engagement rate signals to Google's ranking algorithm.",
+      "priority": "high",
+      "firstSeen": "2026-04-17",
+      "lastSeen": "2026-04-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -178,6 +211,28 @@
       "status": "open"
     },
     {
+      "id": "6826c074b236",
+      "title": "Build a Lender Review Hub to Capitalize on the Highest-Performing Content Cluster",
+      "description": "Five lender review pages are each generating 2 unique users — the highest per-page user count outside the homepage. Park Place Finance ranks at position 7.1 in GSC, just outside the top 5. Steps: (1) Create a /lenders/reviews hub page that aggregates all reviews with a comparison table (rate ranges, loan types, min/max loan amounts, states served). (2) Add schema markup (Review, Product) to each individual lender review page. (3) For Park Place Finance specifically, optimize the title tag to include 'review 2026' and add a pros/cons table and a 'who is Park Place Finance best for' section to push it into the top 5. (4) Internally link all lender reviews to the /lenders/fix-and-flip-loans and /lenders/portfolio-loans pages. (5) Add a 'compare lenders' CTA on each review page pointing to the Lima One vs. Civic Financial comparison page (currently ranking at position 4.6).",
+      "expectedImpact": "A well-structured lender hub with schema markup could push Park Place Finance and 1–2 other reviews into top 5 positions within 45–60 days, and the hub page itself could rank for 'best fix and flip lenders 2026' type queries.",
+      "priority": "medium",
+      "firstSeen": "2026-04-17",
+      "lastSeen": "2026-04-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "6a22a10b1840",
+      "title": "Remove or Tag Internal QA Traffic to Prevent Data Contamination",
+      "description": "2 of ~15 sessions (13%) in the 7-day window came from tagassistant.google.com, which is Google Tag Assistant — internal QA/testing traffic. At this traffic volume, these sessions materially skew all engagement metrics. Steps: (1) In GA4, create an internal traffic filter under Admin > Data Streams > Configure Tag Settings > Define Internal Traffic, adding the IP addresses used for QA testing. (2) Create a separate GA4 data filter to exclude internal traffic from all reports. (3) If testing must occur from dynamic IPs, use a URL parameter (e.g., ?internal=true) and filter on that. (4) Retroactively note in your reporting that pre-filter data includes ~10–15% QA noise.",
+      "expectedImpact": "Cleaner data will give accurate baseline metrics for all future performance comparisons, preventing inflated session counts and distorted engagement rates that could lead to incorrect optimization decisions.",
+      "priority": "medium",
+      "firstSeen": "2026-04-17",
+      "lastSeen": "2026-04-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -196,6 +251,17 @@
       "priority": "low",
       "firstSeen": "2026-04-16",
       "lastSeen": "2026-04-16",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "c01f3bf4f8e4",
+      "title": "Leverage the Newsletter as a Retention and Re-Engagement Channel",
+      "description": "The /newsletter and /newsletter/2026-04-13 pages each received 3 views from 3 unique users — matching the rental cash flow calculator for top-5 page performance. This suggests genuine interest in the newsletter product. Steps: (1) Add a newsletter signup CTA to every blog post footer and calculator results page with a specific value hook ('Get weekly deal analysis and market data'). (2) Ensure the newsletter archive page (/newsletter) is internally linked from the homepage and navigation. (3) In the newsletter itself, include 1–2 deep links back to site calculators or new content to drive return sessions and reduce the direct-traffic dependency. (4) Track newsletter signup conversion rate as a micro-conversion event in GA4.",
+      "expectedImpact": "Growing the newsletter subscriber base will build a direct traffic floor independent of Google algorithm changes, and newsletter-driven return visits will improve the new-vs-returning user ratio and average session duration over time.",
+      "priority": "low",
+      "firstSeen": "2026-04-17",
+      "lastSeen": "2026-04-17",
       "timesRepeated": 1,
       "status": "open"
     }
