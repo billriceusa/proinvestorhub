@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-17T12:01:56.280Z",
+  "lastUpdated": "2026-04-18T12:02:46.960Z",
   "items": [
     {
       "id": "8fcac82ef6e4",
@@ -145,6 +145,39 @@
       "status": "open"
     },
     {
+      "id": "a345f984f992",
+      "title": "Diagnose and Fix the Google Organic CTR Collapse Immediately",
+      "description": "Run a full Google Search Console coverage report to check for manual actions, crawl errors, or indexing exclusions. Verify that canonical tags are correctly implemented — the data shows both http://proinvestorhub.com and https://www.proinvestorhub.com variants appearing in GSC, suggesting a canonical or redirect inconsistency that may be splitting ranking signals. Consolidate all URLs to a single canonical domain (https://proinvestorhub.com without www, or with www — pick one and 301 redirect all variants). Then submit an updated sitemap and request indexing for the top 10 priority pages via GSC's URL Inspection tool. Check if any pages have 'noindex' tags accidentally applied.",
+      "expectedImpact": "Resolving canonical fragmentation alone could consolidate ranking signals and push key pages 5-15 positions higher within 4-6 weeks, and restoring even a 0.5% CTR at current impression volume would generate 4-5 clicks per day — a 5x improvement over current zero baseline.",
+      "priority": "high",
+      "firstSeen": "2026-04-18",
+      "lastSeen": "2026-04-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "8bb235c5f2d3",
+      "title": "Aggressively Optimize the Cap Rate Calculator Page for Positions 1-20",
+      "description": "The cap rate calculator query cluster (14+ variants) is generating the most impressions on the site but the page sits at position 67.5. Implement the following: (1) Add a dedicated H1 of 'Cap Rate Calculator for Real Estate Investors' with the primary keyword in the title tag and meta description. (2) Build out the page with 800-1200 words of supporting content covering cap rate formula, what is a good cap rate by market, and cap rate vs cash-on-cash comparison. (3) Add FAQ schema markup targeting the exact query variants showing in GSC (e.g., 'cap rate calculator with mortgage', 'cap rate calculator excel alternative'). (4) Internally link to this page from the BRRRR guide, rental cashflow calculator, and beginner investing guide. (5) Build 2-3 supporting blog posts targeting long-tail variants like 'what is a good cap rate for rental property 2026' that link back to the calculator.",
+      "expectedImpact": "Moving the cap rate calculator from position 67 to position 15-25 within 60-90 days is realistic with these changes. At position 15-20 with current impression volume, expect 3-8 clicks per day from this cluster alone.",
+      "priority": "high",
+      "firstSeen": "2026-04-18",
+      "lastSeen": "2026-04-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "bd92853e8a9a",
+      "title": "Exclude Internal and QA Traffic From Analytics to Get Clean Baseline Data",
+      "description": "The presence of tagassistant.google.com as a referral source (3 sessions) and the high proportion of direct traffic strongly suggests team members and QA testing are contaminating the analytics data. Implement the following: (1) Create a GA4 internal traffic filter using your office/team IP addresses under Admin > Data Streams > Configure Tag Settings > Define Internal Traffic. (2) Create a GA4 filter to exclude the 'tagassistant.google.com' referral source. (3) Add a developer/QA annotation in GA4 for the current period so historical data can be interpreted correctly. (4) Consider setting a custom dimension or UTM parameter for any intentional internal testing sessions.",
+      "expectedImpact": "Clean data will give an accurate picture of true organic and referral performance, enabling better decision-making. Current metrics like the 72.9% active user increase are likely significantly overstated due to internal traffic inflation.",
+      "priority": "high",
+      "firstSeen": "2026-04-18",
+      "lastSeen": "2026-04-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -233,6 +266,28 @@
       "status": "open"
     },
     {
+      "id": "2fd8369e215b",
+      "title": "Optimize Lender Review Pages for Commercial-Intent Search Queries",
+      "description": "Lender reviews are the top-performing content category by page views (14 views across 5 pages) but none of these pages appear in the GSC top queries, meaning they are not yet ranking for relevant searches. For each lender review page: (1) Target the exact lender name as the primary keyword plus modifiers like 'review 2026', 'rates', 'for fix and flip'. (2) Add structured data (Review schema) with aggregate rating. (3) Create a comparison angle — the Lima One vs Civic Financial comparison page already exists at position 4.6 in GSC, which is excellent; build more comparison pages (e.g., Velocity Mortgage vs Lima One, New Silver vs Easy Street Capital). (4) Add a clear CTA on each review page linking to the lender's application with a tracked affiliate or referral link if applicable. (5) Cross-link all lender reviews from the /lenders hub page with anchor text matching the lender name plus loan type.",
+      "expectedImpact": "Lender review pages with commercial intent typically convert at 3-8x the rate of informational content. Ranking these pages for branded + category queries (e.g., 'Velocity Mortgage fix and flip review') could drive high-quality referral traffic within 30-60 days.",
+      "priority": "medium",
+      "firstSeen": "2026-04-18",
+      "lastSeen": "2026-04-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "5fbe7a5e347b",
+      "title": "Improve Session Duration by Adding Contextual Internal Links and Content Depth Signals",
+      "description": "Session duration dropped 39.9% to 99.1 seconds while page views per session increased, indicating users are skimming and bouncing between pages without reading deeply. To address this: (1) Add a 'Related Guides' or 'Next Step' module at the bottom of every calculator page linking to relevant blog content (e.g., after using the rental cashflow calculator, suggest the BRRRR guide and cap rate calculator). (2) On the BRRRR guide, add a table of contents with anchor links and expand thin sections — the page currently ranks at position 4.5 in GSC but receives only 2 views, suggesting it may not be satisfying user intent fully. (3) Add estimated read time to blog posts to set expectations. (4) Embed the rental cashflow calculator within the BRRRR guide and beginner investing guide to increase tool engagement within editorial content.",
+      "expectedImpact": "Increasing average session duration back toward the 90-day baseline of 164.8 seconds would signal stronger content quality to Google and improve the probability of ranking improvements across all content types within 45-60 days.",
+      "priority": "medium",
+      "firstSeen": "2026-04-18",
+      "lastSeen": "2026-04-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -262,6 +317,17 @@
       "priority": "low",
       "firstSeen": "2026-04-17",
       "lastSeen": "2026-04-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e5f3ef22daa6",
+      "title": "Leverage the Newsletter as an SEO and Retention Asset",
+      "description": "The newsletter is the second-most-visited section of the site with 11 combined page views, yet it does not appear to be optimized for search or structured for SEO value. Implement: (1) Give each newsletter issue a descriptive, keyword-rich URL slug instead of date-based slugs (e.g., /newsletter/brrrr-market-update-april-2026 instead of /newsletter/2026-04-13). (2) Add a newsletter archive index page at /newsletter that is crawlable and internally linked from the main nav. (3) Include a newsletter signup CTA on every high-traffic page (homepage, lender reviews, calculator pages). (4) Repurpose newsletter content into standalone blog posts targeting long-tail queries to increase content output velocity without significant additional writing effort.",
+      "expectedImpact": "SEO-optimized newsletter archive pages can rank for timely real estate investing queries and build topical authority. A visible signup CTA across top pages could grow the subscriber list by 15-30% within 60 days based on current traffic patterns.",
+      "priority": "low",
+      "firstSeen": "2026-04-18",
+      "lastSeen": "2026-04-18",
       "timesRepeated": 1,
       "status": "open"
     }
