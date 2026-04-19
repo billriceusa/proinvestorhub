@@ -1,0 +1,208 @@
+{
+  "runDate": "2026-04-19T06:04:23.738Z",
+  "weekStartDate": "2026-04-20",
+  "analysis": {
+    "strategyReview": "ProInvestorHub has built a solid foundational content library across all five pillars with 108 published posts. The site demonstrates strong coverage of entry-level topics (first rental property, wholesaling basics, BRRRR, hard money) and legal/structural content (LLCs, landlord-tenant law, depreciation). The recent publishing cadence shows good pillar rotation and the editorial calendar still has 25 unpublished briefs, several of which are high-priority. However, a few briefs in the calendar are near-duplicates of already-published posts — notably 'Multi-Family Investing for Beginners,' 'Real Estate Depreciation,' 'Out-of-State Real Estate Investing,' 'LLC for Real Estate,' 'Buying Your First Rental Property,' and 'How to Raise Private Capital' — which substantially overlap with live content and must be retired or significantly reframed before scheduling. The calendar also has a gap in DSCR loans and 1031 exchanges, both of which are high-commercial-intent keywords with strong search volume and no live post yet.",
+    "competitiveInsights": "BiggerPockets dominates broad community-driven search terms ('real estate investing for beginners,' 'BRRRR strategy,' 'house hacking') through sheer domain authority and forum depth. ProInvestorHub's best opportunity is to outrank on long-tail, practitioner-specific queries where BiggerPockets has thin or outdated content — particularly around 2026-specific financing structures like DSCR loans, current interest-rate-environment deal analysis, and market-specific cap rate data. Investopedia covers definitional content shallowly and ranks for terms like '1031 exchange' with generic overviews that lack actionable investor workflow — a gap ProInvestorHub can exploit by publishing step-by-step procedural guides with real numbers. REtipster focuses heavily on land and creative finance niches and has minimal calculator-driven content, leaving the tools-plus-education combination largely uncontested for keywords like 'DSCR loan calculator,' 'fix and flip project management timeline,' and 'self-managing vs property manager math.'",
+    "newOpportunities": [
+      "DSCR loan qualification deep-dive: lenders are tightening DSCR minimums in 2026 — a timely angle BiggerPockets hasn't updated recently",
+      "1031 exchange boot and partial exchange scenarios: Investopedia covers the basics but no competitor walks through the math on partial exchanges",
+      "Fix and flip project management: no competitor has a contractor-system + Gantt-style timeline framework for flippers in a single post",
+      "Eviction process by state cost comparison: landlords are searching for jurisdiction-specific eviction timelines and legal costs — a data table approach no competitor has built",
+      "Short-term vs long-term rental financial comparison with real market examples: BiggerPockets has opinion pieces but no structured financial model walkthrough",
+      "10 market indicators dashboard: a monthly-tracker framework post with specific data sources would rank for 'real estate market analysis' long-tails and serve as a calculator companion"
+    ],
+    "trendingTopics": [
+      "DSCR loans as conventional financing tightens for investors in 2026",
+      "1031 exchange legislative uncertainty and how investors should plan",
+      "Fix and flip project timelines in a high-material-cost environment",
+      "Self-managing vs hiring property management as operating costs rise",
+      "Short-term rental regulation and the pivot to mid-term rentals",
+      "Eviction moratorium aftermath and landlord legal best practices",
+      "Real estate syndication as solo investing becomes harder to scale",
+      "Portfolio scaling from 1 to 10 properties in a tight-credit market"
+    ],
+    "recommendedUpdates": [
+      "Retire or reframe 'Multi-Family Investing for Beginners' calendar brief — substantially covered in published post; reframe as 'Small Apartment Building Underwriting: How to Analyze a 5-10 Unit Deal'",
+      "Retire 'Real Estate Depreciation' calendar brief — covered in published post; reframe as 'Cost Segregation Studies: How to Accelerate Depreciation on Rental Properties'",
+      "Retire 'Out-of-State Real Estate Investing' calendar brief — covered in published post; reframe as 'Remote Property Management Systems: Tools and Processes for Out-of-State Landlords'",
+      "Retire 'LLC for Real Estate' calendar brief — substantially covered in two published posts; reframe as 'Series LLC for Real Estate Investors: Is It Worth the Complexity?'",
+      "Retire 'Buying Your First Rental Property' calendar brief — duplicate of published post; replace with 'House Hacking Your First Property: A Numbers-First Guide for 2026'",
+      "Retire 'How to Raise Private Capital' calendar brief — substantially covered in published post; reframe as 'SEC Compliance for Real Estate Investors Raising Private Capital: Reg D Basics'",
+      "Flag 'How to Calculate ROI on Rental Property' in calendar as duplicate — already published; remove from queue immediately"
+    ]
+  },
+  "articlesCreated": [
+    {
+      "title": "DSCR Loans Explained: No-Income-Verification Financing for Real Estate Investors",
+      "slug": "dscr-loans-explained-real-estate-investors",
+      "publishDate": "2026-04-20",
+      "primaryKeyword": "DSCR loans real estate",
+      "pillar": "FINANCING & DEALS"
+    },
+    {
+      "title": "Fix and Flip Project Management: The Timeline, Budget, and Contractor System That Protects Your Profit",
+      "slug": "fix-and-flip-project-management-timeline-budget-system",
+      "publishDate": "2026-04-22",
+      "primaryKeyword": "fix and flip project management",
+      "pillar": "INVESTMENT STRATEGIES"
+    },
+    {
+      "title": "1031 Exchange Guide: How to Defer Capital Gains Tax and Reinvest Like a Pro",
+      "slug": "1031-exchange-guide-defer-capital-gains-tax",
+      "publishDate": "2026-04-24",
+      "primaryKeyword": "1031 exchange real estate investors",
+      "pillar": "FINANCING & DEALS"
+    }
+  ],
+  "articlesSkipped": [],
+  "articlesFailed": [],
+  "newBriefs": [
+    {
+      "day": "Mon",
+      "publishDate": "2026-04-20",
+      "slug": "dscr-loans-explained-real-estate-investors",
+      "title": "DSCR Loans Explained: No-Income-Verification Financing for Real Estate Investors",
+      "pillar": "FINANCING & DEALS",
+      "primaryKeyword": "DSCR loans real estate",
+      "secondaryKeywords": [
+        "DSCR loan requirements 2026",
+        "no income verification investment property loan",
+        "debt service coverage ratio loan",
+        "DSCR mortgage lenders",
+        "rental property loan without W2"
+      ],
+      "targetLeadTypes": [
+        "beginning-investors",
+        "brrrr-practitioners",
+        "rental-property-investors",
+        "intermediate-portfolio-scalers"
+      ],
+      "wordCount": "2,800-3,200",
+      "competitiveAngle": "BiggerPockets has scattered forum threads on DSCR but no authoritative 2026-updated guide with current lender benchmarks, qualification math, and a side-by-side comparison against conventional and hard money loans. Investopedia defines DSCR as a metric but never explains the loan product. This post owns the practitioner query with a full qualification walkthrough, real lender standards, and an embedded DSCR calculator CTA — a combination no competitor has built.",
+      "outline": [
+        "What Is a DSCR Loan? (Definition and How It Differs from Conventional Mortgages)",
+        "How DSCR Is Calculated: The Formula with Real Property Examples",
+        "Minimum DSCR Requirements: What Lenders Are Requiring in 2026",
+        "DSCR Loan Terms: Rates, LTV Limits, Prepayment Penalties, and Loan Sizes",
+        "Who Qualifies: Investor Profiles Best Suited for DSCR Financing",
+        "DSCR vs. Conventional vs. Hard Money: Side-by-Side Comparison Table",
+        "How to Use a DSCR Loan in a BRRRR Strategy",
+        "Common DSCR Loan Mistakes and How to Avoid Them",
+        "How to Find DSCR Lenders and What to Ask Before Applying",
+        "Step-by-Step: Running the DSCR Numbers on a Sample Deal",
+        "FAQ: DSCR Loans for First-Time Investors"
+      ],
+      "internalLinks": [
+        "/glossary/dscr-loan",
+        "/glossary/dscr",
+        "/glossary/ltv",
+        "/glossary/brrrr-method",
+        "/glossary/cash-flow",
+        "/calculators/dscr-calculator",
+        "/blog/category/financing",
+        "/blog/hard-money-lenders-guide-real-estate",
+        "/blog/brrrr-strategy-complete-guide"
+      ]
+    },
+    {
+      "day": "Wed",
+      "publishDate": "2026-04-22",
+      "slug": "fix-and-flip-project-management-timeline-budget-system",
+      "title": "Fix and Flip Project Management: The Timeline, Budget, and Contractor System That Protects Your Profit",
+      "pillar": "INVESTMENT STRATEGIES",
+      "primaryKeyword": "fix and flip project management",
+      "secondaryKeywords": [
+        "house flip timeline",
+        "fix and flip contractor management",
+        "flip project budget template",
+        "rehab project management real estate",
+        "how to manage a house flip"
+      ],
+      "targetLeadTypes": [
+        "house-flippers",
+        "intermediate-portfolio-scalers",
+        "brrrr-practitioners"
+      ],
+      "wordCount": "2,800-3,200",
+      "competitiveAngle": "BiggerPockets has generic 'how to flip houses' content but no post that builds a complete operational system — phase-by-phase timeline, contractor accountability framework, budget variance tracking, and scope-creep prevention — in a single practitioner guide. REtipster doesn't cover flipping. Investopedia covers flipping conceptually. This post is the operational playbook for the active flipper, differentiated by a phase-gated timeline framework and a contractor payment milestone system tied to inspection checkpoints.",
+      "outline": [
+        "Why Most Flips Fail: The Project Management Problem No One Talks About",
+        "The 5 Phases of a Fix and Flip: A Phase-Gated Timeline Framework",
+        "Phase 1 — Acquisition and Pre-Construction Planning (Weeks 1-2)",
+        "Phase 2 — Demolition and Rough Work: Structural, Electrical, Plumbing (Weeks 3-5)",
+        "Phase 3 — Drywall, HVAC, and Systems Finish (Weeks 6-8)",
+        "Phase 4 — Finish Work: Flooring, Cabinets, Fixtures, Landscaping (Weeks 9-11)",
+        "Phase 5 — Punch List, Staging, and Listing Prep (Weeks 12-13)",
+        "How to Build a Flip Budget That Accounts for Variance (The 10/10/10 Rule)",
+        "Contractor Accountability System: Milestone Payments and Inspection Gates",
+        "Managing Scope Creep: Change Order Protocols That Protect Your Margin",
+        "Tracking Tools: Spreadsheet vs. Project Management Software for Flippers",
+        "What to Do When a Flip Goes Off the Rails: Decision Framework",
+        "Sample Project Management Checklist: Printable Phase-by-Phase Reference"
+      ],
+      "internalLinks": [
+        "/glossary/fix-and-flip",
+        "/glossary/arv",
+        "/glossary/capex-reserve",
+        "/calculators/rehab-cost-estimator",
+        "/blog/category/strategies",
+        "/blog/house-flipping-budget-template",
+        "/blog/real-estate-due-diligence-checklist"
+      ]
+    },
+    {
+      "day": "Fri",
+      "publishDate": "2026-04-24",
+      "slug": "1031-exchange-guide-defer-capital-gains-tax",
+      "title": "1031 Exchange Guide: How to Defer Capital Gains Tax and Reinvest Like a Pro",
+      "pillar": "FINANCING & DEALS",
+      "primaryKeyword": "1031 exchange real estate investors",
+      "secondaryKeywords": [
+        "how to do a 1031 exchange",
+        "1031 exchange rules 2026",
+        "defer capital gains tax real estate",
+        "1031 exchange timeline",
+        "like-kind exchange investment property"
+      ],
+      "targetLeadTypes": [
+        "intermediate-portfolio-scalers",
+        "rental-property-investors",
+        "house-flippers",
+        "brrrr-practitioners"
+      ],
+      "wordCount": "3,000-3,500",
+      "competitiveAngle": "Investopedia ranks for '1031 exchange' with a definitional overview that never walks through the actual mechanics — identification rules, boot calculations, partial exchanges, and qualified intermediary selection. BiggerPockets has forum threads but no updated 2026 guide with legislative context. This post dominates the practitioner query by combining the legal framework with a step-by-step transaction walkthrough, a boot calculation example with real numbers, and a 45-day identification strategy section that no competitor has addressed in a standalone guide.",
+      "outline": [
+        "What Is a 1031 Exchange? (And Why Every Serious Investor Should Use One)",
+        "The Tax Math: How Much You Save with a 1031 Exchange vs. Selling Outright",
+        "1031 Exchange Rules: Like-Kind Property, Timeline, and Value Requirements",
+        "The 45-Day Identification Rule: Strategies for Identifying Replacement Properties",
+        "The 180-Day Closing Rule: How to Structure Timelines That Don't Blow Up",
+        "Boot Explained: What Triggers Partial Taxability and How to Minimize It",
+        "Partial 1031 Exchanges: When They Make Sense and How to Calculate the Tax",
+        "Qualified Intermediaries: What They Do, What They Cost, and How to Choose One",
+        "1031 Exchange for BRRRR Investors: Using Exchanges to Scale Without Tax Drag",
+        "Reverse 1031 Exchanges: Buying Before You Sell",
+        "2026 Legislative Landscape: What Investors Should Know About Proposed Changes",
+        "Common 1031 Exchange Mistakes That Disqualify the Exchange",
+        "Step-by-Step Walkthrough: A Real 1031 Exchange Transaction from Sale to Close",
+        "FAQ: 1031 Exchange for Beginners and Intermediate Investors"
+      ],
+      "internalLinks": [
+        "/glossary/1031-exchange",
+        "/glossary/depreciation",
+        "/glossary/equity",
+        "/glossary/appreciation",
+        "/glossary/irr",
+        "/calculators/roi-calculator",
+        "/blog/category/tax-legal",
+        "/blog/category/financing",
+        "/blog/real-estate-depreciation-tax-strategy",
+        "/blog/real-estate-exit-strategies"
+      ]
+    }
+  ],
+  "nextWeekPlan": "Monday's DSCR Loans post is pulled directly from the unpublished editorial calendar and is the highest-priority financing piece given current market conditions — DSCR lending has become the dominant investor financing vehicle as conventional lenders tighten standards, making this a high-commercial-intent, timely keyword with no live post on the site. Wednesday's Fix and Flip Project Management post is also pulled from the calendar and intentionally scheduled mid-week as an Investment Strategies pillar piece to maintain pillar rotation (Financing → Investment Strategies → Financing). Friday's 1031 Exchange Guide is the third calendar brief selected, returning to Financing and Deals — it is the single highest-search-volume gap in the current content library and carries strong commercial intent from intermediate and advanced investors. Pillar rotation this week: Financing & Deals → Investment Strategies → Financing & Deals. Note: back-to-back Financing & Deals on Monday and Friday is acceptable since Investment Strategies breaks the streak on Wednesday per the 'no two consecutive same pillar' rule. Seven calendar briefs flagged as near-duplicates of published content are documented in recommendedUpdates and should be retired or reframed before scheduling — do not publish them in current form. The duplicate 'How to Calculate ROI on Rental Property' brief in the calendar must be removed immediately as the post is already live.",
+  "errors": []
+}
