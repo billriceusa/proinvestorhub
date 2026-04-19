@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-04-18T12:02:46.960Z",
+  "lastUpdated": "2026-04-19T12:02:30.556Z",
   "items": [
+    {
+      "id": "af922b45cc97",
+      "title": "Exclude Internal Traffic from GA4 to Get Accurate Baseline Data",
+      "description": "The current data is almost certainly contaminated by internal team browsing — 10 of 16 sessions are direct, the page views-to-sessions ratio is anomalously high (5.5 pages/session) while bounce rate is 91.67%, and Tag Assistant referral traffic confirms developer/QA activity. Steps: (1) Identify the office/team IP addresses and add them as an exclusion filter in GA4 under Admin > Data Streams > Configure Tag Settings > Define Internal Traffic. (2) Create a GA4 filter to exclude internal traffic from all reports. (3) Add a UTM parameter convention for all internal testing (e.g., utm_source=internal) as a secondary filter. (4) After 14 days of clean data, re-baseline all KPIs — current metrics are not reliable for decision-making.",
+      "expectedImpact": "Clean data will reveal true organic user behavior, accurate bounce rates, and real engagement metrics — enabling better-informed content and SEO decisions.",
+      "priority": "high",
+      "firstSeen": "2026-04-16",
+      "lastSeen": "2026-04-19",
+      "timesRepeated": 2,
+      "status": "open"
+    },
     {
       "id": "8fcac82ef6e4",
       "title": "Exclude Internal/Developer Traffic via GA4 Filter to Get Accurate Baseline",
@@ -178,6 +189,28 @@
       "status": "open"
     },
     {
+      "id": "b0c13b41dc2c",
+      "title": "Optimize Cap Rate and Cash-on-Cash Calculator Pages for Top-10 Rankings",
+      "description": "The cap rate calculator query cluster (20 queries, avg position 65-99) represents the highest-volume, highest-intent opportunity on the site. Execute the following: (1) Audit /calculators/cap-rate and /calculators/cash-on-cash for Core Web Vitals — these tool pages must load under 2.5s LCP on mobile. (2) Add a 600-800 word FAQ section below each calculator answering the top 5 related queries (e.g., 'what is a good cap rate for rental property', 'cap rate vs cash on cash'). (3) Build 3-5 internal links from the BRRRR guide and beginners guide to each calculator. (4) Submit both URLs for indexing in Google Search Console. (5) Target a featured snippet for 'cap rate calculator' by structuring the formula explanation with a clean H2 + definition + example format.",
+      "expectedImpact": "Moving from position 65-99 to position 20-40 within 60-90 days; breaking into top 10 within 6 months could drive 50-200 organic clicks/day given query volume for 'cap rate calculator' terms.",
+      "priority": "high",
+      "firstSeen": "2026-04-19",
+      "lastSeen": "2026-04-19",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "ad115fe7885d",
+      "title": "Diagnose and Fix the Session Duration Collapse",
+      "description": "The drop from 133.8s to 35.9s average session duration is a critical UX/content signal. Take these steps immediately: (1) In GA4, run a page-level engagement report to identify which specific pages have sub-30s average engagement time. (2) Use Google PageSpeed Insights to test the top 5 pages — if LCP exceeds 3s, prioritize image optimization and server response time. (3) Review above-the-fold content on the homepage and lender review pages: ensure the value proposition and primary CTA are visible without scrolling on both desktop and mobile. (4) Add a sticky table of contents to long-form guides to encourage scroll depth. (5) Check if the bounce rate spike correlates with a specific traffic source (direct vs organic) — if direct traffic (likely internal) is the culprit, this reinforces the need for IP filtering first.",
+      "expectedImpact": "Restoring session duration to 90-120s range and engagement rate to 30%+ within 30 days of fixes; improved engagement signals will positively influence Google ranking factors.",
+      "priority": "high",
+      "firstSeen": "2026-04-19",
+      "lastSeen": "2026-04-19",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -218,17 +251,6 @@
       "priority": "medium",
       "firstSeen": "2026-04-15",
       "lastSeen": "2026-04-15",
-      "timesRepeated": 1,
-      "status": "open"
-    },
-    {
-      "id": "af922b45cc97",
-      "title": "Exclude Internal Traffic from GA4 to Get Accurate Baseline Data",
-      "description": "The current data is almost certainly contaminated by internal team browsing — 10 of 16 sessions are direct, the page views-to-sessions ratio is anomalously high (5.5 pages/session) while bounce rate is 91.67%, and Tag Assistant referral traffic confirms developer/QA activity. Steps: (1) Identify the office/team IP addresses and add them as an exclusion filter in GA4 under Admin > Data Streams > Configure Tag Settings > Define Internal Traffic. (2) Create a GA4 filter to exclude internal traffic from all reports. (3) Add a UTM parameter convention for all internal testing (e.g., utm_source=internal) as a secondary filter. (4) After 14 days of clean data, re-baseline all KPIs — current metrics are not reliable for decision-making.",
-      "expectedImpact": "Clean data will reveal true organic user behavior, accurate bounce rates, and real engagement metrics — enabling better-informed content and SEO decisions.",
-      "priority": "medium",
-      "firstSeen": "2026-04-16",
-      "lastSeen": "2026-04-16",
       "timesRepeated": 1,
       "status": "open"
     },
@@ -288,6 +310,28 @@
       "status": "open"
     },
     {
+      "id": "63dca3a206b2",
+      "title": "Build Out the Lender Review Hub to Capture Commercial-Intent Traffic",
+      "description": "Lender review pages are the clear content winners (12 of top 15 page views). Scale this cluster systematically: (1) Audit which lenders are missing reviews — prioritize the top 20 DSCR, fix-and-flip, and portfolio loan lenders by search volume. (2) Create a standardized review template covering: loan types, rates/fees, minimum qualifications, pros/cons, and a verdict score. (3) Add schema markup (Review + FinancialProduct) to all lender review pages. (4) Build a comparison page matrix (e.g., 'Lima One vs Velocity Mortgage vs New Silver') — the Lima One vs Civic Financial comparison is already at position 4.6, proving this format works. (5) Add affiliate disclosure and CTA buttons to each review for monetization readiness.",
+      "expectedImpact": "Lender review cluster could become the primary organic traffic driver within 90 days; commercial-intent visitors from this cluster have the highest conversion potential for affiliate or lead-gen revenue.",
+      "priority": "medium",
+      "firstSeen": "2026-04-19",
+      "lastSeen": "2026-04-19",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "881f84e6048a",
+      "title": "Investigate and Resolve Mobile Search Visibility Gap",
+      "description": "With only 14 mobile impressions vs 205 desktop impressions (6.4% mobile share), the site is nearly invisible in mobile search. Action steps: (1) Run a Mobile Usability report in Google Search Console to identify any mobile usability errors. (2) Test all top pages in Google's Mobile-Friendly Test tool. (3) Verify that Google is using mobile-first indexing for the site (check Search Console > Settings > Crawling). (4) Ensure viewport meta tags are correctly set on all pages. (5) Test calculator tools specifically on mobile — interactive tools often break on small screens, which can trigger poor mobile UX signals. (6) Check if font sizes, tap target sizes, and horizontal scrolling issues exist on lender review pages.",
+      "expectedImpact": "Resolving mobile indexing/UX issues could 3-5x total impressions within 60 days, as mobile queries represent the majority of real estate search volume.",
+      "priority": "medium",
+      "firstSeen": "2026-04-19",
+      "lastSeen": "2026-04-19",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -328,6 +372,17 @@
       "priority": "low",
       "firstSeen": "2026-04-18",
       "lastSeen": "2026-04-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "13ad86b345ee",
+      "title": "Establish an AI Search Optimization Strategy to Capture ChatGPT Referrals",
+      "description": "ChatGPT is already sending 3 referral sessions — a meaningful signal for a site at this traffic stage. To grow this channel: (1) Ensure all key pages have clear, factual, structured content that AI models can cite (definitions, numbered steps, data tables). (2) Add author bios with credentials to all guides and reviews to establish E-E-A-T signals that AI models favor. (3) Implement FAQ schema on calculator and guide pages — AI models frequently pull from FAQ-structured content. (4) Monitor chatgpt.com referrals monthly in GA4 as a standalone channel segment. (5) Consider publishing data-driven content (e.g., 'Average Cap Rates by City 2026') that AI tools are likely to reference when answering investor questions.",
+      "expectedImpact": "AI referral traffic is growing 20-30% quarter-over-quarter industry-wide; early optimization could establish the site as a cited source in AI responses, driving 10-50 additional sessions/month within 6 months.",
+      "priority": "low",
+      "firstSeen": "2026-04-19",
+      "lastSeen": "2026-04-19",
       "timesRepeated": 1,
       "status": "open"
     }
