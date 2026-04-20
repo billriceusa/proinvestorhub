@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { HoneypotInput } from '@/components/honeypot-input'
 
 type Offer = {
   id: string
@@ -32,6 +33,7 @@ export function CalculatorCTA({
   const activeOffers = offers || [defaultNewsletterOffer]
   const [emailSent, setEmailSent] = useState(false)
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
   const [loading, setLoading] = useState(false)
 
   async function handleNewsletterSubmit(e: React.FormEvent) {
@@ -42,7 +44,7 @@ export function CalculatorCTA({
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, website }),
       })
       if (res.ok) {
         setEmailSent(true)
@@ -104,6 +106,7 @@ export function CalculatorCTA({
                   placeholder="you@example.com"
                   className="flex-1 min-w-0 rounded-md border border-border bg-white px-3 py-2 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                 />
+                <HoneypotInput value={website} onChange={setWebsite} />
                 <button
                   type="submit"
                   disabled={loading}

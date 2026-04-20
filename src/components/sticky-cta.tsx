@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { trackLeadCapture, trackCtaDismiss, trackCtaImpression } from '@/lib/tracking'
+import { HoneypotInput } from '@/components/honeypot-input'
 
 const DISMISS_KEY = 'pih_sticky_cta_dismissed'
 
@@ -9,6 +10,7 @@ export function StickyCTA() {
   const [visible, setVisible] = useState(false)
   const [dismissed, setDismissed] = useState(false)
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const footerRef = useRef<HTMLElement | null>(null)
   const impressionFired = useRef(false)
@@ -60,7 +62,7 @@ export function StickyCTA() {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, source: 'sticky-cta', website }),
       })
 
       if (res.ok) {
@@ -109,6 +111,7 @@ export function StickyCTA() {
           </div>
 
           <form onSubmit={handleSubmit} className="flex items-center gap-2 shrink-0">
+            <HoneypotInput value={website} onChange={setWebsite} />
             <input
               type="email"
               required
@@ -155,6 +158,7 @@ export function StickyCTA() {
             </button>
           </div>
           <form onSubmit={handleSubmit} className="flex gap-2">
+            <HoneypotInput value={website} onChange={setWebsite} />
             <input
               type="email"
               required

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { trackLeadCapture, trackCtaDismiss, trackCtaImpression } from '@/lib/tracking'
+import { HoneypotInput } from '@/components/honeypot-input'
 
 const STORAGE_KEY = 'pih_exit_intent'
 const COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000 // 7 days
@@ -27,6 +28,7 @@ function setCooldown() {
 export function ExitIntentModal() {
   const [show, setShow] = useState(false)
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const impressionFired = useRef(false)
   const triggered = useRef(false)
@@ -92,7 +94,7 @@ export function ExitIntentModal() {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'exit-intent' }),
+        body: JSON.stringify({ email, source: 'exit-intent', website }),
       })
 
       if (res.ok) {
@@ -177,6 +179,7 @@ export function ExitIntentModal() {
                   placeholder="you@example.com"
                   className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all"
                 />
+                <HoneypotInput value={website} onChange={setWebsite} />
                 <button
                   type="submit"
                   disabled={status === 'loading'}

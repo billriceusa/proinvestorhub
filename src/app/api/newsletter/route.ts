@@ -3,6 +3,7 @@ import { Resend } from 'resend'
 import { WelcomeEmail } from '@/emails/welcome'
 import { Drip1CalculatorsEmail } from '@/emails/drip-1-calculators'
 import { Drip2FirstDealEmail } from '@/emails/drip-2-first-deal'
+import { isGoodOrigin, isHoneypotFilled, isGibberishName } from '@/lib/anti-spam'
 
 export type ExperienceLevel = 'beginner' | 'some-experience' | 'experienced'
 
@@ -18,11 +19,25 @@ const fromEmail =
 
 export async function POST(request: Request) {
   try {
+    if (!isGoodOrigin(request)) {
+      return NextResponse.json({ success: true })
+    }
+
     const body = await request.json()
-    const { email, source, experience } = body as {
+
+    if (isHoneypotFilled(body)) {
+      return NextResponse.json({ success: true })
+    }
+
+    const { email, source, experience, firstName: submittedFirstName } = body as {
       email?: string
       source?: string
       experience?: ExperienceLevel
+      firstName?: string
+    }
+
+    if (isGibberishName(submittedFirstName)) {
+      return NextResponse.json({ success: true })
     }
 
     if (!email || typeof email !== 'string' || !email.includes('@')) {
@@ -61,6 +76,7 @@ export async function POST(request: Request) {
     // Schedule drip emails: drip 1 at +24h, drip 2 at +72h
     // (Resend allows scheduling up to 72h out; drip 3-5 handled by daily cron)
     const now = Date.now()
+    const welcomeAt = new Date(now + 15 * 60 * 1000).toISOString() // 15-min Day-0 delay for spam cancel window
     const drip1At = new Date(now + 24 * 60 * 60 * 1000).toISOString()
     const drip2At = new Date(now + 3 * 24 * 60 * 60 * 1000).toISOString()
 
@@ -73,12 +89,13 @@ export async function POST(request: Request) {
         ...(segments.length > 0 && { segments }),
       }),
 
-      // 2. Send welcome email immediately
+      // 2. Send welcome email (delayed 15 min for spam cancel window)
       resend.emails.send({
         from: fromEmail,
         to: email,
         subject: 'Welcome to ProInvestorHub — Real Estate Investing, Demystified',
         react: WelcomeEmail(),
+        scheduledAt: welcomeAt,
       }),
 
       // 3. Schedule drip 1 (day 1)

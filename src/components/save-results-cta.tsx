@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { trackCalculatorSave } from '@/lib/tracking'
+import { HoneypotInput } from '@/components/honeypot-input'
 
 export function SaveResultsCTA({
   calculatorName,
@@ -15,6 +16,7 @@ export function SaveResultsCTA({
   const [expanded, setExpanded] = useState(false)
   const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent) {
@@ -32,6 +34,7 @@ export function SaveResultsCTA({
           email,
           calculatorName,
           results,
+          website,
         }),
       })
 
@@ -90,6 +93,7 @@ export function SaveResultsCTA({
     <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
       <p className="text-sm font-semibold text-text mb-3">Email My Results</p>
       <form onSubmit={handleSubmit} className="space-y-2">
+        <HoneypotInput value={website} onChange={setWebsite} />
         <input
           type="text"
           required

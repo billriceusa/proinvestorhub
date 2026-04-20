@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { HoneypotInput } from '@/components/honeypot-input'
 
 type Variant = 'inline' | 'card' | 'banner'
 
@@ -15,6 +16,7 @@ export function LeadMagnetCTA({
   description?: string
 }) {
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent) {
@@ -37,7 +39,7 @@ export function LeadMagnetCTA({
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, website }),
       })
       if (res.ok) {
         setStatus('success')
@@ -115,6 +117,7 @@ export function LeadMagnetCTA({
         onSubmit={handleSubmit}
         className={`flex gap-2 ${variant === 'inline' ? 'mt-3' : ''} ${variant === 'banner' ? 'flex-col sm:flex-row sm:max-w-md' : ''}`}
       >
+        <HoneypotInput value={website} onChange={setWebsite} />
         <input
           type="email"
           required

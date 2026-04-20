@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { LenderMatchEmail } from '@/emails/lender-match'
+import { isGoodOrigin, isHoneypotFilled, isGibberishName } from '@/lib/anti-spam'
 
 function getResend() {
   const key = process.env.RESEND_API_KEY
@@ -10,7 +11,21 @@ function getResend() {
 
 export async function POST(request: Request) {
   try {
-    const { firstName, email, scenario, topMatches } = await request.json()
+    if (!isGoodOrigin(request)) {
+      return NextResponse.json({ success: true })
+    }
+
+    const body = await request.json()
+
+    if (isHoneypotFilled(body)) {
+      return NextResponse.json({ success: true })
+    }
+
+    const { firstName, email, scenario, topMatches } = body
+
+    if (isGibberishName(firstName)) {
+      return NextResponse.json({ success: true })
+    }
 
     if (!email || typeof email !== 'string' || !email.includes('@')) {
       return NextResponse.json(

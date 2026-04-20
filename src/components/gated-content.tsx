@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { trackLeadCapture } from '@/lib/tracking'
+import { HoneypotInput } from '@/components/honeypot-input'
 
 const STORAGE_KEY = 'pih_content_unlocked'
 
@@ -15,6 +16,7 @@ export function GatedContent({
   const [unlocked, setUnlocked] = useState(false)
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
+  const [website, setWebsite] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle')
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export function GatedContent({
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, firstName, website }),
       })
 
       if (res.ok) {
@@ -82,6 +84,7 @@ export function GatedContent({
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-3">
+            <HoneypotInput value={website} onChange={setWebsite} />
             <input
               type="text"
               required

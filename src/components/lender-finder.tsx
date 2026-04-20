@@ -5,6 +5,7 @@ import Link from 'next/link'
 import type { LenderData } from '@/data/lenders'
 import { formatCurrency } from '@/data/lenders'
 import { LenderOutboundLink } from '@/components/lender-outbound-link'
+import { HoneypotInput } from '@/components/honeypot-input'
 import { loanTypes } from '@/data/loan-types'
 import { usStates } from '@/data/us-states'
 import { trackLenderFinderCapture, trackLenderFinderSkip } from '@/lib/tracking'
@@ -184,6 +185,7 @@ export function LenderFinder({ allLenders }: { allLenders: LenderData[] }) {
   const [showEmailGate, setShowEmailGate] = useState(false)
   const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
   const [emailStatus, setEmailStatus] = useState<'idle' | 'loading' | 'error'>('idle')
 
   // Compute results whenever scenario changes (but only display when showResults is true)
@@ -233,6 +235,7 @@ export function LenderFinder({ allLenders }: { allLenders: LenderData[] }) {
           email,
           scenario,
           topMatches,
+          website,
         }),
       })
 
@@ -438,6 +441,7 @@ export function LenderFinder({ allLenders }: { allLenders: LenderData[] }) {
             </p>
 
             <form onSubmit={handleEmailSubmit} className="mt-6 space-y-3">
+              <HoneypotInput value={website} onChange={setWebsite} />
               <input
                 type="text"
                 required
