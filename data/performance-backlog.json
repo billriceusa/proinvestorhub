@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-19T12:02:30.556Z",
+  "lastUpdated": "2026-04-20T12:02:41.382Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -211,6 +211,39 @@
       "status": "open"
     },
     {
+      "id": "4b73b7f90917",
+      "title": "Rewrite Title Tags and Meta Descriptions for All Calculator Pages",
+      "description": "The cap rate calculator cluster is generating 16 impressions/week at positions 57-94 with 0 clicks. Immediate action: (1) Audit the current title tag for /calculators/cap-rate — it likely reads generically. Rewrite to include a value hook, e.g., 'Cap Rate Calculator — Instant Results for Any Rental Property | ProInvestorHub'. (2) Write meta descriptions that include a specific differentiator like 'Includes NOI breakdown, market benchmarks, and export to PDF.' (3) Do the same for /calculators/cash-on-cash (position 68.6). Even at these low positions, a compelling snippet can lift CTR from 0% to 0.5-1%, which at current impression volume would generate 1-2 clicks/day — a 100%+ improvement from zero.",
+      "expectedImpact": "Move CTR from 0.00% to 0.3-0.8% on calculator pages within 30-45 days, generating first consistent organic clicks",
+      "priority": "high",
+      "firstSeen": "2026-04-20",
+      "lastSeen": "2026-04-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "7f90921414b9",
+      "title": "Build Topical Depth Around Cap Rate Calculator to Accelerate Ranking",
+      "description": "The cap rate calculator has 16 impressions across 10+ query variants ('cap rate calculator', 'cap rate calculator real estate', 'cap rate calculator rental property', etc.) but ranks 57-94. To break into top 30: (1) Add a 500-800 word educational section below the calculator covering what a good cap rate is by market (5-10% benchmarks), how to use it with mortgage analysis, and common mistakes. (2) Create a supporting blog post 'Cap Rate Calculator: How to Use It to Evaluate Any Rental Property' and internally link to /calculators/cap-rate. (3) Add FAQ schema markup targeting the exact query variants showing impressions. This creates topical authority that can lift the page 20-30 positions within 60-90 days.",
+      "expectedImpact": "Move cap rate calculator from position 72-94 into position 30-50 range within 60 days, enabling first organic clicks from this high-intent keyword cluster",
+      "priority": "high",
+      "firstSeen": "2026-04-20",
+      "lastSeen": "2026-04-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "229df336bf31",
+      "title": "Canonicalize HTTP vs HTTPS and www vs non-www URL Variants",
+      "description": "Search Console data shows both 'http://proinvestorhub.com/' and 'https://proinvestorhub.com/' as separate pages, and both 'proinvestorhub.com' and 'www.proinvestorhub.com' variants appearing in top pages. This is splitting link equity and impression data. Immediate steps: (1) Verify canonical tags are set on all pages pointing to the https://www version (or non-www, pick one consistently). (2) Set up 301 redirects from http:// to https:// and from non-www to www (or vice versa) at the server level. (3) Set preferred domain in Google Search Console. This is a foundational technical fix that should be resolved before any content investment.",
+      "expectedImpact": "Consolidate ranking signals and link equity to a single URL variant, potentially improving average position by 3-8 spots within 30 days as Google stops splitting authority",
+      "priority": "high",
+      "firstSeen": "2026-04-20",
+      "lastSeen": "2026-04-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -332,6 +365,28 @@
       "status": "open"
     },
     {
+      "id": "b2f8e2d44361",
+      "title": "Create a Lender Comparison Hub Page to Capitalize on Review Traffic",
+      "description": "Lender review pages (Velocity Mortgage, Lima One Capital, New Silver) are the top-performing content cluster with ~17 views representing 28% of all traffic. To scale this: (1) Create a master /lenders/compare page with a comparison table of all reviewed lenders by loan type (fix-and-flip, DSCR, portfolio). (2) Add internal links from each individual review to the comparison hub and to related loan-type pages (/lenders/dscr-loans, /lenders/fix-and-flip-loans). (3) Target queries like 'Lima One Capital vs New Silver', 'best DSCR lenders 2026', and 'fix and flip lender comparison' — the existing Lima One vs Civic Financial comparison page (position 4.9) shows this format already has early traction. (4) Add schema markup for review/rating on each lender review page.",
+      "expectedImpact": "Increase lender section pageviews by 40-60% within 45 days and begin ranking for comparison queries where competition is lower than head terms",
+      "priority": "medium",
+      "firstSeen": "2026-04-20",
+      "lastSeen": "2026-04-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "9cbcceacb2f9",
+      "title": "Implement Newsletter Capture on High-Traffic Lender and Calculator Pages",
+      "description": "The newsletter page is the second most-visited destination (6 views) and a specific newsletter issue got 5 views — together 18% of all traffic. This audience is self-selecting as highly engaged. Action: (1) Add an inline email capture form (not a popup) within the body of the top 5 lender review pages and both calculator pages, positioned after the main content. (2) Use a specific value proposition tied to the page context, e.g., on lender reviews: 'Get our weekly lender rate updates and new review alerts.' (3) Set up a welcome sequence of 3-5 emails covering beginner investing fundamentals to nurture new subscribers toward deeper site engagement. With 83.61% engagement rate, this audience is primed to convert.",
+      "expectedImpact": "Convert 10-20% of engaged visitors into email subscribers, building a direct traffic channel that reduces dependence on organic search during the site's early growth phase",
+      "priority": "medium",
+      "firstSeen": "2026-04-20",
+      "lastSeen": "2026-04-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -383,6 +438,17 @@
       "priority": "low",
       "firstSeen": "2026-04-19",
       "lastSeen": "2026-04-19",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "019e275d0a15",
+      "title": "Optimize for AI Search Visibility to Scale the ChatGPT Referral Channel",
+      "description": "Two sessions from chatgpt.com this week suggest the site is already being cited in AI responses. To accelerate this: (1) Add clear author bylines with credentials (e.g., 'Reviewed by [Name], licensed real estate investor with X years experience') to all major guides and calculator pages — AI models weight E-E-A-T signals heavily. (2) Ensure all key pages have concise, quotable summary paragraphs in the first 100 words that directly answer the target question — these are the passages AI tools extract. (3) Add structured FAQ sections to the BRRRR guide, beginner investing guide, and lender reviews using the exact question formats users ask AI assistants. (4) Submit the site to Bing Webmaster Tools and optimize for Bing organic (currently 3 sessions) since Bing powers Copilot and many AI tools.",
+      "expectedImpact": "Grow AI referral traffic from 2 sessions/week to 10-20 sessions/week within 90 days as content becomes more AI-citation-friendly",
+      "priority": "low",
+      "firstSeen": "2026-04-20",
+      "lastSeen": "2026-04-20",
       "timesRepeated": 1,
       "status": "open"
     }
