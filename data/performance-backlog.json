@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-20T12:02:41.382Z",
+  "lastUpdated": "2026-04-21T12:01:58.830Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -9,6 +9,17 @@
       "priority": "high",
       "firstSeen": "2026-04-16",
       "lastSeen": "2026-04-19",
+      "timesRepeated": 2,
+      "status": "open"
+    },
+    {
+      "id": "4b73b7f90917",
+      "title": "Rewrite Title Tags and Meta Descriptions for All Calculator Pages",
+      "description": "The cap rate calculator cluster is generating 16 impressions/week at positions 57-94 with 0 clicks. Immediate action: (1) Audit the current title tag for /calculators/cap-rate — it likely reads generically. Rewrite to include a value hook, e.g., 'Cap Rate Calculator — Instant Results for Any Rental Property | ProInvestorHub'. (2) Write meta descriptions that include a specific differentiator like 'Includes NOI breakdown, market benchmarks, and export to PDF.' (3) Do the same for /calculators/cash-on-cash (position 68.6). Even at these low positions, a compelling snippet can lift CTR from 0% to 0.5-1%, which at current impression volume would generate 1-2 clicks/day — a 100%+ improvement from zero.",
+      "expectedImpact": "Move CTR from 0.00% to 0.3-0.8% on calculator pages within 30-45 days, generating first consistent organic clicks",
+      "priority": "high",
+      "firstSeen": "2026-04-20",
+      "lastSeen": "2026-04-21",
       "timesRepeated": 2,
       "status": "open"
     },
@@ -211,17 +222,6 @@
       "status": "open"
     },
     {
-      "id": "4b73b7f90917",
-      "title": "Rewrite Title Tags and Meta Descriptions for All Calculator Pages",
-      "description": "The cap rate calculator cluster is generating 16 impressions/week at positions 57-94 with 0 clicks. Immediate action: (1) Audit the current title tag for /calculators/cap-rate — it likely reads generically. Rewrite to include a value hook, e.g., 'Cap Rate Calculator — Instant Results for Any Rental Property | ProInvestorHub'. (2) Write meta descriptions that include a specific differentiator like 'Includes NOI breakdown, market benchmarks, and export to PDF.' (3) Do the same for /calculators/cash-on-cash (position 68.6). Even at these low positions, a compelling snippet can lift CTR from 0% to 0.5-1%, which at current impression volume would generate 1-2 clicks/day — a 100%+ improvement from zero.",
-      "expectedImpact": "Move CTR from 0.00% to 0.3-0.8% on calculator pages within 30-45 days, generating first consistent organic clicks",
-      "priority": "high",
-      "firstSeen": "2026-04-20",
-      "lastSeen": "2026-04-20",
-      "timesRepeated": 1,
-      "status": "open"
-    },
-    {
       "id": "7f90921414b9",
       "title": "Build Topical Depth Around Cap Rate Calculator to Accelerate Ranking",
       "description": "The cap rate calculator has 16 impressions across 10+ query variants ('cap rate calculator', 'cap rate calculator real estate', 'cap rate calculator rental property', etc.) but ranks 57-94. To break into top 30: (1) Add a 500-800 word educational section below the calculator covering what a good cap rate is by market (5-10% benchmarks), how to use it with mortgage analysis, and common mistakes. (2) Create a supporting blog post 'Cap Rate Calculator: How to Use It to Evaluate Any Rental Property' and internally link to /calculators/cap-rate. (3) Add FAQ schema markup targeting the exact query variants showing impressions. This creates topical authority that can lift the page 20-30 positions within 60-90 days.",
@@ -240,6 +240,28 @@
       "priority": "high",
       "firstSeen": "2026-04-20",
       "lastSeen": "2026-04-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "2d8bba36cdd7",
+      "title": "Audit and Fix GA4 Engagement Configuration to Ensure Data Accuracy",
+      "description": "The combination of 83.61% engagement rate with only 44.9-second average session duration is a red flag. In GA4, an 'engaged session' requires only 10 seconds, 2 pageviews, or a conversion event — meaning scroll events or auto-triggered events may be inflating engagement rate without real content consumption. Audit the GA4 event configuration in Google Tag Manager: (1) check if scroll depth events are firing as conversions, (2) verify session timeout settings, (3) confirm that the tagassistant.google.com referral sessions (2 sessions from testing) are being filtered from reports via an internal traffic filter. Remove test/internal traffic from all reporting to get clean baselines.",
+      "expectedImpact": "Accurate engagement data will allow proper content optimization decisions. Currently, the 83.61% engagement rate may be masking real UX problems that are causing users to leave quickly.",
+      "priority": "high",
+      "firstSeen": "2026-04-21",
+      "lastSeen": "2026-04-21",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "49e1d48de5fc",
+      "title": "Build Topical Authority Around the Griffin Funding Review — Closest Page to Page 1",
+      "description": "The Griffin Funding review page ranks at position 15.3 — the site's best non-branded ranking and closest to page 1. Execute a three-part push: (1) Add a comprehensive comparison table (Griffin Funding vs. competitors), borrower reviews summary, BBB rating section (the query 'griffin funding bbb rating' appeared at position 20.0), and updated 2026 loan terms. (2) Build 3–5 internal links from the lenders hub, DSCR loans page, and fix-and-flip loans page pointing to this review with keyword-rich anchor text. (3) Pursue one external link from a real estate investing forum or partner site referencing the review. Position 15 to position 8 is achievable with content depth improvements alone.",
+      "expectedImpact": "Moving Griffin Funding review from position 15 to top 10 could generate 5–20 organic clicks/day from branded + review queries, establishing the first meaningful organic traffic stream.",
+      "priority": "high",
+      "firstSeen": "2026-04-21",
+      "lastSeen": "2026-04-21",
       "timesRepeated": 1,
       "status": "open"
     },
@@ -387,6 +409,28 @@
       "status": "open"
     },
     {
+      "id": "aa1c01ddade0",
+      "title": "Investigate and Resolve Mobile Indexing Gap",
+      "description": "Only 11 of 193 search impressions (5.7%) came from mobile devices, which is dramatically below the industry norm of 55–65% for real estate content. This suggests either: (1) Google's mobile crawler has not fully indexed the site, (2) mobile page experience signals (Core Web Vitals on mobile) are poor enough to suppress mobile rankings, or (3) the site launched recently and mobile indexing is lagging. Run a Mobile-Friendly Test in Google Search Console for the top 5 pages, check Core Web Vitals mobile scores in GSC's Experience report, and verify that the site is using responsive design with proper viewport meta tags. Submit a sitemap if not already done.",
+      "expectedImpact": "Resolving mobile indexing issues could effectively double or triple total search impressions within 60–90 days, as mobile search represents the majority of real estate query volume.",
+      "priority": "medium",
+      "firstSeen": "2026-04-21",
+      "lastSeen": "2026-04-21",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e951ba1f02ce",
+      "title": "Create a Dedicated Newsletter Landing Page Strategy to Convert Direct Traffic",
+      "description": "The /newsletter page (6 views) and /newsletter/2026-04-13 (5 views) are among the top pages, suggesting the newsletter is a meaningful engagement touchpoint for the current direct audience. Capitalize on this by: (1) Adding an email capture form above the fold on the homepage (currently 10 views, 9 users — the highest traffic page), (2) Creating a dedicated newsletter archive page optimized for queries like 'real estate investing newsletter 2026', and (3) Adding UTM parameters to all newsletter links so GA4 can properly attribute newsletter-driven return visits rather than bucketing them as direct traffic. This will also help de-inflate the direct traffic percentage.",
+      "expectedImpact": "Converting even 20–30% of direct visitors to email subscribers creates a retainable audience that can be brought back repeatedly, compounding the value of each new organic visitor acquired.",
+      "priority": "medium",
+      "firstSeen": "2026-04-21",
+      "lastSeen": "2026-04-21",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -449,6 +493,17 @@
       "priority": "low",
       "firstSeen": "2026-04-20",
       "lastSeen": "2026-04-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "b25f3af8111e",
+      "title": "Develop an AI Search Optimization Strategy to Scale the ChatGPT Referral Channel",
+      "description": "Two sessions from chatgpt.com represent an early signal that the site's content is being surfaced in AI-generated responses. To systematically grow this channel: (1) Ensure all key pages have clear, factual, structured content with defined terms, numbered steps, and explicit source citations — formats AI models prefer to quote. (2) Add author bios with credentials to all guides and reviews to establish E-E-A-T signals that AI models use to assess source reliability. (3) Implement FAQ schema on calculator and guide pages, as these structured Q&A formats are frequently pulled into AI responses. (4) Monitor chatgpt.com referrals weekly in GA4 as a separate channel segment.",
+      "expectedImpact": "AI referral traffic is growing industry-wide. Early optimization positions the site to capture disproportionate AI citation share in the real estate investing niche before competitors adapt.",
+      "priority": "low",
+      "firstSeen": "2026-04-21",
+      "lastSeen": "2026-04-21",
       "timesRepeated": 1,
       "status": "open"
     }
