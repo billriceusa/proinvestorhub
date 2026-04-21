@@ -174,21 +174,28 @@ Respond with ONLY this JSON structure:
 
   const response = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 6144,
+    max_tokens: 8192,
     temperature: 0.7,
     system: NEWSLETTER_SYSTEM,
     messages: [{ role: "user", content: prompt }],
   });
 
-  const textBlock = response.content.find((block) => block.type === "text");
-  if (!textBlock || textBlock.type !== "text") {
-    throw new Error("No text response from Claude for newsletter generation");
+  const { parseJson, LLMParseError } = await import("./llm-json");
+  try {
+    const content = parseJson<NewsletterContent>(response);
+    if (!content || typeof content !== "object") {
+      throw new Error("Newsletter content is not an object");
+    }
+    if (!content.subject || typeof content.subject !== "string") {
+      throw new Error("Newsletter is missing a subject line");
+    }
+    return content;
+  } catch (err) {
+    if (err instanceof LLMParseError && err.truncated) {
+      throw new Error(
+        `Newsletter generation hit max_tokens — raise the limit. Parse error: ${err.message}`
+      );
+    }
+    throw err;
   }
-
-  let jsonText = textBlock.text.trim();
-  if (jsonText.startsWith("```")) {
-    jsonText = jsonText.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
-  }
-
-  return JSON.parse(jsonText) as NewsletterContent;
 }
