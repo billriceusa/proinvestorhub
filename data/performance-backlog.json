@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T12:01:58.830Z",
+  "lastUpdated": "2026-04-22T12:02:05.700Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -266,6 +266,50 @@
       "status": "open"
     },
     {
+      "id": "fe6f34b6b237",
+      "title": "Rewrite Title Tags and Meta Descriptions for All Top-Ranking Pages Immediately",
+      "description": "Pages ranking in positions 3.8–7.0 (BRRRR guide, beginners guide, calculators hub, investor-friendly agent guide, best BRRRR cities) are generating zero clicks despite strong positions. Audit and rewrite each page's title tag to include the primary keyword in the first 40 characters, add a clear value proposition, and include a power word (e.g., 'Free,' 'Complete,' '2026 Guide'). Meta descriptions should be 150–155 characters with a direct call-to-action. For example, the BRRRR guide title could become: 'BRRRR Method: Complete Step-by-Step Guide for 2026 | ProInvestorHub' with a meta description highlighting the free calculator and deal examples. Test changes in Google Search Console's URL Inspection tool and monitor CTR weekly.",
+      "expectedImpact": "Even a 1–2% CTR on the 28 daily impressions would generate 0.3–0.6 additional organic clicks per day — a 100%+ improvement from the current zero baseline. At scale with more impressions, this compounds significantly.",
+      "priority": "high",
+      "firstSeen": "2026-04-22",
+      "lastSeen": "2026-04-22",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "d2b9ad7c341e",
+      "title": "Investigate and Resolve Mobile Search Indexing Suppression",
+      "description": "The 95%/5% desktop-to-mobile impression split (188 vs 10) is a critical anomaly. Run a Mobile-Friendly Test on all top pages via Google Search Console. Check that the site passes Core Web Vitals on mobile, that there are no mobile-specific robots.txt blocks or noindex tags, and that the site renders correctly in Google's mobile crawler. Verify that the canonical tags are consistent between mobile and desktop versions. Submit a mobile crawl request via GSC for the top 10 pages. Real estate investing content typically sees 55–65% mobile search traffic; recovering mobile impressions could 10–15x total search visibility.",
+      "expectedImpact": "Resolving mobile indexing issues could increase total daily impressions from 28.3 to 80–150+, dramatically expanding the click opportunity pool within 4–8 weeks of fixes.",
+      "priority": "high",
+      "firstSeen": "2026-04-22",
+      "lastSeen": "2026-04-22",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "6a3bc2c36f52",
+      "title": "Optimize Cap Rate Calculator Page for Top-20 Rankings on High-Volume Queries",
+      "description": "The cap rate calculator is generating 22 impressions across 14 query variants but sitting at positions 60–90. This is a high-commercial-intent keyword cluster with tools like Omni Calculator, BiggerPockets, and Bankrate dominating. To compete: (1) Ensure the calculator page has a unique H1 targeting 'Cap Rate Calculator' exactly, (2) Add 800–1,200 words of supporting educational content below the calculator covering formula, interpretation benchmarks by property type, and worked examples, (3) Implement FAQ schema markup targeting the top question variants ('how to calculate cap rate,' 'what is a good cap rate'), (4) Build 3–5 internal links from the BRRRR guide and beginners guide to the calculator, (5) Add a downloadable Excel version to target the 'cap rate calculator excel' query variant. Target breaking into position 20–30 within 60 days.",
+      "expectedImpact": "Breaking into top 20 for even 3–4 cap rate calculator variants could generate 5–15 organic clicks per day given the query volume, establishing the calculators section as a meaningful traffic driver.",
+      "priority": "high",
+      "firstSeen": "2026-04-22",
+      "lastSeen": "2026-04-22",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "b60b5bff5cb7",
+      "title": "Implement GA4 Internal Traffic Filter to Separate Real User Data from Team Activity",
+      "description": "Create a GA4 internal traffic definition under Admin > Data Streams > Configure Tag Settings > Define Internal Traffic. Add all office/team IP addresses and set the traffic_type parameter to 'internal.' Then create a Data Filter under Admin > Data Filters to exclude internal traffic from reporting. Until this is done, all GA4 metrics are polluted by team activity and cannot be used for real decision-making. Additionally, remove or filter the tagassistant.google.com referral sessions (2 sessions) which are Tag Assistant tool visits, not real users. This is the single most important data hygiene step for a site at this stage.",
+      "expectedImpact": "Clean data will reveal the true organic/referral user baseline, likely showing 5–10 real external sessions per week currently, enabling accurate measurement of all future growth initiatives.",
+      "priority": "high",
+      "firstSeen": "2026-04-22",
+      "lastSeen": "2026-04-22",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -427,6 +471,28 @@
       "priority": "medium",
       "firstSeen": "2026-04-21",
       "lastSeen": "2026-04-21",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "b4dc7ce02f1a",
+      "title": "Build a Structured Internal Linking Strategy Connecting Lender Reviews to Calculator Tools",
+      "description": "Lender review pages (Velocity Mortgage, Lima One Capital, New Silver) and loan product pages (DSCR loans, fix-and-flip loans) are attracting the most likely real-user traffic. These visitors are in a high-intent research phase. Add contextual internal links from every lender review page to the relevant calculator (e.g., DSCR lender reviews should link to the rental cash flow calculator; fix-and-flip reviews should link to a fix-and-flip ROI calculator if it exists, or the cap rate calculator as a proxy). Add a 'Calculate Your Deal' CTA module to all lender pages. This creates a content funnel from research to tool usage and increases pages-per-session and session duration.",
+      "expectedImpact": "Expected increase in calculator page views by 30–50% from lender page referrals, and improvement in average session duration back toward the 90-day baseline of 137s as users engage with interactive tools.",
+      "priority": "medium",
+      "firstSeen": "2026-04-22",
+      "lastSeen": "2026-04-22",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "0d355b2218ba",
+      "title": "Create an LLM/AI Search Optimization Strategy to Capitalize on ChatGPT and Claude Referrals",
+      "description": "The 3 AI referral sessions (ChatGPT: 2, Claude: 1) are an early but meaningful signal. To grow this channel: (1) Ensure all key pages have clear, factual, structured content with defined terms, numbered steps, and explicit answers to common questions — LLMs prefer content that is easy to extract and cite, (2) Add an 'About' page and author bio pages with credentials to establish E-E-A-T signals that LLMs use to assess source authority, (3) Implement FAQ schema on all calculator and guide pages, (4) Create a dedicated 'Real Estate Investing Glossary' if not already present — definitional content is heavily cited by AI assistants, (5) Monitor the /newsletter/2026-04-13 page (5 views, 5 users) to understand what newsletter content is driving direct visits and replicate that format for AI-friendly content.",
+      "expectedImpact": "AI referral traffic is growing industry-wide at 15–25% month-over-month for content sites. Optimizing for this channel now could position ProInvestorHub to capture 20–50 AI-referred sessions per month within 6 months.",
+      "priority": "medium",
+      "firstSeen": "2026-04-22",
+      "lastSeen": "2026-04-22",
       "timesRepeated": 1,
       "status": "open"
     },
