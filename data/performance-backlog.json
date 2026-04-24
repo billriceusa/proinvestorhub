@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-23T12:02:40.881Z",
+  "lastUpdated": "2026-04-24T12:02:28.622Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -343,6 +343,39 @@
       "status": "open"
     },
     {
+      "id": "ad84aa1ea316",
+      "title": "Rewrite Meta Titles and Descriptions for Top-Ranking Blog Pages",
+      "description": "The BRRRR guide (pos 5.8), beginners guide (pos 6.8), and investor-friendly agent guide (pos 5.0) are ranking well but generating zero clicks. Immediately audit and rewrite their meta titles to include power words and clear value propositions — e.g., change a generic 'BRRRR Method Complete Guide' to 'BRRRR Method: Step-by-Step Guide with Real Numbers (2026)'. Meta descriptions should include a specific hook like '...includes a free deal analyzer and 5 market examples.' Target CTR improvement from 0% to 3–5% at these positions, which at current impression levels would generate 1–3 additional organic clicks daily — a meaningful lift from zero.",
+      "expectedImpact": "Estimated 3–8 organic clicks per day from existing impressions within 2–4 weeks of Google re-crawling updated meta data.",
+      "priority": "high",
+      "firstSeen": "2026-04-24",
+      "lastSeen": "2026-04-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "369934f3ca44",
+      "title": "Build Authoritative Backlinks to Calculator Pages to Escape Position 60–90",
+      "description": "The cap rate calculator and cash-on-cash calculator are generating the most search impressions (6 each) but ranking in positions 66–75 — effectively invisible. At this stage, content quality alone won't move the needle; domain authority and page-level link equity are required. Execute a targeted outreach campaign: (1) identify 20–30 real estate investing blogs, BiggerPockets forum threads, and YouTube creators who reference cap rate calculations; (2) offer a free embed widget version of the calculator; (3) submit the calculator pages to real estate tool directories. Even 5–10 quality backlinks pointing to /calculators/cap-rate could move it from position 66 to the 20–40 range within 60–90 days.",
+      "expectedImpact": "Movement from position 66 to 20–40 range for cap rate calculator queries, potentially generating 5–20 organic clicks per day given the query volume for 'cap rate calculator' terms.",
+      "priority": "high",
+      "firstSeen": "2026-04-24",
+      "lastSeen": "2026-04-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e5be4cfb9c70",
+      "title": "Optimize Griffin Funding Review Page for Immediate Click Capture",
+      "description": "The Griffin Funding review at position 22.2 is the site's closest page to generating organic clicks. Optimize it immediately: (1) ensure the meta title includes 'Review', the current year (2026), and a sentiment signal like 'Honest Review: Rates, Fees & DSCR Requirements'; (2) add FAQ schema markup targeting 'griffin funding dscr loans' and 'griffin funding review' queries; (3) expand the page to 1,500+ words with a comparison table, pros/cons section, and a clear CTA to the DSCR loans guide. Also build 2–3 internal links from the DSCR loans page and lenders hub to this review. Position 22 with a compelling title could realistically achieve 2–5% CTR.",
+      "expectedImpact": "First organic click conversions within 30 days; potential for 3–10 clicks/day if page moves to position 10–15 with schema and content improvements.",
+      "priority": "high",
+      "firstSeen": "2026-04-24",
+      "lastSeen": "2026-04-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -552,6 +585,28 @@
       "status": "open"
     },
     {
+      "id": "c7f84f6fb373",
+      "title": "Implement Internal Analytics Filtering to Exclude Bot and Team Traffic",
+      "description": "The current data is severely polluted by internal visits, bot crawls (api.scraperforce.com confirmed), and potentially AI scrapers. Implement the following immediately: (1) create a GA4 internal traffic filter using your office/team IP addresses; (2) add a referral exclusion for api.scraperforce.com and similar scraper domains; (3) set up a custom segment for 'clean organic traffic' excluding direct sessions under 10 seconds. This will give you a true baseline — current 7-day averages of 8.7 sessions/day likely represent fewer than 3 genuine external user sessions daily, which is the real number to grow from.",
+      "expectedImpact": "Accurate baseline data within 1 week, enabling reliable measurement of all future growth initiatives and preventing false-positive performance signals.",
+      "priority": "medium",
+      "firstSeen": "2026-04-24",
+      "lastSeen": "2026-04-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "0169343babd6",
+      "title": "Create City-Specific Calculator Landing Pages to Capture Local Search Intent",
+      "description": "The /calculators/cap-rate/san-diego-ca page already exists and received a visit, indicating the programmatic city-page strategy is in place. Accelerate this by: (1) prioritizing the top 15–20 investor markets (Phoenix, Tampa, Jacksonville, Memphis, Cleveland, Indianapolis, etc.) for cap rate calculator pages; (2) ensuring each page includes local median rent data, average cap rates by neighborhood, and a pre-filled calculator example; (3) targeting long-tail queries like 'cap rate calculator [city] [state]' which have lower competition than generic calculator terms. These pages can rank in positions 10–30 much faster than the generic calculator page competing against Bankrate and BiggerPockets.",
+      "expectedImpact": "10–20 additional ranking URLs within 60 days, each targeting lower-competition local queries with realistic positions of 15–35 and combined click potential of 10–30 organic visits per day.",
+      "priority": "medium",
+      "firstSeen": "2026-04-24",
+      "lastSeen": "2026-04-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -636,6 +691,17 @@
       "priority": "low",
       "firstSeen": "2026-04-23",
       "lastSeen": "2026-04-23",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "ff887e9a7060",
+      "title": "Develop an AI-Optimized Content Strategy to Capitalize on LLM Referral Traffic",
+      "description": "With 3 sessions already arriving from ChatGPT and Claude, ProInvestorHub has early evidence of LLM citation. To systematically grow this channel: (1) structure all guides with clear H2/H3 headers, definition boxes, and numbered steps that LLMs prefer to cite; (2) add a 'Quick Answer' summary box at the top of each calculator and guide page answering the core question in 2–3 sentences; (3) create a dedicated 'Real Estate Investing Glossary' section with concise, authoritative definitions for 50+ terms (cap rate, DSCR, BRRRR, ARV, NOI, etc.) — glossary content is heavily cited by AI assistants; (4) ensure all pages include author credentials and last-updated dates to signal trustworthiness to LLM training and retrieval systems.",
+      "expectedImpact": "Gradual increase in AI-referred sessions over 3–6 months; glossary pages specifically could become a consistent source of 5–15 AI-referred sessions per day as the content library matures.",
+      "priority": "low",
+      "firstSeen": "2026-04-24",
+      "lastSeen": "2026-04-24",
       "timesRepeated": 1,
       "status": "open"
     }
