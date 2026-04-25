@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T12:02:28.622Z",
+  "lastUpdated": "2026-04-25T12:02:32.030Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -376,6 +376,39 @@
       "status": "open"
     },
     {
+      "id": "2abd43cec73c",
+      "title": "Conduct Immediate Technical SEO Audit to Diagnose Ranking and Impression Collapse",
+      "description": "Run a full crawl using Screaming Frog or Sitebetter to identify: (1) pages returning non-200 status codes, (2) missing or duplicate meta titles/descriptions, (3) canonical tag errors, (4) any noindex tags accidentally applied to key pages. Cross-reference Google Search Console's Coverage report for any manual actions, crawl anomalies, or newly excluded URLs. Check if the http vs https URL split visible in GSC (http://proinvestorhub.com vs https://proinvestorhub.com) is causing duplicate content or split link equity — consolidate all URLs to https with proper 301 redirects. Submit an updated sitemap immediately after fixes.",
+      "expectedImpact": "Resolving technical issues should halt the impression decline and begin recovering lost positions within 2–4 weeks of Google recrawling affected pages.",
+      "priority": "high",
+      "firstSeen": "2026-04-25",
+      "lastSeen": "2026-04-25",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "fce808bc7eff",
+      "title": "Rewrite Title Tags and Meta Descriptions for All Calculator Pages to Recover CTR",
+      "description": "The cap rate calculator query cluster (cap rate calculator, cap rate calculator real estate, cap rate calculator rental property) generated 13 impressions in 7 days at positions 60–89 with zero clicks. Even at these low positions, better titles can improve CTR. Rewrite /calculators/cap-rate title to: 'Free Cap Rate Calculator for Rental Properties (2026) — ProInvestorHub' and meta description to: 'Calculate cap rate instantly. Enter NOI and property value to get your capitalization rate. Trusted by real estate investors.' Do the same for /calculators/cash-on-cash targeting the 5-impression 'cash on cash return calculator' query at position 75.6. Add FAQ schema markup answering 'What is a good cap rate?' and 'How do I calculate cash on cash return?' to improve rich result eligibility.",
+      "expectedImpact": "Even a 2–3% CTR improvement on 13 weekly impressions would generate 1–2 additional organic clicks per week — a meaningful gain at current traffic levels, with compounding effect as rankings improve.",
+      "priority": "high",
+      "firstSeen": "2026-04-25",
+      "lastSeen": "2026-04-25",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "1e14a3c55959",
+      "title": "Filter Internal and Bot Traffic from Analytics to Get Accurate Baseline",
+      "description": "The current data is severely distorted by internal visits and bot crawls. Implement the following immediately: (1) Create a GA4 internal traffic filter using your office/team IP addresses under Admin > Data Streams > Configure Tag Settings > Define Internal Traffic. (2) Enable the 'Exclude internal traffic' filter under Admin > Data Filters. (3) Block api.scraperforce.com in GA4 using a referral exclusion or server-level block. (4) Set up a clean 'Real Users Only' comparison segment in GA4 excluding known bots. This will give you an accurate picture of true user behavior and prevent future misinterpretation of traffic spikes.",
+      "expectedImpact": "Accurate data will allow proper benchmarking, reveal the true engagement quality of real visitors, and prevent false-positive reporting that could lead to misguided strategy decisions.",
+      "priority": "high",
+      "firstSeen": "2026-04-25",
+      "lastSeen": "2026-04-25",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -607,6 +640,28 @@
       "status": "open"
     },
     {
+      "id": "713be6ecfc95",
+      "title": "Build Topical Authority Around DSCR Loans — Your Highest-Performing Content Cluster",
+      "description": "DSCR loan content is your top-performing page by views and lender reviews (RCN Capital, Griffin Funding, Park Place Finance) are appearing in GSC queries. Expand this cluster aggressively: (1) Create a comprehensive 'DSCR Loan Requirements 2026' guide targeting the query 'griffin funding dscr' (pos 27 — your closest-to-page-1 query). (2) Build a DSCR loan calculator at /calculators/dscr to capture calculator-intent traffic. (3) Add state-specific DSCR pages for high-volume states (Texas, Florida, California) beyond the Connecticut and Oregon pages already created. (4) Internally link all lender review pages to the main /lenders/dscr-loans hub page to consolidate authority. Target 2 new DSCR-related pieces per week for the next 6 weeks.",
+      "expectedImpact": "Topical clustering around DSCR loans should push the Griffin Funding DSCR query (currently pos 27) onto page 1 within 60–90 days, potentially generating the site's first consistent organic click stream.",
+      "priority": "medium",
+      "firstSeen": "2026-04-25",
+      "lastSeen": "2026-04-25",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e898d1caaf5e",
+      "title": "Optimize Content for AI Search Referrals to Capitalize on ChatGPT and Claude Traffic",
+      "description": "With 3 AI-referred sessions already appearing at this early stage, the site has an opportunity to optimize for AI citation. Implement: (1) Add a clear 'About This Guide' author box with credentials on all blog posts and guides. (2) Structure all content with explicit definitions, numbered steps, and direct answers in the first 100 words of each section — AI models prefer citable, structured content. (3) Add an llms.txt file to the root domain listing your key resource pages for AI crawler guidance. (4) Ensure all calculator pages include a plain-language explanation of the formula before the interactive tool. (5) Create a 'Real Estate Investing Glossary' hub page with 50+ defined terms — glossary content is heavily cited by AI assistants.",
+      "expectedImpact": "Structured, authoritative content optimized for AI citation could grow AI-referred traffic from 3 sessions to 20–50 sessions per week within 90 days as the site gains more content depth.",
+      "priority": "medium",
+      "firstSeen": "2026-04-25",
+      "lastSeen": "2026-04-25",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -702,6 +757,17 @@
       "priority": "low",
       "firstSeen": "2026-04-24",
       "lastSeen": "2026-04-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "3b7f71fabab5",
+      "title": "Develop a Geographic Calculator Strategy to Capture Local Investment Queries",
+      "description": "The /calculators/cap-rate/san-diego-ca page received a visit, and the site already has state-level lender pages for Connecticut, Oregon, and Alabama. Scale this geographic approach for calculators: (1) Create city-level cap rate calculator pages for the top 20 real estate investment markets (Atlanta, Tampa, Phoenix, Dallas, Indianapolis, etc.) using the format /calculators/cap-rate/[city-state]. (2) Pre-populate each page with local average cap rate data sourced from public records or Zillow Research. (3) Add a 'Best cap rate in [City]' content block with neighborhood-level context. This targets lower-competition long-tail queries like 'cap rate calculator Atlanta GA' where the site can rank faster than for generic calculator terms.",
+      "expectedImpact": "20 city-level calculator pages targeting long-tail geographic queries could generate 50–200 additional monthly impressions within 60 days, with first-page rankings achievable for less competitive markets within 90 days.",
+      "priority": "low",
+      "firstSeen": "2026-04-25",
+      "lastSeen": "2026-04-25",
       "timesRepeated": 1,
       "status": "open"
     }
