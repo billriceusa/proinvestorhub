@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-25T12:02:32.030Z",
+  "lastUpdated": "2026-04-26T12:02:19.607Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -409,6 +409,39 @@
       "status": "open"
     },
     {
+      "id": "6595ae785d08",
+      "title": "Aggressively Optimize Calculator Pages for Top-3 Ranking on Cap Rate and CoC Queries",
+      "description": "The cap rate calculator and cash-on-cash calculator pages are generating the most impression volume (10 and 7 impressions respectively in 7 days) but ranking at positions 64.8 and 75.6 — effectively invisible. Conduct a content gap analysis against the top 3 ranking pages for 'cap rate calculator' and 'cash on cash return calculator'. Ensure each calculator page includes: (1) a fully functional, embedded interactive calculator above the fold, (2) at least 1,500 words of supporting educational content covering formula explanation, worked examples with real numbers, and common use cases, (3) FAQ schema markup targeting the exact query variants showing impressions (e.g., 'cap rate formula calculator', 'capitalisation rate calculator'), and (4) internal links from the beginner's guide and BRRRR guide to the calculator pages. Target acquiring 3-5 backlinks to these calculator pages specifically from real estate investing forums, Reddit communities (r/realestateinvesting), and complementary tool sites.",
+      "expectedImpact": "Moving from position 65 to position 15-25 for 'cap rate calculator' (monthly search volume ~8,000-12,000) could generate 50-150 organic clicks per month within 60-90 days, representing a 10x-30x increase from current zero baseline.",
+      "priority": "high",
+      "firstSeen": "2026-04-26",
+      "lastSeen": "2026-04-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "9f7eed3dfcfe",
+      "title": "Build Topical Authority Around Lender Reviews to Push Griffin Funding and Park Place Finance Into Click Range",
+      "description": "Griffin Funding (pos 23.5) and Park Place Finance (pos 31.4) are the closest pages to generating organic clicks — positions 1-10 capture 90%+ of clicks. To push these into click range: (1) Expand each review to 2,000+ words with structured sections covering loan products, rates, fees, application process, pros/cons, and verified user testimonials or data points, (2) Add Review schema markup with aggregate rating, (3) Create a comparison page (e.g., 'Griffin Funding vs. [Competitor]') to capture comparison queries, (4) Build internal links from the DSCR loans hub page and the lenders index to each review, (5) Pursue mentions or links from mortgage broker blogs and real estate investing podcasts that discuss these lenders. The 'griffin funding dscr' query at position 27 is particularly close to page 1.",
+      "expectedImpact": "Pushing Griffin Funding review from pos 23.5 to pos 8-12 could generate 20-60 clicks per month on branded review queries, which carry high commercial intent and strong affiliate/lead conversion potential.",
+      "priority": "high",
+      "firstSeen": "2026-04-26",
+      "lastSeen": "2026-04-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "c020cc2e4956",
+      "title": "Implement Bot Filtering in GA4 to Protect Data Integrity",
+      "description": "With only 14 sessions per week, a single bot session from api.scraperforce.com represents 7% of traffic and distorts all engagement metrics. Implement the following: (1) Enable 'Filter out all hits from known bots and spiders' in GA4 data stream settings, (2) Create a custom GA4 filter to exclude sessions from api.scraperforce.com referral source, (3) Set up a Looker Studio dashboard that segments human vs. suspected bot traffic using session duration under 3 seconds as a proxy filter, (4) Consider adding a robots.txt disallow rule for known scraper user agents. This is critical at low traffic volumes where data quality directly impacts strategic decisions.",
+      "expectedImpact": "Cleaner data will allow accurate assessment of true engagement metrics, preventing false conclusions about content quality or user behavior based on bot-contaminated sessions.",
+      "priority": "high",
+      "firstSeen": "2026-04-26",
+      "lastSeen": "2026-04-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -662,6 +695,28 @@
       "status": "open"
     },
     {
+      "id": "4b09f0eedcfe",
+      "title": "Resolve HTTP vs HTTPS and www vs non-www Canonicalization Issues",
+      "description": "Search Console data shows impressions split across four URL variants: http://proinvestorhub.com/, https://proinvestorhub.com/, https://www.proinvestorhub.com/, and http://www.proinvestorhub.com/. This canonicalization fragmentation dilutes link equity and can confuse Googlebot. Immediate steps: (1) Verify that all HTTP URLs 301-redirect to HTTPS, (2) Verify that all non-www URLs 301-redirect to www (or vice versa — pick one canonical form and enforce it consistently), (3) Ensure the canonical tag on every page points to the preferred www/https version, (4) Submit only the canonical version in Search Console as the primary property, (5) Update the XML sitemap to include only canonical URLs. This is a foundational technical fix that should be completed before any content investment.",
+      "expectedImpact": "Consolidating link equity and crawl signals to a single canonical domain variant can improve ranking positions by 2-5 positions for pages currently split across variants, and ensures future link building efforts are not diluted.",
+      "priority": "medium",
+      "firstSeen": "2026-04-26",
+      "lastSeen": "2026-04-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "0763bdd638f6",
+      "title": "Add Strategic Internal Linking to Reduce Bounce Rate and Increase Pages Per Session",
+      "description": "Page views per session have collapsed from 6.3 to 2.3, indicating visitors are not navigating beyond their landing page. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post (e.g., the beginner's guide should link to cap rate, CoC, and BRRRR calculators), (2) Add a 'Related Guides' section at the bottom of every calculator page linking to relevant blog content, (3) Create a contextual link from the BRRRR complete guide to the BRRRR cities guide and DSCR lender pages, (4) Add a sticky sidebar or inline CTA on blog posts directing users to the most relevant calculator for their topic, (5) Implement breadcrumb navigation across all page types. Target a pages-per-session metric of at least 2.5 within 30 days.",
+      "expectedImpact": "Improving internal linking architecture should reduce bounce rate from 64.29% toward the 90-day baseline of 55.56% and increase pages per session from ~1.15 to 2.0+, improving both engagement signals sent to Google and on-site conversion opportunities.",
+      "priority": "medium",
+      "firstSeen": "2026-04-26",
+      "lastSeen": "2026-04-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -768,6 +823,17 @@
       "priority": "low",
       "firstSeen": "2026-04-25",
       "lastSeen": "2026-04-25",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "94d50b2d7767",
+      "title": "Develop an AI Search Optimization Strategy to Capitalize on Claude and Copilot Referrals",
+      "description": "Two AI platform referrals (claude.ai, copilot.com) in a 7-day window with only 14 total sessions is a disproportionately high signal — it suggests the site's content is being cited in AI-generated responses. To amplify this channel: (1) Ensure all factual claims include cited sources, statistics with dates, and structured data that AI models can easily parse, (2) Add clear author credentials and expertise signals (E-E-A-T) to all content pages, (3) Structure content with clear question-and-answer formatting that maps to how users query AI assistants (e.g., 'What is a good cap rate for rental property in 2026?'), (4) Create a dedicated FAQ section on calculator and guide pages using natural language questions, (5) Monitor AI referral traffic monthly and track which pages are being cited most frequently to identify content worth expanding.",
+      "expectedImpact": "As AI-assisted search grows, sites optimized for AI citation could see 10-20% of total traffic from AI referrals within 12-18 months. Early optimization positions ProInvestorHub ahead of competitors who are not yet tracking this channel.",
+      "priority": "low",
+      "firstSeen": "2026-04-26",
+      "lastSeen": "2026-04-26",
       "timesRepeated": 1,
       "status": "open"
     }
