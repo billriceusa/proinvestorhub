@@ -1,0 +1,205 @@
+{
+  "runDate": "2026-04-26T06:04:07.460Z",
+  "weekStartDate": "2026-04-27",
+  "analysis": {
+    "strategyReview": "ProInvestorHub has built a strong foundational library of 111 posts covering the core investor journey from beginner to intermediate levels. The content mix shows solid coverage of BRRRR, wholesaling, financing structures, and legal setup topics. However, a pattern emerges: most published content is 'how-to' and definitional in nature, which mirrors BiggerPockets' broad approach rather than differentiating through data-driven depth or practitioner-specific frameworks. The site is strong on process (how to set up an LLC, how to screen tenants) but lighter on quantitative decision-making frameworks (market selection metrics, portfolio-level math, scenario modeling). This is a gap worth closing aggressively since it aligns with our calculator and tools pillar and is an area where BiggerPockets and Investopedia are both weak. The unpublished calendar queue of 25 briefs contains several near-duplicate topics relative to already-published posts — specifically 'Multi-Family Investing for Beginners,' 'Out-of-State Real Estate Investing,' 'Real Estate Depreciation,' 'LLC for Real Estate,' 'How to Raise Private Capital,' and 'Buying Your First Rental Property' all have substantially overlapping published counterparts and should be restructured before scheduling. The pillar rotation discipline appears healthy in the calendar plan but needs enforcement given the duplicate risk.",
+    "competitiveInsights": "BiggerPockets dominates community-driven search terms (forums, deal analysis threads, 'is this a good deal' queries) but is structurally weak on standalone, tool-integrated content that answers specific quantitative questions. Their calculator pages exist but are not deeply supported by contextual editorial content. Investopedia covers definitions but never goes practitioner-depth. REtipster skews toward land and creative finance niches. The clearest keyword whitespace for ProInvestorHub right now is in: (1) market-specific cap rate and cash flow data content ('cap rates by city 2026,' 'best cash flow markets 2026'), (2) DSCR loan mechanics and lender comparison content — a high-intent, high-CPC cluster that is underserved by all three competitors, and (3) eviction process guides by state or general step-by-step, which has high search volume among landlords and almost no authoritative standalone content outside of legal sites. The 'short-term vs long-term rental' comparison angle is also trending heavily given the Airbnb regulatory environment in 2025-2026, with investors actively reconsidering STR strategies — a timely, differentiated angle exists there. DSCR loans in particular are a rising search term driven by the rate environment pushing investors toward non-QM products, and the unpublished brief for it is well-positioned to capture that demand right now.",
+    "newOpportunities": [
+      "DSCR loan lender comparison and rate shopping guide — high commercial intent, underserved by all competitors, rising search volume in 2026 rate environment",
+      "Eviction process step-by-step guide for landlords — high search volume, emotionally urgent topic, BiggerPockets covers it only in forum threads not editorial",
+      "Cap rate by city 2026 data guide — market analysis pillar anchor, differentiated by data specificity, supports calculator linking",
+      "Short-term vs long-term rental financial comparison — timely given Airbnb regulatory shifts, investors actively reconsidering STR allocations",
+      "Fix and flip project management timeline and contractor system — practitioner-depth content not well covered by competitors",
+      "Self-managing vs hiring a property manager with real math — decision-framework content with calculator integration potential",
+      "10 market indicators investors should track monthly — recurring/bookmarkable content that supports the market analysis pillar and differentiates from shallow Investopedia definitions",
+      "Rental property bookkeeping systems — high landlord intent, tax season relevance, underserved by competitors at practitioner depth"
+    ],
+    "trendingTopics": [
+      "DSCR loans as rates remain elevated and investors shift to non-QM financing in 2026",
+      "Airbnb and STR regulation impact on short-term rental investment decisions",
+      "Best cash flow markets as Sun Belt appreciation slows and Midwest markets gain investor attention",
+      "Eviction moratorium aftermath and landlord legal protections in 2026",
+      "Portfolio scaling math as intermediate investors hit the 'stuck at 3 properties' ceiling",
+      "Fix and flip margin compression due to materials costs and contractor availability",
+      "1031 exchange deadline pressure as investors exit pandemic-era appreciation gains",
+      "Real estate syndication interest from passive investors priced out of direct ownership"
+    ],
+    "recommendedUpdates": [
+      "Flag and restructure 6 near-duplicate unpublished briefs before scheduling: Multi-Family Investing for Beginners, Out-of-State Investing, Real Estate Depreciation, LLC for Real Estate, How to Raise Private Capital, Buying Your First Rental Property — each needs a distinct sub-angle to avoid cannibalizing published posts",
+      "Add a data refresh protocol to the 'Best Cities for Rental Property Investing in 2026' brief to ensure cap rate and rent data is sourced and cited at publish time",
+      "Consider consolidating the two wholesale-related unpublished briefs with the already-published wholesale content into a hub-and-spoke cluster with a dedicated wholesale category page",
+      "Audit internal links on the BRRRR calculator post to ensure it links to the BRRRR strategy guide and vice versa — this is the highest-value internal link pair on the site",
+      "Create a 'Start Here' pillar page for the getting-started category to capture top-of-funnel traffic and funnel readers into the most relevant published posts"
+    ]
+  },
+  "articlesCreated": [
+    {
+      "title": "The Eviction Process: A Landlord's Step-by-Step Legal Guide",
+      "slug": "eviction-process-landlord-step-by-step-legal-guide",
+      "publishDate": "2026-04-29",
+      "primaryKeyword": "eviction process for landlords",
+      "pillar": "PROPERTY MANAGEMENT"
+    },
+    {
+      "title": "Best Cities for Rental Property Investing in 2026: Data-Driven Market Selection",
+      "slug": "best-cities-rental-property-investing-2026",
+      "publishDate": "2026-05-01",
+      "primaryKeyword": "best cities for rental property investing 2026",
+      "pillar": "MARKET ANALYSIS"
+    }
+  ],
+  "articlesSkipped": [
+    {
+      "title": "DSCR Loans Explained: No-Income-Verification Financing for Real Estate Investors",
+      "slug": "dscr-loans-explained-real-estate-investors",
+      "reason": "ID already exists: post-dscr-loans-explained-real-estate-investors"
+    }
+  ],
+  "articlesFailed": [],
+  "newBriefs": [
+    {
+      "day": "Mon",
+      "publishDate": "2026-04-27",
+      "slug": "dscr-loans-explained-real-estate-investors",
+      "title": "DSCR Loans Explained: No-Income-Verification Financing for Real Estate Investors",
+      "pillar": "FINANCING & DEALS",
+      "primaryKeyword": "DSCR loans for real estate investors",
+      "secondaryKeywords": [
+        "DSCR loan requirements 2026",
+        "no income verification investment property loan",
+        "debt service coverage ratio loan",
+        "DSCR lender comparison",
+        "non-QM real estate loans"
+      ],
+      "targetLeadTypes": [
+        "intermediate-investors-scaling-portfolio",
+        "brrrr-practitioners",
+        "rental-property-investors"
+      ],
+      "wordCount": "2,800-3,200",
+      "competitiveAngle": "Unlike BiggerPockets forum threads or Investopedia's shallow definition, this guide walks through the actual DSCR underwriting math with worked examples, shows how lenders calculate the ratio differently (some use market rent, some use actual rent), explains how to optimize a deal's DSCR before applying, and provides a side-by-side comparison of DSCR vs conventional vs hard money financing for three common investor scenarios. No competitor offers this decision-framework depth with integrated calculator guidance.",
+      "outline": [
+        "What Is a DSCR Loan and Why It Exists: The Non-QM Financing Revolution",
+        "How DSCR Is Calculated: The Formula, the Variables, and What Lenders Actually Look At",
+        "Worked Example: Running DSCR on a Real Rental Property Deal (with numbers)",
+        "DSCR Loan Requirements in 2026: Credit Score, LTV, Reserve, and Property Type Rules",
+        "How Different Lenders Interpret DSCR: Market Rent vs Actual Rent and Why It Matters",
+        "DSCR vs Conventional vs Hard Money: Which Financing Fits Which Investor Scenario",
+        "How to Optimize a Deal's DSCR Before You Apply (Pricing, Rent, and Structure Levers)",
+        "DSCR Loan Rates and Fees: What to Expect and How to Shop Lenders",
+        "Common DSCR Loan Mistakes Investors Make (and How to Avoid Them)",
+        "Is a DSCR Loan Right for Your Next Deal? A Decision Checklist",
+        "Next Steps: Using the Cash Flow Calculator to Pre-Qualify Your Deal"
+      ],
+      "internalLinks": [
+        "/glossary/dscr-loan",
+        "/glossary/dscr",
+        "/glossary/ltv",
+        "/glossary/cash-flow",
+        "/glossary/noi",
+        "/calculators/cash-flow-calculator",
+        "/blog/category/financing",
+        "/blog/hard-money-loans-what-they-are-how-they-work-and-when-to-use-them"
+      ]
+    },
+    {
+      "day": "Wed",
+      "publishDate": "2026-04-29",
+      "slug": "eviction-process-landlord-step-by-step-legal-guide",
+      "title": "The Eviction Process: A Landlord's Step-by-Step Legal Guide",
+      "pillar": "PROPERTY MANAGEMENT",
+      "primaryKeyword": "eviction process for landlords",
+      "secondaryKeywords": [
+        "how to evict a tenant legally",
+        "eviction notice requirements",
+        "unlawful detainer process",
+        "landlord eviction timeline",
+        "eviction process steps 2026"
+      ],
+      "targetLeadTypes": [
+        "rental-property-investors",
+        "intermediate-investors-scaling-portfolio",
+        "real-estate-professionals"
+      ],
+      "wordCount": "2,500-3,000",
+      "competitiveAngle": "BiggerPockets covers evictions only through forum anecdotes and scattered posts. Investopedia doesn't touch it. Legal sites cover the law but not the investor's operational reality — the cost impact, the timeline on your cash flow model, how to minimize vacancy between an eviction and re-leasing, and how to screen future tenants to avoid repeat situations. This guide integrates the legal process with the financial and operational reality of eviction, including a cost calculator framework and a post-eviction re-leasing checklist that no competitor offers.",
+      "outline": [
+        "Why Every Landlord Needs to Understand the Eviction Process Before They Need It",
+        "The Real Cost of an Eviction: Lost Rent, Legal Fees, Repairs, and Vacancy Math",
+        "Grounds for Eviction: Non-Payment, Lease Violations, Holdover Tenants, and Illegal Activity",
+        "Step 1 — The Eviction Notice: Types, Required Language, and Delivery Rules",
+        "Step 2 — Filing the Unlawful Detainer or Eviction Lawsuit: What to Expect at the Courthouse",
+        "Step 3 — The Court Hearing: How to Prepare, What to Bring, and Common Landlord Mistakes",
+        "Step 4 — The Writ of Possession: Working with the Sheriff and Physical Removal",
+        "Step 5 — Recovering Damages: Security Deposits, Small Claims, and What You Can Actually Collect",
+        "Self-Help Eviction: What It Is and Why It Will Destroy Your Case (and Your Wallet)",
+        "How Eviction Laws Vary by State: Key Differences Investors Must Know",
+        "Post-Eviction Playbook: Repairs, Re-Leasing, and Tightening Your Screening Process",
+        "How to Avoid Evictions in the First Place: Screening, Lease Clauses, and Early Warning Systems",
+        "Eviction Cost Calculator Framework: Modeling the Financial Impact Before It Happens"
+      ],
+      "internalLinks": [
+        "/glossary/vacancy-rate",
+        "/glossary/capex-reserve",
+        "/glossary/rent-roll",
+        "/glossary/lease-up-period",
+        "/calculators/cash-flow-calculator",
+        "/blog/category/tax-legal",
+        "/blog/landlord-tenant-laws-every-investor-must-know-in-2026",
+        "/blog/how-to-create-a-property-management-checklist-that-protects-your-investment"
+      ]
+    },
+    {
+      "day": "Fri",
+      "publishDate": "2026-05-01",
+      "slug": "best-cities-rental-property-investing-2026",
+      "title": "Best Cities for Rental Property Investing in 2026: Data-Driven Market Selection",
+      "pillar": "MARKET ANALYSIS",
+      "primaryKeyword": "best cities for rental property investing 2026",
+      "secondaryKeywords": [
+        "best real estate markets 2026",
+        "top cash flow markets 2026",
+        "where to buy rental property 2026",
+        "real estate market selection criteria",
+        "highest cap rate cities 2026"
+      ],
+      "targetLeadTypes": [
+        "beginning-investors-first-rental",
+        "intermediate-investors-scaling-portfolio",
+        "brrrr-practitioners",
+        "out-of-state-investors"
+      ],
+      "wordCount": "3,000-3,500",
+      "competitiveAngle": "Most 'best cities' content is listicle-style with superficial metro-level data. This guide differentiates by (1) revealing the 5-metric scoring framework used to rank markets rather than just presenting conclusions, (2) separating markets by investor type — cash flow seekers vs appreciation plays vs BRRRR-optimal markets — so readers can match the market to their strategy, (3) including a 'market red flag' section that calls out cities with declining population, rising vacancy, or landlord-hostile regulation that other sites are still recommending, and (4) integrating directly with the cap rate calculator so readers can plug in their target market's numbers in real time.",
+      "outline": [
+        "Why Market Selection Is the Highest-Leverage Decision a Rental Investor Makes",
+        "The 5-Metric Framework We Used to Score Every Market in This Guide",
+        "Metric 1 — Cap Rate by Market: What's Realistic in 2026 and Where the Spreads Are",
+        "Metric 2 — Population and Job Growth: The Demand Drivers That Sustain Rent",
+        "Metric 3 — Rent-to-Price Ratio and the 1% Rule: Which Markets Still Pass the Test",
+        "Metric 4 — Landlord-Friendliness: Eviction Laws, Rent Control Risk, and Regulatory Trends",
+        "Metric 5 — Inventory and Vacancy Rate Trends: Supply-Side Risks in 2026",
+        "Top Cash Flow Markets for 2026: The Midwest and Mid-South Opportunity",
+        "Top Appreciation Markets for 2026: Where Long-Term Equity Is Still Being Built",
+        "Top BRRRR Markets for 2026: Where Distressed Inventory and Refinance Math Still Works",
+        "Markets to Avoid in 2026: Red Flags Hiding in Popular Recommendations",
+        "How to Apply This Framework to Any Market You're Already Considering",
+        "Use the Cap Rate Calculator to Run Your Own Market Comparison Right Now"
+      ],
+      "internalLinks": [
+        "/glossary/cap-rate",
+        "/glossary/cash-flow",
+        "/glossary/one-percent-rule",
+        "/glossary/vacancy-rate",
+        "/glossary/gross-rent-multiplier",
+        "/glossary/brrrr-method",
+        "/glossary/appreciation",
+        "/calculators/cap-rate-calculator",
+        "/blog/category/markets",
+        "/blog/real-estate-market-cycle-investing"
+      ]
+    }
+  ],
+  "nextWeekPlan": "All three briefs are drawn from the existing unpublished editorial calendar, prioritized for timing and differentiation. Monday's DSCR Loans post is the highest-urgency pick — search volume for DSCR-related terms is accelerating in the current rate environment, all three competitors are weak here, and it fills a critical gap in the financing pillar. It follows the Investment Strategies pillar of the most recent published posts, satisfying the pillar rotation rule by switching to Financing & Deals. Wednesday's Eviction Process guide addresses one of the highest-intent landlord search queries on the site's roadmap, fills the Property Management pillar slot, and is differentiated by integrating legal process with investor financial modeling — something no competitor does. Friday's Best Cities for 2026 anchors the Market Analysis pillar with a data-driven framework approach rather than a listicle, which is the unique angle that separates it from every competitor version of this topic. The pillar rotation across the three days is Financing & Deals → Property Management → Market Analysis, which is valid with no consecutive repeats. Six briefs in the unpublished queue flagged as near-duplicates of published posts (Multi-Family Investing for Beginners, Out-of-State Investing, Real Estate Depreciation, LLC for Real Estate, How to Raise Private Capital, Buying Your First Rental Property) are deliberately excluded from this week's schedule and should be restructured with distinct sub-angles before being rescheduled. The 'How to Calculate ROI on Rental Property: 4 Methods' brief in the unpublished queue is a confirmed duplicate of an already-published post and should be removed from the calendar entirely.",
+  "errors": []
+}
