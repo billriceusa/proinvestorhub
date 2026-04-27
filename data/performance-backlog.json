@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-26T12:02:19.607Z",
+  "lastUpdated": "2026-04-27T12:02:21.210Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -442,6 +442,39 @@
       "status": "open"
     },
     {
+      "id": "f728c0b46ed5",
+      "title": "Rewrite Title Tags and Meta Descriptions for Calculator Pages to Improve CTR from Current Impressions",
+      "description": "The cap rate calculator page is generating 8 impressions/day at position 59.9 and cash-on-cash at 4 impressions/day at position 74.5 — these are real searchers who never see the site. Immediate action: (1) Rewrite the cap rate calculator title to 'Free Cap Rate Calculator — Instant Real Estate ROI Analysis | ProInvestorHub' targeting under 60 characters. (2) Write a meta description that includes a value hook: 'Calculate cap rate in seconds. Enter NOI and property value — get instant results with interpretation guide.' (3) Add FAQ schema to the calculator pages answering 'What is a good cap rate?' and 'How do I calculate cap rate?' to earn rich results. (4) Build 3–5 internal links from the beginner guide and BRRRR guide pointing to the calculator with anchor text 'cap rate calculator.' These changes can be implemented within 48 hours.",
+      "expectedImpact": "Even a 1–2% CTR on 8 daily cap rate impressions would generate 2–5 additional organic clicks per day — doubling current organic traffic. Rich result eligibility could push CTR to 3–5%.",
+      "priority": "high",
+      "firstSeen": "2026-04-27",
+      "lastSeen": "2026-04-27",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "5183c55006b5",
+      "title": "Prioritize Griffin Funding and Park Place Finance Review Pages for On-Page Optimization",
+      "description": "Griffin Funding review sits at position 21 and Park Place Finance at position 22.1 — both are within striking distance of page 1. Actions: (1) Expand each review to 1,500+ words covering loan types, rates, fees, application process, pros/cons, and a comparison table vs 2 competitors. (2) Add a structured 'Expert Rating' schema with numeric scores for rate competitiveness, customer service, and speed. (3) Include a 'Who Should Use Griffin Funding' section targeting the query 'griffin funding prequalify or preapprove borrowers' which already ranks at position 16. (4) Add a last-updated date and refresh the content monthly to signal freshness. (5) Build 2–3 internal links from the /lenders and /lenders/dscr-loans pages to each review.",
+      "expectedImpact": "Moving from position 21 to position 8–12 for Griffin Funding queries could generate 5–15 clicks/day from branded searchers who have high commercial intent and are likely to engage with affiliate or lead-gen content.",
+      "priority": "high",
+      "firstSeen": "2026-04-27",
+      "lastSeen": "2026-04-27",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "65bd52d09a9f",
+      "title": "Fix Internal Linking Architecture to Reverse the Page Views Collapse",
+      "description": "The drop from 6.3 to 2.3 page views/day is the most actionable engagement problem. Implementation: (1) Audit every blog post and add a 'Related Tools' section at the bottom linking to relevant calculators — e.g., the BRRRR guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a sticky sidebar or inline CTA on all blog posts pointing to the most relevant calculator. (3) Create a 'Start Here' content hub on the homepage that links to the beginner guide, BRRRR guide, and top calculators in a structured flow. (4) Add breadcrumb navigation to all lender review pages linking back to /lenders and relevant loan type pages. (5) Implement a 'You Might Also Like' section on each page using 3 contextually relevant internal links.",
+      "expectedImpact": "Improving pages-per-session from the current ~1.15 to 2.5+ would restore page views to 90-day averages and increase time-on-site, both of which are positive engagement signals for Google.",
+      "priority": "high",
+      "firstSeen": "2026-04-27",
+      "lastSeen": "2026-04-27",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -717,6 +750,28 @@
       "status": "open"
     },
     {
+      "id": "80f5f5b3998a",
+      "title": "Create Location-Specific Calculator Pages to Capture Geographic Cap Rate Queries",
+      "description": "The San Diego cap rate calculator page (/calculators/cap-rate/san-diego-ca) received a visit, and queries like 'average cap rate by city' appeared in the 90-day data. This is a scalable content opportunity. Actions: (1) Identify the top 20 real estate investor markets (Phoenix, Dallas, Atlanta, Tampa, Indianapolis, etc.) and create /calculators/cap-rate/[city-state] pages for each. (2) Each page should include the calculator widget, a city-specific cap rate benchmark table by property type, and a 300-word market context section. (3) Target long-tail queries like 'cap rate calculator Phoenix AZ' and 'average cap rate Atlanta rental property.' (4) Cross-link each city page to the corresponding /markets/[city] page if it exists. This template can be built once and replicated across 20 cities in 1–2 weeks.",
+      "expectedImpact": "Geographic calculator pages targeting 20 cities at 50–200 monthly searches each could generate 1,000–4,000 additional monthly impressions within 60–90 days, with click potential as rankings mature.",
+      "priority": "medium",
+      "firstSeen": "2026-04-27",
+      "lastSeen": "2026-04-27",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "9109cbf1bfcb",
+      "title": "Optimize for Bing and AI Search Channels Given Current Google Invisibility",
+      "description": "Bing organic is currently the only search engine sending traffic (3 sessions in 7 days) and AI referrals from Claude.ai and Copilot are emerging. Actions: (1) Submit the sitemap to Bing Webmaster Tools and verify the site if not already done. (2) Ensure all pages have complete Open Graph and schema markup, as AI assistants and Bing both rely heavily on structured data. (3) Add an 'Expert Author' bio with credentials to all blog posts — AI citation engines prioritize attributed, expert-authored content. (4) Create a /about/team page with author profiles and link to it from all content. (5) Add 'llms.txt' or structured data that explicitly describes the site's expertise areas to improve AI indexing. These are low-effort, high-leverage actions given the current Google traffic drought.",
+      "expectedImpact": "Bing has 6–8% of US search share and is the engine powering Copilot. Optimizing for Bing could realistically double current search-referred sessions within 30 days given the site's current Bing traction.",
+      "priority": "medium",
+      "firstSeen": "2026-04-27",
+      "lastSeen": "2026-04-27",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -834,6 +889,17 @@
       "priority": "low",
       "firstSeen": "2026-04-26",
       "lastSeen": "2026-04-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "0d1803078e58",
+      "title": "Block Scraper Bot Traffic and Set Up Traffic Quality Filters in GA4",
+      "description": "api.scraperforce.com sent 1 referral session in the 7-day window. With such low traffic volumes, bot and scraper sessions meaningfully distort engagement metrics. Actions: (1) Add api.scraperforce.com to the referral exclusion list in GA4 under Admin > Data Streams > Configure Tag Settings. (2) Enable Google's built-in bot filtering in GA4. (3) Create a custom GA4 segment excluding sessions under 5 seconds to filter ghost traffic. (4) Set up a Looker Studio dashboard that separates human traffic from bot/scraper traffic for cleaner reporting. This is especially important at low traffic volumes where 1 bot session = 7% of weekly traffic.",
+      "expectedImpact": "Cleaner data will give more accurate engagement metrics, making it easier to identify real trends. Current bounce rate and session duration figures may be artificially inflated by bot sessions.",
+      "priority": "low",
+      "firstSeen": "2026-04-27",
+      "lastSeen": "2026-04-27",
       "timesRepeated": 1,
       "status": "open"
     }
