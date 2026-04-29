@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T12:02:26.498Z",
+  "lastUpdated": "2026-04-29T12:02:08.888Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -508,6 +508,39 @@
       "status": "open"
     },
     {
+      "id": "0617ee7397b1",
+      "title": "Rewrite Title Tags and Meta Descriptions for All Pages Ranking Positions 5–20",
+      "description": "The investor-friendly agent guide (pos 5.3), BRRRR best cities guide (pos 4.0), markets page (pos 3.4), calculators hub (pos 2.5), and Griffin Funding review (pos 15.5) are all generating zero clicks despite strong rankings. Immediately audit and rewrite their title tags to include: (1) the primary keyword near the front, (2) a specific value proposition or number (e.g., '2026 Updated', 'Free Tool', 'Verified Review'), and (3) an emotional or urgency trigger relevant to investors. For the agent guide at pos 5.3, a title like 'How to Find an Investor-Friendly Real Estate Agent in 2026 (Checklist)' will outperform a generic title. Target CTR improvement from 0% to 2–4% for positions 3–6, which at current impression volume would generate 3–8 additional weekly clicks.",
+      "expectedImpact": "Estimated 3–10 additional organic clicks per week from existing rankings; measurable CTR improvement within 2–3 weeks of Google re-crawling updated tags",
+      "priority": "high",
+      "firstSeen": "2026-04-29",
+      "lastSeen": "2026-04-29",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e73cb1c011dd",
+      "title": "Aggressively Optimize Cap Rate and Cash-on-Cash Calculator Pages for Positions 55–87",
+      "description": "The cap rate calculator page is generating 16 weekly impressions across multiple query variants but ranks at position 55–87. To move into click range (top 10), implement the following: (1) Add a comprehensive 800–1,200 word guide below the calculator covering cap rate formula, what constitutes a good cap rate by property type, and city-specific benchmarks — this addresses the 'average cap rate by city' query from the 90-day data. (2) Add FAQ schema markup targeting exact query variants: 'cap rate calculator', 'cap rate formula calculator', 'free cap rate calculator'. (3) Build 3–5 internal links from high-authority pages (homepage, BRRRR guide, beginners guide) to the calculator page using keyword-rich anchor text. (4) Ensure the page title is 'Free Cap Rate Calculator for Real Estate Investors (2026)'. Apply the same treatment to the cash-on-cash calculator page targeting the 15 weekly impressions it receives.",
+      "expectedImpact": "Moving from position 60 to position 15–25 within 60–90 days; at current impression volume, position 15 would yield an estimated 1–3 clicks/day",
+      "priority": "high",
+      "firstSeen": "2026-04-29",
+      "lastSeen": "2026-04-29",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "82eff6eaf91f",
+      "title": "Conduct Immediate Technical Audit to Diagnose Traffic and Engagement Collapse",
+      "description": "The simultaneous 75% drop in session duration, 66% drop in page views, and 40% drop in sessions — combined with a 100% CTR drop — is too severe to attribute solely to content or ranking changes. Execute the following audit within 48 hours: (1) Verify GA4 tag is firing correctly on all pages using Google Tag Assistant — check for duplicate tags or broken event triggers. (2) In Google Search Console, check Coverage report for any new 'Excluded' or 'Crawled but not indexed' pages added in the last 14 days. (3) Run a Screaming Frog crawl to identify any new noindex tags, robots.txt blocks, or redirect chains introduced recently. (4) Check Core Web Vitals in GSC for any new failing URLs. (5) Verify that the canonical tag situation is consistent — note that GSC data shows both www and non-www URLs (proinvestorhub.com vs www.proinvestorhub.com), which may indicate a canonicalization issue splitting link equity.",
+      "expectedImpact": "Identifying and resolving a technical issue could immediately restore baseline traffic levels; www/non-www canonicalization fix alone could consolidate ranking signals",
+      "priority": "high",
+      "firstSeen": "2026-04-29",
+      "lastSeen": "2026-04-29",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -827,6 +860,28 @@
       "status": "open"
     },
     {
+      "id": "2dc86eef1d62",
+      "title": "Create a Griffin Funding Content Cluster to Capture Near-Page-1 Rankings",
+      "description": "Griffin Funding queries are appearing across multiple variants (bbb rating pos 12, bank statement loan pos 19.3, DSCR loans pos 16, general brand pos 34) with a combined 9 weekly impressions. This lender is clearly a topic Google associates with the site. Build a content cluster: (1) Ensure the main Griffin Funding review page (/lenders/reviews/griffin-funding) is comprehensive — minimum 2,000 words covering loan products, rates, requirements, BBB rating, pros/cons, and comparison to competitors. (2) Add a dedicated section or FAQ block specifically answering 'Does Griffin Funding offer DSCR loans?' and 'Griffin Funding bank statement loan requirements 2026' — these are exact queries already ranking at positions 16–20. (3) Create an internal link from the /lenders/dscr-loans page to the Griffin Funding review. (4) Add structured data (Review schema) to the lender review page. This cluster has the highest probability of generating the site's first consistent organic clicks.",
+      "expectedImpact": "Pushing Griffin Funding review from position 15.5 to top 10 could generate 5–15 clicks/week given the branded + informational query mix",
+      "priority": "medium",
+      "firstSeen": "2026-04-29",
+      "lastSeen": "2026-04-29",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "6f4eb18f91d1",
+      "title": "Resolve www vs Non-www Canonicalization and Consolidate Domain Authority",
+      "description": "GSC data shows pages indexed under both proinvestorhub.com (no www) and www.proinvestorhub.com, with lender pages predominantly under www and other pages under the root domain. This split likely means Google is treating them as separate entities, dividing link equity and potentially causing duplicate content issues. Steps: (1) Decide on a canonical domain (recommend non-www for cleanliness). (2) Implement 301 redirects from all www URLs to non-www equivalents at the server/CDN level. (3) Update all internal links to use the canonical domain consistently. (4) Update the GSC property to use the preferred domain and resubmit the sitemap. (5) Update the sitemap.xml to only include canonical URLs.",
+      "expectedImpact": "Consolidating domain authority could improve rankings across all pages by 2–5 positions within 4–8 weeks as Google re-processes the consolidated signals",
+      "priority": "medium",
+      "firstSeen": "2026-04-29",
+      "lastSeen": "2026-04-29",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -966,6 +1021,17 @@
       "priority": "low",
       "firstSeen": "2026-04-28",
       "lastSeen": "2026-04-28",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "2dd520d04b7a",
+      "title": "Optimize for AI Citation and Bing/Copilot Traffic Given Early AI Referral Signal",
+      "description": "The appearance of a copilot.com referral session, combined with Bing organic generating 2 sessions (vs Google's 0 organic clicks), suggests the site is gaining traction in Microsoft's AI ecosystem before Google's. To amplify this: (1) Add clear, quotable factual statements in a structured format (e.g., 'The average cap rate for residential rental properties in the US ranges from 4%–10% depending on market') that AI models can cite. (2) Implement Speakable schema and FAQ schema on calculator and guide pages. (3) Ensure all blog posts have a clear 'Key Takeaways' or 'Summary' section at the top — AI tools preferentially cite structured summaries. (4) Submit the sitemap to Bing Webmaster Tools if not already done and verify the Bing property. (5) Monitor copilot.com referrals monthly as a leading indicator of AI visibility.",
+      "expectedImpact": "Incremental Bing and AI referral traffic growth over 60–90 days; positions the site ahead of competitors in the emerging AI search channel",
+      "priority": "low",
+      "firstSeen": "2026-04-29",
+      "lastSeen": "2026-04-29",
       "timesRepeated": 1,
       "status": "open"
     }
