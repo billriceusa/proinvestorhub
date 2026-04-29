@@ -22,7 +22,7 @@ export const POSTS_QUERY = defineQuery(/* groq */ `
       alt
     },
     author->{ name, "slug": slug.current, image },
-    categories[]->{ _id, title, "slug": slug.current }
+    categories[defined(@->)]->{ _id, title, "slug": slug.current }
   }
 `)
 
@@ -43,7 +43,7 @@ export const POST_BY_SLUG_QUERY = defineQuery(/* groq */ `
       alt
     },
     author->{ name, "slug": slug.current, image, bio },
-    categories[]->{ _id, title, "slug": slug.current },
+    categories[defined(@->)]->{ _id, title, "slug": slug.current },
     sources[]{ title, url, publisher, dateAccessed },
     seo
   }
@@ -84,7 +84,7 @@ export const GLOSSARY_TERM_BY_SLUG_QUERY = defineQuery(/* groq */ `
     definition,
     body,
     category,
-    relatedTerms[]->{ _id, term, "slug": slug.current, definition }
+    relatedTerms[defined(@->)]->{ _id, term, "slug": slug.current, definition }
   }
 `)
 
@@ -121,7 +121,7 @@ export const POSTS_BY_CATEGORY_SLUG_QUERY = defineQuery(/* groq */ `
     "slug": slug.current,
     excerpt,
     publishedAt,
-    categories[]->{ _id, title, "slug": slug.current }
+    categories[defined(@->)]->{ _id, title, "slug": slug.current }
   }
 `)
 
@@ -147,7 +147,7 @@ export const POSTS_BY_CATEGORY_PAGINATED_QUERY = defineQuery(/* groq */ `
       alt
     },
     author->{ name, "slug": slug.current },
-    categories[]->{ _id, title, "slug": slug.current }
+    categories[defined(@->)]->{ _id, title, "slug": slug.current }
   }
 `)
 
@@ -167,7 +167,7 @@ export const POSTS_BY_CATEGORY_SLUG_ALL_QUERY = defineQuery(/* groq */ `
       },
       alt
     },
-    categories[]->{ _id, title, "slug": slug.current }
+    categories[defined(@->)]->{ _id, title, "slug": slug.current }
   }
 `)
 
@@ -232,7 +232,7 @@ export const LENDERS_QUERY = defineQuery(/* groq */ `
     logo { asset->{ _id, url }, alt },
     website,
     description,
-    loanTypes[]->{ _id, name, "slug": slug.current, shortName },
+    loanTypes[defined(@->)]->{ _id, name, "slug": slug.current, shortName },
     minRate,
     maxRate,
     maxLtv,
@@ -261,7 +261,7 @@ export const LENDER_BY_SLUG_QUERY = defineQuery(/* groq */ `
     founded,
     headquarters,
     description,
-    loanTypes[]->{ _id, name, "slug": slug.current, shortName },
+    loanTypes[defined(@->)]->{ _id, name, "slug": slug.current, shortName },
     minRate,
     maxRate,
     maxLtv,
@@ -342,7 +342,7 @@ export const GUIDE_BY_SLUG_QUERY = defineQuery(/* groq */ `
     keyTakeaways,
     body,
     sources,
-    categories[]->{ _id, title, "slug": slug.current },
+    categories[defined(@->)]->{ _id, title, "slug": slug.current },
     seo
   }
 `)
