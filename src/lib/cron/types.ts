@@ -73,6 +73,13 @@ export interface FailedArticle {
   reason: string;
 }
 
+export interface ImageOutcomeReport {
+  title: string;
+  status: "created" | "rate-limited" | "no-results" | "no-key" | "upload-failed";
+  photographer?: string;
+  detail?: string;
+}
+
 export interface WeeklyReport {
   runDate: string;
   weekStartDate: string;
@@ -80,6 +87,7 @@ export interface WeeklyReport {
   articlesCreated: PublishedArticle[];
   articlesSkipped: SkippedArticle[];
   articlesFailed: FailedArticle[];
+  imageOutcomes?: ImageOutcomeReport[];
   newBriefs: WeeklyBrief[];
   nextWeekPlan: string;
   errors: string[];

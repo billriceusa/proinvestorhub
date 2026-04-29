@@ -14,6 +14,7 @@ import { callout } from './callout'
 import { inlineCta } from './inline-cta'
 import { guide } from './guide'
 import { cronHeartbeat } from './cron-heartbeat'
+import { codeBlock } from './code-block'
 
 export const schemaTypes = [
   post,
@@ -32,4 +33,5 @@ export const schemaTypes = [
   inlineCta,
   guide,
   cronHeartbeat,
+  codeBlock,
 ]

@@ -17,13 +17,15 @@
     "@sanity/image-url": "^2.0.3",
     "@vercel/functions": "^3.4.3",
     "google-auth-library": "^9.15.1",
+    "marked": "^18.0.2",
     "next": "16.1.6",
     "next-sanity": "^12.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-email": "^5.2.9",
     "resend": "^6.9.3",
-    "sanity": "^5.14.1"
+    "sanity": "^5.14.1",
+    "sharp": "^0.34.5"
   },
   "browserslist": [
     "last 2 Chrome versions",

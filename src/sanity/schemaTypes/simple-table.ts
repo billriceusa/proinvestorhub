@@ -6,9 +6,16 @@ export const simpleTable = defineType({
   type: 'object',
   fields: [
     defineField({
+      name: 'caption',
+      title: 'Caption',
+      type: 'string',
+      description: 'Optional caption shown above the table.',
+    }),
+    defineField({
       name: 'rows',
       title: 'Rows',
       type: 'array',
+      description: 'First row is treated as the header.',
       of: [
         defineArrayMember({
           type: 'object',
@@ -26,10 +33,13 @@ export const simpleTable = defineType({
     }),
   ],
   preview: {
-    select: { rows: 'rows' },
-    prepare({ rows }) {
+    select: { caption: 'caption', rows: 'rows' },
+    prepare({ caption, rows }) {
       const firstRow = rows?.[0]?.cells?.join(' | ') ?? 'Empty table'
-      return { title: `Table (${rows?.length ?? 0} rows)`, subtitle: firstRow }
+      return {
+        title: caption || `Table (${rows?.length ?? 0} rows)`,
+        subtitle: firstRow,
+      }
     },
   },
 })
