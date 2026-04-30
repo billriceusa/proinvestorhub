@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-29T12:02:08.888Z",
+  "lastUpdated": "2026-04-30T12:02:12.398Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -541,6 +541,39 @@
       "status": "open"
     },
     {
+      "id": "d4daf799690a",
+      "title": "Rewrite Title Tags and Meta Descriptions for All Pages Ranking Pos 3–20",
+      "description": "Pages like /blog/brrrr-method-complete-guide (pos 7.0), /blog/how-to-find-an-investor-friendly-real-estate-agent-2026 (pos 5.3), /guides/best-cities/brrrr (pos 3.0), and /lenders/reviews/griffin-funding (pos 15.5) are ranking in click-worthy positions but generating zero clicks. Audit each page's title tag and meta description in GSC. For the BRRRR guide at pos 7, test a title like 'BRRRR Method: Complete Step-by-Step Guide for Real Estate Investors (2026)' with a meta description that includes a specific hook like 'Learn how investors use BRRRR to recycle capital and build portfolios with little money left in deals.' For the investor-friendly agent guide at pos 5.3, add a year, a number (e.g., '7 Ways to Find...'), and a clear benefit statement. Implement changes for all pos 3–20 pages within 48 hours and monitor GSC CTR weekly.",
+      "expectedImpact": "Even a 2–3% CTR on pages ranking pos 3–7 with modest impression volume could generate the site's first consistent organic click stream. A pos 5.3 page with 10 daily impressions at 3% CTR = 9 additional clicks/month.",
+      "priority": "high",
+      "firstSeen": "2026-04-30",
+      "lastSeen": "2026-04-30",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "51520b617975",
+      "title": "Aggressively Build Links and Internal Authority to Cap Rate and Cash-on-Cash Calculator Pages",
+      "description": "The cap rate calculator query cluster (13 impressions at pos 51) and cash-on-cash cluster (~17 impressions at pos 67–77) represent the highest-volume keyword opportunity on the site. To move from pos 51 to pos 10–20, execute three actions: (1) Add a prominent 'Try Our Free Cap Rate Calculator' CTA with anchor text link from the homepage, BRRRR guide, and beginner's guide pages. (2) Publish a supporting blog post titled 'What Is a Good Cap Rate? (2026 Benchmarks by Market)' that links directly to /calculators/cap-rate with exact-match anchor text. (3) Reach out to 5–10 real estate investing blogs or forums (BiggerPockets community posts, Reddit r/realestateinvesting) to share the calculator as a free resource and earn backlinks. The /calculators page already ranks at pos 2.0 — leverage that authority by ensuring it links prominently to both calculator sub-pages.",
+      "expectedImpact": "Moving cap rate calculator from pos 51 to pos 15–25 within 60–90 days could capture 5–15 clicks/day given the query volume, representing a 10x increase in organic traffic from a single page.",
+      "priority": "high",
+      "firstSeen": "2026-04-30",
+      "lastSeen": "2026-04-30",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "fdf3db1f36ee",
+      "title": "Fix On-Page Engagement to Reduce 22-Second Session Duration",
+      "description": "A 22-second average session duration means users are bouncing before reading a single section of content. Diagnose and fix in this order: (1) Run a PageSpeed Insights test on the homepage and top landing pages — if LCP exceeds 2.5s on mobile, optimize images and defer non-critical JS immediately. (2) Add a sticky table of contents to all blog posts and guides so users can see the full value of the page within 3 seconds of landing. (3) Place a high-visibility calculator widget or interactive element (e.g., 'Quick Cap Rate Calculator') in the above-the-fold area of the homepage and BRRRR guide to give users an immediate reason to interact. (4) Review the /markets page (2 views, 2 users this week) — ensure it loads data-rich content immediately rather than requiring user interaction to populate.",
+      "expectedImpact": "Improving session duration from 22s back toward the 90-day average of 130s would signal quality improvement to Google, support better rankings, and increase the probability of users discovering calculators, lender pages, and newsletter signup.",
+      "priority": "high",
+      "firstSeen": "2026-04-30",
+      "lastSeen": "2026-04-30",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "732ff13baa38",
       "title": "Implement Internal Linking Strategy Connecting Blog Posts to Calculator Pages",
       "description": "The ROI blog post (/blog/how-to-calculate-roi-rental-property-4-methods) is the top-performing content page. Add contextual internal links from this post and all other blog posts (BRRRR guide, house flipping guide, rental property guide) to the cap rate calculator and cash-on-cash calculator pages. Use descriptive anchor text like 'use our cap rate calculator' or 'calculate your cash-on-cash return here.' This passes PageRank to the calculator pages, which currently appear to have weak internal link equity given their very low rankings. Also add a 'Related Calculators' widget to all blog posts.",
@@ -882,6 +915,28 @@
       "status": "open"
     },
     {
+      "id": "e41a0289ad70",
+      "title": "Create a Dedicated Griffin Funding DSCR Loans Page to Capture Near-Ranking Queries",
+      "description": "The query 'does griffin funding offer dscr loans' ranks at position 16 with 2 impressions, and 'griffin funding bank statement loan' ranks at position 19.3 with 3 impressions. The existing /lenders/reviews/griffin-funding page (pos 15.5) is close to page 1. Enhance this page by: (1) Adding an explicit FAQ section with H3 headers answering 'Does Griffin Funding offer DSCR loans?' and 'What are Griffin Funding bank statement loan requirements in 2026?' — these are exact-match queries already generating impressions. (2) Add a comparison table showing Griffin Funding's DSCR loan terms vs 1–2 competitors. (3) Internally link from /lenders/dscr-loans and /lenders/bank-statement-loans/illinois to the Griffin Funding review page. This is a low-effort, high-proximity opportunity to break onto page 1.",
+      "expectedImpact": "Moving Griffin Funding review from pos 15–20 to pos 5–10 for 2–3 branded/intent queries could generate 5–20 clicks/month from high-intent users actively researching lenders.",
+      "priority": "medium",
+      "firstSeen": "2026-04-30",
+      "lastSeen": "2026-04-30",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "feb40cc6e3c4",
+      "title": "Develop an AI Search Optimization Strategy to Capitalize on Copilot/ChatGPT Referrals",
+      "description": "With 25% of current sessions coming from AI platforms (Copilot, ChatGPT), the site is already being cited in AI-generated answers. To amplify this: (1) Add structured FAQ schema markup to all calculator pages, lender reviews, and beginner guides — AI models preferentially cite pages with clear Q&A structure. (2) Ensure every major page has a concise 'Key Takeaways' or 'Summary' section in the first 200 words, as AI models often pull from these for citations. (3) Create a dedicated 'Real Estate Investing Glossary' section (if not already present) with definitions for BRRRR, DSCR, cap rate, cash-on-cash, etc. — glossary content is heavily cited by AI assistants. (4) Track AI referral traffic as a separate segment in GA4 by creating a custom channel group for copilot.com, chatgpt.com, perplexity.ai, and gemini.google.com.",
+      "expectedImpact": "If AI referrals scale proportionally with site content growth, this channel could represent 15–25% of total traffic within 6 months — potentially outpacing organic Google traffic in the near term.",
+      "priority": "medium",
+      "firstSeen": "2026-04-30",
+      "lastSeen": "2026-04-30",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -1032,6 +1087,17 @@
       "priority": "low",
       "firstSeen": "2026-04-29",
       "lastSeen": "2026-04-29",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "76ba5ead203a",
+      "title": "Launch a Weekly Newsletter Promotion Strategy to Build a Returning User Base",
+      "description": "The /newsletter page received 1 view this week and /newsletter/2026-04-13 received 1 view, indicating the newsletter exists but has no promotional infrastructure. With organic traffic at near-zero, building an email list is the most reliable way to create a returning user base independent of Google. Implement: (1) Add an inline newsletter signup CTA after the second section of every blog post and guide, with a specific value proposition (e.g., 'Get weekly market analysis and deal calculators — free'). (2) Add a slide-in or exit-intent popup on the homepage and calculator pages offering a lead magnet (e.g., 'Free BRRRR Deal Analyzer Spreadsheet'). (3) Cross-promote the newsletter in the AI-referred traffic landing pages since those users are actively researching and likely to opt in.",
+      "expectedImpact": "Building an email list of even 100–500 engaged subscribers would create a reliable traffic floor of 50–200 sessions per newsletter send, reducing dependence on Google rankings during the site's authority-building phase.",
+      "priority": "low",
+      "firstSeen": "2026-04-30",
+      "lastSeen": "2026-04-30",
       "timesRepeated": 1,
       "status": "open"
     }
