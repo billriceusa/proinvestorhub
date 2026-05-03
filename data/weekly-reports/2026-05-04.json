@@ -1,0 +1,204 @@
+{
+  "runDate": "2026-05-03T06:04:11.522Z",
+  "weekStartDate": "2026-05-04",
+  "analysis": {
+    "strategyReview": "ProInvestorHub has built a solid foundational content library across all five pillars, with particularly strong coverage in Financing & Deals (hard money, subject-to, private money, portfolio loans, seller concessions) and Investment Strategies (BRRRR, flipping, wholesaling, multifamily, vacation rentals, out-of-state). The glossary and calculator ecosystem is well-developed, and the pillar-linking structure appears consistent. However, a clear gap exists in the Market Analysis pillar — only one published post ('Best Cities for Rental Property Investing 2026') directly addresses market selection, and the editorial calendar brief '10 Market Indicators Every Real Estate Investor Should Track Monthly' remains unpublished. This is a high-traffic keyword cluster that competitors like BiggerPockets dominate with community-driven data threads, leaving room for a more structured, data-driven approach. Property Management coverage is also thin relative to the ICP's needs: tenant screening and insurance are covered, but eviction procedures, lease structuring, and the self-management vs. hiring decision remain open — all three are in the unpublished calendar queue.",
+    "competitiveInsights": "BiggerPockets dominates broad informational queries ('how to invest in real estate', 'BRRRR strategy') through community volume and domain authority, but its content is often discussion-thread-based and lacks structured, actionable frameworks with embedded calculators. This is ProInvestorHub's clearest differentiation vector. Investopedia covers definitional content shallowly — terms like 'DSCR loan' and '1031 exchange' are defined but not operationalized for active investors. REtipster skews heavily toward land and creative finance niches. The current keyword opportunity window in mid-2026 centers on: (1) DSCR loan content, as rate environment shifts are driving heavy search volume from investors who can't qualify conventionally; (2) eviction process guides, as landlord-tenant law changes in multiple states in 2025-2026 are generating high-intent searches from worried landlords; (3) self-management vs. property manager cost analysis, which is a decision-stage query that neither BiggerPockets nor Investopedia answers with real math. All three of these map directly to unpublished calendar briefs, making this week's selection straightforward.",
+    "newOpportunities": [
+      "DSCR loan rate comparison tool — a calculator-driven post showing how DSCR loan terms vary by lender type (bank, credit union, hard money) at current rate levels, a gap no competitor fills with real numbers",
+      "Rent-to-price ratio tracker by metro — a data-driven Market Analysis post benchmarking the 1% rule feasibility across 20+ cities using current rental and sales data, unique vs. BiggerPockets' anecdotal city threads",
+      "Landlord tax planning calendar — a month-by-month action guide for rental property tax moves, distinct from the existing tax deductions list post",
+      "Contractor vetting framework for flippers — a systematic due diligence checklist for hiring and managing contractors, which complements the published rehab cost estimation post but hasn't been covered",
+      "Cash-out refinance vs. HELOC for rental property — a decision-framework post for intermediate investors scaling a portfolio, a high-intent query with weak competitor coverage"
+    ],
+    "trendingTopics": [
+      "DSCR loans in a high-rate environment — searches spiking as conventional financing tightens for investors with multiple properties",
+      "Eviction moratorium aftermath and landlord legal rights — ongoing state-level law changes keeping this query evergreen and urgent",
+      "Self-managing vs. hiring a property manager — decision-stage query rising as property management fees squeeze cash flow margins",
+      "Fix-and-flip project management and contractor timelines — flippers searching for operational systems as labor costs and timelines remain volatile",
+      "10 market indicators for real estate investors — data-driven market selection content is trending as investors become more analytical post-rate-shock"
+    ],
+    "recommendedUpdates": [
+      "Update 'Best Cities for Rental Property Investing 2026' with Q2 2026 cap rate and rent data to maintain freshness and ranking",
+      "Add a DSCR calculator embed to the existing 'Hard Money Loans' post to capture crossover searchers evaluating both financing options",
+      "Expand the 'How to Estimate Rehab Costs' post with a contractor vetting section and link to the upcoming Fix and Flip Project Management brief once published",
+      "Add internal links from 'How to Refinance an Investment Property' to the upcoming DSCR Loans post once live, as these serve the same scaling investor audience"
+    ]
+  },
+  "articlesCreated": [
+    {
+      "title": "Self-Managing Rental Properties vs. Hiring a Property Manager: The Real Math",
+      "slug": "self-managing-rental-properties-vs-hiring-property-manager",
+      "publishDate": "2026-05-08",
+      "primaryKeyword": "self-managing rental property vs property manager",
+      "pillar": "PROPERTY MANAGEMENT"
+    }
+  ],
+  "articlesSkipped": [
+    {
+      "title": "DSCR Loans Explained: No-Income-Verification Financing for Real Estate Investors",
+      "slug": "dscr-loans-explained-real-estate-investors",
+      "reason": "ID already exists: post-dscr-loans-explained-real-estate-investors"
+    },
+    {
+      "title": "The Eviction Process: A Landlord's Step-by-Step Legal Guide",
+      "slug": "eviction-process-landlord-step-by-step-legal-guide",
+      "reason": "ID already exists: post-eviction-process-landlord-step-by-step-legal-guide"
+    }
+  ],
+  "articlesFailed": [],
+  "imageOutcomes": [
+    {
+      "title": "Self-Managing Rental Properties vs. Hiring a Property Manager: The Real Math",
+      "status": "created",
+      "photographer": "Towfiqu barbhuiya"
+    }
+  ],
+  "newBriefs": [
+    {
+      "day": "Mon",
+      "publishDate": "2026-05-04",
+      "slug": "dscr-loans-explained-real-estate-investors",
+      "title": "DSCR Loans Explained: No-Income-Verification Financing for Real Estate Investors",
+      "pillar": "FINANCING & DEALS",
+      "primaryKeyword": "DSCR loans real estate",
+      "secondaryKeywords": [
+        "DSCR loan requirements",
+        "no income verification investment property loan",
+        "debt service coverage ratio loan",
+        "DSCR loan vs conventional mortgage",
+        "DSCR loan rates 2026"
+      ],
+      "targetLeadTypes": [
+        "intermediate-portfolio-scalers",
+        "brrrr-practitioners",
+        "rental-property-investors"
+      ],
+      "wordCount": "2,800-3,200",
+      "competitiveAngle": "Unlike BiggerPockets threads that discuss DSCR loans anecdotally or Investopedia's shallow definition, this post operationalizes the loan type with a built-in DSCR calculation walkthrough, a lender comparison framework, and a decision matrix showing exactly when a DSCR loan beats a conventional loan — with real 2026 rate scenarios. It embeds the DSCR calculator and shows investors how to reverse-engineer minimum rent requirements to qualify.",
+      "outline": [
+        "Introduction: Why DSCR Loans Are the Scaling Investor's Secret Weapon in 2026",
+        "What Is a DSCR Loan? (Definition, How It Differs from Conventional Financing)",
+        "How DSCR Is Calculated: The Formula with a Real Property Example",
+        "Step-by-Step: Using the DSCR Calculator to Qualify a Deal Before You Apply",
+        "DSCR Loan Requirements: Credit Score, LTV, Reserve, and Property Type Rules",
+        "DSCR Loan Rates in 2026: What to Expect and How to Shop Lenders",
+        "DSCR Loan vs. Conventional Loan vs. Hard Money: Decision Matrix",
+        "5 Scenarios Where DSCR Loans Win (and 3 Where They Don't)",
+        "How to Improve Your DSCR Before Applying: Rent Optimization and Expense Reduction",
+        "Common DSCR Loan Mistakes Investors Make (and How to Avoid Them)",
+        "Frequently Asked Questions About DSCR Loans",
+        "Next Steps: Run Your Deal Through the DSCR Calculator"
+      ],
+      "internalLinks": [
+        "/glossary/dscr-loan",
+        "/glossary/dscr",
+        "/glossary/ltv",
+        "/glossary/cash-flow",
+        "/glossary/noi",
+        "/calculators/dscr-calculator",
+        "/blog/financing/hard-money-lenders-guide-real-estate",
+        "/blog/financing/portfolio-loans-explained",
+        "/blog/category/financing"
+      ]
+    },
+    {
+      "day": "Wed",
+      "publishDate": "2026-05-06",
+      "slug": "eviction-process-landlord-step-by-step-legal-guide",
+      "title": "The Eviction Process: A Landlord's Step-by-Step Legal Guide",
+      "pillar": "PROPERTY MANAGEMENT",
+      "primaryKeyword": "eviction process landlord",
+      "secondaryKeywords": [
+        "how to evict a tenant",
+        "landlord eviction steps",
+        "eviction notice requirements",
+        "unlawful detainer process",
+        "tenant eviction timeline"
+      ],
+      "targetLeadTypes": [
+        "rental-property-investors",
+        "landlords-self-managing",
+        "beginning-investors"
+      ],
+      "wordCount": "2,500-3,000",
+      "competitiveAngle": "BiggerPockets has forum threads on evictions but no structured legal walkthrough. Investopedia barely touches landlord operations. This post is the definitive practitioner guide: a state-agnostic legal framework with a phase-by-phase timeline, exact notice language templates, a cost estimator for the full eviction process, and a prevention checklist tied back to tenant screening. It addresses 2025-2026 state law changes that have altered notice periods and just-cause requirements in key investor markets.",
+      "outline": [
+        "Introduction: The Real Cost of a Bad Eviction (Time, Money, and Stress)",
+        "Before You File: Is Eviction Actually Your Best Option? (Cash-for-Keys, Payment Plans)",
+        "Legal Grounds for Eviction: Non-Payment, Lease Violations, and No-Cause Notices",
+        "Phase 1 — The Eviction Notice: Types, Timing, and Exact Language Requirements",
+        "Phase 2 — Filing the Unlawful Detainer: Court Paperwork and Filing Fees",
+        "Phase 3 — The Court Hearing: What to Bring, What to Say, What Judges Look For",
+        "Phase 4 — The Writ of Possession: Scheduling the Sheriff and Managing Move-Out",
+        "Phase 5 — Post-Eviction: Recovering Damages, Security Deposit Accounting, and Re-Leasing",
+        "Eviction Timeline by State: Average Duration and Cost in 10 Major Investor Markets",
+        "2025-2026 Law Changes That Affect Landlord Rights (Just Cause, Notice Periods, Fee Caps)",
+        "How to Eviction-Proof Your Rental: Tenant Screening, Lease Clauses, and Early Warning Systems",
+        "Eviction Cost Calculator: What This Process Will Really Cost You",
+        "Frequently Asked Questions About the Eviction Process"
+      ],
+      "internalLinks": [
+        "/glossary/vacancy-rate",
+        "/glossary/lease-up-period",
+        "/glossary/rent-increase",
+        "/glossary/capex-reserve",
+        "/calculators/cash-flow-calculator",
+        "/blog/property-management/tenant-screening-process-landlords",
+        "/blog/tax-legal/landlord-tenant-laws-investors-2026",
+        "/blog/category/strategies"
+      ]
+    },
+    {
+      "day": "Fri",
+      "publishDate": "2026-05-08",
+      "slug": "self-managing-rental-properties-vs-hiring-property-manager",
+      "title": "Self-Managing Rental Properties vs. Hiring a Property Manager: The Real Math",
+      "pillar": "PROPERTY MANAGEMENT",
+      "primaryKeyword": "self-managing rental property vs property manager",
+      "secondaryKeywords": [
+        "property management fees rental property",
+        "should I hire a property manager",
+        "self-managing landlord pros cons",
+        "property manager cost analysis",
+        "DIY landlord vs property management company"
+      ],
+      "targetLeadTypes": [
+        "rental-property-investors",
+        "intermediate-portfolio-scalers",
+        "beginning-investors",
+        "out-of-state-investors"
+      ],
+      "wordCount": "2,500-3,000",
+      "competitiveAngle": "Every competitor covers this topic as a pros-and-cons list. This post does something none of them do: builds a full financial model comparing the two options across three portfolio sizes (1 property, 3 properties, 10 properties) and three market rent levels, showing the exact break-even point where hiring a manager becomes cash-flow-positive after accounting for time value, error costs, and vacancy differences. It includes a downloadable decision framework and links to the cash flow calculator so investors can run their own numbers.",
+      "outline": [
+        "Introduction: This Is a Math Problem, Not a Lifestyle Choice",
+        "What Property Managers Actually Do (and What You're Paying For)",
+        "The True Cost of Self-Management: Time, Errors, and Hidden Expenses",
+        "Property Management Fee Structures: Percentage, Flat Fee, and Hybrid Models",
+        "The Financial Model: Self-Managing vs. PM at 1, 3, and 10 Properties",
+        "The Break-Even Analysis: When Does Hiring a PM Become Cash-Flow-Positive?",
+        "Vacancy Rate Differences: The Data on Self-Managed vs. Professionally Managed Properties",
+        "Out-of-State Investors: Why the Math Changes Dramatically",
+        "How to Evaluate a Property Management Company: 12 Questions and Red Flags",
+        "Hybrid Approach: What to Self-Manage and What to Outsource",
+        "The Portfolio Scaling Decision: When to Transition from DIY to Professional Management",
+        "Run Your Own Numbers: Using the Cash Flow Calculator to Model Both Scenarios",
+        "Decision Framework: A Scoring Matrix to Make the Right Call for Your Situation"
+      ],
+      "internalLinks": [
+        "/glossary/cash-flow",
+        "/glossary/vacancy-rate",
+        "/glossary/occupancy-rate",
+        "/glossary/capex-reserve",
+        "/glossary/fifty-percent-rule",
+        "/calculators/cash-flow-calculator",
+        "/blog/property-management/how-to-create-property-management-checklist",
+        "/blog/strategies/out-of-state-real-estate-investing",
+        "/blog/category/strategies"
+      ]
+    }
+  ],
+  "nextWeekPlan": "All three briefs are pulled directly from the unpublished editorial calendar, prioritized by a combination of search volume timing, pillar rotation compliance, and content gap urgency. Monday's DSCR Loans post (Financing & Deals) leads the week because DSCR loan queries are at peak volume given the current rate environment, and it's the highest-differentiation opportunity against competitors. Wednesday's Eviction Process post (Property Management) addresses an urgent, high-intent landlord query amplified by recent state law changes, and it creates a strong internal link cluster with the already-published tenant screening and landlord-tenant law posts. Friday's Self-Managing vs. Property Manager post (Property Management) was chosen over the Investment Strategies calendar options because (a) it completes a logical Property Management content cluster with Wednesday's post, (b) the unique financial modeling angle is a strong differentiator, and (c) it serves the intermediate portfolio-scaling ICP segment that is currently underserved in the published library. Note: Two consecutive Property Management posts on Wed/Fri is intentional given the pillar gap, but the following week should open with Investment Strategies or Market Analysis to maintain rotation discipline. The '10 Market Indicators' brief remains the top priority for next week's Market Analysis slot, as the Market Analysis pillar is the most underrepresented in the published library. Duplicate check confirmed: none of the three selected briefs overlap with published titles — DSCR Loans, Eviction Process, and Self-Managing vs. PM are all clear of existing content.",
+  "errors": []
+}
