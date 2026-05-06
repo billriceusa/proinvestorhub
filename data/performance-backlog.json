@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-05T12:01:57.245Z",
+  "lastUpdated": "2026-05-06T12:02:45.656Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -739,6 +739,39 @@
       "status": "open"
     },
     {
+      "id": "fa0210e0ef7d",
+      "title": "Emergency Title Tag and Meta Description Overhaul for High-Position Pages",
+      "description": "Three pages are ranking in positions 1-10 in GSC but generating zero clicks: the homepage (pos 4.6), BRRRR best cities guide (pos 6.0), and investor-friendly agent blog (pos 8.0). This is a critical CTR failure. Immediately rewrite title tags to include power words, numbers, and current year (e.g., 'Best Cities for BRRRR Investing in 2026 [Ranked by Cash Flow]'), and craft meta descriptions with a clear value proposition and call-to-action under 155 characters. For the Lima One vs Civic Financial comparison page at position 1.0, ensure the title tag explicitly calls out the comparison format ('Lima One Capital vs Civic Financial: 2026 Lender Comparison [Rates, Fees, Reviews]'). Test changes in Google Search Console's URL Inspection tool after deployment and monitor CTR weekly.",
+      "expectedImpact": "Even moving from 0.00% to 1-2% CTR on pages with positions under 10 could generate 5-15 additional organic clicks per week, representing a meaningful percentage increase from the current zero baseline.",
+      "priority": "high",
+      "firstSeen": "2026-05-06",
+      "lastSeen": "2026-05-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "222b967a7fec",
+      "title": "Expand and Deepen State-Specific Lender Pages to Increase Session Duration",
+      "description": "The Indiana hard money loans page, New Mexico DSCR page, and Illinois bank statement loans page are driving traffic but session duration is only 80.7 seconds — insufficient for conversion or authority building. For each state page, add: (1) a comparison table of 3-5 lenders operating in that state with rates, LTV, and min credit score, (2) a state-specific market context section (average home prices, investor activity), (3) an embedded calculator (cap rate or DSCR) pre-configured for that state's typical deal parameters, and (4) internal links to relevant lender reviews already on the site. Target 1,500+ words per state page. Prioritize Indiana, New Mexico, and Illinois first based on current traffic data.",
+      "expectedImpact": "Deeper content should increase average session duration back toward the 90-day baseline of 126.4 seconds and improve pages-per-session, while also strengthening ranking signals for state + loan type queries.",
+      "priority": "high",
+      "firstSeen": "2026-05-06",
+      "lastSeen": "2026-05-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "f109d46459ff",
+      "title": "Optimize Cap Rate Calculator Page for Top-10 Ranking on Primary Query Cluster",
+      "description": "The 'cap rate calculator' query cluster is generating the site's highest impression volume (19 impressions for the head term alone at pos 41.8) but zero clicks. The /calculators/cap-rate page needs: (1) a comprehensive FAQ section targeting all 16 cap rate query variants identified in GSC (cap rate formula calculator, cap rate by city, cap rate excel, etc.), (2) FAQ schema markup to capture rich results, (3) HowTo schema on the calculation methodology, (4) a comparison table showing cap rate benchmarks by property type and city, (5) internal links from every lender review page and state page where cap rate is mentioned, and (6) an external link-building push targeting real estate investing forums and blogs. The Seattle cap rate calculator page (/calculators/cap-rate/seattle-wa) already has a visitor — expand to the top 20 investor markets immediately.",
+      "expectedImpact": "Moving from position 41.8 to top 20 for 'cap rate calculator' (19 impressions/week) could generate 5-20 clicks/week. Top 10 placement at typical 2-5% CTR for this query type would yield 15-50 clicks/week from this single query.",
+      "priority": "high",
+      "firstSeen": "2026-05-06",
+      "lastSeen": "2026-05-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -1201,6 +1234,28 @@
       "status": "open"
     },
     {
+      "id": "5e316d4cbfbd",
+      "title": "Build an AI Citation Strategy to Scale the ChatGPT/Copilot Referral Channel",
+      "description": "ChatGPT and Copilot are already sending 7 sessions/week — roughly 16% of total traffic — without any deliberate optimization for this channel. To scale it: (1) Add clear, quotable summary boxes at the top of every lender review (e.g., 'Lima One Capital in 30 seconds: [3-4 bullet facts]') that LLMs can easily extract and cite, (2) Ensure every page has accurate, structured data (Organization, Review, FAQPage schema) so AI crawlers can parse content reliably, (3) Create a dedicated 'About ProInvestorHub' page with clear editorial standards and author credentials to build E-E-A-T signals that LLMs weight heavily, (4) Publish original data (lender rate surveys, market analysis) that AI tools will cite as a primary source. Monitor chatgpt.com and copilot.com referral sessions weekly in GA4.",
+      "expectedImpact": "Structured AI-citation optimization could realistically double or triple AI referral traffic within 60-90 days, potentially adding 10-20 sessions/week from this channel alone as LLM usage for financial research continues to grow.",
+      "priority": "medium",
+      "firstSeen": "2026-05-06",
+      "lastSeen": "2026-05-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "9f3330c5bd6c",
+      "title": "Investigate and Resolve the GSC Click Tracking Anomaly",
+      "description": "The GSC data shows the homepage appearing twice with different protocols (http://proinvestorhub.com/ at pos 4.6 and https://proinvestorhub.com/ at pos 25.0), and the lenders page appearing with www (https://www.proinvestorhub.com/lenders) versus non-www variants elsewhere. This indicates a canonical URL inconsistency that is splitting ranking signals and potentially causing Google to index duplicate versions. Immediately: (1) Audit all canonical tags site-wide, (2) Ensure 301 redirects are in place from HTTP to HTTPS and from www to non-www (or vice versa, pick one), (3) Set the preferred domain in Google Search Console, (4) Resubmit the sitemap after fixes. This technical issue may be contributing to the position decline from 30.9 to 43.2.",
+      "expectedImpact": "Consolidating duplicate URL signals could recover 5-15 ranking positions for affected pages within 4-8 weeks of Google recrawling, directly addressing the average position decline.",
+      "priority": "medium",
+      "firstSeen": "2026-05-06",
+      "lastSeen": "2026-05-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -1417,6 +1472,17 @@
       "priority": "low",
       "firstSeen": "2026-05-05",
       "lastSeen": "2026-05-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "4c4e8a299349",
+      "title": "Develop a Lender Review Content Calendar to Capture Long-Tail Comparison Traffic",
+      "description": "The Lima One vs Civic Financial comparison page is ranking at position 1.0 in GSC — the site's strongest ranking — yet generating zero clicks, likely due to very low search volume for this specific pairing. Expand the comparison content strategy by: (1) Identifying the 20 most-searched lender comparison queries using Ahrefs or Semrush (e.g., 'Lima One vs Kiavi,' 'Groundfloor vs Fund That Flip,' 'RCN Capital vs CoreVest'), (2) Publishing 2 comparison pages per week targeting pairs with measurable search volume, (3) Cross-linking all comparison pages to individual lender reviews already on the site (Groundfloor, CoreVest, Easy Street Capital, Tidal Loans, Aloha Capital reviews are already live). Each comparison page should include a structured comparison table, pros/cons, and a recommendation section based on investor type.",
+      "expectedImpact": "A library of 20-40 lender comparison pages targeting queries with 100-500 monthly searches each could generate 500-2,000 additional organic sessions per month within 3-6 months, compounding the existing lender review traffic base.",
+      "priority": "low",
+      "firstSeen": "2026-05-06",
+      "lastSeen": "2026-05-06",
       "timesRepeated": 1,
       "status": "open"
     }
