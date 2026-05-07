@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-06T12:02:45.656Z",
+  "lastUpdated": "2026-05-07T12:02:08.213Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -772,6 +772,39 @@
       "status": "open"
     },
     {
+      "id": "bf38115c7467",
+      "title": "Rewrite Cap Rate Calculator Page Title Tags and Meta Descriptions to Target Position 20-30 Queries First",
+      "description": "The cap rate calculator sits at position 54.1 with 0 clicks. Rather than targeting 'cap rate calculator' (extremely competitive), create optimized title tags for mid-funnel variants where the site is closest to page 2: 'calculator cap rate' (pos 29.5) and 'cap rate calc' (pos 49.0). Rewrite the title to: 'Cap Rate Calculator — Free Real Estate Tool | ProInvestorHub' and meta description to lead with a specific value prop: 'Calculate cap rate in seconds. Enter NOI and property value to instantly evaluate any rental property. Free, no signup required.' Then build 3-5 internal links from the lender review pages (which are getting traffic) pointing to the calculator with anchor text variants like 'evaluate this deal with our cap rate calculator.'",
+      "expectedImpact": "Moving 'calculator cap rate' from position 29.5 to top 15 could realistically generate 5-15 clicks/day given the query volume, breaking the current 0-click streak and establishing the calculator as the site's first organic traffic driver.",
+      "priority": "high",
+      "firstSeen": "2026-05-07",
+      "lastSeen": "2026-05-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "4f76ee78e8e8",
+      "title": "Fix the www vs. non-www Canonical Inconsistency Appearing in Search Console",
+      "description": "Search Console data shows both 'http://proinvestorhub.com/' and 'https://proinvestorhub.com/' and 'https://www.proinvestorhub.com/' as separate indexed URLs with different position data (pos 4.6, 25.0, and 38.0 respectively for the homepage). This indicates a canonical tag or redirect misconfiguration that is splitting link equity and confusing Google about the authoritative URL. Immediately audit all pages for consistent canonical tags pointing to the https://www. version (or whichever is preferred), ensure 301 redirects are in place from all non-canonical variants, and resubmit the sitemap in Search Console. Also verify the Search Console property is set up for the correct preferred domain.",
+      "expectedImpact": "Consolidating link equity from split URL variants could improve rankings across all pages by 3-8 positions within 4-6 weeks, and will prevent ongoing authority dilution as the site scales.",
+      "priority": "high",
+      "firstSeen": "2026-05-07",
+      "lastSeen": "2026-05-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "4915955a0ebd",
+      "title": "Expand the Indiana Hard Money Loans Page Into a Full State-by-State Lender Hub",
+      "description": "The /lenders/hard-money-loans/indiana page is the single highest-traffic page at 7 views — nearly double the homepage. This indicates strong demand for geo-specific lender content. Immediately build out equivalent pages for the top 10 BRRRR and fix-and-flip markets: Ohio, Texas, Florida, Georgia, Tennessee, North Carolina, Arizona, Michigan, and Missouri. Each page should include: state-specific lending regulations, minimum loan amounts, typical LTV ratios for that market, and 3-5 lender recommendations with links to existing review pages. Use the URL pattern /lenders/hard-money-loans/[state] consistently and cross-link all state pages from a hub page at /lenders/hard-money-loans/.",
+      "expectedImpact": "10 new geo-targeted lender pages targeting long-tail queries like 'hard money lenders Ohio' (high commercial intent) could generate 50-200 organic sessions/month within 60-90 days, while also creating a strong internal linking structure that boosts the lender review pages already receiving traffic.",
+      "priority": "high",
+      "firstSeen": "2026-05-07",
+      "lastSeen": "2026-05-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -1256,6 +1289,28 @@
       "status": "open"
     },
     {
+      "id": "5b82b112619c",
+      "title": "Optimize Content for AI Citation to Capitalize on ChatGPT and Copilot Referrals",
+      "description": "With 4 AI referral sessions already appearing at this early stage, the site has an opportunity to systematically optimize for AI answer inclusion. Implement the following on the top 5 content pages: (1) Add a clear, self-contained 'Quick Answer' or 'Key Takeaway' box at the top of each article with a 2-3 sentence direct answer to the primary query. (2) Use FAQ schema markup with 5-8 questions per page targeting the exact phrasing used in the GSC query report (e.g., 'What is a cap rate calculator?', 'How do I calculate cap rate for rental property?'). (3) Ensure all factual claims include a publication/update date, author byline, and source citation — AI models favor citable, authoritative content. Start with the cap rate calculator page and the BRRRR best cities guide (currently ranking at position 6.0 in GSC).",
+      "expectedImpact": "Structured AI-optimized content can increase AI referral sessions by 3-5x within 30 days and improve featured snippet capture rates, which would also improve organic CTR from traditional search.",
+      "priority": "medium",
+      "firstSeen": "2026-05-07",
+      "lastSeen": "2026-05-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "5cfffc9653c9",
+      "title": "Investigate and Address the Session Duration Drop From 125s to 83s",
+      "description": "Average session duration fell 33.7% even as engagement rate improved, which suggests users are clicking through multiple pages quickly rather than reading deeply. Audit the top 5 pages for content depth: check if pages have thin content (under 800 words), lack of embedded tools, or missing internal links that would encourage deeper reading. Specifically, add inline calculator widgets to lender review pages (e.g., embed the cap rate calculator on Lima One Capital and New Silver review pages with pre-filled example deals), add 'Related Guides' sections at the bottom of each lender review, and ensure the newsletter signup CTA appears mid-content rather than only at the bottom. Track time-on-page for individual pages in GA4 to identify which specific pages are causing the drop.",
+      "expectedImpact": "Increasing average session duration back toward the 90-day baseline of 125s signals deeper content engagement to Google, which can positively influence rankings, and increases the probability of newsletter signups and return visits.",
+      "priority": "medium",
+      "firstSeen": "2026-05-07",
+      "lastSeen": "2026-05-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -1483,6 +1538,17 @@
       "priority": "low",
       "firstSeen": "2026-05-06",
       "lastSeen": "2026-05-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "50471b43b43c",
+      "title": "Publish the BRRRR Best Cities Guide Aggressively — It's Ranking at Position 6.0",
+      "description": "The /guides/best-cities/brrrr page is ranking at an average position of 6.0 in Search Console — the highest-ranked content page on the site — yet it received 0 clicks in the 7-day window. This means either the title/meta is not compelling enough to earn clicks at position 6, or the page has very low impression volume. Pull the full impression count for this URL in Search Console and if impressions are above 10/week, immediately A/B test the title tag. Try: '10 Best Cities for BRRRR Investing in 2026 (Data-Backed Rankings)' and meta: 'We analyzed cash flow, appreciation, and rental demand across 50+ markets. Here are the top BRRRR cities for 2026 with real numbers.' Also promote this page via the newsletter and any social channels to build initial click signals.",
+      "expectedImpact": "A compelling title rewrite for a page already at position 6 could realistically achieve a 5-15% CTR, generating 10-50+ clicks/week depending on query impression volume — potentially the site's first meaningful organic traffic driver.",
+      "priority": "low",
+      "firstSeen": "2026-05-07",
+      "lastSeen": "2026-05-07",
       "timesRepeated": 1,
       "status": "open"
     }
