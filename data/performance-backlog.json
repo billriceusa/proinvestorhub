@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-07T12:02:08.213Z",
+  "lastUpdated": "2026-05-08T12:02:49.780Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -805,6 +805,39 @@
       "status": "open"
     },
     {
+      "id": "73304639b911",
+      "title": "Rewrite Title Tags and Meta Descriptions for All Calculator Pages to Fix Zero-Click Crisis",
+      "description": "The cap rate calculator cluster is generating ~47 impressions/week with 0 clicks. Immediately audit and rewrite title tags for /calculators/cap-rate, /calculators/cap-rate/seattle-wa, /calculators/cap-rate/pittsburgh-pa, and /calculators/cap-rate/toledo-oh. Current titles are likely generic (e.g., 'Cap Rate Calculator'). Replace with click-triggering formats: 'Free Cap Rate Calculator for [City] — Instant Results (2025)' or 'Cap Rate Calculator: Calculate NOI ÷ Value in Seconds'. Meta descriptions should include a specific value hook: 'Enter your NOI and property value — get your cap rate instantly. Includes [City] market benchmarks.' Also add FAQ schema markup answering 'What is a good cap rate in [city]?' to earn rich results. Target: move CTR from 0% to 2–4% on the 'cap rate calculator' query, which would yield 1–2 additional clicks/week at current impression volume.",
+      "expectedImpact": "Even a 2% CTR on the 'cap rate calculator' query (21 impressions/week) generates 0.4 additional clicks/week — modest but meaningful at current scale. More importantly, fixing CTR signals to Google that the page satisfies intent, which can improve rankings over 4–8 weeks.",
+      "priority": "high",
+      "firstSeen": "2026-05-08",
+      "lastSeen": "2026-05-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "72f755ab05d0",
+      "title": "Add Aggressive Internal Linking to Reverse Session Duration Decline",
+      "description": "Session duration dropped 36% to 78.3 seconds and pages/session fell to 1.8. The fix is systematic internal linking. On the hard money lenders Indiana page (top performer), add contextual links to: the fix-and-flip calculator, the fix-and-flip vs BRRRR guide, and the Indiana market analysis page if it exists. On the fix-and-flip vs BRRRR guide, add links to the BRRRR calculator, the cap rate calculator, and the hard money lenders page. On every calculator result page, add a 'What does this mean?' section linking to the relevant glossary term (e.g., cap rate calculator → /glossary/cap-rate). Implement a 'Related Tools' widget on all calculator pages showing 2–3 complementary calculators. Target: increase pages/session from 1.8 to 2.5+ and session duration back above 100 seconds within 30 days.",
+      "expectedImpact": "Improved pages/session and duration signals to Google that content is satisfying, supporting ranking improvements. Also increases the probability of a user reaching a lender comparison or review page, which are the site's highest-value conversion pages.",
+      "priority": "high",
+      "firstSeen": "2026-05-08",
+      "lastSeen": "2026-05-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "c3fd519b1d78",
+      "title": "Expand Geo-Targeted Lender Pages to Capitalize on the Site's Strongest Traffic Pattern",
+      "description": "Three geo-targeted lender pages (Indiana hard money, Georgia bridge loans, Maine construction loans) are appearing in top pages despite the site's early stage, suggesting Google is indexing and surfacing these for local searches. Immediately build out 10–15 additional geo-lender pages following the same URL pattern: /lenders/hard-money-loans/[state] for the top 10 fix-and-flip markets (Texas, Florida, Ohio, Tennessee, Georgia, Arizona, North Carolina, Missouri, Michigan, Colorado). Each page should include: state-specific lending requirements, average hard money rates in that state, 3–5 lender options with affiliate or review links, and a embedded fix-and-flip calculator pre-populated with that state's average ARV. This directly targets high-commercial-intent queries like 'hard money lenders [state]' which have strong CPC signals.",
+      "expectedImpact": "Geo-lender pages are already the site's #1 traffic source. Scaling from 3 to 15+ pages could 3–5x lender-related traffic within 60–90 days and directly supports monetization through lender affiliate relationships or lead generation.",
+      "priority": "high",
+      "firstSeen": "2026-05-08",
+      "lastSeen": "2026-05-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -1311,6 +1344,28 @@
       "status": "open"
     },
     {
+      "id": "d4a0298e690d",
+      "title": "Optimize for AI Citation to Scale the ChatGPT Referral Channel",
+      "description": "ChatGPT.com sent 2 referral sessions — a signal that at least one page is being cited in AI responses. To systematically grow this channel: (1) Add a clear, quotable 'Key Takeaways' or 'Quick Answer' box at the top of every guide and glossary page using plain language that AI models can easily extract and cite. (2) Ensure every page has complete, accurate structured data (FAQ schema, HowTo schema for calculators, Article schema for guides). (3) Create a dedicated 'Real Estate Investing Glossary' hub page that defines 50+ terms concisely — AI assistants frequently cite glossary-style content. (4) Add author bios with credentials to all guides to improve E-E-A-T signals that AI systems use to evaluate citation worthiness. Monitor chatgpt.com referrals weekly in GA4 as a leading indicator of AI visibility.",
+      "expectedImpact": "AI referral traffic is growing industry-wide and is largely uncontested for niche real estate investing queries. Even 5–10 AI referral sessions/week would represent a 150–400% increase over current levels and these users tend to be high-intent.",
+      "priority": "medium",
+      "firstSeen": "2026-05-08",
+      "lastSeen": "2026-05-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "ef7350cf29b7",
+      "title": "Target 'BRRRR Method' Query Cluster With Dedicated Landing Pages to Capture 90-Day Impression Data",
+      "description": "The 90-day query data shows BRRRR-related terms ('brrrr method', 'brrrr formula', 'brrrr deal', 'brrrr analysis') appearing with positions ranging from 53–94, indicating Google is aware of the site's BRRRR content but rankings are too deep. The /guides/best-cities/brrrr page holds an impressive position 1.3 in GSC but generated 0 clicks — likely because it's a very long-tail query with near-zero volume. Create a dedicated /calculators/brrrr page with a full BRRRR deal analyzer (purchase price, rehab cost, ARV, refinance LTV, rental income, cash flow after refi). Then build a comprehensive /guides/brrrr-method page targeting 'brrrr method' head term with 2,000+ words covering the 5 steps, worked examples, and pros/cons vs fix-and-flip. Link both pages to the existing fix-and-flip vs BRRRR guide.",
+      "expectedImpact": "BRRRR is a core audience segment. A dedicated calculator + guide combination targeting 'brrrr method' (estimated 8,000–12,000 monthly searches) could realistically reach page 2–3 within 90 days for a new site, generating 50–200 additional monthly impressions.",
+      "priority": "medium",
+      "firstSeen": "2026-05-08",
+      "lastSeen": "2026-05-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -1549,6 +1604,17 @@
       "priority": "low",
       "firstSeen": "2026-05-07",
       "lastSeen": "2026-05-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "68f6494959fc",
+      "title": "Consolidate HTTP/HTTPS and www/non-www URL Variants to Fix Crawl Dilution",
+      "description": "GSC data shows both http://proinvestorhub.com/ and https://proinvestorhub.com/ as separate pages, and both www.proinvestorhub.com and proinvestorhub.com variants appearing in top pages. This means Google may be splitting ranking signals across 4 homepage variants. Immediately: (1) Verify canonical tags on all pages point to the https://www.proinvestorhub.com/ (or non-www) version consistently. (2) Set up 301 redirects from http:// to https:// and from www to non-www (or vice versa) — pick one canonical form and enforce it sitewide. (3) In Google Search Console, set the preferred domain under Settings. (4) Resubmit the sitemap after fixes. This is a one-time technical fix that consolidates all link equity and crawl budget to a single URL structure.",
+      "expectedImpact": "Consolidating URL variants eliminates crawl budget waste and ensures all backlinks and internal links pass full PageRank to a single canonical URL, which can modestly improve rankings across all pages within 2–4 weeks of Google re-crawling.",
+      "priority": "low",
+      "firstSeen": "2026-05-08",
+      "lastSeen": "2026-05-08",
       "timesRepeated": 1,
       "status": "open"
     }
