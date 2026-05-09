@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-08T12:02:49.780Z",
+  "lastUpdated": "2026-05-09T12:02:26.140Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -838,6 +838,39 @@
       "status": "open"
     },
     {
+      "id": "5bdb309f4faf",
+      "title": "Consolidate and Optimize the Cap Rate Calculator Page to Target Position 10–15",
+      "description": "The cap rate calculator query cluster (15+ variants, 50+ total weekly impressions, current position ~30–77) is the site's single largest SEO opportunity. Immediately audit /calculators/cap-rate for: (1) page title and H1 — ensure they contain 'Cap Rate Calculator' exactly; (2) add a 200–300 word explanatory section above the calculator with the formula, a worked example using real numbers, and an FAQ block targeting 'how to calculate cap rate,' 'cap rate formula,' and 'what is a good cap rate'; (3) add schema markup (SoftwareApplication or FAQPage); (4) build 2–3 internal links from the homepage and the beginners guide to this page using anchor text 'cap rate calculator.' Target: move from position 30–45 to position 10–20 within 60 days, which should generate first meaningful Google clicks.",
+      "expectedImpact": "Moving 'cap rate calculator' from position 30.6 to position 15 at even 1% CTR on 25 daily impressions would generate ~9 additional monthly Google clicks — a 100%+ increase from current zero baseline.",
+      "priority": "high",
+      "firstSeen": "2026-05-09",
+      "lastSeen": "2026-05-09",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "fb1645dc63ae",
+      "title": "Investigate and Fix Google Indexing or Crawl Issues Causing Zero Organic Clicks",
+      "description": "The complete absence of Google organic clicks despite 21.9 daily impressions and several pages ranking in positions 1–4 is anomalous. Execute the following diagnostic: (1) Run a site:proinvestorhub.com search in Google to confirm pages are indexed; (2) Check Google Search Console Coverage report for 'Excluded' or 'Crawled but not indexed' pages; (3) Verify canonical tags are not pointing away from the correct URLs — note that GSC shows both http:// and https:// and both www and non-www variants, suggesting a canonicalization issue; (4) Confirm robots.txt is not blocking Googlebot; (5) Check Core Web Vitals in GSC for any 'Poor' URL flags. The www vs non-www split in GSC data (some pages show www.proinvestorhub.com, others show proinvestorhub.com) is a red flag for duplicate content and split link equity.",
+      "expectedImpact": "Resolving canonicalization alone could consolidate ranking signals and improve positions across all pages, potentially unlocking clicks from the 3 pages already ranking positions 1–4.",
+      "priority": "high",
+      "firstSeen": "2026-05-09",
+      "lastSeen": "2026-05-09",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "ed36f1ea93a8",
+      "title": "Create Demand-Validated Content Targeting Queries With Actual Search Volume",
+      "description": "The blog pages ranking positions 1–4 (BRRRR best cities, beginners guide, investor-friendly agent) are generating zero clicks because they target queries with near-zero search volume. Before publishing any new content, validate demand using Google Keyword Planner, Ahrefs, or Semrush. Prioritize content around: (1) 'hard money lenders [state]' — the Indiana lender page is your top GA page, suggesting real user interest; expand to Ohio, Texas, Florida, Georgia with the same template; (2) 'BRRRR method calculator' — you have the calculator but no supporting guide ranking for this; (3) 'fix and flip calculator' — you have the page but it needs SEO optimization. Each new lender state page should follow the Indiana template and target '[state] hard money lenders' which has measurable search volume in most markets.",
+      "expectedImpact": "Adding 5 state-specific hard money lender pages modeled on Indiana could generate 50–200 monthly sessions within 90 days based on typical local lender query volumes.",
+      "priority": "high",
+      "firstSeen": "2026-05-09",
+      "lastSeen": "2026-05-09",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -1366,6 +1399,28 @@
       "status": "open"
     },
     {
+      "id": "12f1959179ca",
+      "title": "Implement an AI-Optimized Content Layer to Capitalize on ChatGPT Referral Signal",
+      "description": "The 2 ChatGPT referral sessions represent a disproportionately large share of traffic at this site's scale and indicate content is being cited in AI responses. To increase AI citation frequency: (1) Add a clear, quotable 'Key Takeaways' or 'Quick Answer' section at the top of every guide and calculator page — AI models prefer concise, factual summaries; (2) Ensure all calculator pages include a plain-language explanation of the formula (e.g., 'Cap Rate = Net Operating Income ÷ Property Value × 100') that AI can extract and attribute; (3) Add author credentials and publication dates to all content to signal E-E-A-T; (4) Submit the site to Bing Webmaster Tools and ensure Bing indexing is healthy, as ChatGPT's browsing tool uses Bing. Monitor chatgpt.com referral sessions weekly as a leading indicator of AI visibility growth.",
+      "expectedImpact": "Optimizing for AI citation could double or triple ChatGPT referral sessions within 60 days, adding a channel that is currently unavailable to most competitors.",
+      "priority": "medium",
+      "firstSeen": "2026-05-09",
+      "lastSeen": "2026-05-09",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "15d7836c52d8",
+      "title": "Add Engagement Depth Mechanisms to the Fix-and-Flip vs BRRRR Guide",
+      "description": "The /guides/fix-and-flip-vs-brrrr page generated 4 views from 1 user — the second-highest page by views — suggesting a highly engaged reader. To convert this interest into newsletter signups and return visits: (1) Embed the /calculators/fix-flip and /calculators/rental-cashflow tools directly within the guide with contextual CTAs ('Run the numbers on your deal'); (2) Add a comparison table with 8–10 criteria (capital required, time horizon, tax treatment, risk level, etc.); (3) Place a newsletter signup CTA mid-page with a lead magnet ('Download our Fix-and-Flip vs BRRRR Decision Checklist'); (4) Add internal links to the Indiana hard money lender page and the cap rate calculator. This page has the profile of a high-intent reader who is actively evaluating strategies.",
+      "expectedImpact": "Adding embedded calculators and a mid-page newsletter CTA could increase time-on-page by 40–60 seconds and generate 1–3 additional newsletter signups per week from this page alone.",
+      "priority": "medium",
+      "firstSeen": "2026-05-09",
+      "lastSeen": "2026-05-09",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -1615,6 +1670,17 @@
       "priority": "low",
       "firstSeen": "2026-05-08",
       "lastSeen": "2026-05-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "f152d1bea7eb",
+      "title": "Expand City-Specific Cap Rate Calculator Pages to Capture Local Search Demand",
+      "description": "You already have /calculators/cap-rate/seattle-wa, /calculators/cap-rate/pittsburgh-pa, and /calculators/cap-rate/toledo-oh. These city-specific pages have a lower competition profile than the generic cap rate calculator and can rank faster. Prioritize expanding to the top 10 real estate investor markets: Atlanta GA, Dallas TX, Jacksonville FL, Memphis TN, Cleveland OH, Kansas City MO, Birmingham AL, and Indianapolis IN. Each page should include: current average cap rates for that market (sourced and cited), neighborhood-level data if available, and a pre-populated calculator with local market defaults. Cross-link all city pages to the main /calculators/cap-rate hub.",
+      "expectedImpact": "City-specific calculator pages in high-investor-activity markets like Atlanta and Dallas could each generate 20–50 monthly organic sessions within 90–120 days, collectively adding 200–500 monthly sessions.",
+      "priority": "low",
+      "firstSeen": "2026-05-09",
+      "lastSeen": "2026-05-09",
       "timesRepeated": 1,
       "status": "open"
     }
