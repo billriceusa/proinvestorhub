@@ -1,0 +1,233 @@
+{
+  "runDate": "2026-05-10T06:04:25.451Z",
+  "weekStartDate": "2026-05-11",
+  "analysis": {
+    "strategyReview": "ProInvestorHub has built a strong foundational library of 114 posts covering the core investor journey from first purchase through portfolio scaling. The content mix skews heavily toward 'how-to' entry and intermediate guides, which is appropriate for the ICP. Pillar coverage is reasonably balanced, though a closer look reveals that Market Analysis is underrepresented relative to the other four pillars — 'Best Cities for Rental Property 2026' and 'Real Estate Market Cycle' are doing heavy lifting for an entire pillar. Tools & Calculators content is also thin beyond the BRRRR calculator and ROI posts, which is a missed opportunity given that calculators drive high-intent, return traffic and differentiate from BiggerPockets. The editorial calendar backlog of 24 unpublished briefs contains several near-duplicates of already-published posts (e.g., 'Multi-Family Investing for Beginners,' 'Self-Managing vs. Hiring a Property Manager,' 'Real Estate Depreciation,' 'Out-of-State Investing,' 'Buying Your First Rental Property,' and 'LLC for Real Estate' all have published equivalents), meaning the effective unpublished pipeline is closer to 14-16 truly net-new briefs. This needs to be reconciled to avoid wasted effort and duplicate content penalties.",
+    "competitiveInsights": "BiggerPockets dominates broad community-driven keywords ('real estate investing for beginners,' 'BRRRR method,' 'house hacking') but is weaker on data-driven, calculator-anchored content and specific financial modeling frameworks. Investopedia covers definitional content shallowly. The gap ProInvestorHub can exploit is practitioner-level financial analysis content — posts that go beyond 'what is X' into 'here is the exact math, the spreadsheet, and the decision framework.' Specific keyword clusters with opportunity right now include: 'DSCR loan requirements 2026,' 'short-term vs long-term rental income comparison,' '1031 exchange rules 2026,' 'fix and flip project management timeline,' and 'real estate syndication for beginners' — none of which are currently published and all of which have meaningful search volume with moderate competition. REtipster does not compete meaningfully in the BRRRR, multifamily, or financing calculator space, leaving ProInvestorHub room to own those intersections.",
+    "competitiveInsights2_merged_above": "",
+    "newOpportunities": [
+      "DSCR loan calculator and underwriting walkthrough — high-intent keyword, no strong calculator-anchored competitor page exists",
+      "Short-term vs long-term rental financial comparison with actual modeled numbers for the same property — unique angle no major competitor has done with real math",
+      "Fix and flip project management with Gantt-style timeline framework — BiggerPockets has forum threads but no authoritative guide",
+      "Real estate syndication passive investor guide — growing search trend as more investors hit conventional loan limits",
+      "1031 exchange 2026 rules and deadlines — evergreen with annual refresh value and high commercial intent",
+      "Rental property bookkeeping systems walkthrough — underserved, practical, high-return-visit topic",
+      "Market indicators dashboard guide — differentiated Market Analysis content that fills a clear pillar gap",
+      "House hacking financial models — first-time investor crossover topic with strong SEO upside"
+    ],
+    "trendingTopics": [
+      "DSCR loans as conventional financing tightens in 2026 rate environment",
+      "Short-term rental regulation changes affecting Airbnb investors in major metros",
+      "1031 exchange legislative uncertainty driving investor research spikes",
+      "Fix and flip margins under pressure from elevated material and labor costs",
+      "Passive real estate syndication as investors seek alternatives to direct ownership",
+      "House hacking as affordability crisis drives creative first-purchase strategies",
+      "Portfolio scaling strategies as investors hit 10-property conventional loan wall",
+      "Rental bookkeeping and tax prep as IRS scrutiny of real estate investors increases"
+    ],
+    "recommendedUpdates": [
+      "Audit the 24-brief editorial calendar and formally retire or retitle the ~8-10 briefs that duplicate published posts to keep the pipeline clean",
+      "Add a Market Analysis post to the weekly rotation — the pillar is critically underpopulated relative to competitors",
+      "Prioritize DSCR Loans brief immediately given rate environment and search volume trajectory in 2026",
+      "Create a Tools & Calculators cluster around the DSCR, 1031, and short-term rental comparison topics to build calculator-anchored content moat",
+      "Consider adding a 'Last Updated' schema to high-traffic posts like Hard Money Loans and BRRRR Strategy to signal freshness to Google",
+      "Cross-link the new Market Analysis post ('10 Market Indicators') to Best Cities 2026 and Real Estate Market Cycle posts to strengthen that pillar's internal link graph"
+    ]
+  },
+  "articlesCreated": [
+    {
+      "title": "10 Market Indicators Every Real Estate Investor Should Track Monthly",
+      "slug": "10-market-indicators-real-estate-investors-track",
+      "publishDate": "2026-05-13",
+      "primaryKeyword": "real estate market indicators",
+      "pillar": "Market Analysis"
+    },
+    {
+      "title": "Short-Term vs Long-Term Rentals: The Complete Financial Analysis for the Same Property",
+      "slug": "short-term-vs-long-term-rental-financial-comparison",
+      "publishDate": "2026-05-15",
+      "primaryKeyword": "short-term vs long-term rental",
+      "pillar": "Investment Strategies"
+    }
+  ],
+  "articlesSkipped": [
+    {
+      "title": "DSCR Loans Explained: No-Income-Verification Financing for Real Estate Investors",
+      "slug": "dscr-loans-explained-real-estate-investors",
+      "reason": "ID already exists: post-dscr-loans-explained-real-estate-investors"
+    }
+  ],
+  "articlesFailed": [],
+  "imageOutcomes": [
+    {
+      "title": "10 Market Indicators Every Real Estate Investor Should Track Monthly",
+      "status": "created",
+      "photographer": "Arthur James"
+    },
+    {
+      "title": "Short-Term vs Long-Term Rentals: The Complete Financial Analysis for the Same Property",
+      "status": "created",
+      "photographer": "Jakub Żerdzicki"
+    }
+  ],
+  "newBriefs": [
+    {
+      "day": "Mon",
+      "publishDate": "2026-05-11",
+      "slug": "dscr-loans-explained-real-estate-investors",
+      "title": "DSCR Loans Explained: No-Income-Verification Financing for Real Estate Investors",
+      "pillar": "Financing & Deals",
+      "primaryKeyword": "DSCR loans",
+      "secondaryKeywords": [
+        "DSCR loan requirements 2026",
+        "no income verification investment property loan",
+        "debt service coverage ratio loan",
+        "DSCR loan calculator",
+        "DSCR mortgage for investors"
+      ],
+      "targetLeadTypes": [
+        "beginning-investors",
+        "brrrr-practitioners",
+        "rental-property-investors",
+        "intermediate-portfolio-scalers"
+      ],
+      "wordCount": "2,800-3,200",
+      "competitiveAngle": "Unlike BiggerPockets forum threads or Investopedia's definitional overview, this post provides an investor-facing underwriting walkthrough — showing exactly how lenders calculate DSCR, what minimum ratios qualify in today's 2026 lending environment, and a side-by-side comparison of DSCR vs conventional vs portfolio loans for three investor scenarios. Includes a worked numerical example using a real duplex scenario and links directly to our DSCR calculator.",
+      "outline": [
+        "Introduction: Why DSCR Loans Are the Fastest-Growing Financing Tool for Investors in 2026",
+        "What Is a DSCR Loan? (Definition and How It Differs from Conventional Mortgages)",
+        "How Lenders Calculate DSCR: The Exact Formula with a Worked Example",
+        "DSCR Loan Requirements in 2026: Minimum Ratios, Credit Scores, LTV Limits, and Reserve Requirements",
+        "DSCR Loan Rates vs Conventional Loan Rates: What to Expect and Why the Spread Exists",
+        "Who DSCR Loans Are Best For: 4 Investor Profiles with Scenarios",
+        "DSCR Loans vs Portfolio Loans vs Hard Money: A Side-by-Side Comparison Table",
+        "How to Improve Your Property's DSCR Before Applying (Rent Optimization, Expense Reduction)",
+        "Step-by-Step: How to Apply for a DSCR Loan and What Documents You'll Need",
+        "Common DSCR Loan Mistakes Investors Make (and How to Avoid Them)",
+        "Conclusion + CTA: Use Our DSCR Calculator to Pre-Qualify Your Next Deal"
+      ],
+      "internalLinks": [
+        "/glossary/dscr-loan",
+        "/glossary/dscr",
+        "/glossary/ltv",
+        "/glossary/cash-flow",
+        "/glossary/noi",
+        "/calculators/dscr-calculator",
+        "/blog/financing/hard-money-lenders-guide-real-estate",
+        "/blog/financing/portfolio-loans-explained",
+        "/blog/category/financing"
+      ]
+    },
+    {
+      "day": "Wed",
+      "publishDate": "2026-05-13",
+      "slug": "10-market-indicators-real-estate-investors-track",
+      "title": "10 Market Indicators Every Real Estate Investor Should Track Monthly",
+      "pillar": "Market Analysis",
+      "primaryKeyword": "real estate market indicators",
+      "secondaryKeywords": [
+        "how to analyze real estate market",
+        "real estate investing market data",
+        "market indicators for rental property investors",
+        "real estate economic indicators 2026",
+        "how to pick a real estate market"
+      ],
+      "targetLeadTypes": [
+        "intermediate-portfolio-scalers",
+        "beginning-investors",
+        "rental-property-investors",
+        "house-flippers"
+      ],
+      "wordCount": "2,500-3,000",
+      "competitiveAngle": "BiggerPockets covers market selection anecdotally through forum opinions. Investopedia lists macro indicators without investor application. This post gives investors a repeatable monthly dashboard — a specific list of 10 trackable metrics with the exact data source for each (Census Bureau, BLS, Zillow Research, FRED, CoStar), the threshold that signals opportunity vs risk, and how each indicator affects buy-hold vs flip decisions differently. No competitor has published this as a structured, data-sourced monthly tracking system.",
+      "outline": [
+        "Introduction: Why Most Investors Pick Markets on Gut Feel (and How Data Changes Your Returns)",
+        "The Investor's Monthly Market Dashboard: What You're Building and Why",
+        "Indicator 1: Days on Market (DOM) — What It Signals for Buyers and Flippers",
+        "Indicator 2: Months of Housing Supply — The Supply-Demand Tipping Point",
+        "Indicator 3: Median Rent Growth Rate — The Cash Flow Trajectory Signal",
+        "Indicator 4: Vacancy Rate by Submarket — Where to Find and How to Interpret It",
+        "Indicator 5: Job Growth and Employer Diversification — The Demand Foundation",
+        "Indicator 6: Population and Net Migration Trends — Leading vs Lagging Indicators",
+        "Indicator 7: Price-to-Rent Ratio by Zip Code — The Buy vs Rent Tipping Point",
+        "Indicator 8: Cap Rate Compression or Expansion — What Institutional Money Is Telling You",
+        "Indicator 9: Foreclosure Filing Rate — Opportunity Signal or Market Distress Warning?",
+        "Indicator 10: Permit Activity and New Construction Pipeline — The Future Supply Threat",
+        "How to Build Your Own Monthly Market Scorecard (with Template)",
+        "Applying the Dashboard: Buy-and-Hold vs Fix-and-Flip Decision Framework",
+        "Conclusion + CTA: Run Your Target Market Through Our Cap Rate and Cash Flow Calculators"
+      ],
+      "internalLinks": [
+        "/glossary/cap-rate",
+        "/glossary/vacancy-rate",
+        "/glossary/cash-flow",
+        "/glossary/occupancy-rate",
+        "/glossary/gross-rent-multiplier",
+        "/glossary/real-estate-cycle",
+        "/glossary/appreciation",
+        "/calculators/cap-rate-calculator",
+        "/calculators/cash-flow-calculator",
+        "/blog/markets/best-cities-rental-property-investing-2026",
+        "/blog/markets/real-estate-market-cycle-investing",
+        "/blog/category/markets"
+      ]
+    },
+    {
+      "day": "Fri",
+      "publishDate": "2026-05-15",
+      "slug": "short-term-vs-long-term-rental-financial-comparison",
+      "title": "Short-Term vs Long-Term Rentals: The Complete Financial Analysis for the Same Property",
+      "pillar": "Investment Strategies",
+      "primaryKeyword": "short-term vs long-term rental",
+      "secondaryKeywords": [
+        "Airbnb vs long term rental income",
+        "short term rental vs traditional rental analysis",
+        "STR vs LTR cash flow comparison",
+        "should I Airbnb or rent my property",
+        "short-term rental financial model"
+      ],
+      "targetLeadTypes": [
+        "beginning-investors",
+        "rental-property-investors",
+        "intermediate-portfolio-scalers",
+        "brrrr-practitioners"
+      ],
+      "wordCount": "3,000-3,500",
+      "competitiveAngle": "Every competitor covers this topic as a pros-and-cons list. This post does what none of them do: models the exact same hypothetical property (a 3BR/2BA single-family home in a mid-tier market) under both STR and LTR scenarios with full P&L, cash-on-cash return, and net cash flow numbers side by side. It accounts for STR-specific costs (platform fees, cleaning, furnishing amortization, higher vacancy volatility, regulatory risk) and LTR-specific costs (lower management overhead, stable vacancy assumptions) to produce an honest apples-to-apples comparison. Includes a decision matrix based on market type, investor time availability, and risk tolerance — not available anywhere else in this format.",
+      "outline": [
+        "Introduction: The STR vs LTR Question Every Rental Investor Faces in 2026",
+        "Why Most Comparisons Are Misleading (and What a Real Analysis Requires)",
+        "Setting Up the Model: The Same Property, Two Strategies — Our Assumptions",
+        "Long-Term Rental Financial Model: Full Annual P&L with Line-Item Costs",
+        "Short-Term Rental Financial Model: Full Annual P&L Including Hidden STR Costs",
+        "Side-by-Side Comparison: Cash Flow, Cash-on-Cash Return, NOI, and Cap Rate",
+        "The Hidden Costs of STR Most Calculators Miss (Furnishing, Platform Fees, Cleaning, Seasonality Buffer)",
+        "Occupancy Rate Reality Check: What STR Platforms Report vs What Investors Actually Earn",
+        "Regulatory Risk: How STR Restrictions Are Reshaping Markets in 2026",
+        "Tax Treatment Differences: The 14-Day Rule, Active vs Passive Income, and Depreciation Implications",
+        "The Decision Matrix: When STR Wins, When LTR Wins, and When to Hybrid",
+        "Market Types That Favor STR vs LTR: A City-Category Framework",
+        "Managing the Transition: How to Convert an LTR to STR (or Back) Without Losing Money",
+        "Conclusion + CTA: Run Your Property Through Our Cash Flow Calculator for Both Scenarios"
+      ],
+      "internalLinks": [
+        "/glossary/short-term-rental",
+        "/glossary/cash-flow",
+        "/glossary/cash-on-cash-return",
+        "/glossary/cap-rate",
+        "/glossary/noi",
+        "/glossary/vacancy-rate",
+        "/glossary/occupancy-rate",
+        "/glossary/depreciation",
+        "/glossary/one-percent-rule",
+        "/calculators/cash-flow-calculator",
+        "/calculators/cap-rate-calculator",
+        "/blog/strategies/vacation-rental-investing-guide",
+        "/blog/strategies/brrrr-strategy-complete-guide",
+        "/blog/category/strategies"
+      ]
+    }
+  ],
+  "nextWeekPlan": "Monday's DSCR Loans brief is pulled directly from the existing editorial calendar and is the highest-priority unpublished brief given the current rate environment and rising investor search volume for no-income-verification financing alternatives in 2026. It fills a Financing & Deals slot and anchors to a calculator, satisfying the internal linking rule. Wednesday's Market Analysis post on 10 Market Indicators is also from the existing calendar and is urgently needed — Market Analysis is the most underpopulated pillar with only 2 published posts carrying the entire category. This post will strengthen internal linking across the markets pillar and drive return visits via its monthly-tracking framework. Friday's Short-Term vs Long-Term Rental comparison is from the existing calendar and was chosen over 'Fix and Flip Project Management' and 'Real Estate Syndication' because it fills the Investment Strategies pillar slot with the highest search volume opportunity and the most differentiated competitive angle available this week. Pillar rotation for the week is: Financing & Deals (Mon) → Market Analysis (Wed) → Investment Strategies (Fri), which satisfies the no-consecutive-same-pillar rule. NOTE: Approximately 8-10 briefs in the existing 24-brief editorial calendar are near-duplicates of already-published posts and should be formally retired or retitled before the next planning cycle. Flagged duplicates include: 'Multi-Family Investing for Beginners,' 'Self-Managing vs Hiring a Property Manager,' 'Real Estate Depreciation,' 'Out-of-State Real Estate Investing,' 'Buying Your First Rental Property,' 'LLC for Real Estate,' 'How to Calculate ROI on Rental Property,' and 'How to Raise Private Capital.' These should be replaced with net-new angles or sub-topic drilldowns to maintain content velocity without duplication risk.",
+  "errors": []
+}
