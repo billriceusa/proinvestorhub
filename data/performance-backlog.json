@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-11T12:02:33.101Z",
+  "lastUpdated": "2026-05-12T12:02:12.058Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -20,6 +20,17 @@
       "priority": "high",
       "firstSeen": "2026-04-20",
       "lastSeen": "2026-04-21",
+      "timesRepeated": 2,
+      "status": "open"
+    },
+    {
+      "id": "61a3cb491210",
+      "title": "Rewrite Title Tags and Meta Descriptions for Cap Rate Calculator Page",
+      "description": "The cap rate calculator page (/calculators/cap-rate) is generating 50+ weekly impressions across query variants but earning zero clicks at position 35.6. Immediately rewrite the title tag to include the exact match phrase 'Cap Rate Calculator — Free Real Estate Tool' and craft a meta description that leads with a value hook such as 'Calculate cap rate instantly. Enter NOI and property value — get your cap rate in seconds. Free, no signup required.' Test including numbers or differentiators (e.g., 'used by 10,000+ investors'). Also audit whether the page is properly canonicalized and that there are no duplicate versions competing against each other (the GSC data shows both http and https variants of the homepage appearing separately, suggesting potential canonicalization issues sitewide).",
+      "expectedImpact": "Even moving CTR from 0% to 2-3% on 50+ weekly impressions would generate 1-2 additional organic clicks per week from Google, and ranking improvement from position 35 to top 10 could multiply impressions 5-10x based on typical SERP click curves.",
+      "priority": "high",
+      "firstSeen": "2026-05-10",
+      "lastSeen": "2026-05-12",
       "timesRepeated": 2,
       "status": "open"
     },
@@ -871,17 +882,6 @@
       "status": "open"
     },
     {
-      "id": "61a3cb491210",
-      "title": "Rewrite Title Tags and Meta Descriptions for Cap Rate Calculator Page",
-      "description": "The cap rate calculator page (/calculators/cap-rate) is generating 50+ weekly impressions across query variants but earning zero clicks at position 35.6. Immediately rewrite the title tag to include the exact match phrase 'Cap Rate Calculator — Free Real Estate Tool' and craft a meta description that leads with a value hook such as 'Calculate cap rate instantly. Enter NOI and property value — get your cap rate in seconds. Free, no signup required.' Test including numbers or differentiators (e.g., 'used by 10,000+ investors'). Also audit whether the page is properly canonicalized and that there are no duplicate versions competing against each other (the GSC data shows both http and https variants of the homepage appearing separately, suggesting potential canonicalization issues sitewide).",
-      "expectedImpact": "Even moving CTR from 0% to 2-3% on 50+ weekly impressions would generate 1-2 additional organic clicks per week from Google, and ranking improvement from position 35 to top 10 could multiply impressions 5-10x based on typical SERP click curves.",
-      "priority": "high",
-      "firstSeen": "2026-05-10",
-      "lastSeen": "2026-05-10",
-      "timesRepeated": 1,
-      "status": "open"
-    },
-    {
       "id": "1e83ba9ec92d",
       "title": "Fix HTTP/HTTPS and WWW/Non-WWW Canonicalization Issues Immediately",
       "description": "GSC data shows the homepage appearing as four separate URLs: http://proinvestorhub.com/, https://proinvestorhub.com/, and www variants. Similarly, lender pages appear under www.proinvestorhub.com while calculator pages appear under proinvestorhub.com. This splits link equity and confuses Google's crawlers. Audit all internal links and ensure 301 redirects force all traffic to a single canonical version (recommend https://proinvestorhub.com without www). Add a canonical tag to every page pointing to the preferred URL. Submit the correct sitemap in GSC with only canonical URLs. This is likely suppressing rankings across the board.",
@@ -933,6 +933,28 @@
       "priority": "high",
       "firstSeen": "2026-05-11",
       "lastSeen": "2026-05-11",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "0d29f8706ae3",
+      "title": "Add Prominent Internal Links and CTAs to Reduce 75% Bounce Rate",
+      "description": "With 3 out of 4 visitors bouncing after one page, the site is failing to create navigation pathways. Audit the top 5 landing pages (/guides/fix-and-flip-vs-brrrr, /lenders/hard-money-loans/indiana, /lenders/dscr-loans/north-carolina, /markets/appreciation, /markets/house-hacking/tampa-fl) and add: (1) a contextual 'Related Tools' module linking to relevant calculators, (2) a 'Next Step' CTA at the bottom of each page pointing to a logical next read, and (3) a sticky sidebar or inline callout for the cap rate or cash-on-cash calculator. The fix-and-flip vs BRRRR guide should link directly to both the BRRRR calculator and fix-and-flip ROI calculator.",
+      "expectedImpact": "Reducing bounce rate from 75% to 55-60% would increase pages/session and session duration, improving engagement rate from 25% back toward the 90-day baseline of 43.81%. This also sends stronger behavioral signals to Google, which can improve rankings.",
+      "priority": "high",
+      "firstSeen": "2026-05-12",
+      "lastSeen": "2026-05-12",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "75fc111a38a5",
+      "title": "Resolve HTTP vs HTTPS and www vs non-www URL Inconsistency",
+      "description": "The Search Console data shows impressions and rankings split across four URL variants: http://proinvestorhub.com/, https://proinvestorhub.com/, https://www.proinvestorhub.com/, and https://www.proinvestorhub.com/lenders. This canonicalization fragmentation is diluting link equity and confusing Google's indexation. Immediately: (1) set a canonical preferred domain in Google Search Console, (2) implement 301 redirects from all non-canonical variants to the preferred URL (recommend https://proinvestorhub.com/ without www), (3) audit all internal links to ensure they use the canonical format, and (4) update the sitemap.xml to only include canonical URLs.",
+      "expectedImpact": "Consolidating URL authority could improve average position by 2-5 spots for affected pages within 4-6 weeks, as Google stops splitting ranking signals across duplicate URLs. The homepage currently ranks at both position 4.0 and 8.7 — consolidation should push it to the stronger position consistently.",
+      "priority": "high",
+      "firstSeen": "2026-05-12",
+      "lastSeen": "2026-05-12",
       "timesRepeated": 1,
       "status": "open"
     },
@@ -1531,6 +1553,28 @@
       "status": "open"
     },
     {
+      "id": "52c35d9dfda0",
+      "title": "Expand Geo-Specific Lender Pages Based on Observed Demand Signals",
+      "description": "The Indiana hard money loans and North Carolina DSCR loans pages are the top-performing content by views, with users viewing multiple pages per session on these topics. This signals genuine research intent for location-specific financing. Build out 8-10 additional state-specific lender pages targeting high-activity real estate markets: Texas, Florida, Georgia, Arizona, Tennessee, Ohio, Colorado, and Pennsylvania. Each page should include: local hard money lenders list, typical rates/LTV for that state, state-specific lending regulations, and a CTA to the DSCR loan calculator. Target queries like 'hard money loans [state]' and 'DSCR loans [state].'",
+      "expectedImpact": "Geographic lender pages represent a scalable long-tail SEO strategy. Each state page targets queries with 100-1,000 monthly searches and relatively low competition. With 10 pages, expect 50-200 additional monthly organic sessions within 3-6 months of indexation.",
+      "priority": "medium",
+      "firstSeen": "2026-05-12",
+      "lastSeen": "2026-05-12",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "04000e90efba",
+      "title": "Optimize the Beginners Guide and BRRRR Cities Pages That Rank in Top 2",
+      "description": "Two pages have exceptional rankings with zero clicks: /blog/real-estate-investing-beginners-guide-2026 (position 1.5) and /guides/best-cities/brrrr (position 1.3). These near-#1 rankings are generating impressions but no clicks — this is almost certainly a title/meta issue or the queries driving impressions have extremely low volume. Pull the exact queries triggering these impressions in Search Console, then rewrite titles to be more click-compelling. For the beginners guide, test: 'Real Estate Investing for Beginners (2026 Complete Guide) — ProInvestorHub.' Add FAQ schema markup to both pages to capture featured snippet real estate.",
+      "expectedImpact": "A page ranking at position 1-2 with optimized CTR should achieve 15-30% CTR. Even at 5 impressions/day for these queries, that's 0.25-1.5 additional clicks/day per page — and if query volume grows as the site ages, these optimized pages are positioned to capture significant traffic.",
+      "priority": "medium",
+      "firstSeen": "2026-05-12",
+      "lastSeen": "2026-05-12",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -1813,6 +1857,17 @@
       "priority": "low",
       "firstSeen": "2026-05-11",
       "lastSeen": "2026-05-11",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e11cb2f0dc47",
+      "title": "Instrument AI Referral Traffic Tracking and Create AI-Optimized Content Blocks",
+      "description": "The copilot.com referral session is an early indicator that AI assistants are discovering the site. To accelerate this channel: (1) Add UTM parameter tracking to monitor AI referral growth across Copilot, Perplexity, and ChatGPT in GA4, (2) Add structured 'Quick Answer' summary boxes at the top of key guides (e.g., 'What is cap rate? Cap rate = NOI ÷ Property Value × 100') that AI systems can easily extract and cite, (3) Implement FAQ schema on all calculator and guide pages, and (4) Ensure all factual claims include data sources, as AI systems prefer citing authoritative, well-sourced content.",
+      "expectedImpact": "AI referral traffic is growing 20-30% quarter-over-quarter across the web. Optimizing for AI citation now, while the site is small, builds a compounding advantage. Expect AI referral sessions to grow from 1/week to 10-20/week within 6 months if content is structured for extractability.",
+      "priority": "low",
+      "firstSeen": "2026-05-12",
+      "lastSeen": "2026-05-12",
       "timesRepeated": 1,
       "status": "open"
     }
