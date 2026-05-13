@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-12T12:02:12.058Z",
+  "lastUpdated": "2026-05-13T12:02:21.352Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -959,6 +959,39 @@
       "status": "open"
     },
     {
+      "id": "910369ff587b",
+      "title": "Optimize Cap Rate Calculator Page Title, Meta Description, and Schema to Convert Impressions to Clicks",
+      "description": "The 'cap rate calculator' query generates 42 impressions/day at position 30.8 — the single largest impression-generating asset on the site. Immediate actions: (1) Rewrite the page title tag to exactly match query intent, e.g., 'Cap Rate Calculator — Free Real Estate Tool | ProInvestorHub'; (2) Write a meta description under 155 characters that includes a value hook such as 'Calculate cap rate instantly. Enter NOI and property value — results in seconds. Free for investors.'; (3) Implement HowTo or SoftwareApplication schema markup on the calculator page; (4) Add FAQ schema addressing 'what is a good cap rate' and 'how to calculate cap rate' directly on the page; (5) Build 3-5 internal links to the cap rate calculator from the depreciation article, DSCR loan pages, and the beginner guide. Target moving from position 30.8 to under 20 within 60 days.",
+      "expectedImpact": "Moving from position 30 to position 15-20 for 'cap rate calculator' (42 impressions/day) could generate 1-3 organic clicks per day, representing a 100%+ increase in Google organic traffic from current zero baseline.",
+      "priority": "high",
+      "firstSeen": "2026-05-13",
+      "lastSeen": "2026-05-13",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "57784ff04a2b",
+      "title": "Add Internal Linking Hubs and CTAs to Depreciation Article to Reduce 75%+ Bounce Rate",
+      "description": "The depreciation tax strategy article is the top traffic page but shows 1:1 user-to-pageview ratio indicating zero internal navigation. Implement: (1) Add a 'Related Tools' section mid-article linking to the cap rate calculator and cash-on-cash calculator with anchor text like 'calculate your depreciation-adjusted returns'; (2) Insert a contextual CTA box after the first major section linking to the 1031 exchange guide (/blog/1031-exchange-guide-defer-capital-gains-tax) with copy like 'Pair depreciation strategy with a 1031 exchange — read our complete guide'; (3) Add a 'Next Steps' section at the bottom with 3 linked resources; (4) Embed the cap rate calculator widget directly in the article if technically feasible. Measure bounce rate change on this specific page within 14 days.",
+      "expectedImpact": "Reducing page-level bounce rate from ~100% to 50-60% on the top traffic page would increase pages-per-session site-wide and improve engagement rate from 24.44% toward the 90-day baseline of 43.59%.",
+      "priority": "high",
+      "firstSeen": "2026-05-13",
+      "lastSeen": "2026-05-13",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "84c00b8e2f57",
+      "title": "Investigate and Resolve the Google Organic Click Collapse",
+      "description": "Zero Google organic clicks over 7 days despite 208 impressions is an anomaly requiring immediate diagnosis. Steps: (1) Check Google Search Console Coverage report for any manual actions, crawl errors, or 'Excluded' pages that may have appeared in the last 7-14 days; (2) Verify robots.txt has not been accidentally modified to block Googlebot; (3) Check if any recent site changes (redirects, canonical tags, noindex tags) were deployed; (4) Review Core Web Vitals in Search Console for any new 'Poor' URL flags; (5) Cross-reference the 0-click period against any hosting downtime logs. The 90-day CTR was already only 0.09% (essentially zero), so this may reflect the site's historically low CTR rather than a new penalty, but the complete absence of clicks warrants verification.",
+      "expectedImpact": "Ruling out a technical issue or identifying and fixing a crawl/indexing problem could restore the baseline 0.09% CTR and prevent further ranking deterioration as the site grows.",
+      "priority": "high",
+      "firstSeen": "2026-05-13",
+      "lastSeen": "2026-05-13",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -1575,6 +1608,28 @@
       "status": "open"
     },
     {
+      "id": "9dd99a942e5d",
+      "title": "Target Bing and Yahoo Organic Growth Deliberately Given Current Traffic Mix",
+      "description": "Bing (10 sessions) and Yahoo (5 sessions) are currently outperforming Google organic (2 sessions) by 7.5x combined. This is unusual and suggests either a Google-specific visibility issue or an opportunity to double down on Bing. Actions: (1) Submit sitemap to Bing Webmaster Tools if not already done; (2) Claim and optimize Bing Places listing; (3) Review Bing Webmaster Tools for any keyword opportunities where the site ranks in positions 5-15 (higher CTR zone); (4) Ensure all pages have complete Open Graph tags since Bing uses social signals more heavily than Google; (5) Check if the cap rate calculator ranks better on Bing than Google and use that as a case study for on-page optimization tactics.",
+      "expectedImpact": "Deliberately optimizing for Bing could realistically double Bing organic sessions from 10 to 20+ per week within 30 days, providing a traffic floor while Google organic is rebuilt.",
+      "priority": "medium",
+      "firstSeen": "2026-05-13",
+      "lastSeen": "2026-05-13",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "9632992900f1",
+      "title": "Create an AI-Optimized Content Layer to Capitalize on ChatGPT and Copilot Referrals",
+      "description": "Three sessions from AI platforms (ChatGPT, Copilot) in 7 days signals early AI citation traction. To accelerate this: (1) Add a clear, quotable 'Key Takeaways' or 'Quick Answer' box at the top of every guide and blog post with concise, factual statements that AI models can cite; (2) Ensure all calculator pages have a plain-language explanation of the formula and a worked example (AI models frequently cite pages with clear examples); (3) Add author bio pages with credentials to improve E-E-A-T signals that AI models use to assess source authority; (4) Structure FAQ sections with direct question-answer pairs on high-traffic pages like the depreciation article and DSCR loan guide; (5) Consider adding a 'Cite This Page' section with proper attribution format.",
+      "expectedImpact": "AI referral traffic is projected to grow 20-30% quarter-over-quarter industry-wide. Early optimization could grow AI referrals from 3 sessions/week to 15-25 sessions/week within 90 days.",
+      "priority": "medium",
+      "firstSeen": "2026-05-13",
+      "lastSeen": "2026-05-13",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -1868,6 +1923,17 @@
       "priority": "low",
       "firstSeen": "2026-05-12",
       "lastSeen": "2026-05-12",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "4ac4f9f67647",
+      "title": "Consolidate HTTP/HTTPS and www/non-www URL Variants to Fix Canonical Fragmentation",
+      "description": "Search Console data shows impressions and clicks split across four URL variants: http://proinvestorhub.com/, https://proinvestorhub.com/, https://www.proinvestorhub.com/, and mixed www/non-www lender pages. This canonical fragmentation dilutes link equity and confuses Google's indexing. Actions: (1) Confirm a single canonical domain (recommend https://www.proinvestorhub.com); (2) Implement 301 redirects from all non-canonical variants; (3) Update all internal links to use the canonical URL format; (4) Resubmit sitemap using only the canonical domain; (5) Update Google Search Console to use a single verified property. This is a one-time technical fix with lasting SEO benefit.",
+      "expectedImpact": "Consolidating URL variants typically improves crawl efficiency and can lift rankings for affected pages by 3-8 positions within 30-60 days as link equity consolidates.",
+      "priority": "low",
+      "firstSeen": "2026-05-13",
+      "lastSeen": "2026-05-13",
       "timesRepeated": 1,
       "status": "open"
     }
