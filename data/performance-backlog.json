@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-13T12:02:21.352Z",
+  "lastUpdated": "2026-05-14T12:01:52.109Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -992,6 +992,39 @@
       "status": "open"
     },
     {
+      "id": "bafb75e989b7",
+      "title": "Rewrite Title Tags and Meta Descriptions for All Calculator Pages to Capture Existing Impression Volume",
+      "description": "The cap rate calculator page is appearing for 48+ impressions per week at position 28.9 with a 0% CTR. Immediately rewrite the title tag to include a value proposition and differentiator, e.g., 'Cap Rate Calculator — Instant Results + Expert Benchmarks | ProInvestorHub' and craft a meta description that includes a call to action and a specific benefit such as 'Calculate cap rate in seconds. See how your property stacks up against market averages. Free, no signup required.' Apply the same treatment to the cash-on-cash calculator page (9 impressions, position 48.1 — needs both CTR and ranking improvement). Test emoji characters (📊) in titles to improve SERP visibility on desktop, which accounts for 213 of 243 total impressions.",
+      "expectedImpact": "Even a 3-5% CTR on the 48 weekly cap rate calculator impressions would generate 1-2 additional clicks per week — a 100%+ improvement over current zero-click performance. As rankings improve toward page 1, this compounds significantly.",
+      "priority": "high",
+      "firstSeen": "2026-05-14",
+      "lastSeen": "2026-05-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "9c95684ce8ed",
+      "title": "Audit and Filter Direct Traffic to Establish True Organic Baseline",
+      "description": "Create a filtered GA4 view or segment that excludes known internal IP addresses and team member devices to determine what percentage of the 27 direct sessions represent genuine external users. Set up a custom GA4 exploration report segmenting direct traffic by landing page, device, and session duration. If internal traffic is confirmed as a significant portion, implement an internal traffic filter in GA4 Admin > Data Streams > Define Internal Traffic. This is critical before making any scaling decisions based on the current traffic numbers.",
+      "expectedImpact": "Establishes an accurate performance baseline, preventing misallocation of resources based on inflated session counts. Accurate data will clarify true organic growth rate.",
+      "priority": "high",
+      "firstSeen": "2026-05-14",
+      "lastSeen": "2026-05-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "1791c8e829ca",
+      "title": "Expand the Depreciation Tax Strategy Post Into a Content Cluster to Capitalize on Demonstrated Demand",
+      "description": "The depreciation post is driving 40% of all site page views. Immediately add internal links from this post to related content (1031 exchange guide, DSCR loans, fix-and-flip guides). Then create 3-5 supporting cluster articles targeting adjacent queries: 'bonus depreciation real estate 2025,' 'cost segregation study guide for investors,' 'depreciation recapture tax calculator,' and 'Schedule E rental property depreciation.' Add a depreciation calculator or worksheet as a lead magnet within the post. Update the post's publish date and add a 'last updated' schema tag to signal freshness.",
+      "expectedImpact": "Content clusters typically increase organic traffic to hub pages by 30-60% within 60-90 days. Internal linking will also distribute page authority to underperforming pages and increase pages-per-session from the current low baseline.",
+      "priority": "high",
+      "firstSeen": "2026-05-14",
+      "lastSeen": "2026-05-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -1630,6 +1663,28 @@
       "status": "open"
     },
     {
+      "id": "cebec760858a",
+      "title": "Improve On-Page Engagement Architecture to Reverse Session Duration Decline",
+      "description": "With average session duration at 58.7 seconds (down from 114s), add engagement hooks within the first 100 words of every blog post: a table of contents with anchor links, a 'key takeaways' box, and an embedded calculator or tool relevant to the topic. For the depreciation post specifically, add an interactive depreciation schedule table or link prominently to a depreciation calculator. Implement scroll-depth tracking in GA4 via a custom event to identify exactly where users are dropping off. Add related post widgets at the 50% scroll depth point rather than only at the bottom of articles.",
+      "expectedImpact": "Targeting a return to 90+ second average session duration within 30 days. Improved engagement signals will positively influence Google's quality assessment of the site, supporting ranking improvements for all indexed pages.",
+      "priority": "medium",
+      "firstSeen": "2026-05-14",
+      "lastSeen": "2026-05-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "bd12c9d2af09",
+      "title": "Build Out Lender Review and Comparison Content Aggressively — It's the Only Click-Converting Category",
+      "description": "The Griffin Funding review is the only page generating organic clicks (position 19.7). Immediately publish 5-10 additional lender reviews targeting similar position ranges. Prioritize: 'Kiavi review,' 'Visio Lending review,' 'RCN Capital review' (notably, an RCN-related query appeared in 90-day data), 'CoreVest review,' and 'New Silver review.' Create comparison pages for high-intent queries like 'Griffin Funding vs Kiavi,' 'best DSCR lenders 2026,' and 'hard money lenders by state.' Add structured data (Review schema) to all lender review pages to improve SERP appearance and CTR.",
+      "expectedImpact": "Lender review content with commercial intent typically converts at 3-8x the rate of informational content. Adding 10 review pages could generate 5-15 additional organic clicks per week within 60 days as pages index and rank.",
+      "priority": "medium",
+      "firstSeen": "2026-05-14",
+      "lastSeen": "2026-05-14",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -1934,6 +1989,17 @@
       "priority": "low",
       "firstSeen": "2026-05-13",
       "lastSeen": "2026-05-13",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "0ca85dc94885",
+      "title": "Optimize Content for AI Search Referrals to Grow the ChatGPT/Copilot Traffic Channel",
+      "description": "The site received its first AI referral sessions from ChatGPT and Copilot this week. To grow this channel, add clear, concise 'answer boxes' at the top of key articles that directly answer the primary query in 2-3 sentences — the format AI assistants prefer to cite. Ensure all pages have complete and accurate structured data (FAQ schema, HowTo schema where applicable). Add an 'About' page and author bio pages with credentials to establish E-E-A-T signals that AI systems use to evaluate source trustworthiness. Submit the site to Bing Webmaster Tools and ensure IndexNow is configured, as Bing powers Copilot.",
+      "expectedImpact": "AI referral traffic is projected to grow 40-60% year-over-year industry-wide. Early optimization positions the site to capture disproportionate share as this channel matures. Even 5-10 AI referral sessions per day would represent a 5-10x improvement over current levels.",
+      "priority": "low",
+      "firstSeen": "2026-05-14",
+      "lastSeen": "2026-05-14",
       "timesRepeated": 1,
       "status": "open"
     }
