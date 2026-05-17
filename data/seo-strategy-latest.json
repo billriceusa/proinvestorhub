@@ -1,53 +1,42 @@
 {
-  "lastRun": "2026-05-10T06:04:25.451Z",
-  "weekOf": "2026-05-11",
+  "lastRun": "2026-05-17T06:04:24.039Z",
+  "weekOf": "2026-05-18",
   "analysis": {
-    "strategyReview": "ProInvestorHub has built a strong foundational library of 114 posts covering the core investor journey from first purchase through portfolio scaling. The content mix skews heavily toward 'how-to' entry and intermediate guides, which is appropriate for the ICP. Pillar coverage is reasonably balanced, though a closer look reveals that Market Analysis is underrepresented relative to the other four pillars — 'Best Cities for Rental Property 2026' and 'Real Estate Market Cycle' are doing heavy lifting for an entire pillar. Tools & Calculators content is also thin beyond the BRRRR calculator and ROI posts, which is a missed opportunity given that calculators drive high-intent, return traffic and differentiate from BiggerPockets. The editorial calendar backlog of 24 unpublished briefs contains several near-duplicates of already-published posts (e.g., 'Multi-Family Investing for Beginners,' 'Self-Managing vs. Hiring a Property Manager,' 'Real Estate Depreciation,' 'Out-of-State Investing,' 'Buying Your First Rental Property,' and 'LLC for Real Estate' all have published equivalents), meaning the effective unpublished pipeline is closer to 14-16 truly net-new briefs. This needs to be reconciled to avoid wasted effort and duplicate content penalties.",
-    "competitiveInsights": "BiggerPockets dominates broad community-driven keywords ('real estate investing for beginners,' 'BRRRR method,' 'house hacking') but is weaker on data-driven, calculator-anchored content and specific financial modeling frameworks. Investopedia covers definitional content shallowly. The gap ProInvestorHub can exploit is practitioner-level financial analysis content — posts that go beyond 'what is X' into 'here is the exact math, the spreadsheet, and the decision framework.' Specific keyword clusters with opportunity right now include: 'DSCR loan requirements 2026,' 'short-term vs long-term rental income comparison,' '1031 exchange rules 2026,' 'fix and flip project management timeline,' and 'real estate syndication for beginners' — none of which are currently published and all of which have meaningful search volume with moderate competition. REtipster does not compete meaningfully in the BRRRR, multifamily, or financing calculator space, leaving ProInvestorHub room to own those intersections.",
-    "competitiveInsights2_merged_above": "",
+    "strategyReview": "ProInvestorHub has built a solid foundational library of 116 posts covering the core real estate investing topics across all five content pillars. The published content skews heavily toward 'how-to' and definitional content (financing mechanics, legal structures, strategy introductions), which is appropriate for SEO but creates a risk of surface-level coverage competing against BiggerPockets' massive content volume. Strengths include strong coverage of BRRRR, wholesale, hard money, vacation rentals, and tax strategy — these are high-intent topics that attract serious investors. The calculator and tools pillar appears underrepresented relative to its strategic importance; only a handful of calculator-adjacent posts exist despite this being a primary differentiator from competitors like Investopedia and REtipster. The editorial calendar backlog of 24 unpublished briefs contains several duplicates of already-published posts (e.g., 'Multi-Family Investing for Beginners,' 'Real Estate Depreciation,' 'Self-Managing vs Hiring a PM,' 'Short-Term vs Long-Term Rentals,' 'Out-of-State Investing,' 'Wholesale Real Estate for Beginners,' 'LLC for Real Estate'), which means the effective unpublished pipeline is closer to 12-14 unique briefs. This is a planning gap that needs immediate attention to avoid wasted effort and thin content penalties.",
+    "competitiveInsights": "BiggerPockets dominates broad community-driven queries ('how to start investing in real estate,' 'BRRRR method') but is notably weak on data-driven, calculator-integrated content and current 2025-2026 market-specific analysis. Investopedia covers definitions but rarely goes beyond 600-800 word overviews with no practitioner depth. REtipster is strong on land and creative financing but lacks multifamily, BRRRR depth, and calculator tools. The biggest keyword opportunity gaps for ProInvestorHub right now are: (1) DSCR loan content — this is a high-volume, high-intent keyword cluster where lender-specific content is sparse and investor confusion is high; (2) 1031 exchange tactical guides — most content is attorney-generic, not investor-practical; (3) eviction process state-by-state — landlords are actively searching this in 2026 amid changing tenant protection laws; (4) rental property bookkeeping and accounting — almost no practitioner-level content exists outside paid software blogs; and (5) portfolio scaling frameworks — 'how to go from 1 to 10 properties' is a high-engagement topic with thin competition from the major players. Trending in May 2026: rising insurance costs for landlords, DSCR loan rate comparisons, short-term rental regulatory crackdowns affecting STR investors, and 1031 exchange deadline planning for Q2 tax year.",
     "newOpportunities": [
-      "DSCR loan calculator and underwriting walkthrough — high-intent keyword, no strong calculator-anchored competitor page exists",
-      "Short-term vs long-term rental financial comparison with actual modeled numbers for the same property — unique angle no major competitor has done with real math",
-      "Fix and flip project management with Gantt-style timeline framework — BiggerPockets has forum threads but no authoritative guide",
-      "Real estate syndication passive investor guide — growing search trend as more investors hit conventional loan limits",
-      "1031 exchange 2026 rules and deadlines — evergreen with annual refresh value and high commercial intent",
-      "Rental property bookkeeping systems walkthrough — underserved, practical, high-return-visit topic",
-      "Market indicators dashboard guide — differentiated Market Analysis content that fills a clear pillar gap",
-      "House hacking financial models — first-time investor crossover topic with strong SEO upside"
+      "DSCR loan rate comparison tool and lender vetting framework — no one has built a practitioner guide that walks through how to shop DSCR lenders with specific questions to ask and red flags to avoid",
+      "Rental property bookkeeping system using free tools (spreadsheet + categories) — QuickBooks and software blogs dominate paid tools but no one owns the DIY investor bookkeeping angle",
+      "1031 exchange boot and partial exchange scenarios — most content covers the basics; the edge case of partial reinvestment and boot taxation is underserved and high-intent",
+      "Short-term rental regulatory risk scoring — how to evaluate a market's STR regulatory environment before buying, a timely topic given 2025-2026 city-level crackdowns",
+      "Fix-and-flip project management system with contractor accountability — not just budgeting but the actual PM workflow, timeline milestones, and contractor payment schedule",
+      "Real estate syndication passive investor due diligence checklist — most syndication content is written for sponsors, not passive LPs who need to vet deals",
+      "Portfolio scaling from 1 to 10 properties with specific financing sequencing — which loan products to use at each stage, when to form an LLC, when to switch to portfolio loans"
     ],
     "trendingTopics": [
-      "DSCR loans as conventional financing tightens in 2026 rate environment",
-      "Short-term rental regulation changes affecting Airbnb investors in major metros",
-      "1031 exchange legislative uncertainty driving investor research spikes",
-      "Fix and flip margins under pressure from elevated material and labor costs",
-      "Passive real estate syndication as investors seek alternatives to direct ownership",
-      "House hacking as affordability crisis drives creative first-purchase strategies",
-      "Portfolio scaling strategies as investors hit 10-property conventional loan wall",
-      "Rental bookkeeping and tax prep as IRS scrutiny of real estate investors increases"
+      "DSCR loans and no-income-verification financing surging in search volume as W-2 investors hit conventional loan limits",
+      "1031 exchange planning for mid-year property sales — Q2 closings trigger 45-day identification windows in summer 2026",
+      "Eviction moratorium expiration aftereffects and updated landlord legal procedures in 2026",
+      "Short-term rental regulatory crackdowns — investors searching how to assess STR risk before buying in new markets",
+      "Rental property insurance cost increases — landlords searching for coverage strategies as premiums spike 20-40% in some markets",
+      "Portfolio loan alternatives as Fed rate environment affects conventional financing eligibility",
+      "Fix-and-flip contractor management — labor shortages and cost overruns driving search for project management frameworks"
     ],
     "recommendedUpdates": [
-      "Audit the 24-brief editorial calendar and formally retire or retitle the ~8-10 briefs that duplicate published posts to keep the pipeline clean",
-      "Add a Market Analysis post to the weekly rotation — the pillar is critically underpopulated relative to competitors",
-      "Prioritize DSCR Loans brief immediately given rate environment and search volume trajectory in 2026",
-      "Create a Tools & Calculators cluster around the DSCR, 1031, and short-term rental comparison topics to build calculator-anchored content moat",
-      "Consider adding a 'Last Updated' schema to high-traffic posts like Hard Money Loans and BRRRR Strategy to signal freshness to Google",
-      "Cross-link the new Market Analysis post ('10 Market Indicators') to Best Cities 2026 and Real Estate Market Cycle posts to strengthen that pillar's internal link graph"
+      "Update 'Best Cities for Rental Property Investing 2026' with Q2 2026 cap rate data and insurance cost overlays for top markets",
+      "Add DSCR loan comparison table and lender vetting checklist to the existing Hard Money Loans post as a related-financing callout",
+      "Refresh 'Real Estate Investing During a Recession' with current 2026 economic indicators and Fed rate context",
+      "Add a short-term rental regulatory risk section to the Vacation Rental Investing guide given 2025-2026 city-level STR restrictions",
+      "Update the BRRRR calculator post with current hard money rate ranges and refinance LTV benchmarks for 2026"
     ]
   },
   "articlesCreated": [
     {
-      "title": "10 Market Indicators Every Real Estate Investor Should Track Monthly",
-      "slug": "10-market-indicators-real-estate-investors-track",
-      "publishDate": "2026-05-13",
-      "primaryKeyword": "real estate market indicators",
-      "pillar": "Market Analysis"
-    },
-    {
-      "title": "Short-Term vs Long-Term Rentals: The Complete Financial Analysis for the Same Property",
-      "slug": "short-term-vs-long-term-rental-financial-comparison",
-      "publishDate": "2026-05-15",
-      "primaryKeyword": "short-term vs long-term rental",
-      "pillar": "Investment Strategies"
+      "title": "1031 Exchange Guide: How to Defer Capital Gains and Reinvest Smarter",
+      "slug": "1031-exchange-guide-real-estate-investors",
+      "publishDate": "2026-05-20",
+      "primaryKeyword": "1031 exchange real estate",
+      "pillar": "MARKET ANALYSIS"
     }
   ],
   "articlesSkipped": [
@@ -55,8 +44,13 @@
       "title": "DSCR Loans Explained: No-Income-Verification Financing for Real Estate Investors",
       "slug": "dscr-loans-explained-real-estate-investors",
       "reason": "ID already exists: post-dscr-loans-explained-real-estate-investors"
+    },
+    {
+      "title": "Fix and Flip Project Management: The Timeline, Budget, and Contractor System That Protects Your Profit",
+      "slug": "fix-and-flip-project-management-timeline-budget-contractors",
+      "reason": "Title too similar to existing post \"Fix and Flip Project Management: The Timeline, Budget, and Contractor System That Protects Your Profit\" (fix-and-flip-project-management-timeline-budget-system)"
     }
   ],
   "articlesFailed": [],
-  "briefsForNextWeek": "Monday's DSCR Loans brief is pulled directly from the existing editorial calendar and is the highest-priority unpublished brief given the current rate environment and rising investor search volume for no-income-verification financing alternatives in 2026. It fills a Financing & Deals slot and anchors to a calculator, satisfying the internal linking rule. Wednesday's Market Analysis post on 10 Market Indicators is also from the existing calendar and is urgently needed — Market Analysis is the most underpopulated pillar with only 2 published posts carrying the entire category. This post will strengthen internal linking across the markets pillar and drive return visits via its monthly-tracking framework. Friday's Short-Term vs Long-Term Rental comparison is from the existing calendar and was chosen over 'Fix and Flip Project Management' and 'Real Estate Syndication' because it fills the Investment Strategies pillar slot with the highest search volume opportunity and the most differentiated competitive angle available this week. Pillar rotation for the week is: Financing & Deals (Mon) → Market Analysis (Wed) → Investment Strategies (Fri), which satisfies the no-consecutive-same-pillar rule. NOTE: Approximately 8-10 briefs in the existing 24-brief editorial calendar are near-duplicates of already-published posts and should be formally retired or retitled before the next planning cycle. Flagged duplicates include: 'Multi-Family Investing for Beginners,' 'Self-Managing vs Hiring a Property Manager,' 'Real Estate Depreciation,' 'Out-of-State Real Estate Investing,' 'Buying Your First Rental Property,' 'LLC for Real Estate,' 'How to Calculate ROI on Rental Property,' and 'How to Raise Private Capital.' These should be replaced with net-new angles or sub-topic drilldowns to maintain content velocity without duplication risk."
+  "briefsForNextWeek": "All three briefs are drawn from the existing unpublished editorial calendar with targeted refinements to their angles. Monday's DSCR Loans post is a high-priority selection: it is the single highest search-volume gap in the current published library, it serves multiple ICP segments (BRRRR practitioners, portfolio scalers, rental investors), and DSCR financing is a trending query in May 2026 as more investors hit conventional loan limits. The pillar is Financing & Deals. Wednesday's 1031 Exchange guide serves the Market Analysis pillar rotation requirement (following Financing on Monday) and targets intermediate-to-advanced investors who are actively selling properties in Q2 — a seasonally timely topic. The angle goes well beyond the calendar brief's original scope by adding the boot/partial exchange depth and the mathematical decision framework, which creates a genuinely differentiated asset versus Investopedia and BiggerPockets. Friday's Fix and Flip Project Management post satisfies the Investment Strategies pillar and completes a Mon-Wed-Fri rotation of Financing, Market Analysis (tax-driven market decisions), and Investment Strategies. It deliberately avoids overlap with the already-published 'How to Estimate Rehab Costs' and 'House Flipping Budget Template' posts by focusing on operational PM systems and contractor accountability rather than cost estimation. Several calendar briefs were skipped this week due to confirmed duplication with published posts: 'Multi-Family Investing for Beginners,' 'Real Estate Depreciation,' 'Self-Managing vs Hiring a PM,' 'Short-Term vs Long-Term Rentals,' 'Out-of-State Investing,' 'Wholesale Real Estate for Beginners,' and 'LLC for Real Estate' all have substantially overlapping published counterparts and should be removed from the calendar or reassigned as deep-dive sub-topic posts with clearly differentiated angles before scheduling."
 }
