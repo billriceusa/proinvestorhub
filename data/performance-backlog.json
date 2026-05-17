@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-16T12:02:49.103Z",
+  "lastUpdated": "2026-05-17T12:02:40.368Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -1091,6 +1091,39 @@
       "status": "open"
     },
     {
+      "id": "beacce822b91",
+      "title": "Optimize Cap Rate Calculator Page for CTR to Capture 100+ Weekly Impressions",
+      "description": "The /calculators/cap-rate page sits at position 36.6 with zero clicks despite the 'cap rate calculator' query generating 58 impressions at position 27.1. Immediate actions: (1) Rewrite the page title tag to include a compelling differentiator — e.g., 'Cap Rate Calculator — Free Tool + Instant Results for Rental Properties' rather than a generic title. (2) Rewrite the meta description to include a clear value hook and call-to-action within 155 characters, e.g., 'Calculate cap rate instantly. Enter NOI and property value — get your cap rate in seconds. Free, no signup required.' (3) Add FAQ schema markup targeting 'what is a good cap rate' and 'how to calculate cap rate' to earn rich result eligibility. (4) Internally link to this page from every blog post that mentions cap rate. The 'cap rate calculator free' query is already at position 19 — a title/meta optimization alone could push this into click range within 2-4 weeks.",
+      "expectedImpact": "Capturing even a 3-5% CTR on the current 58 weekly 'cap rate calculator' impressions would yield 2-3 additional organic clicks per week — a 100-150% increase in Google organic traffic from a single page optimization.",
+      "priority": "high",
+      "firstSeen": "2026-05-17",
+      "lastSeen": "2026-05-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "8c403546891c",
+      "title": "Add Internal Linking and Content Depth to Reduce Bounce Rate on Top Landing Pages",
+      "description": "The depreciation tax strategy post and best cash flow markets 2026 post are receiving the most traffic but the site-wide bounce rate is 65%. Implement the following: (1) Add a prominent 'Related Tools' module within the first 300 words of each blog post linking to relevant calculators (e.g., cap rate calculator, cash-on-cash calculator). (2) Add a 'Next Step' CTA section at the bottom of each post directing users to a logically next piece of content or the newsletter signup. (3) For the depreciation post specifically, add an internal link to the 1031 exchange guide (already indexed) and create a depreciation calculator or worksheet as a lead magnet. (4) For the cash flow markets post, link directly to the /calculators/cap-rate/tulsa-ok location page since Tulsa is already receiving calculator traffic. These changes address the 49.1s average session duration by giving users clear next actions.",
+      "expectedImpact": "Reducing bounce rate from 65% back toward the 55% baseline would represent roughly 10 additional engaged sessions per week at current traffic levels, and would improve GA4 engagement rate signals that feed into Google's quality assessment.",
+      "priority": "high",
+      "firstSeen": "2026-05-17",
+      "lastSeen": "2026-05-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "679bce017d87",
+      "title": "Build Out Location-Specific Calculator Pages to Capture Long-Tail Search Demand",
+      "description": "The /calculators/cap-rate/tulsa-ok page already received 3 views from 1 user — evidence that geo-specific calculator pages attract targeted traffic. The 90-day query data shows 'average cap rate by city' appearing in the index. Action plan: (1) Identify 10-15 high-investor-activity markets (e.g., Memphis TN, Indianapolis IN, Kansas City MO, Cleveland OH, Birmingham AL) and create dedicated /calculators/cap-rate/[city-state] pages. (2) Each page should include: pre-populated local market cap rate benchmarks, median property values, local market commentary (200-300 words), and links to the corresponding /markets/[city] page if it exists. (3) Target queries like 'cap rate calculator Memphis TN' and 'what is a good cap rate in Indianapolis' — these are low-competition, high-intent terms. (4) Cross-link these pages from the best cash flow markets 2026 blog post which is already a top performer.",
+      "expectedImpact": "10 location pages targeting low-competition geo-specific queries could realistically generate 20-40 additional organic sessions per month within 60-90 days, while also strengthening topical authority for the broader calculator cluster.",
+      "priority": "high",
+      "firstSeen": "2026-05-17",
+      "lastSeen": "2026-05-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -1795,6 +1828,28 @@
       "status": "open"
     },
     {
+      "id": "834bf446f41c",
+      "title": "Implement an AI Search Optimization Strategy to Capitalize on ChatGPT Referral Traffic",
+      "description": "ChatGPT.com is already the third-largest traffic source with 8 sessions in 7 days — more than Google organic (2 sessions). To systematically grow this channel: (1) Ensure every major guide and calculator page includes a clear, concise 'What is X' definition section in the first 100 words — AI models prefer definitional, factual content for citations. (2) Add structured FAQ sections to all calculator and guide pages using proper FAQ schema, as these are frequently pulled into AI responses. (3) Create a 'ProInvestorHub Glossary' section with standalone pages for terms like 'cap rate,' 'DSCR,' 'BRRRR method,' 'cash-on-cash return' — these are exactly the types of definitions AI assistants cite. (4) Ensure all pages have clear author attribution and 'last updated' dates to signal freshness and expertise to AI crawlers. (5) Submit a comprehensive sitemap and ensure llms.txt or robots.txt does not block AI crawlers.",
+      "expectedImpact": "Formalizing AI search optimization could grow the ChatGPT/AI referral channel from 8 sessions/week to 20-30+ sessions/week within 60 days, while simultaneously improving E-E-A-T signals that benefit Google rankings.",
+      "priority": "medium",
+      "firstSeen": "2026-05-17",
+      "lastSeen": "2026-05-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "d77991a61ec8",
+      "title": "Create a Newsletter Acquisition Funnel Tied to Top-Performing Content",
+      "description": "The /newsletter page received only 2 views from 1 user despite the site having 8.6 sessions/day. For an education site targeting investors, email is the highest-ROI retention channel. Specific steps: (1) Add an inline email capture form within the body of the top 5 blog posts (depreciation strategy, cash flow markets, BRRRR guide, 1031 exchange, DSCR loans) — not just a footer widget. (2) Create a content upgrade for the depreciation tax strategy post (e.g., 'Download our Real Estate Tax Deduction Checklist') as a lead magnet since this is the top-viewed page. (3) Add an exit-intent popup on calculator pages offering 'Get weekly cap rate benchmarks for top investor markets' — this aligns with the calculator audience's intent. (4) Set up a GA4 conversion event for newsletter signups to measure performance. Currently there is no visible conversion tracking data in the provided metrics.",
+      "expectedImpact": "Even a 5% email capture rate on current traffic (8.6 sessions/day) would yield 13-15 new subscribers per month — a foundational list that compounds in value as traffic grows.",
+      "priority": "medium",
+      "firstSeen": "2026-05-17",
+      "lastSeen": "2026-05-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -2132,6 +2187,17 @@
       "priority": "low",
       "firstSeen": "2026-05-16",
       "lastSeen": "2026-05-16",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "f9fcac952c5b",
+      "title": "Investigate and Resolve the Direct Traffic Anomaly to Understand True Traffic Sources",
+      "description": "Direct traffic (35 sessions) accounts for 56% of all 7-day sessions — an unusually high proportion for a content site that is not running brand campaigns. This likely represents: (1) dark social sharing (Slack, Discord, WhatsApp, email forwards), (2) bookmarked visits from a small loyal audience, or (3) misconfigured UTM parameters on any outbound links or social posts. Action steps: (1) Audit all outbound links from any social profiles, email newsletters, or partner sites to ensure UTM parameters are appended. (2) Check if any PDF downloads or email templates link back to the site without UTM tracking. (3) Set up a GA4 channel grouping rule to better segment 'unknown direct' from 'true direct.' (4) Post in relevant real estate investing communities (BiggerPockets forums, Reddit r/realestateinvesting) with properly UTM-tagged links to understand if community traffic is being misattributed as direct.",
+      "expectedImpact": "Properly attributing direct traffic will clarify which channels are actually driving growth, enabling smarter content distribution decisions and preventing misallocation of effort toward channels that appear to be underperforming.",
+      "priority": "low",
+      "firstSeen": "2026-05-17",
+      "lastSeen": "2026-05-17",
       "timesRepeated": 1,
       "status": "open"
     }
