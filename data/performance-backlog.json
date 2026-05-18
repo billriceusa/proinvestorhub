@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-17T12:02:40.368Z",
+  "lastUpdated": "2026-05-18T12:02:02.906Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -1124,6 +1124,39 @@
       "status": "open"
     },
     {
+      "id": "826e0c3ffe17",
+      "title": "Optimize Cap Rate Calculator Page for Top-10 Ranking and CTR",
+      "description": "The 'cap rate calculator' query cluster (64+9+8+6+3+3+3+2+2+2+1+1+1 = ~109 combined impressions across variants) represents the single largest search opportunity on the site. Immediate actions: (1) Rewrite the title tag to 'Free Cap Rate Calculator — Instant NOI & Property Value Results' to match high-intent query language. (2) Update meta description to include the word 'free,' a specific use case ('rental property'), and a call to action. (3) Add FAQ schema markup answering 'what is a good cap rate,' 'how to calculate cap rate,' and 'cap rate by city.' (4) Build 3-5 internal links from the depreciation article, BRRRR guide, and NOI article pointing to /calculators/cap-rate. (5) Create a supporting blog post titled 'Cap Rate Calculator: How to Use It and What the Numbers Mean' to build topical authority. The 'cap rate calculator with mortgage' query at position 15.5 is closest to page 1 — optimize specifically for this variant with a mortgage-adjusted cap rate feature or section.",
+      "expectedImpact": "Moving from position 26.5 to top 10 on 'cap rate calculator' could realistically generate 50-150 clicks/month given the query volume, representing a 10-50x increase in Google organic traffic from this single keyword cluster.",
+      "priority": "high",
+      "firstSeen": "2026-05-18",
+      "lastSeen": "2026-05-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "3fd43bb1c43b",
+      "title": "Create a Structured AI-Citation Content Strategy to Capitalize on ChatGPT Referrals",
+      "description": "With ChatGPT.com already the #3 traffic source at 9 sessions/week, the site has early evidence of AI citation. To systematically grow this channel: (1) Audit which specific pages are being cited by querying ChatGPT for questions like 'best cash flow markets 2026,' 'real estate depreciation strategy,' and 'BRRRR method guide' to see if ProInvestorHub appears. (2) Add a 'Key Takeaways' summary box at the top of every article with 3-5 bullet points — AI models preferentially cite structured, scannable content. (3) Ensure every calculator page has a clear definition section explaining the metric in 2-3 sentences, as AI assistants frequently cite definitional content. (4) Add author credentials and 'last updated' dates to all content pages to improve E-E-A-T signals that AI models use to assess citation worthiness. (5) Publish a 'Real Estate Investing Glossary' with 50+ terms — glossary content is heavily cited by AI assistants answering definitional questions.",
+      "expectedImpact": "Systematically optimizing for AI citation could double or triple the current 9 sessions/week from ChatGPT within 60-90 days, and as AI search adoption grows, this channel could rival or exceed traditional Google organic within 6 months.",
+      "priority": "high",
+      "firstSeen": "2026-05-18",
+      "lastSeen": "2026-05-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "fe10a2c03604",
+      "title": "Expand Lender Review Content — Only Revenue-Adjacent Content Generating Organic Clicks",
+      "description": "The Griffin Funding review is the only page generating actual Google clicks (1 click, position 16.7), and the lenders section appears multiple times in top pages. Immediate actions: (1) Audit all lender review pages and ensure each has a standardized schema (rates, loan types, pros/cons, user ratings) to improve CTR. (2) Publish 5-10 additional lender reviews targeting hard money lenders, DSCR lenders, and bridge loan providers with search volume — prioritize Kiavi (already getting direct traffic), RCM Capital, Visio Lending, and Corevest. (3) Create comparison pages for high-intent queries like 'Kiavi vs Griffin Funding' and 'best DSCR lenders 2026.' (4) Add affiliate or lead-gen monetization to lender pages if not already present, as this content has the highest commercial intent on the site. (5) The /lenders/dscr-loans/north-dakota page getting 2 views suggests geo-specific DSCR pages have traction — expand this template to the top 20 DSCR markets.",
+      "expectedImpact": "Expanding from 2-3 lender review pages to 15-20 with proper schema could generate 10-30 additional organic clicks/month within 90 days, and lender content carries the highest monetization potential on the site.",
+      "priority": "high",
+      "firstSeen": "2026-05-18",
+      "lastSeen": "2026-05-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -1850,6 +1883,28 @@
       "status": "open"
     },
     {
+      "id": "afa9eec660b2",
+      "title": "Investigate and Resolve Google Indexing Gap vs Bing Performance",
+      "description": "Bing delivering 16 organic sessions vs Google's 2 is a red flag for indexing or crawlability issues on Google. Actions: (1) Run a site:proinvestorhub.com search on Google and count indexed pages — compare to actual published pages. (2) Check Google Search Console Coverage report for any 'Excluded,' 'Crawled but not indexed,' or 'Discovered but not indexed' pages. (3) Submit an updated XML sitemap to Google Search Console if not done in the last 30 days. (4) Check Core Web Vitals in GSC — if LCP or CLS scores are poor, Google may be deprioritizing crawl budget. (5) Verify that canonical tags are correctly implemented, especially on calculator pages with URL parameters (e.g., /calculators/cap-rate/tulsa-ok). (6) Check if robots.txt is accidentally blocking any key page categories.",
+      "expectedImpact": "Resolving indexing issues could unlock Google organic traffic that is currently invisible — if Bing is finding and ranking these pages, Google should be able to as well, potentially adding 20-50 sessions/week once properly indexed.",
+      "priority": "medium",
+      "firstSeen": "2026-05-18",
+      "lastSeen": "2026-05-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "7eeff348380b",
+      "title": "Add Content Depth and Internal Linking to Reduce 41% Session Duration Drop",
+      "description": "The session duration collapse (111.5s to 65.4s) suggests new visitors are not finding clear next steps after landing. Actions: (1) Add a 'Related Calculators' widget to every blog post — the depreciation article should link to the cap rate calculator, NOI calculator, and cash-on-cash calculator. (2) Add a 'You Might Also Like' section at the bottom of every article pulling from the same topic cluster (e.g., tax articles link to other tax articles). (3) Create a 'Start Here' page or beginner learning path that sequences content logically for new investors — link to it from the homepage and every blog post. (4) Add inline contextual links within the depreciation article to the BRRRR guide, LLC guide, and NOI article, all of which appear in the top pages list. (5) Implement a sticky table of contents on long-form articles to encourage scrolling and section engagement.",
+      "expectedImpact": "Improving internal linking and content depth should increase average session duration back toward the 90-day baseline of 111.5s and improve pages/session from the current implied ~1.3 toward 2.0+, reducing bounce rate from 57.69% toward 45%.",
+      "priority": "medium",
+      "firstSeen": "2026-05-18",
+      "lastSeen": "2026-05-18",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -2198,6 +2253,17 @@
       "priority": "low",
       "firstSeen": "2026-05-17",
       "lastSeen": "2026-05-17",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "c93b8c843f31",
+      "title": "Build Out Geo-Specific Calculator Pages to Capture Local Search Intent",
+      "description": "The /calculators/cap-rate/tulsa-ok page received 3 views from 1 user, suggesting the geo-specific calculator template has organic discovery potential. Actions: (1) Identify the top 25-50 real estate investor markets (Dallas, Phoenix, Tampa, Nashville, Indianapolis, etc.) and create geo-specific cap rate calculator pages for each. (2) Each page should include local market context: average cap rates for that city, typical NOI ranges, and links to the /markets/appreciation page. (3) Target queries like 'cap rate calculator Dallas' or 'cap rate for rental property in Phoenix' — these have lower competition than generic calculator terms. (4) Cross-link geo calculator pages to the corresponding lender DSCR pages (e.g., Tulsa cap rate calculator links to DSCR lenders in Oklahoma). (5) Add structured data markup (SoftwareApplication or WebApplication schema) to all calculator pages to improve rich result eligibility.",
+      "expectedImpact": "A network of 25-50 geo-specific calculator pages could generate 100-300 additional monthly impressions within 90 days and begin capturing long-tail local search traffic that larger competitors ignore.",
+      "priority": "low",
+      "firstSeen": "2026-05-18",
+      "lastSeen": "2026-05-18",
       "timesRepeated": 1,
       "status": "open"
     }
