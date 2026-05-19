@@ -38,8 +38,8 @@ const PILLAR_CATEGORY_MAP: Record<string, string> = {
   "Investment Strategies": "cat-strategies",
   "Market Analysis": "cat-markets",
   "Financing & Deals": "cat-financing",
-  "Property Management": "cat-analysis",
-  "Tools & Calculators": "cat-analysis",
+  "Property Management": "cat-property-management",
+  "Tools & Calculators": "cat-tools",
 };
 
 export type ExistingPost = { id: string; slug: string; title: string };

@@ -136,60 +136,40 @@ async function sendPreviewEmail(
   return { success: true };
 }
 
-async function sendToContacts(
+// Schedule delivery via the Resend Broadcasts API. This replaces an earlier
+// per-contact loop (resend.contacts.list + N transactional emails.send) that
+// was fragile at scale: contacts.list is paginated so subscribers past the
+// first page were silently never emailed, partial failures were swallowed,
+// and individual sends produced no broadcast-level deliverability analytics
+// or native unsubscribe handling. One broadcasts.create call fixes all of it.
+async function scheduleBroadcast(
   resend: Resend,
   audienceId: string,
   fromEmail: string,
   subject: string,
+  previewText: string,
   html: string,
   scheduledAt: string
 ): Promise<{ success: boolean; broadcastId?: string; error?: string }> {
-  const { data: contactsData, error: contactsError } =
-    await resend.contacts.list({ audienceId });
+  const { data, error } = await resend.broadcasts.create({
+    audienceId,
+    from: fromEmail,
+    subject,
+    previewText,
+    html,
+    send: true,
+    scheduledAt,
+  });
 
-  if (contactsError || !contactsData) {
+  if (error || !data) {
     return {
       success: false,
-      error: `Failed to list contacts: ${JSON.stringify(contactsError)}`,
+      error: `Broadcast create failed: ${JSON.stringify(error)}`,
     };
   }
 
-  const contacts = contactsData.data.filter((c) => !c.unsubscribed);
-  console.log(`[Newsletter] Sending to ${contacts.length} active contacts`);
-
-  if (contacts.length === 0) {
-    return { success: true, broadcastId: "no-contacts" };
-  }
-
-  const results = await Promise.allSettled(
-    contacts.map((contact) =>
-      resend.emails.send({
-        from: fromEmail,
-        to: contact.email,
-        subject,
-        html,
-        scheduledAt,
-      })
-    )
-  );
-
-  const succeeded = results.filter((r) => r.status === "fulfilled").length;
-  const failed = results.filter((r) => r.status === "rejected");
-
-  if (failed.length > 0) {
-    console.error(
-      "[Newsletter] Some sends failed:",
-      failed.map((r) => (r as PromiseRejectedResult).reason)
-    );
-  }
-
-  return {
-    success: failed.length === 0,
-    broadcastId: `individual-${succeeded}-of-${contacts.length}`,
-    ...(failed.length > 0 && {
-      error: `${failed.length}/${contacts.length} sends failed`,
-    }),
-  };
+  console.log(`[Newsletter] Broadcast ${data.id} scheduled for ${scheduledAt}`);
+  return { success: true, broadcastId: data.id };
 }
 
 export async function GET(request: Request) {
@@ -317,11 +297,12 @@ export async function GET(request: Request) {
     if (audienceId) {
       try {
         const scheduledAt = `${weekDates.tuesday}T14:00:00.000Z`;
-        const result = await sendToContacts(
+        const result = await scheduleBroadcast(
           resend,
           audienceId,
           fromEmail,
           content.subject,
+          content.previewText,
           newsletterHtml,
           scheduledAt
         );

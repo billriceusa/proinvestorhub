@@ -83,25 +83,40 @@ export async function POST(request: Request) {
       })
     }
 
-    const segmentId = process.env.RESEND_SEGMENT_ID
-    if (!segmentId) {
+    // Audience send uses the Broadcasts API. `emails.send` does not support a
+    // `to: "segment:<id>"` pseudo-recipient — that was the source of the 500.
+    const audienceId =
+      process.env.RESEND_AUDIENCE_ID || process.env.RESEND_SEGMENT_ID
+    if (!audienceId) {
       return NextResponse.json(
-        { error: 'RESEND_SEGMENT_ID not configured' },
+        { error: 'RESEND_AUDIENCE_ID not configured' },
         { status: 500 }
       )
     }
 
-    const result = await resend.emails.send({
+    const { data, error: broadcastError } = await resend.broadcasts.create({
+      audienceId,
       from: fromEmail,
-      to: `segment:${segmentId}`,
       subject: `ProInvestorHub #${issueNumber || 1}: ${headline || 'This Week in Real Estate Investing'}`,
       html,
+      send: true,
     })
+
+    if (broadcastError) {
+      console.error(
+        '[Newsletter Send] Broadcast error:',
+        JSON.stringify(broadcastError)
+      )
+      return NextResponse.json(
+        { error: 'Broadcast failed', detail: broadcastError },
+        { status: 500 }
+      )
+    }
 
     return NextResponse.json({
       success: true,
       mode: 'broadcast',
-      result,
+      result: data,
     })
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error)

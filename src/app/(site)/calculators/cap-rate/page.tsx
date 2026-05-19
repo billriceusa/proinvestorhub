@@ -2,18 +2,18 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { CapRateCalculator } from '@/components/calculators/cap-rate-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
-import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
 import { cities } from '@/data/cap-rate-cities'
 
 export const metadata: Metadata = {
-  title: 'Cap Rate Calculator | Free Capitalization Rate Tool',
+  title: 'Cap Rate Calculator: Calculate Cap Rate Instantly (Free)',
   description:
-    'Calculate the capitalization rate of any investment property instantly. Enter purchase price and operating income to compare deals and evaluate returns. Free, no sign-up required.',
+    'Calculate the cap rate of any rental property in seconds. Free cap rate calculator with the NOI ÷ purchase price formula, a worked example, and cap rates for 50 US markets. No sign-up.',
   alternates: { canonical: '/calculators/cap-rate' },
   openGraph: {
-    title: 'Cap Rate Calculator | ProInvestorHub',
+    title: 'Cap Rate Calculator – Calculate Cap Rate Free | ProInvestorHub',
     description:
-      'Free cap rate calculator for real estate investors. Analyze deals in seconds.',
+      'How to calculate cap rate with a free interactive tool: enter purchase price and operating income, get your cap rate plus the formula and a worked example.',
   },
 }
 
@@ -55,7 +55,38 @@ export default function CapRateCalculatorPage() {
             answer:
               'No. Cap rate measures the unlevered return on a property — it ignores how you finance the purchase. This makes it useful for comparing properties regardless of financing. Use cash-on-cash return to factor in your mortgage.',
           },
+          {
+            question: 'How do you calculate the cap rate?',
+            answer:
+              'Calculate cap rate in three steps: (1) add up annual gross rent and subtract a vacancy allowance to get effective income, (2) subtract operating expenses (taxes, insurance, maintenance, management — not the mortgage) to get net operating income, and (3) divide NOI by the purchase price and multiply by 100. Example: a $300,000 property with $24,000 NOI has a cap rate of 8.0%.',
+          },
+          {
+            question: 'What is a cap rate calculation example?',
+            answer:
+              'A $300,000 rental collects $30,000 gross rent. Apply a 5% vacancy ($1,500) for $28,500 effective income, then subtract $4,500 in operating expenses for $24,000 NOI. $24,000 ÷ $300,000 × 100 = an 8.0% cap rate.',
+          },
         ])}
+      />
+      <JsonLd
+        data={howToJsonLd({
+          name: 'How to Calculate Cap Rate',
+          description:
+            'Calculate the capitalization rate of a rental property from net operating income and purchase price.',
+          steps: [
+            {
+              name: 'Find effective gross income',
+              text: 'Start with annual gross rent and subtract a vacancy allowance (5% is a common default) to get effective income.',
+            },
+            {
+              name: 'Subtract operating expenses to get NOI',
+              text: 'Deduct property taxes, insurance, maintenance, and management fees — but not mortgage payments — to get net operating income (NOI).',
+            },
+            {
+              name: 'Divide NOI by purchase price',
+              text: 'Divide NOI by the property purchase price (or current market value) and multiply by 100 to express the cap rate as a percentage.',
+            },
+          ],
+        })}
       />
 
       {/* Breadcrumb */}
@@ -85,6 +116,65 @@ export default function CapRateCalculatorPage() {
       <div className="mt-6 max-w-3xl">
         <CalculatorEmbed calculatorName="Cap Rate Calculator" calculatorPath="/calculators/cap-rate" />
       </div>
+
+      {/* Formula-first answer block — targets "calculate cap rate" / "cap rate formula" / "cap rate calculation" intent */}
+      <section className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-bold text-text">
+          How to Calculate Cap Rate (Formula + Example)
+        </h2>
+        <p className="mt-4 text-text-muted leading-7">
+          To calculate the cap rate, divide a property&apos;s annual net
+          operating income by its purchase price. It takes three steps:
+          find effective income, subtract operating expenses to get NOI, then
+          divide by price.
+        </p>
+
+        <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-6">
+          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            Cap Rate Formula
+          </p>
+          <p className="mt-3 text-xl font-bold text-text sm:text-2xl">
+            Cap Rate = (Net Operating Income ÷ Purchase Price) × 100
+          </p>
+          <p className="mt-3 text-sm text-text-muted">
+            NOI excludes mortgage payments — cap rate measures the property&apos;s
+            return before financing.
+          </p>
+        </div>
+
+        <h3 className="mt-8 text-lg font-semibold text-text">
+          Worked example
+        </h3>
+        <ol className="mt-4 list-decimal space-y-2 pl-6 text-text-muted leading-7">
+          <li>
+            A $300,000 rental collects <strong className="text-text">$30,000</strong> in
+            annual gross rent.
+          </li>
+          <li>
+            Apply a 5% vacancy allowance (&minus;$1,500) →{' '}
+            <strong className="text-text">$28,500</strong> effective income.
+          </li>
+          <li>
+            Subtract $4,500 in operating expenses (taxes, insurance,
+            maintenance, management) → <strong className="text-text">$24,000</strong> NOI.
+          </li>
+          <li>
+            $24,000 ÷ $300,000 × 100 ={' '}
+            <strong className="text-primary">8.0% cap rate</strong>.
+          </li>
+        </ol>
+        <p className="mt-4 text-text-muted leading-7">
+          Use the calculator above to run these numbers for your own deal, or
+          compare typical{' '}
+          <Link
+            href="/calculators/cap-rate/cities"
+            className="text-primary hover:text-primary-light underline transition-colors"
+          >
+            cap rates across 50 US markets
+          </Link>
+          .
+        </p>
+      </section>
 
       {/* Educational Content */}
       <section className="mt-16 max-w-3xl">

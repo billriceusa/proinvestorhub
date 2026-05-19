@@ -34,6 +34,8 @@ const categories = [
   { _id: 'cat-beginner', _type: 'category', title: 'Getting Started', slug: { _type: 'slug', current: 'getting-started' }, description: 'Essential knowledge for new real estate investors taking their first steps.' },
   { _id: 'cat-tax', _type: 'category', title: 'Tax & Legal', slug: { _type: 'slug', current: 'tax-legal' }, description: '1031 exchanges, depreciation, entity structuring, and tax strategies for real estate investors.' },
   { _id: 'cat-markets', _type: 'category', title: 'Markets', slug: { _type: 'slug', current: 'markets' }, description: 'Market analysis, emerging markets, and geographic trends for real estate investors.' },
+  { _id: 'cat-property-management', _type: 'category', title: 'Property Management', slug: { _type: 'slug', current: 'property-management' }, description: 'Tenant screening, leasing, maintenance, evictions, and self-managing vs. hiring a property manager.' },
+  { _id: 'cat-tools', _type: 'category', title: 'Tools & Calculators', slug: { _type: 'slug', current: 'tools' }, description: 'Deal calculators, analysis spreadsheets, and tools for evaluating real estate investments.' },
 ]
 
 // ── Glossary Terms ────────────────────────────────────
