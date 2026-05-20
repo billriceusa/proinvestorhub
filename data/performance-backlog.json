@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-19T12:02:02.982Z",
+  "lastUpdated": "2026-05-20T12:02:02.881Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -1190,6 +1190,39 @@
       "status": "open"
     },
     {
+      "id": "ef58051dfd84",
+      "title": "Rewrite the Cap Rate Calculator Page Title, Meta Description, and H1 to Target Position 23.9 Query",
+      "description": "The query 'cap rate calculator' is generating 73 impressions/week at position 23.9 with zero clicks. The page /calculators/cap-rate sits at position 36.5 — these may be two different URL/query pairings. Immediate actions: (1) Audit the current title tag on /calculators/cap-rate — it should be exactly 'Free Cap Rate Calculator for Rental Properties | ProInvestorHub' or similar, front-loading the primary keyword. (2) Write a meta description that includes a value proposition and a call to action: 'Calculate cap rate instantly for any rental property. Enter NOI and property value — get your cap rate in seconds. Free, no signup required.' (3) Add FAQ schema markup answering 'What is a good cap rate?' and 'How do you calculate cap rate?' directly on the page to capture featured snippet opportunities. (4) Internally link to this page from every blog post that mentions cap rate, including /blog/how-to-calculate-noi and the BRRRR guide.",
+      "expectedImpact": "Moving from position 23.9 to top 10 for 'cap rate calculator' could realistically generate 50-150 clicks/week based on typical CTR curves for this query volume. Even a 2% CTR at current impression volume would yield 1-2 clicks/day — a 10-20x improvement over current baseline.",
+      "priority": "high",
+      "firstSeen": "2026-05-20",
+      "lastSeen": "2026-05-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "5d297f3cb067",
+      "title": "Create an AI-Optimized Content Layer to Capitalize on ChatGPT Referral Traffic",
+      "description": "With 9 ChatGPT sessions already appearing — making it the #3 traffic source — the site has an early foothold in AI-driven discovery. To expand this: (1) Add a clearly structured 'Quick Answer' section at the top of every calculator and guide page with a 2-3 sentence direct answer to the primary question (e.g., 'A cap rate is calculated by dividing Net Operating Income by the property's current market value, expressed as a percentage.'). (2) Ensure every page has complete, accurate structured data (FAQ schema, HowTo schema where applicable) since AI models frequently pull from schema-marked content. (3) Publish a dedicated 'Real Estate Investing Glossary' or expand existing glossary content with authoritative, citation-worthy definitions — these are high-probability AI citation targets. (4) Add an author bio with credentials to all blog posts to increase E-E-A-T signals that AI models use to evaluate source trustworthiness.",
+      "expectedImpact": "AI referral traffic could scale from 9 sessions/week to 50+ sessions/week within 60-90 days if content is structured for AI consumption. This channel has no click cost and compounds as more content is indexed by AI training pipelines.",
+      "priority": "high",
+      "firstSeen": "2026-05-20",
+      "lastSeen": "2026-05-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "8f29dcda3acf",
+      "title": "Launch a City-Specific Cap Rate Calculator Content Cluster (10 Cities in 30 Days)",
+      "description": "Tulsa and Seattle city-specific cap rate pages are already appearing in the top 10 pages with zero promotional effort. This is a scalable, low-competition content pattern. Implementation: (1) Identify 10 high-interest real estate markets for 2026 (e.g., Memphis TN, Kansas City MO, Indianapolis IN, Cleveland OH, Birmingham AL, Jacksonville FL, San Antonio TX, Columbus OH, Pittsburgh PA, Detroit MI) — these are classic cash-flow markets that align with the site's BRRRR and landlord audience. (2) Build a templated page for each city at /calculators/cap-rate/[city-state] with local market context: average cap rates by neighborhood, typical NOI ranges, local property tax considerations. (3) Internally link all city pages to the main /calculators/cap-rate hub page and to relevant blog content. (4) Submit these URLs to Google Search Console for indexing immediately upon publication.",
+      "expectedImpact": "Each city page targets a long-tail query like 'cap rate calculator Memphis TN' with low competition. 10 pages could collectively generate 200-500 additional impressions/week within 60 days and begin producing organic clicks within 90 days.",
+      "priority": "high",
+      "firstSeen": "2026-05-20",
+      "lastSeen": "2026-05-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -1960,6 +1993,28 @@
       "status": "open"
     },
     {
+      "id": "f923fcc74811",
+      "title": "Fix the Engagement Rate Decline by Adding In-Page Interactive Elements to Top Landing Pages",
+      "description": "The bounce rate of 64.29% and engagement rate of 35.71% suggest users are landing and leaving without interacting. For the homepage (9 views, highest traffic) and /blog/best-cash-flow-markets-2026 (5 views): (1) Add a prominent, above-the-fold interactive element on the homepage — ideally an embedded mini cap rate calculator or a 'Find Your Market' quiz that routes users to relevant content. (2) On the cash flow markets blog post, embed the cap rate calculator directly in the article body so users can apply the concepts immediately without navigating away. (3) Add a 'Related Calculators' widget at the bottom of every blog post. (4) Implement a scroll-depth trigger in GA4 to distinguish between users who bounced immediately vs. those who read 75%+ of content — this will clarify whether the bounce rate reflects poor content or simply single-page satisfaction.",
+      "expectedImpact": "Embedding calculators in blog content has been shown to reduce bounce rates by 15-25% and increase session duration. A target of 50-55% bounce rate (from 64.29%) is achievable within 30 days of implementation.",
+      "priority": "medium",
+      "firstSeen": "2026-05-20",
+      "lastSeen": "2026-05-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "eaad06c327bd",
+      "title": "Optimize the /markets/appreciation Page to Convert Its 5 Views Into Newsletter Signups",
+      "description": "The /markets/appreciation page received 5 views from 3 users — a 1.67 pages/user ratio suggesting some depth of engagement. This is a high-intent page (users researching appreciation markets are likely evaluating investment decisions). Actions: (1) Add a contextual newsletter signup CTA mid-page with copy like 'Get our weekly market analysis — which cities are appreciating fastest in 2026?' (2) Add a comparison table of appreciation rates by city with a 'See Full Data' gate that requires email signup. (3) Link this page to /blog/best-cash-flow-markets-2026 and the city-specific calculator pages to increase pages-per-session from appreciation-focused visitors. (4) Add internal links from the homepage and markets hub to this page to increase its crawl priority.",
+      "expectedImpact": "Converting even 1 in 5 high-intent market research visitors to newsletter subscribers builds the owned audience that reduces dependence on search traffic. Target: 20% email capture rate on this page within 60 days.",
+      "priority": "medium",
+      "firstSeen": "2026-05-20",
+      "lastSeen": "2026-05-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -2330,6 +2385,17 @@
       "priority": "low",
       "firstSeen": "2026-05-19",
       "lastSeen": "2026-05-19",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "828bbefede8b",
+      "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
+      "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
+      "expectedImpact": "Resolving canonicalization consolidates link equity and prevents Google from splitting ranking signals between URL variants. This is a technical hygiene fix that protects all future SEO gains.",
+      "priority": "low",
+      "firstSeen": "2026-05-20",
+      "lastSeen": "2026-05-20",
       "timesRepeated": 1,
       "status": "open"
     }
