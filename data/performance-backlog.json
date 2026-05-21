@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-20T12:02:02.881Z",
+  "lastUpdated": "2026-05-21T12:02:22.890Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -1223,6 +1223,39 @@
       "status": "open"
     },
     {
+      "id": "4ff93a5962af",
+      "title": "Diagnose and Resolve the Google Zero-Click Anomaly Immediately",
+      "description": "Run a full GSC coverage report today to check for manual actions, coverage errors, or noindex tags accidentally applied. Verify canonical tags on /calculators/cap-rate and top blog pages are pointing to the correct URLs. Check for www vs non-www split — GSC data shows both 'proinvestorhub.com' and 'www.proinvestorhub.com' URLs in the pages report, indicating a potential canonicalization conflict. Submit a sitemap refresh in GSC. Use the URL Inspection tool on the top 5 pages to confirm they are indexed and crawlable. If no technical issue is found, pull a 28-day GSC comparison to identify the exact date clicks dropped to zero.",
+      "expectedImpact": "Resolving a technical indexing or canonicalization issue could restore Google organic clicks within 1-2 weeks, potentially adding 5-15 sessions/day based on current impression volume and historical CTR benchmarks.",
+      "priority": "high",
+      "firstSeen": "2026-05-21",
+      "lastSeen": "2026-05-21",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "b273f1aa29a1",
+      "title": "Consolidate Cap Rate Calculator Pages and Optimize for Position 22.5 → Top 10",
+      "description": "The 'cap rate calculator' query has 79 impressions at position 22.5 — it is one of the highest-volume, most actionable queries in the dataset. Audit /calculators/cap-rate for: (1) H1 tag containing exact phrase 'Cap Rate Calculator'; (2) a concise meta description under 155 characters with a clear value proposition; (3) structured data markup using HowTo or SoftwareApplication schema; (4) a 300-500 word explanatory section below the calculator covering what cap rate means, how to use the tool, and example calculations for 2-3 cities. Also consolidate the city-specific pages (/calculators/cap-rate/seattle-wa, /calculators/cap-rate/tulsa-ok) with internal links back to the main calculator to consolidate authority.",
+      "expectedImpact": "Moving from position 22.5 to top 10 for 'cap rate calculator' (79 impressions/week) at a 3-5% CTR would generate an estimated 2-4 additional clicks per day from this query alone, with multiplier effect across the 15+ cap rate query variants.",
+      "priority": "high",
+      "firstSeen": "2026-05-21",
+      "lastSeen": "2026-05-21",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e4a6eb16a4ef",
+      "title": "Fix www vs Non-www Canonicalization Split in GSC",
+      "description": "GSC pages report shows a mix of 'https://proinvestorhub.com/' and 'https://www.proinvestorhub.com/' URLs being tracked separately (lenders pages on www, calculator and blog pages on non-www). This indicates Google may be indexing duplicate versions of pages. Implement a 301 redirect from www to non-www (or vice versa, pick one canonical version), add a canonical tag to all pages pointing to the preferred domain version, and update the GSC property to use the correct preferred domain. Verify in Search Console that both properties are verified and set the preferred domain.",
+      "expectedImpact": "Consolidating link equity and crawl signals from duplicate URLs could improve rankings across all affected pages within 4-6 weeks of Google re-crawling.",
+      "priority": "high",
+      "firstSeen": "2026-05-21",
+      "lastSeen": "2026-05-21",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -2015,6 +2048,28 @@
       "status": "open"
     },
     {
+      "id": "8361da46dc1e",
+      "title": "Create an AI-Optimized Content Hub to Capitalize on ChatGPT Referral Traffic",
+      "description": "With ChatGPT delivering 10 sessions (24.4% of total traffic), the site's content is being cited by AI models. Accelerate this by: (1) Adding clear, quotable definition blocks and FAQ sections to all calculator and guide pages using schema markup; (2) Publishing a 'Real Estate Investing Glossary' hub page with 50+ terms that AI models can reference; (3) Ensuring all pages have an accurate, descriptive meta description and OG tags so AI scrapers capture the right context; (4) Adding author bio pages with credentials to signal expertise. Target pages: /blog/brrrr-method-complete-guide, /blog/1031-exchange-guide-defer-capital-gains-tax, and all calculator pages.",
+      "expectedImpact": "Structured, AI-citable content could grow ChatGPT referral sessions by 50-100% over 60 days as more users ask AI assistants about real estate investing topics where the site has established content.",
+      "priority": "medium",
+      "firstSeen": "2026-05-21",
+      "lastSeen": "2026-05-21",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "f2f773e8e3ea",
+      "title": "Add Bounce-Reducing Internal CTAs to Top Landing Pages",
+      "description": "With bounce rate at 67.5%, the homepage (6 views), /blog/best-cash-flow-markets-2026 (5 views), and /markets/appreciation (5 views) are the highest-priority pages for engagement optimization. For each: (1) Add a contextually relevant internal link block ('You might also like') pointing to the cap rate calculator, NOI guide, and newsletter signup; (2) Place a newsletter opt-in CTA above the fold with a specific value hook ('Get weekly cap rate data for 20 markets'); (3) For the cash flow markets post, embed the cap rate calculator inline or link to city-specific calculator pages. The /newsletter page already has 3 views — create a clear conversion funnel from blog posts to newsletter signup.",
+      "expectedImpact": "Reducing bounce rate from 67.5% back toward the 90-day baseline of 55.9% would increase engaged sessions by approximately 20%, improving pages-per-session and downstream newsletter conversion.",
+      "priority": "medium",
+      "firstSeen": "2026-05-21",
+      "lastSeen": "2026-05-21",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -2396,6 +2451,17 @@
       "priority": "low",
       "firstSeen": "2026-05-20",
       "lastSeen": "2026-05-20",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "4d192c34d8c4",
+      "title": "Develop BRRRR and Depreciation Content to Recover Historically Strong Query Topics",
+      "description": "The 90-day GSC data shows BRRRR-related queries ('brrrr method', 'brrrr analysis', 'brrrr formula', 'brrrr deal') generating impressions at positions 53-94, and the existing /blog/brrrr-method-complete-guide received only 1 view in the last 7 days. Refresh the BRRRR guide with: (1) A BRRRR deal analyzer calculator or embedded spreadsheet; (2) A step-by-step example with real numbers (purchase price, rehab cost, ARV, refinance math); (3) An FAQ section targeting long-tail variants like 'brrrr method example' and 'brrrr analysis'. Similarly, expand the depreciation tax strategy post with a depreciation calculator or schedule table. These topics align directly with the target audience of house flippers and BRRRR practitioners.",
+      "expectedImpact": "Refreshed BRRRR content with calculator integration could move 'brrrr method' from position 64.8 into the top 30 within 60-90 days, unlocking a query cluster with demonstrated search demand.",
+      "priority": "low",
+      "firstSeen": "2026-05-21",
+      "lastSeen": "2026-05-21",
       "timesRepeated": 1,
       "status": "open"
     }
