@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-22T12:02:44.302Z",
+  "lastUpdated": "2026-05-23T12:02:38.991Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -1289,6 +1289,39 @@
       "status": "open"
     },
     {
+      "id": "7e52d13596dd",
+      "title": "Emergency SERP Snippet Audit and Rewrite for Cap Rate Calculator Page",
+      "description": "The /calculators/cap-rate page is generating 92+ weekly impressions for 'cap rate calculator' at position 19.2 with zero clicks — a CTR of 0% when the expected CTR for position 19 is roughly 1-2%. Immediately audit the page's title tag and meta description in Google Search Console's URL Inspection tool. Rewrite the title to follow the pattern: 'Free Cap Rate Calculator (2026) — Instant Results | ProInvestorHub' and craft a meta description that includes a value hook: 'Calculate cap rate in seconds. Enter your NOI and property value — get instant cap rate analysis for any U.S. market. Free, no signup required.' Also verify the page is not accidentally blocked, returning a soft 404, or experiencing a structured data error that could suppress rich results. Check if the www vs non-www URL split (GSC shows both versions) is causing indexing fragmentation.",
+      "expectedImpact": "Even a 1-2% CTR on 92 weekly impressions would generate 1-2 additional weekly clicks from this single query. At scale as impressions grow, this fix could become the site's primary organic traffic driver within 60 days.",
+      "priority": "high",
+      "firstSeen": "2026-05-23",
+      "lastSeen": "2026-05-23",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "fab4f4b5bea5",
+      "title": "Resolve www vs non-www URL Canonicalization Issue in GSC",
+      "description": "Google Search Console data shows pages appearing under both 'proinvestorhub.com' and 'www.proinvestorhub.com' (e.g., /lenders and /lenders/reviews/ pages use www while calculator and blog pages do not). This indicates a canonicalization problem that splits link equity and can cause indexing confusion. Steps: (1) Decide on canonical domain (recommend non-www for consistency with GA4 data), (2) Implement 301 redirects from www to non-www at the server/CDN level, (3) Set preferred domain in GSC, (4) Update all internal links and sitemap to use the canonical version, (5) Resubmit sitemap. This is a foundational technical SEO fix that should be completed before any link building or content scaling.",
+      "expectedImpact": "Consolidating link equity and eliminating duplicate indexing signals could improve rankings across all affected pages by 2-5 positions within 30-45 days, and will ensure future content investments are not diluted.",
+      "priority": "high",
+      "firstSeen": "2026-05-23",
+      "lastSeen": "2026-05-23",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "785e28736d12",
+      "title": "Optimize /markets and /markets/appreciation Pages to Capture Position 4.7 Opportunity",
+      "description": "The /markets page is ranking at an average position of 4.7 in GSC — tantalizingly close to the top 3 — yet generating zero clicks. This page received 5 views from 3 users in GA4, suggesting some direct/referral traffic is finding it. Actions: (1) Rewrite the title tag to be more query-specific (e.g., 'Best Real Estate Markets 2026 — City-by-City Analysis | ProInvestorHub'), (2) Add FAQ schema markup targeting questions like 'what are the best real estate markets in 2026', (3) Ensure the page has a compelling meta description with a clear data-driven hook, (4) Add internal links from the homepage and top blog posts pointing to /markets with keyword-rich anchor text, (5) Expand the /markets/appreciation page with city-specific data tables that target 'average cap rate by city' (currently ranking at position 74 in 90-day data).",
+      "expectedImpact": "Moving from position 4.7 to top 3 for market-related queries could generate 5-15 additional organic clicks per day given typical CTR curves, making this the fastest path to meaningful Google organic traffic.",
+      "priority": "high",
+      "firstSeen": "2026-05-23",
+      "lastSeen": "2026-05-23",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -2125,6 +2158,28 @@
       "status": "open"
     },
     {
+      "id": "42bda900b9bb",
+      "title": "Build an AI-Citation Optimization Strategy to Scale the ChatGPT Referral Channel",
+      "description": "ChatGPT and Copilot are already sending 5+ sessions per week — remarkable for a site at this traffic stage. To systematically grow this channel: (1) Audit which specific pages are being cited by querying ChatGPT directly for questions like 'what is the BRRRR method', 'how to calculate cap rate', 'best hard money lenders' and note if ProInvestorHub appears, (2) Add clear, quotable definition blocks and structured data (FAQ, HowTo schema) to all calculator and glossary pages so LLMs can extract and attribute content, (3) Publish a 'ProInvestorHub Data' or 'Research' section with original statistics (e.g., average cap rates by city, BRRRR deal analysis benchmarks) that LLMs are likely to cite as authoritative sources, (4) Ensure every page has a clear author byline with credentials to signal E-E-A-T to both Google and AI training pipelines.",
+      "expectedImpact": "AI referral traffic could realistically double to 10+ sessions/week within 60 days with targeted optimization, and as ChatGPT usage grows, this channel has potential to rival organic search for informational queries.",
+      "priority": "medium",
+      "firstSeen": "2026-05-23",
+      "lastSeen": "2026-05-23",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "87a609b61142",
+      "title": "Fix Bounce Rate on New User Landing Pages with Contextual Internal Linking and CTAs",
+      "description": "The bounce rate increase to 58.82% coincides with new user growth (+22.9%), suggesting cold traffic is not finding clear next steps. For the top landing pages — homepage (7 views), /markets/appreciation (5 views), and the 1031 exchange guide (3 views) — implement: (1) Add a prominent 'Start Here' or 'Related Tools' widget that surfaces the cap rate calculator, cash-on-cash calculator, and BRRRR guide contextually, (2) On the 1031 exchange guide, add an internal link to the depreciation tax strategy post and the NOI calculation guide to create a tax strategy content cluster, (3) On /markets/appreciation, add a CTA linking to the cap rate calculator with city-specific anchor text, (4) Test adding a newsletter signup inline (not just as a separate /newsletter page) since the newsletter page is already getting 3 views organically.",
+      "expectedImpact": "Reducing bounce rate by 5-8 percentage points (back toward the 90-day baseline of 55.5%) would increase pages-per-session and create more calculator usage events, improving both engagement metrics and conversion funnel depth.",
+      "priority": "medium",
+      "firstSeen": "2026-05-23",
+      "lastSeen": "2026-05-23",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -2528,6 +2583,17 @@
       "priority": "low",
       "firstSeen": "2026-05-22",
       "lastSeen": "2026-05-22",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "2dc0c935a5d5",
+      "title": "Expand Lender Review Content to Capture High-Intent Commercial Queries",
+      "description": "The lender review pages (Easy Street Capital, New Silver) are each generating 2 sessions with 100% unique users, and the Lima One vs Civic Financial comparison page ranks at position 9.0 in GSC. This vertical has strong commercial intent and affiliate/lead-gen monetization potential. Actions: (1) Publish 2-3 additional lender reviews per month targeting hard money lenders with search volume (Kiavi, RCN Capital, Visio Lending), (2) Create a 'Best Hard Money Lenders 2026' hub page that aggregates all reviews with a comparison table, (3) Add structured review schema markup to all lender review pages to enable star ratings in SERPs, (4) Target long-tail queries like 'easy street capital review 2026' and 'new silver lending rates' with dedicated H2 sections in each review.",
+      "expectedImpact": "Lender content with review schema can achieve featured snippet placement and rich results, potentially driving 10-20 high-intent clicks per day per page once rankings mature — and these users have the highest conversion probability for affiliate or lead-gen revenue.",
+      "priority": "low",
+      "firstSeen": "2026-05-23",
+      "lastSeen": "2026-05-23",
       "timesRepeated": 1,
       "status": "open"
     }
