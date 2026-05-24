@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-23T12:02:38.991Z",
+  "lastUpdated": "2026-05-24T12:02:17.167Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -1322,6 +1322,39 @@
       "status": "open"
     },
     {
+      "id": "06baea844eaa",
+      "title": "Rewrite Title Tags and Meta Descriptions for Cap Rate Calculator Pages",
+      "description": "The /calculators/cap-rate page is generating 84 impressions for 'cap rate calculator' at position 18.6 with 0 clicks — an industry-standard CTR at position 18 should be roughly 1-2%, meaning you should be getting at least 1-2 clicks per day. Audit the current title tag and rewrite it to include a value proposition and number: e.g., 'Free Cap Rate Calculator — Instant Results for Any Property (2025)'. Write a meta description under 155 characters that includes a call to action: 'Calculate cap rate in seconds. Enter NOI and property value — get instant results. No signup required.' Apply the same treatment to /calculators/cash-on-cash and the city-specific calculator pages (Seattle, Birmingham, Charlotte, Des Moines). Implement within 48 hours and monitor GSC CTR weekly.",
+      "expectedImpact": "Converting even 1% of 84 daily impressions for 'cap rate calculator' would yield ~1 additional click per day, representing a potential 30+ Google organic sessions per month from a single query cluster.",
+      "priority": "high",
+      "firstSeen": "2026-05-24",
+      "lastSeen": "2026-05-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "3231b21c1b63",
+      "title": "Consolidate www vs non-www URL Canonicalization Issue",
+      "description": "GSC data shows pages indexed under both https://proinvestorhub.com/ (no www) and https://www.proinvestorhub.com/ (with www) — for example, /lenders and /lenders/compare/lima-one-vs-civic-financial appear with www while /calculators/cap-rate appears without. This signals a canonicalization misconfiguration that splits link equity and can cause duplicate content penalties. Audit in GSC under Settings > Address to confirm preferred domain. Implement a 301 redirect from the non-preferred variant to the preferred one at the server level. Verify canonical tags on all pages point to the preferred domain version. This is a foundational technical fix.",
+      "expectedImpact": "Consolidating link equity to a single domain variant typically improves ranking positions for affected pages within 4-8 weeks of Google recrawling.",
+      "priority": "high",
+      "firstSeen": "2026-05-24",
+      "lastSeen": "2026-05-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e60e01fea873",
+      "title": "Create a Dedicated 'Cap Rate Calculator' Landing Page Optimized for Position 1-10",
+      "description": "The current /calculators/cap-rate page is at position 31.7 in GSC page data but the query 'cap rate calculator' shows position 18.6 — there is a discrepancy suggesting the homepage or another page may be competing. Build a standalone, content-rich calculator page targeting 'cap rate calculator' as the primary H1. Include: (1) an interactive calculator above the fold, (2) a 500-word explainer on how to use cap rate, (3) a comparison table of cap rates by property type, (4) FAQ schema markup answering 'What is a good cap rate?', 'How do you calculate cap rate?', and 'What is the cap rate formula?'. Target 1,500+ total words on the page. Internal link from the 1031 exchange guide and NOI blog post.",
+      "expectedImpact": "A fully optimized calculator page targeting this query cluster (84+ daily impressions already) could realistically reach position 5-10 within 60-90 days, generating 5-15 organic clicks per day.",
+      "priority": "high",
+      "firstSeen": "2026-05-24",
+      "lastSeen": "2026-05-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -2180,6 +2213,28 @@
       "status": "open"
     },
     {
+      "id": "870e206354b7",
+      "title": "Optimize for AI Citation to Capitalize on Emerging ChatGPT/Copilot Referral Traffic",
+      "description": "With 3 AI referral sessions already appearing (chatgpt.com x2, copilot.com x1), the site is being surfaced in AI responses. To increase this signal: (1) Add structured FAQ schema to all calculator and glossary pages so AI models can extract clean Q&A pairs. (2) Ensure every page has a clear, quotable definition in the first 100 words — e.g., the /glossary/cap-rate-spread page should open with a one-sentence definition. (3) Add author bios with credentials to blog posts to signal E-E-A-T. (4) Submit the site to Bing Webmaster Tools and ensure IndexNow is configured, as Bing powers Copilot's web retrieval.",
+      "expectedImpact": "AI referral channels are growing 20-30% month-over-month industry-wide; optimizing for citation now could double or triple AI-sourced sessions within 90 days.",
+      "priority": "medium",
+      "firstSeen": "2026-05-24",
+      "lastSeen": "2026-05-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "2969d4fae4bb",
+      "title": "Develop City-Specific Cap Rate Calculator Pages for Top Investor Markets",
+      "description": "The site already has pages for Seattle WA, Birmingham AL, Charlotte NC, and Des Moines IA cap rate calculators — each receiving 1-2 views. Expand this to the top 20 real estate investor markets (Atlanta, Dallas, Phoenix, Tampa, Indianapolis, Memphis, Kansas City, Cleveland, Jacksonville, Columbus, etc.). Each page should include: local median cap rate data, neighborhood-level benchmarks, recent market trends, and a pre-populated calculator. These long-tail geo-targeted pages (e.g., 'cap rate calculator Atlanta GA') have low competition and high commercial intent. Create a templated CMS workflow to scale production.",
+      "expectedImpact": "20 city pages targeting low-competition geo queries (avg position potential: 5-15) could generate 50-150 additional organic sessions per month within 60 days of indexing.",
+      "priority": "medium",
+      "firstSeen": "2026-05-24",
+      "lastSeen": "2026-05-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -2594,6 +2649,17 @@
       "priority": "low",
       "firstSeen": "2026-05-23",
       "lastSeen": "2026-05-23",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "12198086bc9d",
+      "title": "Build Internal Linking Architecture Between Calculator, Blog, and Glossary Content",
+      "description": "Current top pages are siloed: the 1031 exchange guide (5 views), NOI calculator blog, cap rate glossary, and cap rate calculators are not visibly cross-linked in the data. Create a systematic internal linking map: (1) Link from /blog/how-to-calculate-noi to /calculators/cap-rate with anchor text 'cap rate calculator'. (2) Link from /glossary/cap-rate-spread to /calculators/cap-rate and /markets/appreciation. (3) Add a 'Related Tools' widget to all blog posts pointing to relevant calculators. (4) Link from /blog/1031-exchange-guide to /blog/real-estate-depreciation-tax-strategy-investors. Target 3-5 internal links per page minimum.",
+      "expectedImpact": "Improved internal linking typically increases pages-per-session (currently ~1.8 pageviews/session) and distributes PageRank to calculator pages that need ranking authority.",
+      "priority": "low",
+      "firstSeen": "2026-05-24",
+      "lastSeen": "2026-05-24",
       "timesRepeated": 1,
       "status": "open"
     }
