@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-24T12:02:17.167Z",
+  "lastUpdated": "2026-05-25T12:02:25.157Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -31,6 +31,17 @@
       "priority": "high",
       "firstSeen": "2026-05-10",
       "lastSeen": "2026-05-12",
+      "timesRepeated": 2,
+      "status": "open"
+    },
+    {
+      "id": "06baea844eaa",
+      "title": "Rewrite Title Tags and Meta Descriptions for Cap Rate Calculator Pages",
+      "description": "The /calculators/cap-rate page is generating 84 impressions for 'cap rate calculator' at position 18.6 with 0 clicks — an industry-standard CTR at position 18 should be roughly 1-2%, meaning you should be getting at least 1-2 clicks per day. Audit the current title tag and rewrite it to include a value proposition and number: e.g., 'Free Cap Rate Calculator — Instant Results for Any Property (2025)'. Write a meta description under 155 characters that includes a call to action: 'Calculate cap rate in seconds. Enter NOI and property value — get instant results. No signup required.' Apply the same treatment to /calculators/cash-on-cash and the city-specific calculator pages (Seattle, Birmingham, Charlotte, Des Moines). Implement within 48 hours and monitor GSC CTR weekly.",
+      "expectedImpact": "Converting even 1% of 84 daily impressions for 'cap rate calculator' would yield ~1 additional click per day, representing a potential 30+ Google organic sessions per month from a single query cluster.",
+      "priority": "high",
+      "firstSeen": "2026-05-24",
+      "lastSeen": "2026-05-25",
       "timesRepeated": 2,
       "status": "open"
     },
@@ -1322,17 +1333,6 @@
       "status": "open"
     },
     {
-      "id": "06baea844eaa",
-      "title": "Rewrite Title Tags and Meta Descriptions for Cap Rate Calculator Pages",
-      "description": "The /calculators/cap-rate page is generating 84 impressions for 'cap rate calculator' at position 18.6 with 0 clicks — an industry-standard CTR at position 18 should be roughly 1-2%, meaning you should be getting at least 1-2 clicks per day. Audit the current title tag and rewrite it to include a value proposition and number: e.g., 'Free Cap Rate Calculator — Instant Results for Any Property (2025)'. Write a meta description under 155 characters that includes a call to action: 'Calculate cap rate in seconds. Enter NOI and property value — get instant results. No signup required.' Apply the same treatment to /calculators/cash-on-cash and the city-specific calculator pages (Seattle, Birmingham, Charlotte, Des Moines). Implement within 48 hours and monitor GSC CTR weekly.",
-      "expectedImpact": "Converting even 1% of 84 daily impressions for 'cap rate calculator' would yield ~1 additional click per day, representing a potential 30+ Google organic sessions per month from a single query cluster.",
-      "priority": "high",
-      "firstSeen": "2026-05-24",
-      "lastSeen": "2026-05-24",
-      "timesRepeated": 1,
-      "status": "open"
-    },
-    {
       "id": "3231b21c1b63",
       "title": "Consolidate www vs non-www URL Canonicalization Issue",
       "description": "GSC data shows pages indexed under both https://proinvestorhub.com/ (no www) and https://www.proinvestorhub.com/ (with www) — for example, /lenders and /lenders/compare/lima-one-vs-civic-financial appear with www while /calculators/cap-rate appears without. This signals a canonicalization misconfiguration that splits link equity and can cause duplicate content penalties. Audit in GSC under Settings > Address to confirm preferred domain. Implement a 301 redirect from the non-preferred variant to the preferred one at the server level. Verify canonical tags on all pages point to the preferred domain version. This is a foundational technical fix.",
@@ -1351,6 +1351,28 @@
       "priority": "high",
       "firstSeen": "2026-05-24",
       "lastSeen": "2026-05-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "1b66ee070a04",
+      "title": "Fix www vs non-www URL Inconsistency in GSC Data",
+      "description": "The GSC top pages data shows a mix of https://proinvestorhub.com/ (no www) and https://www.proinvestorhub.com/ (with www) URLs — for example, the lenders section appears as www.proinvestorhub.com/lenders while calculators appear as proinvestorhub.com/calculators. This indicates either a canonical tag misconfiguration or incomplete redirect setup. Audit all pages to ensure a single canonical version is consistently used, implement 301 redirects from the non-preferred version, and verify the preferred domain is set in Google Search Console. This fragmentation may be splitting ranking signals and preventing pages from consolidating authority.",
+      "expectedImpact": "Consolidating URL signals could improve average position by 3-8 spots for affected pages within 4-8 weeks, particularly for the lender review pages currently sitting at positions 9-31.",
+      "priority": "high",
+      "firstSeen": "2026-05-25",
+      "lastSeen": "2026-05-25",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "c6ee11b419d1",
+      "title": "Create Dedicated BRRRR Calculator and Refresh BRRRR Content",
+      "description": "BRRRR-related queries appeared in the 90-day data (brrrr method, brrrr formula, brrrr analysis) but have dropped out of the 7-day top queries entirely, and current positions are poor (pos 64-94). The site targets BRRRR practitioners but lacks a dedicated BRRRR calculator tool. Build a /calculators/brrrr page with inputs for purchase price, rehab cost, ARV, refinance LTV, and rental income — then internally link it from all BRRRR blog content. Simultaneously, update existing BRRRR blog posts with 2026 data, add a FAQ schema block targeting 'brrrr method example' and 'brrrr formula' queries, and build 3-5 internal links from the lender review pages (which are getting traffic) to the BRRRR content.",
+      "expectedImpact": "A dedicated BRRRR calculator page targeting this query cluster could realistically reach position 20-40 within 60-90 days, generating 50-100 additional monthly impressions from a high-intent audience segment.",
+      "priority": "high",
+      "firstSeen": "2026-05-25",
+      "lastSeen": "2026-05-25",
       "timesRepeated": 1,
       "status": "open"
     },
@@ -2235,6 +2257,28 @@
       "status": "open"
     },
     {
+      "id": "6f5badd1d0f8",
+      "title": "Optimize for AI Citation and Answer Engine Visibility",
+      "description": "With 4 sessions already arriving from ChatGPT and Copilot, the site has early AI referral traction. To accelerate this channel: (1) Add structured FAQ schema to all calculator and glossary pages using clear question-answer pairs that AI models can extract. (2) Ensure each page has a concise 40-60 word summary paragraph at the top that directly answers the primary query — AI models favor extractable, authoritative summaries. (3) Add author bio schema with credentials to blog posts like the 1031 exchange guide. (4) Create a dedicated 'What is a cap rate?' definitional page at /glossary/cap-rate (if not already existing) with a clear, citable definition. Monitor chatgpt.com and copilot.com referral sessions weekly in GA4.",
+      "expectedImpact": "AI referral traffic could grow from 4 sessions/week to 15-30 sessions/week within 90 days as content becomes more structured and citable, particularly for calculator and glossary content.",
+      "priority": "medium",
+      "firstSeen": "2026-05-25",
+      "lastSeen": "2026-05-25",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "744a329164c3",
+      "title": "Build Internal Linking Network from High-Traffic Pages to Calculator Tools",
+      "description": "The homepage (9 views), 1031 exchange guide (5 views), and newsletter pages (6 combined views) are the top traffic destinations, but the cap rate calculator page (/calculators/cap-rate/seattle-wa) only received 2 views. Add prominent contextual CTAs and inline text links from the 1031 exchange guide to the cap rate calculator, from the homepage to the calculators hub, and from newsletter content to relevant tools. Specifically, within the 1031 exchange guide, add a section like 'Use our Cap Rate Calculator to evaluate your replacement property' with a direct link. Also add a sticky sidebar or inline CTA on all blog posts pointing to the most relevant calculator.",
+      "expectedImpact": "Improved internal linking could increase calculator page views by 30-50% within 30 days without any additional traffic acquisition, improving tool engagement metrics that signal content utility to Google.",
+      "priority": "medium",
+      "firstSeen": "2026-05-25",
+      "lastSeen": "2026-05-25",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -2660,6 +2704,17 @@
       "priority": "low",
       "firstSeen": "2026-05-24",
       "lastSeen": "2026-05-24",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "f2b7f38e3fd0",
+      "title": "Develop Newsletter-to-Content Conversion Funnel",
+      "description": "The /newsletter page and two specific newsletter issues (/newsletter/2026-04-13 and /newsletter/2026-05-04) each received 3 views, suggesting newsletter content is being accessed directly — possibly from email click-throughs. Ensure each newsletter archive page includes: (1) a prominent email capture form for new subscribers, (2) 3-5 internal links to the most relevant site tools and guides referenced in that issue, and (3) structured data markup for Article schema. Also A/B test adding a 'Related Calculators' section at the bottom of each newsletter archive page. Track newsletter page engagement rate separately in GA4 to measure content resonance.",
+      "expectedImpact": "Converting even 10-15% of newsletter archive visitors into email subscribers or calculator users would improve the site's owned-audience metrics and increase pages-per-session from the current implied ~2.1 average.",
+      "priority": "low",
+      "firstSeen": "2026-05-25",
+      "lastSeen": "2026-05-25",
       "timesRepeated": 1,
       "status": "open"
     }
