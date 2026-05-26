@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-25T12:02:25.157Z",
+  "lastUpdated": "2026-05-26T12:02:42.188Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -1377,6 +1377,39 @@
       "status": "open"
     },
     {
+      "id": "6ecf7a9c105f",
+      "title": "Rewrite Cap Rate Calculator Title Tag and Meta Description to Capture Existing Impressions",
+      "description": "The /calculators/cap-rate page is sitting at position 17.2 for 'cap rate calculator' (93 impressions/week) with zero clicks. Immediately rewrite the title tag to lead with a value differentiator, e.g., 'Cap Rate Calculator — Instant NOI & Property Value Analysis | ProInvestorHub'. Update the meta description to include a specific hook: 'Calculate cap rate in seconds. Enter NOI and property value — get instant results with interpretation guide for rental properties.' Test including a number or year (2026) in the title. Also audit whether the page has proper schema markup (FAQPage or HowTo) to earn rich results that improve SERP visibility. Target: move CTR from 0% to 2-3%, which at 93 impressions/week would yield 2-3 additional clicks/week from this query alone.",
+      "expectedImpact": "Capturing even 2% CTR on the cap rate calculator cluster (which generates ~170 total impressions/week) would yield 3-4 additional organic clicks per week, representing a 300-400% increase in Google organic traffic from current zero baseline.",
+      "priority": "high",
+      "firstSeen": "2026-05-26",
+      "lastSeen": "2026-05-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "1477fac9a770",
+      "title": "Add Internal Linking Hubs on Homepage and Top Entry Pages to Reduce Bounce Rate",
+      "description": "The homepage (8 views, 8 users) is the top entry point but users are not navigating deeper. Implement a prominent 'Start Here' content hub section on the homepage with 3-4 clear pathways: (1) Calculators for deal analysis, (2) Lender reviews for financing, (3) Beginner guides, (4) Newsletter signup. Add contextual internal links within the 1031 exchange guide (5 views) pointing to related glossary terms, the lender finder, and relevant calculator pages. For the lender review pages, add a 'Compare This Lender' CTA linking to the lender comparison pages. Goal: reduce bounce rate from 62.5% back toward the 90-day baseline of 56.2% within 30 days.",
+      "expectedImpact": "Reducing bounce rate by 6 percentage points and increasing pages/session from the implied ~2.2 to 3+ would meaningfully improve engagement signals sent to Google, supporting ranking improvements for pages already in positions 10-35.",
+      "priority": "high",
+      "firstSeen": "2026-05-26",
+      "lastSeen": "2026-05-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "967754353536",
+      "title": "Fix www vs Non-www URL Inconsistency in Search Console",
+      "description": "Search Console data shows a split between https://proinvestorhub.com/ (non-www) and https://www.proinvestorhub.com/ (www) URLs for lender pages. This canonical inconsistency is likely diluting link equity and causing Google to index duplicate versions. Immediately audit: (1) Confirm canonical tags on all lender pages point to the preferred domain version, (2) Set preferred domain in Google Search Console, (3) Ensure 301 redirects are in place from the non-preferred version to the preferred version, (4) Check that the sitemap.xml only references the canonical domain version. This is a technical SEO issue that could be suppressing rankings across the entire lender section.",
+      "expectedImpact": "Resolving canonical confusion typically results in consolidation of ranking signals within 4-8 weeks, potentially improving positions for lender review pages currently ranking at positions 18-35 in Search Console.",
+      "priority": "high",
+      "firstSeen": "2026-05-26",
+      "lastSeen": "2026-05-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -2279,6 +2312,28 @@
       "status": "open"
     },
     {
+      "id": "7bec00a9661e",
+      "title": "Optimize for AI Citation to Capitalize on Emerging ChatGPT/Copilot Referral Channel",
+      "description": "With 4 sessions from ChatGPT.com and Copilot.com this week, the site is already being surfaced in AI responses. To increase AI citation frequency: (1) Add structured FAQ sections to all calculator pages and top guides answering the exact questions users ask AI (e.g., 'What is a good cap rate for rental property?', 'How do I calculate cap rate?'), (2) Ensure all content has clear, quotable definitions and data points that AI models can extract and attribute, (3) Add author credentials and publication dates to all blog posts to improve E-E-A-T signals that AI models use for source selection, (4) Create a dedicated 'Real Estate Investing Glossary' hub page that AI models can reference for definitions. Monitor chatgpt.com referral traffic weekly as a KPI.",
+      "expectedImpact": "AI referral traffic could realistically scale to 15-25 sessions/week within 60-90 days if content is structured for AI citation, representing a 3-5x increase in this channel and reducing dependence on Google organic.",
+      "priority": "medium",
+      "firstSeen": "2026-05-26",
+      "lastSeen": "2026-05-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "d541dab75e00",
+      "title": "Develop BRRRR and Beginner Strategy Content to Capture 90-Day Query Opportunities",
+      "description": "The 90-day Search Console data shows impressions for 'brrrr method', 'brrrr analysis', 'brrrr formula', 'best beginner tips for real estate investing 2026', and 'best real estate investing strategies for beginners 2026' — all with positions in the 9-95 range but zero clicks. Create or expand: (1) A comprehensive BRRRR calculator page targeting 'brrrr analysis' and 'brrrr formula' queries, (2) A BRRRR method guide with step-by-step examples targeting position improvement from current 53-95 range, (3) Update the beginner strategy guide with 2026 data points since 'best real estate investing strategies for beginners 2026' is already at position 11. These queries align directly with the site's stated target audience of BRRRR practitioners and beginner investors.",
+      "expectedImpact": "The beginner strategy query at position 11 is one ranking improvement away from page-one visibility. Updating this content with fresh 2026 data and improving on-page optimization could push it to positions 5-8, generating consistent organic clicks.",
+      "priority": "medium",
+      "firstSeen": "2026-05-26",
+      "lastSeen": "2026-05-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "17e1a5011f99",
       "title": "Create a 'Cap Rate by City 2026' data page to capture mid-funnel calculator searchers",
       "description": "The 90-day query data shows 'average cap rate by city' as a query the site has appeared for (pos 74). This is a high-intent, data-driven query that real estate investors actively search. Actions: (1) Create /guides/cap-rates-by-city-2026 with a sortable table of cap rates for 30–50 major US markets, sourced from publicly available data (CBRE, Marcus & Millichap reports, Mashvisor). (2) Embed the cap rate calculator directly on this page. (3) Add a methodology section explaining how cap rates are calculated and what affects them by market. (4) Target long-tail variants: 'cap rate by city 2026,' 'average cap rate [city name],' 'best cap rate cities for rental property.' (5) Internally link from the BRRRR guide, rental property guide, and cash flow markets post. This page type performs extremely well for real estate investing sites and directly supports the existing calculator infrastructure.",
@@ -2715,6 +2770,17 @@
       "priority": "low",
       "firstSeen": "2026-05-25",
       "lastSeen": "2026-05-25",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "7324080eff2f",
+      "title": "Implement Newsletter Engagement Tracking and Conversion Funnel",
+      "description": "The newsletter section is generating meaningful traffic (3 views each for 4 recent newsletter issues plus the newsletter signup page), suggesting an engaged subscriber base or active promotion. Implement: (1) GA4 conversion events for newsletter signups, (2) Track scroll depth on newsletter archive pages to understand content consumption, (3) Add UTM parameters to all newsletter outbound links to track newsletter-driven sessions separately from direct traffic (which may be inflated by newsletter clicks without UTM tracking), (4) Add a newsletter CTA at the bottom of all top-performing pages (1031 guide, lender reviews). The current 23 direct sessions may include newsletter readers who aren't being properly attributed.",
+      "expectedImpact": "Proper UTM tracking on newsletter links would clarify the true source of direct traffic and likely reveal newsletter as a meaningful retention channel. Conversion tracking would establish a baseline for email list growth rate.",
+      "priority": "low",
+      "firstSeen": "2026-05-26",
+      "lastSeen": "2026-05-26",
       "timesRepeated": 1,
       "status": "open"
     }
