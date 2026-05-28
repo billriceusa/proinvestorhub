@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-26T12:02:42.188Z",
+  "lastUpdated": "2026-05-28T12:02:43.657Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -42,6 +42,17 @@
       "priority": "high",
       "firstSeen": "2026-05-24",
       "lastSeen": "2026-05-25",
+      "timesRepeated": 2,
+      "status": "open"
+    },
+    {
+      "id": "870e206354b7",
+      "title": "Optimize for AI Citation to Capitalize on Emerging ChatGPT/Copilot Referral Traffic",
+      "description": "With 3 AI referral sessions already appearing (chatgpt.com x2, copilot.com x1), the site is being surfaced in AI responses. To increase this signal: (1) Add structured FAQ schema to all calculator and glossary pages so AI models can extract clean Q&A pairs. (2) Ensure every page has a clear, quotable definition in the first 100 words — e.g., the /glossary/cap-rate-spread page should open with a one-sentence definition. (3) Add author bios with credentials to blog posts to signal E-E-A-T. (4) Submit the site to Bing Webmaster Tools and ensure IndexNow is configured, as Bing powers Copilot's web retrieval.",
+      "expectedImpact": "AI referral channels are growing 20-30% month-over-month industry-wide; optimizing for citation now could double or triple AI-sourced sessions within 90 days.",
+      "priority": "high",
+      "firstSeen": "2026-05-24",
+      "lastSeen": "2026-05-28",
       "timesRepeated": 2,
       "status": "open"
     },
@@ -1410,6 +1421,28 @@
       "status": "open"
     },
     {
+      "id": "06f2e6234829",
+      "title": "Rewrite Title Tag and Meta Description for /calculators/cap-rate Immediately",
+      "description": "The cap rate calculator page is sitting at position 18.1 for 'cap rate calculator' (80 impressions/week) and generating zero clicks. This is a CTR emergency. Rewrite the title tag to: 'Cap Rate Calculator — Free Real Estate Tool | ProInvestorHub' (under 60 chars, includes primary keyword and brand). Rewrite the meta description to lead with a value hook and include a call-to-action: 'Calculate cap rate instantly for any rental property. Enter NOI and property value — get your cap rate in seconds. Free, no signup required.' Also check whether Google is showing a featured snippet or its own calculator widget for this query (likely), and if so, add FAQ schema markup targeting 'what is a good cap rate' and 'how to calculate cap rate' to compete for the featured snippet position. Test 2-3 title tag variants over 30 days using GSC click data.",
+      "expectedImpact": "Even a 2% CTR on 80 weekly impressions would generate 1-2 additional organic clicks per day — a 100%+ increase from zero. Capturing the featured snippet could push CTR to 8-12% for this query cluster.",
+      "priority": "high",
+      "firstSeen": "2026-05-28",
+      "lastSeen": "2026-05-28",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "3310c4bb2ed4",
+      "title": "Diagnose and Fix the Session Duration Collapse with Landing Page Audit",
+      "description": "The drop from 107.9s to 39.9s average session duration is too severe to be explained by audience mix alone. Conduct an immediate audit of the top landing pages (homepage, lender reviews, glossary/stabilized-occupancy) using GA4 engagement time by page. Specifically: (1) Check Core Web Vitals in GSC for LCP and CLS issues that may be causing users to abandon before content loads. (2) Review the homepage — 8 views, 8 users, likely the most common entry point — for above-the-fold clarity: does it immediately communicate what the site does and who it's for? (3) Add internal links from the homepage and lender review pages to the cap rate calculator and other tools to extend session depth. (4) Implement scroll depth tracking in GA4 to determine if users are bouncing at 0% scroll (load issue) or 25-50% scroll (content relevance issue).",
+      "expectedImpact": "Recovering session duration to 75+ seconds and reducing bounce rate below 55% would signal improved content-audience match and support better organic rankings, as Google uses engagement signals as indirect ranking factors.",
+      "priority": "high",
+      "firstSeen": "2026-05-28",
+      "lastSeen": "2026-05-28",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -2268,17 +2301,6 @@
       "status": "open"
     },
     {
-      "id": "870e206354b7",
-      "title": "Optimize for AI Citation to Capitalize on Emerging ChatGPT/Copilot Referral Traffic",
-      "description": "With 3 AI referral sessions already appearing (chatgpt.com x2, copilot.com x1), the site is being surfaced in AI responses. To increase this signal: (1) Add structured FAQ schema to all calculator and glossary pages so AI models can extract clean Q&A pairs. (2) Ensure every page has a clear, quotable definition in the first 100 words — e.g., the /glossary/cap-rate-spread page should open with a one-sentence definition. (3) Add author bios with credentials to blog posts to signal E-E-A-T. (4) Submit the site to Bing Webmaster Tools and ensure IndexNow is configured, as Bing powers Copilot's web retrieval.",
-      "expectedImpact": "AI referral channels are growing 20-30% month-over-month industry-wide; optimizing for citation now could double or triple AI-sourced sessions within 90 days.",
-      "priority": "medium",
-      "firstSeen": "2026-05-24",
-      "lastSeen": "2026-05-24",
-      "timesRepeated": 1,
-      "status": "open"
-    },
-    {
       "id": "2969d4fae4bb",
       "title": "Develop City-Specific Cap Rate Calculator Pages for Top Investor Markets",
       "description": "The site already has pages for Seattle WA, Birmingham AL, Charlotte NC, and Des Moines IA cap rate calculators — each receiving 1-2 views. Expand this to the top 20 real estate investor markets (Atlanta, Dallas, Phoenix, Tampa, Indianapolis, Memphis, Kansas City, Cleveland, Jacksonville, Columbus, etc.). Each page should include: local median cap rate data, neighborhood-level benchmarks, recent market trends, and a pre-populated calculator. These long-tail geo-targeted pages (e.g., 'cap rate calculator Atlanta GA') have low competition and high commercial intent. Create a templated CMS workflow to scale production.",
@@ -2330,6 +2352,28 @@
       "priority": "medium",
       "firstSeen": "2026-05-26",
       "lastSeen": "2026-05-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "872007130b40",
+      "title": "Build Internal Linking Architecture from Newsletter to Calculator Tools",
+      "description": "Newsletter pages are generating consistent 3-view/3-user traffic per issue, but these users are likely reading and leaving without exploring the site's tools. Implement the following: (1) Add a persistent 'Featured Tool of the Week' section in each newsletter issue linking to a specific calculator (cap rate, cash-on-cash, BRRRR). (2) Add contextual inline links within newsletter body content — e.g., when mentioning cap rates, link to /calculators/cap-rate. (3) Add a 'Related Guides' section at the bottom of each newsletter page linking to 2-3 relevant blog posts or glossary terms. (4) Track newsletter-to-calculator conversion as a GA4 custom event. This creates a funnel from the retained newsletter audience into the high-value calculator pages that need engagement signals.",
+      "expectedImpact": "If 1 of 3 newsletter readers clicks through to a calculator, pages per session increases from ~2.3 to ~3.5 and session duration should recover toward the 90-day average of 107.9 seconds.",
+      "priority": "medium",
+      "firstSeen": "2026-05-28",
+      "lastSeen": "2026-05-28",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "c619a4592c82",
+      "title": "Target 'BRRRR Method' Query Cluster with Dedicated Content — Rankings Are Within Striking Distance",
+      "description": "The 90-day GSC data shows the site ranking at position 53-94 for BRRRR-related queries ('brrrr method', 'brrrr method example', 'brrrr formula', 'brrrr analysis', 'brrrr deal'). These are directly aligned with a core audience segment. To move from page 5-9 to page 1-2: (1) Create or expand a comprehensive BRRRR Method guide (2,000+ words) targeting 'brrrr method' as the primary keyword with 'brrrr method example', 'brrrr formula', and 'brrrr analysis' as secondary keywords. (2) Include a worked numerical example (buy at $80K, rehab $20K, refinance at $120K ARV, pull out $96K at 80% LTV, cash flow $400/month). (3) Link to the BRRRR calculator if one exists, or build one. (4) Add FAQ schema for 'what is the BRRRR method', 'does BRRRR method still work in 2026', and 'BRRRR method risks'. The 90-day data showing position 9.0 for 'best beginner tips for real estate investing 2026' confirms the site can rank on page 1 — BRRRR content should follow the same pattern.",
+      "expectedImpact": "Moving BRRRR queries from position 60-90 to position 10-20 within 90 days could generate 5-15 additional organic clicks per day from a high-intent audience segment.",
+      "priority": "medium",
+      "firstSeen": "2026-05-28",
+      "lastSeen": "2026-05-28",
       "timesRepeated": 1,
       "status": "open"
     },
@@ -2781,6 +2825,17 @@
       "priority": "low",
       "firstSeen": "2026-05-26",
       "lastSeen": "2026-05-26",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "ee6a9c63f65d",
+      "title": "Investigate and Resolve the /glossary/stabilized-occupancy Anomaly",
+      "description": "The stabilized-occupancy glossary page received 6 views from only 2 users — a 3:1 page-view-to-user ratio that is the highest on the site and suggests either repeat visits or multi-page browsing within the glossary. This is a positive engagement signal worth understanding and replicating. (1) Check GA4 to see if these 2 users also visited other glossary pages (indicating a glossary browsing pattern). (2) Investigate the traffic source for this page — if it came from a specific referral or search query, double down on that channel. (3) Add 'Related Terms' links at the bottom of this glossary page to 4-5 adjacent concepts (occupancy rate, economic vacancy, gross rent multiplier, NOI) to extend the browsing session. (4) Use this page as a template for expanding the glossary — if one term is generating this engagement, a comprehensive glossary of 50-100 terms could become a significant traffic driver.",
+      "expectedImpact": "Replicating the glossary browsing pattern across 20+ terms could increase pages per session site-wide and reduce bounce rate by 5-8 percentage points.",
+      "priority": "low",
+      "firstSeen": "2026-05-28",
+      "lastSeen": "2026-05-28",
       "timesRepeated": 1,
       "status": "open"
     }
