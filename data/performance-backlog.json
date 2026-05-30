@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-29T12:01:59.510Z",
+  "lastUpdated": "2026-05-30T12:02:03.038Z",
   "items": [
     {
       "id": "af922b45cc97",
@@ -1476,6 +1476,39 @@
       "status": "open"
     },
     {
+      "id": "4d8591dc7b5f",
+      "title": "Rewrite Cap Rate Calculator Meta Title and Description to Compete With SERP Features",
+      "description": "The /calculators/cap-rate page is generating 78+ weekly impressions for 'cap rate calculator' at position 19.4 with zero clicks. Immediately audit the current meta title and description. Rewrite the title to include a value differentiator such as 'Cap Rate Calculator — Free, Instant Results for Rental Properties | ProInvestorHub' and craft a description that leads with a specific benefit: 'Calculate cap rate in seconds. Enter NOI and property value — get instant results plus a breakdown of what your cap rate means for cash flow.' Add FAQ schema markup targeting 'what is a good cap rate' and 'how to calculate cap rate' to compete for featured snippet real estate. Test the updated tags within 7 days and monitor CTR in Search Console.",
+      "expectedImpact": "Even a 1-2% CTR on 78 weekly impressions would generate 1-2 additional organic clicks per day — a 100%+ increase from the current zero baseline. Position improvement from schema markup could push the page into top-15 within 30-60 days.",
+      "priority": "high",
+      "firstSeen": "2026-05-30",
+      "lastSeen": "2026-05-30",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e2aee418337e",
+      "title": "Add Internal Linking From Lender Reviews to Calculator and BRRRR Content",
+      "description": "Lender review pages (Kiavi, Lima One, Visio, Velocity, Park Place, RCN) are generating high-intent traffic with 1:1 user-to-view ratios, meaning visitors are reading but then leaving. Implement contextual internal links within each lender review: (1) Link to the cap rate calculator with anchor text like 'use our cap rate calculator to evaluate deals with [Lender Name] financing,' (2) Link to the BRRRR guide from DSCR and fix-and-flip lender pages, (3) Add a 'Compare Lenders' CTA block at the bottom of each review pointing to the /lenders/compare/ section. This creates a content funnel from commercial-intent pages into educational tools.",
+      "expectedImpact": "Expected 20-35% reduction in bounce rate on lender review pages and a 2-4x increase in calculator page views within 14 days based on the current 22 weekly lender page visits feeding into the tool.",
+      "priority": "high",
+      "firstSeen": "2026-05-30",
+      "lastSeen": "2026-05-30",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "1e5644d167c9",
+      "title": "Optimize Homepage for Engagement — Current 9 Views With High Bounce Suggests Weak Above-the-Fold Hook",
+      "description": "The homepage received 9 views from 9 users (all unique) but the site-wide bounce rate of 69.39% suggests most are not exploring further. Implement three specific changes: (1) Add a prominent above-the-fold calculator entry point — a single-field 'Quick Cap Rate Check' widget that routes to /calculators/cap-rate, (2) Feature the top 3 lender reviews as a 'Top Picks for [Current Month]' section since that content is clearly resonating, (3) Add a newsletter signup with a lead magnet (e.g., 'Free 2026 Cash Flow Market Report') since the newsletter content is already attracting repeat visitors. Measure scroll depth and click events via GA4 event tracking.",
+      "expectedImpact": "Targeting a reduction in homepage bounce rate from ~69% to under 50% within 30 days, and a 15-25% increase in pages-per-session from homepage entry visits.",
+      "priority": "high",
+      "firstSeen": "2026-05-30",
+      "lastSeen": "2026-05-30",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "5bd680b354f2",
       "title": "Add Internal Linking Architecture to Reduce Bounce Rate and Increase Pages Per Session",
       "description": "Pages per session has effectively dropped to ~1.3 (2.7 views / 2.1 sessions) versus a 90-day implied rate of ~2.5. Implement a structured internal linking strategy: (1) Add a 'Related Calculators' widget to every blog post — the beginners guide should link to cap rate, cash-on-cash, and BRRRR calculators. (2) Add a 'Related Lender Reviews' section to all DSCR and bridge loan content. (3) Create a 'Start Here' navigation path on the homepage for the three core personas (house flipper, BRRRR investor, landlord) that funnels each to a curated content sequence. (4) Add breadcrumb navigation to all /lenders/reviews/ and /calculators/ pages. Target increasing pages per session from 1.3 to 2.0+ within 60 days.",
@@ -2433,6 +2466,28 @@
       "status": "open"
     },
     {
+      "id": "50df9be280c0",
+      "title": "Create a 'Cap Rate Calculator' Dedicated Landing Page Optimized for the Full Query Cluster",
+      "description": "Search Console shows 20+ distinct cap rate query variants generating impressions (calculate cap rate, cap rate calculation, cap rate calculator real estate, cap rate calculator rental property, etc.) all pointing to /calculators/cap-rate at varying positions. Consolidate authority by: (1) Expanding the /calculators/cap-rate page with a 1,500+ word guide covering 'how to calculate cap rate,' 'what is a good cap rate by property type,' and 'cap rate vs cash on cash return,' (2) Adding an embedded Excel-style table showing average cap rates by market tier, (3) Implementing HowTo schema for the calculation steps, and (4) Building 3-5 internal links from glossary and blog pages to this URL. Target the 'cap rate calculation' query cluster at position 27.1 as the most achievable first-page opportunity.",
+      "expectedImpact": "Ranking improvement from position 34.8 to top-20 for 'cap rate calculator real estate' within 60-90 days, and potential first-page ranking for 'cap rate calculation' (currently pos 27.1) within 45 days given low competition signals.",
+      "priority": "medium",
+      "firstSeen": "2026-05-30",
+      "lastSeen": "2026-05-30",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "05e85a1cb145",
+      "title": "Leverage AI Referral Traffic by Optimizing Content for LLM Citation Patterns",
+      "description": "ChatGPT and Copilot are already sending referral traffic (6 combined sessions in 7 days), indicating content is being surfaced in AI responses. Accelerate this by: (1) Ensuring all calculator pages and top guides include a clear, quotable definition block at the top (e.g., 'Cap rate is calculated as: NOI ÷ Property Value × 100') since LLMs prefer structured, citable content, (2) Adding author credentials and 'last updated' dates to all pages to improve E-E-A-T signals that AI systems use for source selection, (3) Creating a dedicated 'About Our Methodology' page explaining how calculations and lender reviews are conducted — this type of transparency page is frequently cited by AI assistants. Monitor the chatgpt.com and copilot.com referral channels weekly.",
+      "expectedImpact": "Potential to double AI-referred sessions from 6 to 12+ per week within 60 days as content becomes more consistently cited, creating a compounding referral channel that doesn't depend on Google algorithm changes.",
+      "priority": "medium",
+      "firstSeen": "2026-05-30",
+      "lastSeen": "2026-05-30",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -2891,6 +2946,17 @@
       "priority": "low",
       "firstSeen": "2026-05-28",
       "lastSeen": "2026-05-28",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "d6fbe1f32766",
+      "title": "Investigate and Resolve the www vs. Non-www URL Canonicalization Issue",
+      "description": "Search Console data shows a mix of https://proinvestorhub.com/ (no www) and https://www.proinvestorhub.com/ (with www) URLs being tracked separately — for example, /lenders and /lenders/compare/lima-one-vs-civic-financial appear under www while /calculators/cap-rate appears under non-www. This split can dilute link equity and confuse Google's crawl. Audit all internal links and ensure 301 redirects consolidate all traffic to a single canonical version. Set the preferred domain in Google Search Console. Check that the sitemap.xml references only the canonical domain version.",
+      "expectedImpact": "Consolidating URL authority could improve rankings for affected pages by 2-5 positions within 30-45 days by concentrating link equity to single canonical URLs.",
+      "priority": "low",
+      "firstSeen": "2026-05-30",
+      "lastSeen": "2026-05-30",
       "timesRepeated": 1,
       "status": "open"
     }
