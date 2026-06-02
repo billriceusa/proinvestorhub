@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-06-01T12:02:18.814Z",
+  "lastUpdated": "2026-06-02T12:02:38.607Z",
   "items": [
+    {
+      "id": "61a3cb491210",
+      "title": "Rewrite Title Tags and Meta Descriptions for Cap Rate Calculator Page",
+      "description": "The cap rate calculator page (/calculators/cap-rate) is generating 50+ weekly impressions across query variants but earning zero clicks at position 35.6. Immediately rewrite the title tag to include the exact match phrase 'Cap Rate Calculator — Free Real Estate Tool' and craft a meta description that leads with a value hook such as 'Calculate cap rate instantly. Enter NOI and property value — get your cap rate in seconds. Free, no signup required.' Test including numbers or differentiators (e.g., 'used by 10,000+ investors'). Also audit whether the page is properly canonicalized and that there are no duplicate versions competing against each other (the GSC data shows both http and https variants of the homepage appearing separately, suggesting potential canonicalization issues sitewide).",
+      "expectedImpact": "Even moving CTR from 0% to 2-3% on 50+ weekly impressions would generate 1-2 additional organic clicks per week from Google, and ranking improvement from position 35 to top 10 could multiply impressions 5-10x based on typical SERP click curves.",
+      "priority": "high",
+      "firstSeen": "2026-05-10",
+      "lastSeen": "2026-06-02",
+      "timesRepeated": 3,
+      "status": "open"
+    },
     {
       "id": "af922b45cc97",
       "title": "Exclude Internal Traffic from GA4 to Get Accurate Baseline Data",
@@ -20,17 +31,6 @@
       "priority": "high",
       "firstSeen": "2026-04-20",
       "lastSeen": "2026-04-21",
-      "timesRepeated": 2,
-      "status": "open"
-    },
-    {
-      "id": "61a3cb491210",
-      "title": "Rewrite Title Tags and Meta Descriptions for Cap Rate Calculator Page",
-      "description": "The cap rate calculator page (/calculators/cap-rate) is generating 50+ weekly impressions across query variants but earning zero clicks at position 35.6. Immediately rewrite the title tag to include the exact match phrase 'Cap Rate Calculator — Free Real Estate Tool' and craft a meta description that leads with a value hook such as 'Calculate cap rate instantly. Enter NOI and property value — get your cap rate in seconds. Free, no signup required.' Test including numbers or differentiators (e.g., 'used by 10,000+ investors'). Also audit whether the page is properly canonicalized and that there are no duplicate versions competing against each other (the GSC data shows both http and https variants of the homepage appearing separately, suggesting potential canonicalization issues sitewide).",
-      "expectedImpact": "Even moving CTR from 0% to 2-3% on 50+ weekly impressions would generate 1-2 additional organic clicks per week from Google, and ranking improvement from position 35 to top 10 could multiply impressions 5-10x based on typical SERP click curves.",
-      "priority": "high",
-      "firstSeen": "2026-05-10",
-      "lastSeen": "2026-05-12",
       "timesRepeated": 2,
       "status": "open"
     },
@@ -1575,6 +1575,28 @@
       "status": "open"
     },
     {
+      "id": "6bbb71043d1b",
+      "title": "Diagnose and Fix the Google Organic Click Attribution Gap",
+      "description": "Search Console shows 37.4 daily impressions but GA4 shows zero Google organic sessions. This disconnect suggests one or more of: (1) GA4 tracking code is missing or firing incorrectly on pages that rank, (2) a canonical or redirect issue causing GSC to track a different URL than GA4 receives, (3) the www vs. non-www split in GSC (some pages show www, some show non-www) is causing measurement fragmentation. Immediately audit: verify GA4 tag fires on all indexed pages using Tag Assistant, check that canonical tags are consistent, and consolidate www/non-www in both GSC properties and server-level 301 redirects.",
+      "expectedImpact": "Resolving attribution will either reveal hidden Google organic traffic already occurring or confirm a true zero-click problem — either outcome enables accurate decision-making and may recover misattributed sessions currently showing as direct.",
+      "priority": "high",
+      "firstSeen": "2026-06-02",
+      "lastSeen": "2026-06-02",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "65e5ff581e75",
+      "title": "Add Internal Linking from Lender Reviews to Calculator Tools",
+      "description": "Lender review pages (Visio, Kiavi, Velocity, Griffin, Park Place, RCN) are the top-performing content cluster with 17 combined views, yet the cap rate and cash-on-cash calculators are receiving minimal traffic. Insert contextual CTAs within each lender review — e.g., within the Visio Lending review, add a section: 'Use our DSCR Calculator to see if this loan works for your deal' with a direct link to the relevant calculator. Also add a 'Related Tools' widget at the bottom of each review page linking to 2-3 calculators.",
+      "expectedImpact": "Should increase calculator page views by 20-40% from internal traffic alone, improve pages-per-session metric (currently implied at ~1.6), and reduce bounce rate on review pages by giving users a clear next action.",
+      "priority": "high",
+      "firstSeen": "2026-06-02",
+      "lastSeen": "2026-06-02",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "fc8a3a71c56e",
       "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
       "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
@@ -2587,6 +2609,28 @@
       "status": "open"
     },
     {
+      "id": "b1ef869dabaf",
+      "title": "Optimize /blog/best-cash-flow-markets-2026 for Engagement and Internal Links",
+      "description": "This blog post is the second-highest viewed page (5 views, 2 users — meaning the 2 users each viewed it ~2.5 times on average, suggesting strong interest). Audit the page for: (1) internal links to the /markets/appreciation page and city-specific calculator pages like /calculators/cap-rate/tampa-fl, (2) a content upgrade or lead magnet (e.g., downloadable market comparison spreadsheet), and (3) schema markup for article freshness. Also check if the 90-day query 'best cash flow markets' or similar variants are driving impressions in GSC and optimize accordingly.",
+      "expectedImpact": "Improving this page's internal linking and engagement signals could reduce its bounce rate and increase pages-per-session for the users it attracts, while schema improvements may increase CTR from search.",
+      "priority": "medium",
+      "firstSeen": "2026-06-02",
+      "lastSeen": "2026-06-02",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "1cf5692720e6",
+      "title": "Build Out BRRRR Content Cluster to Capture 90-Day Query Momentum",
+      "description": "The 90-day GSC data shows BRRRR-related queries ('brrrr analysis', 'brrrr deal', 'brrrr formula', 'brrrr method', 'brrrr method example') appearing across multiple positions, yet none appear in the 7-day data — suggesting this content may have dropped in rankings or is not being refreshed. Create or update a BRRRR hub page with internal links to a BRRRR calculator, a step-by-step guide, and a real deal example walkthrough. Target 'brrrr method example' (pos 53 in 90-day data) with a dedicated case study page.",
+      "expectedImpact": "Consolidating BRRRR content into a topical cluster could recover lost impressions and push 2-3 BRRRR queries into the top 20 positions where clicks become achievable.",
+      "priority": "medium",
+      "firstSeen": "2026-06-02",
+      "lastSeen": "2026-06-02",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3067,6 +3111,17 @@
       "priority": "low",
       "firstSeen": "2026-06-01",
       "lastSeen": "2026-06-01",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "ff910c9fe585",
+      "title": "Implement Structured Data on Calculator Pages to Improve SERP Appearance",
+      "description": "Add HowTo and FAQPage schema markup to /calculators/cap-rate and /calculators/cash-on-cash. For cap rate, the HowTo schema should walk through: (1) calculate NOI, (2) divide by property value, (3) multiply by 100. Add an FAQ block answering 'What is a good cap rate?' and 'How do I calculate cap rate without NOI?' — these are high-volume adjacent queries. Rich results can improve CTR by 20-30% even without ranking changes, which is critical given the current zero-click problem.",
+      "expectedImpact": "Rich result eligibility could improve CTR from the current 0% to 1-3% on cap rate calculator impressions, and FAQ snippets may capture additional SERP real estate for long-tail cap rate queries.",
+      "priority": "low",
+      "firstSeen": "2026-06-02",
+      "lastSeen": "2026-06-02",
       "timesRepeated": 1,
       "status": "open"
     }
