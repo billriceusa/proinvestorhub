@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-02T12:02:38.607Z",
+  "lastUpdated": "2026-06-03T12:02:12.284Z",
   "items": [
     {
       "id": "61a3cb491210",
@@ -1597,6 +1597,39 @@
       "status": "open"
     },
     {
+      "id": "cb7942ad906c",
+      "title": "Optimize /calculators/cap-rate Title Tag and Meta Description to Capture Cap Rate Calculator Impressions",
+      "description": "The 'cap rate calculator' query cluster (including variants like 'cap rate calc', 'cap rate calculation', 'calculate cap rate') is generating 100+ combined impressions at positions 20-47 with zero clicks. Immediate action: (1) Rewrite the title tag of /calculators/cap-rate to exactly match 'Cap Rate Calculator — Free Real Estate Tool | ProInvestorHub', front-loading the primary keyword. (2) Write a meta description under 155 characters that includes a value proposition and implicit CTA, e.g., 'Calculate cap rate instantly. Enter NOI and property value to get your cap rate in seconds. Free, no signup required.' (3) Add FAQ schema markup targeting 'what is a good cap rate' and 'how to calculate cap rate' to compete for featured snippets. (4) Internally link to this page from every lender review and blog post mentioning cap rates.",
+      "expectedImpact": "Moving from position 20.5 to top 10 for 'cap rate calculator' (62 impressions) could yield 5-15 clicks/day based on typical CTR curves, representing a potential 5-15x increase in daily Google organic traffic from a single page.",
+      "priority": "high",
+      "firstSeen": "2026-06-03",
+      "lastSeen": "2026-06-03",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "c7bdff4a2465",
+      "title": "Investigate and Resolve Google-Specific Indexing or Authority Gap",
+      "description": "The 10:1 disparity between Bing organic (10 sessions) and Google organic (1 session) is a red flag. Bing and Google crawl the same content, so this gap suggests a Google-specific issue. Action steps: (1) Open Google Search Console and check the Coverage report for crawl errors, noindex tags, or manual actions. (2) Verify that canonical tags are not pointing away from key pages. (3) Check that the sitemap is submitted and all key pages are listed. (4) Review Core Web Vitals in GSC — if LCP or CLS scores are failing on mobile, Google may be suppressing rankings. (5) Check for any thin content flags by reviewing pages with under 500 words. (6) Confirm the www vs non-www redirect is consistent — the GSC data shows both 'proinvestorhub.com' and 'www.proinvestorhub.com' URLs appearing separately, which may indicate a canonicalization issue splitting link equity.",
+      "expectedImpact": "Resolving a technical indexing or canonicalization issue could unlock Google organic traffic proportional to current Bing performance, potentially adding 10-20 sessions/day from Google alone.",
+      "priority": "high",
+      "firstSeen": "2026-06-03",
+      "lastSeen": "2026-06-03",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "8df9d56ea6c0",
+      "title": "Add Internal Linking CTAs to Reduce Single-Page Sessions and Increase Pages Per Session",
+      "description": "Pages per session dropped from 2.06 to 1.34 as new user volume increased, suggesting landing pages are not guiding users to next steps. Implementation: (1) Add a 'Related Calculators' widget to all lender review pages linking to /calculators/cap-rate and /calculators/cash-on-cash. (2) Add a 'Top Markets for This Strategy' CTA block at the bottom of DSCR and hard money loan pages linking to /markets/appreciation. (3) On /blog/best-cash-flow-markets-2026 (5 views, 2 users — highest blog traffic), add inline links to at least 3 lender review pages and the cap rate calculator. (4) Implement a 'You might also like' section on all blog posts pulling from the lender review vertical. Target: restore pages/session to 2.0+ within 30 days.",
+      "expectedImpact": "Increasing pages per session from 1.34 to 2.0 would add approximately 5 additional page views per day without acquiring any new traffic, improving engagement signals that Google uses as indirect ranking factors.",
+      "priority": "high",
+      "firstSeen": "2026-06-03",
+      "lastSeen": "2026-06-03",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "fc8a3a71c56e",
       "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
       "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
@@ -1626,6 +1659,17 @@
       "priority": "medium",
       "firstSeen": "2026-05-02",
       "lastSeen": "2026-06-01",
+      "timesRepeated": 2,
+      "status": "open"
+    },
+    {
+      "id": "6d1939a9ff69",
+      "title": "Optimize for AI Citation to Capitalize on ChatGPT and Copilot Referral Traffic",
+      "description": "With 6 AI-referred sessions already appearing at this early traffic stage, ProInvestorHub has a real opportunity to become a cited source in AI-generated real estate investing answers. To increase AI citation frequency: (1) Add clear, quotable definition blocks and summary boxes to all glossary and guide pages — AI models prefer structured, authoritative definitions. (2) Ensure all calculator pages include a clear 'How It Works' section with the formula written out in plain text (not just rendered in JavaScript). (3) Add author bios with credentials to all blog posts and guides to establish E-E-A-T signals. (4) Submit the site to llms.txt protocol if applicable, and ensure robots.txt does not block GPTBot or Bingbot (which powers Copilot). (5) Create a dedicated 'Real Estate Investing Glossary' hub with 50+ terms — glossary content is heavily cited by AI assistants.",
+      "expectedImpact": "Increasing AI citation rate could add 10–30 referral sessions/day within 60–90 days as AI search usage grows, diversifying away from Google dependency.",
+      "priority": "medium",
+      "firstSeen": "2026-05-04",
+      "lastSeen": "2026-06-03",
       "timesRepeated": 2,
       "status": "open"
     },
@@ -2011,17 +2055,6 @@
       "priority": "medium",
       "firstSeen": "2026-05-03",
       "lastSeen": "2026-05-03",
-      "timesRepeated": 1,
-      "status": "open"
-    },
-    {
-      "id": "6d1939a9ff69",
-      "title": "Optimize for AI Citation to Capitalize on ChatGPT and Copilot Referral Traffic",
-      "description": "With 6 AI-referred sessions already appearing at this early traffic stage, ProInvestorHub has a real opportunity to become a cited source in AI-generated real estate investing answers. To increase AI citation frequency: (1) Add clear, quotable definition blocks and summary boxes to all glossary and guide pages — AI models prefer structured, authoritative definitions. (2) Ensure all calculator pages include a clear 'How It Works' section with the formula written out in plain text (not just rendered in JavaScript). (3) Add author bios with credentials to all blog posts and guides to establish E-E-A-T signals. (4) Submit the site to llms.txt protocol if applicable, and ensure robots.txt does not block GPTBot or Bingbot (which powers Copilot). (5) Create a dedicated 'Real Estate Investing Glossary' hub with 50+ terms — glossary content is heavily cited by AI assistants.",
-      "expectedImpact": "Increasing AI citation rate could add 10–30 referral sessions/day within 60–90 days as AI search usage grows, diversifying away from Google dependency.",
-      "priority": "medium",
-      "firstSeen": "2026-05-04",
-      "lastSeen": "2026-05-04",
       "timesRepeated": 1,
       "status": "open"
     },
@@ -2631,6 +2664,17 @@
       "status": "open"
     },
     {
+      "id": "170ab1b66663",
+      "title": "Publish 2-3 Additional City-Specific Cap Rate Calculator Pages to Expand the Tampa Traction",
+      "description": "The /calculators/cap-rate/tampa-fl page received 2 views from 2 unique users in 7 days — a strong signal for a site at this traffic level, suggesting geo-specific calculator pages have demand. Action: (1) Identify the top 5-8 real estate investor markets (Phoenix AZ, Dallas TX, Atlanta GA, Jacksonville FL, Memphis TN, Indianapolis IN, Cleveland OH) and create dedicated cap rate calculator pages for each. (2) Each page should include the city's current average cap rate range, neighborhood-level data if available, and a pre-populated calculator defaulting to local market NOI benchmarks. (3) Target title tags like 'Cap Rate Calculator — Phoenix, AZ Real Estate | ProInvestorHub'. (4) Cross-link all city pages from the main /calculators/cap-rate hub page.",
+      "expectedImpact": "City-specific calculator pages target long-tail queries with lower competition (e.g., 'cap rate calculator Dallas TX') and can each independently rank, creating a scalable impression and click funnel across multiple markets.",
+      "priority": "medium",
+      "firstSeen": "2026-06-03",
+      "lastSeen": "2026-06-03",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3122,6 +3166,17 @@
       "priority": "low",
       "firstSeen": "2026-06-02",
       "lastSeen": "2026-06-02",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "645610e62430",
+      "title": "Develop a BRRRR Content Cluster to Capture 90-Day Query Traction",
+      "description": "The 90-day GSC data shows the site has appeared for BRRRR-related queries including 'brrrr analysis' (pos 71), 'brrrr deal' (pos 55.3), 'brrrr method' (pos 64.8), and 'brrrr method example' (pos 53). These positions are too low for clicks but indicate Google has associated the site with BRRRR content. Action: (1) Expand /blog/brrrr-rehab-cost-estimation into a comprehensive 2,500+ word guide with step-by-step cost estimation methodology. (2) Create a dedicated BRRRR calculator page at /calculators/brrrr. (3) Build a BRRRR glossary hub page targeting 'brrrr method', 'brrrr formula', and 'brrrr analysis' as primary keywords. (4) Internally link all three pages together and from the homepage. This cluster approach signals topical authority to Google.",
+      "expectedImpact": "A well-structured BRRRR content cluster targeting queries already showing impressions could move positions from 55-71 into the top 20 within 60-90 days, potentially adding 5-10 clicks/day from a highly qualified BRRRR practitioner audience.",
+      "priority": "low",
+      "firstSeen": "2026-06-03",
+      "lastSeen": "2026-06-03",
       "timesRepeated": 1,
       "status": "open"
     }
