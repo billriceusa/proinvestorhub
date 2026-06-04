@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-03T12:02:12.284Z",
+  "lastUpdated": "2026-06-04T12:02:33.027Z",
   "items": [
     {
       "id": "61a3cb491210",
@@ -1630,6 +1630,39 @@
       "status": "open"
     },
     {
+      "id": "09c5362b12d8",
+      "title": "Rewrite Meta Title and Description for /calculators/cap-rate to Fix Zero-Click Crisis",
+      "description": "The cap rate calculator page is generating 53+ impressions per week at position 20.7 but earning zero clicks — this is the single highest-leverage fix available. Rewrite the title tag to include a direct value proposition, e.g., 'Cap Rate Calculator — Free Real Estate Tool | ProInvestorHub' and craft a meta description that includes a call-to-action and differentiator such as 'Calculate cap rate instantly. Enter NOI and property value — get results in seconds. Free, no signup required.' Test structured data markup (HowTo or FAQPage schema) to earn rich snippets. Also audit whether the page URL is canonical and not accidentally blocked in robots.txt or marked noindex.",
+      "expectedImpact": "Even a 1-2% CTR on 53 weekly impressions would generate 1-2 additional organic clicks per week from this single query, with compounding effect as position improves. Fixing CTR signals can also positively influence Google's quality assessment and improve rankings.",
+      "priority": "high",
+      "firstSeen": "2026-06-04",
+      "lastSeen": "2026-06-04",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "212a30df5671",
+      "title": "Build Internal Linking Architecture From Blog Posts to Calculator Pages",
+      "description": "The /blog/best-cash-flow-markets-2026 post (top blog page) and BRRRR guides are receiving traffic but there is no evidence of cross-linking to the cap rate calculator at /calculators/cap-rate/tampa-fl or the cash-on-cash calculator. Add contextual inline links from every blog post and lender review page to relevant calculators. Specifically: in the cash flow markets post, link to the Tampa cap rate calculator where Tampa is mentioned; in BRRRR guides, link to cash-on-cash return calculator. Create a 'Tools Used in This Article' section at the bottom of each blog post listing 2-3 relevant calculators.",
+      "expectedImpact": "Increased pageviews per session (currently flat at ~1.3 pages/session based on 10.3 views / 7.9 sessions), longer session duration, and stronger internal PageRank flow to calculator pages to support their Google rankings.",
+      "priority": "high",
+      "firstSeen": "2026-06-04",
+      "lastSeen": "2026-06-04",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "131ceca8b96a",
+      "title": "Submit XML Sitemap and Request Indexing for Top Lender Pages via Google Search Console",
+      "description": "With Google organic at just 1 session despite 8+ active lender review pages receiving direct/Bing traffic, it is likely these pages are either not indexed or very recently indexed by Google. Log into Search Console, verify the XML sitemap is submitted and error-free, then use the URL Inspection tool to manually request indexing for the top 5 lender pages: /lenders/reviews/visio-lending, /lenders/reviews/griffin-funding, /lenders/dscr-loans/california, /lenders/hard-money-loans, and /lenders/bridge-loans. Also check for crawl errors, redirect chains, or www vs non-www canonicalization issues (the data shows both 'proinvestorhub.com' and 'www.proinvestorhub.com' appearing in GSC, which may indicate a canonicalization problem).",
+      "expectedImpact": "Resolving www/non-www canonicalization alone could consolidate ranking signals and improve positions. Getting lender pages indexed and ranking on Google could replicate the Bing/Yahoo traffic pattern on a much larger scale given Google's market share.",
+      "priority": "high",
+      "firstSeen": "2026-06-04",
+      "lastSeen": "2026-06-04",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "fc8a3a71c56e",
       "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
       "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
@@ -2675,6 +2708,28 @@
       "status": "open"
     },
     {
+      "id": "b08b8812e184",
+      "title": "Expand Geo-Specific Calculator Pages Beyond Tampa to Capture Local Search Demand",
+      "description": "The /calculators/cap-rate/tampa-fl page received 2 views and is the only geo-specific calculator visible in the data. The 90-day GSC data shows 'average cap rate by city' as a query the site has appeared for. Create geo-specific cap rate calculator pages for the top 10 real estate investing markets: Phoenix AZ, Jacksonville FL, Memphis TN, Indianapolis IN, Cleveland OH, Birmingham AL, Kansas City MO, Columbus OH, Atlanta GA, and Dallas TX. Each page should include local market context (average cap rates, neighborhood data), the embedded calculator pre-populated with local averages, and 300-500 words of market-specific content. Use the URL pattern /calculators/cap-rate/[city-state].",
+      "expectedImpact": "Long-tail geo queries like 'cap rate calculator phoenix az' have lower competition and higher purchase intent. 10 new pages targeting these markets could generate 50-100 additional monthly impressions within 60-90 days of indexing.",
+      "priority": "medium",
+      "firstSeen": "2026-06-04",
+      "lastSeen": "2026-06-04",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "bcf3e2206eb3",
+      "title": "Develop a Lender Comparison Content Cluster to Capitalize on Review Page Momentum",
+      "description": "Lender review pages are the top traffic drivers, but the site currently has isolated review pages without a comparison architecture. The GSC data shows /lenders/compare/lima-one-vs-civic-financial at position 7.0 — an excellent ranking that is generating zero clicks, likely due to low search volume or poor snippet. Build out a full comparison cluster: create 'X vs Y' pages for the top 5 lender pairs (Visio vs Kiavi, Griffin Funding vs Lima One, Kiavi vs RCN Capital, etc.), add a comparison table widget to each individual review page, and create a hub page at /lenders/compare/ that links to all comparison pages. Each comparison page should be 800-1200 words with a structured pros/cons table and a recommendation section.",
+      "expectedImpact": "Comparison queries ('visio lending vs kiavi') have high commercial intent from investors actively choosing a lender. Capturing even 5-10 of these queries could drive high-quality sessions with strong conversion potential for affiliate or lead-gen revenue.",
+      "priority": "medium",
+      "firstSeen": "2026-06-04",
+      "lastSeen": "2026-06-04",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3177,6 +3232,17 @@
       "priority": "low",
       "firstSeen": "2026-06-03",
       "lastSeen": "2026-06-03",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "b68a5f71a587",
+      "title": "Optimize Content for AI Citation to Grow ChatGPT and Copilot Referral Channel",
+      "description": "With 4 AI-referred sessions already appearing organically, proactively optimize content for AI citation. Add clear, quotable statistics and definitions at the top of each guide page (e.g., 'The BRRRR method is a real estate investing strategy that stands for Buy, Rehab, Rent, Refinance, Repeat'). Structure content with explicit H2/H3 headers that match natural language questions (e.g., 'What is a good cap rate for rental property in 2026?'). Add an author bio with credentials to each blog post to establish E-E-A-T signals that AI systems use to assess source credibility. Submit the site to Bing Webmaster Tools (which feeds Copilot) and ensure all pages have complete Open Graph and schema markup.",
+      "expectedImpact": "AI referral traffic is growing industry-wide. Optimizing for this channel now positions the site to capture a disproportionate share of AI-driven real estate investing queries as the channel matures, potentially adding 10-20% incremental traffic within 6 months.",
+      "priority": "low",
+      "firstSeen": "2026-06-04",
+      "lastSeen": "2026-06-04",
       "timesRepeated": 1,
       "status": "open"
     }
