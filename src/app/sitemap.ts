@@ -131,11 +131,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/guides/best-cities`,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/markets`,
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -144,11 +139,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/markets/${s.slug}`,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
-    })),
-    ...strategies.map((s) => ({
-      url: `${baseUrl}/guides/best-cities/${s.slug}`,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
     })),
     {
       url: `${baseUrl}/calculators/cap-rate/cities`,
