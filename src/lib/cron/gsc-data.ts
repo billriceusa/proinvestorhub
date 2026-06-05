@@ -312,11 +312,15 @@ export interface StrikingDistanceReport {
   available: boolean;
   error?: string;
   window: { start: string; end: string; days: number };
+  // The actual search footprint — top rows by impressions, ANY position. On a
+  // young site this is the most useful view: it shows what's actually ranking.
+  topByImpressions: StrikingDistanceRow[];
   // pos 8–20, enough impressions to matter — ranked by impression volume.
   strikingDistance: StrikingDistanceRow[];
   // pos ≤ 10 but CTR well below the position curve — ranked by lost clicks.
   ctrOpportunity: CtrOpportunityRow[];
-  totalRowsAnalyzed: number;
+  totalRowsWithImpressions: number;
+  totalRowsAboveFloor: number;
 }
 
 // Approximate organic CTR by rounded position (blended desktop+mobile, 2024–25).
@@ -331,8 +335,10 @@ function expectedCtrForPosition(position: number): number {
 }
 
 const STRIKING_DISTANCE_DAYS = 28;
-// Filter out noise: a row needs at least this many impressions in the window.
-const MIN_IMPRESSIONS = 15;
+// Floor for the opportunity buckets. Kept low because the site is young and
+// impressions are thin — a row with a handful of impressions is still the
+// best available signal. The topByImpressions view applies no floor at all.
+const MIN_IMPRESSIONS = 3;
 
 export async function fetchStrikingDistance(): Promise<StrikingDistanceReport> {
   const days = STRIKING_DISTANCE_DAYS;
@@ -345,9 +351,11 @@ export async function fetchStrikingDistance(): Promise<StrikingDistanceReport> {
       available: false,
       error: "GSC_SITE_URL not configured",
       window: emptyWindow,
+      topByImpressions: [],
       strikingDistance: [],
       ctrOpportunity: [],
-      totalRowsAnalyzed: 0,
+      totalRowsWithImpressions: 0,
+      totalRowsAboveFloor: 0,
     };
   }
 
@@ -362,7 +370,7 @@ export async function fetchStrikingDistance(): Promise<StrikingDistanceReport> {
       type: "web",
     });
 
-    const rows: StrikingDistanceRow[] = (data.rows || [])
+    const allRows: StrikingDistanceRow[] = (data.rows || [])
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .map((row: any) => ({
         page: row.keys?.[0] || "",
@@ -371,8 +379,14 @@ export async function fetchStrikingDistance(): Promise<StrikingDistanceReport> {
         impressions: row.impressions || 0,
         ctr: row.ctr || 0,
         position: row.position || 0,
-      }))
-      .filter((r: StrikingDistanceRow) => r.impressions >= MIN_IMPRESSIONS);
+      }));
+
+    // The actual footprint — no floor, just the biggest impression earners.
+    const topByImpressions = [...allRows]
+      .sort((a, b) => b.impressions - a.impressions)
+      .slice(0, 40);
+
+    const rows = allRows.filter((r) => r.impressions >= MIN_IMPRESSIONS);
 
     const strikingDistance = rows
       .filter((r) => r.position >= 8 && r.position <= 20)
@@ -396,18 +410,22 @@ export async function fetchStrikingDistance(): Promise<StrikingDistanceReport> {
     return {
       available: true,
       window: emptyWindow,
+      topByImpressions,
       strikingDistance,
       ctrOpportunity,
-      totalRowsAnalyzed: rows.length,
+      totalRowsWithImpressions: allRows.filter((r) => r.impressions > 0).length,
+      totalRowsAboveFloor: rows.length,
     };
   } catch (err) {
     return {
       available: false,
       error: `Striking-distance fetch failed: ${err instanceof Error ? err.message : err}`,
       window: emptyWindow,
+      topByImpressions: [],
       strikingDistance: [],
       ctrOpportunity: [],
-      totalRowsAnalyzed: 0,
+      totalRowsWithImpressions: 0,
+      totalRowsAboveFloor: 0,
     };
   }
 }

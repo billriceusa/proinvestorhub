@@ -67,7 +67,7 @@ export async function GET(request: Request) {
 
     if (striking.available) {
       console.log(
-        `[Performance] Striking-distance: ${striking.strikingDistance.length} near-page-1 + ${striking.ctrOpportunity.length} CTR-leak rows (from ${striking.totalRowsAnalyzed} analyzed)`
+        `[Performance] Striking-distance: ${striking.topByImpressions.length} footprint rows, ${striking.strikingDistance.length} near-page-1, ${striking.ctrOpportunity.length} CTR-leak (${striking.totalRowsWithImpressions} rows w/ impressions, ${striking.totalRowsAboveFloor} above floor)`
       );
     } else {
       console.warn(`[Performance] Striking-distance not available: ${striking.error}`);
@@ -265,9 +265,21 @@ function metricRow(
 
 function buildStrikingDistanceSection(striking: StrikingDistanceReport): string {
   if (!striking.available) return "";
-  if (striking.strikingDistance.length === 0 && striking.ctrOpportunity.length === 0) {
+  if (
+    striking.topByImpressions.length === 0 &&
+    striking.strikingDistance.length === 0 &&
+    striking.ctrOpportunity.length === 0
+  ) {
     return "";
   }
+
+  const footprintRows = striking.topByImpressions
+    .slice(0, 15)
+    .map(
+      (r) =>
+        `<tr><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;">${r.query}</td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;"><code style="font-size:11px;">${r.page.replace("https://proinvestorhub.com", "")}</code></td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:600;">${r.position.toFixed(1)}</td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right;">${num(r.impressions)}</td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right;">${r.clicks}</td></tr>`
+    )
+    .join("");
 
   const sdRows = striking.strikingDistance
     .slice(0, 15)
@@ -287,6 +299,22 @@ function buildStrikingDistanceSection(striking: StrikingDistanceReport): string 
 
   return `
     <h2 style="font-size:18px;margin:24px 0 6px;border-bottom:2px solid #1B4D3E;padding-bottom:8px;color:#1B4D3E;">Highest-Leverage Opportunities <span style="font-weight:400;font-size:13px;color:#6b7280;">(real page×query data, last ${striking.window.days}d)</span></h2>
+    <p style="margin:0 0 12px;font-size:12.5px;color:#6b7280;">${num(striking.totalRowsWithImpressions)} page×query pairs earned any impressions; ${num(striking.totalRowsAboveFloor)} cleared the analysis floor.</p>
+
+    <h3 style="font-size:15px;margin:16px 0 4px;">Search Footprint — top pages by impressions (any position)</h3>
+    <p style="margin:0 0 8px;font-size:13px;color:#6b7280;">What's actually surfacing in search right now. On a young site this is the truest signal of where attention is forming.</p>
+    ${
+      footprintRows
+        ? `<table style="width:100%;border-collapse:collapse;margin-bottom:16px;font-size:13px;">
+      <thead><tr style="background:#f9fafb;">
+        <th style="padding:6px 10px;text-align:left;border-bottom:1px solid #e5e7eb;">Query</th>
+        <th style="padding:6px 10px;text-align:left;border-bottom:1px solid #e5e7eb;">Page</th>
+        <th style="padding:6px 10px;text-align:right;border-bottom:1px solid #e5e7eb;">Pos</th>
+        <th style="padding:6px 10px;text-align:right;border-bottom:1px solid #e5e7eb;">Impr</th>
+        <th style="padding:6px 10px;text-align:right;border-bottom:1px solid #e5e7eb;">Clicks</th>
+      </tr></thead><tbody>${footprintRows}</tbody></table>`
+        : `<p style="margin:0 0 16px;font-size:13px;color:#9ca3af;">No impressions recorded in the window yet.</p>`
+    }
 
     <h3 style="font-size:15px;margin:16px 0 4px;">Striking Distance — one push from page 1 (positions 8–20)</h3>
     <p style="margin:0 0 8px;font-size:13px;color:#6b7280;">Add internal links + refresh depth on these pages. Each is already earning impressions and is close to the page-1 click cliff.</p>

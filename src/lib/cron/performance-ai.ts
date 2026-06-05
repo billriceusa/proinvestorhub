@@ -122,9 +122,12 @@ ${gsc.ninetyDay.topQueries.slice(0, 10).map((q) => `- "${q.query}": ${q.clicks} 
     dataContext += `### Google Search Console\nNot available: ${gsc.error || "Not configured"}\n\n`;
   }
 
-  if (striking?.available && (striking.strikingDistance.length > 0 || striking.ctrOpportunity.length > 0)) {
-    dataContext += `### Striking-Distance & CTR Opportunities (GROUND TRUTH — real page×query data, last ${striking.window.days} days)
-These are the exact (page, query) pairs from Search Console. Base your SEO/CTR recommendations on THESE rows — do not invent positions or pages.
+  if (striking?.available && striking.topByImpressions.length > 0) {
+    dataContext += `### Search Footprint & Opportunities (GROUND TRUTH — real page×query data, last ${striking.window.days} days)
+These are the exact (page, query) pairs from Search Console (${striking.totalRowsWithImpressions} pairs earned impressions; ${striking.totalRowsAboveFloor} cleared the floor). Base your SEO/CTR recommendations on THESE rows — do not invent positions or pages. If the striking-distance and CTR buckets are empty, the site simply has not accumulated enough high-position impressions yet — say so plainly and steer recommendations toward earning rankings (authority, internal links, topical depth) rather than CTR tactics.
+
+**Search footprint (top pages by impressions, any position — what is actually surfacing):**
+${striking.topByImpressions.slice(0, 20).map((r) => `- "${r.query}" → ${r.page} | pos ${r.position.toFixed(1)}, ${r.impressions} impr, ${r.clicks} clicks`).join("\n")}
 
 **Striking distance (ranking positions 8–20 — one push from page 1, ranked by impressions):**
 ${striking.strikingDistance.slice(0, 20).map((r) => `- "${r.query}" → ${r.page} | pos ${r.position.toFixed(1)}, ${r.impressions} impr, ${r.clicks} clicks`).join("\n") || "- (none)"}
