@@ -14,29 +14,37 @@ export default function robots(): MetadataRoute.Robots {
           '/api/',
         ],
       },
-      // Block AI training crawlers that don't respect content licensing
+      // Allow AI answer engines to crawl + cite our content (AEO strategy).
+      // These bots power citations and referral traffic in ChatGPT, Perplexity,
+      // and Google AI Overviews — we want to be a source they quote.
       {
         userAgent: 'GPTBot',
-        disallow: ['/'],
+        allow: '/',
+        disallow: ['/studio/', '/api/'],
       },
       {
         userAgent: 'ChatGPT-User',
-        disallow: ['/'],
+        allow: '/',
+        disallow: ['/studio/', '/api/'],
       },
       {
-        userAgent: 'CCBot',
-        disallow: ['/'],
+        userAgent: 'OAI-SearchBot',
+        allow: '/',
+        disallow: ['/studio/', '/api/'],
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+        disallow: ['/studio/', '/api/'],
       },
       {
         userAgent: 'Google-Extended',
-        disallow: ['/'],
+        allow: '/',
+        disallow: ['/studio/', '/api/'],
       },
+      // Block bulk-training / dataset scrapers that don't drive citations or referrals.
       {
-        userAgent: 'anthropic-ai',
-        disallow: ['/'],
-      },
-      {
-        userAgent: 'Claude-Web',
+        userAgent: 'CCBot',
         disallow: ['/'],
       },
       {

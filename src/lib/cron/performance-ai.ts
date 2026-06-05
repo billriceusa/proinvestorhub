@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { GA4Report } from "./ga4-data";
-import type { GSCReport } from "./gsc-data";
+import type { GSCReport, StrikingDistanceReport } from "./gsc-data";
 
 function getAnthropicClient(): Anthropic {
   const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -64,7 +64,8 @@ function changeStr(sevenDay: number, ninetyDay: number): string {
 
 export async function analyzePerformance(
   ga4: GA4Report,
-  gsc: GSCReport
+  gsc: GSCReport,
+  striking?: StrikingDistanceReport
 ): Promise<PerformanceAnalysis> {
   const client = getAnthropicClient();
 
@@ -119,6 +120,19 @@ ${gsc.ninetyDay.topQueries.slice(0, 10).map((q) => `- "${q.query}": ${q.clicks} 
 `;
   } else {
     dataContext += `### Google Search Console\nNot available: ${gsc.error || "Not configured"}\n\n`;
+  }
+
+  if (striking?.available && (striking.strikingDistance.length > 0 || striking.ctrOpportunity.length > 0)) {
+    dataContext += `### Striking-Distance & CTR Opportunities (GROUND TRUTH — real page×query data, last ${striking.window.days} days)
+These are the exact (page, query) pairs from Search Console. Base your SEO/CTR recommendations on THESE rows — do not invent positions or pages.
+
+**Striking distance (ranking positions 8–20 — one push from page 1, ranked by impressions):**
+${striking.strikingDistance.slice(0, 20).map((r) => `- "${r.query}" → ${r.page} | pos ${r.position.toFixed(1)}, ${r.impressions} impr, ${r.clicks} clicks`).join("\n") || "- (none)"}
+
+**CTR opportunities (already on page 1 but CTR below the position curve — ranked by lost clicks/mo):**
+${striking.ctrOpportunity.slice(0, 20).map((r) => `- "${r.query}" → ${r.page} | pos ${r.position.toFixed(1)}, CTR ${pct(r.ctr)} vs ~${pct(r.expectedCtr)} expected, ~${num(r.lostClicksPerMonth)} lost clicks/mo`).join("\n") || "- (none)"}
+
+`;
   }
 
   const response = await client.messages.create({

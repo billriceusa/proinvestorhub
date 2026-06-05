@@ -87,8 +87,8 @@ export async function generateMetadata({
   const city = cities.find((c) => c.slug === slug)
   if (!city) return {}
 
-  const title = `Cap Rate in ${city.city}, ${city.state} — 2026 Market Data | ProInvestorHub`
-  const description = `Average cap rate in ${city.city}, ${city.state} is ${city.avgCapRate}%. See median home prices, rents, vacancy rates, and investor analysis for ${city.city} real estate.`
+  const title = `${city.city}, ${city.state} Cap Rate 2026: ${city.avgCapRate}% Average`
+  const description = `The average cap rate in ${city.city}, ${city.state} is ${city.avgCapRate}% in 2026. Compare median home prices, rents, vacancy, and property taxes — plus a free cap rate calculator for ${city.city} deals.`
 
   return {
     title,

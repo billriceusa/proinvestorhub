@@ -35,9 +35,9 @@ export const strategies: Strategy[] = [
     description:
       'Markets ranked by cash flow potential — factoring in rent-to-price ratio, cap rate, vacancy, and property taxes.',
     metaTitle:
-      'Best Cities for Cash Flow Real Estate Investing 2026 | ProInvestorHub',
+      'Best Cities for Cash Flow Investing: 50+ Markets Ranked (2026)',
     metaDescription:
-      'Data-driven rankings of the best US cities for cash flow real estate investing in 2026. Compare rent-to-price ratios, cap rates, vacancy rates, and property taxes across 50 markets.',
+      'See the 50+ best U.S. cities for cash flow real estate investing in 2026, ranked by rent-to-price ratio, cap rate, vacancy, and property taxes. Find your market in seconds — free.',
     scoreFn: (city) => {
       const rentToPrice = normalize(city.rentToPrice * 100, 0.25, 1.3) * 3
       const capRate = normalize(city.avgCapRate, 2.5, 12) * 3
@@ -80,9 +80,9 @@ export const strategies: Strategy[] = [
     description:
       'Markets ranked by BRRRR viability — factoring in affordable entry prices, cap rates, population growth, and rent-to-price ratio.',
     metaTitle:
-      'Best Cities for BRRRR Real Estate Investing 2026 | ProInvestorHub',
+      'Best Cities for BRRRR Investing: 50+ Markets Ranked (2026)',
     metaDescription:
-      'Data-driven rankings of the best US cities for the BRRRR strategy in 2026. Find markets with low entry prices, strong rents, and population growth to Buy, Rehab, Rent, Refinance, Repeat.',
+      'The 50+ best U.S. markets for the BRRRR strategy in 2026, ranked by entry price, cap rate, rent-to-price, and population growth. See where Buy, Rehab, Rent, Refinance, Repeat actually works.',
     scoreFn: (city) => {
       // BRRRR needs: low price (affordable rehab deals), good cap rate (refinance works),
       // population growth (demand for rentals), decent rent-to-price (cash flow post-refi)
@@ -127,9 +127,9 @@ export const strategies: Strategy[] = [
     description:
       'Markets ranked by house hacking viability — factoring in affordable entry, strong rents, low vacancy, and population growth.',
     metaTitle:
-      'Best Cities for House Hacking 2026 | ProInvestorHub',
+      'Best Cities for House Hacking: 50+ Markets Ranked (2026)',
     metaDescription:
-      'Data-driven rankings of the best US cities for house hacking in 2026. Find affordable markets with strong rents where you can live for free (or close to it) while building equity.',
+      'The 50+ best U.S. cities for house hacking in 2026, ranked by FHA-friendly prices, rents, and vacancy. Find markets where tenants can cover your mortgage while you build equity.',
     scoreFn: (city) => {
       // House hacking needs: affordable entry (FHA-friendly prices), good rents (to offset mortgage),
       // low vacancy (reliable tenants), population growth (demand), livability (income proxy)
@@ -175,9 +175,9 @@ export const strategies: Strategy[] = [
     description:
       'Markets ranked by appreciation potential — factoring in population growth, income growth, low vacancy, and economic momentum.',
     metaTitle:
-      'Best Cities for Real Estate Appreciation 2026 | ProInvestorHub',
+      'Best Cities for Real Estate Appreciation: 50+ Ranked (2026)',
     metaDescription:
-      'Data-driven rankings of the best US cities for real estate appreciation in 2026. Find markets with explosive population growth, strong job markets, and rising property values.',
+      'The 50+ best U.S. cities for real estate appreciation in 2026, ranked by population growth, income, job markets, and demand. Find tomorrow’s fastest-rising property markets.',
     scoreFn: (city) => {
       // Appreciation needs: population growth, high incomes, low vacancy, moderate-high prices (signal demand)
       const growth = normalize(city.populationGrowth, -4, 16) * 4

@@ -282,3 +282,132 @@ function emptyPeriod(): GSCPeriodData {
     devices: [],
   };
 }
+
+// ---------------------------------------------------------------------------
+// Striking-distance / CTR-opportunity analysis
+//
+// The standard daily pull only sees top-20 queries and top-15 pages as
+// separate dimensions, so it can never tell WHICH page ranks WHERE for WHICH
+// query. This deep page×query pull is the ground truth for both north-star
+// goals: it identifies (1) pages one push from page 1 (striking distance) and
+// (2) pages already on page 1 that are leaking clicks (CTR opportunity).
+// ---------------------------------------------------------------------------
+
+export interface StrikingDistanceRow {
+  page: string;
+  query: string;
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
+export interface CtrOpportunityRow extends StrikingDistanceRow {
+  expectedCtr: number;
+  // Estimated clicks/month left on the table if CTR rose to the position curve.
+  lostClicksPerMonth: number;
+}
+
+export interface StrikingDistanceReport {
+  available: boolean;
+  error?: string;
+  window: { start: string; end: string; days: number };
+  // pos 8–20, enough impressions to matter — ranked by impression volume.
+  strikingDistance: StrikingDistanceRow[];
+  // pos ≤ 10 but CTR well below the position curve — ranked by lost clicks.
+  ctrOpportunity: CtrOpportunityRow[];
+  totalRowsAnalyzed: number;
+}
+
+// Approximate organic CTR by rounded position (blended desktop+mobile, 2024–25).
+const CTR_CURVE: Record<number, number> = {
+  1: 0.27, 2: 0.15, 3: 0.1, 4: 0.07, 5: 0.05,
+  6: 0.04, 7: 0.032, 8: 0.026, 9: 0.022, 10: 0.019,
+};
+
+function expectedCtrForPosition(position: number): number {
+  const rounded = Math.max(1, Math.min(10, Math.round(position)));
+  return CTR_CURVE[rounded] ?? 0.015;
+}
+
+const STRIKING_DISTANCE_DAYS = 28;
+// Filter out noise: a row needs at least this many impressions in the window.
+const MIN_IMPRESSIONS = 15;
+
+export async function fetchStrikingDistance(): Promise<StrikingDistanceReport> {
+  const days = STRIKING_DISTANCE_DAYS;
+  const range = dateRange(days);
+  const emptyWindow = { start: range.start, end: range.end, days };
+
+  const siteUrl = process.env.GSC_SITE_URL;
+  if (!siteUrl) {
+    return {
+      available: false,
+      error: "GSC_SITE_URL not configured",
+      window: emptyWindow,
+      strikingDistance: [],
+      ctrOpportunity: [],
+      totalRowsAnalyzed: 0,
+    };
+  }
+
+  try {
+    const token = await getAccessToken();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data: any = await querySearchAnalytics(siteUrl, token, {
+      startDate: range.start,
+      endDate: range.end,
+      dimensions: ["page", "query"],
+      rowLimit: 5000,
+      type: "web",
+    });
+
+    const rows: StrikingDistanceRow[] = (data.rows || [])
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .map((row: any) => ({
+        page: row.keys?.[0] || "",
+        query: row.keys?.[1] || "",
+        clicks: row.clicks || 0,
+        impressions: row.impressions || 0,
+        ctr: row.ctr || 0,
+        position: row.position || 0,
+      }))
+      .filter((r: StrikingDistanceRow) => r.impressions >= MIN_IMPRESSIONS);
+
+    const strikingDistance = rows
+      .filter((r) => r.position >= 8 && r.position <= 20)
+      .sort((a, b) => b.impressions - a.impressions)
+      .slice(0, 40);
+
+    const ctrOpportunity: CtrOpportunityRow[] = rows
+      .filter((r) => r.position <= 10)
+      .map((r) => {
+        const expectedCtr = expectedCtrForPosition(r.position);
+        const gap = Math.max(0, expectedCtr - r.ctr);
+        // Window is `days` long; normalize the lost clicks to a 30-day month.
+        const lostClicksPerMonth = (gap * r.impressions) * (30 / days);
+        return { ...r, expectedCtr, lostClicksPerMonth };
+      })
+      // Only flag rows meaningfully below the curve (CTR < 60% of expected).
+      .filter((r) => r.ctr < r.expectedCtr * 0.6 && r.lostClicksPerMonth >= 1)
+      .sort((a, b) => b.lostClicksPerMonth - a.lostClicksPerMonth)
+      .slice(0, 40);
+
+    return {
+      available: true,
+      window: emptyWindow,
+      strikingDistance,
+      ctrOpportunity,
+      totalRowsAnalyzed: rows.length,
+    };
+  } catch (err) {
+    return {
+      available: false,
+      error: `Striking-distance fetch failed: ${err instanceof Error ? err.message : err}`,
+      window: emptyWindow,
+      strikingDistance: [],
+      ctrOpportunity: [],
+      totalRowsAnalyzed: 0,
+    };
+  }
+}

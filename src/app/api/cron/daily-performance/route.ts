@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { fetchGA4Report, type GA4Report } from "@/lib/cron/ga4-data";
-import { fetchGSCReport, type GSCReport } from "@/lib/cron/gsc-data";
+import {
+  fetchGSCReport,
+  fetchStrikingDistance,
+  type GSCReport,
+  type StrikingDistanceReport,
+} from "@/lib/cron/gsc-data";
 import {
   analyzePerformance,
   type PerformanceAnalysis,
@@ -33,9 +38,14 @@ export async function GET(request: Request) {
 
   let ga4: GA4Report;
   let gsc: GSCReport;
+  let striking: StrikingDistanceReport;
 
   try {
-    [ga4, gsc] = await Promise.all([fetchGA4Report(), fetchGSCReport()]);
+    [ga4, gsc, striking] = await Promise.all([
+      fetchGA4Report(),
+      fetchGSCReport(),
+      fetchStrikingDistance(),
+    ]);
 
     if (ga4.available) {
       console.log(
@@ -53,6 +63,14 @@ export async function GET(request: Request) {
     } else {
       console.warn(`[Performance] GSC not available: ${gsc.error}`);
       errors.push(`GSC: ${gsc.error}`);
+    }
+
+    if (striking.available) {
+      console.log(
+        `[Performance] Striking-distance: ${striking.strikingDistance.length} near-page-1 + ${striking.ctrOpportunity.length} CTR-leak rows (from ${striking.totalRowsAnalyzed} analyzed)`
+      );
+    } else {
+      console.warn(`[Performance] Striking-distance not available: ${striking.error}`);
     }
   } catch (err) {
     const msg = `Data fetch failed: ${err instanceof Error ? err.message : err}`;
@@ -88,7 +106,7 @@ export async function GET(request: Request) {
   let analysis: PerformanceAnalysis;
   try {
     console.log("[Performance] Running AI analysis...");
-    analysis = await analyzePerformance(ga4, gsc);
+    analysis = await analyzePerformance(ga4, gsc, striking);
     console.log(
       `[Performance] Analysis complete: ${analysis.insights.length} insights, ${analysis.recommendations.length} recommendations`
     );
@@ -110,34 +128,48 @@ export async function GET(request: Request) {
 
   let backlogChanged = false;
   let backlogItemCount = 0;
-  if (analysis.recommendations.length > 0) {
+  if (analysis.recommendations.length > 0 || striking.available) {
     try {
-      const existingBacklog = await fetchPerformanceBacklog();
-      const { backlog, changed } = mergeRecommendations(
-        existingBacklog,
-        analysis.recommendations,
-        reportDate
-      );
-      backlogChanged = changed;
-      backlogItemCount = backlog.items.filter((i) => i.status === "open").length;
+      const filesToCommit: { path: string; content: string }[] = [];
+      let commitSummary = "";
 
-      if (changed) {
+      // Always refresh the striking-distance ground-truth export when available.
+      if (striking.available) {
+        filesToCommit.push({
+          path: "data/gsc-striking-distance.json",
+          content: JSON.stringify(striking, null, 2),
+        });
+        commitSummary += `${striking.strikingDistance.length} near-page-1, ${striking.ctrOpportunity.length} CTR-leak rows. `;
+      }
+
+      if (analysis.recommendations.length > 0) {
+        const existingBacklog = await fetchPerformanceBacklog();
+        const { backlog, changed } = mergeRecommendations(
+          existingBacklog,
+          analysis.recommendations,
+          reportDate
+        );
+        backlogChanged = changed;
+        backlogItemCount = backlog.items.filter((i) => i.status === "open").length;
+        if (changed) {
+          filesToCommit.push({
+            path: "data/performance-backlog.json",
+            content: serializeBacklog(backlog),
+          });
+          commitSummary += `${backlog.items.filter((i) => i.lastSeen === reportDate).length} backlog items touched, ${backlogItemCount} open total.`;
+        } else {
+          console.log("[Performance] Backlog unchanged — skipping backlog file");
+        }
+      }
+
+      if (filesToCommit.length > 0) {
         await commitFilesToGitHub(
-          [
-            {
-              path: "data/performance-backlog.json",
-              content: serializeBacklog(backlog),
-            },
-          ],
-          `chore(perf): update performance backlog — ${reportDate}\n\n${
-            backlog.items.filter((i) => i.lastSeen === reportDate).length
-          } items touched today, ${backlogItemCount} open total.`
+          filesToCommit,
+          `chore(perf): daily SEO data — ${reportDate}\n\n${commitSummary.trim()}`
         );
         console.log(
-          `[Performance] Backlog updated and committed (${backlogItemCount} open items)`
+          `[Performance] Committed ${filesToCommit.length} data file(s): ${filesToCommit.map((f) => f.path).join(", ")}`
         );
-      } else {
-        console.log("[Performance] Backlog unchanged — skipping commit");
       }
     } catch (err) {
       const msg = `Backlog update failed: ${err instanceof Error ? err.message : err}`;
@@ -158,7 +190,7 @@ export async function GET(request: Request) {
         from: fromEmail,
         to: REPORT_EMAIL,
         subject: `Daily Performance — ${reportDate}${ga4.available ? ` — ${Math.round(ga4.sevenDay.dailyAverage.sessions)} sessions/day` : ""}`,
-        html: buildPerformanceEmail(ga4, gsc, analysis, reportDate, errors),
+        html: buildPerformanceEmail(ga4, gsc, striking, analysis, reportDate, errors),
       });
       console.log(`[Performance] Report sent to ${REPORT_EMAIL}`);
     } catch (err) {
@@ -231,9 +263,67 @@ function metricRow(
   </tr>`;
 }
 
+function buildStrikingDistanceSection(striking: StrikingDistanceReport): string {
+  if (!striking.available) return "";
+  if (striking.strikingDistance.length === 0 && striking.ctrOpportunity.length === 0) {
+    return "";
+  }
+
+  const sdRows = striking.strikingDistance
+    .slice(0, 15)
+    .map(
+      (r) =>
+        `<tr><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;">${r.query}</td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;"><code style="font-size:11px;">${r.page.replace("https://proinvestorhub.com", "")}</code></td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:600;">${r.position.toFixed(1)}</td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right;">${num(r.impressions)}</td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right;">${r.clicks}</td></tr>`
+    )
+    .join("");
+
+  const ctrRows = striking.ctrOpportunity
+    .slice(0, 15)
+    .map(
+      (r) =>
+        `<tr><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;">${r.query}</td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;"><code style="font-size:11px;">${r.page.replace("https://proinvestorhub.com", "")}</code></td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:600;">${r.position.toFixed(1)}</td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right;">${pct(r.ctr)}</td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right;color:#6b7280;">${pct(r.expectedCtr)}</td><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right;color:#dc2626;font-weight:600;">${num(r.lostClicksPerMonth)}</td></tr>`
+    )
+    .join("");
+
+  return `
+    <h2 style="font-size:18px;margin:24px 0 6px;border-bottom:2px solid #1B4D3E;padding-bottom:8px;color:#1B4D3E;">Highest-Leverage Opportunities <span style="font-weight:400;font-size:13px;color:#6b7280;">(real page×query data, last ${striking.window.days}d)</span></h2>
+
+    <h3 style="font-size:15px;margin:16px 0 4px;">Striking Distance — one push from page 1 (positions 8–20)</h3>
+    <p style="margin:0 0 8px;font-size:13px;color:#6b7280;">Add internal links + refresh depth on these pages. Each is already earning impressions and is close to the page-1 click cliff.</p>
+    ${
+      sdRows
+        ? `<table style="width:100%;border-collapse:collapse;margin-bottom:16px;font-size:13px;">
+      <thead><tr style="background:#f9fafb;">
+        <th style="padding:6px 10px;text-align:left;border-bottom:1px solid #e5e7eb;">Query</th>
+        <th style="padding:6px 10px;text-align:left;border-bottom:1px solid #e5e7eb;">Page</th>
+        <th style="padding:6px 10px;text-align:right;border-bottom:1px solid #e5e7eb;">Pos</th>
+        <th style="padding:6px 10px;text-align:right;border-bottom:1px solid #e5e7eb;">Impr</th>
+        <th style="padding:6px 10px;text-align:right;border-bottom:1px solid #e5e7eb;">Clicks</th>
+      </tr></thead><tbody>${sdRows}</tbody></table>`
+        : `<p style="margin:0 0 16px;font-size:13px;color:#9ca3af;">No striking-distance rows above the impression floor yet.</p>`
+    }
+
+    <h3 style="font-size:15px;margin:16px 0 4px;">CTR Opportunities — on page 1 but leaking clicks (positions 1–10)</h3>
+    <p style="margin:0 0 8px;font-size:13px;color:#6b7280;">Rewrite the title tag + meta description to lift CTR. Lost clicks/mo = estimated clicks gained if CTR reached the position curve.</p>
+    ${
+      ctrRows
+        ? `<table style="width:100%;border-collapse:collapse;margin-bottom:24px;font-size:13px;">
+      <thead><tr style="background:#f9fafb;">
+        <th style="padding:6px 10px;text-align:left;border-bottom:1px solid #e5e7eb;">Query</th>
+        <th style="padding:6px 10px;text-align:left;border-bottom:1px solid #e5e7eb;">Page</th>
+        <th style="padding:6px 10px;text-align:right;border-bottom:1px solid #e5e7eb;">Pos</th>
+        <th style="padding:6px 10px;text-align:right;border-bottom:1px solid #e5e7eb;">CTR</th>
+        <th style="padding:6px 10px;text-align:right;border-bottom:1px solid #e5e7eb;">Exp.</th>
+        <th style="padding:6px 10px;text-align:right;border-bottom:1px solid #e5e7eb;">Lost/mo</th>
+      </tr></thead><tbody>${ctrRows}</tbody></table>`
+        : `<p style="margin:0 0 24px;font-size:13px;color:#9ca3af;">No page-1 CTR leaks above the threshold yet.</p>`
+    }`;
+}
+
 function buildPerformanceEmail(
   ga4: GA4Report,
   gsc: GSCReport,
+  striking: StrikingDistanceReport,
   analysis: PerformanceAnalysis,
   reportDate: string,
   errors: string[]
@@ -432,6 +522,7 @@ function buildPerformanceEmail(
 
   ${ga4Section}
   ${gscSection}
+  ${buildStrikingDistanceSection(striking)}
 
   <h2 style="font-size:18px;margin:24px 0 12px;border-bottom:2px solid #e5e7eb;padding-bottom:8px;">Key Insights</h2>
   <table style="width:100%;border-collapse:collapse;margin-bottom:24px;font-size:14px;">
