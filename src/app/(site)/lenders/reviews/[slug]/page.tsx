@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
-import { lenders, getLenderBySlug, formatCurrency } from '@/data/lenders'
+import { JsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { lenders, getLenderBySlug, formatCurrency, type LenderData } from '@/data/lenders'
 import { loanTypes } from '@/data/loan-types'
 import { getComparisonsForLender } from '@/data/lender-comparisons'
 import { LenderOutboundLink } from '@/components/lender-outbound-link'
@@ -50,6 +50,79 @@ const propertyTypeLabels: Record<string, string> = {
   'new-construction': 'New Construction',
 }
 
+function humanizeLoanType(slug: string): string {
+  const map: Record<string, string> = {
+    'dscr-loans': 'DSCR loans',
+    'bank-statement-loans': 'bank statement loans',
+    'fix-and-flip-loans': 'fix-and-flip loans',
+    'fix-and-rent-loans': 'fix-and-rent loans',
+    'bridge-loans': 'bridge loans',
+    'hard-money-loans': 'hard money loans',
+    'construction-loans': 'construction loans',
+    'portfolio-loans': 'portfolio loans',
+    'asset-based-loans': 'asset-based loans',
+    heloc: 'HELOCs',
+  }
+  return map[slug] || slug.replace(/-/g, ' ')
+}
+
+// Builds a truthful, data-derived FAQ for any lender review. Questions are
+// shaped to match the high-intent branded queries these pages already rank
+// for (legitimacy, pros/cons, bank statement, credit score, rates, LLC, speed).
+// Every answer is sourced from the lender's own data fields — nothing invented.
+function buildLenderFaqs(lender: LenderData): { question: string; answer: string }[] {
+  const loanList = lender.loanTypeSlugs.map(humanizeLoanType)
+  const loanStr =
+    loanList.length > 1
+      ? `${loanList.slice(0, -1).join(', ')} and ${loanList[loanList.length - 1]}`
+      : loanList[0] || 'investment property loans'
+
+  const faqs: { question: string; answer: string }[] = [
+    {
+      question: `Is ${lender.name} a legitimate lender?`,
+      answer: `${lender.name} is an established lender founded in ${lender.founded}${lender.headquarters ? ` and headquartered in ${lender.headquarters}` : ''}. It ${lender.nationwide ? 'lends nationwide' : 'operates in select states'} and specializes in ${loanStr}. As with any lender, confirm its current NMLS registration and state licensing, and compare written quotes before you apply.`,
+    },
+  ]
+
+  if (lender.pros.length && lender.cons.length) {
+    faqs.push({
+      question: `What are the pros and cons of ${lender.name}?`,
+      answer: `Pros: ${lender.pros.slice(0, 3).join('; ')}. Cons: ${lender.cons.slice(0, 3).join('; ')}.`,
+    })
+  }
+
+  if (lender.loanTypeSlugs.includes('bank-statement-loans')) {
+    faqs.push({
+      question: `Does ${lender.name} offer bank statement loans?`,
+      answer: `Yes. ${lender.name} offers bank statement loan programs that qualify self-employed borrowers using 12–24 months of bank deposits instead of tax returns or W-2s — useful for investors with non-traditional income.`,
+    })
+  }
+
+  faqs.push({
+    question: `What credit score do you need for ${lender.name}?`,
+    answer: `${lender.name}'s published minimum credit score is ${lender.minCreditScore}. A higher score generally unlocks better rates and higher leverage. Requirements vary by loan program and are subject to change.`,
+  })
+
+  faqs.push({
+    question: `What rates and fees does ${lender.name} charge?`,
+    answer: `${lender.name}'s rates run approximately ${lender.minRate}%–${lender.maxRate}% with origination fees of ${lender.originationFee}, on loans from ${formatCurrency(lender.minLoanAmount)} to ${formatCurrency(lender.maxLoanAmount)} (up to ${lender.maxLtv}% LTV). All figures are approximate and subject to change — request a written quote for your scenario.`,
+  })
+
+  if (lender.allowsLlc) {
+    faqs.push({
+      question: `Can you close with ${lender.name} in an LLC?`,
+      answer: `Yes. ${lender.name} allows investors to take title in an LLC, which many use for liability protection and cleaner portfolio organization.`,
+    })
+  }
+
+  faqs.push({
+    question: `How fast can ${lender.name} close a loan?`,
+    answer: `${lender.name} typically closes in ${lender.speedToClose}, depending on the loan program, the property, and how quickly you provide documentation.`,
+  })
+
+  return faqs
+}
+
 export default async function LenderProfilePage({ params }: Props) {
   const { slug } = await params
   const lender = getLenderBySlug(slug)
@@ -60,6 +133,8 @@ export default async function LenderProfilePage({ params }: Props) {
   const lenderLoanTypes = lender.loanTypeSlugs
     .map((s) => loanTypes.find((lt) => lt.slug === s))
     .filter(Boolean)
+
+  const faqs = buildLenderFaqs(lender)
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
@@ -96,6 +171,7 @@ export default async function LenderProfilePage({ params }: Props) {
           },
         }}
       />
+      <JsonLd data={faqJsonLd(faqs)} />
 
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-text-muted">
@@ -274,6 +350,23 @@ export default async function LenderProfilePage({ params }: Props) {
               </section>
             )
           })()}
+
+          {/* FAQ — targets high-intent branded queries; mirrors faqJsonLd */}
+          <section className="mb-10">
+            <h2 className="text-xl font-bold text-text mb-4">
+              {lender.name} Review: Frequently Asked Questions
+            </h2>
+            <div className="space-y-6">
+              {faqs.map((faq) => (
+                <div key={faq.question}>
+                  <h3 className="font-semibold text-text">{faq.question}</h3>
+                  <p className="mt-2 text-sm text-text-muted leading-6">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
 
         {/* Sidebar */}
