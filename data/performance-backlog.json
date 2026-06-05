@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-05T17:56:07.166Z",
+  "lastUpdated": "2026-06-05T18:04:14.771Z",
   "items": [
     {
       "id": "61a3cb491210",
@@ -1707,6 +1707,39 @@
       "status": "open"
     },
     {
+      "id": "1e4353b43d54",
+      "title": "Audit and Fix the Google Zero-Click Anomaly on the Cap Rate Calculator Page",
+      "description": "Immediately investigate why /calculators/cap-rate is generating 254 impressions at position 21.9 for 'cap rate calculator' with zero clicks. Steps: (1) Search 'cap rate calculator' in an incognito Chrome window and document whether Google is showing a native calculator widget or featured snippet that eliminates click need. (2) Check the page's title tag — it should be benefit-forward and differentiated, e.g., 'Cap Rate Calculator for Rental Properties (Free, Instant Results) | ProInvestorHub' rather than a generic label. (3) Rewrite the meta description to include a specific value hook like 'Enter NOI and property value — get your cap rate in seconds. Includes market benchmarks for 50+ cities.' (4) Verify the page is not accidentally set to noindex or has a canonical pointing elsewhere in Google Search Console's URL Inspection tool. (5) Check for any manual actions in GSC. If Google's own SERP feature is displacing clicks, pivot the page strategy toward long-tail variants like 'cap rate calculator by city' or 'cap rate calculator with mortgage' (currently pos 19.7) where native widgets are less likely to appear.",
+      "expectedImpact": "Even a 1% CTR on 254 monthly impressions yields 2–3 clicks/month from a single query. Fixing title/meta across all cap rate variants (500+ total impressions in 28 days) could generate 5–15 Google organic clicks/month — a 5–15x increase from current zero baseline.",
+      "priority": "high",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "af33aefe5624",
+      "title": "Push Griffin Funding Review to Page 1 With Targeted Content Depth Additions",
+      "description": "The Griffin Funding review page is the site's only asset with multiple queries in striking distance (positions 16–19). To push it to page 1: (1) Add a dedicated 'Griffin Funding Interest Rates' section with a comparison table showing current rate ranges for DSCR, hard money, and bank statement loans — this directly targets the pos 18.3 query with 12 impressions. (2) Add a 'Griffin Funding BBB Rating & Complaints' section with the current BBB grade, number of complaints, and resolution rate — targets pos 16.1 query with 11 impressions. (3) Add a 'Griffin Funding Bank Statement Loan Requirements' section with LTV, credit score minimums, and income documentation details — targets pos 19.3 query with 11 impressions. (4) Add a structured FAQ schema block with these exact questions as FAQ entries. (5) Build 2–3 internal links to this page from the /lenders/dscr-loans, /lenders/dscr-loans/california, and /lenders/hard-money-loans pages using anchor text variations matching these queries. Implement within 7 days.",
+      "expectedImpact": "Moving 3 queries from positions 16–19 to positions 1–10 could generate 10–30 clicks/month from Google alone based on typical CTR curves for these impression volumes, making Griffin Funding the site's first meaningful Google organic traffic driver.",
+      "priority": "high",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "84b8c067dbb1",
+      "title": "Investigate and Resolve Google Domain Authority or Trust Signal Deficit",
+      "description": "The pattern of near-zero Google organic clicks despite active Bing/Yahoo traffic and healthy impression counts strongly suggests a Google-specific trust or authority issue. Steps: (1) Run a Google Search Console manual actions check and security issues audit immediately. (2) Check domain age and backlink profile in Ahrefs or Semrush — if the domain has fewer than 10–15 referring domains, Google may be applying a 'new site' dampening filter. (3) Verify that both www and non-www versions are properly canonicalized (GSC data shows both versions appearing in top pages, which is a canonicalization red flag — 'https://proinvestorhub.com/' and 'https://www.proinvestorhub.com/' are appearing as separate entities). (4) Submit a sitemap if not already done. (5) Pursue 3–5 high-quality backlinks from real estate investing publications, forums (BiggerPockets), or HARO/journalist queries within the next 30 days to accelerate trust accumulation.",
+      "expectedImpact": "Resolving the www/non-www canonicalization issue alone could consolidate link equity and improve positions across all pages. Earning 5+ quality backlinks over 30–60 days is the primary lever to move calculator pages from positions 22–45 into the top 10.",
+      "priority": "high",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "fc8a3a71c56e",
       "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
       "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
@@ -2818,6 +2851,28 @@
       "status": "open"
     },
     {
+      "id": "a32de487f71c",
+      "title": "Add Internal Linking Pathways to Reduce Single-Page Sessions and Increase Depth",
+      "description": "With pages-per-session at ~1.27 and session duration at 80s, users are not finding reasons to explore further. Implement the following: (1) Add a 'Related Calculators' widget to every calculator page linking to cash-on-cash, DSCR, and cap rate tools. (2) Add a 'Top Lenders for This Strategy' module to every blog post — e.g., the BRRRR guide should link to Visio Lending and Kiavi reviews; the FHA/house hacking guide should link to Griffin Funding. (3) Add a 'Markets Using This Metric' section on the cap rate calculator linking to /calculators/cap-rate/tampa-fl and other city-specific pages. (4) Add a sticky sidebar or bottom-of-page CTA on lender review pages linking to the lender comparison pages. Target a minimum of 3 contextual internal links per page.",
+      "expectedImpact": "Increasing pages-per-session from 1.27 back toward the 90-day baseline of 2.04 would represent a 60% improvement in content consumption and increase the probability of users reaching monetizable pages (lender affiliate links, calculator lead captures).",
+      "priority": "medium",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "78a9c71707f4",
+      "title": "Develop City-Specific Cap Rate Calculator Pages to Capture Long-Tail Search Demand",
+      "description": "The /calculators/cap-rate/tampa-fl page already exists and received 2 views, and the 90-day query data shows 'average cap rate by city' appearing in search footprint. Steps: (1) Audit which city-specific calculator pages currently exist. (2) Create or expand pages for the top 10 BRRRR/cash-flow markets your audience targets: Tampa, Jacksonville, Memphis, Cleveland, Kansas City, Indianapolis, Birmingham, Columbus, Detroit, and St. Louis. (3) Each page should include: the interactive calculator pre-loaded with local market data, current average cap rates by neighborhood/property type, a 'Is [City] a Good Investment in 2026?' section, and links to local DSCR lenders. (4) Target queries like 'cap rate calculator [city]', 'average cap rate [city]', and '[city] rental property calculator'. These are low-competition long-tail terms where a new site can rank faster than for head terms.",
+      "expectedImpact": "10 city-specific pages targeting 3–5 queries each creates a 30–50 query footprint in low-competition long-tail space. Even ranking positions 5–15 for these terms could generate 20–50 additional organic sessions/month within 60–90 days.",
+      "priority": "medium",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3350,6 +3405,17 @@
       "title": "Investigate and Resolve the www vs non-www Canonical Inconsistency",
       "description": "The Search Console data shows a mix of URLs — some pages appear as 'proinvestorhub.com' (non-www) and others as 'www.proinvestorhub.com' — specifically the lender pages show www while calculator and blog pages show non-www. Step 1: Verify that a canonical tag is present on all pages pointing to the preferred domain version. Step 2: Confirm that a 301 redirect is in place from the non-preferred version to the preferred version at the server level. Step 3: Resubmit the sitemap in Search Console under the canonical domain property. Step 4: Check that the Search Console property is set up for the correct preferred domain and that both www and non-www are verified. This split may be diluting link equity and causing indexing confusion.",
       "expectedImpact": "Resolving canonical inconsistency consolidates link equity and ensures Google indexes the correct URL variants, potentially improving rankings for affected lender review pages within 4-6 weeks of recrawl.",
+      "priority": "low",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "5c9c02d11e0f",
+      "title": "Optimize for AI Search Citation to Capitalize on Existing Copilot and ChatGPT Referrals",
+      "description": "Copilot.com (3 sessions) and ChatGPT.com (2 sessions) are already sending referral traffic, indicating the site's content is being cited in AI-generated answers. To amplify this: (1) Add clear, quotable definition blocks and summary boxes at the top of every guide and calculator page — AI models preferentially cite content with clean, structured definitions. (2) Add an 'Expert Summary' or 'Key Takeaways' box with 3–5 bullet points at the top of each blog post. (3) Ensure every page has complete schema markup (HowTo, FAQPage, or Article as appropriate). (4) Add author bio pages with credentials to establish E-E-A-T signals that AI systems use for source credibility. (5) Create a 'Data & Methodology' page explaining how your calculators work and what data sources you use — this increases citation trustworthiness for AI systems.",
+      "expectedImpact": "AI referral traffic is growing industry-wide. Optimizing for AI citation could double or triple the current 5 AI-referred sessions/week within 60 days, and this channel is likely to grow in importance as Google's AI Overviews and Bing Copilot expand their market share.",
       "priority": "low",
       "firstSeen": "2026-06-05",
       "lastSeen": "2026-06-05",
