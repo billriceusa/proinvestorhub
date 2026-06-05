@@ -206,6 +206,41 @@ export default function CapRateCalculatorPage() {
             a specific deal works with your financing.
           </p>
         </div>
+
+        <h2 className="mt-12 text-2xl font-bold text-text">
+          Cap Rate With a Mortgage
+        </h2>
+        <div className="mt-6 text-text-muted leading-7 space-y-4">
+          <p>
+            A question we get constantly: <em>does cap rate include the mortgage?</em>{' '}
+            No — cap rate deliberately ignores financing so you can compare
+            properties on equal footing, whether you pay cash or borrow. Two
+            investors buying the same building get the same cap rate even with
+            very different loans.
+          </p>
+          <p>
+            To see how a mortgage changes your <em>actual</em> return, run the
+            numbers in two passes. Use this cap rate calculator to judge the{' '}
+            <strong className="text-text">property</strong>, then layer in your
+            financing with the{' '}
+            <Link
+              href="/calculators/cash-on-cash"
+              className="text-primary hover:text-primary-light underline transition-colors"
+            >
+              cash-on-cash return calculator
+            </Link>{' '}
+            and the{' '}
+            <Link
+              href="/calculators/mortgage"
+              className="text-primary hover:text-primary-light underline transition-colors"
+            >
+              mortgage &amp; DSCR calculator
+            </Link>
+            . Leverage can lift a 6% cap-rate property to a double-digit
+            cash-on-cash return — or erase it entirely if the monthly payment
+            outruns your net operating income.
+          </p>
+        </div>
       </section>
 
       {/* Cap Rates by City */}

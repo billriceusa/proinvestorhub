@@ -72,6 +72,35 @@ export default async function StrategyPage({
           },
         ])}
       />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Dataset',
+          name: strategy.title,
+          description: strategy.metaDescription,
+          url: `${baseUrl}/markets/${slug}`,
+          keywords: [
+            strategy.shortTitle,
+            'real estate investing',
+            'best cities',
+            'US housing market rankings',
+            '2026',
+          ],
+          creator: {
+            '@type': 'Organization',
+            name: 'ProInvestorHub',
+            url: baseUrl,
+          },
+          ...(freshness.dataUpdatedAt
+            ? { dateModified: freshness.dataUpdatedAt }
+            : {}),
+          measurementTechnique:
+            'Weighted composite scoring of median home price, rent, cap rate, vacancy, property-tax, population, and growth across 50+ US markets.',
+          variableMeasured: strategy.scoreLabel,
+          isAccessibleForFree: true,
+          creativeWorkStatus: 'Published',
+        }}
+      />
 
       {/* Breadcrumb */}
       <nav className="text-sm text-text-muted mb-8">
@@ -214,6 +243,31 @@ export default async function StrategyPage({
             <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 p-6">
               <p className="text-sm text-text-muted leading-7">
                 {strategy.methodology}
+              </p>
+            </div>
+          </section>
+
+          {/* Cite This Data */}
+          <section>
+            <h2 className="text-2xl font-bold text-text">Cite This Data</h2>
+            <div className="mt-4 rounded-xl border border-border bg-white p-6">
+              <p className="text-sm text-text-muted leading-7">
+                Referencing these rankings in an article or report? Please credit
+                ProInvestorHub with a link back. Suggested citation:
+              </p>
+              <p className="mt-3 rounded-lg bg-primary/5 px-4 py-3 text-sm font-medium text-text leading-6">
+                &ldquo;{strategy.title}.&rdquo; ProInvestorHub, {lastUpdated}.{' '}
+                {baseUrl}/markets/{slug}
+              </p>
+              <p className="mt-3 text-xs text-text-muted">
+                The full city-by-city dataset behind these rankings is on our{' '}
+                <Link
+                  href="/calculators/cap-rate/cities"
+                  className="text-primary hover:text-primary-light underline transition-colors"
+                >
+                  cap rates by city
+                </Link>{' '}
+                page.
               </p>
             </div>
           </section>
