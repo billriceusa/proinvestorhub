@@ -1,0 +1,11 @@
+{
+  "available": true,
+  "window": {
+    "start": "2026-05-07",
+    "end": "2026-06-03",
+    "days": 28
+  },
+  "strikingDistance": [],
+  "ctrOpportunity": [],
+  "totalRowsAnalyzed": 10
+}
