@@ -247,10 +247,10 @@ export default function StartHerePage() {
               Explore All Markets
             </Link>
             <Link
-              href="/guides/best-cities"
+              href="/markets/cash-flow"
               className="rounded-lg border border-border px-6 py-3 text-sm font-semibold text-text hover:border-primary/30 hover:text-primary transition-colors"
             >
-              Best Cities by Strategy
+              Best Cities for Cash Flow
             </Link>
             <Link
               href="/resources/cap-rate-report"
