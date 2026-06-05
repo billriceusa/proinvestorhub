@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-04T12:02:33.027Z",
+  "lastUpdated": "2026-06-05T12:03:29.561Z",
   "items": [
     {
       "id": "61a3cb491210",
@@ -31,6 +31,17 @@
       "priority": "high",
       "firstSeen": "2026-04-20",
       "lastSeen": "2026-04-21",
+      "timesRepeated": 2,
+      "status": "open"
+    },
+    {
+      "id": "1030bed0b0f4",
+      "title": "Rewrite Title Tags and Meta Descriptions for All Cap Rate Calculator Pages",
+      "description": "The 'cap rate calculator' query cluster is generating 70+ impressions/day at position 25 with zero clicks — this is the highest-ROI fix available right now. Rewrite the title tag for /calculators/cap-rate to follow the format: 'Free Cap Rate Calculator (2026) — Instant Results | ProInvestorHub'. Add a meta description that explicitly states 'Free, no signup required' and includes a specific value prop like 'Calculate cap rate in seconds for any rental property.' Also add FAQ schema and HowTo schema to the page to improve rich result eligibility. Apply the same treatment to city-specific calculator pages like /calculators/cap-rate/tulsa-ok and /calculators/cap-rate/seattle-wa. Target: move CTR from 0% to 2-4% within 45 days, which at 70 impressions/day would yield 1-3 additional daily clicks from this query alone.",
+      "expectedImpact": "2-5 additional daily organic sessions from cap rate calculator queries within 30-60 days; potential for featured snippet capture on 'cap rate calculator free' (currently position 19)",
+      "priority": "high",
+      "firstSeen": "2026-05-19",
+      "lastSeen": "2026-06-05",
       "timesRepeated": 2,
       "status": "open"
     },
@@ -1179,17 +1190,6 @@
       "status": "open"
     },
     {
-      "id": "1030bed0b0f4",
-      "title": "Rewrite Title Tags and Meta Descriptions for All Cap Rate Calculator Pages",
-      "description": "The 'cap rate calculator' query cluster is generating 70+ impressions/day at position 25 with zero clicks — this is the highest-ROI fix available right now. Rewrite the title tag for /calculators/cap-rate to follow the format: 'Free Cap Rate Calculator (2026) — Instant Results | ProInvestorHub'. Add a meta description that explicitly states 'Free, no signup required' and includes a specific value prop like 'Calculate cap rate in seconds for any rental property.' Also add FAQ schema and HowTo schema to the page to improve rich result eligibility. Apply the same treatment to city-specific calculator pages like /calculators/cap-rate/tulsa-ok and /calculators/cap-rate/seattle-wa. Target: move CTR from 0% to 2-4% within 45 days, which at 70 impressions/day would yield 1-3 additional daily clicks from this query alone.",
-      "expectedImpact": "2-5 additional daily organic sessions from cap rate calculator queries within 30-60 days; potential for featured snippet capture on 'cap rate calculator free' (currently position 19)",
-      "priority": "high",
-      "firstSeen": "2026-05-19",
-      "lastSeen": "2026-05-19",
-      "timesRepeated": 1,
-      "status": "open"
-    },
-    {
       "id": "adda32ad790d",
       "title": "Add Internal Links and CTAs from Top Blog Posts to Calculator Tools",
       "description": "The depreciation tax strategy post (10 views, 10 users) and the cash flow markets 2026 post (6 views) are receiving traffic but likely exiting without engaging with calculators or other content, contributing to the elevated bounce rate. Within each of these posts, add 2-3 contextual internal links to relevant calculators (cap rate, cash-on-cash, NOI) with anchor text like 'use our free cap rate calculator' rather than generic 'click here.' Add a sticky or inline CTA box mid-article pointing to the most relevant calculator. Also link the /markets/appreciation page (5 views, 3 users — notably higher pages/session ratio) to the cap rate calculator pages for city-specific data. Implement within 1 week.",
@@ -1659,6 +1659,28 @@
       "priority": "high",
       "firstSeen": "2026-06-04",
       "lastSeen": "2026-06-04",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "27043cbe1641",
+      "title": "Build Internal Linking Hubs to Increase Pages Per Session from 1.27 to 2.5+",
+      "description": "Pages per session has collapsed to ~1.27, meaning nearly all visitors read one page and leave. Implement a 'Related Tools & Guides' section at the bottom of every lender review page linking to: (1) the relevant calculator (e.g., Visio Lending review → DSCR calculator), (2) a complementary lender comparison page, and (3) a relevant market analysis page. For the BRRRR guide, add inline links to the cap rate and cash-on-cash calculators. Use GA4 path exploration to identify the most common single-page sessions and prioritize those pages first. This is a content/template change that can be deployed site-wide within one sprint.",
+      "expectedImpact": "Increasing pages per session from 1.27 to 2.0 would represent a 57% improvement in content consumption, directly increasing time-on-site, reducing bounce signals to Google, and improving affiliate/calculator conversion opportunities.",
+      "priority": "high",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "70e77e33fb9c",
+      "title": "Diagnose and Resolve the Google Organic Click Collapse Immediately",
+      "description": "Zero Google organic clicks over 7 days is an anomaly requiring immediate investigation. Run the following checks: (1) Verify no manual actions in GSC under Security & Manual Actions; (2) Check Coverage report for any spike in 'Excluded' or 'Crawled but not indexed' pages; (3) Confirm robots.txt is not blocking Googlebot on calculator or lender pages; (4) Test the cap rate calculator URL in GSC's URL Inspection tool to confirm it is indexed and the rendered HTML includes the calculator content (not just JavaScript shell); (5) Check if a recent site update or CMS change may have altered canonical tags. The 29.9% impression drop alongside zero clicks suggests either a crawl/index issue or a significant SERP layout change (featured snippets, AI Overviews) pushing results below the fold.",
+      "expectedImpact": "Identifying and resolving a technical indexing or rendering issue could restore the 0.10% baseline CTR and unlock the impression volume already being generated, potentially adding 2-5 organic clicks per day within 2-4 weeks of resolution.",
+      "priority": "high",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
       "timesRepeated": 1,
       "status": "open"
     },
@@ -2730,6 +2752,28 @@
       "status": "open"
     },
     {
+      "id": "066cb987fe6b",
+      "title": "Create a Dedicated 'Cap Rate Calculator with Mortgage' Page to Target Position 20 Query",
+      "description": "'Cap rate calculator with mortgage' shows position 20.0 with 1 impression — this is the closest the site comes to a top-20 ranking and represents a high-intent, differentiated query that most generic calculators don't serve well. Build a dedicated page at /calculators/cap-rate/with-mortgage that includes a calculator combining NOI, property value, AND mortgage payment inputs to show levered vs. unlevered cap rate. Include a 500-word explainer on why mortgage-adjusted cap rate matters for leveraged investors. Target the page title: 'Cap Rate Calculator with Mortgage (Levered Cap Rate) — ProInvestorHub'. This directly serves the BRRRR and house-hacking audience segments.",
+      "expectedImpact": "A dedicated page targeting a position-20 query with low competition could realistically reach position 10-15 within 60-90 days, generating consistent clicks from a high-intent audience actively comparing financing scenarios.",
+      "priority": "medium",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "316879a9dc80",
+      "title": "Optimize Content for AI Referral Channels to Capitalize on ChatGPT and Copilot Traffic",
+      "description": "With 5 AI referral sessions in 7 days from ChatGPT and Copilot, the site is already being cited in AI responses. To increase this: (1) Add clear, quotable definition blocks at the top of each calculator and lender review page using FAQ schema markup — AI models preferentially cite pages with structured, factual, easily-extractable content; (2) Ensure each lender review includes a structured comparison table with specific data points (min loan amount, rates, LTV, property types) that AI can extract and cite; (3) Add 'Last Updated: [Month Year]' prominently on all pages, as AI systems favor recently updated content; (4) Submit the sitemap to Bing Webmaster Tools and ensure IndexNow is configured, as Bing powers Copilot and currently drives 15 sessions vs Google's 1.",
+      "expectedImpact": "Structured, AI-optimized content could double AI referral traffic within 30-60 days, and Bing optimization directly feeds the Copilot channel which is already outperforming Google organic by 15x in session volume.",
+      "priority": "medium",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3243,6 +3287,17 @@
       "priority": "low",
       "firstSeen": "2026-06-04",
       "lastSeen": "2026-06-04",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "1166837f5093",
+      "title": "Develop a Tampa Cap Rate Market Page to Leverage Existing Calculator Traffic",
+      "description": "The /calculators/cap-rate/tampa-fl page already appears in the top 10 pages with 2 views and 2 users, indicating organic demand for market-specific calculator tools. Expand this into a full content page combining: (1) an embedded cap rate calculator pre-loaded with Tampa market defaults, (2) a 600-word section on current Tampa cap rate benchmarks by property type (SFR, small multifamily, commercial), (3) internal links to relevant lender pages (DSCR loans, hard money). Then replicate this template for Phoenix, Atlanta, and Dallas — markets with high investor search volume. Each page should target '[city] cap rate calculator' and '[city] real estate cap rates 2026' queries.",
+      "expectedImpact": "Market-specific calculator pages typically rank faster than generic tools due to lower competition. A portfolio of 5-10 city pages could generate 20-50 additional monthly impressions within 90 days and establish topical authority in local real estate investing queries.",
+      "priority": "low",
+      "firstSeen": "2026-06-05",
+      "lastSeen": "2026-06-05",
       "timesRepeated": 1,
       "status": "open"
     }
