@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-05T18:04:14.771Z",
+  "lastUpdated": "2026-06-06T12:02:00.886Z",
   "items": [
     {
       "id": "61a3cb491210",
@@ -1740,6 +1740,39 @@
       "status": "open"
     },
     {
+      "id": "942900368701",
+      "title": "Strengthen the Griffin Funding Review Page to Break into Page 1",
+      "description": "This is the site's single most actionable SEO opportunity. The /lenders/reviews/griffin-funding page ranks 16.1–19.3 for six queries with real impression volume. Specific steps: (1) Expand the review to 2,500+ words covering BBB rating history with screenshots, current rate ranges by loan type, bank statement loan requirements, pros/cons table, and a comparison section vs. 2–3 competitors. (2) Add structured data (Review schema with aggregate rating). (3) Add a dedicated H2 section for each striking-distance query phrase — 'Griffin Funding BBB Rating,' 'Griffin Funding Interest Rates 2025,' 'Griffin Funding Bank Statement Loan Requirements.' (4) Build 3–5 internal links to this page from the /lenders/hard-money-loans, /lenders/bridge-loans, and /lenders/dscr-loans pages. (5) Pursue one external link from a real estate investing forum or directory. Moving from position 18 to position 8 on even two of these queries could generate 15–30 clicks/month.",
+      "expectedImpact": "First Google organic clicks within 4–8 weeks; estimated 20–50 clicks/month if two queries break into top 10",
+      "priority": "high",
+      "firstSeen": "2026-06-06",
+      "lastSeen": "2026-06-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "7513f671fc68",
+      "title": "Build Topical Authority Around the Cap Rate Calculator to Move from Position 21 to Top 10",
+      "description": "The /calculators/cap-rate page has 263 impressions for 'cap rate calculator' at position 21.5 — it is the site's most-indexed asset but earns zero clicks because page 2 CTR is near 0%. The fix is authority and content depth, not CTR optimization. Steps: (1) Expand the calculator page with a 1,000-word educational section covering cap rate formula, good vs. bad cap rates by market, cap rate vs. cash-on-cash comparison, and a worked example. (2) Create supporting content: a dedicated 'Cap Rate by City' data page (already ranking for 'average cap rate by city' at pos 74 in 90-day data), a 'What is a Good Cap Rate?' guide, and a 'Cap Rate vs. Cash-on-Cash Return' comparison article. (3) Interlink all three pieces to the calculator. (4) Add FAQ schema targeting the top query variants ('calculate cap rate,' 'cap rate formula calculator'). (5) The /calculators/cap-rate/tampa-fl page already has real user visits — create 5–10 additional city-specific cap rate pages (Atlanta, Phoenix, Dallas, Nashville, Jacksonville) to build topical depth and long-tail impression volume.",
+      "expectedImpact": "Moving from position 21 to position 10 on 'cap rate calculator' (263 impr/28 days) could yield 15–25 clicks/month; city pages add incremental long-tail traffic",
+      "priority": "high",
+      "firstSeen": "2026-06-06",
+      "lastSeen": "2026-06-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "08e5aafe401c",
+      "title": "Diagnose and Resolve the Google Organic Click Gap",
+      "description": "The site has 27 impressions/day from Google but 0 clicks — a CTR of 0.00% versus an expected ~1–3% even at position 36. This is abnormal and warrants investigation. Steps: (1) In Search Console, check for manual actions or security issues. (2) Audit title tags and meta descriptions for all pages with impressions — ensure they are compelling, include the target keyword, and are not truncated. The cap rate calculator page title should read something like 'Cap Rate Calculator — Free Real Estate Tool | ProInvestorHub' with a meta description that includes a clear value proposition. (3) Check if the www vs. non-www URL inconsistency visible in the data (some pages show www., others do not) is causing a canonical or indexing split — consolidate to one preferred domain. (4) Verify Core Web Vitals scores in Search Console, as poor page experience scores can suppress CTR indirectly. (5) Confirm all top impression pages are properly indexed and not accidentally noindexed.",
+      "expectedImpact": "Resolving technical issues could unlock clicks from existing impressions within 2–4 weeks; www/non-www fix prevents authority dilution",
+      "priority": "high",
+      "firstSeen": "2026-06-06",
+      "lastSeen": "2026-06-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "fc8a3a71c56e",
       "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
       "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
@@ -2873,6 +2906,28 @@
       "status": "open"
     },
     {
+      "id": "996827cc2968",
+      "title": "Create Internal Linking Architecture to Reduce Bounce and Increase Pages Per Session",
+      "description": "Page views per session dropped 24.8% to 7.9, and session duration fell to 84.5 seconds. New users are landing and leaving without exploring. Steps: (1) Add a 'Related Calculators' widget to every calculator page linking to cash-on-cash, BRRRR, and rental property calculators. (2) Add a 'Related Lender Types' section to each lender page — e.g., the hard money loans page should link to bridge loans and DSCR loans. (3) Add contextual CTAs within blog posts pointing to relevant calculators — the BRRRR guide should link to the cap rate and cash-on-cash calculators. (4) Create a 'Start Here' hub page for beginners that funnels to the most popular content clusters. (5) Add breadcrumb navigation site-wide to encourage category-level exploration. Target: increase pages/session from 7.9 back toward the 90-day average of 10.4.",
+      "expectedImpact": "10–20% improvement in pages per session and session duration within 30 days; lower bounce rate from current 50%",
+      "priority": "medium",
+      "firstSeen": "2026-06-06",
+      "lastSeen": "2026-06-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "cca18e901f8f",
+      "title": "Optimize for AI Search Visibility to Capitalize on Emerging ChatGPT/Copilot Traffic",
+      "description": "ChatGPT and Copilot already drove 5 sessions last week — more than Google organic. This channel will grow. Steps: (1) Ensure all major guide pages (BRRRR, house hacking, multifamily analysis, rental property buying) have clear, structured answers to common questions in the first 200 words — AI assistants favor content that directly answers questions. (2) Add an author bio with credentials to all blog posts and guides, as AI citation systems favor attributed expert content. (3) Implement FAQ sections on calculator pages with direct Q&A format. (4) Submit the site to AI-friendly directories and ensure it appears in relevant real estate investing resource lists. (5) Monitor the chatgpt.com referral source weekly and note which pages are being cited to understand what content AI systems are recommending.",
+      "expectedImpact": "AI referral traffic could grow to 20–50 sessions/week within 90 days as content depth increases and the site gains more citations",
+      "priority": "medium",
+      "firstSeen": "2026-06-06",
+      "lastSeen": "2026-06-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3419,6 +3474,17 @@
       "priority": "low",
       "firstSeen": "2026-06-05",
       "lastSeen": "2026-06-05",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e029a0d767de",
+      "title": "Develop a Bing/Yahoo SEO Strategy to Maximize the Microsoft Ecosystem Advantage",
+      "description": "Bing is currently the site's top organic search engine (14 sessions vs. 1 from Google). This is an underutilized asset. Steps: (1) Submit and verify the site in Bing Webmaster Tools if not already done. (2) Submit an XML sitemap directly to Bing. (3) Bing weights social signals more than Google — share new content on LinkedIn and X (Twitter) to amplify Bing indexing. (4) Bing also powers Copilot search results, so Bing rankings directly feed AI referral traffic. (5) Check Bing Webmaster Tools for any specific keyword opportunities or crawl errors unique to the Bing index. (6) Note that Bing tends to rank newer sites faster than Google — use this window to build content volume while Google authority accumulates.",
+      "expectedImpact": "Potential to double Bing/Yahoo organic sessions to 30–40/week within 60 days with minimal incremental effort",
+      "priority": "low",
+      "firstSeen": "2026-06-06",
+      "lastSeen": "2026-06-06",
       "timesRepeated": 1,
       "status": "open"
     }
