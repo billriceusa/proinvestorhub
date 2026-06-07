@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-06T12:02:00.886Z",
+  "lastUpdated": "2026-06-07T12:02:27.265Z",
   "items": [
     {
       "id": "61a3cb491210",
@@ -1773,6 +1773,39 @@
       "status": "open"
     },
     {
+      "id": "866189a84b52",
+      "title": "Aggressively optimize the Griffin Funding review page to break into top 10",
+      "description": "This is the site's single highest-probability near-term SEO win. The /lenders/reviews/griffin-funding page has 5 queries clustered in positions 15–19, meaning small ranking improvements could deliver the site's first consistent Google organic clicks. Implementation steps: (1) Expand the page to 2,000+ words covering all five striking-distance query angles explicitly — add a dedicated section on Griffin Funding interest rates with current rate ranges, a BBB rating section with the actual rating and what it means for borrowers, and a bank statement loan eligibility breakdown. (2) Add a structured FAQ schema targeting 'griffin funding pros and cons' and 'griffin funding bbb rating' as question-answer pairs. (3) Build 3–5 internal links to this page from /lenders, /lenders/hard-money-loans, and /lenders/dscr-loans using anchor text variants like 'Griffin Funding review' and 'Griffin Funding interest rates.' (4) If possible, acquire one external link to this page from a real estate investing forum or directory. Target timeline: 4–6 weeks to observe position movement.",
+      "expectedImpact": "Breaking into positions 8–10 for even 2–3 of these queries could deliver the site's first 5–15 Google organic clicks per month, establishing proof of concept for the lender review content strategy.",
+      "priority": "high",
+      "firstSeen": "2026-06-07",
+      "lastSeen": "2026-06-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "0d8874e41a8a",
+      "title": "Strengthen the cap rate calculator page to push from position 20 to top 10",
+      "description": "The /calculators/cap-rate page is earning 276 impressions/month for 'cap rate calculator' at position 20.8 — the site's highest-volume query — but zero clicks. Positions 20+ earn negligible CTR; the goal must be ranking improvement, not CTR tactics. Implementation steps: (1) Audit the page against the top 5 ranking competitors for 'cap rate calculator' — match or exceed their content depth, calculator functionality, and supporting educational content. (2) Add a 500–800 word explanatory section below the calculator covering: what cap rate means, how to interpret results by market, cap rate by property type benchmarks, and cap rate vs. cash-on-cash comparison. (3) Implement HowTo or FAQPage schema markup. (4) Add internal links from /blog/best-cash-flow-markets-2026, /markets/cap-rate (if it exists), and the homepage to this calculator. (5) Create a supporting blog post titled 'What Is a Good Cap Rate? Benchmarks by Market and Property Type' that links back to the calculator as the primary CTA.",
+      "expectedImpact": "Moving from position 20 to position 8–10 for 'cap rate calculator' (276 impressions/month) could generate 15–40 clicks/month at typical page-1 CTR rates, representing a 10–20x increase in organic calculator traffic.",
+      "priority": "high",
+      "firstSeen": "2026-06-07",
+      "lastSeen": "2026-06-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "d60ff8465442",
+      "title": "Fix the engagement collapse by adding internal linking and clear next-step CTAs on lender pages",
+      "description": "The 72.86% bounce rate combined with the lender section dominating page views indicates users are landing on lender pages and leaving without exploring further. Implementation steps: (1) Add a 'Related Calculators' widget to every lender page — e.g., on /lenders/dscr-loans, link to the DSCR calculator or cap rate calculator with copy like 'Run the numbers on your deal.' (2) Add a 'Compare Loan Types' section at the bottom of each lender category page linking to sibling pages. (3) On /lenders/hard-money-loans and /lenders/fix-and-flip-loans, add a contextual link to /blog/how-to-analyze-rental-property and /blog/best-cash-flow-markets-2026. (4) Add a sticky or inline email capture CTA ('Get our free BRRRR deal analyzer') to convert bouncing users into subscribers before they leave.",
+      "expectedImpact": "Reducing bounce rate from 72.86% toward the 90-day baseline of 57.58% would increase engaged sessions by approximately 30–40%, improving pages-per-session and providing more behavioral signals to Google.",
+      "priority": "high",
+      "firstSeen": "2026-06-07",
+      "lastSeen": "2026-06-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "fc8a3a71c56e",
       "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
       "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
@@ -2928,6 +2961,28 @@
       "status": "open"
     },
     {
+      "id": "85619501d367",
+      "title": "Create content specifically optimized for Bing and AI discovery channels",
+      "description": "Bing organic (14 sessions) and AI referrals from ChatGPT/Copilot (4 sessions) are currently outperforming Google organic (1 session). These channels reward different content signals. Implementation steps: (1) Ensure all calculator and guide pages have complete, self-contained answers in the first 200 words — AI engines pull from clearly structured, definitional content. (2) Add explicit 'Key Takeaways' or 'Quick Answer' boxes at the top of blog posts and guide pages, which both Bing and AI assistants favor for featured snippet extraction. (3) Verify the site is submitted to Bing Webmaster Tools and that the sitemap is current. (4) For ChatGPT/Copilot visibility, ensure pages have clear entity definitions (e.g., 'A cap rate calculator is a tool that...') in the opening paragraph — this is how AI models index and cite content. (5) Monitor chatgpt.com referral traffic weekly as a leading indicator of AI-driven brand discovery.",
+      "expectedImpact": "Optimizing for Bing and AI channels could double AI-referred sessions within 60 days and increase Bing organic sessions by 50–100%, providing meaningful traffic while Google rankings develop.",
+      "priority": "medium",
+      "firstSeen": "2026-06-07",
+      "lastSeen": "2026-06-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "bfbff69b1f16",
+      "title": "Investigate and resolve the '(not set)' traffic source (9 sessions, 11.7% of total)",
+      "description": "The '(not set) / (not set)' source accounts for 9 sessions — 11.7% of 7-day traffic — which is abnormally high for a site this size and suggests attribution gaps. Implementation steps: (1) Audit GA4 data stream configuration to confirm the measurement ID is correctly implemented on all pages, particularly calculator pages which may use iframes or JavaScript rendering that breaks session attribution. (2) Check for any server-side redirects (301/302) that may be stripping UTM parameters before GA4 fires. (3) Verify that the /calculators/* pages fire pageview events correctly — calculator tools built in JavaScript frameworks sometimes fail to trigger GA4 hits. (4) Cross-reference the 9 '(not set)' sessions against GSC data and server logs to identify the likely source.",
+      "expectedImpact": "Resolving attribution for these 9 sessions will improve decision-making accuracy and may reveal a hidden traffic source (potentially Google organic being misattributed) that changes strategic priorities.",
+      "priority": "medium",
+      "firstSeen": "2026-06-07",
+      "lastSeen": "2026-06-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3485,6 +3540,17 @@
       "priority": "low",
       "firstSeen": "2026-06-06",
       "lastSeen": "2026-06-06",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "8206d7d3afb0",
+      "title": "Build topical depth around BRRRR and cash-flow market content to earn broader search footprint",
+      "description": "The 90-day GSC data shows the site has previously surfaced for BRRRR-related queries ('brrrr method' pos 64.8, 'brrrr analysis' pos 71.0, 'brrrr deal' pos 55.3) and beginner investing queries ('best real estate investing strategies for beginners 2026' pos 11.0), but these have not translated to clicks or consistent impressions in the current 7-day window. Implementation steps: (1) Publish a comprehensive BRRRR method guide (3,000+ words) covering the full cycle with a worked numerical example, linking to the cap rate and cash-on-cash calculators as embedded tools. (2) Expand /blog/best-cash-flow-markets-2026 with market-specific cap rate data tables and link to /calculators/cap-rate/tampa-fl and similar geo-specific calculator pages. (3) Create a content hub structure: a BRRRR pillar page linking to supporting posts on each phase (Buy, Rehab, Rent, Refinance, Repeat). (4) Target long-tail BRRRR queries like 'brrrr method spreadsheet' and 'brrrr deal analyzer' with calculator or downloadable tool content.",
+      "expectedImpact": "Building topical depth in BRRRR and cash-flow markets could expand the search footprint from the current ~119 page×query pairs to 300+ within 90 days, increasing total impressions and creating more ranking opportunities.",
+      "priority": "low",
+      "firstSeen": "2026-06-07",
+      "lastSeen": "2026-06-07",
       "timesRepeated": 1,
       "status": "open"
     }
