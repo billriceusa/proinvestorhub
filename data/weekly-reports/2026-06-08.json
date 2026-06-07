@@ -1,0 +1,209 @@
+{
+  "runDate": "2026-06-07T06:04:54.201Z",
+  "weekStartDate": "2026-06-08",
+  "analysis": {
+    "strategyReview": "ProInvestorHub has built a solid foundational library of 117 posts covering the core investor journey — from first purchase to portfolio scaling, legal structures, financing, and tax strategy. The content mix skews heavily toward Investment Strategies and Financing & Deals, which is appropriate for the ICP but creates visible gaps in Market Analysis and Tools & Calculators pillars. The published calendar shows strong coverage of deal mechanics (BRRRR, hard money, wholesale, subject-to) and legal/tax topics (LLC, depreciation, 1031), but relatively thin coverage of operational and data-driven content like bookkeeping, market tracking, and team building. The pillar rotation rule is at risk of being violated given the backlog of unpublished briefs — 8 of the 24 unpublished briefs are Investment Strategies, creating a queue imbalance that needs active management this week and beyond.",
+    "competitiveInsights": "BiggerPockets dominates broad community-driven searches like 'real estate investing for beginners' and 'BRRRR strategy,' but their content is often shallow on quantitative frameworks and frequently outdated. ProInvestorHub can outrank them on long-tail, calculator-adjacent, and process-specific queries where depth and data win — terms like 'DSCR loan requirements 2026,' 'rental property bookkeeping system,' and 'real estate market indicators to track.' Investopedia covers definitions well but never gives practitioners a usable system or workflow, which is our core differentiator. REtipster's gap is anything multifamily, short-term rental, or urban market focused. A specific whitespace opportunity right now: mid-2026 search intent around interest rate sensitivity, DSCR loan qualification thresholds, and 'how to analyze a deal in a high-rate environment' — these are high-volume, low-competition queries that none of the three competitors have addressed with fresh 2026-specific data and frameworks.",
+    "newOpportunities": [
+      "DSCR loan minimum requirements by lender type in 2026 — high search volume, no authoritative practitioner guide exists",
+      "Rental property bookkeeping systems: QuickBooks vs. Stessa vs. spreadsheet — comparison content with clear ICP utility",
+      "How to build a real estate investing team (attorney, CPA, agent, contractor) — process-driven, not covered with actionable depth anywhere",
+      "10 market indicators every investor should track monthly — data-driven, evergreen, strong backlink magnet for market analysis pillar",
+      "Real estate syndication passive investing explainer — growing search trend as more investors look for passive income alternatives to direct ownership",
+      "Fix and flip project management timeline and contractor system — operational depth that competitors lack"
+    ],
+    "trendingTopics": [
+      "DSCR loans in a high-interest-rate environment (mid-2026 refinancing wave)",
+      "Short-term rental regulation risk and pivot strategies (municipal crackdowns trending in 2025-2026)",
+      "AI tools for real estate deal analysis and market research",
+      "Eviction moratorium aftermath and landlord legal preparedness",
+      "1031 exchange legislative risk and alternative tax deferral strategies",
+      "Rent-to-income ratio stress testing as rents plateau in many metros",
+      "Build-to-rent as an emerging strategy for individual investors"
+    ],
+    "recommendedUpdates": [
+      "Update 'Best Cities for Rental Property Investing 2026' with Q2 2026 cap rate data and rent growth figures",
+      "Add a DSCR calculator CTA and updated lender requirement table to 'Hard Money Loans' post",
+      "Refresh 'Real Estate Market Cycle' post with current positioning indicators for top 20 metros",
+      "Add 2026 legislative update section to 'Landlord-Tenant Laws Every Investor Must Know in 2026' post",
+      "Expand 'How to Refinance an Investment Property' with a rate sensitivity table for current 2026 rate environment"
+    ]
+  },
+  "articlesCreated": [
+    {
+      "title": "Rental Property Bookkeeping: The Exact System for Tracking Income, Expenses, and Tax Deductions",
+      "slug": "rental-property-bookkeeping-system-investors",
+      "publishDate": "2026-06-12",
+      "primaryKeyword": "rental property bookkeeping",
+      "pillar": "PROPERTY MANAGEMENT"
+    }
+  ],
+  "articlesSkipped": [
+    {
+      "title": "DSCR Loans Explained: How to Qualify, Calculate, and Close in 2026",
+      "slug": "dscr-loans-explained-real-estate-investors",
+      "reason": "ID already exists: post-dscr-loans-explained-real-estate-investors"
+    },
+    {
+      "title": "10 Market Indicators Every Real Estate Investor Should Track Monthly",
+      "slug": "10-market-indicators-real-estate-investors-track",
+      "reason": "ID already exists: post-10-market-indicators-real-estate-investors-track"
+    }
+  ],
+  "articlesFailed": [],
+  "imageOutcomes": [
+    {
+      "title": "Rental Property Bookkeeping: The Exact System for Tracking Income, Expenses, and Tax Deductions",
+      "status": "created",
+      "photographer": "Taylen Lundequam"
+    }
+  ],
+  "newBriefs": [
+    {
+      "day": "Mon",
+      "publishDate": "2026-06-08",
+      "slug": "dscr-loans-explained-real-estate-investors",
+      "title": "DSCR Loans Explained: How to Qualify, Calculate, and Close in 2026",
+      "pillar": "FINANCING & DEALS",
+      "primaryKeyword": "DSCR loans explained",
+      "secondaryKeywords": [
+        "DSCR loan requirements 2026",
+        "debt service coverage ratio loan",
+        "DSCR loan vs conventional mortgage",
+        "no income verification real estate loan"
+      ],
+      "targetLeadTypes": [
+        "beginning-real-estate-investors",
+        "brrrr-practitioners",
+        "rental-property-investors"
+      ],
+      "wordCount": "2,800-3,200",
+      "competitiveAngle": "Unlike BiggerPockets' community threads or Investopedia's definitional overview, this post provides a practitioner-grade breakdown of exactly how lenders calculate DSCR, what minimum thresholds look like across lender types in mid-2026, and a step-by-step qualification checklist — including how to engineer a deal's rent roll to hit a 1.25x DSCR before applying. Includes a worked example with real numbers and a comparison of DSCR vs. conventional vs. hard money for three investor scenarios.",
+      "outline": [
+        "What Is a DSCR Loan and Why Investors Use Them (vs. conventional financing)",
+        "How Lenders Calculate DSCR: The Exact Formula with Worked Example",
+        "What DSCR Ratio Do You Actually Need? Lender Thresholds in 2026",
+        "DSCR Loan Requirements: Credit Score, LTV, Property Types, and Reserves",
+        "How to Engineer a Deal to Hit DSCR Minimums Before You Apply",
+        "DSCR Loan vs. Conventional Mortgage vs. Hard Money: Side-by-Side Comparison",
+        "Best Use Cases: When a DSCR Loan Is the Right Tool",
+        "The DSCR Application Process: What to Expect and How to Prepare",
+        "Common DSCR Loan Mistakes That Kill Deals at Underwriting",
+        "DSCR in a High-Rate Environment: How to Stress-Test Your Deal",
+        "Next Steps: Run Your Numbers Before You Call a Lender"
+      ],
+      "internalLinks": [
+        "/glossary/dscr",
+        "/glossary/dscr-loan",
+        "/glossary/ltv",
+        "/glossary/cash-flow",
+        "/glossary/noi",
+        "/calculators/cash-flow-calculator",
+        "/blog/financing/hard-money-lenders-guide-real-estate",
+        "/blog/financing"
+      ]
+    },
+    {
+      "day": "Wed",
+      "publishDate": "2026-06-10",
+      "slug": "10-market-indicators-real-estate-investors-track",
+      "title": "10 Market Indicators Every Real Estate Investor Should Track Monthly",
+      "pillar": "MARKET ANALYSIS",
+      "primaryKeyword": "real estate market indicators",
+      "secondaryKeywords": [
+        "how to analyze real estate markets",
+        "real estate investing data to track",
+        "market analysis for rental property",
+        "real estate economic indicators 2026"
+      ],
+      "targetLeadTypes": [
+        "intermediate-investors-scaling",
+        "rental-property-investors",
+        "brrrr-practitioners",
+        "house-flippers"
+      ],
+      "wordCount": "2,500-3,000",
+      "competitiveAngle": "BiggerPockets covers market selection anecdotally through forum discussion. Investopedia lists economic indicators at a macro level with no investor-specific application. This post is unique because it gives investors a monthly tracking dashboard — 10 specific metrics, where to find each one for free, what threshold signals opportunity vs. risk, and how to combine them into a go/no-go market score. Includes a downloadable tracking template concept and real examples from 3 contrasting metro markets in mid-2026.",
+      "outline": [
+        "Why Most Investors Pick Markets on Gut Feel (and Lose Money Because of It)",
+        "The Monthly Market Dashboard: How to Build One in Under an Hour",
+        "Indicator 1: Cap Rate Trends by Neighborhood (and Where to Pull the Data)",
+        "Indicator 2: Rent-to-Price Ratio and the 1% Rule in Today's Market",
+        "Indicator 3: Vacancy Rate and Absorption Rate — What's Normal and What's a Warning",
+        "Indicator 4: Days on Market for Investment Properties",
+        "Indicator 5: Population and Net Migration Trends",
+        "Indicator 6: Job Growth by Sector and Employer Concentration Risk",
+        "Indicator 7: Permit Activity and New Supply Pipeline",
+        "Indicator 8: Rent Growth Rate vs. Expense Inflation",
+        "Indicator 9: Price-to-Rent Ratio as a Valuation Signal",
+        "Indicator 10: Interest Rate Sensitivity and Local Cap Rate Spread",
+        "How to Score a Market: A Simple Weighted Framework",
+        "Case Study: Applying All 10 Indicators to Three Real Markets in Mid-2026",
+        "Free Data Sources and Tools for Each Indicator",
+        "Building Your Monthly Review Routine"
+      ],
+      "internalLinks": [
+        "/glossary/cap-rate",
+        "/glossary/vacancy-rate",
+        "/glossary/occupancy-rate",
+        "/glossary/gross-rent-multiplier",
+        "/glossary/cash-flow",
+        "/glossary/one-percent-rule",
+        "/glossary/real-estate-cycle",
+        "/calculators/cap-rate-calculator",
+        "/blog/markets/best-cities-rental-property-investing-2026",
+        "/blog/markets"
+      ]
+    },
+    {
+      "day": "Fri",
+      "publishDate": "2026-06-12",
+      "slug": "rental-property-bookkeeping-system-investors",
+      "title": "Rental Property Bookkeeping: The Exact System for Tracking Income, Expenses, and Tax Deductions",
+      "pillar": "PROPERTY MANAGEMENT",
+      "primaryKeyword": "rental property bookkeeping",
+      "secondaryKeywords": [
+        "rental property accounting system",
+        "how to track rental income and expenses",
+        "rental property tax deductions tracking",
+        "Stessa vs QuickBooks for landlords"
+      ],
+      "targetLeadTypes": [
+        "rental-property-investors",
+        "beginning-real-estate-investors",
+        "intermediate-investors-scaling"
+      ],
+      "wordCount": "2,500-3,000",
+      "competitiveAngle": "BiggerPockets has scattered forum threads on bookkeeping but no authoritative system guide. Investopedia covers accounting concepts with zero landlord-specific application. REtipster doesn't address this at all. This post is differentiated by providing a complete, replicable bookkeeping architecture — chart of accounts designed specifically for rental investors, a month-end close checklist, a tool comparison (Stessa, QuickBooks, spreadsheet) with honest tradeoffs, and a tax-season handoff package that makes your CPA's job easy. Written from the perspective of an investor managing 1 to 10 properties, not an accountant writing for other accountants.",
+      "outline": [
+        "Why Most Landlords Have a Bookkeeping Problem (and What It Costs Them at Tax Time)",
+        "The Rental Property Chart of Accounts: Every Income and Expense Category You Need",
+        "Setting Up Your System: Cash vs. Accrual Accounting for Rental Investors",
+        "Tracking Rental Income: Rent, Late Fees, Pet Fees, and Other Revenue Streams",
+        "Tracking Operating Expenses: Repairs, Property Management, Insurance, Utilities",
+        "CapEx vs. Repairs: The IRS Distinction That Determines Your Deduction",
+        "Depreciation Tracking: How to Record It Without a CPA Doing It Monthly",
+        "Tool Comparison: Stessa vs. QuickBooks vs. Custom Spreadsheet for Landlords",
+        "The Month-End Close Checklist: 8 Steps That Take Under 30 Minutes",
+        "The Tax-Season Handoff Package: What to Give Your CPA and How to Organize It",
+        "Bookkeeping for Multiple Properties: How to Scale the System from 1 to 10 Units",
+        "Common Bookkeeping Mistakes That Trigger Audits or Cost Deductions",
+        "Your First 30 Days: Setting Up the System from Scratch"
+      ],
+      "internalLinks": [
+        "/glossary/depreciation",
+        "/glossary/capex-reserve",
+        "/glossary/cash-flow",
+        "/glossary/noi",
+        "/glossary/trailing-12",
+        "/glossary/rent-roll",
+        "/calculators/cash-flow-calculator",
+        "/blog/tax-legal/real-estate-depreciation-tax-strategy",
+        "/blog/strategies/self-managing-rental-properties-vs-hiring-property-manager",
+        "/blog/tax-legal"
+      ]
+    }
+  ],
+  "nextWeekPlan": "This week's three posts were selected to satisfy pillar rotation (Financing & Deals → Market Analysis → Property Management), clear high-priority unpublished briefs from the editorial calendar, and target mid-2026 search demand that competitors haven't addressed with practitioner-grade depth. Monday's DSCR post pulls directly from the unpublished calendar brief and is timed well given active refinancing and acquisition activity in the current rate environment — it also creates a natural internal link target for several existing financing posts. Wednesday's Market Indicators post is from the unpublished calendar and fills the most significant content gap identified: Market Analysis has only one published post (best cities 2026) and this piece becomes the analytical backbone of that entire pillar. Friday's Bookkeeping post is from the unpublished calendar and addresses a high-intent, underserved query cluster; it also creates a strong internal link bridge between the tax-legal and property management pillars. Two briefs from the unpublished calendar were skipped this week due to duplicate risk: 'Multi-Family Investing for Beginners' and 'Self-Managing vs Hiring a Property Manager' both have substantially overlapping published posts and need to be either differentiated with a new angle or retired from the calendar. 'Real Estate Depreciation' in the calendar is also a confirmed duplicate of the published post and should be removed. These three items should be flagged for editorial review before the next planning cycle.",
+  "errors": []
+}
