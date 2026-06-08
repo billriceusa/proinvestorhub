@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-07T12:02:27.265Z",
+  "lastUpdated": "2026-06-08T12:03:10.315Z",
   "items": [
     {
       "id": "61a3cb491210",
@@ -1806,6 +1806,39 @@
       "status": "open"
     },
     {
+      "id": "965d17840fa2",
+      "title": "Expand the Griffin Funding Review Page to Capture 5 Striking-Distance Rankings",
+      "description": "The /lenders/reviews/griffin-funding page has 5 queries ranking between positions 15–19, making it the only URL on the site with a near-term path to page-1 Google clicks. Implement the following: (1) Add a dedicated H2 section titled 'Griffin Funding Interest Rates' with current rate ranges for DSCR, fix-and-flip, and bank statement loans — this directly targets the pos 18.3 query with 12 impressions. (2) Add a 'Griffin Funding BBB Rating & Trustpilot Score' section with the actual ratings and a brief analysis — targets pos 15.4 query with 9 impressions. (3) Add a 'Griffin Funding Bank Statement Loan' section covering eligibility, LTV, and documentation requirements — targets pos 19.3 query with 10 impressions. (4) Add a 'Pros and Cons' structured section with a comparison table — targets pos 19.0 query. (5) Add FAQ schema markup with questions matching these exact query strings. Target page length of 2,500–3,500 words with original data points where possible. This single page expansion is the highest-ROI SEO action available given the existing ranking momentum.",
+      "expectedImpact": "Pushing 2–3 of these 5 queries from positions 15–19 to top 10 could generate the site's first consistent Google organic clicks within 4–8 weeks. At position 8–10, even 12 impressions/query could yield 1–3 clicks/day per query.",
+      "priority": "high",
+      "firstSeen": "2026-06-08",
+      "lastSeen": "2026-06-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "b868d144e9e5",
+      "title": "Strengthen the Cap Rate Calculator Page to Break Through Position 20",
+      "description": "The /calculators/cap-rate page is earning 304 impressions/28 days for 'cap rate calculator' at position 20.5 — it is literally one position away from page 1 territory. To push it over: (1) Audit the page against the top 3 ranking pages for 'cap rate calculator' and identify content gaps — likely missing: what is a good cap rate by property type, cap rate by city benchmarks, cap rate vs cash-on-cash comparison, and a downloadable Excel template (which has its own query cluster at pos 47.2 with 13 impressions). (2) Add a 'Cap Rate by Market' section linking to /markets/appreciation and /markets/cash-flow pages to build topical depth and internal link equity. (3) Ensure the calculator itself is functional, fast-loading, and mobile-optimized — the device breakdown shows 193 desktop impressions vs 53 mobile, so desktop UX is the priority. (4) Add structured data (HowTo or FAQPage schema) targeting the 'how to calculate cap rate' query cluster. (5) Build 2–3 internal links from the highest-traffic blog posts pointing to this calculator with anchor text variations matching the top query strings.",
+      "expectedImpact": "Moving from position 20.5 to position 8–12 for 'cap rate calculator' (304 impressions/28 days) could generate 15–30 clicks/month from that single query, plus lift across the 15+ related cap rate query variants that are currently ranking positions 25–70.",
+      "priority": "high",
+      "firstSeen": "2026-06-08",
+      "lastSeen": "2026-06-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "a0e78334673a",
+      "title": "Diagnose and Fix the Bounce Rate Spike — Add Contextual Internal Navigation",
+      "description": "The bounce rate increase from 57.96% to 75.32% combined with session duration dropping from 106.4s to 82.5s indicates users are not finding a clear next step after landing. Implement: (1) Add a sticky or inline 'Related Tools' widget on all blog and glossary pages linking to the most relevant calculator (e.g., the rental property analysis blog should prominently link to the cap rate and cash-on-cash calculators). (2) Add a 'You might also like' content block at the 60% scroll depth on all top-entry pages. (3) Review the /blog/best-cash-flow-markets-2026 page specifically — it received 4 views from 4 unique users (1:1 ratio suggests no return visits) and likely has no strong CTA or internal link to /markets/cash-flow or /markets/cash-flow/indianapolis-in. (4) Add a lender recommendation module at the bottom of all market and blog pages, since lender pages are clearly what users want (7 of top 15 pages). (5) Check page load speed on mobile — the bounce rate spike correlates with the new user influx, who may be hitting slow-loading pages for the first time.",
+      "expectedImpact": "Reducing bounce rate from 75.32% back toward the 90-day baseline of 57.96% would increase pages/session and session duration, improving engagement rate from 24.68% back toward 42%. This also sends positive behavioral signals to Google, which can support ranking improvements.",
+      "priority": "high",
+      "firstSeen": "2026-06-08",
+      "lastSeen": "2026-06-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "fc8a3a71c56e",
       "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
       "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
@@ -2983,6 +3016,28 @@
       "status": "open"
     },
     {
+      "id": "e94fe40c60fe",
+      "title": "Resolve the www vs. non-www URL Inconsistency in Search Console",
+      "description": "The Search Console data shows a split between 'https://proinvestorhub.com/' (no www) and 'https://www.proinvestorhub.com/' (with www) for different pages — lender pages appear under www while calculator and homepage appear under non-www. This canonical inconsistency can dilute link equity and confuse Google's crawl. Steps: (1) Verify which version is set as the canonical in Google Search Console and ensure only one property is the primary. (2) Audit all internal links to ensure they consistently use one version. (3) Confirm 301 redirects are in place from the non-preferred version to the preferred version. (4) Check that the sitemap.xml only references one canonical version. This is a foundational technical fix that should be resolved before investing further in content.",
+      "expectedImpact": "Consolidating URL authority under a single canonical version ensures all impression and ranking data flows to one URL, preventing split rankings and improving the site's ability to accumulate domain authority efficiently.",
+      "priority": "medium",
+      "firstSeen": "2026-06-08",
+      "lastSeen": "2026-06-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "52d3eee36572",
+      "title": "Create a Dedicated Indianapolis Cash Flow Market Page to Capture Local Intent",
+      "description": "The /markets/cash-flow/indianapolis-in page received 2 views from 1 user, suggesting it exists but may be thin. Indianapolis is one of the most searched cash flow markets for real estate investors. Expand this page to include: (1) Current median home prices and average gross rental yields with cited sources. (2) Neighborhood-level cap rate ranges (e.g., Broad Ripple vs. Southside). (3) A pre-filled cap rate calculator embed using Indianapolis-typical numbers. (4) Links to DSCR and portfolio loan pages since these are the financing products Indianapolis investors use. (5) Target queries like 'indianapolis rental property investing', 'indianapolis cash flow real estate', and 'best neighborhoods to invest in indianapolis'. Replicate this template for 3–5 additional high-demand cash flow markets (Cleveland, Memphis, Kansas City, Birmingham) to build out the /markets/cash-flow/ cluster.",
+      "expectedImpact": "City-level market pages targeting long-tail geographic queries (typically positions 10–30 for new sites) can generate highly qualified traffic from investors actively researching specific markets. These users have high conversion intent for lender referral content.",
+      "priority": "medium",
+      "firstSeen": "2026-06-08",
+      "lastSeen": "2026-06-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3551,6 +3606,17 @@
       "priority": "low",
       "firstSeen": "2026-06-07",
       "lastSeen": "2026-06-07",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "b95431b09267",
+      "title": "Optimize for AI Citation and LLM Discoverability to Scale the Emerging AI Referral Channel",
+      "description": "With 5 AI-referred sessions already appearing (ChatGPT, Copilot) for a site with only 11 sessions/day average, there is a disproportionately high AI citation rate. To amplify this: (1) Add a clear 'About This Page' or 'Methodology' section to all calculator pages explaining how calculations work — LLMs prefer citing pages with explicit, structured explanations. (2) Ensure all glossary pages have a concise 1–2 sentence definition at the very top before any other content, formatted as a direct answer. (3) Add author credentials and last-updated dates to all content pages to signal freshness and expertise to AI retrieval systems. (4) Consider adding an llms.txt file to the site root to guide AI crawlers. (5) Monitor the chatgpt.com and copilot.com referral channels weekly to identify which pages are being cited and double down on those topics.",
+      "expectedImpact": "AI referral traffic is growing industry-wide. Optimizing for LLM citation now, while the site is small, could establish ProInvestorHub as a go-to source in AI responses for real estate investing calculations and lender reviews — a channel that bypasses traditional Google ranking competition entirely.",
+      "priority": "low",
+      "firstSeen": "2026-06-08",
+      "lastSeen": "2026-06-08",
       "timesRepeated": 1,
       "status": "open"
     }
