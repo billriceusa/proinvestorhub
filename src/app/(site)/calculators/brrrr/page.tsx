@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BRRRRCalculator } from '@/components/calculators/brrrr-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
-import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
   title: 'BRRRR Calculator | Analyze Buy, Rehab, Rent, Refinance, Repeat Deals',
@@ -59,7 +59,37 @@ export default function BRRRRCalculatorPage() {
             answer:
               'Most lenders require a 6-12 month seasoning period before allowing a cash-out refinance based on the new appraised value. Some portfolio and DSCR lenders have shorter or no seasoning requirements.',
           },
+          {
+            question: 'How do you calculate a BRRRR deal?',
+            answer:
+              'Add your purchase price, rehab, and holding costs to get your all-in cost, estimate the after-repair value (ARV), then calculate the refinance loan (typically 75% of ARV). Subtract refinance costs to find your cash recovered; the gap between that and your all-in cost is the cash left in the deal. The goal is to leave little or no cash in while keeping positive cash flow.',
+          },
         ])}
+      />
+      <JsonLd
+        data={howToJsonLd({
+          name: 'How to Calculate a BRRRR Deal',
+          description:
+            'Analyze a Buy, Rehab, Rent, Refinance, Repeat deal in four steps to see how much capital you recover.',
+          steps: [
+            {
+              name: 'Total your all-in cost',
+              text: 'Add purchase price, rehab budget, and closing and holding costs to get the total cash you have invested before refinancing.',
+            },
+            {
+              name: 'Estimate the after-repair value (ARV)',
+              text: 'Use recent comparable sales to project what the renovated property will appraise for. Be conservative — overestimating ARV is the most common BRRRR mistake.',
+            },
+            {
+              name: 'Calculate the refinance loan',
+              text: 'Multiply ARV by your lender LTV (typically 70-80%) to find the new loan amount, then subtract refinance closing costs to get cash recovered.',
+            },
+            {
+              name: 'Find the cash left in the deal',
+              text: 'Subtract cash recovered from your all-in cost. A strong BRRRR leaves little or no cash in the deal while the property still produces positive monthly cash flow.',
+            },
+          ],
+        })}
       />
 
       {/* Breadcrumb */}
