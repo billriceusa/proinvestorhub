@@ -97,6 +97,12 @@ You MUST NOT propose any brief whose title substantially overlaps with an existi
 2. **Competitive Research**: Identify keyword opportunities, trending topics, or new angles in the real estate investing space that we haven't covered. Think about what new investors, flippers, landlords, and BRRRR practitioners are searching for RIGHT NOW.
 3. **Content Plan**: Select 3 content briefs for this week. Prefer existing unpublished briefs from the editorial calendar when they're timely and relevant. Create new briefs only if you identify a compelling opportunity that outranks existing options.
 
+## Content Priority: Build the Calculator Clusters
+Our strongest organic signal is on calculator-concept and "how to calculate" queries (cap rate, cash-on-cash return, DSCR, BRRRR, rental cash flow, fix-and-flip). These are where search engines already surface us, so content that deepens these clusters compounds our authority fastest. When choosing between equally good briefs, favor ones that:
+- Target "how to calculate", "formula", "what is a good [metric]", or worked-example intent around one of our calculators, OR support a calculator topic with adjacent concepts (financing, expenses, market context)
+- Link to the specific calculator they discuss so the guide and tool reinforce each other
+Do NOT create a thin standalone post that simply duplicates a calculator page's job — add depth (worked examples, market nuance, comparisons) the tool page can't, and link to the tool.
+
 Respond with valid JSON matching this structure exactly:
 {
   "analysis": {
@@ -161,7 +167,7 @@ export async function writeArticle(
 ## Available Internal Links
 - Glossary terms: ${glossaryTermSlugs.slice(0, 30).join(", ")}
 - Category pages: ${categorySlugs.join(", ")}
-- Calculators: /calculators/cap-rate, /calculators/cash-flow, /calculators/roi, /calculators/rehab-estimator
+- Calculators (use ONLY these exact paths — these are the only calculators that exist): /calculators/cap-rate, /calculators/cash-on-cash, /calculators/rental-cashflow, /calculators/mortgage, /calculators/brrrr, /calculators/fix-flip, /calculators/wholesale, /calculators/1031-exchange, /calculators/str-revenue
 
 ## Writing Requirements
 - Write as Bill Rice — 30+ year mortgage lending veteran, active real estate investor who is still learning and building his portfolio

@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { CashOnCashCalculator } from '@/components/calculators/cash-on-cash-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
-import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
-  title: 'Cash-on-Cash Return Calculator | Free Investment Analysis Tool',
+  title: 'Cash-on-Cash Return Calculator + Formula & Example',
   description:
-    'Calculate your cash-on-cash return on rental properties. Factor in financing, down payment, and expenses to see how your invested cash performs. Free, no sign-up.',
+    'Free cash-on-cash return calculator plus the formula and a step-by-step example. Factor in financing, down payment, and expenses to see how your invested cash performs, and learn how to calculate it by hand. No sign-up.',
   alternates: { canonical: '/calculators/cash-on-cash' },
   openGraph: {
     title: 'Cash-on-Cash Return Calculator | ProInvestorHub',
@@ -54,7 +54,33 @@ export default function CashOnCashPage() {
             answer:
               'Positive leverage occurs when the property cap rate exceeds your cost of debt, amplifying cash-on-cash return above the cap rate. Negative leverage occurs when interest rates are high relative to cap rate, reducing your return below an all-cash purchase.',
           },
+          {
+            question: 'How do you calculate cash-on-cash return?',
+            answer:
+              'Divide your annual pre-tax cash flow (net operating income minus annual mortgage payments) by the total cash you invested (down payment, closing costs, and rehab), then multiply by 100. For example, $6,600 of annual cash flow on $60,000 invested is an 11% cash-on-cash return.',
+          },
         ])}
+      />
+      <JsonLd
+        data={howToJsonLd({
+          name: 'How to Calculate Cash-on-Cash Return',
+          description:
+            'Calculate the cash-on-cash return on a financed rental property in three steps using annual cash flow and total cash invested.',
+          steps: [
+            {
+              name: 'Add up your total cash invested',
+              text: 'Sum the down payment, closing costs, and any upfront rehab. This is the actual cash out of your pocket — not the full purchase price.',
+            },
+            {
+              name: 'Calculate annual pre-tax cash flow',
+              text: 'Start with net operating income (rent minus vacancy and operating expenses), then subtract your annual mortgage payments (principal and interest). The result is annual pre-tax cash flow.',
+            },
+            {
+              name: 'Divide cash flow by cash invested',
+              text: 'Divide annual pre-tax cash flow by total cash invested and multiply by 100. For example, $6,600 of cash flow on $60,000 invested is an 11% cash-on-cash return.',
+            },
+          ],
+        })}
       />
 
       <nav className="text-sm text-text-muted mb-8">
@@ -88,6 +114,77 @@ export default function CashOnCashPage() {
       <div className="mt-6 max-w-3xl">
         <CalculatorEmbed calculatorName="Cash-on-Cash Return Calculator" calculatorPath="/calculators/cash-on-cash" />
       </div>
+
+      {/* How to Calculate — formula + worked example */}
+      <section className="mt-16 max-w-3xl">
+        <h2 className="text-2xl font-bold text-text">
+          How to Calculate Cash-on-Cash Return (Formula &amp; Example)
+        </h2>
+        <p className="mt-4 text-text-muted leading-7">
+          The calculator handles it instantly, but the formula is
+          straightforward: divide your annual pre-tax cash flow by the total
+          cash you actually invested, then convert to a percentage.
+        </p>
+        <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
+          <p className="text-lg font-semibold text-text sm:text-xl">
+            Cash-on-Cash Return = (Annual Pre-Tax Cash Flow &divide; Total Cash Invested) &times; 100
+          </p>
+        </div>
+        <div className="mt-6 text-text-muted leading-7 space-y-4">
+          <p>
+            <strong className="text-text">Step 1 — Add up total cash invested.</strong>{' '}
+            Sum your down payment, closing costs, and any upfront rehab. This is
+            the cash out of your pocket, not the full purchase price.
+          </p>
+          <p>
+            <strong className="text-text">Step 2 — Find annual pre-tax cash flow.</strong>{' '}
+            Start with{' '}
+            <Link
+              href="/glossary/noi"
+              className="text-primary hover:text-primary-light underline transition-colors"
+            >
+              net operating income
+            </Link>{' '}
+            (rent minus vacancy and operating expenses), then subtract your
+            annual mortgage payments. What&apos;s left is your cash flow.
+          </p>
+          <p>
+            <strong className="text-text">Step 3 — Divide cash flow by cash invested.</strong>{' '}
+            Multiply by 100 to get a percentage.
+          </p>
+        </div>
+        <div className="mt-6 rounded-xl border border-border bg-surface-alt p-6">
+          <p className="font-semibold text-text">Worked example</p>
+          <p className="mt-2 text-text-muted leading-7">
+            You buy a <strong className="text-text">$200,000</strong> rental with{' '}
+            <strong className="text-text">25% down</strong> ($50,000) plus $4,000
+            in closing costs and $6,000 in rehab — <strong className="text-text">$60,000</strong>{' '}
+            total cash invested. The property nets $18,600 in NOI, and your
+            $150,000 loan at 7% costs about $11,976 a year. That leaves{' '}
+            <strong className="text-text">$6,624</strong> in annual cash flow.
+            Dividing $6,624 by $60,000 gives a cash-on-cash return of{' '}
+            <strong className="text-primary">11%</strong> — positive leverage at
+            work, since the return beats the property&apos;s 9.3% cap rate.
+          </p>
+        </div>
+        <p className="mt-6 text-text-muted leading-7">
+          Not sure which metric to lead with? See{' '}
+          <Link
+            href="/blog/cash-on-cash-vs-cap-rate"
+            className="text-primary hover:text-primary-light underline transition-colors"
+          >
+            Cash-on-Cash Return vs. Cap Rate
+          </Link>
+          , or run the unlevered number with the{' '}
+          <Link
+            href="/calculators/cap-rate"
+            className="text-primary hover:text-primary-light underline transition-colors"
+          >
+            cap rate calculator
+          </Link>
+          .
+        </p>
+      </section>
 
       <section className="mt-16 max-w-3xl">
         <h2 className="text-2xl font-bold text-text">

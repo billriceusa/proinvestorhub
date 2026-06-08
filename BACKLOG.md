@@ -53,11 +53,15 @@
 - [ ] Unified lead capture API — consolidate `/api/newsletter`, `/api/lender-lead`, `/api/calculator-results` into single `/api/lead` endpoint with `{ firstName, email, source, metadata }` interface
 - [ ] GTM tracking migration — migrate all inline `dataLayer.push` calls across existing components to use `src/lib/tracking.ts` typed helpers
 - [ ] A/B testing infrastructure — variant routing for CTA copy/placement testing via GTM or edge middleware
+- [ ] **Run published broken-calculator-link remediation** <!-- added 2026-06-08 /brsg-session --> — ~20 live posts link to dead calculator URLs (`/calculators/cash-flow`, `/calculators/rental-property`, `/calculators/house-flip`, `/calculators/rehab-estimator`). Root cause fixed in cron + editorial calendar this session; existing posts still need the one-time fix. Script ready: `node --env-file=.env.local scripts/fix-broken-calculator-links.mjs --apply` (needs `SANITY_API_WRITE_TOKEN` — lives in Vercel, not local). Run dry first.
 
 ---
 
 ## Completed
 
+- [x] **2026-06-08** Calculator how-to-calculate enrichment (SEO content push) — added formula box, worked numeric example, and `HowTo` JSON-LD to the cap-rate, cash-on-cash, BRRRR, and mortgage/DSCR calculator pages to capture procedural "how to calculate X" search intent on the same URL (no cannibalization). GSC showed all earned impressions clustered on these queries at avg position 33. Added explainer-post cluster cross-links and a procedural FAQ to each.
+- [x] **2026-06-08** Fixed broken-calculator-link generator (root cause) — `src/lib/cron/ai-content.ts` `writeArticle` prompt listed 3 non-existent calculator routes (`/calculators/cash-flow`, `/calculators/roi`, `/calculators/rehab-estimator`); replaced with the accurate 9-calculator list so every future AI post links to real tools. Also fixed 35 broken `/calculators/*` refs in `src/data/editorial-calendar.ts`.
+- [x] **2026-06-08** Biased weekly content planner toward calculator clusters — added a "Content Priority" block to the `analyzeAndPlan` prompt steering new briefs toward how-to-calculate / formula / worked-example intent around the calculators (where the site already ranks), with tool↔guide cross-linking and an anti-thin-duplicate guard.
 - [x] **2026-04-03** Lender Finder email gate — email capture step between form submit and results, with skip option, API route + email template
 - [x] **2026-04-03** Calculator Save Results CTA — "Save These Results" email form on all 9 calculators, API route + email template
 - [x] **2026-04-03** Header CTA button — "Find a Lender" button in desktop nav + mobile hamburger menu

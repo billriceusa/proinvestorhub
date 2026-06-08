@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { MortgageCalculator } from '@/components/calculators/mortgage-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
-import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
   title: 'Mortgage & DSCR Payment Calculator | Investment Property Loans',
@@ -59,7 +59,33 @@ export default function MortgageCalculatorPage() {
             answer:
               'Your total monthly payment includes principal and interest (P&I), property taxes, homeowner\'s insurance, PMI (if applicable), and HOA fees. For DSCR analysis, operating expenses like maintenance and property management are also factored in.',
           },
+          {
+            question: 'How do you calculate DSCR?',
+            answer:
+              'Divide the property\'s net operating income (NOI) by its annual debt service (the yearly mortgage payment). For example, $24,000 of NOI against $19,200 in annual mortgage payments is a DSCR of 1.25. Most lenders look for 1.0 to 1.25 or higher.',
+          },
         ])}
+      />
+      <JsonLd
+        data={howToJsonLd({
+          name: 'How to Calculate DSCR',
+          description:
+            'Calculate the debt service coverage ratio of an investment property in three steps to see whether it qualifies for a DSCR loan.',
+          steps: [
+            {
+              name: 'Calculate net operating income (NOI)',
+              text: 'Subtract annual operating expenses and a vacancy allowance from the property\'s gross rental income. Do not include the mortgage payment.',
+            },
+            {
+              name: 'Calculate annual debt service',
+              text: 'Multiply the monthly principal-and-interest mortgage payment by 12 to get total annual debt service.',
+            },
+            {
+              name: 'Divide NOI by annual debt service',
+              text: 'Divide NOI by annual debt service to get the DSCR. For example, $24,000 NOI against $19,200 in annual payments is a 1.25 DSCR.',
+            },
+          ],
+        })}
       />
 
       {/* Breadcrumb */}
@@ -158,6 +184,13 @@ export default function MortgageCalculatorPage() {
               DSCR = NOI / Annual Debt Service
             </p>
           </div>
+          <p>
+            For example, a property with <strong className="text-text">$24,000</strong>{' '}
+            in NOI and a mortgage costing <strong className="text-text">$19,200</strong>{' '}
+            a year has a DSCR of <strong className="text-primary">1.25</strong>{' '}
+            ($24,000 &divide; $19,200) — comfortably in the range most lenders
+            want to see.
+          </p>
           <ul className="list-disc pl-6 space-y-2">
             <li>
               <strong className="text-text">DSCR 1.25+</strong> — Strong. The
