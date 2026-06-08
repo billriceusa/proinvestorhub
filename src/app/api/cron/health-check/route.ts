@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "next-sanity";
 import { Resend } from "resend";
 import { recordCronRun, type CronName } from "@/lib/cron/heartbeat";
+import { cleanSecret, findDirtyEnv } from "@/lib/env";
 
 export const maxDuration = 60;
 export const dynamic = "force-dynamic";
@@ -19,9 +20,9 @@ type HealthCheck = {
 function getSanityClient() {
   const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
   const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
-  const token = (
-    process.env.SANITY_API_TOKEN || process.env.SANITY_API_WRITE_TOKEN || ""
-  ).trim();
+  const token = cleanSecret(
+    process.env.SANITY_API_TOKEN || process.env.SANITY_API_WRITE_TOKEN
+  );
   if (!projectId || !token) {
     throw new Error("Missing NEXT_PUBLIC_SANITY_PROJECT_ID or SANITY_API_TOKEN");
   }
@@ -170,6 +171,24 @@ async function checkFuturePipeline(client: ReturnType<typeof getSanityClient>, n
   };
 }
 
+function checkEnvIntegrity(): HealthCheck {
+  const dirty = findDirtyEnv();
+  if (dirty.length === 0) {
+    return {
+      name: "Env integrity",
+      ok: true,
+      detail: "All critical secrets are clean (no stray \\n / whitespace)",
+    };
+  }
+  return {
+    name: "Env integrity",
+    ok: false,
+    detail: `Corrupted env var(s) — value carries a literal \\n or whitespace, which breaks auth at runtime: ${dirty.join(
+      ", "
+    )}. Re-add the clean value in Vercel (strip the trailing \\n) and redeploy.`,
+  };
+}
+
 function buildAlertEmail(checks: HealthCheck[], now: Date): string {
   const failing = checks.filter((c) => !c.ok);
   const rows = checks
@@ -213,19 +232,38 @@ export async function GET(request: Request) {
 
   const startTime = Date.now();
   const now = new Date();
-  const client = getSanityClient();
 
-  const [contentChecks, heartbeatChecks] = await Promise.all([
-    Promise.all([
-      checkWeeklyContent(client, now),
-      checkNewsletter(client, now),
-      checkMarketData(client, now),
-      checkFuturePipeline(client, now),
-    ]),
-    checkCronHeartbeats(client, now),
-  ]);
+  // Evaluate env integrity FIRST — it needs no Sanity client, so the alarm
+  // still fires even when corrupted secrets have taken Sanity auth down.
+  const envCheck = checkEnvIntegrity();
 
-  const checks = [...contentChecks, ...heartbeatChecks];
+  let sanityChecks: HealthCheck[];
+  try {
+    const client = getSanityClient();
+    const [contentChecks, heartbeatChecks] = await Promise.all([
+      Promise.all([
+        checkWeeklyContent(client, now),
+        checkNewsletter(client, now),
+        checkMarketData(client, now),
+        checkFuturePipeline(client, now),
+      ]),
+      checkCronHeartbeats(client, now),
+    ]);
+    sanityChecks = [...contentChecks, ...heartbeatChecks];
+  } catch (err) {
+    // Don't 500 — a Sanity outage must still produce an alert email.
+    sanityChecks = [
+      {
+        name: "Sanity connectivity",
+        ok: false,
+        detail: `Could not reach Sanity for health checks: ${
+          err instanceof Error ? err.message : String(err)
+        }. Often a corrupted SANITY_API_TOKEN — see Env integrity.`,
+      },
+    ];
+  }
+
+  const checks = [envCheck, ...sanityChecks];
   const failing = checks.filter((c) => !c.ok);
 
   if (failing.length > 0) {
