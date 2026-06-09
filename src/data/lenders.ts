@@ -791,7 +791,7 @@ Where Griffin isn't the answer: there's no fix-and-flip or bridge product, so a 
     founded: 2014,
     headquarters: 'Redondo Beach, CA',
     description:
-      'Civic Financial Services is a private money lender offering business purpose loans including fix-and-flip, bridge, and DSCR products. A subsidiary of Pacific Western Bank, providing institutional backing with private lender flexibility.',
+      'Civic Financial Services is a private money lender offering business purpose loans including fix-and-flip, bridge, and DSCR products. Now part of the Roc360 family of companies, it pairs institutional capital with private-lender flexibility.',
     loanTypeSlugs: ['hard-money-loans', 'fix-and-flip-loans', 'bridge-loans', 'dscr-loans'],
     minRate: 7.5,
     maxRate: 12.0,
@@ -810,7 +810,7 @@ Where Griffin isn't the answer: there's no fix-and-flip or bridge product, so a 
     foreignNational: false,
     bestForTags: ['All-in-one lender', 'Institutional-backed stability', 'Larger loan amounts'],
     pros: [
-      'Bank-backed stability (Pacific Western Bank subsidiary)',
+      'Institutional backing via the Roc360 lending group',
       'Broad product range — flip, bridge, and DSCR',
       'High max loan ($5M)',
       'Works with first-time investors',
@@ -824,10 +824,15 @@ Where Griffin isn't the answer: there's no fix-and-flip or bridge product, so a 
     editorRating: 4.1,
     featured: false,
     editorSummary:
-      'Civic Financial offers the best of both worlds: private lender flexibility with institutional backing. As a subsidiary of Pacific Western Bank, they have deep capital reserves — you don\'t need to worry about them running out of funds mid-deal. The product range covers fix-and-flip through DSCR, making them a solid one-stop-shop for investors who want a bank-backed lender with private money speed.',
+      'Civic Financial offers private-lender flexibility with institutional backing. Now part of the Roc360 family of companies (the group behind Roc Capital), it draws on deep capital and a long origination track record — more than $9 billion funded since 2014. The product range covers fix-and-flip through DSCR, making it a solid one-stop shop for investors who want institutional scale with private-money speed.',
+    editorReview: `CIVIC Financial Services has one of the more eventful histories in private lending, and where it sits today matters as much as where it started. It was founded in 2014 as a venture of Wedgewood, the large California real estate firm, and grew into one of the best-known institutional private lenders in the country — funding fix-and-flip, bridge, and DSCR loans at serious scale, more than $9 billion since inception, including one of the largest bridge-loan securitizations the private-money industry had seen at the time.
+
+Its ownership has changed twice in quick succession. In February 2021, Pacific Western Bank (PacWest Bancorp) acquired Civic outright, making it a bank-owned lender. Then in the 2023 regional-banking stress that battered PacWest, the bank divested Civic, and Roc360 — the holding company behind Roc Capital — acquired Civic's origination business in May 2023. Today CIVIC operates as a Roc360 family company and is still actively originating under its own brand.
+
+For investors, that means a broad, all-in-one product line — hard money and fix-and-flip, bridge, multifamily, and DSCR — backed now by Roc360's institutional capital rather than a bank. One thing worth knowing if you're comparing options on this site: Civic and Roc Capital are now sibling brands under the same parent, so you may effectively be evaluating the same lending group twice. As always, confirm current rates and terms for your specific loan — and note that some older reviews elsewhere still describe Civic as bank-owned, which stopped being true in 2023.`,
     metaTitle: 'Civic Financial Services Review 2026: Private Money Lender | ProInvestorHub',
     metaDescription:
-      'Civic Financial Services review. Bank-backed hard money, flip, bridge, and DSCR loans. Institutional stability with private lender speed. Expert analysis.',
+      'Civic Financial Services review. Roc360-family hard money, flip, bridge, and DSCR loans. Institutional scale with private lender speed. Expert analysis.',
   },
   {
     name: 'Velocity Mortgage Capital',
