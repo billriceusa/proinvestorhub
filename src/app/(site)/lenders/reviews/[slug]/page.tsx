@@ -80,7 +80,7 @@ function buildLenderFaqs(lender: LenderData): { question: string; answer: string
   const faqs: { question: string; answer: string }[] = [
     {
       question: `Is ${lender.name} a legitimate lender?`,
-      answer: `${lender.name} is an established lender founded in ${lender.founded}${lender.headquarters ? ` and headquartered in ${lender.headquarters}` : ''}. It ${lender.nationwide ? 'lends nationwide' : 'operates in select states'} and specializes in ${loanStr}. As with any lender, confirm its current NMLS registration and state licensing, and compare written quotes before you apply.`,
+      answer: `${lender.name} is an established lender founded in ${lender.founded}${lender.headquarters ? ` and headquartered in ${lender.headquarters}` : ''}. It ${lender.nationwide ? 'lends nationwide' : 'operates in select states'} and specializes in ${loanStr}. To verify it for yourself, confirm ${lender.name}'s current NMLS registration and state licensing, check its Better Business Bureau (BBB) profile and reviews, and compare written quotes before you apply.`,
     },
   ]
 
@@ -236,6 +236,26 @@ export default async function LenderProfilePage({ params }: Props) {
               </p>
             </div>
           </section>
+
+          {/* Full Review — long-form editorial, only when authored */}
+          {lender.editorReview && (
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold text-text mb-4">
+                {lender.name} Review: The Full Breakdown
+              </h2>
+              <div className="space-y-4">
+                {lender.editorReview
+                  .split(/\n\s*\n/)
+                  .map((para) => para.trim())
+                  .filter(Boolean)
+                  .map((para, i) => (
+                    <p key={i} className="text-text-muted leading-7">
+                      {para}
+                    </p>
+                  ))}
+              </div>
+            </section>
+          )}
 
           {/* Pros & Cons */}
           <section className="mb-10">
