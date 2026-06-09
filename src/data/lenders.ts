@@ -35,6 +35,13 @@ export type LenderData = {
   editorRating: number
   featured: boolean
   editorSummary: string
+  /**
+   * Optional long-form editorial review, rendered as a "Full Review" section
+   * below the Editor's Take. Plain paragraphs separated by blank lines. Adds
+   * depth + word count for branded "<lender> review" queries. Fill on the
+   * lenders that draw search demand first; pages without it render unchanged.
+   */
+  editorReview?: string
   metaTitle: string
   metaDescription: string
 }
@@ -536,6 +543,13 @@ export const lenders: LenderData[] = [
     featured: false,
     editorSummary:
       'Griffin Funding combines low credit requirements (620 DSCR) with bank statement and foreign national programs — a rare combination. If you\'re a self-employed investor with a 640 credit score who wants a DSCR loan, Griffin is one of the few lenders who\'ll work with you. Their non-QM expertise means they understand non-standard borrower profiles better than most.',
+    editorReview: `Griffin Funding is a non-QM lender out of San Diego, founded in 2014, that has built its investor business around two products most banks won't touch: DSCR loans and bank statement loans. For real estate investors, that focus is the whole point — these are the programs that let you qualify on the property's cash flow or your deposits instead of W-2s and tax returns.
+
+On rates and terms, Griffin's investor loans run roughly 6.5% to 9% with up to 80% LTV, a 620 minimum credit score on DSCR, and loan amounts from $100,000 up to $5 million. Origination sits in the 0–2 point range and they'll close in title held by an LLC, with interest-only options available. Those are competitive numbers for the non-QM space — the 620 DSCR floor in particular is lower than many competitors, which is what makes Griffin worth a quote if your credit isn't pristine. Treat every figure here as a starting point and get a written quote for your scenario; non-QM pricing moves with the market and your specific profile.
+
+The bank statement program is the other reason investors find Griffin. If you're self-employed and your tax returns understate your real income, Griffin will qualify you on 12–24 months of bank deposits — useful for full-time investors, gig-economy earners, and business owners. They also lend to foreign nationals, a thin market where few lenders compete.
+
+Where Griffin isn't the answer: there's no fix-and-flip or bridge product, so a BRRRR or flip investor needs a second lender for the acquisition-and-rehab leg. Closings tend to run 21–30 days rather than the one-to-two weeks a hard-money shop can hit, and DSCR loans carry a 3-year step-down prepayment penalty you'll want to model if you plan to refinance or sell early. As with any lender, confirm Griffin Funding's current NMLS registration and check its Better Business Bureau (BBB) profile and reviews before you apply, and compare at least one written quote against a competing DSCR lender.`,
     metaTitle: 'Griffin Funding Review 2026: DSCR & Bank Statement Loans | ProInvestorHub',
     metaDescription:
       'Griffin Funding review for real estate investors. Low credit score DSCR, bank statement programs, foreign national loans. Rates, requirements, expert analysis.',
