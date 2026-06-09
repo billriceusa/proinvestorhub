@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-08T12:03:10.315Z",
+  "lastUpdated": "2026-06-09T12:02:43.542Z",
   "items": [
     {
       "id": "61a3cb491210",
@@ -1839,6 +1839,39 @@
       "status": "open"
     },
     {
+      "id": "eaedb18ff3ec",
+      "title": "Strengthen the Griffin Funding review page to push 5 queries from pos 15–19 onto page 1",
+      "description": "The /lenders/reviews/griffin-funding page is the site's only cluster with multiple striking-distance rankings. Implement these steps: (1) Expand the review to 2,000+ words covering loan types (DSCR, bank statement, fix-and-flip, bridge), current rate ranges, BBB rating and complaint history, pros/cons table, and a comparison vs. 2–3 competitors. (2) Add an H2 section explicitly titled 'Griffin Funding Interest Rates' and another for 'Griffin Funding BBB Rating & Reviews' to match the exact query language at positions 18.3 and 15.4. (3) Add structured data (Review schema with aggregate rating). (4) Build 3–5 internal links from /lenders, /lenders/bridge-loans/new-york, and relevant blog posts. (5) Pursue one external link from a real estate investing forum or directory. Even reaching position 10–12 on 'griffin funding bbb rating' (currently pos 15.4, 9 impr/28 days) would deliver the site's first recurring organic clicks.",
+      "expectedImpact": "First page-1 rankings within 4–8 weeks; estimated 15–40 organic clicks/month once 3–5 queries break top 10, based on query impression volumes.",
+      "priority": "high",
+      "firstSeen": "2026-06-09",
+      "lastSeen": "2026-06-09",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e00b88469bb2",
+      "title": "Improve /calculators/cap-rate page authority and on-page depth to close the gap from pos 20 to top 10",
+      "description": "The cap rate calculator page is generating 312 impressions/28 days for 'cap rate calculator' at position 20.2 — the site's highest-volume query — but earning zero clicks because it sits just outside page 1. Actions: (1) Expand the page content below the calculator with a 600–800 word educational section covering cap rate formula, what constitutes a good cap rate by property type, and cap rate vs. cash-on-cash comparison. (2) Add an FAQ schema block answering 'What is a good cap rate?', 'How do you calculate cap rate?', and 'What is the difference between cap rate and ROI?' — these directly match query variants already generating impressions. (3) Add internal links from every blog post mentioning cap rate, from the glossary/cap-rate-spread page, and from the markets/cash-flow page. (4) Ensure the page title tag is exactly 'Cap Rate Calculator — Free Real Estate Tool' and the H1 matches. (5) Consider adding a downloadable cap rate calculator Excel template to target the 'cap rate calculator excel' query (pos 47.2, 13 impr) as a secondary conversion.",
+      "expectedImpact": "Moving from position 20 to position 10–15 could generate 50–150 clicks/month given 312 impressions at current position; page-1 entry (pos 8–10) could yield 200–400 clicks/month.",
+      "priority": "high",
+      "firstSeen": "2026-06-09",
+      "lastSeen": "2026-06-09",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "256f85ff3352",
+      "title": "Diagnose and fix the engagement collapse — 91% bounce rate and 44s duration require immediate investigation",
+      "description": "Before investing further in traffic acquisition, identify why visitors are leaving immediately. Steps: (1) In GA4, create a segment for sessions under 10 seconds and identify which pages and sources they come from — if it's predominantly direct/none, the issue may be internal testing inflating bounce metrics. (2) Run a Core Web Vitals check via PageSpeed Insights on the top 5 pages; if LCP exceeds 2.5s or CLS exceeds 0.1, fix these first. (3) Review mobile experience on /calculators/cap-rate and /lenders — 56 of 244 GSC impressions come from mobile, and a broken mobile calculator would explain zero clicks despite impressions. (4) Add a sticky internal navigation bar or 'related content' module to all blog posts to reduce single-page exits. (5) Ensure the calculator on /calculators/cap-rate is functional, fast, and above the fold on both desktop and mobile.",
+      "expectedImpact": "Reducing bounce rate from 91% to 65–70% and increasing session duration to 75+ seconds would signal content quality to Google and improve ranking potential across all pages.",
+      "priority": "high",
+      "firstSeen": "2026-06-09",
+      "lastSeen": "2026-06-09",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "fc8a3a71c56e",
       "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
       "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
@@ -3038,6 +3071,28 @@
       "status": "open"
     },
     {
+      "id": "5d0113781134",
+      "title": "Resolve the direct/unattributed traffic dominance to understand true audience",
+      "description": "122 of ~160 weekly sessions are tagged as direct/none, and 45 more are '(not set)/(not set)' — together that is 104% of attributed sessions, meaning nearly all traffic is untracked. Actions: (1) Audit GA4 implementation: verify the GA4 tag fires on all pages including calculator and lender subpages using GA4 DebugView. (2) Check for UTM stripping — if the site uses redirects (e.g., www vs. non-www), ensure they preserve UTM parameters. (3) Add UTM parameters to any promotional links shared via email, social, or forums (e.g., ?utm_source=linkedin&utm_medium=social). (4) Investigate whether the www vs. non-www discrepancy visible in GSC data (some pages indexed as www.proinvestorhub.com, others as proinvestorhub.com) is causing session fragmentation in GA4. Canonicalize to one version immediately.",
+      "expectedImpact": "Accurate source attribution will reveal which promotional channels are actually driving traffic, enabling smarter content distribution decisions and eliminating false baseline inflation.",
+      "priority": "medium",
+      "firstSeen": "2026-06-09",
+      "lastSeen": "2026-06-09",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "3ea80d52b3ea",
+      "title": "Expand geo-specific calculator pages systematically, starting with high-investor-activity markets",
+      "description": "The /calculators/cap-rate/toledo-oh page earned 2 visits this week, validating the geo-calculator strategy. Scale this systematically: (1) Build cap rate calculator pages for the top 15–20 cash-flow markets already featured on /markets/cash-flow — cities like Cleveland OH, Indianapolis IN, Memphis TN, Birmingham AL, Kansas City MO. (2) Each page should pre-populate the calculator with local market data (median property price, average cap rate range, typical NOI) and include 300–400 words of market-specific context. (3) Target long-tail queries like 'cap rate calculator [city]' and 'average cap rate in [city]' — these have low competition and directly serve the BRRRR/cash-flow investor audience. (4) Internally link each city calculator page from the corresponding /markets/ page and from the main /calculators/cap-rate page.",
+      "expectedImpact": "20 geo-calculator pages targeting low-competition city-specific queries could collectively generate 100–300 organic sessions/month within 3–6 months, with high engagement due to local relevance.",
+      "priority": "medium",
+      "firstSeen": "2026-06-09",
+      "lastSeen": "2026-06-09",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3617,6 +3672,17 @@
       "priority": "low",
       "firstSeen": "2026-06-08",
       "lastSeen": "2026-06-08",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "f3516dc1076e",
+      "title": "Optimize for AI search referrals by adding structured, citable content blocks",
+      "description": "ChatGPT and Copilot already sent 6 sessions this week unprompted — a meaningful signal for a site this new. To accelerate AI referral growth: (1) Add a 'Quick Answer' box at the top of each calculator and glossary page with a 2–3 sentence plain-language definition (e.g., 'A cap rate is calculated by dividing Net Operating Income by property value. A good cap rate for rental properties typically ranges from 4–10% depending on market and risk tolerance.'). (2) Ensure all factual claims include a publication/update date — AI systems favor recently updated, clearly dated content. (3) Add an author bio with credentials to blog posts and guides. (4) Structure FAQ sections with explicit Q&A formatting on high-traffic pages — this format is highly citable by AI assistants. These changes also benefit featured snippet eligibility in traditional Google search.",
+      "expectedImpact": "AI referral traffic could grow from 6 to 20–50 sessions/week within 2–3 months as content becomes more citable; also improves featured snippet capture probability for calculator and glossary queries.",
+      "priority": "low",
+      "firstSeen": "2026-06-09",
+      "lastSeen": "2026-06-09",
       "timesRepeated": 1,
       "status": "open"
     }

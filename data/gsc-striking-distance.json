@@ -1,8 +1,8 @@
 {
   "available": true,
   "window": {
-    "start": "2026-05-10",
-    "end": "2026-06-06",
+    "start": "2026-05-11",
+    "end": "2026-06-07",
     "days": 28
   },
   "topByImpressions": [
@@ -10,9 +10,9 @@
       "page": "https://proinvestorhub.com/calculators/cap-rate",
       "query": "cap rate calculator",
       "clicks": 0,
-      "impressions": 304,
+      "impressions": 312,
       "ctr": 0,
-      "position": 20.529605263157894
+      "position": 20.243589743589745
     },
     {
       "page": "https://proinvestorhub.com/calculators/cap-rate",
@@ -26,17 +26,17 @@
       "page": "https://proinvestorhub.com/calculators/cap-rate",
       "query": "calculate cap rate",
       "clicks": 0,
-      "impressions": 48,
+      "impressions": 47,
       "ctr": 0,
-      "position": 45.104166666666664
+      "position": 44.42553191489362
     },
     {
       "page": "https://proinvestorhub.com/calculators/cash-on-cash",
       "query": "cash on cash return calculator",
       "clicks": 0,
-      "impressions": 47,
+      "impressions": 46,
       "ctr": 0,
-      "position": 38.5531914893617
+      "position": 38.41304347826087
     },
     {
       "page": "https://proinvestorhub.com/calculators/cap-rate",
@@ -48,19 +48,19 @@
     },
     {
       "page": "https://proinvestorhub.com/calculators/cap-rate",
-      "query": "rental cap rate calculator",
+      "query": "interest rate cap calculator",
       "clicks": 0,
-      "impressions": 24,
+      "impressions": 23,
       "ctr": 0,
-      "position": 39.833333333333336
+      "position": 46.391304347826086
     },
     {
       "page": "https://proinvestorhub.com/calculators/cap-rate",
-      "query": "interest rate cap calculator",
+      "query": "rental cap rate calculator",
       "clicks": 0,
-      "impressions": 22,
+      "impressions": 23,
       "ctr": 0,
-      "position": 46.72727272727273
+      "position": 39.91304347826087
     },
     {
       "page": "https://proinvestorhub.com/calculators/cap-rate",
@@ -96,14 +96,6 @@
     },
     {
       "page": "https://proinvestorhub.com/calculators/cap-rate",
-      "query": "cap rate rental property calculator",
-      "clicks": 0,
-      "impressions": 13,
-      "ctr": 0,
-      "position": 40.53846153846154
-    },
-    {
-      "page": "https://proinvestorhub.com/calculators/cap-rate",
       "query": "cap.rate calculator",
       "clicks": 0,
       "impressions": 13,
@@ -127,6 +119,22 @@
       "position": 59.46153846153846
     },
     {
+      "page": "https://proinvestorhub.com/calculators/cap-rate",
+      "query": "calculate cap rate calculator",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 58.833333333333336
+    },
+    {
+      "page": "https://proinvestorhub.com/calculators/cap-rate",
+      "query": "cap rate rental property calculator",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 40.75
+    },
+    {
       "page": "https://www.proinvestorhub.com/lenders/reviews/griffin-funding",
       "query": "griffin funding",
       "clicks": 0,
@@ -144,11 +152,11 @@
     },
     {
       "page": "https://proinvestorhub.com/calculators/cap-rate",
-      "query": "calculate cap rate calculator",
+      "query": "cap rate calc",
       "clicks": 0,
       "impressions": 11,
       "ctr": 0,
-      "position": 60.18181818181818
+      "position": 46.81818181818182
     },
     {
       "page": "https://proinvestorhub.com/calculators/cap-rate",
@@ -157,14 +165,6 @@
       "impressions": 11,
       "ctr": 0,
       "position": 45
-    },
-    {
-      "page": "https://proinvestorhub.com/calculators/cap-rate",
-      "query": "cap rate calc",
-      "clicks": 0,
-      "impressions": 10,
-      "ctr": 0,
-      "position": 47.8
     },
     {
       "page": "https://www.proinvestorhub.com/lenders/reviews/griffin-funding",
@@ -191,6 +191,14 @@
       "position": 34.333333333333336
     },
     {
+      "page": "https://proinvestorhub.com/calculators/cap-rate",
+      "query": "real estate cap rate calculator",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 53.77777777777778
+    },
+    {
       "page": "https://proinvestorhub.com/calculators/cash-on-cash",
       "query": "cash on cash roi calculator",
       "clicks": 0,
@@ -205,14 +213,6 @@
       "impressions": 9,
       "ctr": 0,
       "position": 15.444444444444445
-    },
-    {
-      "page": "https://proinvestorhub.com/calculators/cap-rate",
-      "query": "real estate cap rate calculator",
-      "clicks": 0,
-      "impressions": 8,
-      "ctr": 0,
-      "position": 54.75
     },
     {
       "page": "https://proinvestorhub.com/calculators",
@@ -279,14 +279,6 @@
       "position": 42.333333333333336
     },
     {
-      "page": "https://proinvestorhub.com/calculators/cash-on-cash",
-      "query": "calculating cash on cash return",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 73
-    },
-    {
       "page": "https://www.proinvestorhub.com/lenders/reviews/park-place-finance",
       "query": "park place finance",
       "clicks": 0,
@@ -325,6 +317,14 @@
       "impressions": 5,
       "ctr": 0,
       "position": 18
+    },
+    {
+      "page": "https://proinvestorhub.com/calculators/cap-rate",
+      "query": "calculate a cap rate",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 69
     }
   ],
   "strikingDistance": [
@@ -370,6 +370,6 @@
     }
   ],
   "ctrOpportunity": [],
-  "totalRowsWithImpressions": 120,
+  "totalRowsWithImpressions": 118,
   "totalRowsAboveFloor": 67
 }
