@@ -90,6 +90,11 @@ export const lenders: LenderData[] = [
     featured: true,
     editorSummary:
       'Kiavi is the best all-around platform for investors who want to do both flips and rentals with one lender. Their tech stack is best-in-class — the online portal makes draw requests, document uploads, and closings genuinely easy. Volume borrowers get meaningfully better pricing. If you\'re doing 3+ deals per year across flips and DSCR holds, Kiavi should be your primary lending relationship.',
+    editorReview: `Kiavi is one of the largest private lenders to residential real estate investors in the country, and it has been at this longer than the name suggests. It launched in 2013 as LendingHome, co-founded by entrepreneurs Matt Humphrey and James Herbert with the idea of using technology to make investor lending faster than the bank process they'd found painfully slow. In November 2021 it rebranded to Kiavi — a play on "chiave," the Italian word for key — and Arvind Mohan, a long-time operator who'd been COO since 2020, took over as CEO in early 2023.
+
+The scale is the headline: Kiavi reports having funded more than $22 billion in loans, and its bread and butter is exactly what active investors need — fix-and-flip and bridge financing for the buy-rehab phase, plus DSCR loans for the long-term hold. If you run the BRRRR playbook, you can stay under one roof from acquisition through refinance, which is rare on this list.
+
+What you're buying with Kiavi is technology and repeatability: a slick online platform, fast pre-approvals, and a lender that does enough volume to be predictable deal after deal. The trade-off is that it's a high-volume operation rather than a boutique — great for a standardized flip or rental, less so if your deal needs a lot of hand-holding. Confirm current rates and terms for your scenario before you commit.`,
     metaTitle: 'Kiavi Review 2026: DSCR & Fix-and-Flip Loans | ProInvestorHub',
     metaDescription:
       'In-depth Kiavi review for real estate investors. Rates, LTV, closing speed, pros & cons for DSCR and fix-and-flip loans. Expert analysis from a 30-year lending veteran.',
@@ -135,6 +140,11 @@ export const lenders: LenderData[] = [
     featured: true,
     editorSummary:
       'Lima One is the best choice for investors who want one lender relationship across every product type. If you\'re doing BRRRR, flips, ground-up construction, and multifamily — Lima One can handle all of it. They\'re also one of the more welcoming lenders for first-time investors, and their foreign national program opens doors for international investors. Rates aren\'t quite as aggressive as Kiavi for volume borrowers, but the breadth of products compensates.',
+    editorReview: `Lima One Capital has one of the better origin stories in this space. It was founded in 2010 in Greenville, South Carolina by two U.S. Marine Corps veterans, John Warren and John Thompson, who served together in Iraq — the company is named after their "Lima One" Marine call sign. They came home, got into real estate, and built a lender for investors. That veteran-founded identity is still part of the brand.
+
+The company has since grown into an institution. In 2021, MFA Financial (NYSE: MFA), a publicly traded mortgage REIT, completed its acquisition of Lima One, which now operates as an MFA subsidiary while keeping its Greenville headquarters. Lima One reports having funded well over $10 billion across tens of thousands of loans.
+
+For investors, the draw is breadth: Lima One is a genuine full-service shop, covering DSCR rental loans, fix-and-flip, bridge, new construction, and multifamily — so you can grow from a single rental into a portfolio without changing lenders. That institutional backing means deep capital and staying power, with the usual trade-off that a larger, process-driven lender is less flexible than a local hard-money contact. Verify current pricing for your specific loan type before applying.`,
     metaTitle: 'Lima One Capital Review 2026: Full-Service Investor Lender | ProInvestorHub',
     metaDescription:
       'Lima One Capital review for real estate investors. DSCR, flip, construction, and multifamily loans. Rates, requirements, pros & cons. Expert analysis.',
@@ -180,6 +190,11 @@ export const lenders: LenderData[] = [
     featured: false,
     editorSummary:
       'RCN Capital stands out for accessibility — their 620 minimum credit score for DSCR loans is among the lowest in the industry, making them a strong option for investors with less-than-perfect credit. They also offer foreign national programs. If you\'re turned down by lenders with 680+ credit requirements, RCN should be your next call.',
+    editorReview: `RCN Capital started, fittingly, as "Rehab Cash Now." It was founded in 2010 in South Windsor, Connecticut by Don Vaccaro — better known as the founder of TicketNetwork — who saw an opening in private lending after the 2008 crisis, when traditional banks pulled back hard from real estate. Jeff Tesch, who joined at the founding as managing director, has run the company as CEO since 2019; Vaccaro remains on the board.
+
+Fifteen years in, RCN has become one of the more established names in business-purpose lending, reporting more than $8 billion funded across tens of thousands of loans. It lends both directly and through brokers and correspondents, which is part of how it has built that volume.
+
+For an investor, RCN's strength is range and tenure: DSCR rental loans, fix-and-flip, and bridge financing from a lender that has been doing this through multiple market cycles. That track record is reassuring, and the multi-channel model means a broker can often place your deal there. As always, confirm the current rate sheet and fees for your loan type — a lender this size prices to the scenario.`,
     metaTitle: 'RCN Capital Review 2026: DSCR & Bridge Loans | ProInvestorHub',
     metaDescription:
       'RCN Capital review for real estate investors. Low credit score DSCR programs, flip loans, and bridge financing. Rates, requirements, and expert analysis.',
@@ -226,6 +241,11 @@ export const lenders: LenderData[] = [
     featured: false,
     editorSummary:
       'Visio Lending is the right choice if DSCR is all you need and you want a lender that does one thing well. As a pure DSCR shop, their underwriting team knows rental property lending inside and out. They\'re particularly strong for portfolio builders who need consistent, reliable closings on buy-and-hold acquisitions. The 5-year prepayment penalty is the main drawback — make sure you plan to hold.',
+    editorReview: `Visio Lending is a rental-loan specialist, and it has the pedigree to back the claim: founded in 2012 in Austin, Texas by Jeff Ball and Matt Matza, it was one of the first lenders in the country to build its business specifically around DSCR loans for single-family rental properties. While other lenders bolted DSCR on as one product among many, Visio made it the whole company.
+
+That focus shows up in the numbers. Visio reports having originated more than $4 billion across 40-plus states, and Scotsman Guide ranked it the No. 1 DSCR loan provider in the U.S. by 2024 volume. The founders, Ball and Matza, retired in January 2025, handing the CEO role to Jenny Coupland — a transition worth noting, though the company's DSCR-first strategy has stayed intact.
+
+For a buy-and-hold investor, the appeal is exactly that specialization: Visio does one thing — long-term rental financing qualified on the property's cash flow — and does it at scale. If you want a fix-and-flip or bridge loan, you'll look elsewhere; for a 30-year rental loan, it's one of the most established options on this list. Confirm current rates and LTV for your market before you apply.`,
     metaTitle: 'Visio Lending Review 2026: DSCR Loan Specialist | ProInvestorHub',
     metaDescription:
       'Visio Lending review for rental property investors. DSCR-only specialist with competitive rates and consistent closings. Expert analysis from a lending veteran.',
@@ -234,7 +254,7 @@ export const lenders: LenderData[] = [
     name: 'New Silver',
     slug: 'new-silver',
     website: 'https://www.newsilver.com',
-    founded: 2019,
+    founded: 2018,
     headquarters: 'New York, NY',
     description:
       'New Silver is a technology-first hard money and DSCR lender that emphasizes speed, offering instant term sheets and same-day pre-approvals. A strong option for fix-and-flip investors who need certainty and speed.',
@@ -271,6 +291,11 @@ export const lenders: LenderData[] = [
     featured: false,
     editorSummary:
       'New Silver\'s speed is their competitive advantage. If you\'re buying at auction with a 7-day close window, or competing against cash offers and need a fast pre-approval letter, New Silver delivers. Their instant term sheet tool is genuinely useful — you know exactly what you\'re getting before you submit an offer. Good for experienced investors who value speed and technology.',
+    editorReview: `New Silver is the fintech of the group. It was founded in 2018 in West Hartford, Connecticut by Kirill Bensonoff and Alex Shvayetsky, and it didn't start as a lender at all — it began as software that could value a property as-is and as-renovated and issue preliminary terms almost instantly, then pivoted into doing the lending itself. That software DNA is still the pitch: online pre-approval in minutes, with no hard credit pull to get a conditional number.
+
+It also has a genuinely unusual chapter in its history — in 2021 New Silver completed one of the first securitizations of real-estate loans using blockchain/DeFi infrastructure, partnering with Centrifuge and MakerDAO. It's a small, tech-forward shop rather than a balance-sheet giant; the company reports having closed more than $300 million in loans across roughly 40 states.
+
+For investors, New Silver fits the borrower who values speed and a slick digital process — fast hard money for flips plus DSCR loans for holds. The trade-off is scale and track record: it's younger and leaner than a Kiavi or Lima One. If a fast online quote and quick close matter more to you than working with a large institution, it's worth a look. Verify the final terms before you rely on the instant estimate.`,
     metaTitle: 'New Silver Review 2026: Fast Hard Money & DSCR | ProInvestorHub',
     metaDescription:
       'New Silver review for real estate investors. Fastest hard money closings (5 days), instant term sheets, DSCR loans. Rates, pros & cons, expert analysis.',
@@ -316,6 +341,11 @@ export const lenders: LenderData[] = [
     featured: false,
     editorSummary:
       'Angel Oak is the top choice for self-employed investors who need bank statement loans. As one of the largest non-QM lenders in the country, they have deep expertise in alternative documentation. If your tax returns don\'t reflect your real income and you need a bank statement product for an investment property, Angel Oak should be at the top of your list. Work with a mortgage broker who specializes in non-QM to access their products.',
+    editorReview: `Angel Oak Mortgage Solutions is the wholesale and correspondent lending arm of Angel Oak Companies, the Atlanta-based non-QM specialist co-founded in 2008 by Mike Fierman and Sreeni Prabhu. The founders came out of the structured-credit and mortgage world — Prabhu was previously chief investment officer over a $25 billion portfolio at Washington Mutual — and they built Angel Oak into one of the defining names in non-QM lending after the financial crisis.
+
+It operates at real scale. The Angel Oak group reports having originated more than $32 billion in residential loans and issued 65-plus securitizations, and in October 2025 Brookfield Asset Management acquired a majority stake in the company, with Fierman and Prabhu staying on as co-CEOs. That capital-markets depth is the whole point: Angel Oak doesn't just originate loans, it securitizes them, which is what lets it keep non-QM programs open through changing markets.
+
+For investors, the relevant products are bank statement loans for self-employed borrowers and DSCR loans for rentals. A quirk worth knowing: "Angel Oak" spans several affiliated entities — the wholesale lender, an asset-management arm, and a publicly traded mortgage REIT — so make sure you're dealing with the lending operation. Confirm current terms, and note that as a wholesale-leaning lender you may reach Angel Oak through a broker.`,
     metaTitle: 'Angel Oak Review 2026: DSCR & Bank Statement Loans | ProInvestorHub',
     metaDescription:
       'Angel Oak Mortgage Solutions review. DSCR and bank statement loans for self-employed real estate investors. Rates, requirements, and expert analysis.',
@@ -362,6 +392,11 @@ export const lenders: LenderData[] = [
     featured: true,
     editorSummary:
       'CoreVest is the lender you graduate to when you\'ve built a meaningful rental portfolio. Their blanket loan product — one loan covering 5, 10, or 50+ properties — simplifies your lending relationships and enables portfolio-level decisions. If you have 5+ rentals and want to consolidate, or if you\'re a build-to-rent developer, CoreVest is best-in-class. Not for beginners — the $500K minimum and experience requirements make this an experienced investor play.',
+    editorReview: `CoreVest is the institutional heavyweight of this list, and its corporate history reflects that. The business launched in 2014 as Colony American Finance under founding CEO Beth O'Brien. In 2017, funds managed by Fortress Investment Group acquired it and rebranded it CoreVest. Then in 2019, Redwood Trust (NYSE: RWT) bought CoreVest for roughly $490 million, and it has operated as a Redwood subsidiary ever since; Fred Matera was promoted to CEO in 2024.
+
+That ownership chain matters because it explains what CoreVest is good at. With a public mortgage REIT behind it, CoreVest specializes in the larger, more complex deals most lenders shy away from — blanket/portfolio loans across many properties, build-to-rent financing, and large multifamily and bridge loans. The company reports having closed over $25 billion across more than 170,000 units.
+
+For a scaling investor — someone financing a portfolio of rentals at once, or a build-to-rent project — CoreVest's institutional capital and structuring experience are the draw. For a single starter rental, it's overkill; this is a lender built for investors operating at size. As with any balance-sheet lender, pricing is deal-specific, so get a written quote for your portfolio.`,
     metaTitle: 'CoreVest Review 2026: Portfolio & Build-to-Rent Loans | ProInvestorHub',
     metaDescription:
       'CoreVest review for portfolio investors. Blanket loans, build-to-rent financing, DSCR. For investors with 5+ properties. Expert analysis from a lending veteran.',
@@ -453,18 +488,27 @@ export const lenders: LenderData[] = [
     featured: false,
     editorSummary:
       'Groundfloor occupies a unique niche — their crowdfunding model connects borrowers with individual investors, creating a different dynamic than institutional lenders. The main advantages are no prepayment penalties (rare for hard money) and accessibility for first-time flippers. The trade-off is higher origination fees and a lower max loan amount. Best for smaller flips where you want the flexibility to sell quickly without penalty.',
+    editorReview: `Groundfloor works differently from every other lender on this list, and the difference is baked into its founding. It was started in 2013 in Raleigh — later moving to Atlanta — by Brian Dally and Nick Bhargava, the latter a co-author of the JOBS Act, the law that opened up investment crowdfunding. In 2015 Groundfloor became the first company the SEC qualified (under Regulation A+) to offer real-estate debt investments to everyday, non-accredited investors.
+
+That's the model: instead of funding loans off a Wall Street credit line, Groundfloor raises the capital from thousands of retail investors who buy into the loans for yield. By its tenth anniversary in 2023, the company reported surpassing $1 billion in total retail investment volume. So the same platform serves two audiences — flippers who need short-term capital, and small investors who want to lend it.
+
+For a borrower, Groundfloor is a source of fix-and-flip and short-term renovation financing with a tech-forward, transparent process. The crowdfunded model can mean a different rhythm than a balance-sheet lender, and pricing should be compared head-to-head with the hard-money options here. Confirm current rates and terms for your project before committing.`,
     metaTitle: 'Groundfloor Review 2026: Crowdfunded Fix-and-Flip Loans | ProInvestorHub',
     metaDescription:
       'Groundfloor review for fix-and-flip investors. Crowdfunded hard money loans, no prepayment penalties, low credit requirements. Expert analysis.',
   },
   {
-    name: 'Arrived (formerly Fund That Flip)',
+    name: 'Upright (formerly Fund That Flip)',
+    // NOTE: slug kept as 'arrived' to preserve the existing /lenders/reviews/arrived URL.
+    // Earlier data mislabeled this entry "Arrived" — a separate, unrelated fractional
+    // rental-INVESTING platform (arrived.com). The loan data here is Fund That Flip's,
+    // which rebranded to Upright in Sept 2023. Corrected to Upright.
     slug: 'arrived',
-    website: 'https://www.arrived.com',
+    website: 'https://upright.us',
     founded: 2014,
-    headquarters: 'New York, NY',
+    headquarters: 'Cleveland, OH',
     description:
-      'Arrived (formerly Fund That Flip) offers fix-and-flip and bridge loans for real estate investors. Known for a technology-forward platform and competitive terms for experienced flippers.',
+      'Upright (formerly Fund That Flip) offers fix-and-flip and bridge loans for real estate investors. Known for a technology-forward platform and competitive terms for experienced flippers.',
     loanTypeSlugs: ['fix-and-flip-loans', 'bridge-loans'],
     minRate: 8.5,
     maxRate: 12.0,
@@ -492,21 +536,26 @@ export const lenders: LenderData[] = [
       'Requires at least 1-2 completed deals',
       'Higher minimum rate than some competitors',
       'Limited to 1-4 unit residential',
-      'Brand transition (Fund That Flip → Arrived) may cause confusion',
+      'Brand transition (Fund That Flip → Upright) may cause confusion',
     ],
     editorRating: 3.9,
     featured: false,
     editorSummary:
-      'Arrived (formerly Fund That Flip) offers higher leverage than most fix-and-flip lenders — up to 85% of purchase price, which means less cash out of pocket per deal. If you have 1-2 flips under your belt and want to stretch your capital across more deals, their higher LTV is a meaningful advantage. The no-prepayment-penalty policy adds flexibility.',
-    metaTitle: 'Arrived (Fund That Flip) Review 2026: Fix-and-Flip Loans | ProInvestorHub',
+      'Upright (formerly Fund That Flip) offers higher leverage than most fix-and-flip lenders — up to 85% of purchase price, which means less cash out of pocket per deal. If you have 1-2 flips under your belt and want to stretch your capital across more deals, their higher LTV is a meaningful advantage. The no-prepayment-penalty policy adds flexibility.',
+    editorReview: `Upright is the fix-and-flip lender that spent its first decade as Fund That Flip. Founder and CEO Matt Rodak launched the company in 2014 in Cleveland, Ohio, building a platform that does two things at once: it originates short-term loans to house flippers and redevelopers, and it lets accredited investors buy into those loans as passive-income notes. In 2022 it acquired the project-management software FlipperForce, and in September 2023 it rebranded the whole operation as Upright.
+
+For a borrower, the draw is leverage and speed. Upright will go up to 85% of the purchase price with closings in roughly 10–14 days — useful when you're competing for a flip and need to move faster than a bank will. Rates run higher (roughly 8.5%–12%) than long-term rental financing, which is normal for short-term fix-and-flip money, and there's no prepayment penalty, so paying the loan off the day you sell costs you nothing extra.
+
+It's a better fit for investors with at least a deal or two behind them than for a first-timer — the platform is built around experienced flippers, and the financing tops out at 1–4 unit residential. Confirm Upright's current NMLS registration and check its Better Business Bureau profile before applying, and know that you may still see "Fund That Flip" in older reviews and search results.`,
+    metaTitle: 'Upright (Fund That Flip) Review 2026: Fix-and-Flip Loans | ProInvestorHub',
     metaDescription:
-      'Arrived (formerly Fund That Flip) review. Fix-and-flip and bridge loans with high LTV (85%). Fast closings, no prepayment penalties. Expert analysis.',
+      'Upright (formerly Fund That Flip) review. Fix-and-flip and bridge loans with high LTV (85%). Fast closings, no prepayment penalties. Expert analysis.',
   },
   {
     name: 'Griffin Funding',
     slug: 'griffin-funding',
     website: 'https://www.griffinfunding.com',
-    founded: 2014,
+    founded: 2013,
     headquarters: 'San Diego, CA',
     description:
       'Griffin Funding is a mortgage lender specializing in non-QM products for investors, including DSCR, bank statement, and asset-based loans. Strong option for self-employed borrowers and investors with complex income situations.',
@@ -543,7 +592,7 @@ export const lenders: LenderData[] = [
     featured: false,
     editorSummary:
       'Griffin Funding combines low credit requirements (620 DSCR) with bank statement and foreign national programs — a rare combination. If you\'re a self-employed investor with a 640 credit score who wants a DSCR loan, Griffin is one of the few lenders who\'ll work with you. Their non-QM expertise means they understand non-standard borrower profiles better than most.',
-    editorReview: `Griffin Funding is a non-QM lender out of San Diego, founded in 2014, that has built its investor business around two products most banks won't touch: DSCR loans and bank statement loans. For real estate investors, that focus is the whole point — these are the programs that let you qualify on the property's cash flow or your deposits instead of W-2s and tax returns.
+    editorReview: `Griffin Funding is a non-QM lender out of San Diego, founded in 2013 by Bill Lyons, who still runs it as founder and CEO. It's a direct-to-consumer shop that grew up fast — a repeat Inc. 5000 honoree that reports having funded north of $3.6 billion to more than 8,000 clients — and it has built its investor business around two products most banks won't touch: DSCR loans and bank statement loans. For real estate investors, that focus is the whole point — these are the programs that let you qualify on the property's cash flow or your deposits instead of W-2s and tax returns.
 
 On rates and terms, Griffin's investor loans run roughly 6.5% to 9% with up to 80% LTV, a 620 minimum credit score on DSCR, and loan amounts from $100,000 up to $5 million. Origination sits in the 0–2 point range and they'll close in title held by an LLC, with interest-only options available. Those are competitive numbers for the non-QM space — the 620 DSCR floor in particular is lower than many competitors, which is what makes Griffin worth a quote if your credit isn't pristine. Treat every figure here as a starting point and get a written quote for your scenario; non-QM pricing moves with the market and your specific profile.
 
@@ -822,6 +871,11 @@ Where Griffin isn't the answer: there's no fix-and-flip or bridge product, so a 
     featured: false,
     editorSummary:
       'Velocity Mortgage fills an important gap for investors transitioning from residential to small commercial. Their ability to do DSCR on 1-4 units AND commercial loans on 5+ units under one roof is rare. If you\'re scaling from duplexes to small apartment buildings, Velocity can grow with you. Their 20-year track record provides stability that newer lenders can\'t match.',
+    editorReview: `Velocity Mortgage Capital is the most established lender on this list by age — it was founded in 2004 by Christopher Farrar and Jeff Taylor, making it a survivor of both the 2008 crisis and every cycle since. Farrar still serves as CEO. The company built its niche early: investor 1–4 unit residential rentals and small-balance commercial real estate, a corner of the market the big banks tend to ignore.
+
+It's also the rare investor lender that's publicly traded. The parent, Velocity Financial, went public on the NYSE under ticker VEL in January 2020, which brings a level of financial disclosure most private lenders don't offer. The loan portfolio has grown steadily, reaching roughly $6.5 billion in unpaid balances by the end of 2025.
+
+For investors, Velocity's sweet spot is the deal that straddles residential and commercial — small multifamily, mixed-use, and small-balance commercial alongside standard DSCR rentals. That breadth, plus two decades of operating history and public-company transparency, is the case for Velocity; the trade-off is that a long-established, broker-driven lender is less nimble than a boutique. Verify current pricing for your property type before you apply.`,
     metaTitle: 'Velocity Mortgage Review 2026: DSCR & Commercial | ProInvestorHub',
     metaDescription:
       'Velocity Mortgage Capital review. DSCR and small balance commercial loans for real estate investors. Residential and 5+ unit financing. Expert analysis.',
@@ -867,16 +921,24 @@ Where Griffin isn't the answer: there's no fix-and-flip or bridge product, so a 
     featured: false,
     editorSummary:
       'Roc Capital is a solid all-around investor lender with competitive pricing and broad product availability. They\'re a good option to get a competing quote when evaluating loans from Kiavi, Lima One, or RCN Capital. Their 620 credit minimum for DSCR makes them accessible for borrowers with credit challenges.',
+    editorReview: `Roc Capital is the lending brand of Roc360, and it has grown into one of the largest players in business-purpose lending. It was founded in 2014 in New York City by Arvind Raghunathan, Maksim Stavinsky, and Eric Abramovich, starting with a secured lending fund for residential real estate investors. In 2020 the founders reorganized under a holding company, Roc360, with Roc Capital as its flagship lending brand; Stavinsky now serves as CEO.
+
+A lot of Roc's scale has come through acquisition. In 2023 it acquired both Finance of America Commercial and the origination assets of Civic Financial Services, absorbing two sizable investor-lending operations. It's backed by institutional capital including Temasek, Singapore's sovereign wealth fund, and reports having funded more than $20 billion across roughly 50,000 loans since 2014 — more when its acquired brands are included.
+
+For investors, Roc Capital offers hard money for flips and DSCR loans for rentals, backed by deep institutional capital and a wholesale network. One thing to keep straight: "Roc Capital" and "Roc360" are the same organization — the brand and its parent — not competing lenders. Confirm current terms for your loan, and you may reach Roc through a broker given its wholesale focus.`,
     metaTitle: 'Roc Capital Review 2026: Hard Money & DSCR Loans | ProInvestorHub',
     metaDescription:
       'Roc Capital review for real estate investors. Fix-and-flip, bridge, and DSCR loans. Low credit minimums, competitive rates. Expert analysis and comparison.',
   },
   {
-    name: 'Lima One (formerly OfferMarket)',
+    // NOTE: corrected from a prior mislabel of "Lima One (formerly OfferMarket)".
+    // OfferMarket (founded 2020, MD) is unrelated to Lima One Capital (founded 2011,
+    // Greenville SC, owned by MFA Financial) — no rebrand or acquisition links them.
+    name: 'OfferMarket',
     slug: 'offermarket',
     website: 'https://www.offermarket.us',
     founded: 2020,
-    headquarters: 'Philadelphia, PA',
+    headquarters: 'Baltimore, MD',
     description:
       'OfferMarket is a tech-enabled DSCR lender offering competitive 30-year rental loans with a focus on investor education and transparent pricing.',
     loanTypeSlugs: ['dscr-loans'],
@@ -911,6 +973,11 @@ Where Griffin isn't the answer: there's no fix-and-flip or bridge product, so a 
     featured: false,
     editorSummary:
       'OfferMarket pairs DSCR lending with strong investor education — their content library helps first-time DSCR borrowers understand the product before they apply. If you\'re new to DSCR loans and want a lender that will educate rather than just sell, OfferMarket\'s approach is refreshing. Rates are competitive and the process is straightforward.',
+    editorReview: `OfferMarket is one of the newer names on this list, and it comes at investor financing from a different angle than the big balance-sheet lenders. It was founded in 2020 by Daniel Sperling-Horowitz (CEO) and Martin Terskin (CTO), who met at the University of Maryland, and it runs as a fully remote company out of Maryland. The lending arm, OfferMarket Capital, sits alongside an off-market property marketplace and an insurance marketplace — the pitch is a one-stop platform for buy-and-hold investors rather than a pure lender.
+
+On the loan side, OfferMarket focuses on 30-year DSCR rental loans, with rates roughly 6.5%–8.5% up to 80% LTV and no experience requirement, so it will work with first-time investors. The differentiator they lean into is transparency and education: published pricing and a deep content library aimed at helping a borrower understand the DSCR product before they commit, rather than pushing them through a sales funnel.
+
+The trade-off is what you'd expect from a younger, leaner shop — DSCR only (no fix-and-flip or bridge), a shorter track record, and a smaller team than a Kiavi or a CoreVest. For an investor who values a straightforward 30-year rental loan and wants to be educated along the way, that's a fair trade; just confirm current terms and NMLS registration before you apply.`,
     metaTitle: 'OfferMarket Review 2026: DSCR Loans for Investors | ProInvestorHub',
     metaDescription:
       'OfferMarket review for rental property investors. Transparent DSCR lending with investor education. Competitive rates, honest reviews, expert analysis.',
@@ -919,7 +986,7 @@ Where Griffin isn't the answer: there's no fix-and-flip or bridge product, so a 
     name: 'Park Place Finance',
     slug: 'park-place-finance',
     website: 'https://www.parkplacefinance.com',
-    founded: 2016,
+    founded: 2006,
     headquarters: 'Dallas, TX',
     description:
       'Park Place Finance is a private lender specializing in hard money, bridge, and fix-and-flip loans. Known for flexibility on property types and deal structures.',
@@ -956,6 +1023,11 @@ Where Griffin isn't the answer: there's no fix-and-flip or bridge product, so a 
     featured: false,
     editorSummary:
       'Park Place Finance fills a niche for investors doing smaller deals in lower-cost markets. Their $50K minimum loan is among the lowest in the industry — if you\'re flipping houses in Detroit, Memphis, or other affordable markets where deal sizes run $60K–$120K, many national lenders won\'t touch it. Park Place will. They also finance land and commercial properties, adding flexibility for non-standard deals.',
+    editorReview: `Park Place Finance is one of the longer-running independent hard-money lenders on this list. According to the company, it was founded in 2006 in Austin, Texas by Justin Hubbert, who still leads it. Hubbert came up as a conventional loan officer and an active house-flipper himself before launching the firm — a background that fits a lender built around the realities of fix-and-flip investing rather than a desk-bound underwriting model.
+
+The company reports having funded more than $1 billion in loans over its history and has grown its team substantially in recent years, while staying an independent, founder-led shop rather than part of a larger financial group. That independence can mean a more direct, relationship-driven process than you'd get from a national institution.
+
+For investors, Park Place focuses on hard-money financing for flips and short-term deals out of its Austin base. As a privately held lender, much of its published track record is self-reported, so the usual discipline applies: confirm current rates, points, and terms in writing for your specific deal, and check the firm's NMLS registration and Better Business Bureau profile before you commit.`,
     metaTitle: 'Park Place Finance Review 2026: Hard Money Lender | ProInvestorHub',
     metaDescription:
       'Park Place Finance review. Hard money and bridge loans with $50K minimum. Flexible property types, low credit requirements. Expert analysis for investors.',
