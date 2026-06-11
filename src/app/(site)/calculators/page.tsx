@@ -68,6 +68,13 @@ const calculators = [
     status: 'live' as const,
   },
   {
+    title: 'Refinance Calculator',
+    description:
+      'See your break-even on a rate-and-term refinance, or your net cash and new payment on a cash-out.',
+    href: '/calculators/refinance',
+    status: 'live' as const,
+  },
+  {
     title: '1031 Exchange Tax Savings',
     description:
       'Calculate how much you save in taxes by doing a 1031 exchange instead of selling outright.',
@@ -95,10 +102,10 @@ export default function CalculatorsPage() {
     <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
       <div className="max-w-2xl">
         <h1 className="text-4xl font-bold text-text">
-          Investment Calculators
+          Real Estate Investment Calculators
         </h1>
         <p className="mt-4 text-lg text-text-muted">
-          Free tools to analyze any deal in seconds. No sign-up required.
+          Free tools to analyze rental, flip, and BRRRR deals in seconds — no sign-up required.
         </p>
         <Link
           href="/calculators/compare"
