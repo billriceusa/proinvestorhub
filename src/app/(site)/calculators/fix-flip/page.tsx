@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FixFlipCalculator } from '@/components/calculators/fix-flip-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
-import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
   title: 'Fix & Flip Calculator | Estimate Rehab Profit & ROI',
@@ -60,6 +60,27 @@ export default function FixFlipCalculatorPage() {
               'Commonly overlooked costs include holding costs (loan interest, taxes, insurance, utilities during rehab), buyer closing costs, seller closing costs, agent commissions, and a contingency buffer for unexpected repairs. Our calculator accounts for all of these.',
           },
         ])}
+      />
+      <JsonLd
+        data={howToJsonLd({
+          name: 'How to Calculate Fix-and-Flip Profit',
+          description:
+            'Estimate the profit on a fix-and-flip in three steps using the after-repair value and all of your project costs.',
+          steps: [
+            {
+              name: 'Estimate the after-repair value (ARV)',
+              text: 'Determine what the property will sell for once renovated, based on comparable sales in the neighborhood.',
+            },
+            {
+              name: 'Total every cost',
+              text: 'Add the purchase price, rehab budget, holding costs (loan interest, taxes, insurance, utilities), financing points, and selling costs (agent commissions and closing).',
+            },
+            {
+              name: 'Subtract costs from ARV',
+              text: 'Profit is the ARV minus all of those costs. Divide profit by your cash invested to get your return on investment.',
+            },
+          ],
+        })}
       />
 
       {/* Breadcrumb */}

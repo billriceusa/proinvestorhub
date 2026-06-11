@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { STRCalculator } from '@/components/calculators/str-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
-import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
+import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 
 export const metadata: Metadata = {
-  title: 'Short-Term Rental Revenue Calculator | STR Income Estimator',
+  title: 'Airbnb & Short-Term Rental Revenue Calculator | STR Income Estimator',
   description:
     'Estimate your Airbnb or VRBO rental income with this free STR revenue calculator. Factor in occupancy, nightly rate, cleaning fees, and all operating expenses to see your true net income.',
   alternates: { canonical: '/calculators/str-revenue' },
@@ -60,6 +61,27 @@ export default function STRRevenueCalculatorPage() {
           },
         ])}
       />
+      <JsonLd
+        data={howToJsonLd({
+          name: 'How to Estimate Short-Term Rental Revenue',
+          description:
+            'Project the net income of an Airbnb or short-term rental in three steps using nightly rate, occupancy, and operating costs.',
+          steps: [
+            {
+              name: 'Project gross revenue',
+              text: 'Multiply your average nightly rate by your expected occupancy rate and by 365 nights to estimate annual gross revenue.',
+            },
+            {
+              name: 'Subtract operating costs',
+              text: 'Deduct cleaning, platform and management fees, utilities, supplies, insurance, and a maintenance allowance.',
+            },
+            {
+              name: 'Subtract debt service',
+              text: 'Subtract your mortgage payment to arrive at net cash flow. Compare it against a long-term rental to see whether the STR premium is worth the extra work.',
+            },
+          ],
+        })}
+      />
 
       {/* Breadcrumb */}
       <nav className="text-sm text-text-muted mb-8">
@@ -76,7 +98,7 @@ export default function STRRevenueCalculatorPage() {
       {/* Header */}
       <div className="max-w-3xl mb-10">
         <h1 className="text-3xl font-bold text-text sm:text-4xl">
-          Short-Term Rental Revenue Calculator
+          Airbnb &amp; Short-Term Rental Revenue Calculator
         </h1>
         <p className="mt-3 text-lg text-text-muted leading-7">
           Estimate your Airbnb, VRBO, or vacation rental income by factoring
@@ -283,6 +305,15 @@ export default function STRRevenueCalculatorPage() {
           </p>
         </div>
       </section>
+
+      <CalculatorRelatedTools
+        tools={[
+          { label: 'Rental Cash Flow', href: '/calculators/rental-cashflow' },
+          { label: 'Cap Rate Calculator', href: '/calculators/cap-rate' },
+          { label: 'Mortgage / DSCR Payment', href: '/calculators/mortgage' },
+          { label: 'Financing Matcher', href: '/financing/matcher' },
+        ]}
+      />
     </div>
   )
 }

@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { WholesaleCalculator } from '@/components/calculators/wholesale-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
-import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
+import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 
 export const metadata: Metadata = {
   title: 'Wholesale Deal Analyzer | Free Real Estate Wholesale Calculator',
@@ -56,6 +57,27 @@ export default function WholesalCalculatorPage() {
           },
         ])}
       />
+      <JsonLd
+        data={howToJsonLd({
+          name: 'How to Calculate a Wholesale Offer (70% Rule)',
+          description:
+            'Find your maximum allowable offer on a wholesale deal in three steps using the after-repair value, repair costs, and your assignment fee.',
+          steps: [
+            {
+              name: 'Estimate the after-repair value (ARV)',
+              text: 'Determine what the property will be worth fully renovated, based on comparable sales in the area.',
+            },
+            {
+              name: 'Apply the 70% rule',
+              text: 'Multiply the ARV by 70% and subtract estimated repair costs. This is the most an end-buyer investor will typically pay.',
+            },
+            {
+              name: 'Subtract your assignment fee',
+              text: 'Take your fee off that number to set your maximum offer to the seller. The difference between your contract price and the buyer’s price is your profit.',
+            },
+          ],
+        })}
+      />
 
       {/* Breadcrumb */}
       <nav className="text-sm text-text-muted mb-8">
@@ -69,7 +91,7 @@ export default function WholesalCalculatorPage() {
       {/* Header */}
       <div className="max-w-3xl mb-10">
         <h1 className="text-3xl font-bold text-text sm:text-4xl">
-          Wholesale Deal Analyzer
+          Wholesale Calculator &amp; Deal Analyzer
         </h1>
         <p className="mt-3 text-lg text-text-muted leading-7">
           Calculate your maximum offer price, assignment fee, and end buyer
@@ -237,6 +259,14 @@ export default function WholesalCalculatorPage() {
           </p>
         </div>
       </section>
+
+      <CalculatorRelatedTools
+        tools={[
+          { label: 'Fix & Flip Profit', href: '/calculators/fix-flip' },
+          { label: 'BRRRR Calculator', href: '/calculators/brrrr' },
+          { label: 'Financing Matcher', href: '/financing/matcher' },
+        ]}
+      />
     </div>
   )
 }

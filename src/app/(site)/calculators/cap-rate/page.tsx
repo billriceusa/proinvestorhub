@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CapRateCalculator } from '@/components/calculators/cap-rate-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
 import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
+import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 import { cities } from '@/data/cap-rate-cities'
 
 export const metadata: Metadata = {
@@ -425,6 +426,15 @@ export default function CapRateCalculatorPage() {
           </Link>
         </div>
       </section>
+
+      <CalculatorRelatedTools
+        tools={[
+          { label: 'Cash-on-Cash Return', href: '/calculators/cash-on-cash' },
+          { label: 'Rental Cash Flow', href: '/calculators/rental-cashflow' },
+          { label: 'Mortgage / DSCR Payment', href: '/calculators/mortgage' },
+          { label: 'Financing Matcher', href: '/financing/matcher' },
+        ]}
+      />
     </div>
   )
 }

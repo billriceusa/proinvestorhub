@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Exchange1031Calculator } from '@/components/calculators/exchange-1031-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
-import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
+import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 
 export const metadata: Metadata = {
   title: '1031 Exchange Calculator | Free Tax Savings Estimator',
@@ -55,6 +56,27 @@ export default function Exchange1031CalculatorPage() {
               'No. Section 1031 applies only to property held for investment or productive use in a trade or business. Your primary residence does not qualify. However, if you convert a rental property to your primary residence (or vice versa), partial eligibility may apply under specific IRS rules. Consult a tax professional for your situation.',
           },
         ])}
+      />
+      <JsonLd
+        data={howToJsonLd({
+          name: 'How to Calculate 1031 Exchange Tax Savings',
+          description:
+            'Estimate the tax a 1031 exchange lets you defer when you sell an investment property and reinvest the proceeds.',
+          steps: [
+            {
+              name: 'Find your capital gain',
+              text: 'Subtract your adjusted cost basis (purchase price plus improvements, minus the depreciation you have taken) from the net sale price.',
+            },
+            {
+              name: 'Add depreciation recapture',
+              text: 'The depreciation you claimed over the years is taxed separately on a sale, often at a 25% federal rate.',
+            },
+            {
+              name: 'Apply the tax rates',
+              text: 'Total the federal capital-gains tax, depreciation recapture, and any state tax. That combined amount is what a 1031 exchange lets you defer by reinvesting.',
+            },
+          ],
+        })}
       />
 
       {/* Breadcrumb */}
@@ -247,6 +269,14 @@ export default function Exchange1031CalculatorPage() {
           </p>
         </div>
       </section>
+
+      <CalculatorRelatedTools
+        tools={[
+          { label: 'Cap Rate Calculator', href: '/calculators/cap-rate' },
+          { label: 'Rental Cash Flow', href: '/calculators/rental-cashflow' },
+          { label: 'Financing Matcher', href: '/financing/matcher' },
+        ]}
+      />
     </div>
   )
 }

@@ -149,6 +149,55 @@ export default function CalculatorsPage() {
         })}
       </div>
 
+      {/* Financing tools */}
+      <section className="mt-16">
+        <h2 className="text-2xl font-bold text-text">Financing Tools</h2>
+        <p className="mt-2 text-text-muted">
+          Figured out the numbers? Now find the right way to fund the deal.
+        </p>
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          <Link
+            href="/financing/matcher"
+            className="rounded-xl border border-primary/20 bg-white p-6 transition-all hover:border-primary/40 hover:shadow-md"
+          >
+            <h3 className="text-lg font-semibold text-text">Financing Matcher</h3>
+            <p className="mt-2 text-sm leading-6 text-text-muted">
+              Answer a few questions about your deal and get matched to the right financing type —
+              DSCR, hard money, BRRRR, commercial, and more.
+            </p>
+            <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">
+              Match my deal &rarr;
+            </span>
+          </Link>
+          <Link
+            href="/lenders/finder"
+            className="rounded-xl border border-primary/20 bg-white p-6 transition-all hover:border-primary/40 hover:shadow-md"
+          >
+            <h3 className="text-lg font-semibold text-text">Lender Finder</h3>
+            <p className="mt-2 text-sm leading-6 text-text-muted">
+              Match your credit, experience, and scenario against 25+ reviewed investor lenders to
+              find your best fits.
+            </p>
+            <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">
+              Find a lender &rarr;
+            </span>
+          </Link>
+          <Link
+            href="/how-to-finance"
+            className="rounded-xl border border-primary/20 bg-white p-6 transition-all hover:border-primary/40 hover:shadow-md"
+          >
+            <h3 className="text-lg font-semibold text-text">How-to-Finance Guides</h3>
+            <p className="mt-2 text-sm leading-6 text-text-muted">
+              Plain-English funding playbooks by scenario — a flip, a BRRRR, an Airbnb, no money
+              down, in an LLC, and more.
+            </p>
+            <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">
+              Browse the guides &rarr;
+            </span>
+          </Link>
+        </div>
+      </section>
+
       <ToolRecommendations
         tools={['dealcheck', 'baselane', 'rentredi', 'landlord-studio']}
         heading="Tools That Pair with Our Calculators"
