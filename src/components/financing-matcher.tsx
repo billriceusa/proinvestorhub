@@ -43,10 +43,11 @@ const STEPS: StepDef[] = [
   ] },
 ]
 
-export function FinancingMatcher() {
-  const [profile, setProfile] = useState<DealProfile>({})
+export function FinancingMatcher({ initialProfile }: { initialProfile?: DealProfile } = {}) {
+  const hasInitial = !!initialProfile && Object.values(initialProfile).some(Boolean)
+  const [profile, setProfile] = useState<DealProfile>(initialProfile ?? {})
   const [step, setStep] = useState(0)
-  const [showResults, setShowResults] = useState(false)
+  const [showResults, setShowResults] = useState(hasInitial)
 
   const recommendations = useMemo(() => recommendFinancing(profile), [profile])
   const creative = useMemo(() => creativeOptions(profile), [profile])
