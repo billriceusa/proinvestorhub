@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-10T12:02:26.905Z",
+  "lastUpdated": "2026-06-11T12:03:06.686Z",
   "items": [
     {
       "id": "61a3cb491210",
@@ -1905,6 +1905,39 @@
       "status": "open"
     },
     {
+      "id": "fba663765fc6",
+      "title": "Push Griffin Funding Review to Page 1 — Site's Only Near-Term Click Opportunity",
+      "description": "The Griffin Funding review page has four queries in striking distance (positions 14–19). Specific actions: (1) Expand the review to 2,000+ words covering bank statement loan specifics, current rate ranges, BBB rating details, and investor-specific use cases — these are the exact sub-queries ranking. (2) Add a structured FAQ section with schema markup targeting 'griffin funding bbb rating,' 'griffin funding interest rates,' and 'griffin funding bank statement loan' as H3 questions. (3) Build 2–3 internal links to this page from the homepage, the /lenders directory, and any BRRRR or financing guide pages. (4) Add an investor-focused comparison table (Griffin Funding vs. 1–2 competitors) to increase dwell time and topical authority. Target: move the page from position 18–19 to top 10 within 60 days.",
+      "expectedImpact": "First organic clicks for the site; estimated 5–15 clicks/month once top-10 position is achieved for 'griffin funding' cluster queries based on typical CTR curves at positions 7–10.",
+      "priority": "high",
+      "firstSeen": "2026-06-11",
+      "lastSeen": "2026-06-11",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "9586abfc1727",
+      "title": "Resolve GA4 502 Error and Audit Hosting/API Stability",
+      "description": "The GA4 API failure is a critical blind spot. Immediate steps: (1) Check GA4 Measurement ID configuration and confirm the data stream is active in the GA4 property settings. (2) Test the API endpoint directly and verify OAuth credentials have not expired. (3) Implement a fallback monitoring alert (e.g., via Google Cloud Monitoring or a simple uptime check) that fires when the GA4 fetch fails so it is caught same-day. (4) Separately, verify that the hosting environment is not returning 502s to Googlebot — check Google Search Console's Page Indexing report and server logs for crawl errors. A server that intermittently 502s will suppress crawl budget and indexing.",
+      "expectedImpact": "Restores behavioral data visibility (sessions, engagement rate, calculator usage) needed for all future optimization decisions; prevents potential crawl budget waste from server errors.",
+      "priority": "high",
+      "firstSeen": "2026-06-11",
+      "lastSeen": "2026-06-11",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e87ee48e1db0",
+      "title": "Strengthen Cap Rate Calculator Page to Break Position 20 Barrier",
+      "description": "The cap rate calculator page is ranking ~20.3 for its primary query (309 impressions, 0 clicks) — it needs to move to position 10 or better to generate traffic. Specific actions: (1) Audit the page against the top 5 ranking competitors for 'cap rate calculator' — match or exceed their word count, formula explanations, and example scenarios. (2) Add a dedicated 'What is a good cap rate by property type and market?' section with a data table, targeting the 'average cap rate by city' query visible in 90-day data. (3) Implement HowTo or FAQPage schema markup on the calculator page. (4) Add internal links from any real estate investing guide, BRRRR content, or glossary pages on the site. (5) Consider adding a downloadable cap rate Excel template to capture the 'cap rate calculator excel' variant (12 impressions at position 45.8).",
+      "expectedImpact": "Moving from position 20 to position 10 for 'cap rate calculator' (309 impressions/28 days) could generate an estimated 15–30 clicks/month at a 5–10% CTR; top-5 position could yield 50–100+ clicks/month.",
+      "priority": "high",
+      "firstSeen": "2026-06-11",
+      "lastSeen": "2026-06-11",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "fc8a3a71c56e",
       "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
       "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
@@ -3148,6 +3181,28 @@
       "status": "open"
     },
     {
+      "id": "aa692b7e1733",
+      "title": "Add a Park Place Finance Lender Review to Complement Griffin Funding",
+      "description": "The Park Place Finance review page is appearing in search data (position 41.5) but with no impression volume detail, suggesting it is very thinly indexed. Actions: (1) Audit the current Park Place Finance page length and completeness — if under 1,000 words, expand to match the Griffin Funding review depth. (2) Target investor-specific queries: 'park place finance hard money,' 'park place finance fix and flip loan,' 'park place finance rates.' (3) Cross-link the Griffin Funding and Park Place Finance reviews to each other and to a /lenders hub page to build topical authority in the lender review cluster. This creates a content moat in the lender review space that compounds over time.",
+      "expectedImpact": "Builds a second striking-distance cluster in the lender review category; cross-linking strengthens both pages' authority signals.",
+      "priority": "medium",
+      "firstSeen": "2026-06-11",
+      "lastSeen": "2026-06-11",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "06a9d0cbcdb0",
+      "title": "Develop BRRRR and Beginner Investing Content to Capture 90-Day Query Signals",
+      "description": "The 90-day data shows impressions for 'brrrr method,' 'brrrr deal,' 'brrrr formula,' 'best beginner tips for real estate investing 2026,' and 'best real estate investing strategies for beginners 2026' — the last two at positions 9 and 11 respectively, which is striking distance. Actions: (1) Immediately audit and optimize the pages ranking for the two 2026 beginner strategy queries — these are the only non-lender queries near page 1. (2) Create or expand a comprehensive BRRRR guide targeting 'brrrr method,' 'brrrr formula,' and 'brrrr analysis' as a single pillar page. (3) Build a BRRRR calculator to complement the cap rate and cash-on-cash calculators, creating a calculator hub that serves the full investor workflow.",
+      "expectedImpact": "The two beginner investing queries at positions 9–11 are the second-closest click opportunities after Griffin Funding; optimizing those pages could yield clicks within 30 days.",
+      "priority": "medium",
+      "firstSeen": "2026-06-11",
+      "lastSeen": "2026-06-11",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3749,6 +3804,17 @@
       "priority": "low",
       "firstSeen": "2026-06-10",
       "lastSeen": "2026-06-10",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "504906ec3382",
+      "title": "Canonicalize www vs Non-www URL Inconsistency",
+      "description": "Search Console data shows a mix of https://proinvestorhub.com/ (no www) and https://www.proinvestorhub.com/ (with www) URLs appearing as separate pages in the top pages report. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Choose one canonical version (preferably non-www if that is the primary) and implement a 301 redirect from the other. (2) Verify the canonical tag on all pages points to the preferred version. (3) Update Google Search Console to set the preferred domain. (4) Audit internal links to ensure all point to the canonical version. This prevents link equity dilution across duplicate URL variants.",
+      "expectedImpact": "Consolidates link equity and crawl signals to a single domain version, marginally improving ranking potential for all pages; eliminates duplicate content risk.",
+      "priority": "low",
+      "firstSeen": "2026-06-11",
+      "lastSeen": "2026-06-11",
       "timesRepeated": 1,
       "status": "open"
     }
