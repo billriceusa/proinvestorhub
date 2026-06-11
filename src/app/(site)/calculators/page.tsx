@@ -68,6 +68,13 @@ const calculators = [
     status: 'live' as const,
   },
   {
+    title: 'Refinance Calculator',
+    description:
+      'See your break-even on a rate-and-term refinance, or your net cash and new payment on a cash-out.',
+    href: '/calculators/refinance',
+    status: 'live' as const,
+  },
+  {
     title: '1031 Exchange Tax Savings',
     description:
       'Calculate how much you save in taxes by doing a 1031 exchange instead of selling outright.',

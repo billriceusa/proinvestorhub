@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { HelocCalculator } from '@/components/calculators/heloc-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
+import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
 
 export const metadata: Metadata = {
@@ -247,6 +248,15 @@ export default function HelocPage() {
           </p>
         </div>
       </section>
+
+      <CalculatorRelatedTools
+        tools={[
+          { label: 'Refinance Calculator', href: '/calculators/refinance' },
+          { label: 'DSCR Loan Qualifier', href: '/calculators/dscr' },
+          { label: 'Financing Matcher', href: '/financing/matcher' },
+          { label: 'Compare DSCR Lenders', href: '/lenders/dscr-loans', muted: true },
+        ]}
+      />
     </div>
   )
 }
