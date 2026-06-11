@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FinancingMatcher } from '@/components/financing-matcher'
 import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
+import { financingScenarios } from '@/data/financing-scenarios'
 
 export const metadata: Metadata = {
   title: 'Financing Matcher: What Loan Should I Use for My Real Estate Deal?',
@@ -139,6 +140,27 @@ export default function FinancingMatcherPage() {
             </Link>{' '}
             rank them against your full profile.
           </p>
+        </div>
+      </section>
+
+      <section className="mt-12 max-w-3xl border-t border-border pt-8">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-text-muted">
+          Financing by scenario
+        </h2>
+        <p className="mt-2 text-text-muted">
+          Prefer to start from your situation? Each guide breaks down the options and drops you into
+          the matcher pre-set for that deal.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {financingScenarios.map((s) => (
+            <Link
+              key={s.slug}
+              href={`/how-to-finance/${s.slug}`}
+              className="rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-text transition-colors hover:border-primary/40 hover:bg-surface"
+            >
+              {s.h1.replace(/^How to Finance /, '')}
+            </Link>
+          ))}
         </div>
       </section>
     </div>

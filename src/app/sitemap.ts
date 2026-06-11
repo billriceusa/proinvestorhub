@@ -8,6 +8,7 @@ import { loanTypes } from '@/data/loan-types'
 import { lenders } from '@/data/lenders'
 import { usStates } from '@/data/us-states'
 import { lenderComparisons } from '@/data/lender-comparisons'
+import { financingScenarios } from '@/data/financing-scenarios'
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -217,6 +218,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.5,
       }))
     ),
+    // ── Financing tools & guides ──────────────────────
+    {
+      url: `${baseUrl}/calculators/heloc`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/financing/matcher`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/how-to-finance`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    ...financingScenarios.map((s) => ({
+      url: `${baseUrl}/how-to-finance/${s.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
   ]
 
   const postPages: MetadataRoute.Sitemap = (posts ?? []).map((post) => ({
