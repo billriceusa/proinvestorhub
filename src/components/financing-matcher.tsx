@@ -220,7 +220,7 @@ function Results({
                     href={c.href}
                     className="mt-3 inline-flex text-sm font-semibold text-primary hover:text-primary-light transition-colors"
                   >
-                    Open the tool →
+                    {c.href.startsWith('/calculators') ? 'Open the calculator →' : 'Learn more →'}
                   </Link>
                 )}
               </div>

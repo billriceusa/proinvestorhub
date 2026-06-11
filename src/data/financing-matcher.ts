@@ -343,6 +343,7 @@ const CREATIVE_CATALOG: Array<CreativeOption & { when: (p: DealProfile) => boole
     name: 'FHA / VA house-hack (owner-occupied)',
     blurb: 'Live in one unit of a 2–4 unit and put as little as 0–3.5% down with owner-occupied financing.',
     whenToUse: 'You’re willing to live in the property for a year.',
+    href: '/financing#fha-va-househack',
     when: (p) => p.ownerOccupy === 'yes',
   },
   {
@@ -350,6 +351,7 @@ const CREATIVE_CATALOG: Array<CreativeOption & { when: (p: DealProfile) => boole
     name: 'Seller financing',
     blurb: 'The seller acts as the bank. No institutional qualifying, and the terms are negotiable.',
     whenToUse: 'Your credit or income docs are a hurdle, or you want creative terms.',
+    href: '/financing#seller-financing',
     when: (p) => p.cash === 'under-25k' || p.credit === 'below-620' || p.income === 'no-doc',
   },
   {
@@ -357,6 +359,7 @@ const CREATIVE_CATALOG: Array<CreativeOption & { when: (p: DealProfile) => boole
     name: 'Subject-to (take over the existing loan)',
     blurb: 'Acquire the property and keep the seller’s existing mortgage in place. Powerful, but watch the due-on-sale clause.',
     whenToUse: 'Low cash and a motivated seller with an assumable-in-practice low-rate loan.',
+    href: '/financing#subject-to',
     when: (p) => p.cash === 'under-25k' || p.income === 'no-doc',
   },
   {
@@ -364,6 +367,7 @@ const CREATIVE_CATALOG: Array<CreativeOption & { when: (p: DealProfile) => boole
     name: 'Partnership / JV',
     blurb: 'Bring the deal and the work; a partner brings the capital. Split the returns.',
     whenToUse: 'You have little of your own cash but a strong deal.',
+    href: '/financing#partnerships-jv',
     when: (p) => p.cash === 'under-25k',
   },
   {
@@ -371,6 +375,7 @@ const CREATIVE_CATALOG: Array<CreativeOption & { when: (p: DealProfile) => boole
     name: 'Syndication',
     blurb: 'Pool capital from passive investors to fund a larger deal than you could alone.',
     whenToUse: 'You’re scaling into larger multifamily or commercial.',
+    href: '/financing#syndication',
     when: (p) => p.dealType === 'multifamily-5plus',
   },
   {
@@ -378,6 +383,7 @@ const CREATIVE_CATALOG: Array<CreativeOption & { when: (p: DealProfile) => boole
     name: 'Transactional funding',
     blurb: 'One-day funding for a wholesale double-close — you never use your own cash.',
     whenToUse: 'You’re wholesaling and need to fund a simultaneous close.',
+    href: '/financing#transactional-funding',
     when: (p) => p.dealType === 'wholesale',
   },
 ]
