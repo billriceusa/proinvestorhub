@@ -225,6 +225,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/calculators/dscr`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/financing/matcher`,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
