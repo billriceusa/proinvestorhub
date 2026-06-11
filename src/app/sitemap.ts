@@ -220,6 +220,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ),
     // ── Financing tools & guides ──────────────────────
     {
+      url: `${baseUrl}/financing`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/calculators/heloc`,
       changeFrequency: 'monthly' as const,
       priority: 0.8,

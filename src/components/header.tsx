@@ -11,6 +11,14 @@ const navigation: NavItem[] = [
   { name: 'Start Here', href: '/start-here', accent: true },
   { name: 'Calculators', href: '/calculators' },
   { name: 'Lenders', href: '/lenders' },
+  {
+    name: 'Financing',
+    children: [
+      { name: 'Complete Guide', href: '/financing', description: 'Every way to fund a deal' },
+      { name: 'Financing Matcher', href: '/financing/matcher', description: 'Match your deal to a loan' },
+      { name: 'How-to-Finance Guides', href: '/how-to-finance', description: 'Funding playbooks by scenario' },
+    ],
+  },
   { name: 'Markets', href: '/markets' },
   {
     name: 'Learn',
@@ -29,6 +37,8 @@ const mobileNavigation = [
   { name: 'Start Here', href: '/start-here' },
   { name: 'Calculators', href: '/calculators' },
   { name: 'Lenders', href: '/lenders' },
+  { name: 'Financing Guide', href: '/financing' },
+  { name: 'Financing Matcher', href: '/financing/matcher' },
   { name: 'Markets', href: '/markets' },
   { name: 'Blog', href: '/blog' },
   { name: 'Newsletter', href: '/newsletter' },
