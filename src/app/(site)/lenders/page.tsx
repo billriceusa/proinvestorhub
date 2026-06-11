@@ -77,8 +77,14 @@ export default function LenderDirectoryPage() {
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
-            href="/lenders/finder"
+            href="/financing/matcher"
             className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-light transition-colors"
+          >
+            Match My Deal to Financing
+          </Link>
+          <Link
+            href="/lenders/finder"
+            className="rounded-lg border border-primary px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
           >
             Find My Lender Match
           </Link>

@@ -77,6 +77,15 @@ export default function LenderFinderPage() {
         </div>
       </div>
 
+      {/* Upstream pointer to the Matcher */}
+      <div className="mb-8 rounded-xl border border-primary/20 bg-primary/5 px-5 py-4 text-sm text-text-muted">
+        Not sure which <em>loan type</em> you need yet? Start with the{' '}
+        <Link href="/financing/matcher" className="font-semibold text-primary underline transition-colors hover:text-primary-light">
+          Financing Matcher
+        </Link>{' '}
+        — describe your deal and it&apos;ll recommend the right financing before you match a lender.
+      </div>
+
       {/* Finder Tool */}
       <LenderFinder allLenders={lenders} />
 
