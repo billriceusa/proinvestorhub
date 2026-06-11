@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CashOnCashCalculator } from '@/components/calculators/cash-on-cash-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
 import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
+import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 
 export const metadata: Metadata = {
   title: 'Cash-on-Cash Return Calculator + Formula & Example',
@@ -264,6 +265,15 @@ export default function CashOnCashPage() {
           </p>
         </div>
       </section>
+
+      <CalculatorRelatedTools
+        tools={[
+          { label: 'Cap Rate Calculator', href: '/calculators/cap-rate' },
+          { label: 'Rental Cash Flow', href: '/calculators/rental-cashflow' },
+          { label: 'Mortgage / DSCR Payment', href: '/calculators/mortgage' },
+          { label: 'Financing Matcher', href: '/financing/matcher' },
+        ]}
+      />
     </div>
   )
 }

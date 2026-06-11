@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { RentalCashFlowCalculator } from '@/components/calculators/rental-cashflow-calculator'
 import { CalculatorEmbed } from '@/components/calculator-embed'
-import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
+import { JsonLd, calculatorJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from '@/components/json-ld'
+import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 
 export const metadata: Metadata = {
-  title: 'Rental Cash Flow Calculator | Monthly & Annual Projections',
+  title: 'Rental Property Cash Flow Calculator | Monthly & Annual Projections',
   description:
     'Project monthly and annual cash flow for rental properties. Enter rent, expenses, and mortgage to see your net cash flow instantly. Supports multi-unit properties.',
   alternates: { canonical: '/calculators/rental-cashflow' },
@@ -56,6 +57,27 @@ export default function RentalCashFlowPage() {
           },
         ])}
       />
+      <JsonLd
+        data={howToJsonLd({
+          name: 'How to Calculate Rental Property Cash Flow',
+          description:
+            'Calculate the monthly cash flow on a rental property in three steps using income, operating expenses, and debt service.',
+          steps: [
+            {
+              name: 'Total your gross monthly income',
+              text: 'Add the rent plus any other income the property produces — parking, laundry, storage, or pet fees.',
+            },
+            {
+              name: 'Subtract operating expenses',
+              text: 'Deduct property taxes, insurance, maintenance, property management, a vacancy allowance, HOA dues, and any utilities you cover.',
+            },
+            {
+              name: 'Subtract the mortgage payment',
+              text: 'Subtract your monthly principal and interest. What remains is your monthly cash flow; multiply by 12 for the annual figure.',
+            },
+          ],
+        })}
+      />
 
       <nav className="text-sm text-text-muted mb-8">
         <Link href="/calculators" className="hover:text-primary transition-colors">
@@ -67,7 +89,7 @@ export default function RentalCashFlowPage() {
 
       <div className="max-w-3xl mb-10">
         <h1 className="text-3xl font-bold text-text sm:text-4xl">
-          Rental Cash Flow Calculator
+          Rental Property Cash Flow Calculator
         </h1>
         <p className="mt-3 text-lg text-text-muted leading-7">
           Cash flow is the lifeblood of rental investing. This calculator gives
@@ -146,6 +168,15 @@ export default function RentalCashFlowPage() {
           </p>
         </div>
       </section>
+
+      <CalculatorRelatedTools
+        tools={[
+          { label: 'Cap Rate Calculator', href: '/calculators/cap-rate' },
+          { label: 'Cash-on-Cash Return', href: '/calculators/cash-on-cash' },
+          { label: 'Mortgage / DSCR Payment', href: '/calculators/mortgage' },
+          { label: 'Financing Matcher', href: '/financing/matcher' },
+        ]}
+      />
     </div>
   )
 }
