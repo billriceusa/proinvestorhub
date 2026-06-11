@@ -54,6 +54,13 @@ const calculators = [
     status: 'live' as const,
   },
   {
+    title: 'Investment Property HELOC',
+    description:
+      'See how much equity you can tap from a rental, the monthly cost, and how many more deals it funds.',
+    href: '/calculators/heloc',
+    status: 'live' as const,
+  },
+  {
     title: '1031 Exchange Tax Savings',
     description:
       'Calculate how much you save in taxes by doing a 1031 exchange instead of selling outright.',
