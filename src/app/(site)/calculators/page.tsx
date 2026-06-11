@@ -54,6 +54,13 @@ const calculators = [
     status: 'live' as const,
   },
   {
+    title: 'DSCR Loan Qualifier',
+    description:
+      'Check whether a rental’s rent covers the payment to qualify for a DSCR loan, and the max loan at your target ratio.',
+    href: '/calculators/dscr',
+    status: 'live' as const,
+  },
+  {
     title: 'Investment Property HELOC',
     description:
       'See how much equity you can tap from a rental, the monthly cost, and how many more deals it funds.',
