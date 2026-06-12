@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-11T12:03:06.686Z",
+  "lastUpdated": "2026-06-12T12:02:42.646Z",
   "items": [
     {
       "id": "61a3cb491210",
@@ -1938,6 +1938,39 @@
       "status": "open"
     },
     {
+      "id": "fc741c2a6f38",
+      "title": "Filter Internal Traffic Immediately to Get Clean Analytics Data",
+      "description": "Create a GA4 internal traffic filter by IP address (Settings > Data Streams > Define Internal Traffic) for all office/home IPs used by the team. Additionally, create a custom segment excluding sessions where source/medium is 'direct/none' AND session duration is under 5 seconds to identify bot-like behavior. Tag all future internal QA visits with a UTM parameter (utm_source=internal&utm_medium=qa) so they can be filtered in reports. Until this is done, every GA4 metric — bounce rate, session duration, engagement rate — is unreliable for decision-making.",
+      "expectedImpact": "Clean baseline data within 48 hours; accurate engagement metrics that reflect real visitor behavior rather than owner/developer sessions inflating or deflating averages.",
+      "priority": "high",
+      "firstSeen": "2026-06-12",
+      "lastSeen": "2026-06-12",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "8402f60c5927",
+      "title": "Push /calculators/cap-rate from Position 20 to Top 10 for 'Cap Rate Calculator'",
+      "description": "This is the single highest-leverage SEO action available. The page already earns 313 impressions/28 days at position 20 — it is indexed, relevant, and close. Execute the following: (1) Audit the page against the top 3 ranking competitors for 'cap rate calculator' — match or exceed their word count, formula explanations, and example scenarios. (2) Add a dedicated 'What is a Good Cap Rate by Property Type and Market?' section with a data table covering residential, multifamily, and commercial benchmarks — this directly addresses related queries like 'cap rate calculation' (pos 28, 26 impr) and 'cap rate rental property calculator' (pos 40, 12 impr). (3) Add schema markup (SoftwareApplication or FAQPage) to the calculator page. (4) Build 3–5 internal links from the blog posts (/blog/how-to-analyze-rental-property, /blog/real-estate-investing-beginners-guide-2026) pointing to this page with anchor text variations matching the query cluster. (5) Explicitly add a sentence like 'This is a real estate capitalization rate calculator, not an interest rate cap calculator' to eliminate the semantic bleed from the derivatives query.",
+      "expectedImpact": "Moving from position 20 to position 8–12 for 'cap rate calculator' (313 impr/28 days) could generate 15–40 clicks/month at a 5–13% CTR. Reaching positions 3–5 could yield 60–120 clicks/month from this term cluster alone.",
+      "priority": "high",
+      "firstSeen": "2026-06-12",
+      "lastSeen": "2026-06-12",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "dc7f0bfb9a05",
+      "title": "Deepen Griffin Funding Review Page to Capture 3 Striking-Distance Queries",
+      "description": "The Griffin Funding review page has three queries in positions 15–19: 'griffin funding bbb rating' (pos 15.0, 5 impr), 'griffin funding interest rates' (pos 18.7, 7 impr), and 'griffin funding bank statement loan' (pos 19.2, 9 impr). These are high-commercial-intent queries from investors actively vetting a lender. Actions: (1) Add a dedicated 'Griffin Funding BBB Rating & Trustpilot Score' section with the current BBB rating, accreditation status, and number of reviews — update this quarterly. (2) Add a 'Griffin Funding Current Interest Rates' section with a rate table (even if approximate/range-based with a 'rates as of [date]' disclaimer) — this directly targets the rates query. (3) Add a 'Griffin Funding Bank Statement Loan' section explaining their DSCR and bank statement loan products with eligibility criteria. (4) Add FAQ schema covering these three topics. These are low-competition branded queries where a thorough review page can realistically rank in the top 5.",
+      "expectedImpact": "Pushing these 3 queries from positions 15–19 to positions 3–8 could generate 10–30 additional clicks/month. More importantly, lender review pages have high affiliate/lead-gen conversion potential.",
+      "priority": "high",
+      "firstSeen": "2026-06-12",
+      "lastSeen": "2026-06-12",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "fc8a3a71c56e",
       "title": "Investigate and resolve the www vs non-www URL inconsistency in GSC",
       "description": "The GSC data shows a split between www (www.proinvestorhub.com/lenders, /lenders/reviews/) and non-www (proinvestorhub.com/blog/, /calculators/) URLs being tracked. This suggests either a canonical tag misconfiguration or that GSC has both properties verified separately. Actions: (1) Confirm in GSC whether both www and non-www are verified as separate properties or as a domain property. (2) Ensure all pages have a canonical tag pointing to the preferred domain version (recommend non-www for consistency with GA4 data). (3) Set up a 301 redirect from www to non-www (or vice versa) at the server level if not already in place. (4) Check that the sitemap submitted to GSC uses only the canonical domain version. This fragmentation may be diluting link equity and causing Google to index duplicate versions of pages.",
@@ -3203,6 +3236,28 @@
       "status": "open"
     },
     {
+      "id": "76b6f6733013",
+      "title": "Build a Topical Cluster Around BRRRR and Rental Analysis to Recover Impression Share",
+      "description": "The 90-day Search Console data shows the site was surfacing for BRRRR-related queries ('brrrr method' pos 64.8, 'brrrr analysis' pos 71, 'brrrr formula' pos 94.7) but these have largely disappeared from the 7-day data, contributing to the 37% impression drop. The /markets/brrrr/kansas-city-mo page appeared in top pages this week, suggesting BRRRR content exists but lacks depth. Actions: (1) Create a comprehensive 'BRRRR Method Calculator' page at /calculators/brrrr that walks through all 5 steps with input fields. (2) Write a 2,000+ word 'BRRRR Method Formula: Step-by-Step with Real Examples' blog post linking to the calculator. (3) Expand the Kansas City BRRRR market page with current ARV data, average rehab costs, and local lender recommendations. (4) Internally link the BRRRR cluster from the beginners guide and rental property analysis posts.",
+      "expectedImpact": "Rebuilding the BRRRR topical cluster could recover the lost impression share and add 20–50 impressions/day within 60–90 days, with click potential once positions improve above 20.",
+      "priority": "medium",
+      "firstSeen": "2026-06-12",
+      "lastSeen": "2026-06-12",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "e2e2ebb92cd6",
+      "title": "Optimize the Cash-on-Cash Calculator Page for Its Query Cluster",
+      "description": "The /calculators/cash-on-cash page is surfacing for 'cash on cash return calculator' (pos 36.2, 45 impr), 'coc return calculator' (pos 49.9, 17 impr), 'cash on cash calculator' (pos 44.1, 12 impr), and 'cocr calculator' (pos 57.7, 12 impr) — a combined 86 impressions over 28 days with zero clicks. The page is indexed but ranking too low to earn traffic. Actions: (1) Audit the page against top 3 competitors for 'cash on cash return calculator.' (2) Add a 'Cash on Cash Return vs. Cap Rate vs. ROI' comparison section — this addresses a common investor question and adds topical depth. (3) Add worked examples for a fix-and-flip scenario, a BRRRR refinance scenario, and a straight rental purchase. (4) Cross-link from /calculators/cap-rate with anchor text 'cash on cash return calculator' to pass internal authority. (5) Add FAQ schema for 'What is a good cash on cash return?' and 'How is CoC different from cap rate?'",
+      "expectedImpact": "Improving positions from the 36–58 range to positions 15–25 for this cluster could add 5–20 impressions/day and begin generating first clicks within 60 days.",
+      "priority": "medium",
+      "firstSeen": "2026-06-12",
+      "lastSeen": "2026-06-12",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
       "id": "828bbefede8b",
       "title": "Investigate and Resolve the www vs. non-www URL Inconsistency in GSC Data",
       "description": "The GSC top pages data shows a mix of www.proinvestorhub.com (lenders pages) and proinvestorhub.com (calculators, blog, markets pages) URLs. This suggests either a canonicalization issue or inconsistent internal linking. Actions: (1) Verify that a canonical redirect is in place — all traffic should resolve to one preferred domain version (recommend www). (2) Check that the GSC property is set up as a Domain Property rather than a URL-prefix property to capture all variants. (3) Audit internal links to ensure they all point to the canonical version. (4) Check that the sitemap.xml only includes the canonical URL format. This is particularly important for the lenders section which appears to be on www while the rest of the site is non-www.",
@@ -3815,6 +3870,17 @@
       "priority": "low",
       "firstSeen": "2026-06-11",
       "lastSeen": "2026-06-11",
+      "timesRepeated": 1,
+      "status": "open"
+    },
+    {
+      "id": "c3d32d509bc3",
+      "title": "Implement UTM Tracking for All Internal Content Links and Social Shares",
+      "description": "The 'not set / not set' source/medium bucket (59 sessions, 13% of traffic) represents untagged traffic that cannot be attributed. Additionally, any social media posts, email newsletters, or partner links driving traffic are currently being misattributed to direct. Actions: (1) Create a UTM naming convention document (e.g., utm_source=twitter, utm_medium=social, utm_campaign=cap-rate-calculator-launch). (2) Tag all links shared in any social posts, email campaigns, or partner sites. (3) Investigate the 'not set' sessions — check if these correlate with specific pages or times of day, as they may indicate a GA4 configuration issue with certain page types (e.g., calculator pages with JavaScript rendering).",
+      "expectedImpact": "Full traffic attribution within 2 weeks, enabling accurate channel ROI measurement and revealing whether any social or referral channels are already driving meaningful traffic.",
+      "priority": "low",
+      "firstSeen": "2026-06-12",
+      "lastSeen": "2026-06-12",
       "timesRepeated": 1,
       "status": "open"
     }
