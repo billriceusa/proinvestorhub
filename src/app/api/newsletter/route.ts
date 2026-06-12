@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { WelcomeEmail } from '@/emails/welcome'
-import { Drip1CalculatorsEmail } from '@/emails/drip-1-calculators'
-import { Drip2FirstDealEmail } from '@/emails/drip-2-first-deal'
 import { isGoodOrigin, isHoneypotFilled, isGibberishName } from '@/lib/anti-spam'
 
 export type ExperienceLevel = 'beginner' | 'some-experience' | 'experienced'
@@ -73,12 +71,9 @@ export async function POST(request: Request) {
 
     console.log(`[Newsletter Signup] ${email} source=${source || 'direct'} experience=${experience || 'none'}`)
 
-    // Schedule drip emails: drip 1 at +24h, drip 2 at +72h
-    // (Resend allows scheduling up to 72h out; drip 3-5 handled by daily cron)
-    const now = Date.now()
-    const welcomeAt = new Date(now + 15 * 60 * 1000).toISOString() // 15-min Day-0 delay for spam cancel window
-    const drip1At = new Date(now + 24 * 60 * 60 * 1000).toISOString()
-    const drip2At = new Date(now + 3 * 24 * 60 * 60 * 1000).toISOString()
+    // Day-0 welcome only — drip automation retired with the content engine.
+    // 15-min delay gives a spam-cancel window before the first send.
+    const welcomeAt = new Date(Date.now() + 15 * 60 * 1000).toISOString()
 
     const results = await Promise.allSettled([
       // 1. Create contact
@@ -97,29 +92,11 @@ export async function POST(request: Request) {
         react: WelcomeEmail(),
         scheduledAt: welcomeAt,
       }),
-
-      // 3. Schedule drip 1 (day 1)
-      resend.emails.send({
-        from: fromEmail,
-        to: email,
-        subject: '3 Calculators Every Investor Needs to Master',
-        react: Drip1CalculatorsEmail({ firstName: firstName || 'there' }),
-        scheduledAt: drip1At,
-      }),
-
-      // 4. Schedule drip 2 (day 3)
-      resend.emails.send({
-        from: fromEmail,
-        to: email,
-        subject: 'How to Analyze Your First Deal (Step by Step)',
-        react: Drip2FirstDealEmail({ firstName: firstName || 'there' }),
-        scheduledAt: drip2At,
-      }),
     ])
 
     for (const [i, result] of results.entries()) {
       if (result.status === 'rejected') {
-        const labels = ['Contact create', 'Welcome email', 'Drip 1 schedule', 'Drip 2 schedule']
+        const labels = ['Contact create', 'Welcome email']
         console.error(`[Newsletter] ${labels[i]} failed:`, result.reason)
       }
     }

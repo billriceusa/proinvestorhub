@@ -7,11 +7,26 @@ import {
   NEWSLETTER_ISSUE_SLUGS_QUERY,
   NEWSLETTER_ISSUE_NEIGHBORS_QUERY,
 } from '@/sanity/lib/queries'
-import type { NewsletterContent } from '@/lib/cron/newsletter-ai'
 import { markdownToHtml } from '@/lib/markdown'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
+
+// Shape of a stored newsletter issue's contentJson. Previously emitted by the
+// (retired) AI newsletter generator; kept here so manually-published issues in
+// Sanity still render. The archive is empty until an issue is published.
+interface NewsletterContent {
+  subject: string
+  previewText: string
+  personalIntro: string
+  mainSection: { type: 'trends' | 'education'; title: string; body: string }
+  secondarySection: { type: 'trends' | 'education'; title: string; body: string }
+  featuredPartner: { lenderName: string; lenderSlug: string; body: string }
+  blogHighlights: { title: string; slug: string; oneLiner: string }[]
+  closingNote: string
+  ctaText: string
+  ctaUrl: string
+}
 
 type IssueDetail = {
   _id: string
