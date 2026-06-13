@@ -33,6 +33,7 @@ const creativeFinance: Array<{ id: string; name: string; blurb: string; whoFor: 
     blurb:
       'Owner-occupied financing on a 2–4 unit: live in one unit and rent the rest. FHA allows as little as 3.5% down; VA can go to 0% for eligible veterans.',
     whoFor: 'First-timers willing to live in the property for a year.',
+    href: '/financing/house-hacking',
   },
   {
     id: 'seller-financing',
@@ -40,6 +41,7 @@ const creativeFinance: Array<{ id: string; name: string; blurb: string; whoFor: 
     blurb:
       'The seller acts as the bank and carries a note for you. No institutional qualifying, and the rate, term, and down payment are all negotiable.',
     whoFor: 'Buyers whose credit or income docs are a hurdle, or who want creative terms.',
+    href: '/financing/seller-financing',
   },
   {
     id: 'subject-to',
@@ -47,6 +49,7 @@ const creativeFinance: Array<{ id: string; name: string; blurb: string; whoFor: 
     blurb:
       'You take over the seller’s existing mortgage and keep it in place. Powerful when the loan carries a low rate — but mind the lender’s due-on-sale clause.',
     whoFor: 'Low-cash buyers with a motivated seller and a favorable existing loan.',
+    href: '/financing/subject-to',
   },
   {
     id: 'lease-option',
@@ -68,6 +71,7 @@ const creativeFinance: Array<{ id: string; name: string; blurb: string; whoFor: 
     blurb:
       'Pool capital from passive investors to acquire a larger asset than you could alone. The sponsor runs the deal; limited partners fund it.',
     whoFor: 'Experienced operators scaling into larger multifamily or commercial.',
+    href: '/financing/real-estate-syndication',
   },
   {
     id: 'transactional-funding',
@@ -246,7 +250,7 @@ export default function FinancingPillarPage() {
               </p>
               {c.href && (
                 <Link href={c.href} className="mt-3 inline-flex text-sm font-semibold text-primary transition-colors hover:text-primary-light">
-                  Open the calculator →
+                  {c.href.startsWith('/calculators') ? 'Open the calculator →' : 'Read the full guide →'}
                 </Link>
               )}
             </div>

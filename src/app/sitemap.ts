@@ -9,6 +9,7 @@ import { lenders } from '@/data/lenders'
 import { usStates } from '@/data/us-states'
 import { lenderComparisons } from '@/data/lender-comparisons'
 import { financingScenarios } from '@/data/financing-scenarios'
+import { financingTypes } from '@/data/financing-types'
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -263,6 +264,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/how-to-finance/${s.slug}`,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+    })),
+    ...financingTypes.map((t) => ({
+      url: `${baseUrl}/financing/${t.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     })),
   ]
 
