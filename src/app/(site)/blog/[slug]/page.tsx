@@ -202,16 +202,44 @@ export default async function PostPage({ params }: Props) {
       </div>
 
       {post.mainImage?.asset && (
-        <div className="mt-8 overflow-hidden rounded-xl">
-          <Image
-            src={urlFor(post.mainImage).width(960).height(540).url()}
-            alt={post.mainImage.alt || ''}
-            width={960}
-            height={540}
-            className="w-full"
-            priority
-          />
-        </div>
+        <figure className="mt-8">
+          <div className="overflow-hidden rounded-xl">
+            <Image
+              src={urlFor(post.mainImage).width(960).height(540).url()}
+              alt={post.mainImage.alt || ''}
+              width={960}
+              height={540}
+              className="w-full"
+              priority
+            />
+          </div>
+          {post.mainImage.credit && (
+            <figcaption className="mt-2 text-xs text-text-light">
+              Photo by{' '}
+              {post.mainImage.creditUrl ? (
+                <a
+                  href={post.mainImage.creditUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-primary"
+                >
+                  {post.mainImage.credit}
+                </a>
+              ) : (
+                post.mainImage.credit
+              )}{' '}
+              on{' '}
+              <a
+                href="https://unsplash.com?utm_source=proinvestorhub&utm_medium=referral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-primary"
+              >
+                Unsplash
+              </a>
+            </figcaption>
+          )}
+        </figure>
       )}
 
       {post.body && (
