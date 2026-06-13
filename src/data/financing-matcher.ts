@@ -367,7 +367,7 @@ const CREATIVE_CATALOG: Array<CreativeOption & { when: (p: DealProfile) => boole
     name: 'Partnership / JV',
     blurb: 'Bring the deal and the work; a partner brings the capital. Split the returns.',
     whenToUse: 'You have little of your own cash but a strong deal.',
-    href: '/financing#partnerships-jv',
+    href: '/financing/partnerships-jv',
     when: (p) => p.cash === 'under-25k',
   },
   {
@@ -383,7 +383,7 @@ const CREATIVE_CATALOG: Array<CreativeOption & { when: (p: DealProfile) => boole
     name: 'Transactional funding',
     blurb: 'One-day funding for a wholesale double-close — you never use your own cash.',
     whenToUse: 'You’re wholesaling and need to fund a simultaneous close.',
-    href: '/financing#transactional-funding',
+    href: '/financing/transactional-funding',
     when: (p) => p.dealType === 'wholesale',
   },
 ]
