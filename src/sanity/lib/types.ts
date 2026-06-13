@@ -10,6 +10,8 @@ export type PostSummary = {
   mainImage: {
     asset: { _id: string; url: string; metadata: { lqip: string; dimensions: unknown } } | null
     alt: string | null
+    credit?: string | null
+    creditUrl?: string | null
   } | null
   author: { name: string | null; slug: string | null; image: SanityImage } | null
   categories: Array<{ _id: string; title: string | null; slug: string | null }> | null

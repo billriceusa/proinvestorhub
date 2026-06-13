@@ -38,6 +38,18 @@ export const post = defineType({
           type: 'string',
           validation: (rule) => rule.required(),
         }),
+        defineField({
+          name: 'credit',
+          title: 'Photo Credit',
+          description: 'Photographer name (e.g. for Unsplash attribution).',
+          type: 'string',
+        }),
+        defineField({
+          name: 'creditUrl',
+          title: 'Photo Credit URL',
+          description: 'Link to the photographer / source profile.',
+          type: 'url',
+        }),
       ],
     }),
     defineField({

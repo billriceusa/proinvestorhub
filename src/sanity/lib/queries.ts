@@ -19,7 +19,9 @@ export const POSTS_QUERY = defineQuery(/* groq */ `
         url,
         metadata { lqip, dimensions }
       },
-      alt
+      alt,
+      credit,
+      creditUrl
     },
     author->{ name, "slug": slug.current, image },
     categories[defined(@->)]->{ _id, title, "slug": slug.current }
@@ -40,7 +42,9 @@ export const POST_BY_SLUG_QUERY = defineQuery(/* groq */ `
         url,
         metadata { lqip, dimensions }
       },
-      alt
+      alt,
+      credit,
+      creditUrl
     },
     author->{ name, "slug": slug.current, image, bio },
     categories[defined(@->)]->{ _id, title, "slug": slug.current },
@@ -144,7 +148,9 @@ export const POSTS_BY_CATEGORY_PAGINATED_QUERY = defineQuery(/* groq */ `
         url,
         metadata { lqip, dimensions }
       },
-      alt
+      alt,
+      credit,
+      creditUrl
     },
     author->{ name, "slug": slug.current },
     categories[defined(@->)]->{ _id, title, "slug": slug.current }
@@ -165,7 +171,9 @@ export const POSTS_BY_CATEGORY_SLUG_ALL_QUERY = defineQuery(/* groq */ `
         url,
         metadata { lqip, dimensions }
       },
-      alt
+      alt,
+      credit,
+      creditUrl
     },
     categories[defined(@->)]->{ _id, title, "slug": slug.current }
   }
