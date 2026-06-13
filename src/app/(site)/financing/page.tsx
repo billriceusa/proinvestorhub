@@ -57,6 +57,15 @@ const creativeFinance: Array<{ id: string; name: string; blurb: string; whoFor: 
     blurb:
       'Control a property with a lease plus the option to buy later at a set price. Lets you lock a deal without financing it today.',
     whoFor: 'Investors who want control now and financing (or resale) later.',
+    href: '/financing/lease-option',
+  },
+  {
+    id: 'wraparound',
+    name: 'Wraparound Mortgage',
+    blurb:
+      'Seller financing when the seller still has a mortgage: a new, larger note wraps around their existing loan, and they earn the rate spread.',
+    whoFor: 'Buyers with a willing seller whose existing loan stays in place.',
+    href: '/financing/wraparound-mortgage',
   },
   {
     id: 'partnerships-jv',
@@ -64,6 +73,7 @@ const creativeFinance: Array<{ id: string; name: string; blurb: string; whoFor: 
     blurb:
       'Split the deal: you bring the deal and the work, a partner brings the capital, and you share the returns under a written agreement.',
     whoFor: 'Operators with strong deals but limited capital of their own.',
+    href: '/financing/partnerships-jv',
   },
   {
     id: 'syndication',
@@ -79,6 +89,7 @@ const creativeFinance: Array<{ id: string; name: string; blurb: string; whoFor: 
     blurb:
       'Very short-term funding (often a single day) that lets a wholesaler close an A-to-B purchase and immediately resell B-to-C, without using their own cash.',
     whoFor: 'Wholesalers executing a same-day double close.',
+    href: '/financing/transactional-funding',
   },
 ]
 

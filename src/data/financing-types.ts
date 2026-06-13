@@ -367,6 +367,317 @@ export const financingTypes: FinancingType[] = [
     relatedTypes: ['seller-financing'],
     matcherProfile: { dealType: 'turnkey-rental', exit: 'hold', cash: 'under-25k', income: 'no-doc' },
   },
+
+  // ── Wraparound mortgage — 1,700/mo, KD 7 ────────────────────────────────────
+  {
+    slug: 'wraparound-mortgage',
+    shortLabel: 'Wraparound mortgage',
+    name: 'Wraparound Mortgage',
+    metaTitle: 'Wraparound Mortgage: How a Wrap Loan Works (2026 Guide)',
+    metaDescription:
+      'A wraparound mortgage lets a buyer finance a purchase around the seller’s existing loan. How a wrap is structured, when it beats seller financing, and the due-on-sale risk.',
+    targetKeyword: 'wraparound mortgage',
+    h1: 'Wraparound Mortgage: How a Wrap Loan Works',
+    intro:
+      'A wraparound mortgage is a form of seller financing used when the seller still owes money on the property. Instead of paying off that loan, the seller carries a new, larger note that “wraps around” their existing mortgage — you pay the seller, and the seller keeps paying their original lender. It is the bridge between seller financing and subject-to, and it carries the risks of both.',
+    definition:
+      'A wraparound mortgage (or “wrap”) is a seller-financed loan in which the seller’s existing mortgage stays in place and the new, larger note the buyer pays wraps around it, with the seller using part of the buyer’s payment to service the underlying loan.',
+    bestFor: [
+      'Sellers with an existing mortgage who want to carry financing',
+      'Buyers who can’t qualify for a bank loan but have a willing seller',
+      'Deals where the seller’s existing rate is below the new wrap rate',
+      'Experienced parties willing to manage due-on-sale risk',
+    ],
+    sections: [
+      {
+        heading: 'How a wrap is structured',
+        paragraphs: [
+          'The seller keeps their original mortgage and creates a new promissory note to you for a larger amount — typically the agreed sale price minus your down payment. You make one monthly payment to the seller on the wrap note. The seller then continues making their own payment on the underlying loan out of what you send them, and pockets the difference.',
+          'The seller usually profits on the spread between the two loans. If their underlying loan is at 4% and they write your wrap at 7%, they earn the 3% difference on the wrapped balance — on top of any markup on the sale price. That spread is the reason a seller agrees to a wrap instead of demanding to be cashed out.',
+        ],
+      },
+      {
+        heading: 'Wraparound vs. seller financing vs. subject-to',
+        paragraphs: [
+          'Plain seller financing assumes the seller owns the property free and clear — there is no underlying loan to work around. A wraparound is what you use when the seller still has a mortgage: it lets them carry financing without first paying that mortgage off.',
+          'Subject-to is the close cousin: in a subject-to deal you simply take over the seller’s existing payment with no new note created. A wrap adds a new, larger seller-held note on top of the existing loan — giving the seller a profit spread and a clearer paper trail, at the cost of more complexity. Choose the wrap when the seller wants ongoing income and a markup; choose subject-to when you just want the existing low payment.',
+        ],
+      },
+      {
+        heading: 'The risks — and why you paper it carefully',
+        paragraphs: [
+          'The underlying mortgage almost certainly has a due-on-sale clause, and a wrap triggers it just as subject-to does. The lender can call the wrapped loan; build a refinance or payoff plan before you close. There is also performance risk in both directions: if the seller stops paying the underlying loan despite collecting your payment, the property can be foreclosed out from under you — so many wraps route payments through a neutral third-party servicer that pays the underlying lender directly.',
+          'Because two loans are stacked on one property, a wraparound has more ways to go wrong than a standard purchase. Always use a real-estate attorney and a servicing company, record the wrap note, and define who pays the underlying loan and how, in writing.',
+        ],
+      },
+    ],
+    pros: [
+      'Lets a seller with an existing mortgage still carry financing',
+      'No bank qualifying for the buyer — terms are negotiated',
+      'Seller earns the rate spread plus any price markup',
+      'Faster, cheaper close than originating a new bank loan',
+    ],
+    cons: [
+      'Due-on-sale clause on the underlying loan can be triggered',
+      'Buyer depends on the seller actually paying the underlying loan',
+      'More complex and higher-risk than plain seller financing',
+      'Requires careful legal documentation and ideally a servicer',
+    ],
+    faqs: [
+      {
+        question: 'Is a wraparound mortgage legal?',
+        answer:
+          'Yes, wraparound mortgages are legal, but they implicate the underlying loan’s due-on-sale clause and, for owner-occupant buyers, federal lending rules. Between investors on an investment property the rules are lighter — but always close a wrap through an attorney and use a neutral servicer.',
+      },
+      {
+        question: 'What is the difference between a wraparound and subject-to?',
+        answer:
+          'Subject-to means you take over the seller’s existing payment with no new loan created. A wraparound creates a new, larger seller-held note that wraps around that existing loan, giving the seller a profit on the rate spread. A wrap is essentially subject-to plus seller financing layered on top.',
+      },
+      {
+        question: 'Who pays the underlying mortgage in a wrap?',
+        answer:
+          'The seller remains legally responsible for the underlying loan and pays it out of the payment you send them. To protect the buyer, many wraps use a third-party loan servicer that receives the buyer’s payment and pays the underlying lender directly, so the buyer can confirm the senior loan stays current.',
+      },
+    ],
+    relatedCalculators: [
+      { label: 'Mortgage / Payment Calculator', href: '/calculators/mortgage' },
+      { label: 'Cash-on-Cash Return', href: '/calculators/cash-on-cash' },
+    ],
+    relatedTypes: ['seller-financing', 'subject-to'],
+    matcherProfile: { dealType: 'turnkey-rental', exit: 'hold', cash: 'under-25k', income: 'no-doc' },
+  },
+
+  // ── Lease option / rent-to-own — ≈700/mo ────────────────────────────────────
+  {
+    slug: 'lease-option',
+    shortLabel: 'Lease option',
+    pillarAnchor: 'lease-option',
+    name: 'Lease Option',
+    metaTitle: 'Lease Option Real Estate: How Rent-to-Own Investing Works',
+    metaDescription:
+      'How a lease option works for real estate investors — control a property with a lease plus the right to buy later at a set price, with little money down. Structure, pros, and risks.',
+    targetKeyword: 'lease option',
+    h1: 'Lease Option: Controlling Property Before You Finance It',
+    intro:
+      'A lease option lets you control a property — and lock in a future purchase price — with a lease today and the right (but not the obligation) to buy later. You do not need financing now, which makes it a low-cash way to tie up a deal while you arrange a loan, improve your credit, or simply wait for appreciation to build equity you can refinance against.',
+    definition:
+      'A lease option is an agreement that combines a lease of a property with an option giving the tenant the exclusive right to purchase it at a predetermined price within a set period.',
+    bestFor: [
+      'Investors who want to control a deal without financing it today',
+      'Buyers building credit or cash toward a future purchase',
+      'Wholesalers and rent-to-own operators',
+      'Sellers who want income now and a likely sale later',
+    ],
+    sections: [
+      {
+        heading: 'The two pieces: the lease and the option',
+        paragraphs: [
+          'A lease option is two agreements working together. The lease lets you (or your tenant-buyer) occupy or control the property and pay rent. The option gives you the exclusive right to buy at a price fixed today, exercisable within a defined window — often one to three years. You typically pay a non-refundable option fee up front for that right, and a portion of each month’s rent (a “rent credit”) may be applied toward the eventual purchase.',
+          'The key word is option, not obligation. If the deal no longer makes sense when the window closes — the market dropped, your financing fell through — you can walk away and simply lose the option fee and rent credits. That asymmetry is the appeal: limited downside, full upside if the property appreciates above your locked price.',
+        ],
+      },
+      {
+        heading: 'How investors use it',
+        paragraphs: [
+          'Investors use lease options two ways. As a buyer, you lock a purchase price now, control the property, and refinance or pay cash to exercise the option once you can — capturing any appreciation above the strike price. As an operator, you can sandwich the deal: lease-option a property from an owner, then sub-lease-option it to a tenant-buyer at a higher price, profiting on the spread and the option fees (a “sandwich lease option”).',
+          'Because you are not taking title or originating a loan, the cash to get in is small — the option fee plus first month’s rent — which is why lease options show up in low- and no-money-down strategies.',
+        ],
+      },
+      {
+        heading: 'The risks to watch',
+        paragraphs: [
+          'The biggest risk is the seller’s situation changing before you exercise. If the owner stops paying their mortgage, files bankruptcy, or places liens on the property, your option can be jeopardized — so record a memorandum of option and verify the title and that the mortgage stays current. Make sure the contract clearly separates the lease from the option so it cannot be re-characterized as an installment sale.',
+          'For the buyer, option fees and rent credits are usually non-refundable, so only pay them on a deal you genuinely intend and expect to be able to close. As always with creative structures, have an attorney draft the agreements.',
+        ],
+      },
+    ],
+    pros: [
+      'Control a property and lock a price with little cash down',
+      'No financing or qualifying required to get started',
+      'Walk away if the deal sours — the option is a right, not a duty',
+      'Capture appreciation above your locked purchase price',
+    ],
+    cons: [
+      'Option fee and rent credits are typically non-refundable',
+      'Your interest is exposed if the seller’s finances deteriorate',
+      'Still need financing (or cash) to actually exercise and buy',
+      'Contracts must be drafted carefully to hold up legally',
+    ],
+    faqs: [
+      {
+        question: 'How much is a lease option fee?',
+        answer:
+          'The option fee is negotiable, commonly a few percent of the purchase price. It is usually non-refundable and is often credited toward the price if you exercise the option, so treat it as earnest commitment, not a sunk cost — provided you intend to buy.',
+      },
+      {
+        question: 'What happens if I don’t exercise the option?',
+        answer:
+          'You simply let the option expire. You are not obligated to buy, so you walk away — but you forfeit the option fee and any rent credits you paid for the right. That capped loss is the trade-off for the no-obligation upside.',
+      },
+      {
+        question: 'Is a lease option the same as rent-to-own?',
+        answer:
+          'They overlap. “Rent-to-own” is the consumer-facing name for the same idea — leasing with a path to ownership. A lease option specifically grants the right (not the obligation) to buy; a related structure, a lease-purchase, obligates the tenant to buy. Read which one the contract actually is.',
+      },
+    ],
+    relatedCalculators: [
+      { label: 'Rental Cash Flow Calculator', href: '/calculators/rental-cashflow' },
+      { label: 'Mortgage / Payment Calculator', href: '/calculators/mortgage' },
+    ],
+    relatedTypes: ['seller-financing', 'subject-to'],
+    matcherProfile: { dealType: 'turnkey-rental', exit: 'hold', cash: 'under-25k' },
+  },
+
+  // ── Partnerships & JV — low KD ──────────────────────────────────────────────
+  {
+    slug: 'partnerships-jv',
+    shortLabel: 'Partnerships & JV',
+    pillarAnchor: 'partnerships-jv',
+    name: 'Real Estate Partnerships & JV',
+    metaTitle: 'Real Estate Partnerships & Joint Ventures: How to Structure a Deal',
+    metaDescription:
+      'How real estate partnerships and joint ventures work — pairing a capital partner with an operating partner, common profit splits, and how to structure and protect the deal.',
+    targetKeyword: 'real estate partnership',
+    h1: 'Real Estate Partnerships & Joint Ventures',
+    intro:
+      'A real estate partnership pairs people with what a deal needs: one side brings the capital, the other brings the deal, the work, and the expertise. It is how investors with strong deal flow but limited cash keep buying — and how investors with cash but no time still own real estate. Structured well, a partnership funds deals no single party could do alone.',
+    definition:
+      'A real estate joint venture (JV) is a partnership in which two or more parties combine resources — typically one supplying capital and another supplying the deal and active management — to acquire and operate a property, sharing the returns by agreement.',
+    bestFor: [
+      'Operators with strong deals but limited capital of their own',
+      'Passive partners with capital but no time or expertise',
+      'Investors pooling resources to access larger deals',
+      'Pairing complementary skills (capital, construction, management)',
+    ],
+    sections: [
+      {
+        heading: 'The classic split: money partner and operating partner',
+        paragraphs: [
+          'The most common real estate JV pairs a capital partner, who funds the down payment and reserves, with an operating partner (sometimes called the sweat-equity partner), who finds the deal, arranges financing, manages the rehab or property, and executes the business plan. Each contributes what the other lacks, and they split the profit by agreement — 50/50 is common, but the split should reflect what each side actually brings.',
+          'A JV is typically structured through an LLC the partners jointly own, with an operating agreement that spells out capital contributions, who decides what, how profits and losses are split, and how either party can exit. Unlike a syndication — where many passive investors fund a sponsor’s deal under securities law — a JV is usually a small number of active or semi-active partners, which keeps it simpler legally.',
+        ],
+      },
+      {
+        heading: 'Structuring the deal so it survives',
+        paragraphs: [
+          'The split is only part of it. A durable partnership agreement also covers the unglamorous questions: What happens if the deal needs more cash than planned — who funds the shortfall, and what does the other partner give up if they can’t? How are decisions made when partners disagree? How does a partner exit, and how is their interest valued? What happens if one partner dies or wants out early?',
+          'Get these answered in writing before you close, not after a dispute. The deals that blow up partnerships are almost always the ones where the agreement was silent on the hard cases.',
+        ],
+      },
+      {
+        heading: 'JV vs. syndication vs. just borrowing',
+        paragraphs: [
+          'If you mainly need money and have the deal handled, a private-money loan or a simple capital partner may be cleaner than a full JV — you keep control and just pay for the capital. A JV makes sense when you genuinely want a partner’s involvement, skills, or shared risk, not only their cash.',
+          'If you need capital from many passive investors rather than one or two partners, you are no longer doing a JV — you are doing a syndication, which is a securities offering with its own rules. Know which one you are actually structuring.',
+        ],
+      },
+    ],
+    pros: [
+      'Fund deals you couldn’t finance with your own capital alone',
+      'Combine complementary strengths (capital, deals, management)',
+      'Share risk across partners rather than carrying it solo',
+      'Simpler legally than a multi-investor syndication',
+    ],
+    cons: [
+      'You give up a share of the profit and some control',
+      'Partner disputes can stall or sink a deal',
+      'Requires a thorough operating agreement to protect both sides',
+      'Misaligned expectations or skills can poison the relationship',
+    ],
+    faqs: [
+      {
+        question: 'How do you split profits in a real estate partnership?',
+        answer:
+          'There is no fixed rule — it is negotiated to reflect each party’s contribution. A common starting point is 50/50 between a capital partner and an operating partner, but splits shift based on how much capital, work, expertise, and risk each side brings. Put the split, and how it changes if the deal needs more money, in the operating agreement.',
+      },
+      {
+        question: 'What is the difference between a JV and a syndication?',
+        answer:
+          'A joint venture is a small group of active partners combining resources on a deal. A syndication pools money from many passive investors under a sponsor and is regulated as a securities offering. JVs are simpler legally; syndications can raise far more capital but carry SEC compliance obligations.',
+      },
+      {
+        question: 'Do I need an LLC for a real estate partnership?',
+        answer:
+          'It is strongly advisable. Holding the property in a jointly owned LLC with a written operating agreement provides liability protection and a clear framework for contributions, decisions, profit splits, and exits — far safer than an informal handshake partnership.',
+      },
+    ],
+    relatedCalculators: [
+      { label: 'Cash-on-Cash Return', href: '/calculators/cash-on-cash' },
+      { label: 'BRRRR Calculator', href: '/calculators/brrrr' },
+    ],
+    relatedTypes: ['real-estate-syndication', 'seller-financing'],
+    matcherProfile: { dealType: 'value-add-brrrr', exit: 'refi-hold', cash: 'under-25k' },
+  },
+
+  // ── Transactional funding — 500/mo, KD 0, $5 CPC ────────────────────────────
+  {
+    slug: 'transactional-funding',
+    shortLabel: 'Transactional funding',
+    pillarAnchor: 'transactional-funding',
+    name: 'Transactional Funding',
+    metaTitle: 'Transactional Funding: Same-Day Double-Close Financing Explained',
+    metaDescription:
+      'How transactional funding works for wholesalers — very short-term capital that funds an A-to-B purchase so you can immediately resell B-to-C, without using your own cash.',
+    targetKeyword: 'transactional funding',
+    h1: 'Transactional Funding: Financing a Double Close',
+    intro:
+      'Transactional funding is ultra-short-term money — often used for just a day — that lets a wholesaler fund the purchase of a property and immediately resell it to the end buyer in a back-to-back, or “double,” close. It exists for one job: to complete an A-to-B then B-to-C transaction without the wholesaler using their own cash and without the two buyers’ funds touching.',
+    definition:
+      'Transactional funding is very short-term financing (often same-day) that funds the first leg of a back-to-back real estate closing, letting a wholesaler buy from the seller and simultaneously resell to the end buyer without using personal capital.',
+    bestFor: [
+      'Wholesalers executing a same-day double close',
+      'Deals where the contract can’t be simply assigned',
+      'Investors who want to keep their spread confidential',
+      'Quick A-to-B-to-C flips with an end buyer already lined up',
+    ],
+    sections: [
+      {
+        heading: 'Why a double close needs its own funding',
+        paragraphs: [
+          'Wholesalers usually profit by assigning a purchase contract to an end buyer for a fee. But sometimes you can’t assign — the seller forbids it, the end buyer’s lender won’t allow it, or you simply don’t want the parties to see your spread. In those cases you actually take title (the A-to-B close) and immediately resell (the B-to-C close). Transactional funding supplies the cash for that brief moment you own the property.',
+          'The two closings happen back-to-back, often the same day. The transactional lender funds your purchase from the seller; minutes or hours later your end buyer’s funds close the resale and pay the transactional loan back. The money is outstanding for an extremely short time, which is why it is priced as a flat fee rather than an annual rate.',
+        ],
+      },
+      {
+        heading: 'What it costs and what it requires',
+        paragraphs: [
+          'Transactional funding is priced as a flat fee on the amount funded plus closing costs, reflecting the one-or-two-day term rather than an interest rate. The defining requirement is a non-negotiable one: the end buyer must already be in place and ready to close. Transactional lenders fund only simultaneous or near-simultaneous closings — they are not a bridge to go find a buyer later.',
+          'Because the loan is repaid almost immediately by the end buyer’s purchase, the lender’s risk is low and qualification is light — the deal, the signed B-to-C contract, and the title work matter far more than your personal credit.',
+        ],
+      },
+    ],
+    pros: [
+      'Close a wholesale deal without using your own cash',
+      'Keeps your spread private (vs. a visible assignment fee)',
+      'Works when a contract can’t legally be assigned',
+      'Light qualification — the funded deal repays it same-day',
+    ],
+    cons: [
+      'Requires a ready, funded end buyer to close simultaneously',
+      'Flat fee plus two sets of closing costs eats into the spread',
+      'Useless for any deal you’ll hold more than a day or two',
+      'Not all title companies handle double closings smoothly',
+    ],
+    faqs: [
+      {
+        question: 'How much does transactional funding cost?',
+        answer:
+          'It is charged as a flat fee on the amount funded — reflecting the one-to-two-day term — rather than an annual interest rate, plus the closing costs on the purchase. Because the spread on the resale has to cover both, transactional funding only makes sense on a deal with a healthy margin.',
+      },
+      {
+        question: 'When should I use transactional funding instead of assigning a contract?',
+        answer:
+          'Use it when you cannot or do not want to assign: the seller prohibits assignment, the end buyer’s lender won’t allow it, or you want to keep your profit confidential. If assignment is allowed and the parties are fine with it, a simple assignment is cheaper.',
+      },
+    ],
+    relatedCalculators: [
+      { label: 'Wholesale Calculator', href: '/calculators/wholesale' },
+      { label: 'Fix & Flip Profit', href: '/calculators/fix-flip' },
+    ],
+    relatedTypes: ['seller-financing'],
+    matcherProfile: { dealType: 'wholesale', timeline: 'urgent' },
+  },
 ]
 
 export function getFinancingTypeBySlug(slug: string): FinancingType | undefined {
