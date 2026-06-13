@@ -109,6 +109,27 @@ const calculators = [
     href: '/calculators/str-revenue',
     status: 'live' as const,
   },
+  {
+    title: 'Hard Money Loan Calculator',
+    description:
+      'Size a hard money loan against ARV, with points, interest, and the cash you bring to close a flip or BRRRR.',
+    href: '/calculators/hard-money',
+    status: 'live' as const,
+  },
+  {
+    title: 'Mortgage Points Calculator',
+    description:
+      'See the cost of buying discount points, your monthly savings, and the break-even month.',
+    href: '/calculators/mortgage-points',
+    status: 'live' as const,
+  },
+  {
+    title: 'Closing Cost Calculator',
+    description:
+      'Itemize origination, title, transfer taxes, and prepaids to estimate your total cash to close.',
+    href: '/calculators/closing-costs',
+    status: 'live' as const,
+  },
 ]
 
 export default function CalculatorsPage() {
