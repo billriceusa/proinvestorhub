@@ -363,6 +363,22 @@ const CREATIVE_CATALOG: Array<CreativeOption & { when: (p: DealProfile) => boole
     when: (p) => p.cash === 'under-25k' || p.income === 'no-doc',
   },
   {
+    id: 'wraparound',
+    name: 'Wraparound mortgage',
+    blurb: 'Seller financing layered over the seller’s existing loan — they keep the mortgage and earn the rate spread.',
+    whenToUse: 'A motivated seller still has a mortgage you can’t (or don’t want to) pay off.',
+    href: '/financing/wraparound-mortgage',
+    when: (p) => p.credit === 'below-620' || p.income === 'no-doc',
+  },
+  {
+    id: 'lease-option',
+    name: 'Lease option / rent-to-own',
+    blurb: 'Control the property and lock a purchase price now with a lease plus the right to buy later.',
+    whenToUse: 'You want control now and financing (or resale) later, with little cash down.',
+    href: '/financing/lease-option',
+    when: (p) => p.cash === 'under-25k' || p.cash === '25-50k',
+  },
+  {
     id: 'partnerships-jv',
     name: 'Partnership / JV',
     blurb: 'Bring the deal and the work; a partner brings the capital. Split the returns.',
@@ -376,6 +392,14 @@ const CREATIVE_CATALOG: Array<CreativeOption & { when: (p: DealProfile) => boole
     blurb: 'Pool capital from passive investors to fund a larger deal than you could alone.',
     whenToUse: 'You’re scaling into larger multifamily or commercial.',
     href: '/financing/real-estate-syndication',
+    when: (p) => p.dealType === 'multifamily-5plus',
+  },
+  {
+    id: 'mezzanine',
+    name: 'Mezzanine financing',
+    blurb: 'Debt that fills the gap between the senior loan and your equity on a larger commercial deal — cheaper than giving up equity.',
+    whenToUse: 'A commercial or multifamily deal needs more leverage than the senior lender will fund.',
+    href: '/financing/mezzanine-financing',
     when: (p) => p.dealType === 'multifamily-5plus',
   },
   {
