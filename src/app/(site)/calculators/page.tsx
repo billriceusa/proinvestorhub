@@ -82,6 +82,20 @@ const calculators = [
     status: 'live' as const,
   },
   {
+    title: 'Depreciation Calculator',
+    description:
+      'See your annual rental property depreciation, depreciable basis, and the tax it shelters.',
+    href: '/calculators/depreciation',
+    status: 'live' as const,
+  },
+  {
+    title: 'Sell vs. Rent',
+    description:
+      'Compare the long-run wealth of selling and reinvesting against holding and renting.',
+    href: '/calculators/sell-vs-rent',
+    status: 'live' as const,
+  },
+  {
     title: 'Wholesale Deal Analyzer',
     description:
       'Calculate your maximum offer and assignment fee on wholesale deals using the 70% rule.',
