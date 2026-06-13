@@ -213,6 +213,26 @@ export default async function FinancingTypePage({
           </div>
         </section>
       )}
+
+      {/* Cross-links to lender directories / guides */}
+      {t.relatedGuides && t.relatedGuides.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-text-muted">
+            Where to get it
+          </h2>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {t.relatedGuides.map((g) => (
+              <Link
+                key={g.href}
+                href={g.href}
+                className="rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-text transition-colors hover:border-primary/40 hover:bg-surface"
+              >
+                {g.label} →
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   )
 }

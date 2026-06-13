@@ -39,6 +39,8 @@ export type FinancingType = {
   relatedCalculators: Array<{ label: string; href: string }>
   /** Other financing-type slugs (this file) to cross-link. */
   relatedTypes: string[]
+  /** Optional cross-links to lender directories or other guides (e.g. /lenders/commercial-loans). */
+  relatedGuides?: Array<{ label: string; href: string }>
   /** Optional matcher pre-set, so the page can drop into a live recommendation. */
   matcherProfile?: DealProfile
 }
@@ -677,6 +679,304 @@ export const financingTypes: FinancingType[] = [
     ],
     relatedTypes: ['seller-financing'],
     matcherProfile: { dealType: 'wholesale', timeline: 'urgent' },
+  },
+
+  // ── Mezzanine financing — 2,000/mo, KD 7, $5 CPC ────────────────────────────
+  {
+    slug: 'mezzanine-financing',
+    shortLabel: 'Mezzanine financing',
+    name: 'Mezzanine Financing',
+    metaTitle: 'Mezzanine Financing in Real Estate: How the Cap Stack Works',
+    metaDescription:
+      'Mezzanine financing explained — the layer between senior debt and equity that fills the funding gap on commercial real estate deals, how it’s secured, and what it costs.',
+    targetKeyword: 'mezzanine financing',
+    h1: 'Mezzanine Financing: Filling the Gap in the Capital Stack',
+    intro:
+      'Mezzanine financing is the layer of capital that sits between the senior mortgage and the owner’s equity on a commercial real estate deal. When the senior lender will only fund, say, 65% of a project and the sponsor doesn’t want to write a check for the other 35%, mezzanine debt fills part of that gap — at a higher cost than the mortgage, but cheaper than giving away equity.',
+    definition:
+      'Mezzanine financing is subordinate debt that fills the gap between a property’s senior mortgage and the sponsor’s equity, typically secured by a pledge of ownership interests in the entity that owns the property rather than by the property itself.',
+    bestFor: [
+      'Commercial and multifamily sponsors short of the equity to close',
+      'Value-add deals that need more leverage than the senior loan allows',
+      'Sponsors who’d rather pay for debt than dilute their equity',
+      'Larger deals with a clear stabilization and exit plan',
+    ],
+    sections: [
+      {
+        heading: 'Where mezzanine sits in the capital stack',
+        paragraphs: [
+          'Think of a deal’s funding as a stack: the senior mortgage is at the bottom (lowest risk, lowest cost, paid first), the sponsor’s equity is at the top (highest risk, highest return, paid last), and mezzanine debt sits in between. It is repaid after the senior lender but before the equity, which is why it commands a rate above the mortgage but below the return equity expects.',
+          'Mezzanine debt is usually secured differently from a mortgage. Rather than a lien on the real estate (which the senior lender holds), the mezzanine lender takes a pledge of the membership interests in the LLC that owns the property. If the borrower defaults, the mezzanine lender can foreclose on that ownership interest and step into control far faster than a traditional mortgage foreclosure.',
+        ],
+      },
+      {
+        heading: 'What it costs and why sponsors use it',
+        paragraphs: [
+          'Mezzanine money is more expensive than senior debt because it takes more risk — it is repaid later and is effectively second in line. In exchange for that gap-filling capital, the sponsor preserves more of the equity upside than they would by bringing in an equity partner for the same dollars. It is a leverage decision: pay a higher rate on a slice of debt, or give away a share of the profit forever.',
+          'It is a commercial tool, not a single-family one. You will see mezzanine financing on apartment complexes, development projects, and larger value-add deals — situations with enough scale and a clear business plan to support a multi-layer capital stack.',
+        ],
+      },
+    ],
+    pros: [
+      'Adds leverage beyond what the senior lender will fund',
+      'Cheaper than raising the same dollars as equity',
+      'Lets the sponsor keep more of the upside',
+      'Faster lender remedy (UCC pledge) can mean more flexible terms',
+    ],
+    cons: [
+      'More expensive than the senior mortgage',
+      'Adds risk — over-leverage can wipe out equity in a downturn',
+      'Complex documentation and an intercreditor agreement required',
+      'A commercial-scale tool — not for small residential deals',
+    ],
+    faqs: [
+      {
+        question: 'How is mezzanine financing secured?',
+        answer:
+          'Typically by a pledge of the equity interests in the entity that owns the property, not by a mortgage lien on the real estate itself (the senior lender holds that). On default, the mezzanine lender can foreclose on the ownership interest and take control of the property-owning entity.',
+      },
+      {
+        question: 'Is mezzanine financing debt or equity?',
+        answer:
+          'It is debt, but it sits closer to equity in risk and return because it is repaid after the senior loan. Some mezzanine structures include an equity “kicker” (a small share of the upside) on top of the interest rate, which blurs the line further.',
+      },
+    ],
+    relatedCalculators: [
+      { label: 'Cap Rate Calculator', href: '/calculators/cap-rate' },
+      { label: 'Cash-on-Cash Return', href: '/calculators/cash-on-cash' },
+    ],
+    relatedTypes: ['real-estate-syndication', 'gap-funding'],
+    relatedGuides: [
+      { label: 'Commercial real estate lenders', href: '/lenders/commercial-loans' },
+      { label: 'Bridge loan lenders', href: '/lenders/bridge-loans' },
+    ],
+    matcherProfile: { dealType: 'multifamily-5plus', exit: 'hold' },
+  },
+
+  // ── Blanket loan — 700/mo, KD 0 ─────────────────────────────────────────────
+  {
+    slug: 'blanket-loan',
+    shortLabel: 'Blanket loan',
+    name: 'Blanket Loan',
+    metaTitle: 'Blanket Loan: One Mortgage for Multiple Properties Explained',
+    metaDescription:
+      'A blanket loan is a single mortgage covering multiple properties. How it works for portfolio investors, the release clause, the cross-collateralization risk, and when it beats separate loans.',
+    targetKeyword: 'blanket loan',
+    h1: 'Blanket Loan: One Mortgage Across Multiple Properties',
+    intro:
+      'A blanket loan is a single mortgage that covers several properties at once. Instead of juggling a separate loan, payment, and closing for every rental you own, a blanket loan consolidates them under one note — which is why it becomes attractive once an investor’s portfolio grows past a handful of doors.',
+    definition:
+      'A blanket loan (or blanket mortgage) is a single loan secured by two or more properties under one note, commonly used by investors to finance or refinance a portfolio of rentals together.',
+    bestFor: [
+      'Investors with several rental properties to consolidate',
+      'Portfolio buyers acquiring multiple properties at once',
+      'Investors who want one payment instead of many',
+      'Developers holding multiple lots or units',
+    ],
+    sections: [
+      {
+        heading: 'How a blanket loan works',
+        paragraphs: [
+          'One loan, one payment, one set of terms — secured by a lien on every property in the package. Blanket loans are usually portfolio products held by the originating bank (rather than sold to Fannie or Freddie), so the lender sets its own guidelines on property count, credit, and structure. That flexibility is the point: you can finance a portfolio that no single conforming loan would cover.',
+          'The feature that makes a blanket loan practical for investors is the release clause. It lets you sell an individual property out of the package and release the lien on just that property — paying down the loan by an agreed amount — without having to refinance or pay off the entire blanket. Without a release clause, selling one property could require retiring the whole loan.',
+        ],
+      },
+      {
+        heading: 'The cross-collateralization trade-off',
+        paragraphs: [
+          'Because every property secures the same loan, they are cross-collateralized — a default doesn’t threaten just one property, it can put the entire package at risk. That concentration of risk is the main downside, and it is why blanket loans suit investors who are confident in the portfolio’s combined cash flow.',
+          'Blanket loans also commonly carry balloon terms (for example, a 5–10 year term on a 30-year amortization) and prepayment penalties, like other portfolio products. Weigh the convenience of one consolidated loan against those structural trade-offs and the cross-collateral risk.',
+        ],
+      },
+    ],
+    pros: [
+      'One loan, one payment across many properties',
+      'Finances portfolios conforming loans won’t cover',
+      'Release clause lets you sell individual properties',
+      'Streamlines refinancing and portfolio-level lending',
+    ],
+    cons: [
+      'Cross-collateralization — a default can risk the whole package',
+      'Often balloon terms and prepayment penalties',
+      'Fewer lenders offer them; rates above conventional',
+      'Less flexibility than financing properties individually',
+    ],
+    faqs: [
+      {
+        question: 'What is a release clause in a blanket loan?',
+        answer:
+          'A release clause lets you sell one property out of the blanket and have its lien released — by paying down the loan a pre-agreed amount — without refinancing or paying off the entire loan. It is the feature that makes a blanket loan workable for an active investor who buys and sells.',
+      },
+      {
+        question: 'What is the difference between a blanket loan and a portfolio loan?',
+        answer:
+          'A portfolio loan is any loan a lender keeps on its own books with flexible guidelines. A blanket loan is a specific structure — one loan secured by multiple properties. Many blanket loans are portfolio loans, but a portfolio loan can also be a single-property loan with flexible underwriting.',
+      },
+    ],
+    relatedCalculators: [
+      { label: 'Mortgage / Payment Calculator', href: '/calculators/mortgage' },
+      { label: 'Rental Cash Flow Calculator', href: '/calculators/rental-cashflow' },
+    ],
+    relatedTypes: ['mezzanine-financing'],
+    relatedGuides: [
+      { label: 'Portfolio lenders', href: '/lenders/portfolio-loans' },
+      { label: 'DSCR lenders', href: '/lenders/dscr-loans' },
+    ],
+    matcherProfile: { dealType: 'turnkey-rental', exit: 'hold', financedCount: '10plus', entity: 'llc' },
+  },
+
+  // ── Gap funding — 60/mo, KD 0, $7 CPC ───────────────────────────────────────
+  {
+    slug: 'gap-funding',
+    shortLabel: 'Gap funding',
+    name: 'Gap Funding',
+    metaTitle: 'Gap Funding in Real Estate: Covering the Down-Payment Gap',
+    metaDescription:
+      'Gap funding covers the difference between what your primary loan funds and the total cash a deal needs. How investors use it on flips and BRRRRs, what it costs, and the risks.',
+    targetKeyword: 'gap funding real estate',
+    h1: 'Gap Funding: Covering the Cash a Loan Leaves Behind',
+    intro:
+      'Gap funding is secondary capital that covers the difference between what your main loan provides and the total cash a deal actually requires — the down payment, the points, the holding costs, the rehab overage. For a flipper or BRRRR investor who has found a great deal but is short the last slice of cash, gap funding is what gets them to the closing table.',
+    definition:
+      'Gap funding is short-term secondary financing that covers the shortfall between a project’s primary loan and the total capital needed — typically the down payment and costs a hard-money or rehab loan does not fund.',
+    bestFor: [
+      'Fix-and-flip investors short on down-payment cash',
+      'BRRRR investors stretching into more deals at once',
+      'Borrowers whose hard-money loan leaves a cash gap',
+      'Experienced investors with a strong deal but limited liquidity',
+    ],
+    sections: [
+      {
+        heading: 'What “the gap” actually is',
+        paragraphs: [
+          'A hard-money or fix-and-flip loan rarely funds 100% of a deal. It might cover, say, 85–90% of the purchase and most of the rehab — leaving the borrower to bring the down payment, the points, closing costs, and a cushion for overruns out of pocket. That remaining out-of-pocket requirement is the gap. Gap funding is the capital that covers it, usually from a private lender or a gap-funding specialist.',
+          'Because it sits behind the primary loan and the primary lender, gap funding is high-risk capital and is priced accordingly — often as a high interest rate, a flat fee, a share of the deal’s profit, or some combination. It is short-term money meant to be repaid when the flip sells or the BRRRR refinances.',
+        ],
+      },
+      {
+        heading: 'Use it carefully — it is the most expensive slice',
+        paragraphs: [
+          'Gap funding lets you do a deal you couldn’t otherwise afford, and lets you spread limited cash across more deals at once. The flip side is that you are financing nearly the entire deal with borrowed money, which magnifies both returns and risk. If the project runs over budget or the exit slips, the gap lender’s cost compounds the squeeze.',
+          'Treat gap funding as a tool for a genuinely strong deal with a healthy margin and a clear, fast exit — not as a way to force a thin deal to pencil. Run the numbers with the cost of the gap capital included before you commit.',
+        ],
+      },
+    ],
+    pros: [
+      'Lets you close a deal you’re short the cash to fund',
+      'Spreads limited capital across more simultaneous deals',
+      'Fast and flexible — usually private, lightly underwritten',
+      'Short-term — repaid at sale or refinance',
+    ],
+    cons: [
+      'The most expensive capital in the stack',
+      'Near-100% leverage magnifies downside risk',
+      'Profit shares or high fees eat into the margin',
+      'Subordinate position makes it hard to find and costly',
+    ],
+    faqs: [
+      {
+        question: 'How is gap funding different from a hard money loan?',
+        answer:
+          'A hard money loan is the primary loan that funds most of the purchase and rehab. Gap funding is secondary capital that covers what the hard money loan leaves out — the down payment and costs. Gap funding sits behind the hard money loan in priority and is therefore riskier and more expensive.',
+      },
+      {
+        question: 'What does gap funding cost?',
+        answer:
+          'It varies widely because it is private, high-risk capital — often a high interest rate, a flat fee, or a share of the deal’s profit, sometimes a blend. Because it is the priciest money in the deal, only use it on a project whose margin can absorb the cost.',
+      },
+    ],
+    relatedCalculators: [
+      { label: 'Fix & Flip Profit', href: '/calculators/fix-flip' },
+      { label: 'BRRRR Calculator', href: '/calculators/brrrr' },
+    ],
+    relatedTypes: ['mezzanine-financing', 'partnerships-jv'],
+    relatedGuides: [
+      { label: 'Hard money lenders', href: '/lenders/hard-money-loans' },
+      { label: 'Private money lenders', href: '/lenders/private-money-loans' },
+    ],
+    matcherProfile: { dealType: 'flip', exit: 'sell-after-rehab', cash: 'under-25k', timeline: 'urgent' },
+  },
+
+  // ── Creative financing hub — 350/mo "creative financing real estate", KD 1 ──
+  {
+    slug: 'creative-financing',
+    shortLabel: 'Creative financing',
+    name: 'Creative Financing',
+    metaTitle: 'Creative Financing in Real Estate: Every Method Explained',
+    metaDescription:
+      'Creative financing in real estate — seller financing, subject-to, lease options, wraparounds, partnerships, and more. What each method is, when to use it, and how to choose.',
+    targetKeyword: 'creative financing real estate',
+    h1: 'Creative Financing in Real Estate',
+    intro:
+      'Creative financing is the umbrella term for funding a real estate deal without a conventional bank loan — using the seller, a partner, existing equity, or an alternative structure instead. Investors reach for it when the bank says no, when cash is tight, or when a non-standard structure simply makes a better deal. This is the map of every major creative method and how to choose between them.',
+    definition:
+      'Creative financing refers to any method of funding a real estate purchase outside conventional institutional mortgages — including seller financing, subject-to, lease options, wraparound mortgages, partnerships, and tapping existing equity.',
+    bestFor: [
+      'Buyers who can’t or don’t want to qualify with a bank',
+      'Low-cash investors structuring no-money-down deals',
+      'Investors facing a motivated, flexible seller',
+      'Anyone whose deal doesn’t fit a standard loan box',
+    ],
+    sections: [
+      {
+        heading: 'When creative financing makes sense',
+        paragraphs: [
+          'Creative financing is not a free lunch — every method shifts cost or risk somewhere rather than eliminating it. But there are clear situations where it beats a bank loan: your credit or income documents are a hurdle, you’re short on cash for a down payment, you’ve hit the conventional ten-property cap, or the seller’s motivation opens terms a lender never would. The trade for that flexibility is more complexity and, usually, more legal nuance — so go in with eyes open and professionals involved.',
+        ],
+      },
+      {
+        heading: 'The main creative financing methods',
+        paragraphs: [
+          'Seller financing: the seller becomes your lender and carries a note — no bank, fully negotiable terms. Subject-to: you take over the seller’s existing mortgage and keep it in place, inheriting its (often low) rate. Wraparound mortgage: seller financing layered over the seller’s existing loan, so they earn the rate spread. Each leans on a cooperative seller.',
+          'Lease option: control a property and lock a price now with a lease plus the right to buy later, with little cash down. Partnerships and JV: pair your deal and work with a partner’s capital and split the returns. Tapping equity: a HELOC or cash-out refinance on a property you already own funds the next down payment. For wholesalers, transactional funding covers a same-day double close. Use the related guides below for the full breakdown of each, and the matcher to see which fit your deal.',
+        ],
+      },
+      {
+        heading: 'How to choose',
+        paragraphs: [
+          'Start with what the deal and your situation actually allow. If you have equity elsewhere, tapping it is usually the cheapest creative path. If the seller is motivated, seller financing or subject-to are the most powerful. If you’re short on cash but have a strong deal, a partner or gap funding can close it. If you want control without committing to buy yet, a lease option fits. The Financing Matcher weighs your credit, cash, income docs, and deal type and ranks both the institutional and creative options for you.',
+        ],
+      },
+    ],
+    pros: [
+      'Funds deals conventional lenders would reject',
+      'Often low- or no-money-down',
+      'Terms are negotiable, not dictated by a lender box',
+      'Speed — no bank underwriting timeline',
+    ],
+    cons: [
+      'More complex, with real legal nuance per method',
+      'Usually depends on a willing, motivated counterparty',
+      'Shifts cost or risk rather than removing it',
+      'Easier to get into a bad deal without a lender’s guardrails',
+    ],
+    faqs: [
+      {
+        question: 'What is the most common creative financing method?',
+        answer:
+          'Seller financing and its cousins (subject-to and wraparound mortgages) are the most widely used, because they only require a willing seller. Tapping existing equity through a HELOC or cash-out refinance is also extremely common among investors who already own property.',
+      },
+      {
+        question: 'Is creative financing legal?',
+        answer:
+          'Yes. The individual methods — seller financing, subject-to, lease options, partnerships — are all legal, though several implicate specific rules (due-on-sale clauses, securities law for syndications, lending rules for owner-occupant buyers). Always structure creative deals through a real-estate attorney.',
+      },
+      {
+        question: 'Can a beginner use creative financing?',
+        answer:
+          'Yes, but it rewards homework. The simplest entry points are house-hacking and tapping equity you already have. Seller-side methods (seller financing, subject-to) are very accessible when you find a motivated seller, but learn the structure and use professionals before you sign.',
+      },
+    ],
+    relatedCalculators: [
+      { label: 'Investment Property HELOC', href: '/calculators/heloc' },
+      { label: 'Mortgage / Payment Calculator', href: '/calculators/mortgage' },
+    ],
+    relatedTypes: ['seller-financing', 'subject-to', 'lease-option', 'wraparound-mortgage', 'partnerships-jv'],
+    relatedGuides: [
+      { label: 'Complete Financing Guide', href: '/financing' },
+      { label: 'Financing Matcher', href: '/financing/matcher' },
+    ],
+    matcherProfile: { dealType: 'turnkey-rental', exit: 'hold', cash: 'under-25k', income: 'no-doc' },
   },
 ]
 
