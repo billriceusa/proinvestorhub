@@ -16,6 +16,7 @@ const navigation: NavItem[] = [
     children: [
       { name: 'Complete Guide', href: '/financing', description: 'Every way to fund a deal' },
       { name: 'Financing Matcher', href: '/financing/matcher', description: 'Match your deal to a loan' },
+      { name: 'Creative Financing', href: '/financing/creative-financing', description: 'Seller financing, subject-to & more' },
       { name: 'How-to-Finance Guides', href: '/how-to-finance', description: 'Funding playbooks by scenario' },
     ],
   },
@@ -39,6 +40,7 @@ const mobileNavigation = [
   { name: 'Lenders', href: '/lenders' },
   { name: 'Financing Guide', href: '/financing' },
   { name: 'Financing Matcher', href: '/financing/matcher' },
+  { name: 'Creative Financing', href: '/financing/creative-financing' },
   { name: 'Markets', href: '/markets' },
   { name: 'Blog', href: '/blog' },
   { name: 'Newsletter', href: '/newsletter' },

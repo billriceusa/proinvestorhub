@@ -185,9 +185,9 @@ export const loanTypes: LoanTypeData[] = [
         answer: 'It depends on your situation. Portfolio loans may offer better terms if you have a strong banking relationship, but DSCR products have become more competitive and are available from more lenders. Portfolio loans shine when you need a blanket loan or have properties that don\'t qualify for standard DSCR (e.g., commercial, mixed-use).',
       },
     ],
-    metaTitle: 'Best Portfolio Lenders for Real Estate Investors 2026 | ProInvestorHub',
+    metaTitle: 'Portfolio Loans for Real Estate Investors: Rates, Terms & Lenders (2026)',
     metaDescription:
-      'Compare portfolio lenders offering blanket loans and flexible underwriting for real estate investors. No property limits, custom terms, expert reviews.',
+      'What a portfolio loan is and how it works for investors with multiple properties — typical rates and terms, the blanket-loan option, no property limit, and the best portfolio lenders.',
   },
 
   // ── Short-Term / Acquisition ────────────────────────
