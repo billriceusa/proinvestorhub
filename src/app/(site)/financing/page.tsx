@@ -245,7 +245,11 @@ export default function FinancingPillarPage() {
         <p className="mt-1 text-text-muted">
           When institutional debt doesn&apos;t fit — low cash, tricky credit, or an unusual deal — these
           are the levers experienced investors pull. Each trades simplicity for flexibility, so know
-          the risks going in.
+          the risks going in. Start with the{' '}
+          <Link href="/financing/creative-financing" className="text-primary underline transition-colors hover:text-primary-light">
+            complete creative financing guide
+          </Link>
+          .
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {creativeFinance.map((c) => (
@@ -265,6 +269,43 @@ export default function FinancingPillarPage() {
                 </Link>
               )}
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Advanced & specialty methods */}
+      <section className="mt-14">
+        <h2 className="text-2xl font-bold text-text">Advanced &amp; Specialty Methods</h2>
+        <p className="mt-1 text-text-muted">
+          Capital-stack and portfolio tools that come into play on larger or more complex deals.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              name: 'Mezzanine Financing',
+              blurb: 'The layer between the senior mortgage and equity — fills the funding gap on commercial deals without diluting ownership.',
+              href: '/financing/mezzanine-financing',
+            },
+            {
+              name: 'Blanket Loan',
+              blurb: 'One mortgage across multiple properties, with a release clause to sell individual ones. For consolidating a portfolio.',
+              href: '/financing/blanket-loan',
+            },
+            {
+              name: 'Gap Funding',
+              blurb: 'Secondary capital that covers the cash a hard-money loan leaves behind — the down payment and costs on a flip or BRRRR.',
+              href: '/financing/gap-funding',
+            },
+          ].map((c) => (
+            <Link
+              key={c.href}
+              href={c.href}
+              className="rounded-xl border border-border bg-surface p-5 transition-all hover:border-primary/40 hover:shadow-md"
+            >
+              <h3 className="text-lg font-semibold text-text">{c.name}</h3>
+              <p className="mt-1.5 text-sm leading-6 text-text-muted">{c.blurb}</p>
+              <span className="mt-3 inline-flex text-sm font-semibold text-primary">Read the full guide →</span>
+            </Link>
           ))}
         </div>
       </section>
