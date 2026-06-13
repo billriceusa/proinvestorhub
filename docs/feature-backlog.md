@@ -17,9 +17,30 @@
 
 ---
 
+## Shipped (as of 2026-06-13)
+
+The financing authority and the calculator suite are **built and live**. What shipped:
+
+- **A1 — Financing Matcher** (decision engine + 10-step wizard) · `/financing/matcher` — PR #39, #40
+- **A2 — Financing pillar** `/financing` + 8 how-to-finance scenario pages `/how-to-finance/*` — PR #44, #40
+- **A2 — Per-type guide cluster** (12 pages) `/financing/[type]`: seller-financing, house-hacking, real-estate-syndication, subject-to, wraparound-mortgage, lease-option, partnerships-jv, transactional-funding, mezzanine-financing, blanket-loan, gap-funding, creative-financing — PR #46, #47, #48
+- **B1 — Investor HELOC** `/calculators/heloc` — shipped
+- **B2 — DSCR qualifier** `/calculators/dscr` — PR #42
+- **B3 — Refinance** `/calculators/refinance` — PR #43
+- **B4 — Hard money / mortgage points / closing costs** — PR #49
+- **C1 — Depreciation** · **C2 — Sell-vs-Rent** — PR #45
+- **C3 — Quick rules** (1%/2%/50%/GRM/NOI) `/calculators/quick-rules` — PR #50
+- **C4 — Calculator SEO pass** (HowTo schema, interlink spine, keyword H1s) — shipped
+
+**17 calculators + the Matcher + the financing pillar + scenarios + the 12-page type cluster, all interlinked.**
+
+What remains: **A3 programmatic** (still `BLOCKED` — needs a real data backbone, see Open Decisions #3) and **Track D portfolio layer** (`SPEC`, retention not SEO). Three judgment-call enhancements are queued separately: header-nav surfacing, matcher `CREATIVE_CATALOG` scoring entries for the new creative methods, and `/lenders/portfolio-loans` on-page optimization for the "portfolio loan" head term.
+
+---
+
 ## Track A — The Financing Authority (flagship)
 
-### A1 · Financing Matcher tool — `SPEC` · priority: flagship
+### A1 · Financing Matcher tool — `DONE` (PR #39, #40) · priority: flagship
 "Tell us your deal, we'll tell you how to fund it." A wizard → ranked shortlist of financing types with *why-it-fits / why-not* → routes into the existing lender directory.
 - **Targets the undefended decision SERPs:** "best loan for investment property" (900, KD 42), "how to finance a rental property / a flip / a BRRRR" (head terms small at ~150/mo but bank-page + Reddit/Quora SERPs an interactive answer can win via AI Overviews/snippets). The *volume* lives in the per-type pages (A2) the matcher routes to.
 - **Inputs (wizard):** deal type (buy-hold SFR/small-multi · large multi/commercial · flip · ground-up · STR · wholesale · land) · investor stage (first deal / scaling 1–10 / portfolio 10+ / passive) · property condition (turnkey / cosmetic / heavy rehab / tear-down) · exit (hold / flip / BRRRR refi / 1031) · credit band (760+/700–759/640–699/<640) · income docs (W-2 / self-employed / no-income-verify) · cash available (banded) · timeline (<14d vs 30–45d) · financed-property count · owner-occupy? (unlocks FHA/VA/house-hack).
@@ -29,7 +50,7 @@
 - **Acceptance:** every input combo yields ≥1 financing type with reasoning; no dead ends; links resolve to live lender/loan-type pages; JSON-LD for the decision queries.
 - **Depends on:** A2 type pages (for routing destinations) ideally land in parallel. Decision #2 (monetization).
 
-### A2 · Definitive financing pillar + per-type cluster (25–30 pages) — `SPEC` · priority: high
+### A2 · Definitive financing pillar + per-type cluster — `DONE` (pillar PR #44; 12-page cluster PR #46, #47, #48) · priority: high
 Neutral, authoritative page per financing type, hub-and-spoke off a master pillar `/real-estate-financing/` (or `/financing/`). Sub-pillars: buy-and-hold, fix-and-flip, creative, commercial, no-money-down. Each type page: what it is · who it's for · rates/terms · pros/cons · qualification · how to get one · **embedded calculator** · "compare to alternatives" · lender CTA. Connects to existing `/lenders/[loanType]` pages and reviews.
 - **Lead with the low-KD cluster to bank authority fast:**
 
@@ -72,19 +93,19 @@ The most under-competed valuable cluster: very low KD, meaningful volume, highes
 - **Computes:** tappable equity = (value × max CLTV) − balance; current equity & %; new CLTV; interest-only or amortizing monthly cost; **buying power** = how many next-deal down payments it funds. Honest investor caveats (lower CLTV, higher rates, fewer lenders). CTA → DSCR/cash-out lenders.
 - **Verified:** tsc/eslint/next build clean; screenshot empty + populated ($300k/$150k/75% → $75k tappable, 1 deal, $200k buying power).
 
-### B2 · Dedicated DSCR loan calculator — `READY` · priority: high
+### B2 · Dedicated DSCR loan calculator — `DONE` (PR #42) · priority: high
 - **Route:** `/calculators/dscr` · **Targets:** "dscr loan calculator" (3,200, KD 52, $1.80). Pairs with the 50k DSCR pillar (A2). The current Mortgage calc does payment math but not DSCR *qualification*.
 - **Inputs:** monthly rent (or annual gross) · PITIA (principal, interest, taxes, insurance, HOA/assoc) · target DSCR (lender min, default 1.0–1.25) · loan amount or purchase+down · rate/term.
 - **Outputs:** DSCR = NOI or rent ÷ PITIA (state which basis; many DSCR lenders use gross rent ÷ PITIA) · qualifying status vs target · max loan that still clears target DSCR · rate-tier note (don't fabricate live rates — frame as "higher DSCR generally earns better pricing").
 - **Acceptance:** DSCR math correct on both gross-rent and NOI conventions (let user pick); clear pass/fail vs lender min; links to DSCR lender list + DSCR pillar.
 
-### B3 · Cash-out refinance (investor) + "when to refinance" break-even — `READY` · priority: high
+### B3 · Cash-out refinance (investor) + "when to refinance" break-even — `DONE` (PR #43) · priority: high
 - **Routes:** `/calculators/cash-out-refinance` and/or `/calculators/when-to-refinance`.
 - **Targets:** "when to refinance" (1,400, KD 5, $1.60), "cash out refinance rental property" (300, KD 2, $10), "refinance rental property" (400, KD 2, $9).
 - **Computes (cash-out):** new loan at target LTV, cash to borrower = new loan − old balance − costs, new payment vs old, blended cost. **(Break-even):** monthly savings, break-even months = closing costs ÷ monthly savings, lifetime interest delta.
 - **Acceptance:** both refinance flavors covered; surfaces the "pull equity vs sell" tie-in to Track C2; lender CTA.
 
-### B4 · Hard money + mortgage points + closing cost — `READY` · priority: medium
+### B4 · Hard money + mortgage points + closing cost — `DONE` (PR #49) · priority: medium
 - **Hard money calculator** `/calculators/hard-money` — "hard money loan calculator" (1,000, KD 8, $2.50). Inputs: purchase, rehab, ARV, LTV/LTC caps, points, rate, term, holding months → total borrowed, points cost, monthly interest (usually interest-only), total financing cost, cash-to-close. Easy win; feeds flip audience.
 - **Mortgage points calculator** `/calculators/mortgage-points` — "mortgage points calculator" (2,100, KD 25, $0.50). Cost of buying points vs monthly savings + break-even.
 - **Closing cost calculator** `/calculators/closing-costs` — "closing cost calculator" (15,000, KD 46) — stretch SERP but a strong **link magnet**; build for links + completeness, not a fast rank.
@@ -93,18 +114,18 @@ The most under-competed valuable cluster: very low KD, meaningful volume, highes
 
 ## Track C — Complete the deal-analysis suite & optimize existing
 
-### C1 · Rental Property Depreciation calculator — `READY` · priority: medium
+### C1 · Rental Property Depreciation calculator — `DONE` (PR #45) · priority: medium
 - **Route:** `/calculators/depreciation` · **Targets:** "rental property depreciation calculator" (1,100, KD 33); rides "depreciation calculator" (8,400) + "schedule e" (12,000) via a tool+guide hub.
 - **Inputs:** purchase price, land value % (non-depreciable), placed-in-service date, capital improvements. **Outputs:** annual straight-line over 27.5 yrs (residential), cumulative, estimated annual tax shield, recapture note. Pure math. Beatable (Stessa/TurboTenant rank but link-thin).
 
-### C2 · Sell-vs-Rent (hold) calculator — `READY` · priority: medium
+### C2 · Sell-vs-Rent (hold) calculator — `DONE` (PR #45) · priority: medium
 - **Route:** `/calculators/sell-vs-rent` · **Targets:** "sell vs rent calculator" (150, KD 0), "sell or rent calculator" (50), "when to sell rental property" (100). Wide open (DR-5 sites rank).
 - **Inputs:** current value, mortgage balance, rent, expenses, expected appreciation, sale costs, tax basis. **Outputs:** 5/10-yr net-worth comparison of sell-and-reinvest vs hold-and-rent, IRR each path. **Surface the refi alternative** ("instead of selling, a cash-out unlocks $X") → links B1/B3.
 
-### C3 · Micro rule-checkers: NOI, GRM, 1% / 2% / 50% / 70% — `READY` · priority: low
+### C3 · Micro rule-checkers: NOI, GRM, 1% / 2% / 50% / 70% — `DONE` (PR #50, `/calculators/quick-rules`) · priority: low
 - Trivially winnable, trivial to build, bookmark-worthy quick screens that interlink the suite. "noi calculator" (350, KD 0), "gross rent multiplier calculator" (150, KD 5), "1 percent rule" (250, KD 9), "70 rule calculator" (150, KD 5), "50 percent rule" (60, KD 1). Can be one combined "Quick Rules" page or small standalone tools. (Note: fix-flip already covers 70%-rule context — avoid cannibalizing; cross-link instead.)
 
-### C4 · SEO-optimize the 9 existing calculators — `SPEC` · priority: high (low effort, high leverage)
+### C4 · SEO-optimize the existing calculators — `DONE` · priority: high (low effort, high leverage)
 - They exist but must actually *target* their head terms: cap rate (14,000, KD 5 — biggest winnable volume, currently has 50-city programmatic), rental cash flow vs "rental property calculator" (7,400, KD 33), BRRRR (700, KD 1), cash-on-cash (2,200, KD 28).
 - **Actions:** audit title/H1/meta/intro copy against the exact head term; ensure calculator + breadcrumb + faq + howTo JSON-LD on each; build a unified **"Investor Tools" hub** so the flagship rental calc passes internal-link equity to the long-tail tools (this is how a DR-13 site climbs); add a cross-tool recommendation strip. No new tools — pure on-page + interlinking.
 
