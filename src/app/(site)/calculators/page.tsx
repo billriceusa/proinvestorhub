@@ -130,6 +130,13 @@ const calculators = [
     href: '/calculators/closing-costs',
     status: 'live' as const,
   },
+  {
+    title: 'Quick Rules (1% · 50% · GRM · NOI)',
+    description:
+      'Fast screening tools — the 1% and 2% rules, the 50% rule, gross rent multiplier, and NOI in one place.',
+    href: '/calculators/quick-rules',
+    status: 'live' as const,
+  },
 ]
 
 export default function CalculatorsPage() {
