@@ -155,6 +155,56 @@ export function calculatorJsonLd({
   }
 }
 
+export function datasetJsonLd({
+  name,
+  description,
+  url,
+  downloadUrl,
+  temporalCoverage,
+  datePublished,
+}: {
+  name: string
+  description: string
+  url: string
+  downloadUrl?: string
+  temporalCoverage?: string
+  datePublished?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name,
+    description,
+    url,
+    ...(temporalCoverage && { temporalCoverage }),
+    ...(datePublished && { datePublished }),
+    license: 'https://www.usa.gov/government-works',
+    isAccessibleForFree: true,
+    creator: {
+      '@type': 'Organization',
+      name: 'ProInvestorHub',
+      url: baseUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ProInvestorHub',
+      url: baseUrl,
+    },
+    ...(downloadUrl && {
+      distribution: {
+        '@type': 'DataDownload',
+        encodingFormat: 'text/csv',
+        contentUrl: downloadUrl,
+      },
+    }),
+    sourceOrganization: {
+      '@type': 'GovernmentOrganization',
+      name: 'Consumer Financial Protection Bureau (HMDA)',
+      url: 'https://ffiec.cfpb.gov',
+    },
+  }
+}
+
 export function breadcrumbJsonLd(
   items: Array<{ name: string; url: string }>
 ) {

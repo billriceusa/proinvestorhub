@@ -10,6 +10,7 @@ import { usStates } from '@/data/us-states'
 import { lenderComparisons } from '@/data/lender-comparisons'
 import { financingScenarios } from '@/data/financing-scenarios'
 import { financingTypes } from '@/data/financing-types'
+import { states as investorFinancingStates } from '@/data/hmda-investor'
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -289,6 +290,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/financing/${t.slug}`,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    })),
+    { url: `${baseUrl}/reports`, changeFrequency: 'monthly' as const, priority: 0.8 },
+    {
+      url: `${baseUrl}/reports/investor-financing`,
+      changeFrequency: 'yearly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/reports/investor-financing/methodology`,
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    },
+    ...investorFinancingStates.map((s) => ({
+      url: `${baseUrl}/reports/investor-financing/${s.slug}`,
+      changeFrequency: 'yearly' as const,
+      priority: 0.7,
     })),
   ]
 

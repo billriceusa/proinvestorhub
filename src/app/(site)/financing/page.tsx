@@ -350,6 +350,29 @@ export default function FinancingPillarPage() {
           ))}
         </div>
       </section>
+
+      {/* Data report callout */}
+      <section className="mt-14">
+        <Link
+          href="/reports/investor-financing"
+          className="group block rounded-2xl border border-primary/20 bg-primary/5 p-6 transition-colors hover:border-primary/40 sm:p-8"
+        >
+          <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+            Data Report
+          </p>
+          <h2 className="mt-2 text-2xl font-bold text-text group-hover:text-primary">
+            How investors actually finance deals — by state
+          </h2>
+          <p className="mt-2 max-w-2xl leading-7 text-text-muted">
+            Our analysis of federal mortgage data shows the rate premium investors
+            pay over owner-occupants, how often they&apos;re denied, and where DSCR
+            lending dominates — ranked across all 50 states.
+          </p>
+          <span className="mt-4 inline-block text-sm font-semibold text-primary">
+            See the Investor Financing Report →
+          </span>
+        </Link>
+      </section>
     </div>
   )
 }
