@@ -36,9 +36,22 @@
 - [x] Start-here sticky step nav — horizontal sticky nav bar with numbered steps, scroll-aware active highlighting
 - [x] Calculator embed codes — collapsible embed code generator on all 9 calculators with iframe snippet + attribution backlink
 
+### SEO Audit — 2026-06-13 (/website-audit) <!-- added 2026-06-13 /website-audit -->
+Deep audit findings. Snapshot: GA4 781 sessions/28d (mostly Direct), GSC 1,049 impressions → **1 click**, avg pos 33.9, DR 13. Site is technically excellent (PageSpeed 89-99, SEO 100, clean canonicals/robots/sitemap) — the limiters are **attribution measurement** and **domain authority**, not on-page.
+- [x] Fix GA4 attribution — analytics load strategy `lazyOnload` → `afterInteractive` so the referrer-bearing pageview fires reliably on bounce. <!-- shipped 2026-06-13 -->
+- [ ] **Attribution, config side (the rest of the fix):** in GA4 Admin enable bot-traffic exclusion + review referral-exclusion list; in the GTM container (`GTM-5J446HT5`) confirm the GA4 page_view tag fires on all loads and isn't dropping `page_referrer`. 87% "Direct" is also inflated by bots on a new domain — verify in GA4 DebugView. (Fleet-wide BRSG pattern — agedleadsales shows it too.)
+- [ ] **Push "cap rate calculator" to page 1** (currently pos 19, **308 impressions ≈ 30% of all site impressions**, 0 clicks). On-page is already strong and the page is already internally linked (cash-on-cash 4 links, /calculators 2, blog 2) — the real blocker is authority. Add a few exact-anchor "cap rate calculator" links from the highest-traffic posts, then pursue 2-3 quality backlinks to that URL.
+- [ ] **Authority program (DR 13 = ranking ceiling)** — the 9 calculators are the natural linkable assets (embed codes already exist). Outreach/embeds to lift DR; this unlocks the page-3 cluster sitewide.
+- Note: FAQPage + HowTo + WebApplication schema already present on calculators (verified live 2026-06-13) — no schema work needed.
+
 ---
 
 ## P2 — Later
+
+### SEO Audit — 2026-06-13 (/website-audit) <!-- added 2026-06-13 /website-audit -->
+- [ ] **Audit the 1,231-URL programmatic surface** — large for a DR-13 site getting ~71 organic sessions. Prune/consolidate thin lenders/markets pages; focus crawl budget + topical authority on pages that can rank.
+- [ ] **Lean into AEO** — 8 sessions already from ChatGPT, robots.txt allows GPTBot/OAI/Perplexity. Calculators + definitional content are what assistants cite; a distribution front that doesn't require out-ranking high-DR sites.
+- [ ] Trim unused JavaScript on blog/calculator templates (~310-450ms lab savings; perf already strong — do opportunistically).
 
 ### Authority & Trust
 - [ ] Guest author system — recruit 2-3 guest contributors with cross-web presence (LinkedIn, personal sites) to build domain E-E-A-T signals
