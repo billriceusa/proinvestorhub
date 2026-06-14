@@ -1,0 +1,1541 @@
+{
+  "meta": {
+    "year": 2024,
+    "source": "CFPB / FFIEC HMDA Data Browser (loan-level public dataset)",
+    "universe": "Single-family 1-4 unit, site-built; home purchase + refinance + cash-out; originated & denied",
+    "generatedAt": "2026-06-14",
+    "stateCount": 51
+  },
+  "states": [
+    {
+      "abbr": "MS",
+      "name": "Mississippi",
+      "slug": "mississippi",
+      "investorOriginations": 4654,
+      "investorVolume": 721580000,
+      "investorShare": 0.12353347135955832,
+      "denialRate": 0.11234026320808697,
+      "investorMedianRate": 8.25,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 163,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.7243231628706489,
+      "cashOutShare": 0.06961753330468415,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 157
+        },
+        {
+          "reason": "Collateral",
+          "count": 153
+        },
+        {
+          "reason": "Credit history",
+          "count": 132
+        }
+      ],
+      "rateCoverage": 0.801890846583584
+    },
+    {
+      "abbr": "AR",
+      "name": "Arkansas",
+      "slug": "arkansas",
+      "investorOriginations": 6379,
+      "investorVolume": 1144305000,
+      "investorShare": 0.14029030129755882,
+      "denialRate": 0.07911072614407391,
+      "investorMedianRate": 8,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 138,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6546480639598683,
+      "cashOutShare": 0.046559021790249254,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 152
+        },
+        {
+          "reason": "Collateral",
+          "count": 134
+        },
+        {
+          "reason": "Credit history",
+          "count": 102
+        }
+      ],
+      "rateCoverage": 0.7509013952030099
+    },
+    {
+      "abbr": "LA",
+      "name": "Louisiana",
+      "slug": "louisiana",
+      "investorOriginations": 6443,
+      "investorVolume": 1334465000,
+      "investorShare": 0.1300460196996609,
+      "denialRate": 0.1370211626038039,
+      "investorMedianRate": 7.999,
+      "ownerMedianRate": 6.624,
+      "ratePremiumBps": 138,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.5061306844637591,
+      "cashOutShare": 0.1139220859847897,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 238
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 225
+        },
+        {
+          "reason": "Credit history",
+          "count": 222
+        }
+      ],
+      "rateCoverage": 0.6157069688033525
+    },
+    {
+      "abbr": "SD",
+      "name": "South Dakota",
+      "slug": "south-dakota",
+      "investorOriginations": 919,
+      "investorVolume": 200155000,
+      "investorShare": 0.07272295639787925,
+      "denialRate": 0.08557213930348259,
+      "investorMedianRate": 7.75,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 125,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6474428726877041,
+      "cashOutShare": 0.05767138193688792,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 41
+        },
+        {
+          "reason": "Credit history",
+          "count": 14
+        },
+        {
+          "reason": "Other",
+          "count": 8
+        }
+      ],
+      "rateCoverage": 0.7170837867247007
+    },
+    {
+      "abbr": "AL",
+      "name": "Alabama",
+      "slug": "alabama",
+      "investorOriginations": 8083,
+      "investorVolume": 1550495000,
+      "investorShare": 0.10034511868110041,
+      "denialRate": 0.15112371350556605,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 113,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6668316219225535,
+      "cashOutShare": 0.1248298898923667,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 442
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 308
+        },
+        {
+          "reason": "Credit history",
+          "count": 256
+        }
+      ],
+      "rateCoverage": 0.8396634912779909
+    },
+    {
+      "abbr": "AK",
+      "name": "Alaska",
+      "slug": "alaska",
+      "investorOriginations": 482,
+      "investorVolume": 149080000,
+      "investorShare": 0.0525283347863993,
+      "denialRate": 0.2137030995106036,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.375,
+      "ratePremiumBps": 113,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.7385892116182573,
+      "cashOutShare": 0.1825726141078838,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 40
+        },
+        {
+          "reason": "Collateral",
+          "count": 31
+        },
+        {
+          "reason": "Other",
+          "count": 24
+        }
+      ],
+      "rateCoverage": 0.9398340248962656
+    },
+    {
+      "abbr": "DC",
+      "name": "District of Columbia",
+      "slug": "district-of-columbia",
+      "investorOriginations": 780,
+      "investorVolume": 475710000,
+      "investorShare": 0.10874111250522794,
+      "denialRate": 0.2953929539295393,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 113,
+      "investorMedianLtv": 70,
+      "businessPurposeShare": 0.7128205128205128,
+      "cashOutShare": 0.22435897435897437,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 94
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 67
+        },
+        {
+          "reason": "Other",
+          "count": 63
+        }
+      ],
+      "rateCoverage": 0.9461538461538461
+    },
+    {
+      "abbr": "KS",
+      "name": "Kansas",
+      "slug": "kansas",
+      "investorOriginations": 4745,
+      "investorVolume": 790885000,
+      "investorShare": 0.11166019531709613,
+      "denialRate": 0.08433037437282902,
+      "investorMedianRate": 7.75,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 113,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.5378292939936775,
+      "cashOutShare": 0.09357218124341413,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 105
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 101
+        },
+        {
+          "reason": "Credit history",
+          "count": 97
+        }
+      ],
+      "rateCoverage": 0.6484720758693362
+    },
+    {
+      "abbr": "MO",
+      "name": "Missouri",
+      "slug": "missouri",
+      "investorOriginations": 12962,
+      "investorVolume": 2216310000,
+      "investorShare": 0.12341588353471013,
+      "denialRate": 0.09936075597554196,
+      "investorMedianRate": 7.75,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 113,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6382502700200586,
+      "cashOutShare": 0.10816232062953247,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 441
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 285
+        },
+        {
+          "reason": "Credit history",
+          "count": 263
+        }
+      ],
+      "rateCoverage": 0.7544360438203981
+    },
+    {
+      "abbr": "NE",
+      "name": "Nebraska",
+      "slug": "nebraska",
+      "investorOriginations": 3046,
+      "investorVolume": 565030000,
+      "investorShare": 0.09946772034092022,
+      "denialRate": 0.0783661119515885,
+      "investorMedianRate": 7.75,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 113,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.5531845042678923,
+      "cashOutShare": 0.06401838476690742,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 82
+        },
+        {
+          "reason": "Collateral",
+          "count": 57
+        },
+        {
+          "reason": "Credit history",
+          "count": 55
+        }
+      ],
+      "rateCoverage": 0.6631648063033486
+    },
+    {
+      "abbr": "SC",
+      "name": "South Carolina",
+      "slug": "south-carolina",
+      "investorOriginations": 7316,
+      "investorVolume": 2025730000,
+      "investorShare": 0.07240840079969912,
+      "denialRate": 0.18674966651845265,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 113,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6864406779661016,
+      "cashOutShare": 0.15445598687807546,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 550
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 361
+        },
+        {
+          "reason": "Credit history",
+          "count": 293
+        }
+      ],
+      "rateCoverage": 0.9231820667031164
+    },
+    {
+      "abbr": "OK",
+      "name": "Oklahoma",
+      "slug": "oklahoma",
+      "investorOriginations": 8867,
+      "investorVolume": 1570765000,
+      "investorShare": 0.15521828939537163,
+      "denialRate": 0.08738163853437629,
+      "investorMedianRate": 7.749,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 112,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6276079846622308,
+      "cashOutShare": 0.07736551257471523,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 237
+        },
+        {
+          "reason": "Credit history",
+          "count": 185
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 180
+        }
+      ],
+      "rateCoverage": 0.7233562648020752
+    },
+    {
+      "abbr": "FL",
+      "name": "Florida",
+      "slug": "florida",
+      "investorOriginations": 42282,
+      "investorVolume": 15224260000,
+      "investorShare": 0.1104727267026705,
+      "denialRate": 0.2292885656477279,
+      "investorMedianRate": 7.562,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 106,
+      "investorMedianLtv": 72.6,
+      "businessPurposeShare": 0.7729057282058559,
+      "cashOutShare": 0.19076675653942576,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 4121
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 2851
+        },
+        {
+          "reason": "Credit history",
+          "count": 2071
+        }
+      ],
+      "rateCoverage": 0.9717846837897923
+    },
+    {
+      "abbr": "CT",
+      "name": "Connecticut",
+      "slug": "connecticut",
+      "investorOriginations": 4595,
+      "investorVolume": 1486685000,
+      "investorShare": 0.09106403218454587,
+      "denialRate": 0.2019798541160125,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 100,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.8213275299238303,
+      "cashOutShare": 0.24635473340587596,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 320
+        },
+        {
+          "reason": "Other",
+          "count": 220
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 206
+        }
+      ],
+      "rateCoverage": 0.9727965179542981
+    },
+    {
+      "abbr": "GA",
+      "name": "Georgia",
+      "slug": "georgia",
+      "investorOriginations": 18563,
+      "investorVolume": 5320405000,
+      "investorShare": 0.10199058277978319,
+      "denialRate": 0.18282268004930446,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 100,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6202122501750794,
+      "cashOutShare": 0.1576792544308571,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 1176
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 903
+        },
+        {
+          "reason": "Credit history",
+          "count": 804
+        }
+      ],
+      "rateCoverage": 0.8535258309540483
+    },
+    {
+      "abbr": "HI",
+      "name": "Hawaii",
+      "slug": "hawaii",
+      "investorOriginations": 2026,
+      "investorVolume": 1270540000,
+      "investorShare": 0.15538001380473962,
+      "denialRate": 0.2556943423952976,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 100,
+      "investorMedianLtv": 66.1,
+      "businessPurposeShare": 0.7206317867719645,
+      "cashOutShare": 0.16189536031589338,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 286
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 205
+        },
+        {
+          "reason": "Credit history",
+          "count": 90
+        }
+      ],
+      "rateCoverage": 0.9921026653504442
+    },
+    {
+      "abbr": "KY",
+      "name": "Kentucky",
+      "slug": "kentucky",
+      "investorOriginations": 6168,
+      "investorVolume": 1156930000,
+      "investorShare": 0.09329481342549877,
+      "denialRate": 0.11873124732104587,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 100,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.5886835278858625,
+      "cashOutShare": 0.09030479896238651,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 219
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 192
+        },
+        {
+          "reason": "Other",
+          "count": 149
+        }
+      ],
+      "rateCoverage": 0.7219520103761349
+    },
+    {
+      "abbr": "MD",
+      "name": "Maryland",
+      "slug": "maryland",
+      "investorOriginations": 8472,
+      "investorVolume": 2095670000,
+      "investorShare": 0.0901036958255783,
+      "denialRate": 0.20210962516481445,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 100,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.7511803588290841,
+      "cashOutShare": 0.18744098205854579,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 640
+        },
+        {
+          "reason": "Credit history",
+          "count": 400
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 399
+        }
+      ],
+      "rateCoverage": 0.9624645892351275
+    },
+    {
+      "abbr": "NV",
+      "name": "Nevada",
+      "slug": "nevada",
+      "investorOriginations": 5321,
+      "investorVolume": 1775195000,
+      "investorShare": 0.10103484287477452,
+      "denialRate": 0.1680737961225766,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 100,
+      "investorMedianLtv": 70,
+      "businessPurposeShare": 0.7455365532794588,
+      "cashOutShare": 0.141326818267243,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 294
+        },
+        {
+          "reason": "Collateral",
+          "count": 285
+        },
+        {
+          "reason": "Other",
+          "count": 194
+        }
+      ],
+      "rateCoverage": 0.9883480548769028
+    },
+    {
+      "abbr": "NJ",
+      "name": "New Jersey",
+      "slug": "new-jersey",
+      "investorOriginations": 14283,
+      "investorVolume": 5649615000,
+      "investorShare": 0.12001714170475934,
+      "denialRate": 0.18503937007874016,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 100,
+      "investorMedianLtv": 74,
+      "businessPurposeShare": 0.7874396135265701,
+      "cashOutShare": 0.23447455016453125,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 898
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 681
+        },
+        {
+          "reason": "Credit history",
+          "count": 600
+        }
+      ],
+      "rateCoverage": 0.969824266610656
+    },
+    {
+      "abbr": "NY",
+      "name": "New York",
+      "slug": "new-york",
+      "investorOriginations": 17900,
+      "investorVolume": 8537390000,
+      "investorShare": 0.11581637604736178,
+      "denialRate": 0.20221063422026117,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 100,
+      "investorMedianLtv": 70.6,
+      "businessPurposeShare": 0.8440782122905028,
+      "cashOutShare": 0.22474860335195532,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 1159
+        },
+        {
+          "reason": "Other",
+          "count": 1054
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 895
+        }
+      ],
+      "rateCoverage": 0.9589385474860335
+    },
+    {
+      "abbr": "PA",
+      "name": "Pennsylvania",
+      "slug": "pennsylvania",
+      "investorOriginations": 18938,
+      "investorVolume": 3839390000,
+      "investorShare": 0.1080245505156521,
+      "denialRate": 0.1788935137010059,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 100,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.7544619283979301,
+      "cashOutShare": 0.20065476819093886,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 1282
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 894
+        },
+        {
+          "reason": "Credit history",
+          "count": 856
+        }
+      ],
+      "rateCoverage": 0.9127151758369416
+    },
+    {
+      "abbr": "WV",
+      "name": "West Virginia",
+      "slug": "west-virginia",
+      "investorOriginations": 1592,
+      "investorVolume": 272620000,
+      "investorShare": 0.07696398356296834,
+      "denialRate": 0.14546430488459475,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.562,
+      "ratePremiumBps": 94,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.5835427135678392,
+      "cashOutShare": 0.10552763819095477,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 80
+        },
+        {
+          "reason": "Credit history",
+          "count": 61
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 49
+        }
+      ],
+      "rateCoverage": 0.7870603015075377
+    },
+    {
+      "abbr": "AZ",
+      "name": "Arizona",
+      "slug": "arizona",
+      "investorOriginations": 8722,
+      "investorVolume": 3245070000,
+      "investorShare": 0.0692904127871874,
+      "denialRate": 0.1860768943635685,
+      "investorMedianRate": 7.375,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 70,
+      "businessPurposeShare": 0.6597110754414125,
+      "cashOutShare": 0.20110066498509516,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 578
+        },
+        {
+          "reason": "Collateral",
+          "count": 576
+        },
+        {
+          "reason": "Other",
+          "count": 299
+        }
+      ],
+      "rateCoverage": 0.990025223572575
+    },
+    {
+      "abbr": "CA",
+      "name": "California",
+      "slug": "california",
+      "investorOriginations": 42942,
+      "investorVolume": 26935470000,
+      "investorShare": 0.10940051615072824,
+      "denialRate": 0.1843100009497578,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 69,
+      "businessPurposeShare": 0.7056261934702622,
+      "cashOutShare": 0.24554049648362908,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 2760
+        },
+        {
+          "reason": "Collateral",
+          "count": 2712
+        },
+        {
+          "reason": "Other",
+          "count": 1515
+        }
+      ],
+      "rateCoverage": 0.990172791206744
+    },
+    {
+      "abbr": "CO",
+      "name": "Colorado",
+      "slug": "colorado",
+      "investorOriginations": 7138,
+      "investorVolume": 3179980000,
+      "investorShare": 0.06508201354887533,
+      "denialRate": 0.18320173932944273,
+      "investorMedianRate": 7.375,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 70,
+      "businessPurposeShare": 0.6755393667694032,
+      "cashOutShare": 0.15872793499579715,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 610
+        },
+        {
+          "reason": "Collateral",
+          "count": 463
+        },
+        {
+          "reason": "Other",
+          "count": 241
+        }
+      ],
+      "rateCoverage": 0.9578313253012049
+    },
+    {
+      "abbr": "DE",
+      "name": "Delaware",
+      "slug": "delaware",
+      "investorOriginations": 1408,
+      "investorVolume": 355580000,
+      "investorShare": 0.07572335161880177,
+      "denialRate": 0.1756440281030445,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6825284090909091,
+      "cashOutShare": 0.22514204545454544,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 81
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 71
+        },
+        {
+          "reason": "Credit history",
+          "count": 63
+        }
+      ],
+      "rateCoverage": 0.9644886363636364
+    },
+    {
+      "abbr": "IL",
+      "name": "Illinois",
+      "slug": "illinois",
+      "investorOriginations": 14989,
+      "investorVolume": 3045795000,
+      "investorShare": 0.09040628241935873,
+      "denialRate": 0.16458588786088507,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.75,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6641537127226633,
+      "cashOutShare": 0.1691240242844753,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 862
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 647
+        },
+        {
+          "reason": "Credit history",
+          "count": 527
+        }
+      ],
+      "rateCoverage": 0.8216692240976716
+    },
+    {
+      "abbr": "ME",
+      "name": "Maine",
+      "slug": "maine",
+      "investorOriginations": 1463,
+      "investorVolume": 453165000,
+      "investorShare": 0.06726746057289991,
+      "denialRate": 0.20315904139433552,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.75,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.7265892002734108,
+      "cashOutShare": 0.1496924128503076,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 109
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 90
+        },
+        {
+          "reason": "Credit history",
+          "count": 75
+        }
+      ],
+      "rateCoverage": 0.8646616541353384
+    },
+    {
+      "abbr": "MI",
+      "name": "Michigan",
+      "slug": "michigan",
+      "investorOriginations": 9811,
+      "investorVolume": 1686435000,
+      "investorShare": 0.06580279951977572,
+      "denialRate": 0.20590853905301498,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.75,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.7340739985730302,
+      "cashOutShare": 0.21822444195291,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 840
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 545
+        },
+        {
+          "reason": "Credit history",
+          "count": 392
+        }
+      ],
+      "rateCoverage": 0.9505656915706859
+    },
+    {
+      "abbr": "MN",
+      "name": "Minnesota",
+      "slug": "minnesota",
+      "investorOriginations": 5080,
+      "investorVolume": 1177260000,
+      "investorShare": 0.05839617436086077,
+      "denialRate": 0.11204334906484881,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.4795275590551181,
+      "cashOutShare": 0.07440944881889763,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 194
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 185
+        },
+        {
+          "reason": "Credit history",
+          "count": 91
+        }
+      ],
+      "rateCoverage": 0.6742125984251969
+    },
+    {
+      "abbr": "NM",
+      "name": "New Mexico",
+      "slug": "new-mexico",
+      "investorOriginations": 1631,
+      "investorVolume": 383895000,
+      "investorShare": 0.05810680822259432,
+      "denialRate": 0.21924365725227382,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 73.7,
+      "businessPurposeShare": 0.6499080318822809,
+      "cashOutShare": 0.24770079705702022,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 115
+        },
+        {
+          "reason": "Collateral",
+          "count": 98
+        },
+        {
+          "reason": "Credit history",
+          "count": 77
+        }
+      ],
+      "rateCoverage": 0.9466584917228694
+    },
+    {
+      "abbr": "ND",
+      "name": "North Dakota",
+      "slug": "north-dakota",
+      "investorOriginations": 779,
+      "investorVolume": 149645000,
+      "investorShare": 0.07601483216237315,
+      "denialRate": 0.05804111245465538,
+      "investorMedianRate": 7.25,
+      "ownerMedianRate": 6.375,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.686777920410783,
+      "cashOutShare": 0.05263157894736842,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 19
+        },
+        {
+          "reason": "Credit history",
+          "count": 10
+        },
+        {
+          "reason": "Credit application incomplete",
+          "count": 9
+        }
+      ],
+      "rateCoverage": 0.7496790757381258
+    },
+    {
+      "abbr": "OH",
+      "name": "Ohio",
+      "slug": "ohio",
+      "investorOriginations": 16858,
+      "investorVolume": 2696300000,
+      "investorShare": 0.09154593044724896,
+      "denialRate": 0.16955665024630542,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.75,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.7256495432435639,
+      "cashOutShare": 0.18887175228378217,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 1074
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 715
+        },
+        {
+          "reason": "Credit history",
+          "count": 561
+        }
+      ],
+      "rateCoverage": 0.9333254241309764
+    },
+    {
+      "abbr": "RI",
+      "name": "Rhode Island",
+      "slug": "rhode-island",
+      "investorOriginations": 1282,
+      "investorVolume": 537870000,
+      "investorShare": 0.07874209200909035,
+      "denialRate": 0.18706404565630944,
+      "investorMedianRate": 7.625,
+      "ownerMedianRate": 6.75,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 71.9,
+      "businessPurposeShare": 0.7285491419656787,
+      "cashOutShare": 0.250390015600624,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 101
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 82
+        },
+        {
+          "reason": "Credit history",
+          "count": 61
+        }
+      ],
+      "rateCoverage": 0.9773790951638065
+    },
+    {
+      "abbr": "TN",
+      "name": "Tennessee",
+      "slug": "tennessee",
+      "investorOriginations": 13064,
+      "investorVolume": 3523680000,
+      "investorShare": 0.10535228986395491,
+      "denialRate": 0.14328808446455504,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.624,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6739895897121861,
+      "cashOutShare": 0.14712186160440907,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 636
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 476
+        },
+        {
+          "reason": "Credit history",
+          "count": 385
+        }
+      ],
+      "rateCoverage": 0.8485150030618493
+    },
+    {
+      "abbr": "TX",
+      "name": "Texas",
+      "slug": "texas",
+      "investorOriginations": 42756,
+      "investorVolume": 11197790000,
+      "investorShare": 0.10005710060002433,
+      "denialRate": 0.17200511251404005,
+      "investorMedianRate": 7.375,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6471606324258583,
+      "cashOutShare": 0.1468565815324165,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 2318
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 2205
+        },
+        {
+          "reason": "Credit history",
+          "count": 1585
+        }
+      ],
+      "rateCoverage": 0.9150060810178688
+    },
+    {
+      "abbr": "VA",
+      "name": "Virginia",
+      "slug": "virginia",
+      "investorOriginations": 10397,
+      "investorVolume": 2884075000,
+      "investorShare": 0.07324461602406498,
+      "denialRate": 0.16409390577263225,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.624,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.64759065114937,
+      "cashOutShare": 0.1603347119361354,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 550
+        },
+        {
+          "reason": "Collateral",
+          "count": 511
+        },
+        {
+          "reason": "Other",
+          "count": 337
+        }
+      ],
+      "rateCoverage": 0.9139174761950563
+    },
+    {
+      "abbr": "WY",
+      "name": "Wyoming",
+      "slug": "wyoming",
+      "investorOriginations": 611,
+      "investorVolume": 175255000,
+      "investorShare": 0.06983655274888559,
+      "denialRate": 0.14664804469273743,
+      "investorMedianRate": 7.375,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 88,
+      "investorMedianLtv": 74.6,
+      "businessPurposeShare": 0.6104746317512275,
+      "cashOutShare": 0.11783960720130933,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 30
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 25
+        },
+        {
+          "reason": "Credit history",
+          "count": 16
+        }
+      ],
+      "rateCoverage": 0.8052373158756138
+    },
+    {
+      "abbr": "NC",
+      "name": "North Carolina",
+      "slug": "north-carolina",
+      "investorOriginations": 18316,
+      "investorVolume": 4968310000,
+      "investorShare": 0.09426271692364699,
+      "denialRate": 0.15896776563504453,
+      "investorMedianRate": 7.375,
+      "ownerMedianRate": 6.525,
+      "ratePremiumBps": 85,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.6750382179515177,
+      "cashOutShare": 0.13818519327364054,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 955
+        },
+        {
+          "reason": "Collateral",
+          "count": 913
+        },
+        {
+          "reason": "Credit history",
+          "count": 603
+        }
+      ],
+      "rateCoverage": 0.9760318846909806
+    },
+    {
+      "abbr": "WI",
+      "name": "Wisconsin",
+      "slug": "wisconsin",
+      "investorOriginations": 6970,
+      "investorVolume": 1396230000,
+      "investorShare": 0.0702535983550377,
+      "denialRate": 0.1285321330332583,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.65,
+      "ratePremiumBps": 85,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.636728837876614,
+      "cashOutShare": 0.16915351506456242,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 297
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 265
+        },
+        {
+          "reason": "Credit history",
+          "count": 207
+        }
+      ],
+      "rateCoverage": 0.8282639885222381
+    },
+    {
+      "abbr": "IN",
+      "name": "Indiana",
+      "slug": "indiana",
+      "investorOriginations": 8784,
+      "investorVolume": 1536920000,
+      "investorShare": 0.07096117493092918,
+      "denialRate": 0.15424610051993068,
+      "investorMedianRate": 7.5,
+      "ownerMedianRate": 6.75,
+      "ratePremiumBps": 75,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.673155737704918,
+      "cashOutShare": 0.17782331511839708,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 476
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 360
+        },
+        {
+          "reason": "Credit history",
+          "count": 334
+        }
+      ],
+      "rateCoverage": 0.9073315118397086
+    },
+    {
+      "abbr": "IA",
+      "name": "Iowa",
+      "slug": "iowa",
+      "investorOriginations": 4690,
+      "investorVolume": 705100000,
+      "investorShare": 0.09037131240726824,
+      "denialRate": 0.07018239492466297,
+      "investorMedianRate": 7.25,
+      "ownerMedianRate": 6.5,
+      "ratePremiumBps": 75,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.4660980810234542,
+      "cashOutShare": 0.07014925373134329,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 78
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 77
+        },
+        {
+          "reason": "Credit history",
+          "count": 72
+        }
+      ],
+      "rateCoverage": 0.5684434968017058
+    },
+    {
+      "abbr": "MA",
+      "name": "Massachusetts",
+      "slug": "massachusetts",
+      "investorOriginations": 7566,
+      "investorVolume": 4443870000,
+      "investorShare": 0.08504850440080484,
+      "denialRate": 0.17356635718186783,
+      "investorMedianRate": 7.375,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 75,
+      "investorMedianLtv": 70,
+      "businessPurposeShare": 0.7487443827650013,
+      "cashOutShare": 0.1591329632566746,
+      "topDenialReasons": [
+        {
+          "reason": "Collateral",
+          "count": 494
+        },
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 479
+        },
+        {
+          "reason": "Other",
+          "count": 263
+        }
+      ],
+      "rateCoverage": 0.8711340206185567
+    },
+    {
+      "abbr": "MT",
+      "name": "Montana",
+      "slug": "montana",
+      "investorOriginations": 1235,
+      "investorVolume": 442795000,
+      "investorShare": 0.08415672913117547,
+      "denialRate": 0.1459197786998617,
+      "investorMedianRate": 7.375,
+      "ownerMedianRate": 6.624,
+      "ratePremiumBps": 75,
+      "investorMedianLtv": 70,
+      "businessPurposeShare": 0.6955465587044535,
+      "cashOutShare": 0.10121457489878542,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 81
+        },
+        {
+          "reason": "Collateral",
+          "count": 66
+        },
+        {
+          "reason": "Other",
+          "count": 31
+        }
+      ],
+      "rateCoverage": 0.8582995951417004
+    },
+    {
+      "abbr": "OR",
+      "name": "Oregon",
+      "slug": "oregon",
+      "investorOriginations": 3481,
+      "investorVolume": 1252775000,
+      "investorShare": 0.06396192786138213,
+      "denialRate": 0.1801695713612812,
+      "investorMedianRate": 7.375,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 75,
+      "investorMedianLtv": 70,
+      "businessPurposeShare": 0.6630278655558748,
+      "cashOutShare": 0.22378626831370296,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 241
+        },
+        {
+          "reason": "Collateral",
+          "count": 218
+        },
+        {
+          "reason": "Other",
+          "count": 155
+        }
+      ],
+      "rateCoverage": 0.9548980178109738
+    },
+    {
+      "abbr": "WA",
+      "name": "Washington",
+      "slug": "washington",
+      "investorOriginations": 7802,
+      "investorVolume": 3698310000,
+      "investorShare": 0.06915992234799798,
+      "denialRate": 0.18431782540512284,
+      "investorMedianRate": 7.375,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 75,
+      "investorMedianLtv": 70,
+      "businessPurposeShare": 0.7193027428864394,
+      "cashOutShare": 0.17187900538323506,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 562
+        },
+        {
+          "reason": "Collateral",
+          "count": 467
+        },
+        {
+          "reason": "Other",
+          "count": 312
+        }
+      ],
+      "rateCoverage": 0.9806459882081517
+    },
+    {
+      "abbr": "NH",
+      "name": "New Hampshire",
+      "slug": "new-hampshire",
+      "investorOriginations": 1144,
+      "investorVolume": 387350000,
+      "investorShare": 0.054455445544554455,
+      "denialRate": 0.20334261838440112,
+      "investorMedianRate": 7.49,
+      "ownerMedianRate": 6.75,
+      "ratePremiumBps": 74,
+      "investorMedianLtv": 74.8,
+      "businessPurposeShare": 0.7508741258741258,
+      "cashOutShare": 0.1791958041958042,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 89
+        },
+        {
+          "reason": "Collateral",
+          "count": 85
+        },
+        {
+          "reason": "Credit history",
+          "count": 40
+        }
+      ],
+      "rateCoverage": 0.9256993006993007
+    },
+    {
+      "abbr": "ID",
+      "name": "Idaho",
+      "slug": "idaho",
+      "investorOriginations": 2276,
+      "investorVolume": 756440000,
+      "investorShare": 0.06347081625254469,
+      "denialRate": 0.17326552851434798,
+      "investorMedianRate": 7.25,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 63,
+      "investorMedianLtv": 70,
+      "businessPurposeShare": 0.5637082601054482,
+      "cashOutShare": 0.18585237258347978,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 174
+        },
+        {
+          "reason": "Collateral",
+          "count": 151
+        },
+        {
+          "reason": "Other",
+          "count": 58
+        }
+      ],
+      "rateCoverage": 0.968365553602812
+    },
+    {
+      "abbr": "VT",
+      "name": "Vermont",
+      "slug": "vermont",
+      "investorOriginations": 548,
+      "investorVolume": 276560000,
+      "investorShare": 0.06828660436137071,
+      "denialRate": 0.1659056316590563,
+      "investorMedianRate": 7.22,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 59,
+      "investorMedianLtv": 75,
+      "businessPurposeShare": 0.7554744525547445,
+      "cashOutShare": 0.07481751824817519,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 37
+        },
+        {
+          "reason": "Collateral",
+          "count": 33
+        },
+        {
+          "reason": "Other",
+          "count": 16
+        }
+      ],
+      "rateCoverage": 0.9434306569343066
+    },
+    {
+      "abbr": "UT",
+      "name": "Utah",
+      "slug": "utah",
+      "investorOriginations": 3689,
+      "investorVolume": 1413815000,
+      "investorShare": 0.057746192257721145,
+      "denialRate": 0.20666666666666667,
+      "investorMedianRate": 7.125,
+      "ownerMedianRate": 6.625,
+      "ratePremiumBps": 50,
+      "investorMedianLtv": 70,
+      "businessPurposeShare": 0.7075088099756032,
+      "cashOutShare": 0.16291677961507184,
+      "topDenialReasons": [
+        {
+          "reason": "Debt-to-income ratio",
+          "count": 325
+        },
+        {
+          "reason": "Collateral",
+          "count": 251
+        },
+        {
+          "reason": "Other",
+          "count": 204
+        }
+      ],
+      "rateCoverage": 0.9864461913797777
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "year": 2024,
+    "source": "CFPB / FFIEC HMDA Data Browser (loan-level public dataset)",
+    "universe": "Single-family 1-4 unit, site-built; home purchase + refinance + cash-out; originated & denied",
+    "generatedAt": "2026-06-14",
+    "stateCount": 51
+  },
+  "abbr": "US",
+  "name": "United States",
+  "slug": "united-states",
+  "investorOriginations": 450248,
+  "investorVolume": 142278950000,
+  "investorShare": 0.09441035777962627,
+  "denialRate": 0.17240517311099837,
+  "investorMedianRate": 7.5,
+  "ownerMedianRate": 6.625,
+  "ratePremiumBps": 88,
+  "investorMedianLtv": 75,
+  "businessPurposeShare": 0.6909791936888116,
+  "cashOutShare": 0.16981308079103072,
+  "topDenialReasons": [
+    {
+      "reason": "Collateral",
+      "count": 27097
+    },
+    {
+      "reason": "Debt-to-income ratio",
+      "count": 22886
+    },
+    {
+      "reason": "Credit history",
+      "count": 15652
+    }
+  ],
+  "rateCoverage": 0.9002438656029566
+}
