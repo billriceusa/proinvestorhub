@@ -140,6 +140,13 @@ export function getPriorStateBySlug(slug: string): InvestorFinancingRow | undefi
   return statesPrior.find((s) => s.slug === slug)
 }
 
+/** A state's year-over-year delta row (per-metric Delta), by slug. */
+export function getStateTrendBySlug(
+  slug: string
+): ({ abbr: string; name: string; slug: string } & Record<string, Delta>) | undefined {
+  return trends.states.find((s) => s.slug === slug)
+}
+
 // ---- signed delta formatters ----
 
 /** "+12 bps" / "-12 bps" / "—". */

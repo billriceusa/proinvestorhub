@@ -14,22 +14,7 @@ import {
   trendDir,
   type Delta,
 } from '@/data/hmda-investor'
-
-function Arrow({ dir }: { dir: 'up' | 'down' | 'flat' }) {
-  if (dir === 'flat') {
-    return (
-      <svg aria-hidden viewBox="0 0 12 12" className="h-3 w-3">
-        <path d="M2 6h8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    )
-  }
-  const d = dir === 'up' ? 'M3 9L9 3M9 3H4M9 3V8' : 'M3 3L9 9M9 9H4M9 9V4'
-  return (
-    <svg aria-hidden viewBox="0 0 12 12" className="h-3 w-3">
-      <path d={d} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
+import { TrendArrow } from '@/components/reports/trend-delta'
 
 function DeltaStat({
   label,
@@ -47,7 +32,7 @@ function DeltaStat({
       <p className="text-3xl font-bold text-primary">{value}</p>
       <p className="mt-1 text-sm font-medium text-text">{label}</p>
       <p className="mt-1.5 inline-flex items-center gap-1 text-xs font-medium text-text-muted">
-        <Arrow dir={dir} />
+        <TrendArrow dir={dir} />
         {delta} vs {priorYear}
       </p>
     </div>
