@@ -1,0 +1,85 @@
+<!doctype html><html><head><meta charset="utf-8"/><style>
+  :root{
+    --primary:#1B4D3E;--primary-light:#2A7A5F;--primary-dark:#0F3329;
+    --accent:#D4A843;--accent-light:#E5C06E;--surface:#F8F7F4;--surface-alt:#EDE9E0;
+    --text:#1A1A1A;--muted:#6B6B6B;--light:#9A9A9A;--border:#E2DED5;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:1200px}
+  body{background:var(--surface);font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;color:var(--text);padding:64px 64px 48px;display:flex;flex-direction:column}
+  .serif{font-family:Georgia,"Times New Roman",serif}
+  .eyebrow{font-size:18px;letter-spacing:3px;font-weight:700;color:var(--accent);text-transform:uppercase}
+  h1{font-size:52px;line-height:1.08;color:var(--primary-dark);margin-top:14px;font-weight:700}
+  .sub{font-size:21px;color:var(--muted);margin-top:12px}
+  .rule{height:3px;width:84px;background:var(--accent);margin-top:20px;border-radius:2px}
+  .hero{background:var(--primary);color:#fff;border-radius:22px;margin-top:28px;padding:34px 38px;display:flex;flex-direction:column;gap:20px}
+  .hero-top{display:flex;align-items:flex-end;justify-content:space-between}
+  .hero-num{font-size:96px;line-height:.9;font-weight:700}
+  .hero-num .unit{font-size:40px;opacity:.85}
+  .hero-label{font-size:21px;color:var(--accent-light);margin-top:12px;max-width:560px}
+  .hero-from{text-align:right}
+  .hero-from .big{font-size:30px;font-weight:700;color:var(--accent-light)}
+  .hero-from .cap{font-size:17px;color:rgba(255,255,255,.72)}
+  .pillrow{display:flex;gap:12px}
+  .pill{flex:1;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 8px;text-align:center}
+  .pill .n{font-size:30px;font-weight:700}
+  .pill.win .n{color:var(--accent-light)}
+  .pill .t{font-size:15px;color:rgba(255,255,255,.78);margin-top:3px;text-transform:uppercase;letter-spacing:1px}
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+  .tile{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px 18px}
+  .tile .n{font-size:36px;font-weight:700;color:var(--primary);line-height:1}
+  .tile .l{font-size:16px;color:var(--text);margin-top:9px;font-weight:600}
+  .tile .d{font-size:14px;color:var(--muted);margin-top:6px}
+  .lower{margin-top:24px}
+  .lower h2{font-size:19px;color:var(--primary-dark);font-weight:700}
+  .lower .cap{font-size:15px;color:var(--muted);margin-top:2px}
+  .bars{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+  .bar{display:flex;align-items:center;gap:12px}
+  .bar .name{width:148px;font-size:16px;color:var(--text);font-weight:600}
+  .bar .track{flex:1}
+  .bar .fill{height:22px;background:var(--primary);border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;color:#fff;font-size:14px;font-weight:700;min-width:38px}
+  .bar .fill.alt{background:var(--accent)}
+  .bar .fill.muted{background:var(--surface-alt);color:var(--muted)}
+  .foot{margin-top:auto;padding-top:22px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+  .foot .src{font-size:15px;color:var(--light)}
+  .foot .brand{font-size:18px;font-weight:700;color:var(--primary);letter-spacing:.3px}
+  .foot .brand .dot{color:var(--accent)}
+</style></head><body>
+    <div class="eyebrow">ProInvestorHub · 2025 Data Report</div>
+    <h1 class="serif">How investors finance<br/>real estate in Illinois</h1>
+    <div class="sub">Illinois vs the nation — CFPB HMDA 2025 mortgage data</div>
+    <div class="rule"></div>
+    <div class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="hero-num serif">72<span class="unit"> bps</span></div>
+          <div class="hero-label">Investor rate premium in Illinois &middot; 37th of 51 by premium</div>
+        </div>
+        <div class="hero-from">
+          <div class="big">&darr; from 88</div>
+          <div class="cap">in 2024</div>
+        </div>
+      </div>
+      <div class="pillrow">
+        <div class="pill"><div class="n">-16</div><div class="t">bps vs 2024</div></div>
+        <div class="pill"><div class="n">+21%</div><div class="t">investor loans</div></div>
+        <div class="pill"><div class="n">+2 pts</div><div class="t">DSCR share</div></div>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="n">16.8%</div><div class="l">Denial rate</div><div class="d">U.S. 17.5%</div></div>
+      <div class="tile"><div class="n">69%</div><div class="l">DSCR / biz-purpose</div><div class="d">U.S. 72%</div></div>
+      <div class="tile"><div class="n">75%</div><div class="l">Median LTV</div><div class="d">U.S. 74%</div></div>
+      <div class="tile"><div class="n">18,177</div><div class="l">Investor loans</div><div class="d">$5.4B financed</div></div>
+    </div>
+    <div class="lower">
+      <h2>Investor rate premium: Illinois vs the nation</h2>
+      <div class="cap">Extra basis points investors pay over owner-occupants</div>
+      <div class="bars">
+        <div class="bar"><div class="name">Illinois</div><div class="track"><div class="fill " style="width:64%">72</div></div></div>
+        <div class="bar"><div class="name">U.S. median</div><div class="track"><div class="fill alt" style="width:67%">76</div></div></div>
+        <div class="bar"><div class="name">Highest (Alaska)</div><div class="track"><div class="fill muted" style="width:100%">113</div></div></div>
+      </div>
+    </div>
+    <div class="foot"><div class="src">Source: CFPB / FFIEC HMDA 2025 (public domain). Single-family 1&ndash;4 unit, financed loans.</div><div class="brand">proinvestorhub<span class="dot">.</span>com</div></div>
+  </body></html>
