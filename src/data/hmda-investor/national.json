@@ -1,37 +1,37 @@
 {
   "meta": {
-    "year": 2024,
-    "source": "CFPB / FFIEC HMDA Data Browser (loan-level public dataset)",
+    "year": 2025,
+    "source": "CFPB / FFIEC HMDA combined Modified LAR (loan-level public dataset, early release)",
     "universe": "Single-family 1-4 unit, site-built; home purchase + refinance + cash-out; originated & denied",
-    "generatedAt": "2026-06-14",
+    "generatedAt": "2026-06-15",
     "stateCount": 51
   },
   "abbr": "US",
   "name": "United States",
   "slug": "united-states",
-  "investorOriginations": 450248,
-  "investorVolume": 142278950000,
-  "investorShare": 0.09441035777962627,
-  "denialRate": 0.17240517311099837,
-  "investorMedianRate": 7.5,
-  "ownerMedianRate": 6.625,
-  "ratePremiumBps": 88,
-  "investorMedianLtv": 75,
-  "businessPurposeShare": 0.6909791936888116,
-  "cashOutShare": 0.16981308079103072,
+  "investorOriginations": 524314,
+  "investorVolume": 181562490000,
+  "investorShare": 0.09810139667736467,
+  "denialRate": 0.17522565462650974,
+  "investorMedianRate": 7.25,
+  "ownerMedianRate": 6.49,
+  "ratePremiumBps": 76,
+  "investorMedianLtv": 74,
+  "businessPurposeShare": 0.7161204926818662,
+  "cashOutShare": 0.20486960104059782,
   "topDenialReasons": [
     {
       "reason": "Collateral",
-      "count": 27097
+      "count": 31710
     },
     {
       "reason": "Debt-to-income ratio",
-      "count": 22886
+      "count": 24547
     },
     {
-      "reason": "Credit history",
-      "count": 15652
+      "reason": "Other",
+      "count": 20245
     }
   ],
-  "rateCoverage": 0.9002438656029566
+  "rateCoverage": 0.9038076419855278
 }

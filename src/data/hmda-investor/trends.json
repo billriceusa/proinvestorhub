@@ -1,0 +1,3643 @@
+{
+  "meta": {
+    "currentYear": 2025,
+    "priorYear": 2024,
+    "currentSource": "CFPB / FFIEC HMDA combined Modified LAR (loan-level public dataset, early release)",
+    "priorSource": "CFPB / FFIEC HMDA Data Browser (loan-level public dataset)",
+    "note": "Year-over-year compares the 2024 finalized Snapshot dataset with the 2025 early-release combined Modified LAR. Both are CFPB HMDA loan-level public data covering the same universe and computed identically; 2025 figures will be reconciled when the 2025 Snapshot publishes.",
+    "generatedAt": "2026-06-15"
+  },
+  "national": {
+    "ratePremiumBps": {
+      "current": 76,
+      "prior": 88,
+      "abs": -12,
+      "pct": -0.13636363636363635
+    },
+    "denialRate": {
+      "current": 0.17522565462650974,
+      "prior": 0.17240517311099837,
+      "abs": 0.0028204815155113694,
+      "pct": 0.01635961070434632
+    },
+    "investorShare": {
+      "current": 0.09810139667736467,
+      "prior": 0.09441035777962627,
+      "abs": 0.003691038897738405,
+      "pct": 0.03909569865579866
+    },
+    "businessPurposeShare": {
+      "current": 0.7161204926818662,
+      "prior": 0.6909791936888116,
+      "abs": 0.025141298993054617,
+      "pct": 0.03638503043606436
+    },
+    "investorMedianRate": {
+      "current": 7.25,
+      "prior": 7.5,
+      "abs": -0.25,
+      "pct": -0.03333333333333333
+    },
+    "ownerMedianRate": {
+      "current": 6.49,
+      "prior": 6.625,
+      "abs": -0.1349999999999998,
+      "pct": -0.020377358490566006
+    },
+    "investorMedianLtv": {
+      "current": 74,
+      "prior": 75,
+      "abs": -1,
+      "pct": -0.013333333333333334
+    },
+    "cashOutShare": {
+      "current": 0.20486960104059782,
+      "prior": 0.16981308079103072,
+      "abs": 0.0350565202495671,
+      "pct": 0.2064418128819363
+    },
+    "investorOriginations": {
+      "current": 524314,
+      "prior": 450248,
+      "abs": 74066,
+      "pct": 0.1645004530836339
+    },
+    "investorVolume": {
+      "current": 181562490000,
+      "prior": 142278950000,
+      "abs": 39283540000,
+      "pct": 0.2761022624920974
+    }
+  },
+  "states": [
+    {
+      "abbr": "AK",
+      "name": "Alaska",
+      "slug": "alaska",
+      "ratePremiumBps": {
+        "current": 113,
+        "prior": 113,
+        "abs": 0,
+        "pct": 0
+      },
+      "denialRate": {
+        "current": 0.20241286863270777,
+        "prior": 0.2137030995106036,
+        "abs": -0.011290230877895824,
+        "pct": -0.05283138571106977
+      },
+      "investorShare": {
+        "current": 0.05802613614199337,
+        "prior": 0.0525283347863993,
+        "abs": 0.005497801355594065,
+        "pct": 0.1046635378401061
+      },
+      "businessPurposeShare": {
+        "current": 0.6218487394957983,
+        "prior": 0.7385892116182573,
+        "abs": -0.11674047212245897,
+        "pct": -0.1580587291096214
+      },
+      "investorMedianRate": {
+        "current": 7.375,
+        "prior": 7.5,
+        "abs": -0.125,
+        "pct": -0.016666666666666666
+      },
+      "ownerMedianRate": {
+        "current": 6.25,
+        "prior": 6.375,
+        "abs": -0.125,
+        "pct": -0.0196078431372549
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.22857142857142856,
+        "prior": 0.1825726141078838,
+        "abs": 0.04599881446354476,
+        "pct": 0.251948051948052
+      },
+      "investorOriginations": {
+        "current": 595,
+        "prior": 482,
+        "abs": 113,
+        "pct": 0.23443983402489627
+      },
+      "investorVolume": {
+        "current": 189225000,
+        "prior": 149080000,
+        "abs": 40145000,
+        "pct": 0.2692849476790985
+      }
+    },
+    {
+      "abbr": "LA",
+      "name": "Louisiana",
+      "slug": "louisiana",
+      "ratePremiumBps": {
+        "current": 101,
+        "prior": 138,
+        "abs": -37,
+        "pct": -0.26811594202898553
+      },
+      "denialRate": {
+        "current": 0.14252952643045522,
+        "prior": 0.1370211626038039,
+        "abs": 0.005508363826651319,
+        "pct": 0.0402008253468023
+      },
+      "investorShare": {
+        "current": 0.13622618136772688,
+        "prior": 0.1300460196996609,
+        "abs": 0.006180161668065981,
+        "pct": 0.047522882148480675
+      },
+      "businessPurposeShare": {
+        "current": 0.49612195774271195,
+        "prior": 0.5061306844637591,
+        "abs": -0.010008726721047134,
+        "pct": -0.019774985054801193
+      },
+      "investorMedianRate": {
+        "current": 7.5,
+        "prior": 7.999,
+        "abs": -0.49899999999999967,
+        "pct": -0.06238279784973118
+      },
+      "ownerMedianRate": {
+        "current": 6.49,
+        "prior": 6.624,
+        "abs": -0.13399999999999945,
+        "pct": -0.020229468599033736
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.15164482481947045,
+        "prior": 0.1139220859847897,
+        "abs": 0.03772273883468075,
+        "pct": 0.3311275290352153
+      },
+      "investorOriginations": {
+        "current": 7478,
+        "prior": 6443,
+        "abs": 1035,
+        "pct": 0.16063945367065033
+      },
+      "investorVolume": {
+        "current": 1402330000,
+        "prior": 1334465000,
+        "abs": 67865000,
+        "pct": 0.05085558632110996
+      }
+    },
+    {
+      "abbr": "MS",
+      "name": "Mississippi",
+      "slug": "mississippi",
+      "ratePremiumBps": {
+        "current": 101,
+        "prior": 163,
+        "abs": -62,
+        "pct": -0.3803680981595092
+      },
+      "denialRate": {
+        "current": 0.12349058122685558,
+        "prior": 0.11234026320808697,
+        "abs": 0.011150318018768604,
+        "pct": 0.0992548682044207
+      },
+      "investorShare": {
+        "current": 0.13126612494876186,
+        "prior": 0.12353347135955832,
+        "abs": 0.007732653589203539,
+        "pct": 0.06259561480869233
+      },
+      "businessPurposeShare": {
+        "current": 0.7496326230712711,
+        "prior": 0.7243231628706489,
+        "abs": 0.02530946020062219,
+        "pct": 0.03494222123218501
+      },
+      "investorMedianRate": {
+        "current": 7.5,
+        "prior": 8.25,
+        "abs": -0.75,
+        "pct": -0.09090909090909091
+      },
+      "ownerMedianRate": {
+        "current": 6.49,
+        "prior": 6.625,
+        "abs": -0.1349999999999998,
+        "pct": -0.020377358490566006
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.08504775900073476,
+        "prior": 0.06961753330468415,
+        "abs": 0.015430225696050612,
+        "pct": 0.22164280984388748
+      },
+      "investorOriginations": {
+        "current": 5444,
+        "prior": 4654,
+        "abs": 790,
+        "pct": 0.16974645466265578
+      },
+      "investorVolume": {
+        "current": 855600000,
+        "prior": 721580000,
+        "abs": 134020000,
+        "pct": 0.18573131184345465
+      }
+    },
+    {
+      "abbr": "AL",
+      "name": "Alabama",
+      "slug": "alabama",
+      "ratePremiumBps": {
+        "current": 100,
+        "prior": 113,
+        "abs": -13,
+        "pct": -0.11504424778761062
+      },
+      "denialRate": {
+        "current": 0.15600249176826556,
+        "prior": 0.15112371350556605,
+        "abs": 0.004878778262699501,
+        "pct": 0.03228334024838405
+      },
+      "investorShare": {
+        "current": 0.10595109090299733,
+        "prior": 0.10034511868110041,
+        "abs": 0.005605972221896918,
+        "pct": 0.055866915058547635
+      },
+      "businessPurposeShare": {
+        "current": 0.7047659215520877,
+        "prior": 0.6668316219225535,
+        "abs": 0.03793429962953421,
+        "pct": 0.05688737363738868
+      },
+      "investorMedianRate": {
+        "current": 7.375,
+        "prior": 7.625,
+        "abs": -0.25,
+        "pct": -0.03278688524590164
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.5,
+        "abs": -0.125,
+        "pct": -0.019230769230769232
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.17186840995360608,
+        "prior": 0.1248298898923667,
+        "abs": 0.04703852006123939,
+        "pct": 0.3768209689345867
+      },
+      "investorOriginations": {
+        "current": 9484,
+        "prior": 8083,
+        "abs": 1401,
+        "pct": 0.17332673512309785
+      },
+      "investorVolume": {
+        "current": 1953890000,
+        "prior": 1550495000,
+        "abs": 403395000,
+        "pct": 0.26017175160190775
+      }
+    },
+    {
+      "abbr": "HI",
+      "name": "Hawaii",
+      "slug": "hawaii",
+      "ratePremiumBps": {
+        "current": 100,
+        "prior": 100,
+        "abs": 0,
+        "pct": 0
+      },
+      "denialRate": {
+        "current": 0.2514851485148515,
+        "prior": 0.2556943423952976,
+        "abs": -0.004209193880446105,
+        "pct": -0.016461818595652725
+      },
+      "investorShare": {
+        "current": 0.1649111872857588,
+        "prior": 0.15538001380473962,
+        "abs": 0.009531173481019173,
+        "pct": 0.06134105183564117
+      },
+      "businessPurposeShare": {
+        "current": 0.7403628117913832,
+        "prior": 0.7206317867719645,
+        "abs": 0.019731025019418702,
+        "pct": 0.027380175814618005
+      },
+      "investorMedianRate": {
+        "current": 7.125,
+        "prior": 7.5,
+        "abs": -0.375,
+        "pct": -0.05
+      },
+      "ownerMedianRate": {
+        "current": 6.125,
+        "prior": 6.5,
+        "abs": -0.375,
+        "pct": -0.057692307692307696
+      },
+      "investorMedianLtv": {
+        "current": 67.7,
+        "prior": 66.1,
+        "abs": 1.6000000000000085,
+        "pct": 0.024205748865355654
+      },
+      "cashOutShare": {
+        "current": 0.18783068783068782,
+        "prior": 0.16189536031589338,
+        "abs": 0.025935327514794437,
+        "pct": 0.1601980900761388
+      },
+      "investorOriginations": {
+        "current": 2646,
+        "prior": 2026,
+        "abs": 620,
+        "pct": 0.3060217176702863
+      },
+      "investorVolume": {
+        "current": 1682060000,
+        "prior": 1270540000,
+        "abs": 411520000,
+        "pct": 0.3238937774489587
+      }
+    },
+    {
+      "abbr": "KS",
+      "name": "Kansas",
+      "slug": "kansas",
+      "ratePremiumBps": {
+        "current": 100,
+        "prior": 113,
+        "abs": -13,
+        "pct": -0.11504424778761062
+      },
+      "denialRate": {
+        "current": 0.08861347792408986,
+        "prior": 0.08433037437282902,
+        "abs": 0.004283103551260839,
+        "pct": 0.050789571173074755
+      },
+      "investorShare": {
+        "current": 0.1213339933176587,
+        "prior": 0.11166019531709613,
+        "abs": 0.009673798000562575,
+        "pct": 0.08663604763622901
+      },
+      "businessPurposeShare": {
+        "current": 0.6034336223015468,
+        "prior": 0.5378292939936775,
+        "abs": 0.06560432830786933,
+        "pct": 0.12197983456929468
+      },
+      "investorMedianRate": {
+        "current": 7.5,
+        "prior": 7.75,
+        "abs": -0.25,
+        "pct": -0.03225806451612903
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.12544620091789904,
+        "prior": 0.09357218124341413,
+        "abs": 0.031874019674484916,
+        "pct": 0.3406356381879075
+      },
+      "investorOriginations": {
+        "current": 5883,
+        "prior": 4745,
+        "abs": 1138,
+        "pct": 0.2398314014752371
+      },
+      "investorVolume": {
+        "current": 1086285000,
+        "prior": 790885000,
+        "abs": 295400000,
+        "pct": 0.3735056297691826
+      }
+    },
+    {
+      "abbr": "SC",
+      "name": "South Carolina",
+      "slug": "south-carolina",
+      "ratePremiumBps": {
+        "current": 100,
+        "prior": 113,
+        "abs": -13,
+        "pct": -0.11504424778761062
+      },
+      "denialRate": {
+        "current": 0.1835710772257747,
+        "prior": 0.18674966651845265,
+        "abs": -0.003178589292677947,
+        "pct": -0.017020588855315957
+      },
+      "investorShare": {
+        "current": 0.07225317778164722,
+        "prior": 0.07240840079969912,
+        "abs": -0.0001552230180519032,
+        "pct": -0.002143715595670885
+      },
+      "businessPurposeShare": {
+        "current": 0.7043017230991686,
+        "prior": 0.6864406779661016,
+        "abs": 0.017861045133066966,
+        "pct": 0.02601979414446793
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.625,
+        "abs": -0.375,
+        "pct": -0.04918032786885246
+      },
+      "ownerMedianRate": {
+        "current": 6.25,
+        "prior": 6.5,
+        "abs": -0.25,
+        "pct": -0.038461538461538464
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.1738763706470659,
+        "prior": 0.15445598687807546,
+        "abs": 0.01942038376899044,
+        "pct": 0.1257340952689682
+      },
+      "investorOriginations": {
+        "current": 8299,
+        "prior": 7316,
+        "abs": 983,
+        "pct": 0.1343630399125205
+      },
+      "investorVolume": {
+        "current": 2452775000,
+        "prior": 2025730000,
+        "abs": 427045000,
+        "pct": 0.21081042389657062
+      }
+    },
+    {
+      "abbr": "CT",
+      "name": "Connecticut",
+      "slug": "connecticut",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 100,
+        "abs": -12,
+        "pct": -0.12
+      },
+      "denialRate": {
+        "current": 0.20734184561810795,
+        "prior": 0.2019798541160125,
+        "abs": 0.005361991502095459,
+        "pct": 0.026547159990598156
+      },
+      "investorShare": {
+        "current": 0.09574635890425365,
+        "prior": 0.09106403218454587,
+        "abs": 0.00468232671970778,
+        "pct": 0.05141795951027962
+      },
+      "businessPurposeShare": {
+        "current": 0.828665568369028,
+        "prior": 0.8213275299238303,
+        "abs": 0.007338038445197759,
+        "pct": 0.008934363183805962
+      },
+      "investorMedianRate": {
+        "current": 7.375,
+        "prior": 7.625,
+        "abs": -0.25,
+        "pct": -0.03278688524590164
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 74.8,
+        "prior": 75,
+        "abs": -0.20000000000000284,
+        "pct": -0.0026666666666667047
+      },
+      "cashOutShare": {
+        "current": 0.2943437671609006,
+        "prior": 0.24635473340587596,
+        "abs": 0.04798903375502464,
+        "pct": 0.19479647535718922
+      },
+      "investorOriginations": {
+        "current": 5463,
+        "prior": 4595,
+        "abs": 868,
+        "pct": 0.18890097932535366
+      },
+      "investorVolume": {
+        "current": 1940365000,
+        "prior": 1486685000,
+        "abs": 453680000,
+        "pct": 0.30516215607206637
+      }
+    },
+    {
+      "abbr": "FL",
+      "name": "Florida",
+      "slug": "florida",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 106,
+        "abs": -18,
+        "pct": -0.16981132075471697
+      },
+      "denialRate": {
+        "current": 0.2270154078401129,
+        "prior": 0.2292885656477279,
+        "abs": -0.0022731578076150005,
+        "pct": -0.009913960607645007
+      },
+      "investorShare": {
+        "current": 0.11865994962216625,
+        "prior": 0.1104727267026705,
+        "abs": 0.008187222919495751,
+        "pct": 0.07411080692822113
+      },
+      "businessPurposeShare": {
+        "current": 0.7996518638023266,
+        "prior": 0.7729057282058559,
+        "abs": 0.026746135596470655,
+        "pct": 0.03460465438463808
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.562,
+        "abs": -0.3120000000000003,
+        "pct": -0.04125892620999739
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.5,
+        "abs": -0.125,
+        "pct": -0.019230769230769232
+      },
+      "investorMedianLtv": {
+        "current": 71.4,
+        "prior": 72.6,
+        "abs": -1.1999999999999886,
+        "pct": -0.016528925619834555
+      },
+      "cashOutShare": {
+        "current": 0.22444170841470662,
+        "prior": 0.19076675653942576,
+        "abs": 0.033674951875280856,
+        "pct": 0.17652421462814594
+      },
+      "investorOriginations": {
+        "current": 47108,
+        "prior": 42282,
+        "abs": 4826,
+        "pct": 0.1141384040490043
+      },
+      "investorVolume": {
+        "current": 17589410000,
+        "prior": 15224260000,
+        "abs": 2365150000,
+        "pct": 0.15535402049097952
+      }
+    },
+    {
+      "abbr": "GA",
+      "name": "Georgia",
+      "slug": "georgia",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 100,
+        "abs": -12,
+        "pct": -0.12
+      },
+      "denialRate": {
+        "current": 0.1830927320381079,
+        "prior": 0.18282268004930446,
+        "abs": 0.00027005198880344916,
+        "pct": 0.0014771252053116183
+      },
+      "investorShare": {
+        "current": 0.1002368603748928,
+        "prior": 0.10199058277978319,
+        "abs": -0.0017537224048903982,
+        "pct": -0.017194944445773134
+      },
+      "businessPurposeShare": {
+        "current": 0.6754939906294561,
+        "prior": 0.6202122501750794,
+        "abs": 0.05528174045437673,
+        "pct": 0.08913358360588858
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.5,
+        "abs": -0.25,
+        "pct": -0.03333333333333333
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.5,
+        "abs": -0.125,
+        "pct": -0.019230769230769232
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.19296190670197597,
+        "prior": 0.1576792544308571,
+        "abs": 0.035282652271118875,
+        "pct": 0.22376217086053285
+      },
+      "investorOriginations": {
+        "current": 19636,
+        "prior": 18563,
+        "abs": 1073,
+        "pct": 0.057803156817324786
+      },
+      "investorVolume": {
+        "current": 5051400000,
+        "prior": 5320405000,
+        "abs": -269005000,
+        "pct": -0.05056100052533595
+      }
+    },
+    {
+      "abbr": "MD",
+      "name": "Maryland",
+      "slug": "maryland",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 100,
+        "abs": -12,
+        "pct": -0.12
+      },
+      "denialRate": {
+        "current": 0.2485144485144485,
+        "prior": 0.20210962516481445,
+        "abs": 0.046404823349634056,
+        "pct": 0.2296022433953469
+      },
+      "investorShare": {
+        "current": 0.08988939087085215,
+        "prior": 0.0901036958255783,
+        "abs": -0.00021430495472614386,
+        "pct": -0.00237842579888169
+      },
+      "businessPurposeShare": {
+        "current": 0.7493500866551126,
+        "prior": 0.7511803588290841,
+        "abs": -0.00183027217397147,
+        "pct": -0.0024365282617671738
+      },
+      "investorMedianRate": {
+        "current": 7.375,
+        "prior": 7.625,
+        "abs": -0.25,
+        "pct": -0.03278688524590164
+      },
+      "ownerMedianRate": {
+        "current": 6.49,
+        "prior": 6.625,
+        "abs": -0.1349999999999998,
+        "pct": -0.020377358490566006
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.2270363951473137,
+        "prior": 0.18744098205854579,
+        "abs": 0.039595413088767906,
+        "pct": 0.21124202751136129
+      },
+      "investorOriginations": {
+        "current": 9232,
+        "prior": 8472,
+        "abs": 760,
+        "pct": 0.08970727101038715
+      },
+      "investorVolume": {
+        "current": 2482140000,
+        "prior": 2095670000,
+        "abs": 386470000,
+        "pct": 0.18441357656501262
+      }
+    },
+    {
+      "abbr": "MI",
+      "name": "Michigan",
+      "slug": "michigan",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 88,
+        "abs": 0,
+        "pct": 0
+      },
+      "denialRate": {
+        "current": 0.20562726217305197,
+        "prior": 0.20590853905301498,
+        "abs": -0.0002812768799630161,
+        "pct": -0.001366028243688311
+      },
+      "investorShare": {
+        "current": 0.06787494018929359,
+        "prior": 0.06580279951977572,
+        "abs": 0.002072140669517872,
+        "pct": 0.03149015975977027
+      },
+      "businessPurposeShare": {
+        "current": 0.7742434662998624,
+        "prior": 0.7340739985730302,
+        "abs": 0.040169467726832164,
+        "pct": 0.054721278515405494
+      },
+      "investorMedianRate": {
+        "current": 7.5,
+        "prior": 7.625,
+        "abs": -0.125,
+        "pct": -0.01639344262295082
+      },
+      "ownerMedianRate": {
+        "current": 6.625,
+        "prior": 6.75,
+        "abs": -0.125,
+        "pct": -0.018518518518518517
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.25816712517193946,
+        "prior": 0.21822444195291,
+        "abs": 0.03994268321902947,
+        "pct": 0.18303487391961612
+      },
+      "investorOriginations": {
+        "current": 11632,
+        "prior": 9811,
+        "abs": 1821,
+        "pct": 0.18560799103047598
+      },
+      "investorVolume": {
+        "current": 4801930000,
+        "prior": 1686435000,
+        "abs": 3115495000,
+        "pct": 1.847385164563117
+      }
+    },
+    {
+      "abbr": "MO",
+      "name": "Missouri",
+      "slug": "missouri",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 113,
+        "abs": -25,
+        "pct": -0.22123893805309736
+      },
+      "denialRate": {
+        "current": 0.11506109166820164,
+        "prior": 0.09936075597554196,
+        "abs": 0.015700335692659675,
+        "pct": 0.15801344845367696
+      },
+      "investorShare": {
+        "current": 0.12163382421199206,
+        "prior": 0.12341588353471013,
+        "abs": -0.0017820593227180631,
+        "pct": -0.014439464934972227
+      },
+      "businessPurposeShare": {
+        "current": 0.6501769236106293,
+        "prior": 0.6382502700200586,
+        "abs": 0.011926653590570657,
+        "pct": 0.01868648420657281
+      },
+      "investorMedianRate": {
+        "current": 7.375,
+        "prior": 7.75,
+        "abs": -0.375,
+        "pct": -0.04838709677419355
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.1308540900575869,
+        "prior": 0.10816232062953247,
+        "abs": 0.02269176942805444,
+        "pct": 0.20979366285766168
+      },
+      "investorOriginations": {
+        "current": 14413,
+        "prior": 12962,
+        "abs": 1451,
+        "pct": 0.11194260145039346
+      },
+      "investorVolume": {
+        "current": 2724215000,
+        "prior": 2216310000,
+        "abs": 507905000,
+        "pct": 0.22916694866692836
+      }
+    },
+    {
+      "abbr": "NJ",
+      "name": "New Jersey",
+      "slug": "new-jersey",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 100,
+        "abs": -12,
+        "pct": -0.12
+      },
+      "denialRate": {
+        "current": 0.1817125865353343,
+        "prior": 0.18503937007874016,
+        "abs": -0.0033267835434058757,
+        "pct": -0.01797878766010835
+      },
+      "investorShare": {
+        "current": 0.1277148098998557,
+        "prior": 0.12001714170475934,
+        "abs": 0.0076976681950963605,
+        "pct": 0.06413807299321064
+      },
+      "businessPurposeShare": {
+        "current": 0.8158641835112423,
+        "prior": 0.7874396135265701,
+        "abs": 0.028424569984672243,
+        "pct": 0.03609746004188438
+      },
+      "investorMedianRate": {
+        "current": 7.375,
+        "prior": 7.625,
+        "abs": -0.25,
+        "pct": -0.03278688524590164
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 71.3,
+        "prior": 74,
+        "abs": -2.700000000000003,
+        "pct": -0.03648648648648652
+      },
+      "cashOutShare": {
+        "current": 0.28117192823075177,
+        "prior": 0.23447455016453125,
+        "abs": 0.04669737806622051,
+        "pct": 0.19915755476853617
+      },
+      "investorOriginations": {
+        "current": 17612,
+        "prior": 14283,
+        "abs": 3329,
+        "pct": 0.23307428411398165
+      },
+      "investorVolume": {
+        "current": 7579750000,
+        "prior": 5649615000,
+        "abs": 1930135000,
+        "pct": 0.3416400940595067
+      }
+    },
+    {
+      "abbr": "OH",
+      "name": "Ohio",
+      "slug": "ohio",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 88,
+        "abs": 0,
+        "pct": 0
+      },
+      "denialRate": {
+        "current": 0.17917203006269983,
+        "prior": 0.16955665024630542,
+        "abs": 0.009615379816394404,
+        "pct": 0.05670895127042603
+      },
+      "investorShare": {
+        "current": 0.0935648156913232,
+        "prior": 0.09154593044724896,
+        "abs": 0.002018885244074245,
+        "pct": 0.022053249491385932
+      },
+      "businessPurposeShare": {
+        "current": 0.7643160663698907,
+        "prior": 0.7256495432435639,
+        "abs": 0.03866652312632679,
+        "pct": 0.053285395803451076
+      },
+      "investorMedianRate": {
+        "current": 7.5,
+        "prior": 7.625,
+        "abs": -0.125,
+        "pct": -0.01639344262295082
+      },
+      "ownerMedianRate": {
+        "current": 6.625,
+        "prior": 6.75,
+        "abs": -0.125,
+        "pct": -0.018518518518518517
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.22227842978551193,
+        "prior": 0.18887175228378217,
+        "abs": 0.033406677501729765,
+        "pct": 0.17687492755155793
+      },
+      "investorOriginations": {
+        "current": 19768,
+        "prior": 16858,
+        "abs": 2910,
+        "pct": 0.17261834144026575
+      },
+      "investorVolume": {
+        "current": 3329640000,
+        "prior": 2696300000,
+        "abs": 633340000,
+        "pct": 0.23489225976337944
+      }
+    },
+    {
+      "abbr": "OK",
+      "name": "Oklahoma",
+      "slug": "oklahoma",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 112,
+        "abs": -24,
+        "pct": -0.21428571428571427
+      },
+      "denialRate": {
+        "current": 0.09468652325795184,
+        "prior": 0.08738163853437629,
+        "abs": 0.007304884723575544,
+        "pct": 0.08359747935719669
+      },
+      "investorShare": {
+        "current": 0.1552357382682577,
+        "prior": 0.15521828939537163,
+        "abs": 0.00001744887288607222,
+        "pct": 0.00011241505723353577
+      },
+      "businessPurposeShare": {
+        "current": 0.6421608448415922,
+        "prior": 0.6276079846622308,
+        "abs": 0.014552860179361415,
+        "pct": 0.023187818726037316
+      },
+      "investorMedianRate": {
+        "current": 7.375,
+        "prior": 7.749,
+        "abs": -0.37399999999999967,
+        "pct": -0.04826429216673115
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.09433387489845654,
+        "prior": 0.07736551257471523,
+        "abs": 0.016968362323741312,
+        "pct": 0.21932721388427728
+      },
+      "investorOriginations": {
+        "current": 9848,
+        "prior": 8867,
+        "abs": 981,
+        "pct": 0.11063493853614526
+      },
+      "investorVolume": {
+        "current": 1854960000,
+        "prior": 1570765000,
+        "abs": 284195000,
+        "pct": 0.1809277644969171
+      }
+    },
+    {
+      "abbr": "PA",
+      "name": "Pennsylvania",
+      "slug": "pennsylvania",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 100,
+        "abs": -12,
+        "pct": -0.12
+      },
+      "denialRate": {
+        "current": 0.1706437392983351,
+        "prior": 0.1788935137010059,
+        "abs": -0.0082497744026708,
+        "pct": -0.04611555909432849
+      },
+      "investorShare": {
+        "current": 0.11511719046294658,
+        "prior": 0.1080245505156521,
+        "abs": 0.007092639947294477,
+        "pct": 0.06565766683071546
+      },
+      "businessPurposeShare": {
+        "current": 0.7810235009883594,
+        "prior": 0.7544619283979301,
+        "abs": 0.02656157259042924,
+        "pct": 0.035205981363210306
+      },
+      "investorMedianRate": {
+        "current": 7.375,
+        "prior": 7.625,
+        "abs": -0.25,
+        "pct": -0.03278688524590164
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.22956292554359764,
+        "prior": 0.20065476819093886,
+        "abs": 0.02890815735265878,
+        "pct": 0.1440691273538558
+      },
+      "investorOriginations": {
+        "current": 22765,
+        "prior": 18938,
+        "abs": 3827,
+        "pct": 0.20208047312282185
+      },
+      "investorVolume": {
+        "current": 4872395000,
+        "prior": 3839390000,
+        "abs": 1033005000,
+        "pct": 0.2690544591718997
+      }
+    },
+    {
+      "abbr": "SD",
+      "name": "South Dakota",
+      "slug": "south-dakota",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 125,
+        "abs": -37,
+        "pct": -0.296
+      },
+      "denialRate": {
+        "current": 0.06607929515418502,
+        "prior": 0.08557213930348259,
+        "abs": -0.01949284414929757,
+        "pct": -0.2277942833726053
+      },
+      "investorShare": {
+        "current": 0.07536437966583719,
+        "prior": 0.07272295639787925,
+        "abs": 0.0026414232679579375,
+        "pct": 0.03632172561173499
+      },
+      "businessPurposeShare": {
+        "current": 0.6452830188679245,
+        "prior": 0.6474428726877041,
+        "abs": -0.002159853819779567,
+        "pct": -0.0033359758997939864
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.75,
+        "abs": -0.5,
+        "pct": -0.06451612903225806
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.5,
+        "abs": -0.125,
+        "pct": -0.019230769230769232
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.07547169811320754,
+        "prior": 0.05767138193688792,
+        "abs": 0.017800316176319622,
+        "pct": 0.30865076539693836
+      },
+      "investorOriginations": {
+        "current": 1060,
+        "prior": 919,
+        "abs": 141,
+        "pct": 0.15342763873775844
+      },
+      "investorVolume": {
+        "current": 253160000,
+        "prior": 200155000,
+        "abs": 53005000,
+        "pct": 0.2648197646823712
+      }
+    },
+    {
+      "abbr": "TN",
+      "name": "Tennessee",
+      "slug": "tennessee",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 88,
+        "abs": 0,
+        "pct": 0
+      },
+      "denialRate": {
+        "current": 0.14703483630432249,
+        "prior": 0.14328808446455504,
+        "abs": 0.0037467518397674426,
+        "pct": 0.026148383892271733
+      },
+      "investorShare": {
+        "current": 0.10618378017738392,
+        "prior": 0.10535228986395491,
+        "abs": 0.0008314903134290091,
+        "pct": 0.00789247499511156
+      },
+      "businessPurposeShare": {
+        "current": 0.6754541729271958,
+        "prior": 0.6739895897121861,
+        "abs": 0.0014645832150096405,
+        "pct": 0.0021730056923209475
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.5,
+        "abs": -0.25,
+        "pct": -0.03333333333333333
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.624,
+        "abs": -0.24899999999999967,
+        "pct": -0.03759057971014488
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.16923917497609617,
+        "prior": 0.14712186160440907,
+        "abs": 0.022117313371687097,
+        "pct": 0.15033328922357972
+      },
+      "investorOriginations": {
+        "current": 14642,
+        "prior": 13064,
+        "abs": 1578,
+        "pct": 0.120789957134109
+      },
+      "investorVolume": {
+        "current": 4179270000,
+        "prior": 3523680000,
+        "abs": 655590000,
+        "pct": 0.18605264950279254
+      }
+    },
+    {
+      "abbr": "TX",
+      "name": "Texas",
+      "slug": "texas",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 88,
+        "abs": 0,
+        "pct": 0
+      },
+      "denialRate": {
+        "current": 0.1823442760942761,
+        "prior": 0.17200511251404005,
+        "abs": 0.010339163580236038,
+        "pct": 0.06010962947041528
+      },
+      "investorShare": {
+        "current": 0.10148375315327472,
+        "prior": 0.10005710060002433,
+        "abs": 0.0014266525532503904,
+        "pct": 0.014258383909737672
+      },
+      "businessPurposeShare": {
+        "current": 0.6889503710376185,
+        "prior": 0.6471606324258583,
+        "abs": 0.04178973861176016,
+        "pct": 0.06457398135469525
+      },
+      "investorMedianRate": {
+        "current": 7.125,
+        "prior": 7.375,
+        "abs": -0.25,
+        "pct": -0.03389830508474576
+      },
+      "ownerMedianRate": {
+        "current": 6.25,
+        "prior": 6.5,
+        "abs": -0.25,
+        "pct": -0.038461538461538464
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.19090207180543045,
+        "prior": 0.1468565815324165,
+        "abs": 0.04404549027301394,
+        "pct": 0.2999217999861417
+      },
+      "investorOriginations": {
+        "current": 46626,
+        "prior": 42756,
+        "abs": 3870,
+        "pct": 0.09051361212461409
+      },
+      "investorVolume": {
+        "current": 12398440000,
+        "prior": 11197790000,
+        "abs": 1200650000,
+        "pct": 0.1072220500652361
+      }
+    },
+    {
+      "abbr": "VA",
+      "name": "Virginia",
+      "slug": "virginia",
+      "ratePremiumBps": {
+        "current": 88,
+        "prior": 88,
+        "abs": 0,
+        "pct": 0
+      },
+      "denialRate": {
+        "current": 0.17151143184730558,
+        "prior": 0.16409390577263225,
+        "abs": 0.007417526074673331,
+        "pct": 0.04520293450112048
+      },
+      "investorShare": {
+        "current": 0.07678123847562615,
+        "prior": 0.07324461602406498,
+        "abs": 0.0035366224515611666,
+        "pct": 0.048285084195119364
+      },
+      "businessPurposeShare": {
+        "current": 0.6951318788668186,
+        "prior": 0.64759065114937,
+        "abs": 0.04754122771744862,
+        "pct": 0.07341246763379078
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.5,
+        "abs": -0.25,
+        "pct": -0.03333333333333333
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.624,
+        "abs": -0.24899999999999967,
+        "pct": -0.03759057971014488
+      },
+      "investorMedianLtv": {
+        "current": 74.4,
+        "prior": 75,
+        "abs": -0.5999999999999943,
+        "pct": -0.007999999999999924
+      },
+      "cashOutShare": {
+        "current": 0.19317811787691305,
+        "prior": 0.1603347119361354,
+        "abs": 0.03284340594077764,
+        "pct": 0.2048427663864818
+      },
+      "investorOriginations": {
+        "current": 12284,
+        "prior": 10397,
+        "abs": 1887,
+        "pct": 0.18149466192170818
+      },
+      "investorVolume": {
+        "current": 3617260000,
+        "prior": 2884075000,
+        "abs": 733185000,
+        "pct": 0.2542184235846849
+      }
+    },
+    {
+      "abbr": "DC",
+      "name": "District of Columbia",
+      "slug": "district-of-columbia",
+      "ratePremiumBps": {
+        "current": 87,
+        "prior": 113,
+        "abs": -26,
+        "pct": -0.23008849557522124
+      },
+      "denialRate": {
+        "current": 0.3167883211678832,
+        "prior": 0.2953929539295393,
+        "abs": 0.0213953672383439,
+        "pct": 0.07243018817384311
+      },
+      "investorShare": {
+        "current": 0.11843603694799443,
+        "prior": 0.10874111250522794,
+        "abs": 0.009694924442766484,
+        "pct": 0.08915601670251792
+      },
+      "businessPurposeShare": {
+        "current": 0.75,
+        "prior": 0.7128205128205128,
+        "abs": 0.03717948717948716,
+        "pct": 0.05215827338129493
+      },
+      "investorMedianRate": {
+        "current": 7.249,
+        "prior": 7.625,
+        "abs": -0.37600000000000033,
+        "pct": -0.04931147540983611
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.5,
+        "abs": -0.125,
+        "pct": -0.019230769230769232
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 70,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.2841880341880342,
+        "prior": 0.22435897435897437,
+        "abs": 0.05982905982905981,
+        "pct": 0.26666666666666655
+      },
+      "investorOriginations": {
+        "current": 936,
+        "prior": 780,
+        "abs": 156,
+        "pct": 0.2
+      },
+      "investorVolume": {
+        "current": 571530000,
+        "prior": 475710000,
+        "abs": 95820000,
+        "pct": 0.2014252380652078
+      }
+    },
+    {
+      "abbr": "AR",
+      "name": "Arkansas",
+      "slug": "arkansas",
+      "ratePremiumBps": {
+        "current": 86,
+        "prior": 138,
+        "abs": -52,
+        "pct": -0.37681159420289856
+      },
+      "denialRate": {
+        "current": 0.08340384382932431,
+        "prior": 0.07911072614407391,
+        "abs": 0.004293117685250397,
+        "pct": 0.05426720110534581
+      },
+      "investorShare": {
+        "current": 0.14453996149667384,
+        "prior": 0.14029030129755882,
+        "abs": 0.0042496601991150185,
+        "pct": 0.030291903002627355
+      },
+      "businessPurposeShare": {
+        "current": 0.6527759461954371,
+        "prior": 0.6546480639598683,
+        "abs": -0.0018721177644311915,
+        "pct": -0.0028597316138186234
+      },
+      "investorMedianRate": {
+        "current": 7.35,
+        "prior": 8,
+        "abs": -0.6500000000000004,
+        "pct": -0.08125000000000004
+      },
+      "ownerMedianRate": {
+        "current": 6.49,
+        "prior": 6.625,
+        "abs": -0.1349999999999998,
+        "pct": -0.020377358490566006
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.06316761176315443,
+        "prior": 0.046559021790249254,
+        "abs": 0.016608589972905173,
+        "pct": 0.3567211967581216
+      },
+      "investorOriginations": {
+        "current": 7583,
+        "prior": 6379,
+        "abs": 1204,
+        "pct": 0.18874431729111146
+      },
+      "investorVolume": {
+        "current": 1512815000,
+        "prior": 1144305000,
+        "abs": 368510000,
+        "pct": 0.3220382677695195
+      }
+    },
+    {
+      "abbr": "DE",
+      "name": "Delaware",
+      "slug": "delaware",
+      "ratePremiumBps": {
+        "current": 76,
+        "prior": 88,
+        "abs": -12,
+        "pct": -0.13636363636363635
+      },
+      "denialRate": {
+        "current": 0.15753086419753087,
+        "prior": 0.1756440281030445,
+        "abs": -0.018113163905513624,
+        "pct": -0.1031242798353909
+      },
+      "investorShare": {
+        "current": 0.08052107424363997,
+        "prior": 0.07572335161880177,
+        "abs": 0.004797722624838199,
+        "pct": 0.06335856142488741
+      },
+      "businessPurposeShare": {
+        "current": 0.7514654161781946,
+        "prior": 0.6825284090909091,
+        "abs": 0.06893700708728556,
+        "pct": 0.1010023995618086
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.5,
+        "abs": -0.25,
+        "pct": -0.03333333333333333
+      },
+      "ownerMedianRate": {
+        "current": 6.49,
+        "prior": 6.625,
+        "abs": -0.1349999999999998,
+        "pct": -0.020377358490566006
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.26318874560375144,
+        "prior": 0.22514204545454544,
+        "abs": 0.038046700149206,
+        "pct": 0.16898975965325566
+      },
+      "investorOriginations": {
+        "current": 1706,
+        "prior": 1408,
+        "abs": 298,
+        "pct": 0.21164772727272727
+      },
+      "investorVolume": {
+        "current": 454110000,
+        "prior": 355580000,
+        "abs": 98530000,
+        "pct": 0.2770965746104955
+      }
+    },
+    {
+      "abbr": "NM",
+      "name": "New Mexico",
+      "slug": "new-mexico",
+      "ratePremiumBps": {
+        "current": 76,
+        "prior": 88,
+        "abs": -12,
+        "pct": -0.13636363636363635
+      },
+      "denialRate": {
+        "current": 0.21224325412807088,
+        "prior": 0.21924365725227382,
+        "abs": -0.007000403124202942,
+        "pct": -0.03192978630231429
+      },
+      "investorShare": {
+        "current": 0.0636573697399681,
+        "prior": 0.05810680822259432,
+        "abs": 0.005550561517373785,
+        "pct": 0.09552342810003972
+      },
+      "businessPurposeShare": {
+        "current": 0.6554192229038854,
+        "prior": 0.6499080318822809,
+        "abs": 0.005511191021604578,
+        "pct": 0.00847995524173308
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.5,
+        "abs": -0.25,
+        "pct": -0.03333333333333333
+      },
+      "ownerMedianRate": {
+        "current": 6.49,
+        "prior": 6.625,
+        "abs": -0.1349999999999998,
+        "pct": -0.020377358490566006
+      },
+      "investorMedianLtv": {
+        "current": 74.2,
+        "prior": 73.7,
+        "abs": 0.5,
+        "pct": 0.006784260515603799
+      },
+      "cashOutShare": {
+        "current": 0.2770961145194274,
+        "prior": 0.24770079705702022,
+        "abs": 0.029395317462407172,
+        "pct": 0.11867268015145074
+      },
+      "investorOriginations": {
+        "current": 1956,
+        "prior": 1631,
+        "abs": 325,
+        "pct": 0.19926425505824646
+      },
+      "investorVolume": {
+        "current": 504440000,
+        "prior": 383895000,
+        "abs": 120545000,
+        "pct": 0.31400513161150834
+      }
+    },
+    {
+      "abbr": "WV",
+      "name": "West Virginia",
+      "slug": "west-virginia",
+      "ratePremiumBps": {
+        "current": 76,
+        "prior": 94,
+        "abs": -18,
+        "pct": -0.19148936170212766
+      },
+      "denialRate": {
+        "current": 0.14903403863845446,
+        "prior": 0.14546430488459475,
+        "abs": 0.0035697337538597163,
+        "pct": 0.02454027300162602
+      },
+      "investorShare": {
+        "current": 0.08157685862950878,
+        "prior": 0.07696398356296834,
+        "abs": 0.004612875066540442,
+        "pct": 0.05993550298454085
+      },
+      "businessPurposeShare": {
+        "current": 0.5713513513513514,
+        "prior": 0.5835427135678392,
+        "abs": -0.012191362216487756,
+        "pct": -0.020891979169696994
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.5,
+        "abs": -0.25,
+        "pct": -0.03333333333333333
+      },
+      "ownerMedianRate": {
+        "current": 6.49,
+        "prior": 6.562,
+        "abs": -0.07200000000000006,
+        "pct": -0.0109722645534898
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.1308108108108108,
+        "prior": 0.10552763819095477,
+        "abs": 0.025283172619856034,
+        "pct": 0.23958815958815957
+      },
+      "investorOriginations": {
+        "current": 1850,
+        "prior": 1592,
+        "abs": 258,
+        "pct": 0.1620603015075377
+      },
+      "investorVolume": {
+        "current": 328210000,
+        "prior": 272620000,
+        "abs": 55590000,
+        "pct": 0.20391020468050766
+      }
+    },
+    {
+      "abbr": "AZ",
+      "name": "Arizona",
+      "slug": "arizona",
+      "ratePremiumBps": {
+        "current": 75,
+        "prior": 88,
+        "abs": -13,
+        "pct": -0.14772727272727273
+      },
+      "denialRate": {
+        "current": 0.18380245461894612,
+        "prior": 0.1860768943635685,
+        "abs": -0.0022744397446223807,
+        "pct": -0.012223117504199313
+      },
+      "investorShare": {
+        "current": 0.07802499666289632,
+        "prior": 0.0692904127871874,
+        "abs": 0.008734583875708926,
+        "pct": 0.12605761063273752
+      },
+      "businessPurposeShare": {
+        "current": 0.6820637493246894,
+        "prior": 0.6597110754414125,
+        "abs": 0.022352673883276886,
+        "pct": 0.033882520265891725
+      },
+      "investorMedianRate": {
+        "current": 7.125,
+        "prior": 7.375,
+        "abs": -0.25,
+        "pct": -0.03389830508474576
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.5,
+        "abs": -0.125,
+        "pct": -0.019230769230769232
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 70,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.2276247073653881,
+        "prior": 0.20110066498509516,
+        "abs": 0.026524042380292934,
+        "pct": 0.13189435441329245
+      },
+      "investorOriginations": {
+        "current": 11106,
+        "prior": 8722,
+        "abs": 2384,
+        "pct": 0.27333180463196516
+      },
+      "investorVolume": {
+        "current": 4333690000,
+        "prior": 3245070000,
+        "abs": 1088620000,
+        "pct": 0.3354688804863994
+      }
+    },
+    {
+      "abbr": "CA",
+      "name": "California",
+      "slug": "california",
+      "ratePremiumBps": {
+        "current": 75,
+        "prior": 88,
+        "abs": -13,
+        "pct": -0.14772727272727273
+      },
+      "denialRate": {
+        "current": 0.18379334204659029,
+        "prior": 0.1843100009497578,
+        "abs": -0.0005166589031675162,
+        "pct": -0.0028032060143516327
+      },
+      "investorShare": {
+        "current": 0.11799592320328633,
+        "prior": 0.10940051615072824,
+        "abs": 0.008595407052558096,
+        "pct": 0.07856824953838099
+      },
+      "businessPurposeShare": {
+        "current": 0.7192080177838062,
+        "prior": 0.7056261934702622,
+        "abs": 0.013581824313543933,
+        "pct": 0.019247902698663527
+      },
+      "investorMedianRate": {
+        "current": 7.125,
+        "prior": 7.5,
+        "abs": -0.375,
+        "pct": -0.05
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.625,
+        "abs": -0.25,
+        "pct": -0.03773584905660377
+      },
+      "investorMedianLtv": {
+        "current": 68.2,
+        "prior": 69,
+        "abs": -0.7999999999999972,
+        "pct": -0.011594202898550683
+      },
+      "cashOutShare": {
+        "current": 0.2823179232131419,
+        "prior": 0.24554049648362908,
+        "abs": 0.03677742672951284,
+        "pct": 0.14978151162924322
+      },
+      "investorOriginations": {
+        "current": 53082,
+        "prior": 42942,
+        "abs": 10140,
+        "pct": 0.2361324577336873
+      },
+      "investorVolume": {
+        "current": 36062990000,
+        "prior": 26935470000,
+        "abs": 9127520000,
+        "pct": 0.33886618648198824
+      }
+    },
+    {
+      "abbr": "CO",
+      "name": "Colorado",
+      "slug": "colorado",
+      "ratePremiumBps": {
+        "current": 75,
+        "prior": 88,
+        "abs": -13,
+        "pct": -0.14772727272727273
+      },
+      "denialRate": {
+        "current": 0.18621152555374437,
+        "prior": 0.18320173932944273,
+        "abs": 0.003009786224301647,
+        "pct": 0.016428808128777072
+      },
+      "investorShare": {
+        "current": 0.06738441750232237,
+        "prior": 0.06508201354887533,
+        "abs": 0.002302403953447038,
+        "pct": 0.03537696251081687
+      },
+      "businessPurposeShare": {
+        "current": 0.6925886650170849,
+        "prior": 0.6755393667694032,
+        "abs": 0.017049298247681755,
+        "pct": 0.025238052860214095
+      },
+      "investorMedianRate": {
+        "current": 7.125,
+        "prior": 7.375,
+        "abs": -0.25,
+        "pct": -0.03389830508474576
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.5,
+        "abs": -0.125,
+        "pct": -0.019230769230769232
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 70,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.19865676917638742,
+        "prior": 0.15872793499579715,
+        "abs": 0.03992883418059026,
+        "pct": 0.2515551795066666
+      },
+      "investorOriginations": {
+        "current": 8487,
+        "prior": 7138,
+        "abs": 1349,
+        "pct": 0.18898851218828805
+      },
+      "investorVolume": {
+        "current": 3803135000,
+        "prior": 3179980000,
+        "abs": 623155000,
+        "pct": 0.195961924288832
+      }
+    },
+    {
+      "abbr": "IN",
+      "name": "Indiana",
+      "slug": "indiana",
+      "ratePremiumBps": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "denialRate": {
+        "current": 0.17062043795620438,
+        "prior": 0.15424610051993068,
+        "abs": 0.0163743374362737,
+        "pct": 0.10615722135651601
+      },
+      "investorShare": {
+        "current": 0.07250801293672318,
+        "prior": 0.07096117493092918,
+        "abs": 0.001546838005793999,
+        "pct": 0.02179837083165027
+      },
+      "businessPurposeShare": {
+        "current": 0.7138713871387139,
+        "prior": 0.673155737704918,
+        "abs": 0.04071564943379591,
+        "pct": 0.060484739493736395
+      },
+      "investorMedianRate": {
+        "current": 7.374,
+        "prior": 7.5,
+        "abs": -0.12600000000000033,
+        "pct": -0.016800000000000044
+      },
+      "ownerMedianRate": {
+        "current": 6.625,
+        "prior": 6.75,
+        "abs": -0.125,
+        "pct": -0.018518518518518517
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.21652165216521652,
+        "prior": 0.17782331511839708,
+        "abs": 0.03869833704681944,
+        "pct": 0.21762240244511008
+      },
+      "investorOriginations": {
+        "current": 9999,
+        "prior": 8784,
+        "abs": 1215,
+        "pct": 0.13831967213114754
+      },
+      "investorVolume": {
+        "current": 2666035000,
+        "prior": 1536920000,
+        "abs": 1129115000,
+        "pct": 0.7346608802019624
+      }
+    },
+    {
+      "abbr": "KY",
+      "name": "Kentucky",
+      "slug": "kentucky",
+      "ratePremiumBps": {
+        "current": 75,
+        "prior": 100,
+        "abs": -25,
+        "pct": -0.25
+      },
+      "denialRate": {
+        "current": 0.10664160401002507,
+        "prior": 0.11873124732104587,
+        "abs": -0.012089643311020803,
+        "pct": -0.10182360232711744
+      },
+      "investorShare": {
+        "current": 0.09422167005894637,
+        "prior": 0.09329481342549877,
+        "abs": 0.0009268566334476036,
+        "pct": 0.009934706972620205
+      },
+      "businessPurposeShare": {
+        "current": 0.6150932809650722,
+        "prior": 0.5886835278858625,
+        "abs": 0.026409753079209675,
+        "pct": 0.04486239520588413
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.625,
+        "abs": -0.375,
+        "pct": -0.04918032786885246
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.1401318558002525,
+        "prior": 0.09030479896238651,
+        "abs": 0.04982705683786599,
+        "pct": 0.5517653259891516
+      },
+      "investorOriginations": {
+        "current": 7129,
+        "prior": 6168,
+        "abs": 961,
+        "pct": 0.1558041504539559
+      },
+      "investorVolume": {
+        "current": 1439225000,
+        "prior": 1156930000,
+        "abs": 282295000,
+        "pct": 0.2440035265746415
+      }
+    },
+    {
+      "abbr": "ME",
+      "name": "Maine",
+      "slug": "maine",
+      "ratePremiumBps": {
+        "current": 75,
+        "prior": 88,
+        "abs": -13,
+        "pct": -0.14772727272727273
+      },
+      "denialRate": {
+        "current": 0.21027131782945738,
+        "prior": 0.20315904139433552,
+        "abs": 0.007112276435121856,
+        "pct": 0.035008416983602485
+      },
+      "investorShare": {
+        "current": 0.06497648090568445,
+        "prior": 0.06726746057289991,
+        "abs": -0.002290979667215462,
+        "pct": -0.03405776950257627
+      },
+      "businessPurposeShare": {
+        "current": 0.7110429447852761,
+        "prior": 0.7265892002734108,
+        "abs": -0.015546255488134708,
+        "pct": -0.021396210516595557
+      },
+      "investorMedianRate": {
+        "current": 7.371,
+        "prior": 7.625,
+        "abs": -0.25399999999999956,
+        "pct": -0.033311475409836006
+      },
+      "ownerMedianRate": {
+        "current": 6.625,
+        "prior": 6.75,
+        "abs": -0.125,
+        "pct": -0.018518518518518517
+      },
+      "investorMedianLtv": {
+        "current": 74.6,
+        "prior": 75,
+        "abs": -0.4000000000000057,
+        "pct": -0.0053333333333334095
+      },
+      "cashOutShare": {
+        "current": 0.17239263803680982,
+        "prior": 0.1496924128503076,
+        "abs": 0.02270022518650222,
+        "pct": 0.15164579656553764
+      },
+      "investorOriginations": {
+        "current": 1630,
+        "prior": 1463,
+        "abs": 167,
+        "pct": 0.11414900888585099
+      },
+      "investorVolume": {
+        "current": 537020000,
+        "prior": 453165000,
+        "abs": 83855000,
+        "pct": 0.18504297551664406
+      }
+    },
+    {
+      "abbr": "NV",
+      "name": "Nevada",
+      "slug": "nevada",
+      "ratePremiumBps": {
+        "current": 75,
+        "prior": 100,
+        "abs": -25,
+        "pct": -0.25
+      },
+      "denialRate": {
+        "current": 0.17399819222657428,
+        "prior": 0.1680737961225766,
+        "abs": 0.00592439610399767,
+        "pct": 0.03524877905225032
+      },
+      "investorShare": {
+        "current": 0.09780941168075921,
+        "prior": 0.10103484287477452,
+        "abs": -0.0032254311940153046,
+        "pct": -0.03192394922623868
+      },
+      "businessPurposeShare": {
+        "current": 0.7432062739376254,
+        "prior": 0.7455365532794588,
+        "abs": -0.0023302793418333856,
+        "pct": -0.0031256406296686274
+      },
+      "investorMedianRate": {
+        "current": 7.125,
+        "prior": 7.5,
+        "abs": -0.375,
+        "pct": -0.05
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.5,
+        "abs": -0.125,
+        "pct": -0.019230769230769232
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 70,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.1884005106693416,
+        "prior": 0.141326818267243,
+        "abs": 0.047073692402098605,
+        "pct": 0.333083932541977
+      },
+      "investorOriginations": {
+        "current": 5483,
+        "prior": 5321,
+        "abs": 162,
+        "pct": 0.030445404999060326
+      },
+      "investorVolume": {
+        "current": 1940915000,
+        "prior": 1775195000,
+        "abs": 165720000,
+        "pct": 0.09335312458631305
+      }
+    },
+    {
+      "abbr": "NY",
+      "name": "New York",
+      "slug": "new-york",
+      "ratePremiumBps": {
+        "current": 75,
+        "prior": 100,
+        "abs": -25,
+        "pct": -0.25
+      },
+      "denialRate": {
+        "current": 0.20444002650762094,
+        "prior": 0.20221063422026117,
+        "abs": 0.0022293922873597716,
+        "pct": 0.011025099129709323
+      },
+      "investorShare": {
+        "current": 0.1257097314655373,
+        "prior": 0.11581637604736178,
+        "abs": 0.009893355418175515,
+        "pct": 0.08542276796961545
+      },
+      "businessPurposeShare": {
+        "current": 0.8630200379471517,
+        "prior": 0.8440782122905028,
+        "abs": 0.018941825656648814,
+        "pct": 0.02244084183294816
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.625,
+        "abs": -0.375,
+        "pct": -0.04918032786885246
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 70.6,
+        "abs": -0.5999999999999943,
+        "pct": -0.008498583569405018
+      },
+      "cashOutShare": {
+        "current": 0.27604238974501366,
+        "prior": 0.22474860335195532,
+        "abs": 0.051293786393058344,
+        "pct": 0.22822738663578035
+      },
+      "investorOriginations": {
+        "current": 21609,
+        "prior": 17900,
+        "abs": 3709,
+        "pct": 0.20720670391061452
+      },
+      "investorVolume": {
+        "current": 11404705000,
+        "prior": 8537390000,
+        "abs": 2867315000,
+        "pct": 0.33585381480757
+      }
+    },
+    {
+      "abbr": "NC",
+      "name": "North Carolina",
+      "slug": "north-carolina",
+      "ratePremiumBps": {
+        "current": 75,
+        "prior": 85,
+        "abs": -10,
+        "pct": -0.11764705882352941
+      },
+      "denialRate": {
+        "current": 0.16753129117259552,
+        "prior": 0.15896776563504453,
+        "abs": 0.008563525537550992,
+        "pct": 0.053869572257881436
+      },
+      "investorShare": {
+        "current": 0.0921583999562431,
+        "prior": 0.09426271692364699,
+        "abs": -0.002104316967403888,
+        "pct": -0.022323958358938342
+      },
+      "businessPurposeShare": {
+        "current": 0.7105198081012909,
+        "prior": 0.6750382179515177,
+        "abs": 0.035481590149773146,
+        "pct": 0.05256234270327119
+      },
+      "investorMedianRate": {
+        "current": 7,
+        "prior": 7.375,
+        "abs": -0.375,
+        "pct": -0.05084745762711865
+      },
+      "ownerMedianRate": {
+        "current": 6.25,
+        "prior": 6.525,
+        "abs": -0.27500000000000036,
+        "pct": -0.04214559386973185
+      },
+      "investorMedianLtv": {
+        "current": 74.7,
+        "prior": 75,
+        "abs": -0.29999999999999716,
+        "pct": -0.003999999999999962
+      },
+      "cashOutShare": {
+        "current": 0.16894999752707848,
+        "prior": 0.13818519327364054,
+        "abs": 0.030764804253437944,
+        "pct": 0.22263459293005505
+      },
+      "investorOriginations": {
+        "current": 20219,
+        "prior": 18316,
+        "abs": 1903,
+        "pct": 0.10389823105481547
+      },
+      "investorVolume": {
+        "current": 5708015000,
+        "prior": 4968310000,
+        "abs": 739705000,
+        "pct": 0.14888463078994668
+      }
+    },
+    {
+      "abbr": "WY",
+      "name": "Wyoming",
+      "slug": "wyoming",
+      "ratePremiumBps": {
+        "current": 75,
+        "prior": 88,
+        "abs": -13,
+        "pct": -0.14772727272727273
+      },
+      "denialRate": {
+        "current": 0.12128418549346016,
+        "prior": 0.14664804469273743,
+        "abs": -0.025363859199277264,
+        "pct": -0.17295736368269068
+      },
+      "investorShare": {
+        "current": 0.0706365895622252,
+        "prior": 0.06983655274888559,
+        "abs": 0.000800036813339608,
+        "pct": 0.011455846284628854
+      },
+      "businessPurposeShare": {
+        "current": 0.5872801082543978,
+        "prior": 0.6104746317512275,
+        "abs": -0.02319452349682971,
+        "pct": -0.037994246264243844
+      },
+      "investorMedianRate": {
+        "current": 7,
+        "prior": 7.375,
+        "abs": -0.375,
+        "pct": -0.05084745762711865
+      },
+      "ownerMedianRate": {
+        "current": 6.25,
+        "prior": 6.5,
+        "abs": -0.25,
+        "pct": -0.038461538461538464
+      },
+      "investorMedianLtv": {
+        "current": 73.1,
+        "prior": 74.6,
+        "abs": -1.5,
+        "pct": -0.020107238605898126
+      },
+      "cashOutShare": {
+        "current": 0.12584573748308525,
+        "prior": 0.11783960720130933,
+        "abs": 0.008006130281775922,
+        "pct": 0.06794091114118178
+      },
+      "investorOriginations": {
+        "current": 739,
+        "prior": 611,
+        "abs": 128,
+        "pct": 0.20949263502454993
+      },
+      "investorVolume": {
+        "current": 283095000,
+        "prior": 175255000,
+        "abs": 107840000,
+        "pct": 0.6153319448803173
+      }
+    },
+    {
+      "abbr": "IL",
+      "name": "Illinois",
+      "slug": "illinois",
+      "ratePremiumBps": {
+        "current": 72,
+        "prior": 88,
+        "abs": -16,
+        "pct": -0.18181818181818182
+      },
+      "denialRate": {
+        "current": 0.16813875795158117,
+        "prior": 0.16458588786088507,
+        "abs": 0.003552870090696103,
+        "pct": 0.021586723727487125
+      },
+      "investorShare": {
+        "current": 0.09578588479556509,
+        "prior": 0.09040628241935873,
+        "abs": 0.005379602376206355,
+        "pct": 0.05950474051407758
+      },
+      "businessPurposeShare": {
+        "current": 0.6877372503713484,
+        "prior": 0.6641537127226633,
+        "abs": 0.023583537648685038,
+        "pct": 0.03550915578263586
+      },
+      "investorMedianRate": {
+        "current": 7.35,
+        "prior": 7.625,
+        "abs": -0.27500000000000036,
+        "pct": -0.03606557377049185
+      },
+      "ownerMedianRate": {
+        "current": 6.625,
+        "prior": 6.75,
+        "abs": -0.125,
+        "pct": -0.018518518518518517
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.19618198822688013,
+        "prior": 0.1691240242844753,
+        "abs": 0.02705796394240484,
+        "pct": 0.1599888842338091
+      },
+      "investorOriginations": {
+        "current": 18177,
+        "prior": 14989,
+        "abs": 3188,
+        "pct": 0.21268930549069318
+      },
+      "investorVolume": {
+        "current": 5426755000,
+        "prior": 3045795000,
+        "abs": 2380960000,
+        "pct": 0.7817203718569372
+      }
+    },
+    {
+      "abbr": "IA",
+      "name": "Iowa",
+      "slug": "iowa",
+      "ratePremiumBps": {
+        "current": 63,
+        "prior": 75,
+        "abs": -12,
+        "pct": -0.16
+      },
+      "denialRate": {
+        "current": 0.06873920552677029,
+        "prior": 0.07018239492466297,
+        "abs": -0.0014431893978926746,
+        "pct": -0.020563410516866245
+      },
+      "investorShare": {
+        "current": 0.09051232122473646,
+        "prior": 0.09037131240726824,
+        "abs": 0.00014100881746821614,
+        "pct": 0.001560327206854587
+      },
+      "businessPurposeShare": {
+        "current": 0.48089762611275966,
+        "prior": 0.4660980810234542,
+        "abs": 0.014799545089305477,
+        "pct": 0.0317519974697359
+      },
+      "investorMedianRate": {
+        "current": 7,
+        "prior": 7.25,
+        "abs": -0.25,
+        "pct": -0.034482758620689655
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.5,
+        "abs": -0.125,
+        "pct": -0.019230769230769232
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.06064540059347181,
+        "prior": 0.07014925373134329,
+        "abs": -0.009503853137871478,
+        "pct": -0.13548045962497637
+      },
+      "investorOriginations": {
+        "current": 5392,
+        "prior": 4690,
+        "abs": 702,
+        "pct": 0.14968017057569297
+      },
+      "investorVolume": {
+        "current": 860730000,
+        "prior": 705100000,
+        "abs": 155630000,
+        "pct": 0.22072046518224364
+      }
+    },
+    {
+      "abbr": "MN",
+      "name": "Minnesota",
+      "slug": "minnesota",
+      "ratePremiumBps": {
+        "current": 63,
+        "prior": 88,
+        "abs": -25,
+        "pct": -0.2840909090909091
+      },
+      "denialRate": {
+        "current": 0.1101983880967142,
+        "prior": 0.11204334906484881,
+        "abs": -0.0018449609681346069,
+        "pct": -0.0164664925096694
+      },
+      "investorShare": {
+        "current": 0.05960093019392882,
+        "prior": 0.05839617436086077,
+        "abs": 0.0012047558330680538,
+        "pct": 0.020630732171310263
+      },
+      "businessPurposeShare": {
+        "current": 0.5209893746734019,
+        "prior": 0.4795275590551181,
+        "abs": 0.04146181561828377,
+        "pct": 0.08646388478689719
+      },
+      "investorMedianRate": {
+        "current": 7.125,
+        "prior": 7.5,
+        "abs": -0.375,
+        "pct": -0.05
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.09719561052081518,
+        "prior": 0.07440944881889763,
+        "abs": 0.02278616170191755,
+        "pct": 0.30622672340143164
+      },
+      "investorOriginations": {
+        "current": 5741,
+        "prior": 5080,
+        "abs": 661,
+        "pct": 0.13011811023622047
+      },
+      "investorVolume": {
+        "current": 1461275000,
+        "prior": 1177260000,
+        "abs": 284015000,
+        "pct": 0.24125087066578327
+      }
+    },
+    {
+      "abbr": "NE",
+      "name": "Nebraska",
+      "slug": "nebraska",
+      "ratePremiumBps": {
+        "current": 63,
+        "prior": 113,
+        "abs": -50,
+        "pct": -0.4424778761061947
+      },
+      "denialRate": {
+        "current": 0.08647281921618205,
+        "prior": 0.0783661119515885,
+        "abs": 0.008106707264593546,
+        "pct": 0.10344659270070143
+      },
+      "investorShare": {
+        "current": 0.10088515343590317,
+        "prior": 0.09946772034092022,
+        "abs": 0.0014174330949829478,
+        "pct": 0.014250181768766518
+      },
+      "businessPurposeShare": {
+        "current": 0.5543869360642125,
+        "prior": 0.5531845042678923,
+        "abs": 0.0012024317963201803,
+        "pct": 0.002173654155247044
+      },
+      "investorMedianRate": {
+        "current": 7.125,
+        "prior": 7.75,
+        "abs": -0.625,
+        "pct": -0.08064516129032258
+      },
+      "ownerMedianRate": {
+        "current": 6.49,
+        "prior": 6.625,
+        "abs": -0.1349999999999998,
+        "pct": -0.020377358490566006
+      },
+      "investorMedianLtv": {
+        "current": 74.1,
+        "prior": 75,
+        "abs": -0.9000000000000057,
+        "pct": -0.012000000000000077
+      },
+      "cashOutShare": {
+        "current": 0.07888181566565182,
+        "prior": 0.06401838476690742,
+        "abs": 0.014863430898744395,
+        "pct": 0.2321744129106432
+      },
+      "investorOriginations": {
+        "current": 3613,
+        "prior": 3046,
+        "abs": 567,
+        "pct": 0.1861457649376231
+      },
+      "investorVolume": {
+        "current": 716055000,
+        "prior": 565030000,
+        "abs": 151025000,
+        "pct": 0.2672866927419783
+      }
+    },
+    {
+      "abbr": "NH",
+      "name": "New Hampshire",
+      "slug": "new-hampshire",
+      "ratePremiumBps": {
+        "current": 63,
+        "prior": 74,
+        "abs": -11,
+        "pct": -0.14864864864864866
+      },
+      "denialRate": {
+        "current": 0.18656302054414214,
+        "prior": 0.20334261838440112,
+        "abs": -0.01677959784025898,
+        "pct": -0.0825188441733284
+      },
+      "investorShare": {
+        "current": 0.056283376234200315,
+        "prior": 0.054455445544554455,
+        "abs": 0.0018279306896458597,
+        "pct": 0.033567454482587605
+      },
+      "businessPurposeShare": {
+        "current": 0.6969283276450512,
+        "prior": 0.7508741258741258,
+        "abs": -0.05394579822907464,
+        "pct": -0.07184399671019952
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.49,
+        "abs": -0.2400000000000002,
+        "pct": -0.03204272363150871
+      },
+      "ownerMedianRate": {
+        "current": 6.625,
+        "prior": 6.75,
+        "abs": -0.125,
+        "pct": -0.018518518518518517
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 74.8,
+        "abs": 0.20000000000000284,
+        "pct": 0.0026737967914438883
+      },
+      "cashOutShare": {
+        "current": 0.21569965870307167,
+        "prior": 0.1791958041958042,
+        "abs": 0.03650385450726748,
+        "pct": 0.20370931490884878
+      },
+      "investorOriginations": {
+        "current": 1465,
+        "prior": 1144,
+        "abs": 321,
+        "pct": 0.28059440559440557
+      },
+      "investorVolume": {
+        "current": 548085000,
+        "prior": 387350000,
+        "abs": 160735000,
+        "pct": 0.4149606299212598
+      }
+    },
+    {
+      "abbr": "OR",
+      "name": "Oregon",
+      "slug": "oregon",
+      "ratePremiumBps": {
+        "current": 63,
+        "prior": 75,
+        "abs": -12,
+        "pct": -0.16
+      },
+      "denialRate": {
+        "current": 0.1635096497498213,
+        "prior": 0.1801695713612812,
+        "abs": -0.016659921611459905,
+        "pct": -0.09246800936242974
+      },
+      "investorShare": {
+        "current": 0.07362609707760547,
+        "prior": 0.06396192786138213,
+        "abs": 0.009664169216223331,
+        "pct": 0.1510925254968464
+      },
+      "businessPurposeShare": {
+        "current": 0.7205725272377697,
+        "prior": 0.6630278655558748,
+        "abs": 0.05754466168189487,
+        "pct": 0.08679071374119413
+      },
+      "investorMedianRate": {
+        "current": 7.125,
+        "prior": 7.375,
+        "abs": -0.25,
+        "pct": -0.03389830508474576
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 70,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.2535782952360607,
+        "prior": 0.22378626831370296,
+        "abs": 0.029792026922357717,
+        "pct": 0.13312714469412992
+      },
+      "investorOriginations": {
+        "current": 4681,
+        "prior": 3481,
+        "abs": 1200,
+        "pct": 0.3447285262855501
+      },
+      "investorVolume": {
+        "current": 1726255000,
+        "prior": 1252775000,
+        "abs": 473480000,
+        "pct": 0.3779449621839516
+      }
+    },
+    {
+      "abbr": "RI",
+      "name": "Rhode Island",
+      "slug": "rhode-island",
+      "ratePremiumBps": {
+        "current": 63,
+        "prior": 88,
+        "abs": -25,
+        "pct": -0.2840909090909091
+      },
+      "denialRate": {
+        "current": 0.1866737176097303,
+        "prior": 0.18706404565630944,
+        "abs": -0.0003903280465791248,
+        "pct": -0.0020866011167975586
+      },
+      "investorShare": {
+        "current": 0.07963960231980116,
+        "prior": 0.07874209200909035,
+        "abs": 0.0008975103107108084,
+        "pct": 0.011398100911608948
+      },
+      "businessPurposeShare": {
+        "current": 0.7802340702210663,
+        "prior": 0.7285491419656787,
+        "abs": 0.05168492825538762,
+        "pct": 0.07094226769101383
+      },
+      "investorMedianRate": {
+        "current": 7.25,
+        "prior": 7.625,
+        "abs": -0.375,
+        "pct": -0.04918032786885246
+      },
+      "ownerMedianRate": {
+        "current": 6.625,
+        "prior": 6.75,
+        "abs": -0.125,
+        "pct": -0.018518518518518517
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 71.9,
+        "abs": -1.9000000000000057,
+        "pct": -0.026425591098748338
+      },
+      "cashOutShare": {
+        "current": 0.32769830949284784,
+        "prior": 0.250390015600624,
+        "abs": 0.07730829389222382,
+        "pct": 0.30875150395585965
+      },
+      "investorOriginations": {
+        "current": 1538,
+        "prior": 1282,
+        "abs": 256,
+        "pct": 0.1996879875195008
+      },
+      "investorVolume": {
+        "current": 682250000,
+        "prior": 537870000,
+        "abs": 144380000,
+        "pct": 0.26842917433580604
+      }
+    },
+    {
+      "abbr": "WA",
+      "name": "Washington",
+      "slug": "washington",
+      "ratePremiumBps": {
+        "current": 63,
+        "prior": 75,
+        "abs": -12,
+        "pct": -0.16
+      },
+      "denialRate": {
+        "current": 0.18881671348314608,
+        "prior": 0.18431782540512284,
+        "abs": 0.004498888078023233,
+        "pct": 0.02440831790487364
+      },
+      "investorShare": {
+        "current": 0.06990853866113915,
+        "prior": 0.06915992234799798,
+        "abs": 0.0007486163131411733,
+        "pct": 0.010824423853084965
+      },
+      "businessPurposeShare": {
+        "current": 0.7384482198896223,
+        "prior": 0.7193027428864394,
+        "abs": 0.01914547700318292,
+        "pct": 0.026616716247119233
+      },
+      "investorMedianRate": {
+        "current": 7,
+        "prior": 7.375,
+        "abs": -0.375,
+        "pct": -0.05084745762711865
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.625,
+        "abs": -0.25,
+        "pct": -0.03773584905660377
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 70,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.21382967211340764,
+        "prior": 0.17187900538323506,
+        "abs": 0.04195066673017259,
+        "pct": 0.24407091858971405
+      },
+      "investorOriginations": {
+        "current": 9241,
+        "prior": 7802,
+        "abs": 1439,
+        "pct": 0.1844398872084081
+      },
+      "investorVolume": {
+        "current": 4378455000,
+        "prior": 3698310000,
+        "abs": 680145000,
+        "pct": 0.18390697372583695
+      }
+    },
+    {
+      "abbr": "WI",
+      "name": "Wisconsin",
+      "slug": "wisconsin",
+      "ratePremiumBps": {
+        "current": 63,
+        "prior": 85,
+        "abs": -22,
+        "pct": -0.25882352941176473
+      },
+      "denialRate": {
+        "current": 0.12742581373857687,
+        "prior": 0.1285321330332583,
+        "abs": -0.0011063192946814404,
+        "pct": -0.008607336302395099
+      },
+      "investorShare": {
+        "current": 0.07490722540040724,
+        "prior": 0.0702535983550377,
+        "abs": 0.004653627045369549,
+        "pct": 0.06624040838238217
+      },
+      "businessPurposeShare": {
+        "current": 0.6756883972699459,
+        "prior": 0.636728837876614,
+        "abs": 0.038959559393331844,
+        "pct": 0.061187050241442754
+      },
+      "investorMedianRate": {
+        "current": 7.125,
+        "prior": 7.5,
+        "abs": -0.375,
+        "pct": -0.05
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.65,
+        "abs": -0.15000000000000036,
+        "pct": -0.02255639097744366
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.18051306189691693,
+        "prior": 0.16915351506456242,
+        "abs": 0.011359546832354517,
+        "pct": 0.0671552514177362
+      },
+      "investorOriginations": {
+        "current": 8498,
+        "prior": 6970,
+        "abs": 1528,
+        "pct": 0.21922525107604018
+      },
+      "investorVolume": {
+        "current": 1897500000,
+        "prior": 1396230000,
+        "abs": 501270000,
+        "pct": 0.3590167809028598
+      }
+    },
+    {
+      "abbr": "ID",
+      "name": "Idaho",
+      "slug": "idaho",
+      "ratePremiumBps": {
+        "current": 62,
+        "prior": 63,
+        "abs": -1,
+        "pct": -0.015873015873015872
+      },
+      "denialRate": {
+        "current": 0.16461243494932895,
+        "prior": 0.17326552851434798,
+        "abs": -0.008653093565019032,
+        "pct": -0.049941229736891815
+      },
+      "investorShare": {
+        "current": 0.07043554570227703,
+        "prior": 0.06347081625254469,
+        "abs": 0.0069647294497323375,
+        "pct": 0.10973120972669238
+      },
+      "businessPurposeShare": {
+        "current": 0.5455737704918033,
+        "prior": 0.5637082601054482,
+        "abs": -0.018134489613644833,
+        "pct": -0.03216999092802466
+      },
+      "investorMedianRate": {
+        "current": 6.99,
+        "prior": 7.25,
+        "abs": -0.2599999999999998,
+        "pct": -0.03586206896551721
+      },
+      "ownerMedianRate": {
+        "current": 6.375,
+        "prior": 6.625,
+        "abs": -0.25,
+        "pct": -0.03773584905660377
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 70,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.17934426229508196,
+        "prior": 0.18585237258347978,
+        "abs": -0.006508110288397817,
+        "pct": -0.035017633608495115
+      },
+      "investorOriginations": {
+        "current": 3050,
+        "prior": 2276,
+        "abs": 774,
+        "pct": 0.3400702987697715
+      },
+      "investorVolume": {
+        "current": 1047770000,
+        "prior": 756440000,
+        "abs": 291330000,
+        "pct": 0.3851329913806779
+      }
+    },
+    {
+      "abbr": "MT",
+      "name": "Montana",
+      "slug": "montana",
+      "ratePremiumBps": {
+        "current": 60,
+        "prior": 75,
+        "abs": -15,
+        "pct": -0.2
+      },
+      "denialRate": {
+        "current": 0.13108839446782922,
+        "prior": 0.1459197786998617,
+        "abs": -0.01483138423203248,
+        "pct": -0.1016406710877676
+      },
+      "investorShare": {
+        "current": 0.08139469385455979,
+        "prior": 0.08415672913117547,
+        "abs": -0.0027620352766156847,
+        "pct": -0.03282013577678961
+      },
+      "businessPurposeShare": {
+        "current": 0.7038062283737024,
+        "prior": 0.6955465587044535,
+        "abs": 0.008259669669248959,
+        "pct": 0.011875078046009853
+      },
+      "investorMedianRate": {
+        "current": 7,
+        "prior": 7.375,
+        "abs": -0.375,
+        "pct": -0.05084745762711865
+      },
+      "ownerMedianRate": {
+        "current": 6.399,
+        "prior": 6.624,
+        "abs": -0.22499999999999964,
+        "pct": -0.033967391304347776
+      },
+      "investorMedianLtv": {
+        "current": 69.9,
+        "prior": 70,
+        "abs": -0.09999999999999432,
+        "pct": -0.0014285714285713475
+      },
+      "cashOutShare": {
+        "current": 0.1370242214532872,
+        "prior": 0.10121457489878542,
+        "abs": 0.035809646554501764,
+        "pct": 0.3537993079584774
+      },
+      "investorOriginations": {
+        "current": 1445,
+        "prior": 1235,
+        "abs": 210,
+        "pct": 0.1700404858299595
+      },
+      "investorVolume": {
+        "current": 623865000,
+        "prior": 442795000,
+        "abs": 181070000,
+        "pct": 0.408925123364085
+      }
+    },
+    {
+      "abbr": "MA",
+      "name": "Massachusetts",
+      "slug": "massachusetts",
+      "ratePremiumBps": {
+        "current": 55,
+        "prior": 75,
+        "abs": -20,
+        "pct": -0.26666666666666666
+      },
+      "denialRate": {
+        "current": 0.1679874597230689,
+        "prior": 0.17356635718186783,
+        "abs": -0.005578897458798943,
+        "pct": -0.03214273520157603
+      },
+      "investorShare": {
+        "current": 0.0918291827260407,
+        "prior": 0.08504850440080484,
+        "abs": 0.0067806783252358505,
+        "pct": 0.07972719065441534
+      },
+      "businessPurposeShare": {
+        "current": 0.7455516014234875,
+        "prior": 0.7487443827650013,
+        "abs": -0.003192781341513795,
+        "pct": -0.004264180693714629
+      },
+      "investorMedianRate": {
+        "current": 7.05,
+        "prior": 7.375,
+        "abs": -0.3250000000000002,
+        "pct": -0.04406779661016952
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 70,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.20023027004396066,
+        "prior": 0.1591329632566746,
+        "abs": 0.04109730678728607,
+        "pct": 0.2582576604257528
+      },
+      "investorOriginations": {
+        "current": 9554,
+        "prior": 7566,
+        "abs": 1988,
+        "pct": 0.2627544277028813
+      },
+      "investorVolume": {
+        "current": 5839160000,
+        "prior": 4443870000,
+        "abs": 1395290000,
+        "pct": 0.3139808320225389
+      }
+    },
+    {
+      "abbr": "ND",
+      "name": "North Dakota",
+      "slug": "north-dakota",
+      "ratePremiumBps": {
+        "current": 53,
+        "prior": 88,
+        "abs": -35,
+        "pct": -0.3977272727272727
+      },
+      "denialRate": {
+        "current": 0.05130784708249497,
+        "prior": 0.05804111245465538,
+        "abs": -0.006733265372160409,
+        "pct": -0.11600855130784704
+      },
+      "investorShare": {
+        "current": 0.08623685413808871,
+        "prior": 0.07601483216237315,
+        "abs": 0.010222021975715562,
+        "pct": 0.13447404519529277
+      },
+      "businessPurposeShare": {
+        "current": 0.6214209968186638,
+        "prior": 0.686777920410783,
+        "abs": -0.0653569235921192,
+        "pct": -0.09516456724908572
+      },
+      "investorMedianRate": {
+        "current": 6.875,
+        "prior": 7.25,
+        "abs": -0.375,
+        "pct": -0.05172413793103448
+      },
+      "ownerMedianRate": {
+        "current": 6.35,
+        "prior": 6.375,
+        "abs": -0.025000000000000355,
+        "pct": -0.003921568627451036
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.06468716861081654,
+        "prior": 0.05263157894736842,
+        "abs": 0.012055589663448121,
+        "pct": 0.22905620360551432
+      },
+      "investorOriginations": {
+        "current": 943,
+        "prior": 779,
+        "abs": 164,
+        "pct": 0.21052631578947367
+      },
+      "investorVolume": {
+        "current": 188845000,
+        "prior": 149645000,
+        "abs": 39200000,
+        "pct": 0.2619532894517024
+      }
+    },
+    {
+      "abbr": "UT",
+      "name": "Utah",
+      "slug": "utah",
+      "ratePremiumBps": {
+        "current": 50,
+        "prior": 50,
+        "abs": 0,
+        "pct": 0
+      },
+      "denialRate": {
+        "current": 0.18744783842430313,
+        "prior": 0.20666666666666667,
+        "abs": -0.01921882824236354,
+        "pct": -0.09299433020498486
+      },
+      "investorShare": {
+        "current": 0.06602289372321381,
+        "prior": 0.057746192257721145,
+        "abs": 0.008276701465492663,
+        "pct": 0.1433289562808533
+      },
+      "businessPurposeShare": {
+        "current": 0.7134346754313886,
+        "prior": 0.7075088099756032,
+        "abs": 0.0059258654557854396,
+        "pct": 0.008375677266817044
+      },
+      "investorMedianRate": {
+        "current": 6.99,
+        "prior": 7.125,
+        "abs": -0.1349999999999998,
+        "pct": -0.0189473684210526
+      },
+      "ownerMedianRate": {
+        "current": 6.49,
+        "prior": 6.625,
+        "abs": -0.1349999999999998,
+        "pct": -0.020377358490566006
+      },
+      "investorMedianLtv": {
+        "current": 70,
+        "prior": 70,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.1865242399342646,
+        "prior": 0.16291677961507184,
+        "abs": 0.023607460319192752,
+        "pct": 0.1449050268178071
+      },
+      "investorOriginations": {
+        "current": 4868,
+        "prior": 3689,
+        "abs": 1179,
+        "pct": 0.3195988072648414
+      },
+      "investorVolume": {
+        "current": 2086990000,
+        "prior": 1413815000,
+        "abs": 673175000,
+        "pct": 0.47614079635595885
+      }
+    },
+    {
+      "abbr": "VT",
+      "name": "Vermont",
+      "slug": "vermont",
+      "ratePremiumBps": {
+        "current": 40,
+        "prior": 59,
+        "abs": -19,
+        "pct": -0.3220338983050847
+      },
+      "denialRate": {
+        "current": 0.14430379746835442,
+        "prior": 0.1659056316590563,
+        "abs": -0.021601834190701885,
+        "pct": -0.13020555103936826
+      },
+      "investorShare": {
+        "current": 0.07159500105909765,
+        "prior": 0.06828660436137071,
+        "abs": 0.003308396697726937,
+        "pct": 0.04844869251689538
+      },
+      "businessPurposeShare": {
+        "current": 0.7085798816568047,
+        "prior": 0.7554744525547445,
+        "abs": -0.0468945708979398,
+        "pct": -0.062073006889060416
+      },
+      "investorMedianRate": {
+        "current": 6.9,
+        "prior": 7.22,
+        "abs": -0.3199999999999994,
+        "pct": -0.044321329639889114
+      },
+      "ownerMedianRate": {
+        "current": 6.5,
+        "prior": 6.625,
+        "abs": -0.125,
+        "pct": -0.018867924528301886
+      },
+      "investorMedianLtv": {
+        "current": 75,
+        "prior": 75,
+        "abs": 0,
+        "pct": 0
+      },
+      "cashOutShare": {
+        "current": 0.11390532544378698,
+        "prior": 0.07481751824817519,
+        "abs": 0.03908780719561179,
+        "pct": 0.5224419108096405
+      },
+      "investorOriginations": {
+        "current": 676,
+        "prior": 548,
+        "abs": 128,
+        "pct": 0.23357664233576642
+      },
+      "investorVolume": {
+        "current": 232070000,
+        "prior": 276560000,
+        "abs": -44490000,
+        "pct": -0.16086925079548742
+      }
+    }
+  ],
+  "movers": {
+    "premiumUp": [
+      {
+        "abbr": "AK",
+        "name": "Alaska",
+        "slug": "alaska",
+        "prior": 113,
+        "current": 113,
+        "abs": 0
+      },
+      {
+        "abbr": "HI",
+        "name": "Hawaii",
+        "slug": "hawaii",
+        "prior": 100,
+        "current": 100,
+        "abs": 0
+      },
+      {
+        "abbr": "MI",
+        "name": "Michigan",
+        "slug": "michigan",
+        "prior": 88,
+        "current": 88,
+        "abs": 0
+      },
+      {
+        "abbr": "OH",
+        "name": "Ohio",
+        "slug": "ohio",
+        "prior": 88,
+        "current": 88,
+        "abs": 0
+      },
+      {
+        "abbr": "TN",
+        "name": "Tennessee",
+        "slug": "tennessee",
+        "prior": 88,
+        "current": 88,
+        "abs": 0
+      }
+    ],
+    "premiumDown": [
+      {
+        "abbr": "MS",
+        "name": "Mississippi",
+        "slug": "mississippi",
+        "prior": 163,
+        "current": 101,
+        "abs": -62
+      },
+      {
+        "abbr": "AR",
+        "name": "Arkansas",
+        "slug": "arkansas",
+        "prior": 138,
+        "current": 86,
+        "abs": -52
+      },
+      {
+        "abbr": "NE",
+        "name": "Nebraska",
+        "slug": "nebraska",
+        "prior": 113,
+        "current": 63,
+        "abs": -50
+      },
+      {
+        "abbr": "LA",
+        "name": "Louisiana",
+        "slug": "louisiana",
+        "prior": 138,
+        "current": 101,
+        "abs": -37
+      },
+      {
+        "abbr": "SD",
+        "name": "South Dakota",
+        "slug": "south-dakota",
+        "prior": 125,
+        "current": 88,
+        "abs": -37
+      }
+    ],
+    "denialUp": [
+      {
+        "abbr": "MD",
+        "name": "Maryland",
+        "slug": "maryland",
+        "prior": 0.20210962516481445,
+        "current": 0.2485144485144485,
+        "abs": 0.046404823349634056
+      },
+      {
+        "abbr": "DC",
+        "name": "District of Columbia",
+        "slug": "district-of-columbia",
+        "prior": 0.2953929539295393,
+        "current": 0.3167883211678832,
+        "abs": 0.0213953672383439
+      },
+      {
+        "abbr": "IN",
+        "name": "Indiana",
+        "slug": "indiana",
+        "prior": 0.15424610051993068,
+        "current": 0.17062043795620438,
+        "abs": 0.0163743374362737
+      },
+      {
+        "abbr": "MO",
+        "name": "Missouri",
+        "slug": "missouri",
+        "prior": 0.09936075597554196,
+        "current": 0.11506109166820164,
+        "abs": 0.015700335692659675
+      },
+      {
+        "abbr": "MS",
+        "name": "Mississippi",
+        "slug": "mississippi",
+        "prior": 0.11234026320808697,
+        "current": 0.12349058122685558,
+        "abs": 0.011150318018768604
+      }
+    ],
+    "denialDown": [
+      {
+        "abbr": "WY",
+        "name": "Wyoming",
+        "slug": "wyoming",
+        "prior": 0.14664804469273743,
+        "current": 0.12128418549346016,
+        "abs": -0.025363859199277264
+      },
+      {
+        "abbr": "VT",
+        "name": "Vermont",
+        "slug": "vermont",
+        "prior": 0.1659056316590563,
+        "current": 0.14430379746835442,
+        "abs": -0.021601834190701885
+      },
+      {
+        "abbr": "SD",
+        "name": "South Dakota",
+        "slug": "south-dakota",
+        "prior": 0.08557213930348259,
+        "current": 0.06607929515418502,
+        "abs": -0.01949284414929757
+      },
+      {
+        "abbr": "UT",
+        "name": "Utah",
+        "slug": "utah",
+        "prior": 0.20666666666666667,
+        "current": 0.18744783842430313,
+        "abs": -0.01921882824236354
+      },
+      {
+        "abbr": "DE",
+        "name": "Delaware",
+        "slug": "delaware",
+        "prior": 0.1756440281030445,
+        "current": 0.15753086419753087,
+        "abs": -0.018113163905513624
+      }
+    ],
+    "shareUp": [
+      {
+        "abbr": "ND",
+        "name": "North Dakota",
+        "slug": "north-dakota",
+        "prior": 0.07601483216237315,
+        "current": 0.08623685413808871,
+        "abs": 0.010222021975715562
+      },
+      {
+        "abbr": "NY",
+        "name": "New York",
+        "slug": "new-york",
+        "prior": 0.11581637604736178,
+        "current": 0.1257097314655373,
+        "abs": 0.009893355418175515
+      },
+      {
+        "abbr": "DC",
+        "name": "District of Columbia",
+        "slug": "district-of-columbia",
+        "prior": 0.10874111250522794,
+        "current": 0.11843603694799443,
+        "abs": 0.009694924442766484
+      },
+      {
+        "abbr": "KS",
+        "name": "Kansas",
+        "slug": "kansas",
+        "prior": 0.11166019531709613,
+        "current": 0.1213339933176587,
+        "abs": 0.009673798000562575
+      },
+      {
+        "abbr": "OR",
+        "name": "Oregon",
+        "slug": "oregon",
+        "prior": 0.06396192786138213,
+        "current": 0.07362609707760547,
+        "abs": 0.009664169216223331
+      }
+    ],
+    "bizUp": [
+      {
+        "abbr": "DE",
+        "name": "Delaware",
+        "slug": "delaware",
+        "prior": 0.6825284090909091,
+        "current": 0.7514654161781946,
+        "abs": 0.06893700708728556
+      },
+      {
+        "abbr": "KS",
+        "name": "Kansas",
+        "slug": "kansas",
+        "prior": 0.5378292939936775,
+        "current": 0.6034336223015468,
+        "abs": 0.06560432830786933
+      },
+      {
+        "abbr": "OR",
+        "name": "Oregon",
+        "slug": "oregon",
+        "prior": 0.6630278655558748,
+        "current": 0.7205725272377697,
+        "abs": 0.05754466168189487
+      },
+      {
+        "abbr": "GA",
+        "name": "Georgia",
+        "slug": "georgia",
+        "prior": 0.6202122501750794,
+        "current": 0.6754939906294561,
+        "abs": 0.05528174045437673
+      },
+      {
+        "abbr": "RI",
+        "name": "Rhode Island",
+        "slug": "rhode-island",
+        "prior": 0.7285491419656787,
+        "current": 0.7802340702210663,
+        "abs": 0.05168492825538762
+      }
+    ]
+  }
+}

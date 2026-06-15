@@ -18,6 +18,7 @@ const caveats = [
   ['Agricultural loans excluded', 'Loans used primarily for agricultural purposes are excluded under 12 CFR 1003.3(c)(9), so farm and rural-ag investor loans drop out.'],
   ['Privacy modifications', 'The public file rounds property value to the nearest $10,000 and bins debt-to-income and age. Interest rate and loan amount are disclosed, so the rate-premium analysis uses exact reported rates.'],
   ['Small-filer exemptions', 'Some smaller institutions report partial data ("Exempt" fields). Rows missing a usable interest rate or loan-to-value are excluded from those medians; rate coverage exceeds 90% nationally.'],
+  ['Early-release vintage', 'The 2025 figures are built on the combined Modified LAR, the early-release HMDA product. It contains the same loan records as the later Snapshot but may shift slightly as institutions file late or resubmit. We refresh from the Snapshot once it publishes. Year-over-year comparisons hold the metric definitions constant across vintages.'],
 ]
 
 const fields = [
@@ -26,7 +27,7 @@ const fields = [
   ['Investor share', 'Investor originations ÷ all single-family 1-4 originations (any occupancy) in the state.'],
   ['DSCR / business-purpose share', 'Investor originations flagged business_or_commercial_purpose = 1 ÷ all investor originations.'],
   ['Cash-out share', 'Investor originations with loan_purpose = 32 (cash-out refinance) ÷ all investor originations.'],
-  ['Median LTV', 'Median loan_to_value_ratio on investor originations.'],
+  ['Median LTV', 'Median combined loan-to-value ratio (CLTV) on investor originations.'],
 ]
 
 export default function MethodologyPage() {
@@ -60,9 +61,21 @@ export default function MethodologyPage() {
         <h2 className="text-2xl font-bold text-text">Data source</h2>
         <p className="mt-3 leading-7 text-text-muted">
           {reportMeta.source}. We use the loan-level public file for{' '}
-          {reportMeta.year}, the most recent year available, accessed through the
-          CFPB HMDA Data Browser. The universe is {reportMeta.universe.toLowerCase()}.
-          HMDA is a U.S. government work in the public domain.
+          {reportMeta.year}, the most recent year available. The universe is{' '}
+          {reportMeta.universe.toLowerCase()}. HMDA is a U.S. government work in the
+          public domain.
+        </p>
+        <p className="mt-3 leading-7 text-text-muted">
+          For {reportMeta.year} we use the combined Modified Loan Application
+          Register (LAR) — the early-release file the CFPB publishes months before
+          the finalized Snapshot National Loan-Level Dataset. Because the Modified
+          LAR carries raw reported codes rather than the Snapshot&apos;s derived
+          fields, we reconstruct the single-family 1-4 unit, site-built universe from{' '}
+          <code className="text-text">construction_method</code> and{' '}
+          <code className="text-text">total_units</code> directly. Every metric is
+          computed with the same logic used for prior Snapshot years, so the years
+          remain directly comparable; {reportMeta.year} figures will be reconciled
+          when the {reportMeta.year} Snapshot is published.
         </p>
         <p className="mt-3 leading-7 text-text-muted">
           For each state we separate investor loans (the property is an investment

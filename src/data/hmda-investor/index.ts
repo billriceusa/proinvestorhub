@@ -4,6 +4,9 @@
  */
 import nationalJson from './national.json'
 import statesJson from './states.json'
+import priorNationalJson from './national-2024.json'
+import priorStatesJson from './states-2024.json'
+import trendsJson from './trends.json'
 
 export type DenialReason = { reason: string; count: number }
 
@@ -89,4 +92,86 @@ export function ordinal(n: number): string {
   const s = ['th', 'st', 'nd', 'rd']
   const v = n % 100
   return n + (s[(v - 20) % 10] || s[v] || s[0])
+}
+
+// ---- year-over-year trend layer ----
+
+/** A single metric's change between the prior and current year. */
+export type Delta = {
+  current: number | null
+  prior: number | null
+  abs: number | null
+  pct: number | null
+}
+
+/** A state's value movement on one metric (used for "biggest movers"). */
+export type Mover = {
+  abbr: string
+  name: string
+  slug: string
+  prior: number | null
+  current: number | null
+  abs: number | null
+}
+
+export type TrendsData = {
+  meta: {
+    currentYear: number
+    priorYear: number
+    currentSource: string
+    priorSource: string | null
+    note: string
+    generatedAt: string | null
+  }
+  national: Record<string, Delta>
+  states: Array<{ abbr: string; name: string; slug: string } & Record<string, Delta>>
+  movers: Record<string, Mover[]>
+}
+
+export const trends = trendsJson as unknown as TrendsData
+export const priorYear = trends.meta.priorYear
+export const priorNational = priorNationalJson as unknown as InvestorFinancingRow & {
+  meta: ReportMeta
+}
+export const statesPrior = priorStatesJson.states as InvestorFinancingRow[]
+
+/** A state's prior-year row, by slug. */
+export function getPriorStateBySlug(slug: string): InvestorFinancingRow | undefined {
+  return statesPrior.find((s) => s.slug === slug)
+}
+
+// ---- signed delta formatters ----
+
+/** "+12 bps" / "-12 bps" / "—". */
+export const fmtSignedBps = (v: number | null) =>
+  v == null ? '—' : `${v > 0 ? '+' : ''}${v} bps`
+
+/** Percentage-point change from a fractional delta: 0.035 -> "+3.5 pts". */
+export const fmtSignedPts = (v: number | null, digits = 1) =>
+  v == null ? '—' : `${v > 0 ? '+' : ''}${(v * 100).toFixed(digits)} pts`
+
+/** Relative percent change: 0.165 -> "+16.5%". */
+export const fmtPctChange = (v: number | null, digits = 1) =>
+  v == null ? '—' : `${v > 0 ? '+' : ''}${(v * 100).toFixed(digits)}%`
+
+/** Signed integer count: 74066 -> "+74,066". */
+export const fmtSignedCount = (v: number | null) =>
+  v == null ? '—' : `${v > 0 ? '+' : ''}${v.toLocaleString('en-US')}`
+
+/** Direction of a delta for arrow/label rendering. */
+export const trendDir = (v: number | null): 'up' | 'down' | 'flat' =>
+  v == null || v === 0 ? 'flat' : v > 0 ? 'up' : 'down'
+
+/** Count of states whose metric moved up / flat / down year over year. */
+export function premiumDirectionCounts() {
+  let up = 0,
+    flat = 0,
+    down = 0
+  for (const s of trends.states) {
+    const d = (s as Record<string, Delta>).ratePremiumBps?.abs
+    if (d == null || d === 0) flat++
+    else if (d > 0) up++
+    else down++
+  }
+  return { up, flat, down }
 }

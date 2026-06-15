@@ -11,6 +11,7 @@ import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 import { InvestorUsMap } from '@/components/reports/investor-us-map'
 import { InvestorRankingsTable } from '@/components/reports/investor-rankings-table'
 import { BrandBarChart } from '@/components/reports/brand-bar-chart'
+import { YearOverYear } from '@/components/reports/year-over-year'
 import {
   national,
   states,
@@ -190,6 +191,9 @@ export default function InvestorFinancingReport() {
           </li>
         </ul>
       </section>
+
+      {/* Year-over-year trend */}
+      <YearOverYear />
 
       {/* Charts */}
       <section className="mt-14 grid gap-8 lg:grid-cols-2">
