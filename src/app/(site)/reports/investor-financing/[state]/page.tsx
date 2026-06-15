@@ -13,7 +13,9 @@ import {
   states,
   national,
   getStateBySlug,
+  getStateTrendBySlug,
   reportMeta,
+  priorYear,
   rankedBy,
   rankOf,
   ordinal,
@@ -22,7 +24,12 @@ import {
   fmtRate,
   fmtCount,
   fmtUSD,
+  fmtSignedBps,
+  fmtSignedPts,
+  fmtPctChange,
+  trendDir,
 } from '@/data/hmda-investor'
+import { DeltaTag } from '@/components/reports/trend-delta'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 const PUBLISHED = '2026-06-14'
@@ -59,6 +66,31 @@ function vs(label: string, stateVal: string, natVal: string) {
   )
 }
 
+function YoYItem({
+  label,
+  from,
+  to,
+  delta,
+  dir,
+}: {
+  label: string
+  from: string
+  to: string
+  delta: string
+  dir: 'up' | 'down' | 'flat'
+}) {
+  return (
+    <div>
+      <p className="text-xs font-medium uppercase tracking-wide text-text-light">{label}</p>
+      <p className="mt-0.5 text-sm text-text">
+        {from} <span className="text-text-light">&rarr;</span>{' '}
+        <span className="font-semibold">{to}</span>
+      </p>
+      <DeltaTag dir={dir}>{delta}</DeltaTag>
+    </div>
+  )
+}
+
 export default async function StateReportPage({
   params,
 }: {
@@ -68,6 +100,7 @@ export default async function StateReportPage({
   const s = getStateBySlug(state)
   if (!s) notFound()
 
+  const trend = getStateTrendBySlug(s.slug)
   const url = `${baseUrl}/reports/investor-financing/${s.slug}`
   const premiumRank = rankOf(s.slug, 'ratePremiumBps')
   const denialRank = rankOf(s.slug, 'denialRate')
@@ -156,6 +189,45 @@ export default async function StateReportPage({
         {vs('DSCR / business-purpose', fmtPct(s.businessPurposeShare, 0), fmtPct(national.businessPurposeShare, 0))}
         {vs('Median LTV', `${s.investorMedianLtv?.toFixed(0)}%`, `${national.investorMedianLtv?.toFixed(0)}%`)}
       </section>
+
+      {/* Year-over-year for this state */}
+      {trend && (
+        <section className="mt-6 rounded-2xl border border-border bg-surface px-5 py-4">
+          <p className="text-sm font-semibold text-text">
+            Since {priorYear} in {s.name}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-x-10 gap-y-3">
+            <YoYItem
+              label="Rate premium"
+              from={fmtBps(trend.ratePremiumBps.prior)}
+              to={fmtBps(trend.ratePremiumBps.current)}
+              delta={fmtSignedBps(trend.ratePremiumBps.abs)}
+              dir={trendDir(trend.ratePremiumBps.abs)}
+            />
+            <YoYItem
+              label="Investor loans"
+              from={fmtCount(trend.investorOriginations.prior ?? 0)}
+              to={fmtCount(trend.investorOriginations.current ?? 0)}
+              delta={fmtPctChange(trend.investorOriginations.pct)}
+              dir={trendDir(trend.investorOriginations.abs)}
+            />
+            <YoYItem
+              label="Denial rate"
+              from={fmtPct(trend.denialRate.prior)}
+              to={fmtPct(trend.denialRate.current)}
+              delta={fmtSignedPts(trend.denialRate.abs)}
+              dir={trendDir(trend.denialRate.abs)}
+            />
+            <YoYItem
+              label="DSCR / business-purpose"
+              from={fmtPct(trend.businessPurposeShare.prior, 0)}
+              to={fmtPct(trend.businessPurposeShare.current, 0)}
+              delta={fmtSignedPts(trend.businessPurposeShare.abs)}
+              dir={trendDir(trend.businessPurposeShare.abs)}
+            />
+          </div>
+        </section>
+      )}
 
       {/* Narrative */}
       <article className="mt-12 max-w-3xl space-y-4 leading-7 text-text-muted">
