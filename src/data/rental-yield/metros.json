@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "year": 2024,
+    "dataset": "ACS 2024 1-year",
+    "source": "U.S. Census Bureau, American Community Survey 2024 1-year estimates",
+    "universe": "Median gross rent and median owner-occupied home value; geographies with population >= 65,000",
+    "metric": "Gross rental yield = (median gross rent x 12) / median home value",
+    "placeholder": true,
+    "generatedAt": null,
+    "stateCount": 6,
+    "metroCount": 6
+  },
+  "metros": [
+    { "name": "Youngstown-Warren-Boardman, OH-PA", "slug": "youngstown-warren-boardman-oh-pa", "cbsa": "49660", "state": "OH-PA", "medianGrossRent": 800, "medianHomeValue": 130000, "grossYield": 0.0738 },
+    { "name": "Toledo, OH", "slug": "toledo-oh", "cbsa": "45780", "state": "OH", "medianGrossRent": 900, "medianHomeValue": 160000, "grossYield": 0.0675 },
+    { "name": "Cleveland-Elyria, OH", "slug": "cleveland-elyria-oh", "cbsa": "17460", "state": "OH", "medianGrossRent": 1000, "medianHomeValue": 200000, "grossYield": 0.0600 },
+    { "name": "Memphis, TN-MS-AR", "slug": "memphis-tn-ms-ar", "cbsa": "32820", "state": "TN-MS-AR", "medianGrossRent": 1150, "medianHomeValue": 240000, "grossYield": 0.0575 },
+    { "name": "Austin-Round Rock-San Marcos, TX", "slug": "austin-round-rock-san-marcos-tx", "cbsa": "12420", "state": "TX", "medianGrossRent": 1600, "medianHomeValue": 450000, "grossYield": 0.0427 },
+    { "name": "San Jose-Sunnyvale-Santa Clara, CA", "slug": "san-jose-sunnyvale-santa-clara-ca", "cbsa": "41940", "state": "CA", "medianGrossRent": 2700, "medianHomeValue": 1400000, "grossYield": 0.0231 }
+  ]
+}

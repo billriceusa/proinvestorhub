@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "year": 2024,
+    "dataset": "ACS 2024 1-year",
+    "source": "U.S. Census Bureau, American Community Survey 2024 1-year estimates",
+    "universe": "Median gross rent and median owner-occupied home value; geographies with population >= 65,000",
+    "metric": "Gross rental yield = (median gross rent x 12) / median home value",
+    "placeholder": true,
+    "generatedAt": null,
+    "stateCount": 6,
+    "metroCount": 6
+  },
+  "name": "United States",
+  "slug": "united-states",
+  "medianGrossRent": 1500,
+  "medianHomeValue": 340000,
+  "grossYield": 0.0529
+}
