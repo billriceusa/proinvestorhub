@@ -11,6 +11,7 @@ import { lenderComparisons } from '@/data/lender-comparisons'
 import { financingScenarios } from '@/data/financing-scenarios'
 import { financingTypes } from '@/data/financing-types'
 import { states as investorFinancingStates } from '@/data/hmda-investor'
+import { states as rentalYieldStates } from '@/data/rental-yield'
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -304,6 +305,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...investorFinancingStates.map((s) => ({
       url: `${baseUrl}/reports/investor-financing/${s.slug}`,
+      changeFrequency: 'yearly' as const,
+      priority: 0.7,
+    })),
+    {
+      url: `${baseUrl}/reports/rental-yield`,
+      changeFrequency: 'yearly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/reports/rental-yield/methodology`,
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    },
+    ...rentalYieldStates.map((s) => ({
+      url: `${baseUrl}/reports/rental-yield/${s.slug}`,
       changeFrequency: 'yearly' as const,
       priority: 0.7,
     })),

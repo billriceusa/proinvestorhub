@@ -8,6 +8,13 @@ import {
   fmtPct,
   fmtCount,
 } from '@/data/hmda-investor'
+import {
+  national as yieldNational,
+  statesByYield,
+  yieldMeta,
+  fmtYield,
+  fmtRent,
+} from '@/data/rental-yield'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
@@ -22,6 +29,8 @@ const reports = [
   {
     title: `The ${reportMeta.year} Investor Financing Report`,
     href: '/reports/investor-financing',
+    source: 'CFPB HMDA',
+    year: reportMeta.year,
     blurb:
       'A 50-state analysis of how real estate investors finance deals — the rate premium they pay over owner-occupants, denial rates, DSCR/business-purpose lending, and leverage.',
     stats: [
@@ -29,7 +38,19 @@ const reports = [
       { label: 'Investor denial rate', value: fmtPct(national.denialRate) },
       { label: 'Investor loans analyzed', value: fmtCount(national.investorOriginations) },
     ],
-    source: 'CFPB HMDA',
+  },
+  {
+    title: `Best Cash-Flow Markets (${yieldMeta.year})`,
+    href: '/reports/rental-yield',
+    source: 'Census ACS',
+    year: yieldMeta.year,
+    blurb:
+      'Where rent goes furthest against home prices — gross rental yield for every state and major metro, ranked, from Census ACS data. The first screen before you finance a deal.',
+    stats: [
+      { label: 'U.S. gross rental yield', value: fmtYield(yieldNational.grossYield) },
+      { label: 'Top state', value: statesByYield[0] ? `${statesByYield[0].abbr} ${fmtYield(statesByYield[0].grossYield)}` : '—' },
+      { label: 'U.S. median rent', value: fmtRent(yieldNational.medianGrossRent) },
+    ],
   },
 ]
 
@@ -60,7 +81,7 @@ export default function ReportsHub() {
             className="group rounded-2xl border border-border bg-white p-6 transition-colors hover:border-primary/40 sm:p-8"
           >
             <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-              {r.source} · {reportMeta.year}
+              {r.source} · {r.year}
             </p>
             <h2 className="mt-2 text-2xl font-bold text-text group-hover:text-primary">
               {r.title}
