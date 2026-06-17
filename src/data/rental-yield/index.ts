@@ -54,6 +54,17 @@ export function stateRank(slug: string): number | null {
   return i === -1 ? null : i + 1
 }
 
+/**
+ * Metros that fall in a given state, highest yield first. A metro's `state`
+ * field is the comma-suffix segment (e.g. "TX", "OH-PA", "TN-MS-AR"), so a
+ * multi-state metro shows up for each of its states.
+ */
+export function metrosInState(abbr: string): GeoYield[] {
+  return metrosByYield.filter((m) =>
+    (m.state ?? '').split('-').includes(abbr)
+  )
+}
+
 // ---- formatters ----
 export const fmtYield = (v: number | null, digits = 1) =>
   v == null ? '—' : `${(v * 100).toFixed(digits)}%`

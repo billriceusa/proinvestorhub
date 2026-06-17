@@ -5,17 +5,3547 @@
     "source": "U.S. Census Bureau, American Community Survey 2024 1-year estimates",
     "universe": "Median gross rent and median owner-occupied home value; geographies with population >= 65,000",
     "metric": "Gross rental yield = (median gross rent x 12) / median home value",
-    "placeholder": true,
-    "generatedAt": null,
-    "stateCount": 6,
-    "metroCount": 6
+    "generatedAt": "2026-06-17",
+    "stateCount": 51,
+    "metroCount": 393
   },
   "metros": [
-    { "name": "Youngstown-Warren-Boardman, OH-PA", "slug": "youngstown-warren-boardman-oh-pa", "cbsa": "49660", "state": "OH-PA", "medianGrossRent": 800, "medianHomeValue": 130000, "grossYield": 0.0738 },
-    { "name": "Toledo, OH", "slug": "toledo-oh", "cbsa": "45780", "state": "OH", "medianGrossRent": 900, "medianHomeValue": 160000, "grossYield": 0.0675 },
-    { "name": "Cleveland-Elyria, OH", "slug": "cleveland-elyria-oh", "cbsa": "17460", "state": "OH", "medianGrossRent": 1000, "medianHomeValue": 200000, "grossYield": 0.0600 },
-    { "name": "Memphis, TN-MS-AR", "slug": "memphis-tn-ms-ar", "cbsa": "32820", "state": "TN-MS-AR", "medianGrossRent": 1150, "medianHomeValue": 240000, "grossYield": 0.0575 },
-    { "name": "Austin-Round Rock-San Marcos, TX", "slug": "austin-round-rock-san-marcos-tx", "cbsa": "12420", "state": "TX", "medianGrossRent": 1600, "medianHomeValue": 450000, "grossYield": 0.0427 },
-    { "name": "San Jose-Sunnyvale-Santa Clara, CA", "slug": "san-jose-sunnyvale-santa-clara-ca", "cbsa": "41940", "state": "CA", "medianGrossRent": 2700, "medianHomeValue": 1400000, "grossYield": 0.0231 }
+    {
+      "name": "Elmira, NY",
+      "slug": "elmira-ny",
+      "medianGrossRent": 1029,
+      "medianHomeValue": 146800,
+      "grossYield": 0.08411444141689374,
+      "cbsa": "21300",
+      "state": "NY"
+    },
+    {
+      "name": "Beckley, WV",
+      "slug": "beckley-wv",
+      "medianGrossRent": 935,
+      "medianHomeValue": 135100,
+      "grossYield": 0.08304959289415248,
+      "cbsa": "13220",
+      "state": "WV"
+    },
+    {
+      "name": "Sumter, SC",
+      "slug": "sumter-sc",
+      "medianGrossRent": 1110,
+      "medianHomeValue": 168500,
+      "grossYield": 0.07905044510385757,
+      "cbsa": "44940",
+      "state": "SC"
+    },
+    {
+      "name": "Decatur, IL",
+      "slug": "decatur-il",
+      "medianGrossRent": 896,
+      "medianHomeValue": 142600,
+      "grossYield": 0.07539971949509117,
+      "cbsa": "19500",
+      "state": "IL"
+    },
+    {
+      "name": "Beaumont-Port Arthur, TX",
+      "slug": "beaumont-port-arthur-tx",
+      "medianGrossRent": 1134,
+      "medianHomeValue": 181700,
+      "grossYield": 0.07489268024215741,
+      "cbsa": "13140",
+      "state": "TX"
+    },
+    {
+      "name": "Odessa, TX",
+      "slug": "odessa-tx",
+      "medianGrossRent": 1337,
+      "medianHomeValue": 214500,
+      "grossYield": 0.0747972027972028,
+      "cbsa": "36220",
+      "state": "TX"
+    },
+    {
+      "name": "Abilene, TX",
+      "slug": "abilene-tx",
+      "medianGrossRent": 1173,
+      "medianHomeValue": 190500,
+      "grossYield": 0.07388976377952756,
+      "cbsa": "10180",
+      "state": "TX"
+    },
+    {
+      "name": "Albany, GA",
+      "slug": "albany-ga",
+      "medianGrossRent": 975,
+      "medianHomeValue": 158500,
+      "grossYield": 0.07381703470031546,
+      "cbsa": "10500",
+      "state": "GA"
+    },
+    {
+      "name": "Muncie, IN",
+      "slug": "muncie-in",
+      "medianGrossRent": 944,
+      "medianHomeValue": 154400,
+      "grossYield": 0.07336787564766839,
+      "cbsa": "34620",
+      "state": "IN"
+    },
+    {
+      "name": "Saginaw, MI",
+      "slug": "saginaw-mi",
+      "medianGrossRent": 972,
+      "medianHomeValue": 159000,
+      "grossYield": 0.07335849056603773,
+      "cbsa": "40980",
+      "state": "MI"
+    },
+    {
+      "name": "Binghamton, NY",
+      "slug": "binghamton-ny",
+      "medianGrossRent": 981,
+      "medianHomeValue": 161600,
+      "grossYield": 0.07284653465346534,
+      "cbsa": "13780",
+      "state": "NY"
+    },
+    {
+      "name": "Wichita Falls, TX",
+      "slug": "wichita-falls-tx",
+      "medianGrossRent": 1065,
+      "medianHomeValue": 177000,
+      "grossYield": 0.07220338983050847,
+      "cbsa": "48660",
+      "state": "TX"
+    },
+    {
+      "name": "Watertown-Fort Drum, NY",
+      "slug": "watertown-fort-drum-ny",
+      "medianGrossRent": 1226,
+      "medianHomeValue": 204800,
+      "grossYield": 0.0718359375,
+      "cbsa": "48060",
+      "state": "NY"
+    },
+    {
+      "name": "Brownsville-Harlingen, TX",
+      "slug": "brownsville-harlingen-tx",
+      "medianGrossRent": 966,
+      "medianHomeValue": 163300,
+      "grossYield": 0.07098591549295774,
+      "cbsa": "15180",
+      "state": "TX"
+    },
+    {
+      "name": "McAllen-Edinburg-Mission, TX",
+      "slug": "mcallen-edinburg-mission-tx",
+      "medianGrossRent": 971,
+      "medianHomeValue": 164200,
+      "grossYield": 0.07096224116930573,
+      "cbsa": "32580",
+      "state": "TX"
+    },
+    {
+      "name": "Charleston, WV",
+      "slug": "charleston-wv",
+      "medianGrossRent": 851,
+      "medianHomeValue": 144300,
+      "grossYield": 0.07076923076923076,
+      "cbsa": "16620",
+      "state": "WV"
+    },
+    {
+      "name": "Fayetteville, NC",
+      "slug": "fayetteville-nc",
+      "medianGrossRent": 1334,
+      "medianHomeValue": 227400,
+      "grossYield": 0.07039577836411609,
+      "cbsa": "22180",
+      "state": "NC"
+    },
+    {
+      "name": "Eagle Pass, TX",
+      "slug": "eagle-pass-tx",
+      "medianGrossRent": 1015,
+      "medianHomeValue": 174900,
+      "grossYield": 0.06963979416809606,
+      "cbsa": "20580",
+      "state": "TX"
+    },
+    {
+      "name": "Lawton, OK",
+      "slug": "lawton-ok",
+      "medianGrossRent": 1001,
+      "medianHomeValue": 172900,
+      "grossYield": 0.06947368421052631,
+      "cbsa": "30020",
+      "state": "OK"
+    },
+    {
+      "name": "Bay City, MI",
+      "slug": "bay-city-mi",
+      "medianGrossRent": 976,
+      "medianHomeValue": 168700,
+      "grossYield": 0.0694250148192057,
+      "cbsa": "13020",
+      "state": "MI"
+    },
+    {
+      "name": "Peoria, IL",
+      "slug": "peoria-il",
+      "medianGrossRent": 1003,
+      "medianHomeValue": 173700,
+      "grossYield": 0.06929188255613127,
+      "cbsa": "37900",
+      "state": "IL"
+    },
+    {
+      "name": "Battle Creek, MI",
+      "slug": "battle-creek-mi",
+      "medianGrossRent": 991,
+      "medianHomeValue": 172300,
+      "grossYield": 0.06901915264074289,
+      "cbsa": "12980",
+      "state": "MI"
+    },
+    {
+      "name": "Terre Haute, IN",
+      "slug": "terre-haute-in",
+      "medianGrossRent": 893,
+      "medianHomeValue": 155600,
+      "grossYield": 0.06886889460154241,
+      "cbsa": "45460",
+      "state": "IN"
+    },
+    {
+      "name": "Huntington-Ashland, WV-KY-OH",
+      "slug": "huntington-ashland-wv-ky-oh",
+      "medianGrossRent": 914,
+      "medianHomeValue": 159600,
+      "grossYield": 0.0687218045112782,
+      "cbsa": "26580",
+      "state": "WV-KY-OH"
+    },
+    {
+      "name": "Weirton-Steubenville, WV-OH",
+      "slug": "weirton-steubenville-wv-oh",
+      "medianGrossRent": 833,
+      "medianHomeValue": 145900,
+      "grossYield": 0.06851267991775188,
+      "cbsa": "48260",
+      "state": "WV-OH"
+    },
+    {
+      "name": "Hinesville, GA",
+      "slug": "hinesville-ga",
+      "medianGrossRent": 1338,
+      "medianHomeValue": 238800,
+      "grossYield": 0.06723618090452262,
+      "cbsa": "25980",
+      "state": "GA"
+    },
+    {
+      "name": "Anniston-Oxford, AL",
+      "slug": "anniston-oxford-al",
+      "medianGrossRent": 915,
+      "medianHomeValue": 163400,
+      "grossYield": 0.06719706242350061,
+      "cbsa": "11500",
+      "state": "AL"
+    },
+    {
+      "name": "Johnstown, PA",
+      "slug": "johnstown-pa",
+      "medianGrossRent": 712,
+      "medianHomeValue": 127200,
+      "grossYield": 0.06716981132075471,
+      "cbsa": "27780",
+      "state": "PA"
+    },
+    {
+      "name": "Corpus Christi, TX",
+      "slug": "corpus-christi-tx",
+      "medianGrossRent": 1293,
+      "medianHomeValue": 232100,
+      "grossYield": 0.06685049547608789,
+      "cbsa": "18580",
+      "state": "TX"
+    },
+    {
+      "name": "Ocala, FL",
+      "slug": "ocala-fl",
+      "medianGrossRent": 1523,
+      "medianHomeValue": 275600,
+      "grossYield": 0.06631349782293179,
+      "cbsa": "36100",
+      "state": "FL"
+    },
+    {
+      "name": "Lubbock, TX",
+      "slug": "lubbock-tx",
+      "medianGrossRent": 1207,
+      "medianHomeValue": 218900,
+      "grossYield": 0.06616719963453632,
+      "cbsa": "31180",
+      "state": "TX"
+    },
+    {
+      "name": "Joplin, MO-KS",
+      "slug": "joplin-mo-ks",
+      "medianGrossRent": 1001,
+      "medianHomeValue": 184500,
+      "grossYield": 0.06510569105691057,
+      "cbsa": "27900",
+      "state": "MO-KS"
+    },
+    {
+      "name": "Salisbury, MD",
+      "slug": "salisbury-md",
+      "medianGrossRent": 1388,
+      "medianHomeValue": 255900,
+      "grossYield": 0.06508792497069167,
+      "cbsa": "41540",
+      "state": "MD"
+    },
+    {
+      "name": "Alexandria, LA",
+      "slug": "alexandria-la",
+      "medianGrossRent": 899,
+      "medianHomeValue": 165800,
+      "grossYield": 0.06506634499396864,
+      "cbsa": "10780",
+      "state": "LA"
+    },
+    {
+      "name": "Rockford, IL",
+      "slug": "rockford-il",
+      "medianGrossRent": 1014,
+      "medianHomeValue": 188400,
+      "grossYield": 0.06458598726114649,
+      "cbsa": "40420",
+      "state": "IL"
+    },
+    {
+      "name": "Mobile, AL",
+      "slug": "mobile-al",
+      "medianGrossRent": 1106,
+      "medianHomeValue": 207400,
+      "grossYield": 0.06399228543876567,
+      "cbsa": "33660",
+      "state": "AL"
+    },
+    {
+      "name": "Davenport-Moline-Rock Island, IA-IL",
+      "slug": "davenport-moline-rock-island-ia-il",
+      "medianGrossRent": 971,
+      "medianHomeValue": 182100,
+      "grossYield": 0.06398682042833607,
+      "cbsa": "19340",
+      "state": "IA-IL"
+    },
+    {
+      "name": "Enid, OK",
+      "slug": "enid-ok",
+      "medianGrossRent": 940,
+      "medianHomeValue": 176800,
+      "grossYield": 0.06380090497737556,
+      "cbsa": "21420",
+      "state": "OK"
+    },
+    {
+      "name": "Jacksonville, NC",
+      "slug": "jacksonville-nc",
+      "medianGrossRent": 1389,
+      "medianHomeValue": 262000,
+      "grossYield": 0.06361832061068702,
+      "cbsa": "27340",
+      "state": "NC"
+    },
+    {
+      "name": "Springfield, IL",
+      "slug": "springfield-il",
+      "medianGrossRent": 1047,
+      "medianHomeValue": 197600,
+      "grossYield": 0.063582995951417,
+      "cbsa": "44100",
+      "state": "IL"
+    },
+    {
+      "name": "Flint, MI",
+      "slug": "flint-mi",
+      "medianGrossRent": 1058,
+      "medianHomeValue": 200400,
+      "grossYield": 0.06335329341317365,
+      "cbsa": "22420",
+      "state": "MI"
+    },
+    {
+      "name": "Altoona, PA",
+      "slug": "altoona-pa",
+      "medianGrossRent": 895,
+      "medianHomeValue": 169600,
+      "grossYield": 0.06332547169811321,
+      "cbsa": "11020",
+      "state": "PA"
+    },
+    {
+      "name": "Warner Robins, GA",
+      "slug": "warner-robins-ga",
+      "medianGrossRent": 1279,
+      "medianHomeValue": 242600,
+      "grossYield": 0.06326463314097279,
+      "cbsa": "47580",
+      "state": "GA"
+    },
+    {
+      "name": "Jackson, TN",
+      "slug": "jackson-tn",
+      "medianGrossRent": 1102,
+      "medianHomeValue": 209300,
+      "grossYield": 0.0631820353559484,
+      "cbsa": "27180",
+      "state": "TN"
+    },
+    {
+      "name": "Monroe, LA",
+      "slug": "monroe-la",
+      "medianGrossRent": 928,
+      "medianHomeValue": 176900,
+      "grossYield": 0.06295081967213115,
+      "cbsa": "33740",
+      "state": "LA"
+    },
+    {
+      "name": "Longview, TX",
+      "slug": "longview-tx",
+      "medianGrossRent": 1091,
+      "medianHomeValue": 208000,
+      "grossYield": 0.06294230769230769,
+      "cbsa": "30980",
+      "state": "TX"
+    },
+    {
+      "name": "Jackson, MS",
+      "slug": "jackson-ms",
+      "medianGrossRent": 1100,
+      "medianHomeValue": 210000,
+      "grossYield": 0.06285714285714286,
+      "cbsa": "27140",
+      "state": "MS"
+    },
+    {
+      "name": "Florence, SC",
+      "slug": "florence-sc",
+      "medianGrossRent": 1023,
+      "medianHomeValue": 196600,
+      "grossYield": 0.06244150559511699,
+      "cbsa": "22500",
+      "state": "SC"
+    },
+    {
+      "name": "San Angelo, TX",
+      "slug": "san-angelo-tx",
+      "medianGrossRent": 1199,
+      "medianHomeValue": 230900,
+      "grossYield": 0.06231268947596362,
+      "cbsa": "41660",
+      "state": "TX"
+    },
+    {
+      "name": "Punta Gorda, FL",
+      "slug": "punta-gorda-fl",
+      "medianGrossRent": 1843,
+      "medianHomeValue": 355300,
+      "grossYield": 0.062245989304812836,
+      "cbsa": "39460",
+      "state": "FL"
+    },
+    {
+      "name": "El Paso, TX",
+      "slug": "el-paso-tx",
+      "medianGrossRent": 1081,
+      "medianHomeValue": 208800,
+      "grossYield": 0.062126436781609194,
+      "cbsa": "21340",
+      "state": "TX"
+    },
+    {
+      "name": "Montgomery, AL",
+      "slug": "montgomery-al",
+      "medianGrossRent": 1141,
+      "medianHomeValue": 220500,
+      "grossYield": 0.06209523809523809,
+      "cbsa": "33860",
+      "state": "AL"
+    },
+    {
+      "name": "Goldsboro, NC",
+      "slug": "goldsboro-nc",
+      "medianGrossRent": 1087,
+      "medianHomeValue": 211900,
+      "grossYield": 0.06155733836715432,
+      "cbsa": "24140",
+      "state": "NC"
+    },
+    {
+      "name": "Kankakee, IL",
+      "slug": "kankakee-il",
+      "medianGrossRent": 1093,
+      "medianHomeValue": 213300,
+      "grossYield": 0.06149085794655415,
+      "cbsa": "28100",
+      "state": "IL"
+    },
+    {
+      "name": "Syracuse, NY",
+      "slug": "syracuse-ny",
+      "medianGrossRent": 1114,
+      "medianHomeValue": 217600,
+      "grossYield": 0.06143382352941176,
+      "cbsa": "45060",
+      "state": "NY"
+    },
+    {
+      "name": "Sherman-Denison, TX",
+      "slug": "sherman-denison-tx",
+      "medianGrossRent": 1482,
+      "medianHomeValue": 290100,
+      "grossYield": 0.06130299896587384,
+      "cbsa": "43300",
+      "state": "TX"
+    },
+    {
+      "name": "Houma-Bayou Cane-Thibodaux, LA",
+      "slug": "houma-bayou-cane-thibodaux-la",
+      "medianGrossRent": 980,
+      "medianHomeValue": 192000,
+      "grossYield": 0.06125,
+      "cbsa": "26380",
+      "state": "LA"
+    },
+    {
+      "name": "Laredo, TX",
+      "slug": "laredo-tx",
+      "medianGrossRent": 1056,
+      "medianHomeValue": 207100,
+      "grossYield": 0.06118783196523419,
+      "cbsa": "29700",
+      "state": "TX"
+    },
+    {
+      "name": "Parkersburg-Vienna, WV",
+      "slug": "parkersburg-vienna-wv",
+      "medianGrossRent": 879,
+      "medianHomeValue": 172400,
+      "grossYield": 0.061183294663573085,
+      "cbsa": "37620",
+      "state": "WV"
+    },
+    {
+      "name": "Champaign-Urbana, IL",
+      "slug": "champaign-urbana-il",
+      "medianGrossRent": 1103,
+      "medianHomeValue": 216500,
+      "grossYield": 0.061136258660508085,
+      "cbsa": "16580",
+      "state": "IL"
+    },
+    {
+      "name": "Columbus, GA-AL",
+      "slug": "columbus-ga-al",
+      "medianGrossRent": 1143,
+      "medianHomeValue": 224600,
+      "grossYield": 0.06106856634016029,
+      "cbsa": "17980",
+      "state": "GA-AL"
+    },
+    {
+      "name": "South Bend-Mishawaka, IN-MI",
+      "slug": "south-bend-mishawaka-in-mi",
+      "medianGrossRent": 1101,
+      "medianHomeValue": 216500,
+      "grossYield": 0.06102540415704388,
+      "cbsa": "43780",
+      "state": "IN-MI"
+    },
+    {
+      "name": "Hattiesburg, MS",
+      "slug": "hattiesburg-ms",
+      "medianGrossRent": 1096,
+      "medianHomeValue": 216100,
+      "grossYield": 0.060860712633040256,
+      "cbsa": "25620",
+      "state": "MS"
+    },
+    {
+      "name": "Shreveport-Bossier City, LA",
+      "slug": "shreveport-bossier-city-la",
+      "medianGrossRent": 990,
+      "medianHomeValue": 195300,
+      "grossYield": 0.060829493087557605,
+      "cbsa": "43340",
+      "state": "LA"
+    },
+    {
+      "name": "Rocky Mount, NC",
+      "slug": "rocky-mount-nc",
+      "medianGrossRent": 1000,
+      "medianHomeValue": 197700,
+      "grossYield": 0.06069802731411229,
+      "cbsa": "40580",
+      "state": "NC"
+    },
+    {
+      "name": "Gulfport-Biloxi, MS",
+      "slug": "gulfport-biloxi-ms",
+      "medianGrossRent": 1146,
+      "medianHomeValue": 227600,
+      "grossYield": 0.06042179261862917,
+      "cbsa": "25060",
+      "state": "MS"
+    },
+    {
+      "name": "Texarkana, TX-AR",
+      "slug": "texarkana-tx-ar",
+      "medianGrossRent": 939,
+      "medianHomeValue": 186600,
+      "grossYield": 0.06038585209003215,
+      "cbsa": "45500",
+      "state": "TX-AR"
+    },
+    {
+      "name": "Macon-Bibb County, GA",
+      "slug": "macon-bibb-county-ga",
+      "medianGrossRent": 1104,
+      "medianHomeValue": 219400,
+      "grossYield": 0.06038286235186873,
+      "cbsa": "31420",
+      "state": "GA"
+    },
+    {
+      "name": "Youngstown-Warren, OH",
+      "slug": "youngstown-warren-oh",
+      "medianGrossRent": 838,
+      "medianHomeValue": 166800,
+      "grossYield": 0.06028776978417266,
+      "cbsa": "49660",
+      "state": "OH"
+    },
+    {
+      "name": "Kokomo, IN",
+      "slug": "kokomo-in",
+      "medianGrossRent": 877,
+      "medianHomeValue": 174600,
+      "grossYield": 0.06027491408934708,
+      "cbsa": "29020",
+      "state": "IN"
+    },
+    {
+      "name": "Victoria, TX",
+      "slug": "victoria-tx",
+      "medianGrossRent": 1118,
+      "medianHomeValue": 223100,
+      "grossYield": 0.0601344688480502,
+      "cbsa": "47020",
+      "state": "TX"
+    },
+    {
+      "name": "Rochester, NY",
+      "slug": "rochester-ny",
+      "medianGrossRent": 1172,
+      "medianHomeValue": 234100,
+      "grossYield": 0.060076890217855616,
+      "cbsa": "40380",
+      "state": "NY"
+    },
+    {
+      "name": "Scranton--Wilkes-Barre, PA",
+      "slug": "scranton-wilkes-barre-pa",
+      "medianGrossRent": 1072,
+      "medianHomeValue": 215400,
+      "grossYield": 0.05972144846796657,
+      "cbsa": "42540",
+      "state": "PA"
+    },
+    {
+      "name": "Midland, TX",
+      "slug": "midland-tx",
+      "medianGrossRent": 1558,
+      "medianHomeValue": 313200,
+      "grossYield": 0.059693486590038314,
+      "cbsa": "33260",
+      "state": "TX"
+    },
+    {
+      "name": "Waterloo-Cedar Falls, IA",
+      "slug": "waterloo-cedar-falls-ia",
+      "medianGrossRent": 1047,
+      "medianHomeValue": 212400,
+      "grossYield": 0.05915254237288135,
+      "cbsa": "47940",
+      "state": "IA"
+    },
+    {
+      "name": "Mansfield, OH",
+      "slug": "mansfield-oh",
+      "medianGrossRent": 862,
+      "medianHomeValue": 175400,
+      "grossYield": 0.05897377423033067,
+      "cbsa": "31900",
+      "state": "OH"
+    },
+    {
+      "name": "Dayton-Kettering-Beavercreek, OH",
+      "slug": "dayton-kettering-beavercreek-oh",
+      "medianGrossRent": 1119,
+      "medianHomeValue": 228600,
+      "grossYield": 0.05874015748031496,
+      "cbsa": "19430",
+      "state": "OH"
+    },
+    {
+      "name": "Lima, OH",
+      "slug": "lima-oh",
+      "medianGrossRent": 889,
+      "medianHomeValue": 182100,
+      "grossYield": 0.0585831960461285,
+      "cbsa": "30620",
+      "state": "OH"
+    },
+    {
+      "name": "Toledo, OH",
+      "slug": "toledo-oh",
+      "medianGrossRent": 949,
+      "medianHomeValue": 194700,
+      "grossYield": 0.058489984591679506,
+      "cbsa": "45780",
+      "state": "OH"
+    },
+    {
+      "name": "Lakeland-Winter Haven, FL",
+      "slug": "lakeland-winter-haven-fl",
+      "medianGrossRent": 1484,
+      "medianHomeValue": 305400,
+      "grossYield": 0.05831041257367387,
+      "cbsa": "29460",
+      "state": "FL"
+    },
+    {
+      "name": "Amarillo, TX",
+      "slug": "amarillo-tx",
+      "medianGrossRent": 1097,
+      "medianHomeValue": 226600,
+      "grossYield": 0.058093556928508386,
+      "cbsa": "11100",
+      "state": "TX"
+    },
+    {
+      "name": "Sebring, FL",
+      "slug": "sebring-fl",
+      "medianGrossRent": 1183,
+      "medianHomeValue": 244500,
+      "grossYield": 0.05806134969325153,
+      "cbsa": "42700",
+      "state": "FL"
+    },
+    {
+      "name": "Valdosta, GA",
+      "slug": "valdosta-ga",
+      "medianGrossRent": 1092,
+      "medianHomeValue": 226600,
+      "grossYield": 0.05782877316857899,
+      "cbsa": "46660",
+      "state": "GA"
+    },
+    {
+      "name": "Ithaca, NY",
+      "slug": "ithaca-ny",
+      "medianGrossRent": 1515,
+      "medianHomeValue": 315200,
+      "grossYield": 0.05767766497461929,
+      "cbsa": "27060",
+      "state": "NY"
+    },
+    {
+      "name": "Vineland, NJ",
+      "slug": "vineland-nj",
+      "medianGrossRent": 1201,
+      "medianHomeValue": 249900,
+      "grossYield": 0.05767106842737095,
+      "cbsa": "47220",
+      "state": "NJ"
+    },
+    {
+      "name": "Gadsden, AL",
+      "slug": "gadsden-al",
+      "medianGrossRent": 834,
+      "medianHomeValue": 173700,
+      "grossYield": 0.05761658031088083,
+      "cbsa": "23460",
+      "state": "AL"
+    },
+    {
+      "name": "Birmingham, AL",
+      "slug": "birmingham-al",
+      "medianGrossRent": 1262,
+      "medianHomeValue": 263900,
+      "grossYield": 0.057385373247442216,
+      "cbsa": "13820",
+      "state": "AL"
+    },
+    {
+      "name": "Killeen-Temple, TX",
+      "slug": "killeen-temple-tx",
+      "medianGrossRent": 1283,
+      "medianHomeValue": 268400,
+      "grossYield": 0.057362146050670644,
+      "cbsa": "28660",
+      "state": "TX"
+    },
+    {
+      "name": "Panama City-Panama City Beach, FL",
+      "slug": "panama-city-panama-city-beach-fl",
+      "medianGrossRent": 1543,
+      "medianHomeValue": 324900,
+      "grossYield": 0.05698984302862419,
+      "cbsa": "37460",
+      "state": "FL"
+    },
+    {
+      "name": "Wheeling, WV-OH",
+      "slug": "wheeling-wv-oh",
+      "medianGrossRent": 775,
+      "medianHomeValue": 163300,
+      "grossYield": 0.05695039804041641,
+      "cbsa": "48540",
+      "state": "WV-OH"
+    },
+    {
+      "name": "Augusta-Richmond County, GA-SC",
+      "slug": "augusta-richmond-county-ga-sc",
+      "medianGrossRent": 1243,
+      "medianHomeValue": 262100,
+      "grossYield": 0.05690957649752003,
+      "cbsa": "12260",
+      "state": "GA-SC"
+    },
+    {
+      "name": "Cape Coral-Fort Myers, FL",
+      "slug": "cape-coral-fort-myers-fl",
+      "medianGrossRent": 1871,
+      "medianHomeValue": 396500,
+      "grossYield": 0.056625472887767966,
+      "cbsa": "15980",
+      "state": "FL"
+    },
+    {
+      "name": "Paducah, KY-IL",
+      "slug": "paducah-ky-il",
+      "medianGrossRent": 823,
+      "medianHomeValue": 174500,
+      "grossYield": 0.056595988538681946,
+      "cbsa": "37140",
+      "state": "KY-IL"
+    },
+    {
+      "name": "Pensacola-Ferry Pass-Brent, FL",
+      "slug": "pensacola-ferry-pass-brent-fl",
+      "medianGrossRent": 1481,
+      "medianHomeValue": 314100,
+      "grossYield": 0.05658070678127985,
+      "cbsa": "37860",
+      "state": "FL"
+    },
+    {
+      "name": "New Orleans-Metairie, LA",
+      "slug": "new-orleans-metairie-la",
+      "medianGrossRent": 1262,
+      "medianHomeValue": 267900,
+      "grossYield": 0.05652855543113102,
+      "cbsa": "35380",
+      "state": "LA"
+    },
+    {
+      "name": "Pittsburgh, PA",
+      "slug": "pittsburgh-pa",
+      "medianGrossRent": 1083,
+      "medianHomeValue": 230300,
+      "grossYield": 0.056430742509769864,
+      "cbsa": "38300",
+      "state": "PA"
+    },
+    {
+      "name": "Memphis, TN-MS-AR",
+      "slug": "memphis-tn-ms-ar",
+      "medianGrossRent": 1330,
+      "medianHomeValue": 282900,
+      "grossYield": 0.05641569459172852,
+      "cbsa": "32820",
+      "state": "TN-MS-AR"
+    },
+    {
+      "name": "Lansing-East Lansing, MI",
+      "slug": "lansing-east-lansing-mi",
+      "medianGrossRent": 1111,
+      "medianHomeValue": 237100,
+      "grossYield": 0.05622943905525095,
+      "cbsa": "29620",
+      "state": "MI"
+    },
+    {
+      "name": "Topeka, KS",
+      "slug": "topeka-ks",
+      "medianGrossRent": 990,
+      "medianHomeValue": 211800,
+      "grossYield": 0.056090651558073655,
+      "cbsa": "45820",
+      "state": "KS"
+    },
+    {
+      "name": "San Antonio-New Braunfels, TX",
+      "slug": "san-antonio-new-braunfels-tx",
+      "medianGrossRent": 1422,
+      "medianHomeValue": 304800,
+      "grossYield": 0.055984251968503936,
+      "cbsa": "41700",
+      "state": "TX"
+    },
+    {
+      "name": "Sioux City, IA-NE-SD",
+      "slug": "sioux-city-ia-ne-sd",
+      "medianGrossRent": 1002,
+      "medianHomeValue": 215000,
+      "grossYield": 0.05592558139534884,
+      "cbsa": "43580",
+      "state": "IA-NE-SD"
+    },
+    {
+      "name": "Dothan, AL",
+      "slug": "dothan-al",
+      "medianGrossRent": 897,
+      "medianHomeValue": 192800,
+      "grossYield": 0.055829875518672196,
+      "cbsa": "20020",
+      "state": "AL"
+    },
+    {
+      "name": "Columbia, SC",
+      "slug": "columbia-sc",
+      "medianGrossRent": 1257,
+      "medianHomeValue": 270400,
+      "grossYield": 0.055784023668639056,
+      "cbsa": "17900",
+      "state": "SC"
+    },
+    {
+      "name": "Midland, MI",
+      "slug": "midland-mi",
+      "medianGrossRent": 1031,
+      "medianHomeValue": 222300,
+      "grossYield": 0.055654520917678814,
+      "cbsa": "33220",
+      "state": "MI"
+    },
+    {
+      "name": "Cleveland, OH",
+      "slug": "cleveland-oh",
+      "medianGrossRent": 1087,
+      "medianHomeValue": 234700,
+      "grossYield": 0.05557733276523221,
+      "cbsa": "17410",
+      "state": "OH"
+    },
+    {
+      "name": "Michigan City-La Porte, IN",
+      "slug": "michigan-city-la-porte-in",
+      "medianGrossRent": 999,
+      "medianHomeValue": 215800,
+      "grossYield": 0.05555143651529194,
+      "cbsa": "33140",
+      "state": "IN"
+    },
+    {
+      "name": "Springfield, OH",
+      "slug": "springfield-oh",
+      "medianGrossRent": 913,
+      "medianHomeValue": 197700,
+      "grossYield": 0.05541729893778452,
+      "cbsa": "44220",
+      "state": "OH"
+    },
+    {
+      "name": "Little Rock-North Little Rock-Conway, AR",
+      "slug": "little-rock-north-little-rock-conway-ar",
+      "medianGrossRent": 1093,
+      "medianHomeValue": 237300,
+      "grossYield": 0.05527180783817952,
+      "cbsa": "30780",
+      "state": "AR"
+    },
+    {
+      "name": "St. Joseph, MO-KS",
+      "slug": "st-joseph-mo-ks",
+      "medianGrossRent": 882,
+      "medianHomeValue": 191600,
+      "grossYield": 0.055240083507306886,
+      "cbsa": "41140",
+      "state": "MO-KS"
+    },
+    {
+      "name": "Detroit-Warren-Dearborn, MI",
+      "slug": "detroit-warren-dearborn-mi",
+      "medianGrossRent": 1248,
+      "medianHomeValue": 271600,
+      "grossYield": 0.055139911634757,
+      "cbsa": "19820",
+      "state": "MI"
+    },
+    {
+      "name": "Oklahoma City, OK",
+      "slug": "oklahoma-city-ok",
+      "medianGrossRent": 1162,
+      "medianHomeValue": 253200,
+      "grossYield": 0.05507109004739336,
+      "cbsa": "36420",
+      "state": "OK"
+    },
+    {
+      "name": "Orlando-Kissimmee-Sanford, FL",
+      "slug": "orlando-kissimmee-sanford-fl",
+      "medianGrossRent": 1877,
+      "medianHomeValue": 409400,
+      "grossYield": 0.0550170981924768,
+      "cbsa": "36740",
+      "state": "FL"
+    },
+    {
+      "name": "Lake Charles, LA",
+      "slug": "lake-charles-la",
+      "medianGrossRent": 977,
+      "medianHomeValue": 213100,
+      "grossYield": 0.05501642421398405,
+      "cbsa": "29340",
+      "state": "LA"
+    },
+    {
+      "name": "Tampa-St. Petersburg-Clearwater, FL",
+      "slug": "tampa-st-petersburg-clearwater-fl",
+      "medianGrossRent": 1776,
+      "medianHomeValue": 387400,
+      "grossYield": 0.05501290655653072,
+      "cbsa": "45300",
+      "state": "FL"
+    },
+    {
+      "name": "Hammond, LA",
+      "slug": "hammond-la",
+      "medianGrossRent": 1084,
+      "medianHomeValue": 236500,
+      "grossYield": 0.055002114164904865,
+      "cbsa": "25220",
+      "state": "LA"
+    },
+    {
+      "name": "Columbus, IN",
+      "slug": "columbus-in",
+      "medianGrossRent": 1090,
+      "medianHomeValue": 238200,
+      "grossYield": 0.05491183879093199,
+      "cbsa": "18020",
+      "state": "IN"
+    },
+    {
+      "name": "Hot Springs, AR",
+      "slug": "hot-springs-ar",
+      "medianGrossRent": 1025,
+      "medianHomeValue": 224200,
+      "grossYield": 0.054861730597680645,
+      "cbsa": "26300",
+      "state": "AR"
+    },
+    {
+      "name": "Crestview-Fort Walton Beach-Destin, FL",
+      "slug": "crestview-fort-walton-beach-destin-fl",
+      "medianGrossRent": 1784,
+      "medianHomeValue": 391500,
+      "grossYield": 0.05468199233716475,
+      "cbsa": "18880",
+      "state": "FL"
+    },
+    {
+      "name": "Fairbanks-College, AK",
+      "slug": "fairbanks-college-ak",
+      "medianGrossRent": 1499,
+      "medianHomeValue": 329200,
+      "grossYield": 0.054641555285540704,
+      "cbsa": "21820",
+      "state": "AK"
+    },
+    {
+      "name": "Ponce, PR",
+      "slug": "ponce-pr",
+      "medianGrossRent": 516,
+      "medianHomeValue": 113500,
+      "grossYield": 0.05455506607929515,
+      "cbsa": "38660",
+      "state": "PR"
+    },
+    {
+      "name": "Savannah, GA",
+      "slug": "savannah-ga",
+      "medianGrossRent": 1589,
+      "medianHomeValue": 349900,
+      "grossYield": 0.054495570162903684,
+      "cbsa": "42340",
+      "state": "GA"
+    },
+    {
+      "name": "Jackson, MI",
+      "slug": "jackson-mi",
+      "medianGrossRent": 965,
+      "medianHomeValue": 212900,
+      "grossYield": 0.05439173320807891,
+      "cbsa": "27100",
+      "state": "MI"
+    },
+    {
+      "name": "Dover, DE",
+      "slug": "dover-de",
+      "medianGrossRent": 1540,
+      "medianHomeValue": 339800,
+      "grossYield": 0.05438493231312537,
+      "cbsa": "20100",
+      "state": "DE"
+    },
+    {
+      "name": "Canton-Massillon, OH",
+      "slug": "canton-massillon-oh",
+      "medianGrossRent": 930,
+      "medianHomeValue": 205400,
+      "grossYield": 0.05433300876338851,
+      "cbsa": "15940",
+      "state": "OH"
+    },
+    {
+      "name": "Baton Rouge, LA",
+      "slug": "baton-rouge-la",
+      "medianGrossRent": 1138,
+      "medianHomeValue": 252000,
+      "grossYield": 0.05419047619047619,
+      "cbsa": "12940",
+      "state": "LA"
+    },
+    {
+      "name": "Wichita, KS",
+      "slug": "wichita-ks",
+      "medianGrossRent": 1010,
+      "medianHomeValue": 223700,
+      "grossYield": 0.05417970496200268,
+      "cbsa": "48620",
+      "state": "KS"
+    },
+    {
+      "name": "Gainesville, FL",
+      "slug": "gainesville-fl",
+      "medianGrossRent": 1377,
+      "medianHomeValue": 305300,
+      "grossYield": 0.05412381264330167,
+      "cbsa": "23540",
+      "state": "FL"
+    },
+    {
+      "name": "Palm Bay-Melbourne-Titusville, FL",
+      "slug": "palm-bay-melbourne-titusville-fl",
+      "medianGrossRent": 1681,
+      "medianHomeValue": 372900,
+      "grossYield": 0.05409493161705551,
+      "cbsa": "37340",
+      "state": "FL"
+    },
+    {
+      "name": "Racine-Mount Pleasant, WI",
+      "slug": "racine-mount-pleasant-wi",
+      "medianGrossRent": 1202,
+      "medianHomeValue": 266700,
+      "grossYield": 0.05408323959505062,
+      "cbsa": "39540",
+      "state": "WI"
+    },
+    {
+      "name": "Tulsa, OK",
+      "slug": "tulsa-ok",
+      "medianGrossRent": 1115,
+      "medianHomeValue": 247500,
+      "grossYield": 0.05406060606060606,
+      "cbsa": "46140",
+      "state": "OK"
+    },
+    {
+      "name": "Farmington, NM",
+      "slug": "farmington-nm",
+      "medianGrossRent": 946,
+      "medianHomeValue": 210000,
+      "grossYield": 0.05405714285714286,
+      "cbsa": "22140",
+      "state": "NM"
+    },
+    {
+      "name": "Kenosha, WI",
+      "slug": "kenosha-wi",
+      "medianGrossRent": 1289,
+      "medianHomeValue": 286800,
+      "grossYield": 0.05393305439330544,
+      "cbsa": "28450",
+      "state": "WI"
+    },
+    {
+      "name": "Houston-Pasadena-The Woodlands, TX",
+      "slug": "houston-pasadena-the-woodlands-tx",
+      "medianGrossRent": 1469,
+      "medianHomeValue": 327400,
+      "grossYield": 0.05384239462431277,
+      "cbsa": "26420",
+      "state": "TX"
+    },
+    {
+      "name": "Utica-Rome, NY",
+      "slug": "utica-rome-ny",
+      "medianGrossRent": 888,
+      "medianHomeValue": 198600,
+      "grossYield": 0.05365558912386707,
+      "cbsa": "46540",
+      "state": "NY"
+    },
+    {
+      "name": "Waco, TX",
+      "slug": "waco-tx",
+      "medianGrossRent": 1238,
+      "medianHomeValue": 277100,
+      "grossYield": 0.05361241429086972,
+      "cbsa": "47380",
+      "state": "TX"
+    },
+    {
+      "name": "Bloomington, IL",
+      "slug": "bloomington-il",
+      "medianGrossRent": 1034,
+      "medianHomeValue": 231600,
+      "grossYield": 0.05357512953367875,
+      "cbsa": "14010",
+      "state": "IL"
+    },
+    {
+      "name": "Akron, OH",
+      "slug": "akron-oh",
+      "medianGrossRent": 1059,
+      "medianHomeValue": 237300,
+      "grossYield": 0.053552465233881165,
+      "cbsa": "10420",
+      "state": "OH"
+    },
+    {
+      "name": "Deltona-Daytona Beach-Ormond Beach, FL",
+      "slug": "deltona-daytona-beach-ormond-beach-fl",
+      "medianGrossRent": 1614,
+      "medianHomeValue": 362600,
+      "grossYield": 0.0534142305570877,
+      "cbsa": "19660",
+      "state": "FL"
+    },
+    {
+      "name": "Erie, PA",
+      "slug": "erie-pa",
+      "medianGrossRent": 888,
+      "medianHomeValue": 200000,
+      "grossYield": 0.05328,
+      "cbsa": "21500",
+      "state": "PA"
+    },
+    {
+      "name": "Janesville-Beloit, WI",
+      "slug": "janesville-beloit-wi",
+      "medianGrossRent": 1150,
+      "medianHomeValue": 259100,
+      "grossYield": 0.05326128907757623,
+      "cbsa": "27500",
+      "state": "WI"
+    },
+    {
+      "name": "Harrisburg-Carlisle, PA",
+      "slug": "harrisburg-carlisle-pa",
+      "medianGrossRent": 1254,
+      "medianHomeValue": 282600,
+      "grossYield": 0.0532484076433121,
+      "cbsa": "25420",
+      "state": "PA"
+    },
+    {
+      "name": "Spartanburg, SC",
+      "slug": "spartanburg-sc",
+      "medianGrossRent": 1139,
+      "medianHomeValue": 257800,
+      "grossYield": 0.053017843289371605,
+      "cbsa": "43900",
+      "state": "SC"
+    },
+    {
+      "name": "Dallas-Fort Worth-Arlington, TX",
+      "slug": "dallas-fort-worth-arlington-tx",
+      "medianGrossRent": 1718,
+      "medianHomeValue": 389500,
+      "grossYield": 0.052929396662387676,
+      "cbsa": "19100",
+      "state": "TX"
+    },
+    {
+      "name": "Myrtle Beach-Conway-North Myrtle Beach, SC",
+      "slug": "myrtle-beach-conway-north-myrtle-beach-sc",
+      "medianGrossRent": 1433,
+      "medianHomeValue": 325300,
+      "grossYield": 0.052861973562865046,
+      "cbsa": "34820",
+      "state": "SC"
+    },
+    {
+      "name": "Atlanta-Sandy Springs-Roswell, GA",
+      "slug": "atlanta-sandy-springs-roswell-ga",
+      "medianGrossRent": 1770,
+      "medianHomeValue": 402100,
+      "grossYield": 0.052822680925143,
+      "cbsa": "12060",
+      "state": "GA"
+    },
+    {
+      "name": "Slidell-Mandeville-Covington, LA",
+      "slug": "slidell-mandeville-covington-la",
+      "medianGrossRent": 1305,
+      "medianHomeValue": 296500,
+      "grossYield": 0.05281618887015177,
+      "cbsa": "43640",
+      "state": "LA"
+    },
+    {
+      "name": "Evansville, IN",
+      "slug": "evansville-in",
+      "medianGrossRent": 1007,
+      "medianHomeValue": 228800,
+      "grossYield": 0.05281468531468531,
+      "cbsa": "21780",
+      "state": "IN"
+    },
+    {
+      "name": "Buffalo-Cheektowaga, NY",
+      "slug": "buffalo-cheektowaga-ny",
+      "medianGrossRent": 1114,
+      "medianHomeValue": 253200,
+      "grossYield": 0.05279620853080569,
+      "cbsa": "15380",
+      "state": "NY"
+    },
+    {
+      "name": "Muskegon-Norton Shores, MI",
+      "slug": "muskegon-norton-shores-mi",
+      "medianGrossRent": 977,
+      "medianHomeValue": 222100,
+      "grossYield": 0.05278703286807744,
+      "cbsa": "34740",
+      "state": "MI"
+    },
+    {
+      "name": "Allentown-Bethlehem-Easton, PA-NJ",
+      "slug": "allentown-bethlehem-easton-pa-nj",
+      "medianGrossRent": 1458,
+      "medianHomeValue": 332700,
+      "grossYield": 0.05258791704238052,
+      "cbsa": "10900",
+      "state": "PA-NJ"
+    },
+    {
+      "name": "Guayama, PR",
+      "slug": "guayama-pr",
+      "medianGrossRent": 471,
+      "medianHomeValue": 107500,
+      "grossYield": 0.05257674418604651,
+      "cbsa": "25020",
+      "state": "PR"
+    },
+    {
+      "name": "Fort Smith, AR-OK",
+      "slug": "fort-smith-ar-ok",
+      "medianGrossRent": 906,
+      "medianHomeValue": 207000,
+      "grossYield": 0.052521739130434786,
+      "cbsa": "22900",
+      "state": "AR-OK"
+    },
+    {
+      "name": "Elkhart-Goshen, IN",
+      "slug": "elkhart-goshen-in",
+      "medianGrossRent": 1047,
+      "medianHomeValue": 239500,
+      "grossYield": 0.05245929018789144,
+      "cbsa": "21140",
+      "state": "IN"
+    },
+    {
+      "name": "York-Hanover, PA",
+      "slug": "york-hanover-pa",
+      "medianGrossRent": 1203,
+      "medianHomeValue": 275200,
+      "grossYield": 0.05245639534883721,
+      "cbsa": "49620",
+      "state": "PA"
+    },
+    {
+      "name": "Tallahassee, FL",
+      "slug": "tallahassee-fl",
+      "medianGrossRent": 1330,
+      "medianHomeValue": 304300,
+      "grossYield": 0.05244824186657904,
+      "cbsa": "45220",
+      "state": "FL"
+    },
+    {
+      "name": "Indianapolis-Carmel-Greenwood, IN",
+      "slug": "indianapolis-carmel-greenwood-in",
+      "medianGrossRent": 1273,
+      "medianHomeValue": 291400,
+      "grossYield": 0.05242278654770075,
+      "cbsa": "26900",
+      "state": "IN"
+    },
+    {
+      "name": "Tyler, TX",
+      "slug": "tyler-tx",
+      "medianGrossRent": 1272,
+      "medianHomeValue": 291800,
+      "grossYield": 0.052309801233721726,
+      "cbsa": "46340",
+      "state": "TX"
+    },
+    {
+      "name": "Lafayette, LA",
+      "slug": "lafayette-la",
+      "medianGrossRent": 968,
+      "medianHomeValue": 222100,
+      "grossYield": 0.05230076542098154,
+      "cbsa": "29180",
+      "state": "LA"
+    },
+    {
+      "name": "Elizabethtown, KY",
+      "slug": "elizabethtown-ky",
+      "medianGrossRent": 1051,
+      "medianHomeValue": 241200,
+      "grossYield": 0.052288557213930345,
+      "cbsa": "21060",
+      "state": "KY"
+    },
+    {
+      "name": "Lancaster, PA",
+      "slug": "lancaster-pa",
+      "medianGrossRent": 1449,
+      "medianHomeValue": 332600,
+      "grossYield": 0.05227901383042694,
+      "cbsa": "29540",
+      "state": "PA"
+    },
+    {
+      "name": "Tuscaloosa, AL",
+      "slug": "tuscaloosa-al",
+      "medianGrossRent": 1042,
+      "medianHomeValue": 239500,
+      "grossYield": 0.052208768267223385,
+      "cbsa": "46220",
+      "state": "AL"
+    },
+    {
+      "name": "Jacksonville, FL",
+      "slug": "jacksonville-fl",
+      "medianGrossRent": 1625,
+      "medianHomeValue": 375200,
+      "grossYield": 0.05197228144989339,
+      "cbsa": "27260",
+      "state": "FL"
+    },
+    {
+      "name": "Williamsport, PA",
+      "slug": "williamsport-pa",
+      "medianGrossRent": 934,
+      "medianHomeValue": 215900,
+      "grossYield": 0.051912922649374714,
+      "cbsa": "48700",
+      "state": "PA"
+    },
+    {
+      "name": "Chicago-Naperville-Elgin, IL-IN",
+      "slug": "chicago-naperville-elgin-il-in",
+      "medianGrossRent": 1469,
+      "medianHomeValue": 339700,
+      "grossYield": 0.05189284662937886,
+      "cbsa": "16980",
+      "state": "IL-IN"
+    },
+    {
+      "name": "Greensboro-High Point, NC",
+      "slug": "greensboro-high-point-nc",
+      "medianGrossRent": 1171,
+      "medianHomeValue": 271000,
+      "grossYield": 0.05185239852398524,
+      "cbsa": "24660",
+      "state": "NC"
+    },
+    {
+      "name": "Clarksville, TN-KY",
+      "slug": "clarksville-tn-ky",
+      "medianGrossRent": 1260,
+      "medianHomeValue": 291700,
+      "grossYield": 0.051834076105587934,
+      "cbsa": "17300",
+      "state": "TN-KY"
+    },
+    {
+      "name": "Yuma, AZ",
+      "slug": "yuma-az",
+      "medianGrossRent": 1099,
+      "medianHomeValue": 255300,
+      "grossYield": 0.05165687426556992,
+      "cbsa": "49740",
+      "state": "AZ"
+    },
+    {
+      "name": "St. Louis, MO-IL",
+      "slug": "st-louis-mo-il",
+      "medianGrossRent": 1154,
+      "medianHomeValue": 268300,
+      "grossYield": 0.05161386507640701,
+      "cbsa": "41180",
+      "state": "MO-IL"
+    },
+    {
+      "name": "Rochester, MN",
+      "slug": "rochester-mn",
+      "medianGrossRent": 1378,
+      "medianHomeValue": 320600,
+      "grossYield": 0.05157829070492826,
+      "cbsa": "40340",
+      "state": "MN"
+    },
+    {
+      "name": "Fort Wayne, IN",
+      "slug": "fort-wayne-in",
+      "medianGrossRent": 1056,
+      "medianHomeValue": 245800,
+      "grossYield": 0.05155410903173312,
+      "cbsa": "23060",
+      "state": "IN"
+    },
+    {
+      "name": "Glens Falls, NY",
+      "slug": "glens-falls-ny",
+      "medianGrossRent": 1140,
+      "medianHomeValue": 265600,
+      "grossYield": 0.05150602409638554,
+      "cbsa": "24020",
+      "state": "NY"
+    },
+    {
+      "name": "Louisville/Jefferson County, KY-IN",
+      "slug": "louisville-jefferson-county-ky-in",
+      "medianGrossRent": 1140,
+      "medianHomeValue": 265900,
+      "grossYield": 0.051447912749153814,
+      "cbsa": "31140",
+      "state": "KY-IN"
+    },
+    {
+      "name": "Virginia Beach-Chesapeake-Norfolk, VA-NC",
+      "slug": "virginia-beach-chesapeake-norfolk-va-nc",
+      "medianGrossRent": 1556,
+      "medianHomeValue": 363400,
+      "grossYield": 0.051381397908640616,
+      "cbsa": "47260",
+      "state": "VA-NC"
+    },
+    {
+      "name": "Roanoke, VA",
+      "slug": "roanoke-va",
+      "medianGrossRent": 1188,
+      "medianHomeValue": 278000,
+      "grossYield": 0.05128057553956834,
+      "cbsa": "40220",
+      "state": "VA"
+    },
+    {
+      "name": "Daphne-Fairhope-Foley, AL",
+      "slug": "daphne-fairhope-foley-al",
+      "medianGrossRent": 1440,
+      "medianHomeValue": 338100,
+      "grossYield": 0.051109139307897074,
+      "cbsa": "19300",
+      "state": "AL"
+    },
+    {
+      "name": "Reading, PA",
+      "slug": "reading-pa",
+      "medianGrossRent": 1195,
+      "medianHomeValue": 281100,
+      "grossYield": 0.05101387406616862,
+      "cbsa": "39740",
+      "state": "PA"
+    },
+    {
+      "name": "North Port-Bradenton-Sarasota, FL",
+      "slug": "north-port-bradenton-sarasota-fl",
+      "medianGrossRent": 1920,
+      "medianHomeValue": 452100,
+      "grossYield": 0.050962176509621766,
+      "cbsa": "35840",
+      "state": "FL"
+    },
+    {
+      "name": "Albany-Schenectady-Troy, NY",
+      "slug": "albany-schenectady-troy-ny",
+      "medianGrossRent": 1341,
+      "medianHomeValue": 316300,
+      "grossYield": 0.050875750869427756,
+      "cbsa": "10580",
+      "state": "NY"
+    },
+    {
+      "name": "Burlington, NC",
+      "slug": "burlington-nc",
+      "medianGrossRent": 1218,
+      "medianHomeValue": 289200,
+      "grossYield": 0.05053941908713693,
+      "cbsa": "15500",
+      "state": "NC"
+    },
+    {
+      "name": "Wausau, WI",
+      "slug": "wausau-wi",
+      "medianGrossRent": 1023,
+      "medianHomeValue": 243500,
+      "grossYield": 0.05041478439425051,
+      "cbsa": "48140",
+      "state": "WI"
+    },
+    {
+      "name": "Omaha, NE-IA",
+      "slug": "omaha-ne-ia",
+      "medianGrossRent": 1230,
+      "medianHomeValue": 292800,
+      "grossYield": 0.05040983606557377,
+      "cbsa": "36540",
+      "state": "NE-IA"
+    },
+    {
+      "name": "Rome, GA",
+      "slug": "rome-ga",
+      "medianGrossRent": 1097,
+      "medianHomeValue": 261500,
+      "grossYield": 0.05034034416826004,
+      "cbsa": "40660",
+      "state": "GA"
+    },
+    {
+      "name": "Kansas City, MO-KS",
+      "slug": "kansas-city-mo-ks",
+      "medianGrossRent": 1315,
+      "medianHomeValue": 314300,
+      "grossYield": 0.050206808781419025,
+      "cbsa": "28140",
+      "state": "MO-KS"
+    },
+    {
+      "name": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",
+      "slug": "philadelphia-camden-wilmington-pa-nj-de-md",
+      "medianGrossRent": 1567,
+      "medianHomeValue": 375100,
+      "grossYield": 0.0501306318315116,
+      "cbsa": "37980",
+      "state": "PA-NJ-DE-MD"
+    },
+    {
+      "name": "New Haven, CT",
+      "slug": "new-haven-ct",
+      "medianGrossRent": 1600,
+      "medianHomeValue": 383600,
+      "grossYield": 0.05005213764337852,
+      "cbsa": "35300",
+      "state": "CT"
+    },
+    {
+      "name": "Cincinnati, OH-KY-IN",
+      "slug": "cincinnati-oh-ky-in",
+      "medianGrossRent": 1203,
+      "medianHomeValue": 288700,
+      "grossYield": 0.050003463803255974,
+      "cbsa": "17140",
+      "state": "OH-KY-IN"
+    },
+    {
+      "name": "Dubuque, IA",
+      "slug": "dubuque-ia",
+      "medianGrossRent": 1047,
+      "medianHomeValue": 251600,
+      "grossYield": 0.049936406995230526,
+      "cbsa": "20220",
+      "state": "IA"
+    },
+    {
+      "name": "Manhattan, KS",
+      "slug": "manhattan-ks",
+      "medianGrossRent": 1070,
+      "medianHomeValue": 257600,
+      "grossYield": 0.04984472049689441,
+      "cbsa": "31740",
+      "state": "KS"
+    },
+    {
+      "name": "Blacksburg-Christiansburg-Radford, VA",
+      "slug": "blacksburg-christiansburg-radford-va",
+      "medianGrossRent": 1123,
+      "medianHomeValue": 270600,
+      "grossYield": 0.04980044345898004,
+      "cbsa": "13980",
+      "state": "VA"
+    },
+    {
+      "name": "Arecibo, PR",
+      "slug": "arecibo-pr",
+      "medianGrossRent": 537,
+      "medianHomeValue": 129500,
+      "grossYield": 0.04976061776061776,
+      "cbsa": "11640",
+      "state": "PR"
+    },
+    {
+      "name": "Sierra Vista-Douglas, AZ",
+      "slug": "sierra-vista-douglas-az",
+      "medianGrossRent": 960,
+      "medianHomeValue": 231600,
+      "grossYield": 0.049740932642487044,
+      "cbsa": "43420",
+      "state": "AZ"
+    },
+    {
+      "name": "Kalamazoo-Portage, MI",
+      "slug": "kalamazoo-portage-mi",
+      "medianGrossRent": 1080,
+      "medianHomeValue": 260600,
+      "grossYield": 0.04973138910207214,
+      "cbsa": "28020",
+      "state": "MI"
+    },
+    {
+      "name": "Minot, ND",
+      "slug": "minot-nd",
+      "medianGrossRent": 1091,
+      "medianHomeValue": 264600,
+      "grossYield": 0.04947845804988662,
+      "cbsa": "33500",
+      "state": "ND"
+    },
+    {
+      "name": "Cedar Rapids, IA",
+      "slug": "cedar-rapids-ia",
+      "medianGrossRent": 933,
+      "medianHomeValue": 226700,
+      "grossYield": 0.049386854874283195,
+      "cbsa": "16300",
+      "state": "IA"
+    },
+    {
+      "name": "Greenville-Anderson-Greer, SC",
+      "slug": "greenville-anderson-greer-sc",
+      "medianGrossRent": 1236,
+      "medianHomeValue": 300400,
+      "grossYield": 0.04937416777629827,
+      "cbsa": "24860",
+      "state": "SC"
+    },
+    {
+      "name": "Lebanon, PA",
+      "slug": "lebanon-pa",
+      "medianGrossRent": 1159,
+      "medianHomeValue": 281800,
+      "grossYield": 0.0493541518807665,
+      "cbsa": "30140",
+      "state": "PA"
+    },
+    {
+      "name": "Oshkosh-Neenah, WI",
+      "slug": "oshkosh-neenah-wi",
+      "medianGrossRent": 1029,
+      "medianHomeValue": 250200,
+      "grossYield": 0.04935251798561151,
+      "cbsa": "36780",
+      "state": "WI"
+    },
+    {
+      "name": "Owensboro, KY",
+      "slug": "owensboro-ky",
+      "medianGrossRent": 853,
+      "medianHomeValue": 208000,
+      "grossYield": 0.04921153846153846,
+      "cbsa": "36980",
+      "state": "KY"
+    },
+    {
+      "name": "Lafayette-West Lafayette, IN",
+      "slug": "lafayette-west-lafayette-in",
+      "medianGrossRent": 1126,
+      "medianHomeValue": 274600,
+      "grossYield": 0.04920611798980335,
+      "cbsa": "29200",
+      "state": "IN"
+    },
+    {
+      "name": "Port St. Lucie, FL",
+      "slug": "port-st-lucie-fl",
+      "medianGrossRent": 1722,
+      "medianHomeValue": 420200,
+      "grossYield": 0.04917658257972394,
+      "cbsa": "38940",
+      "state": "FL"
+    },
+    {
+      "name": "Gettysburg, PA",
+      "slug": "gettysburg-pa",
+      "medianGrossRent": 1171,
+      "medianHomeValue": 285900,
+      "grossYield": 0.04915005246589717,
+      "cbsa": "23900",
+      "state": "PA"
+    },
+    {
+      "name": "Morgantown, WV",
+      "slug": "morgantown-wv",
+      "medianGrossRent": 973,
+      "medianHomeValue": 237800,
+      "grossYield": 0.049100084104289315,
+      "cbsa": "34060",
+      "state": "WV"
+    },
+    {
+      "name": "Decatur, AL",
+      "slug": "decatur-al",
+      "medianGrossRent": 899,
+      "medianHomeValue": 219800,
+      "grossYield": 0.04908098271155596,
+      "cbsa": "19460",
+      "state": "AL"
+    },
+    {
+      "name": "Richmond, VA",
+      "slug": "richmond-va",
+      "medianGrossRent": 1546,
+      "medianHomeValue": 378100,
+      "grossYield": 0.0490663845543507,
+      "cbsa": "40060",
+      "state": "VA"
+    },
+    {
+      "name": "Waterbury-Shelton, CT",
+      "slug": "waterbury-shelton-ct",
+      "medianGrossRent": 1407,
+      "medianHomeValue": 344300,
+      "grossYield": 0.04903862910252687,
+      "cbsa": "47930",
+      "state": "CT"
+    },
+    {
+      "name": "Des Moines-West Des Moines, IA",
+      "slug": "des-moines-west-des-moines-ia",
+      "medianGrossRent": 1178,
+      "medianHomeValue": 288400,
+      "grossYield": 0.04901525658807212,
+      "cbsa": "19780",
+      "state": "IA"
+    },
+    {
+      "name": "Miami-Fort Lauderdale-West Palm Beach, FL",
+      "slug": "miami-fort-lauderdale-west-palm-beach-fl",
+      "medianGrossRent": 2083,
+      "medianHomeValue": 510600,
+      "grossYield": 0.048954171562867216,
+      "cbsa": "33100",
+      "state": "FL"
+    },
+    {
+      "name": "Kingston, NY",
+      "slug": "kingston-ny",
+      "medianGrossRent": 1586,
+      "medianHomeValue": 389100,
+      "grossYield": 0.048912875867386275,
+      "cbsa": "28740",
+      "state": "NY"
+    },
+    {
+      "name": "Gainesville, GA",
+      "slug": "gainesville-ga",
+      "medianGrossRent": 1581,
+      "medianHomeValue": 388000,
+      "grossYield": 0.048896907216494846,
+      "cbsa": "23580",
+      "state": "GA"
+    },
+    {
+      "name": "Grand Rapids-Wyoming-Kentwood, MI",
+      "slug": "grand-rapids-wyoming-kentwood-mi",
+      "medianGrossRent": 1289,
+      "medianHomeValue": 316600,
+      "grossYield": 0.04885660138976627,
+      "cbsa": "24340",
+      "state": "MI"
+    },
+    {
+      "name": "Winston-Salem, NC",
+      "slug": "winston-salem-nc",
+      "medianGrossRent": 1102,
+      "medianHomeValue": 270700,
+      "grossYield": 0.048851126708533435,
+      "cbsa": "49180",
+      "state": "NC"
+    },
+    {
+      "name": "San Juan-Bayamón-Caguas, PR",
+      "slug": "san-juan-bayam-n-caguas-pr",
+      "medianGrossRent": 620,
+      "medianHomeValue": 152300,
+      "grossYield": 0.048850952068286276,
+      "cbsa": "41980",
+      "state": "PR"
+    },
+    {
+      "name": "Bakersfield-Delano, CA",
+      "slug": "bakersfield-delano-ca",
+      "medianGrossRent": 1479,
+      "medianHomeValue": 363600,
+      "grossYield": 0.048811881188118814,
+      "cbsa": "12540",
+      "state": "CA"
+    },
+    {
+      "name": "Johnson City, TN",
+      "slug": "johnson-city-tn",
+      "medianGrossRent": 993,
+      "medianHomeValue": 244500,
+      "grossYield": 0.048736196319018404,
+      "cbsa": "27740",
+      "state": "TN"
+    },
+    {
+      "name": "Columbus, OH",
+      "slug": "columbus-oh",
+      "medianGrossRent": 1359,
+      "medianHomeValue": 334800,
+      "grossYield": 0.048709677419354835,
+      "cbsa": "18140",
+      "state": "OH"
+    },
+    {
+      "name": "Fond du Lac, WI",
+      "slug": "fond-du-lac-wi",
+      "medianGrossRent": 951,
+      "medianHomeValue": 234400,
+      "grossYield": 0.048686006825938564,
+      "cbsa": "22540",
+      "state": "WI"
+    },
+    {
+      "name": "Lexington-Fayette, KY",
+      "slug": "lexington-fayette-ky",
+      "medianGrossRent": 1245,
+      "medianHomeValue": 306900,
+      "grossYield": 0.04868035190615836,
+      "cbsa": "30460",
+      "state": "KY"
+    },
+    {
+      "name": "Hanford-Corcoran, CA",
+      "slug": "hanford-corcoran-ca",
+      "medianGrossRent": 1421,
+      "medianHomeValue": 350500,
+      "grossYield": 0.04865049928673324,
+      "cbsa": "25260",
+      "state": "CA"
+    },
+    {
+      "name": "Baltimore-Columbia-Towson, MD",
+      "slug": "baltimore-columbia-towson-md",
+      "medianGrossRent": 1633,
+      "medianHomeValue": 403000,
+      "grossYield": 0.04862531017369727,
+      "cbsa": "12580",
+      "state": "MD"
+    },
+    {
+      "name": "Jonesboro, AR",
+      "slug": "jonesboro-ar",
+      "medianGrossRent": 870,
+      "medianHomeValue": 214800,
+      "grossYield": 0.04860335195530726,
+      "cbsa": "27860",
+      "state": "AR"
+    },
+    {
+      "name": "Cape Girardeau, MO-IL",
+      "slug": "cape-girardeau-mo-il",
+      "medianGrossRent": 890,
+      "medianHomeValue": 220100,
+      "grossYield": 0.04852339845524761,
+      "cbsa": "16020",
+      "state": "MO-IL"
+    },
+    {
+      "name": "Chambersburg, PA",
+      "slug": "chambersburg-pa",
+      "medianGrossRent": 1117,
+      "medianHomeValue": 276500,
+      "grossYield": 0.04847739602169982,
+      "cbsa": "16540",
+      "state": "PA"
+    },
+    {
+      "name": "Dalton, GA",
+      "slug": "dalton-ga",
+      "medianGrossRent": 973,
+      "medianHomeValue": 242400,
+      "grossYield": 0.04816831683168317,
+      "cbsa": "19140",
+      "state": "GA"
+    },
+    {
+      "name": "Florence-Muscle Shoals, AL",
+      "slug": "florence-muscle-shoals-al",
+      "medianGrossRent": 877,
+      "medianHomeValue": 218600,
+      "grossYield": 0.048142726440988104,
+      "cbsa": "22520",
+      "state": "AL"
+    },
+    {
+      "name": "Greenville, NC",
+      "slug": "greenville-nc",
+      "medianGrossRent": 986,
+      "medianHomeValue": 245800,
+      "grossYield": 0.0481366965012205,
+      "cbsa": "24780",
+      "state": "NC"
+    },
+    {
+      "name": "Atlantic City-Hammonton, NJ",
+      "slug": "atlantic-city-hammonton-nj",
+      "medianGrossRent": 1467,
+      "medianHomeValue": 366000,
+      "grossYield": 0.04809836065573771,
+      "cbsa": "12100",
+      "state": "NJ"
+    },
+    {
+      "name": "Trenton-Princeton, NJ",
+      "slug": "trenton-princeton-nj",
+      "medianGrossRent": 1744,
+      "medianHomeValue": 436500,
+      "grossYield": 0.04794501718213058,
+      "cbsa": "45940",
+      "state": "NJ"
+    },
+    {
+      "name": "Duluth, MN-WI",
+      "slug": "duluth-mn-wi",
+      "medianGrossRent": 993,
+      "medianHomeValue": 248600,
+      "grossYield": 0.047932421560740145,
+      "cbsa": "20260",
+      "state": "MN-WI"
+    },
+    {
+      "name": "Charleston-North Charleston, SC",
+      "slug": "charleston-north-charleston-sc",
+      "medianGrossRent": 1714,
+      "medianHomeValue": 430300,
+      "grossYield": 0.04779920985359052,
+      "cbsa": "16700",
+      "state": "SC"
+    },
+    {
+      "name": "Charlotte-Concord-Gastonia, NC-SC",
+      "slug": "charlotte-concord-gastonia-nc-sc",
+      "medianGrossRent": 1594,
+      "medianHomeValue": 400400,
+      "grossYield": 0.047772227772227775,
+      "cbsa": "16740",
+      "state": "NC-SC"
+    },
+    {
+      "name": "Las Cruces, NM",
+      "slug": "las-cruces-nm",
+      "medianGrossRent": 1031,
+      "medianHomeValue": 259000,
+      "grossYield": 0.04776833976833977,
+      "cbsa": "29740",
+      "state": "NM"
+    },
+    {
+      "name": "Wilmington, NC",
+      "slug": "wilmington-nc",
+      "medianGrossRent": 1578,
+      "medianHomeValue": 397300,
+      "grossYield": 0.04766171658696199,
+      "cbsa": "48900",
+      "state": "NC"
+    },
+    {
+      "name": "Hartford-West Hartford-East Hartford, CT",
+      "slug": "hartford-west-hartford-east-hartford-ct",
+      "medianGrossRent": 1458,
+      "medianHomeValue": 367100,
+      "grossYield": 0.04766003813674748,
+      "cbsa": "25540",
+      "state": "CT"
+    },
+    {
+      "name": "Norwich-New London-Willimantic, CT",
+      "slug": "norwich-new-london-willimantic-ct",
+      "medianGrossRent": 1440,
+      "medianHomeValue": 362800,
+      "grossYield": 0.04762954796030871,
+      "cbsa": "35980",
+      "state": "CT"
+    },
+    {
+      "name": "Lynchburg, VA",
+      "slug": "lynchburg-va",
+      "medianGrossRent": 1065,
+      "medianHomeValue": 268700,
+      "grossYield": 0.047562337179010046,
+      "cbsa": "31340",
+      "state": "VA"
+    },
+    {
+      "name": "College Station-Bryan, TX",
+      "slug": "college-station-bryan-tx",
+      "medianGrossRent": 1195,
+      "medianHomeValue": 301800,
+      "grossYield": 0.04751491053677932,
+      "cbsa": "17780",
+      "state": "TX"
+    },
+    {
+      "name": "La Crosse-Onalaska, WI-MN",
+      "slug": "la-crosse-onalaska-wi-mn",
+      "medianGrossRent": 1087,
+      "medianHomeValue": 274600,
+      "grossYield": 0.047501820830298615,
+      "cbsa": "29100",
+      "state": "WI-MN"
+    },
+    {
+      "name": "Bowling Green, KY",
+      "slug": "bowling-green-ky",
+      "medianGrossRent": 1024,
+      "medianHomeValue": 258900,
+      "grossYield": 0.04746234067207416,
+      "cbsa": "14540",
+      "state": "KY"
+    },
+    {
+      "name": "Monroe, MI",
+      "slug": "monroe-mi",
+      "medianGrossRent": 1002,
+      "medianHomeValue": 253500,
+      "grossYield": 0.04743195266272189,
+      "cbsa": "33780",
+      "state": "MI"
+    },
+    {
+      "name": "Homosassa Springs, FL",
+      "slug": "homosassa-springs-fl",
+      "medianGrossRent": 1109,
+      "medianHomeValue": 280900,
+      "grossYield": 0.04737629049483802,
+      "cbsa": "26140",
+      "state": "FL"
+    },
+    {
+      "name": "Bangor, ME",
+      "slug": "bangor-me",
+      "medianGrossRent": 1015,
+      "medianHomeValue": 257700,
+      "grossYield": 0.04726426076833527,
+      "cbsa": "12620",
+      "state": "ME"
+    },
+    {
+      "name": "Ann Arbor, MI",
+      "slug": "ann-arbor-mi",
+      "medianGrossRent": 1554,
+      "medianHomeValue": 395300,
+      "grossYield": 0.04717429800151784,
+      "cbsa": "11460",
+      "state": "MI"
+    },
+    {
+      "name": "Springfield, MO",
+      "slug": "springfield-mo",
+      "medianGrossRent": 1019,
+      "medianHomeValue": 260000,
+      "grossYield": 0.04703076923076923,
+      "cbsa": "44180",
+      "state": "MO"
+    },
+    {
+      "name": "Appleton, WI",
+      "slug": "appleton-wi",
+      "medianGrossRent": 1164,
+      "medianHomeValue": 297500,
+      "grossYield": 0.04695126050420168,
+      "cbsa": "11540",
+      "state": "WI"
+    },
+    {
+      "name": "Mayagüez, PR",
+      "slug": "mayag-ez-pr",
+      "medianGrossRent": 519,
+      "medianHomeValue": 133000,
+      "grossYield": 0.04682706766917293,
+      "cbsa": "32420",
+      "state": "PR"
+    },
+    {
+      "name": "Sandusky, OH",
+      "slug": "sandusky-oh",
+      "medianGrossRent": 924,
+      "medianHomeValue": 236800,
+      "grossYield": 0.046824324324324325,
+      "cbsa": "41780",
+      "state": "OH"
+    },
+    {
+      "name": "Chattanooga, TN-GA",
+      "slug": "chattanooga-tn-ga",
+      "medianGrossRent": 1265,
+      "medianHomeValue": 324500,
+      "grossYield": 0.04677966101694915,
+      "cbsa": "16860",
+      "state": "TN-GA"
+    },
+    {
+      "name": "Kiryas Joel-Poughkeepsie-Newburgh, NY",
+      "slug": "kiryas-joel-poughkeepsie-newburgh-ny",
+      "medianGrossRent": 1688,
+      "medianHomeValue": 434900,
+      "grossYield": 0.04657622441940676,
+      "cbsa": "28880",
+      "state": "NY"
+    },
+    {
+      "name": "Lincoln, NE",
+      "slug": "lincoln-ne",
+      "medianGrossRent": 1114,
+      "medianHomeValue": 287200,
+      "grossYield": 0.04654596100278552,
+      "cbsa": "30700",
+      "state": "NE"
+    },
+    {
+      "name": "Harrisonburg, VA",
+      "slug": "harrisonburg-va",
+      "medianGrossRent": 1274,
+      "medianHomeValue": 328800,
+      "grossYield": 0.0464963503649635,
+      "cbsa": "25500",
+      "state": "VA"
+    },
+    {
+      "name": "Huntsville, AL",
+      "slug": "huntsville-al",
+      "medianGrossRent": 1283,
+      "medianHomeValue": 331800,
+      "grossYield": 0.04640144665461121,
+      "cbsa": "26620",
+      "state": "AL"
+    },
+    {
+      "name": "Phoenix-Mesa-Chandler, AZ",
+      "slug": "phoenix-mesa-chandler-az",
+      "medianGrossRent": 1819,
+      "medianHomeValue": 470600,
+      "grossYield": 0.04638334041648959,
+      "cbsa": "38060",
+      "state": "AZ"
+    },
+    {
+      "name": "Kingsport-Bristol, TN-VA",
+      "slug": "kingsport-bristol-tn-va",
+      "medianGrossRent": 917,
+      "medianHomeValue": 237300,
+      "grossYield": 0.046371681415929206,
+      "cbsa": "28700",
+      "state": "TN-VA"
+    },
+    {
+      "name": "Staunton-Stuarts Draft, VA",
+      "slug": "staunton-stuarts-draft-va",
+      "medianGrossRent": 1202,
+      "medianHomeValue": 311300,
+      "grossYield": 0.04633472534532605,
+      "cbsa": "44420",
+      "state": "VA"
+    },
+    {
+      "name": "Las Vegas-Henderson-North Las Vegas, NV",
+      "slug": "las-vegas-henderson-north-las-vegas-nv",
+      "medianGrossRent": 1739,
+      "medianHomeValue": 451000,
+      "grossYield": 0.04627050997782705,
+      "cbsa": "29820",
+      "state": "NV"
+    },
+    {
+      "name": "Columbia, MO",
+      "slug": "columbia-mo",
+      "medianGrossRent": 1115,
+      "medianHomeValue": 289500,
+      "grossYield": 0.04621761658031088,
+      "cbsa": "17860",
+      "state": "MO"
+    },
+    {
+      "name": "Eau Claire, WI",
+      "slug": "eau-claire-wi",
+      "medianGrossRent": 1135,
+      "medianHomeValue": 294700,
+      "grossYield": 0.046216491347132675,
+      "cbsa": "20740",
+      "state": "WI"
+    },
+    {
+      "name": "Auburn-Opelika, AL",
+      "slug": "auburn-opelika-al",
+      "medianGrossRent": 1111,
+      "medianHomeValue": 288600,
+      "grossYield": 0.046195426195426194,
+      "cbsa": "12220",
+      "state": "AL"
+    },
+    {
+      "name": "Lexington Park, MD",
+      "slug": "lexington-park-md",
+      "medianGrossRent": 1733,
+      "medianHomeValue": 451000,
+      "grossYield": 0.04611086474501109,
+      "cbsa": "30500",
+      "state": "MD"
+    },
+    {
+      "name": "Visalia, CA",
+      "slug": "visalia-ca",
+      "medianGrossRent": 1384,
+      "medianHomeValue": 361500,
+      "grossYield": 0.04594190871369295,
+      "cbsa": "47300",
+      "state": "CA"
+    },
+    {
+      "name": "Albuquerque, NM",
+      "slug": "albuquerque-nm",
+      "medianGrossRent": 1220,
+      "medianHomeValue": 322700,
+      "grossYield": 0.04536721413077161,
+      "cbsa": "10740",
+      "state": "NM"
+    },
+    {
+      "name": "Sebastian-Vero Beach-West Vero Corridor, FL",
+      "slug": "sebastian-vero-beach-west-vero-corridor-fl",
+      "medianGrossRent": 1509,
+      "medianHomeValue": 399800,
+      "grossYield": 0.04529264632316158,
+      "cbsa": "42680",
+      "state": "FL"
+    },
+    {
+      "name": "Hagerstown-Martinsburg, MD-WV",
+      "slug": "hagerstown-martinsburg-md-wv",
+      "medianGrossRent": 1122,
+      "medianHomeValue": 298400,
+      "grossYield": 0.04512064343163539,
+      "cbsa": "25180",
+      "state": "MD-WV"
+    },
+    {
+      "name": "Redding, CA",
+      "slug": "redding-ca",
+      "medianGrossRent": 1420,
+      "medianHomeValue": 377900,
+      "grossYield": 0.045091293993119876,
+      "cbsa": "39820",
+      "state": "CA"
+    },
+    {
+      "name": "Minneapolis-St. Paul-Bloomington, MN-WI",
+      "slug": "minneapolis-st-paul-bloomington-mn-wi",
+      "medianGrossRent": 1444,
+      "medianHomeValue": 384300,
+      "grossYield": 0.04508977361436378,
+      "cbsa": "33460",
+      "state": "MN-WI"
+    },
+    {
+      "name": "Sheboygan, WI",
+      "slug": "sheboygan-wi",
+      "medianGrossRent": 976,
+      "medianHomeValue": 260500,
+      "grossYield": 0.044959692898272556,
+      "cbsa": "43100",
+      "state": "WI"
+    },
+    {
+      "name": "Modesto, CA",
+      "slug": "modesto-ca",
+      "medianGrossRent": 1753,
+      "medianHomeValue": 468300,
+      "grossYield": 0.044919923126201154,
+      "cbsa": "33700",
+      "state": "CA"
+    },
+    {
+      "name": "Grand Island, NE",
+      "slug": "grand-island-ne",
+      "medianGrossRent": 950,
+      "medianHomeValue": 254100,
+      "grossYield": 0.0448642266824085,
+      "cbsa": "24260",
+      "state": "NE"
+    },
+    {
+      "name": "Pueblo, CO",
+      "slug": "pueblo-co",
+      "medianGrossRent": 1128,
+      "medianHomeValue": 301800,
+      "grossYield": 0.04485089463220676,
+      "cbsa": "39380",
+      "state": "CO"
+    },
+    {
+      "name": "Brunswick-St. Simons, GA",
+      "slug": "brunswick-st-simons-ga",
+      "medianGrossRent": 1067,
+      "medianHomeValue": 285500,
+      "grossYield": 0.04484763572679509,
+      "cbsa": "15260",
+      "state": "GA"
+    },
+    {
+      "name": "Pinehurst-Southern Pines, NC",
+      "slug": "pinehurst-southern-pines-nc",
+      "medianGrossRent": 1346,
+      "medianHomeValue": 361000,
+      "grossYield": 0.044742382271468144,
+      "cbsa": "38240",
+      "state": "NC"
+    },
+    {
+      "name": "Niles, MI",
+      "slug": "niles-mi",
+      "medianGrossRent": 910,
+      "medianHomeValue": 244300,
+      "grossYield": 0.04469914040114613,
+      "cbsa": "35660",
+      "state": "MI"
+    },
+    {
+      "name": "Hilton Head Island-Bluffton-Port Royal, SC",
+      "slug": "hilton-head-island-bluffton-port-royal-sc",
+      "medianGrossRent": 1903,
+      "medianHomeValue": 511100,
+      "grossYield": 0.0446801017413422,
+      "cbsa": "25940",
+      "state": "SC"
+    },
+    {
+      "name": "Burlington-South Burlington, VT",
+      "slug": "burlington-south-burlington-vt",
+      "medianGrossRent": 1631,
+      "medianHomeValue": 438100,
+      "grossYield": 0.044674731796393516,
+      "cbsa": "15540",
+      "state": "VT"
+    },
+    {
+      "name": "Tucson, AZ",
+      "slug": "tucson-az",
+      "medianGrossRent": 1300,
+      "medianHomeValue": 349500,
+      "grossYield": 0.04463519313304721,
+      "cbsa": "46060",
+      "state": "AZ"
+    },
+    {
+      "name": "Bloomington, IN",
+      "slug": "bloomington-in",
+      "medianGrossRent": 1153,
+      "medianHomeValue": 311100,
+      "grossYield": 0.04447444551591128,
+      "cbsa": "14020",
+      "state": "IN"
+    },
+    {
+      "name": "Austin-Round Rock-San Marcos, TX",
+      "slug": "austin-round-rock-san-marcos-tx",
+      "medianGrossRent": 1784,
+      "medianHomeValue": 482800,
+      "grossYield": 0.04434134217067109,
+      "cbsa": "12420",
+      "state": "TX"
+    },
+    {
+      "name": "Aguadilla, PR",
+      "slug": "aguadilla-pr",
+      "medianGrossRent": 572,
+      "medianHomeValue": 154900,
+      "grossYield": 0.04431245965138799,
+      "cbsa": "10380",
+      "state": "PR"
+    },
+    {
+      "name": "Merced, CA",
+      "slug": "merced-ca",
+      "medianGrossRent": 1462,
+      "medianHomeValue": 397800,
+      "grossYield": 0.0441025641025641,
+      "cbsa": "32900",
+      "state": "CA"
+    },
+    {
+      "name": "Winchester, VA-WV",
+      "slug": "winchester-va-wv",
+      "medianGrossRent": 1359,
+      "medianHomeValue": 372000,
+      "grossYield": 0.04383870967741935,
+      "cbsa": "49020",
+      "state": "VA-WV"
+    },
+    {
+      "name": "Fresno, CA",
+      "slug": "fresno-ca",
+      "medianGrossRent": 1513,
+      "medianHomeValue": 416200,
+      "grossYield": 0.043623258049014894,
+      "cbsa": "23420",
+      "state": "CA"
+    },
+    {
+      "name": "Mankato, MN",
+      "slug": "mankato-mn",
+      "medianGrossRent": 1049,
+      "medianHomeValue": 288600,
+      "grossYield": 0.04361746361746362,
+      "cbsa": "31860",
+      "state": "MN"
+    },
+    {
+      "name": "Anchorage, AK",
+      "slug": "anchorage-ak",
+      "medianGrossRent": 1491,
+      "medianHomeValue": 410900,
+      "grossYield": 0.04354344122657581,
+      "cbsa": "11260",
+      "state": "AK"
+    },
+    {
+      "name": "Lewiston-Auburn, ME",
+      "slug": "lewiston-auburn-me",
+      "medianGrossRent": 1076,
+      "medianHomeValue": 297000,
+      "grossYield": 0.04347474747474747,
+      "cbsa": "30340",
+      "state": "ME"
+    },
+    {
+      "name": "Nashville-Davidson--Murfreesboro--Franklin, TN",
+      "slug": "nashville-davidson-murfreesboro-franklin-tn",
+      "medianGrossRent": 1627,
+      "medianHomeValue": 449300,
+      "grossYield": 0.04345426218562208,
+      "cbsa": "34980",
+      "state": "TN"
+    },
+    {
+      "name": "Durham-Chapel Hill, NC",
+      "slug": "durham-chapel-hill-nc",
+      "medianGrossRent": 1598,
+      "medianHomeValue": 441300,
+      "grossYield": 0.04345343303874915,
+      "cbsa": "20500",
+      "state": "NC"
+    },
+    {
+      "name": "Colorado Springs, CO",
+      "slug": "colorado-springs-co",
+      "medianGrossRent": 1761,
+      "medianHomeValue": 487900,
+      "grossYield": 0.04331215412994466,
+      "cbsa": "17820",
+      "state": "CO"
+    },
+    {
+      "name": "Grand Forks, ND-MN",
+      "slug": "grand-forks-nd-mn",
+      "medianGrossRent": 958,
+      "medianHomeValue": 265600,
+      "grossYield": 0.043283132530120484,
+      "cbsa": "24220",
+      "state": "ND-MN"
+    },
+    {
+      "name": "Lake Havasu City-Kingman, AZ",
+      "slug": "lake-havasu-city-kingman-az",
+      "medianGrossRent": 1120,
+      "medianHomeValue": 310700,
+      "grossYield": 0.04325716124879305,
+      "cbsa": "29420",
+      "state": "AZ"
+    },
+    {
+      "name": "Manchester-Nashua, NH",
+      "slug": "manchester-nashua-nh",
+      "medianGrossRent": 1714,
+      "medianHomeValue": 476000,
+      "grossYield": 0.04321008403361345,
+      "cbsa": "31700",
+      "state": "NH"
+    },
+    {
+      "name": "Raleigh-Cary, NC",
+      "slug": "raleigh-cary-nc",
+      "medianGrossRent": 1674,
+      "medianHomeValue": 465800,
+      "grossYield": 0.04312580506655217,
+      "cbsa": "39580",
+      "state": "NC"
+    },
+    {
+      "name": "St. Cloud, MN",
+      "slug": "st-cloud-mn",
+      "medianGrossRent": 1039,
+      "medianHomeValue": 289200,
+      "grossYield": 0.043112033195020744,
+      "cbsa": "41060",
+      "state": "MN"
+    },
+    {
+      "name": "Green Bay, WI",
+      "slug": "green-bay-wi",
+      "medianGrossRent": 1052,
+      "medianHomeValue": 295100,
+      "grossYield": 0.04277871907827855,
+      "cbsa": "24580",
+      "state": "WI"
+    },
+    {
+      "name": "Milwaukee-Waukesha, WI",
+      "slug": "milwaukee-waukesha-wi",
+      "medianGrossRent": 1177,
+      "medianHomeValue": 331100,
+      "grossYield": 0.0426578073089701,
+      "cbsa": "33340",
+      "state": "WI"
+    },
+    {
+      "name": "Vallejo, CA",
+      "slug": "vallejo-ca",
+      "medianGrossRent": 2223,
+      "medianHomeValue": 629700,
+      "grossYield": 0.04236303001429252,
+      "cbsa": "46700",
+      "state": "CA"
+    },
+    {
+      "name": "Hickory-Lenoir-Morganton, NC",
+      "slug": "hickory-lenoir-morganton-nc",
+      "medianGrossRent": 934,
+      "medianHomeValue": 266100,
+      "grossYield": 0.042119503945885005,
+      "cbsa": "25860",
+      "state": "NC"
+    },
+    {
+      "name": "State College, PA",
+      "slug": "state-college-pa",
+      "medianGrossRent": 1189,
+      "medianHomeValue": 339200,
+      "grossYield": 0.042063679245283016,
+      "cbsa": "44300",
+      "state": "PA"
+    },
+    {
+      "name": "Morristown, TN",
+      "slug": "morristown-tn",
+      "medianGrossRent": 876,
+      "medianHomeValue": 250300,
+      "grossYield": 0.04199760287654814,
+      "cbsa": "34100",
+      "state": "TN"
+    },
+    {
+      "name": "Traverse City, MI",
+      "slug": "traverse-city-mi",
+      "medianGrossRent": 1329,
+      "medianHomeValue": 380200,
+      "grossYield": 0.04194634402945818,
+      "cbsa": "45900",
+      "state": "MI"
+    },
+    {
+      "name": "Springfield, MA",
+      "slug": "springfield-ma",
+      "medianGrossRent": 1158,
+      "medianHomeValue": 331300,
+      "grossYield": 0.041943857530938725,
+      "cbsa": "44140",
+      "state": "MA"
+    },
+    {
+      "name": "Flagstaff, AZ",
+      "slug": "flagstaff-az",
+      "medianGrossRent": 1637,
+      "medianHomeValue": 468600,
+      "grossYield": 0.04192061459667094,
+      "cbsa": "22380",
+      "state": "AZ"
+    },
+    {
+      "name": "Jefferson City, MO",
+      "slug": "jefferson-city-mo",
+      "medianGrossRent": 874,
+      "medianHomeValue": 250400,
+      "grossYield": 0.041884984025559104,
+      "cbsa": "27620",
+      "state": "MO"
+    },
+    {
+      "name": "Iowa City, IA",
+      "slug": "iowa-city-ia",
+      "medianGrossRent": 1099,
+      "medianHomeValue": 315200,
+      "grossYield": 0.04184010152284264,
+      "cbsa": "26980",
+      "state": "IA"
+    },
+    {
+      "name": "Olympia-Lacey-Tumwater, WA",
+      "slug": "olympia-lacey-tumwater-wa",
+      "medianGrossRent": 1829,
+      "medianHomeValue": 525500,
+      "grossYield": 0.04176593720266413,
+      "cbsa": "36500",
+      "state": "WA"
+    },
+    {
+      "name": "Athens-Clarke County, GA",
+      "slug": "athens-clarke-county-ga",
+      "medianGrossRent": 1238,
+      "medianHomeValue": 356400,
+      "grossYield": 0.041683501683501684,
+      "cbsa": "12020",
+      "state": "GA"
+    },
+    {
+      "name": "Knoxville, TN",
+      "slug": "knoxville-tn",
+      "medianGrossRent": 1219,
+      "medianHomeValue": 351400,
+      "grossYield": 0.04162777461582243,
+      "cbsa": "28940",
+      "state": "TN"
+    },
+    {
+      "name": "Riverside-San Bernardino-Ontario, CA",
+      "slug": "riverside-san-bernardino-ontario-ca",
+      "medianGrossRent": 2006,
+      "medianHomeValue": 579500,
+      "grossYield": 0.04153925798101812,
+      "cbsa": "40140",
+      "state": "CA"
+    },
+    {
+      "name": "Madison, WI",
+      "slug": "madison-wi",
+      "medianGrossRent": 1437,
+      "medianHomeValue": 415500,
+      "grossYield": 0.04150180505415162,
+      "cbsa": "31540",
+      "state": "WI"
+    },
+    {
+      "name": "Great Falls, MT",
+      "slug": "great-falls-mt",
+      "medianGrossRent": 1058,
+      "medianHomeValue": 306800,
+      "grossYield": 0.041382007822685786,
+      "cbsa": "24500",
+      "state": "MT"
+    },
+    {
+      "name": "Amherst Town-Northampton, MA",
+      "slug": "amherst-town-northampton-ma",
+      "medianGrossRent": 1425,
+      "medianHomeValue": 413400,
+      "grossYield": 0.041364296081277216,
+      "cbsa": "11200",
+      "state": "MA"
+    },
+    {
+      "name": "Chico, CA",
+      "slug": "chico-ca",
+      "medianGrossRent": 1446,
+      "medianHomeValue": 420400,
+      "grossYield": 0.04127497621313035,
+      "cbsa": "17020",
+      "state": "CA"
+    },
+    {
+      "name": "Prescott Valley-Prescott, AZ",
+      "slug": "prescott-valley-prescott-az",
+      "medianGrossRent": 1542,
+      "medianHomeValue": 450000,
+      "grossYield": 0.04112,
+      "cbsa": "39150",
+      "state": "AZ"
+    },
+    {
+      "name": "Salem, OR",
+      "slug": "salem-or",
+      "medianGrossRent": 1526,
+      "medianHomeValue": 447000,
+      "grossYield": 0.040966442953020134,
+      "cbsa": "41420",
+      "state": "OR"
+    },
+    {
+      "name": "Yuba City, CA",
+      "slug": "yuba-city-ca",
+      "medianGrossRent": 1486,
+      "medianHomeValue": 436200,
+      "grossYield": 0.040880330123796424,
+      "cbsa": "49700",
+      "state": "CA"
+    },
+    {
+      "name": "Ames, IA",
+      "slug": "ames-ia",
+      "medianGrossRent": 950,
+      "medianHomeValue": 279700,
+      "grossYield": 0.040757954951734,
+      "cbsa": "11180",
+      "state": "IA"
+    },
+    {
+      "name": "Pittsfield, MA",
+      "slug": "pittsfield-ma",
+      "medianGrossRent": 1102,
+      "medianHomeValue": 325700,
+      "grossYield": 0.040601780779858765,
+      "cbsa": "38340",
+      "state": "MA"
+    },
+    {
+      "name": "Fayetteville-Springdale-Rogers, AR",
+      "slug": "fayetteville-springdale-rogers-ar",
+      "medianGrossRent": 1222,
+      "medianHomeValue": 362500,
+      "grossYield": 0.04045241379310345,
+      "cbsa": "22220",
+      "state": "AR"
+    },
+    {
+      "name": "Washington-Arlington-Alexandria, DC-VA-MD-WV",
+      "slug": "washington-arlington-alexandria-dc-va-md-wv",
+      "medianGrossRent": 2037,
+      "medianHomeValue": 604800,
+      "grossYield": 0.04041666666666666,
+      "cbsa": "47900",
+      "state": "DC-VA-MD-WV"
+    },
+    {
+      "name": "Boise City, ID",
+      "slug": "boise-city-id",
+      "medianGrossRent": 1628,
+      "medianHomeValue": 484000,
+      "grossYield": 0.040363636363636365,
+      "cbsa": "14260",
+      "state": "ID"
+    },
+    {
+      "name": "Worcester, MA",
+      "slug": "worcester-ma",
+      "medianGrossRent": 1563,
+      "medianHomeValue": 465500,
+      "grossYield": 0.040292158968850696,
+      "cbsa": "49340",
+      "state": "MA"
+    },
+    {
+      "name": "Portland-South Portland, ME",
+      "slug": "portland-south-portland-me",
+      "medianGrossRent": 1590,
+      "medianHomeValue": 474200,
+      "grossYield": 0.04023618726275833,
+      "cbsa": "38860",
+      "state": "ME"
+    },
+    {
+      "name": "Santa Fe, NM",
+      "slug": "santa-fe-nm",
+      "medianGrossRent": 1586,
+      "medianHomeValue": 473800,
+      "grossYield": 0.04016884761502744,
+      "cbsa": "42140",
+      "state": "NM"
+    },
+    {
+      "name": "Lawrence, KS",
+      "slug": "lawrence-ks",
+      "medianGrossRent": 1100,
+      "medianHomeValue": 330200,
+      "grossYield": 0.039975772259236826,
+      "cbsa": "29940",
+      "state": "KS"
+    },
+    {
+      "name": "Fargo, ND-MN",
+      "slug": "fargo-nd-mn",
+      "medianGrossRent": 997,
+      "medianHomeValue": 300200,
+      "grossYield": 0.039853431045969355,
+      "cbsa": "22020",
+      "state": "ND-MN"
+    },
+    {
+      "name": "Asheville, NC",
+      "slug": "asheville-nc",
+      "medianGrossRent": 1396,
+      "medianHomeValue": 420800,
+      "grossYield": 0.03980988593155894,
+      "cbsa": "11700",
+      "state": "NC"
+    },
+    {
+      "name": "Charlottesville, VA",
+      "slug": "charlottesville-va",
+      "medianGrossRent": 1542,
+      "medianHomeValue": 466600,
+      "grossYield": 0.03965709387055293,
+      "cbsa": "16820",
+      "state": "VA"
+    },
+    {
+      "name": "Sioux Falls, SD-MN",
+      "slug": "sioux-falls-sd-mn",
+      "medianGrossRent": 1094,
+      "medianHomeValue": 331400,
+      "grossYield": 0.0396137598068799,
+      "cbsa": "43620",
+      "state": "SD-MN"
+    },
+    {
+      "name": "Eugene-Springfield, OR",
+      "slug": "eugene-springfield-or",
+      "medianGrossRent": 1470,
+      "medianHomeValue": 448000,
+      "grossYield": 0.039375,
+      "cbsa": "21660",
+      "state": "OR"
+    },
+    {
+      "name": "Lewiston, ID-WA",
+      "slug": "lewiston-id-wa",
+      "medianGrossRent": 1171,
+      "medianHomeValue": 357000,
+      "grossYield": 0.039361344537815125,
+      "cbsa": "30300",
+      "state": "ID-WA"
+    },
+    {
+      "name": "Cheyenne, WY",
+      "slug": "cheyenne-wy",
+      "medianGrossRent": 1217,
+      "medianHomeValue": 372400,
+      "grossYield": 0.039215896885069816,
+      "cbsa": "16940",
+      "state": "WY"
+    },
+    {
+      "name": "Albany, OR",
+      "slug": "albany-or",
+      "medianGrossRent": 1363,
+      "medianHomeValue": 417300,
+      "grossYield": 0.039194823867721065,
+      "cbsa": "10540",
+      "state": "OR"
+    },
+    {
+      "name": "Pocatello, ID",
+      "slug": "pocatello-id",
+      "medianGrossRent": 1076,
+      "medianHomeValue": 331500,
+      "grossYield": 0.03895022624434389,
+      "cbsa": "38540",
+      "state": "ID"
+    },
+    {
+      "name": "Spokane-Spokane Valley, WA",
+      "slug": "spokane-spokane-valley-wa",
+      "medianGrossRent": 1405,
+      "medianHomeValue": 434300,
+      "grossYield": 0.03882109141146673,
+      "cbsa": "44060",
+      "state": "WA"
+    },
+    {
+      "name": "Rapid City, SD",
+      "slug": "rapid-city-sd",
+      "medianGrossRent": 1168,
+      "medianHomeValue": 361100,
+      "grossYield": 0.03881473276100803,
+      "cbsa": "39660",
+      "state": "SD"
+    },
+    {
+      "name": "Ogden, UT",
+      "slug": "ogden-ut",
+      "medianGrossRent": 1641,
+      "medianHomeValue": 507500,
+      "grossYield": 0.03880197044334975,
+      "cbsa": "36260",
+      "state": "UT"
+    },
+    {
+      "name": "Casper, WY",
+      "slug": "casper-wy",
+      "medianGrossRent": 997,
+      "medianHomeValue": 309200,
+      "grossYield": 0.03869340232858991,
+      "cbsa": "16220",
+      "state": "WY"
+    },
+    {
+      "name": "Bremerton-Silverdale-Port Orchard, WA",
+      "slug": "bremerton-silverdale-port-orchard-wa",
+      "medianGrossRent": 1869,
+      "medianHomeValue": 579700,
+      "grossYield": 0.0386889770570985,
+      "cbsa": "14740",
+      "state": "WA"
+    },
+    {
+      "name": "Cleveland, TN",
+      "slug": "cleveland-tn",
+      "medianGrossRent": 1034,
+      "medianHomeValue": 322400,
+      "grossYield": 0.0384863523573201,
+      "cbsa": "17420",
+      "state": "TN"
+    },
+    {
+      "name": "Naples-Marco Island, FL",
+      "slug": "naples-marco-island-fl",
+      "medianGrossRent": 2032,
+      "medianHomeValue": 636600,
+      "grossYield": 0.03830348727615457,
+      "cbsa": "34940",
+      "state": "FL"
+    },
+    {
+      "name": "Greeley, CO",
+      "slug": "greeley-co",
+      "medianGrossRent": 1579,
+      "medianHomeValue": 496100,
+      "grossYield": 0.038193912517637575,
+      "cbsa": "24540",
+      "state": "CO"
+    },
+    {
+      "name": "Stockton-Lodi, CA",
+      "slug": "stockton-lodi-ca",
+      "medianGrossRent": 1788,
+      "medianHomeValue": 562500,
+      "grossYield": 0.038144,
+      "cbsa": "44700",
+      "state": "CA"
+    },
+    {
+      "name": "Yakima, WA",
+      "slug": "yakima-wa",
+      "medianGrossRent": 1106,
+      "medianHomeValue": 349900,
+      "grossYield": 0.03793083738210917,
+      "cbsa": "49420",
+      "state": "WA"
+    },
+    {
+      "name": "Sacramento-Roseville-Folsom, CA",
+      "slug": "sacramento-roseville-folsom-ca",
+      "medianGrossRent": 1904,
+      "medianHomeValue": 605500,
+      "grossYield": 0.03773410404624278,
+      "cbsa": "40900",
+      "state": "CA"
+    },
+    {
+      "name": "Reno, NV",
+      "slug": "reno-nv",
+      "medianGrossRent": 1680,
+      "medianHomeValue": 535700,
+      "grossYield": 0.037633003546761246,
+      "cbsa": "39900",
+      "state": "NV"
+    },
+    {
+      "name": "Grants Pass, OR",
+      "slug": "grants-pass-or",
+      "medianGrossRent": 1249,
+      "medianHomeValue": 403400,
+      "grossYield": 0.03715418939018344,
+      "cbsa": "24420",
+      "state": "OR"
+    },
+    {
+      "name": "Walla Walla, WA",
+      "slug": "walla-walla-wa",
+      "medianGrossRent": 1311,
+      "medianHomeValue": 425100,
+      "grossYield": 0.03700776287932251,
+      "cbsa": "47460",
+      "state": "WA"
+    },
+    {
+      "name": "Denver-Aurora-Centennial, CO",
+      "slug": "denver-aurora-centennial-co",
+      "medianGrossRent": 1943,
+      "medianHomeValue": 631000,
+      "grossYield": 0.036950871632329636,
+      "cbsa": "19740",
+      "state": "CO"
+    },
+    {
+      "name": "Bridgeport-Stamford-Danbury, CT",
+      "slug": "bridgeport-stamford-danbury-ct",
+      "medianGrossRent": 1895,
+      "medianHomeValue": 615800,
+      "grossYield": 0.03692757388762585,
+      "cbsa": "14860",
+      "state": "CT"
+    },
+    {
+      "name": "Kennewick-Richland, WA",
+      "slug": "kennewick-richland-wa",
+      "medianGrossRent": 1360,
+      "medianHomeValue": 442000,
+      "grossYield": 0.036923076923076927,
+      "cbsa": "28420",
+      "state": "WA"
+    },
+    {
+      "name": "Boston-Cambridge-Newton, MA-NH",
+      "slug": "boston-cambridge-newton-ma-nh",
+      "medianGrossRent": 2093,
+      "medianHomeValue": 681100,
+      "grossYield": 0.03687564234326824,
+      "cbsa": "14460",
+      "state": "MA-NH"
+    },
+    {
+      "name": "Grand Junction, CO",
+      "slug": "grand-junction-co",
+      "medianGrossRent": 1259,
+      "medianHomeValue": 410200,
+      "grossYield": 0.03683081423695758,
+      "cbsa": "24300",
+      "state": "CO"
+    },
+    {
+      "name": "Idaho Falls, ID",
+      "slug": "idaho-falls-id",
+      "medianGrossRent": 1257,
+      "medianHomeValue": 410400,
+      "grossYield": 0.03675438596491228,
+      "cbsa": "26820",
+      "state": "ID"
+    },
+    {
+      "name": "Bismarck, ND",
+      "slug": "bismarck-nd",
+      "medianGrossRent": 935,
+      "medianHomeValue": 305600,
+      "grossYield": 0.036714659685863876,
+      "cbsa": "13900",
+      "state": "ND"
+    },
+    {
+      "name": "Billings, MT",
+      "slug": "billings-mt",
+      "medianGrossRent": 1170,
+      "medianHomeValue": 383900,
+      "grossYield": 0.03657202396457411,
+      "cbsa": "13740",
+      "state": "MT"
+    },
+    {
+      "name": "Medford, OR",
+      "slug": "medford-or",
+      "medianGrossRent": 1369,
+      "medianHomeValue": 449200,
+      "grossYield": 0.03657168299198575,
+      "cbsa": "32780",
+      "state": "OR"
+    },
+    {
+      "name": "Napa, CA",
+      "slug": "napa-ca",
+      "medianGrossRent": 2642,
+      "medianHomeValue": 870100,
+      "grossYield": 0.036437191127456615,
+      "cbsa": "34900",
+      "state": "CA"
+    },
+    {
+      "name": "Portland-Vancouver-Hillsboro, OR-WA",
+      "slug": "portland-vancouver-hillsboro-or-wa",
+      "medianGrossRent": 1767,
+      "medianHomeValue": 584800,
+      "grossYield": 0.03625854993160055,
+      "cbsa": "38900",
+      "state": "OR-WA"
+    },
+    {
+      "name": "El Centro, CA",
+      "slug": "el-centro-ca",
+      "medianGrossRent": 1062,
+      "medianHomeValue": 352800,
+      "grossYield": 0.03612244897959184,
+      "cbsa": "20940",
+      "state": "CA"
+    },
+    {
+      "name": "Twin Falls, ID",
+      "slug": "twin-falls-id",
+      "medianGrossRent": 1121,
+      "medianHomeValue": 374900,
+      "grossYield": 0.035881568418244865,
+      "cbsa": "46300",
+      "state": "ID"
+    },
+    {
+      "name": "Providence-Warwick, RI-MA",
+      "slug": "providence-warwick-ri-ma",
+      "medianGrossRent": 1396,
+      "medianHomeValue": 471000,
+      "grossYield": 0.03556687898089172,
+      "cbsa": "39300",
+      "state": "RI-MA"
+    },
+    {
+      "name": "Carson City, NV",
+      "slug": "carson-city-nv",
+      "medianGrossRent": 1495,
+      "medianHomeValue": 505400,
+      "grossYield": 0.03549663632766126,
+      "cbsa": "16180",
+      "state": "NV"
+    },
+    {
+      "name": "St. George, UT",
+      "slug": "st-george-ut",
+      "medianGrossRent": 1653,
+      "medianHomeValue": 567200,
+      "grossYield": 0.03497179125528914,
+      "cbsa": "41100",
+      "state": "UT"
+    },
+    {
+      "name": "Bend, OR",
+      "slug": "bend-or",
+      "medianGrossRent": 1834,
+      "medianHomeValue": 631000,
+      "grossYield": 0.03487797147385103,
+      "cbsa": "13460",
+      "state": "OR"
+    },
+    {
+      "name": "Salt Lake City-Murray, UT",
+      "slug": "salt-lake-city-murray-ut",
+      "medianGrossRent": 1659,
+      "medianHomeValue": 575200,
+      "grossYield": 0.0346105702364395,
+      "cbsa": "41620",
+      "state": "UT"
+    },
+    {
+      "name": "Fort Collins-Loveland, CO",
+      "slug": "fort-collins-loveland-co",
+      "medianGrossRent": 1751,
+      "medianHomeValue": 610000,
+      "grossYield": 0.03444590163934426,
+      "cbsa": "22660",
+      "state": "CO"
+    },
+    {
+      "name": "New York-Newark-Jersey City, NY-NJ",
+      "slug": "new-york-newark-jersey-city-ny-nj",
+      "medianGrossRent": 1851,
+      "medianHomeValue": 648800,
+      "grossYield": 0.034235511713933416,
+      "cbsa": "35620",
+      "state": "NY-NJ"
+    },
+    {
+      "name": "Wildwood-The Villages, FL",
+      "slug": "wildwood-the-villages-fl",
+      "medianGrossRent": 1155,
+      "medianHomeValue": 412800,
+      "grossYield": 0.03357558139534884,
+      "cbsa": "48680",
+      "state": "FL"
+    },
+    {
+      "name": "Longview-Kelso, WA",
+      "slug": "longview-kelso-wa",
+      "medianGrossRent": 1173,
+      "medianHomeValue": 420000,
+      "grossYield": 0.03351428571428571,
+      "cbsa": "31020",
+      "state": "WA"
+    },
+    {
+      "name": "Seattle-Tacoma-Bellevue, WA",
+      "slug": "seattle-tacoma-bellevue-wa",
+      "medianGrossRent": 2050,
+      "medianHomeValue": 743000,
+      "grossYield": 0.033109017496635265,
+      "cbsa": "42660",
+      "state": "WA"
+    },
+    {
+      "name": "Provo-Orem-Lehi, UT",
+      "slug": "provo-orem-lehi-ut",
+      "medianGrossRent": 1611,
+      "medianHomeValue": 584600,
+      "grossYield": 0.033068764967499144,
+      "cbsa": "39340",
+      "state": "UT"
+    },
+    {
+      "name": "Logan, UT-ID",
+      "slug": "logan-ut-id",
+      "medianGrossRent": 1311,
+      "medianHomeValue": 476800,
+      "grossYield": 0.03299496644295302,
+      "cbsa": "30860",
+      "state": "UT-ID"
+    },
+    {
+      "name": "Coeur d'Alene, ID",
+      "slug": "coeur-d-alene-id",
+      "medianGrossRent": 1578,
+      "medianHomeValue": 577600,
+      "grossYield": 0.03278393351800554,
+      "cbsa": "17660",
+      "state": "ID"
+    },
+    {
+      "name": "Wenatchee-East Wenatchee, WA",
+      "slug": "wenatchee-east-wenatchee-wa",
+      "medianGrossRent": 1375,
+      "medianHomeValue": 503300,
+      "grossYield": 0.03278362805483807,
+      "cbsa": "48300",
+      "state": "WA"
+    },
+    {
+      "name": "Santa Rosa-Petaluma, CA",
+      "slug": "santa-rosa-petaluma-ca",
+      "medianGrossRent": 2229,
+      "medianHomeValue": 822400,
+      "grossYield": 0.03252431906614786,
+      "cbsa": "42220",
+      "state": "CA"
+    },
+    {
+      "name": "Mount Vernon-Anacortes, WA",
+      "slug": "mount-vernon-anacortes-wa",
+      "medianGrossRent": 1649,
+      "medianHomeValue": 609800,
+      "grossYield": 0.03244998360118072,
+      "cbsa": "34580",
+      "state": "WA"
+    },
+    {
+      "name": "Oxnard-Thousand Oaks-Ventura, CA",
+      "slug": "oxnard-thousand-oaks-ventura-ca",
+      "medianGrossRent": 2313,
+      "medianHomeValue": 869300,
+      "grossYield": 0.0319291383872081,
+      "cbsa": "37100",
+      "state": "CA"
+    },
+    {
+      "name": "Corvallis, OR",
+      "slug": "corvallis-or",
+      "medianGrossRent": 1490,
+      "medianHomeValue": 566100,
+      "grossYield": 0.03158452570217276,
+      "cbsa": "18700",
+      "state": "OR"
+    },
+    {
+      "name": "Bozeman, MT",
+      "slug": "bozeman-mt",
+      "medianGrossRent": 1917,
+      "medianHomeValue": 734100,
+      "grossYield": 0.0313363302002452,
+      "cbsa": "14580",
+      "state": "MT"
+    },
+    {
+      "name": "San Diego-Chula Vista-Carlsbad, CA",
+      "slug": "san-diego-chula-vista-carlsbad-ca",
+      "medianGrossRent": 2336,
+      "medianHomeValue": 914700,
+      "grossYield": 0.030646113479829453,
+      "cbsa": "41740",
+      "state": "CA"
+    },
+    {
+      "name": "Boulder, CO",
+      "slug": "boulder-co",
+      "medianGrossRent": 1966,
+      "medianHomeValue": 783000,
+      "grossYield": 0.030130268199233718,
+      "cbsa": "14500",
+      "state": "CO"
+    },
+    {
+      "name": "Bellingham, WA",
+      "slug": "bellingham-wa",
+      "medianGrossRent": 1569,
+      "medianHomeValue": 627800,
+      "grossYield": 0.0299904428161835,
+      "cbsa": "13380",
+      "state": "WA"
+    },
+    {
+      "name": "Salinas, CA",
+      "slug": "salinas-ca",
+      "medianGrossRent": 2007,
+      "medianHomeValue": 808600,
+      "grossYield": 0.029784813257482067,
+      "cbsa": "41500",
+      "state": "CA"
+    },
+    {
+      "name": "Missoula, MT",
+      "slug": "missoula-mt",
+      "medianGrossRent": 1332,
+      "medianHomeValue": 550200,
+      "grossYield": 0.029051254089422027,
+      "cbsa": "33540",
+      "state": "MT"
+    },
+    {
+      "name": "San Luis Obispo-Paso Robles, CA",
+      "slug": "san-luis-obispo-paso-robles-ca",
+      "medianGrossRent": 2110,
+      "medianHomeValue": 883700,
+      "grossYield": 0.028652257553468372,
+      "cbsa": "42020",
+      "state": "CA"
+    },
+    {
+      "name": "Santa Maria-Santa Barbara, CA",
+      "slug": "santa-maria-santa-barbara-ca",
+      "medianGrossRent": 2108,
+      "medianHomeValue": 900900,
+      "grossYield": 0.02807858807858808,
+      "cbsa": "42200",
+      "state": "CA"
+    },
+    {
+      "name": "Los Angeles-Long Beach-Anaheim, CA",
+      "slug": "los-angeles-long-beach-anaheim-ca",
+      "medianGrossRent": 2114,
+      "medianHomeValue": 908500,
+      "grossYield": 0.02792294991744634,
+      "cbsa": "31080",
+      "state": "CA"
+    },
+    {
+      "name": "Santa Cruz-Watsonville, CA",
+      "slug": "santa-cruz-watsonville-ca",
+      "medianGrossRent": 2293,
+      "medianHomeValue": 985800,
+      "grossYield": 0.027912355447352405,
+      "cbsa": "42100",
+      "state": "CA"
+    },
+    {
+      "name": "Helena, MT",
+      "slug": "helena-mt",
+      "medianGrossRent": 1099,
+      "medianHomeValue": 476600,
+      "grossYield": 0.027671002937473772,
+      "cbsa": "25740",
+      "state": "MT"
+    },
+    {
+      "name": "Barnstable Town, MA",
+      "slug": "barnstable-town-ma",
+      "medianGrossRent": 1577,
+      "medianHomeValue": 692900,
+      "grossYield": 0.02731130033193823,
+      "cbsa": "12700",
+      "state": "MA"
+    },
+    {
+      "name": "Urban Honolulu, HI",
+      "slug": "urban-honolulu-hi",
+      "medianGrossRent": 2001,
+      "medianHomeValue": 920600,
+      "grossYield": 0.02608298935476863,
+      "cbsa": "46520",
+      "state": "HI"
+    },
+    {
+      "name": "San Francisco-Oakland-Fremont, CA",
+      "slug": "san-francisco-oakland-fremont-ca",
+      "medianGrossRent": 2435,
+      "medianHomeValue": 1132900,
+      "grossYield": 0.02579221467031512,
+      "cbsa": "41860",
+      "state": "CA"
+    },
+    {
+      "name": "San Jose-Sunnyvale-Santa Clara, CA",
+      "slug": "san-jose-sunnyvale-santa-clara-ca",
+      "medianGrossRent": 2827,
+      "medianHomeValue": 1528500,
+      "grossYield": 0.02219430814524043,
+      "cbsa": "41940",
+      "state": "CA"
+    },
+    {
+      "name": "Kahului-Wailuku, HI",
+      "slug": "kahului-wailuku-hi",
+      "medianGrossRent": 1943,
+      "medianHomeValue": 1061300,
+      "grossYield": 0.02196928295486667,
+      "cbsa": "27980",
+      "state": "HI"
+    }
   ]
 }

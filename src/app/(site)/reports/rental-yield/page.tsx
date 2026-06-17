@@ -228,7 +228,11 @@ export default function RentalYieldReport() {
               {statesByYield.map((s, i) => (
                 <tr key={s.slug} className="border-b border-border/60 last:border-0">
                   <td className="px-4 py-2.5 text-text-muted">{i + 1}</td>
-                  <td className="px-4 py-2.5 font-medium text-text">{s.name}</td>
+                  <td className="px-4 py-2.5 font-medium text-text">
+                    <Link href={`/reports/rental-yield/${s.slug}`} className="hover:text-primary hover:underline">
+                      {s.name}
+                    </Link>
+                  </td>
                   <td className="px-4 py-2.5 text-right font-semibold text-primary">{fmtYield(s.grossYield)}</td>
                   <td className="px-4 py-2.5 text-right text-text-muted">{fmtRent(s.medianGrossRent)}</td>
                   <td className="px-4 py-2.5 text-right text-text-muted">{fmtValue(s.medianHomeValue)}</td>

@@ -5,17 +5,418 @@
     "source": "U.S. Census Bureau, American Community Survey 2024 1-year estimates",
     "universe": "Median gross rent and median owner-occupied home value; geographies with population >= 65,000",
     "metric": "Gross rental yield = (median gross rent x 12) / median home value",
-    "placeholder": true,
-    "generatedAt": null,
-    "stateCount": 6,
-    "metroCount": 6
+    "generatedAt": "2026-06-17",
+    "stateCount": 51,
+    "metroCount": 393
   },
   "states": [
-    { "abbr": "WV", "name": "West Virginia", "slug": "west-virginia", "medianGrossRent": 850, "medianHomeValue": 160000, "grossYield": 0.0638 },
-    { "abbr": "MS", "name": "Mississippi", "slug": "mississippi", "medianGrossRent": 950, "medianHomeValue": 180000, "grossYield": 0.0633 },
-    { "abbr": "OH", "name": "Ohio", "slug": "ohio", "medianGrossRent": 1000, "medianHomeValue": 210000, "grossYield": 0.0571 },
-    { "abbr": "TX", "name": "Texas", "slug": "texas", "medianGrossRent": 1350, "medianHomeValue": 300000, "grossYield": 0.0540 },
-    { "abbr": "CA", "name": "California", "slug": "california", "medianGrossRent": 2100, "medianHomeValue": 720000, "grossYield": 0.0350 },
-    { "abbr": "HI", "name": "Hawaii", "slug": "hawaii", "medianGrossRent": 2000, "medianHomeValue": 840000, "grossYield": 0.0286 }
+    {
+      "name": "Mississippi",
+      "slug": "mississippi",
+      "medianGrossRent": 990,
+      "medianHomeValue": 186500,
+      "grossYield": 0.06369973190348525,
+      "abbr": "MS"
+    },
+    {
+      "name": "West Virginia",
+      "slug": "west-virginia",
+      "medianGrossRent": 883,
+      "medianHomeValue": 170800,
+      "grossYield": 0.06203747072599532,
+      "abbr": "WV"
+    },
+    {
+      "name": "Louisiana",
+      "slug": "louisiana",
+      "medianGrossRent": 1064,
+      "medianHomeValue": 223200,
+      "grossYield": 0.05720430107526882,
+      "abbr": "LA"
+    },
+    {
+      "name": "Illinois",
+      "slug": "illinois",
+      "medianGrossRent": 1322,
+      "medianHomeValue": 280700,
+      "grossYield": 0.05651585322408265,
+      "abbr": "IL"
+    },
+    {
+      "name": "Texas",
+      "slug": "texas",
+      "medianGrossRent": 1475,
+      "medianHomeValue": 313200,
+      "grossYield": 0.05651340996168582,
+      "abbr": "TX"
+    },
+    {
+      "name": "Oklahoma",
+      "slug": "oklahoma",
+      "medianGrossRent": 1044,
+      "medianHomeValue": 222100,
+      "grossYield": 0.05640702386312472,
+      "abbr": "OK"
+    },
+    {
+      "name": "Alabama",
+      "slug": "alabama",
+      "medianGrossRent": 1077,
+      "medianHomeValue": 233300,
+      "grossYield": 0.05539648521217317,
+      "abbr": "AL"
+    },
+    {
+      "name": "Michigan",
+      "slug": "michigan",
+      "medianGrossRent": 1168,
+      "medianHomeValue": 254200,
+      "grossYield": 0.055137686860739575,
+      "abbr": "MI"
+    },
+    {
+      "name": "Florida",
+      "slug": "florida",
+      "medianGrossRent": 1812,
+      "medianHomeValue": 396900,
+      "grossYield": 0.05478458049886621,
+      "abbr": "FL"
+    },
+    {
+      "name": "Arkansas",
+      "slug": "arkansas",
+      "medianGrossRent": 982,
+      "medianHomeValue": 215600,
+      "grossYield": 0.05465677179962894,
+      "abbr": "AR"
+    },
+    {
+      "name": "Ohio",
+      "slug": "ohio",
+      "medianGrossRent": 1090,
+      "medianHomeValue": 239800,
+      "grossYield": 0.05454545454545454,
+      "abbr": "OH"
+    },
+    {
+      "name": "Indiana",
+      "slug": "indiana",
+      "medianGrossRent": 1104,
+      "medianHomeValue": 243500,
+      "grossYield": 0.054406570841889115,
+      "abbr": "IN"
+    },
+    {
+      "name": "Kansas",
+      "slug": "kansas",
+      "medianGrossRent": 1079,
+      "medianHomeValue": 238700,
+      "grossYield": 0.0542438206954336,
+      "abbr": "KS"
+    },
+    {
+      "name": "Pennsylvania",
+      "slug": "pennsylvania",
+      "medianGrossRent": 1252,
+      "medianHomeValue": 277600,
+      "grossYield": 0.054121037463976944,
+      "abbr": "PA"
+    },
+    {
+      "name": "Kentucky",
+      "slug": "kentucky",
+      "medianGrossRent": 998,
+      "medianHomeValue": 226000,
+      "grossYield": 0.052991150442477875,
+      "abbr": "KY"
+    },
+    {
+      "name": "Georgia",
+      "slug": "georgia",
+      "medianGrossRent": 1506,
+      "medianHomeValue": 343300,
+      "grossYield": 0.05264200407806583,
+      "abbr": "GA"
+    },
+    {
+      "name": "Iowa",
+      "slug": "iowa",
+      "medianGrossRent": 981,
+      "medianHomeValue": 227300,
+      "grossYield": 0.051790585129784426,
+      "abbr": "IA"
+    },
+    {
+      "name": "South Carolina",
+      "slug": "south-carolina",
+      "medianGrossRent": 1272,
+      "medianHomeValue": 299500,
+      "grossYield": 0.050964941569282135,
+      "abbr": "SC"
+    },
+    {
+      "name": "Missouri",
+      "slug": "missouri",
+      "medianGrossRent": 1067,
+      "medianHomeValue": 254400,
+      "grossYield": 0.05033018867924528,
+      "abbr": "MO"
+    },
+    {
+      "name": "Nebraska",
+      "slug": "nebraska",
+      "medianGrossRent": 1102,
+      "medianHomeValue": 263100,
+      "grossYield": 0.05026225769669327,
+      "abbr": "NE"
+    },
+    {
+      "name": "Delaware",
+      "slug": "delaware",
+      "medianGrossRent": 1530,
+      "medianHomeValue": 371600,
+      "grossYield": 0.04940796555435953,
+      "abbr": "DE"
+    },
+    {
+      "name": "Virginia",
+      "slug": "virginia",
+      "medianGrossRent": 1646,
+      "medianHomeValue": 403500,
+      "grossYield": 0.048951672862453534,
+      "abbr": "VA"
+    },
+    {
+      "name": "North Carolina",
+      "slug": "north-carolina",
+      "medianGrossRent": 1338,
+      "medianHomeValue": 333000,
+      "grossYield": 0.04821621621621622,
+      "abbr": "NC"
+    },
+    {
+      "name": "New Mexico",
+      "slug": "new-mexico",
+      "medianGrossRent": 1117,
+      "medianHomeValue": 279900,
+      "grossYield": 0.047888531618435155,
+      "abbr": "NM"
+    },
+    {
+      "name": "Maryland",
+      "slug": "maryland",
+      "medianGrossRent": 1721,
+      "medianHomeValue": 436300,
+      "grossYield": 0.04733440293376117,
+      "abbr": "MD"
+    },
+    {
+      "name": "Arizona",
+      "slug": "arizona",
+      "medianGrossRent": 1672,
+      "medianHomeValue": 426000,
+      "grossYield": 0.04709859154929578,
+      "abbr": "AZ"
+    },
+    {
+      "name": "Connecticut",
+      "slug": "connecticut",
+      "medianGrossRent": 1550,
+      "medianHomeValue": 396900,
+      "grossYield": 0.04686318972033258,
+      "abbr": "CT"
+    },
+    {
+      "name": "Wisconsin",
+      "slug": "wisconsin",
+      "medianGrossRent": 1142,
+      "medianHomeValue": 294700,
+      "grossYield": 0.04650152697658636,
+      "abbr": "WI"
+    },
+    {
+      "name": "Tennessee",
+      "slug": "tennessee",
+      "medianGrossRent": 1284,
+      "medianHomeValue": 332600,
+      "grossYield": 0.046325917017438364,
+      "abbr": "TN"
+    },
+    {
+      "name": "Alaska",
+      "slug": "alaska",
+      "medianGrossRent": 1444,
+      "medianHomeValue": 376500,
+      "grossYield": 0.04602390438247012,
+      "abbr": "AK"
+    },
+    {
+      "name": "Nevada",
+      "slug": "nevada",
+      "medianGrossRent": 1709,
+      "medianHomeValue": 455500,
+      "grossYield": 0.045023051591657516,
+      "abbr": "NV"
+    },
+    {
+      "name": "Minnesota",
+      "slug": "minnesota",
+      "medianGrossRent": 1291,
+      "medianHomeValue": 344600,
+      "grossYield": 0.044956471271038884,
+      "abbr": "MN"
+    },
+    {
+      "name": "Vermont",
+      "slug": "vermont",
+      "medianGrossRent": 1319,
+      "medianHomeValue": 352800,
+      "grossYield": 0.04486394557823129,
+      "abbr": "VT"
+    },
+    {
+      "name": "North Dakota",
+      "slug": "north-dakota",
+      "medianGrossRent": 980,
+      "medianHomeValue": 266100,
+      "grossYield": 0.04419391206313416,
+      "abbr": "ND"
+    },
+    {
+      "name": "New York",
+      "slug": "new-york",
+      "medianGrossRent": 1634,
+      "medianHomeValue": 449800,
+      "grossYield": 0.04359270787016452,
+      "abbr": "NY"
+    },
+    {
+      "name": "New Jersey",
+      "slug": "new-jersey",
+      "medianGrossRent": 1800,
+      "medianHomeValue": 496000,
+      "grossYield": 0.043548387096774194,
+      "abbr": "NJ"
+    },
+    {
+      "name": "Maine",
+      "slug": "maine",
+      "medianGrossRent": 1210,
+      "medianHomeValue": 341900,
+      "grossYield": 0.04246855805791167,
+      "abbr": "ME"
+    },
+    {
+      "name": "South Dakota",
+      "slug": "south-dakota",
+      "medianGrossRent": 999,
+      "medianHomeValue": 289600,
+      "grossYield": 0.04139502762430939,
+      "abbr": "SD"
+    },
+    {
+      "name": "New Hampshire",
+      "slug": "new-hampshire",
+      "medianGrossRent": 1558,
+      "medianHomeValue": 458800,
+      "grossYield": 0.04074978204010462,
+      "abbr": "NH"
+    },
+    {
+      "name": "Oregon",
+      "slug": "oregon",
+      "medianGrossRent": 1597,
+      "medianHomeValue": 497500,
+      "grossYield": 0.03852060301507538,
+      "abbr": "OR"
+    },
+    {
+      "name": "Colorado",
+      "slug": "colorado",
+      "medianGrossRent": 1822,
+      "medianHomeValue": 574600,
+      "grossYield": 0.03805081796032022,
+      "abbr": "CO"
+    },
+    {
+      "name": "Rhode Island",
+      "slug": "rhode-island",
+      "medianGrossRent": 1418,
+      "medianHomeValue": 455700,
+      "grossYield": 0.03734035549703753,
+      "abbr": "RI"
+    },
+    {
+      "name": "Idaho",
+      "slug": "idaho",
+      "medianGrossRent": 1384,
+      "medianHomeValue": 446400,
+      "grossYield": 0.037204301075268814,
+      "abbr": "ID"
+    },
+    {
+      "name": "Massachusetts",
+      "slug": "massachusetts",
+      "medianGrossRent": 1848,
+      "medianHomeValue": 607400,
+      "grossYield": 0.03650971353309187,
+      "abbr": "MA"
+    },
+    {
+      "name": "Washington",
+      "slug": "washington",
+      "medianGrossRent": 1824,
+      "medianHomeValue": 602200,
+      "grossYield": 0.03634672866157423,
+      "abbr": "WA"
+    },
+    {
+      "name": "Wyoming",
+      "slug": "wyoming",
+      "medianGrossRent": 998,
+      "medianHomeValue": 339500,
+      "grossYield": 0.03527540500736377,
+      "abbr": "WY"
+    },
+    {
+      "name": "Utah",
+      "slug": "utah",
+      "medianGrossRent": 1593,
+      "medianHomeValue": 545200,
+      "grossYield": 0.03506236243580337,
+      "abbr": "UT"
+    },
+    {
+      "name": "California",
+      "slug": "california",
+      "medianGrossRent": 2104,
+      "medianHomeValue": 759500,
+      "grossYield": 0.03324292297564187,
+      "abbr": "CA"
+    },
+    {
+      "name": "Montana",
+      "slug": "montana",
+      "medianGrossRent": 1177,
+      "medianHomeValue": 425400,
+      "grossYield": 0.03320169252468265,
+      "abbr": "MT"
+    },
+    {
+      "name": "District of Columbia",
+      "slug": "district-of-columbia",
+      "medianGrossRent": 1931,
+      "medianHomeValue": 733400,
+      "grossYield": 0.03159530951731661,
+      "abbr": "DC"
+    },
+    {
+      "name": "Hawaii",
+      "slug": "hawaii",
+      "medianGrossRent": 1942,
+      "medianHomeValue": 875900,
+      "grossYield": 0.026605776915172966,
+      "abbr": "HI"
+    }
   ]
 }

@@ -87,14 +87,26 @@ function grossYield(rent, value) {
   return (rent * 12) / value
 }
 
-async function fetchRows(geoQuery) {
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
+
+async function fetchRows(geoQuery, attempts = 5) {
   const url = `${BASE}?get=${VARS}&for=${encodeURIComponent(geoQuery)}&key=${KEY}`
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`Census API ${res.status} for "${geoQuery}": ${await res.text()}`)
-  const data = await res.json() // [ [header...], [row...], ... ]
-  const header = data[0]
-  const idx = Object.fromEntries(header.map((h, i) => [h, i]))
-  return { rows: data.slice(1), idx }
+  let lastErr
+  for (let i = 1; i <= attempts; i++) {
+    const res = await fetch(url)
+    const text = await res.text()
+    // The Census API intermittently returns a 200 with an "Invalid Key" HTML
+    // page under rapid sequential requests; the same key succeeds on retry.
+    if (res.ok && text.trimStart().startsWith('[')) {
+      const data = JSON.parse(text) // [ [header...], [row...], ... ]
+      const header = data[0]
+      const idx = Object.fromEntries(header.map((h, j) => [h, j]))
+      return { rows: data.slice(1), idx }
+    }
+    lastErr = `Census API ${res.status} for "${geoQuery}": ${text.slice(0, 80).replace(/\s+/g, ' ')}`
+    if (i < attempts) await sleep(1000 * i)
+  }
+  throw new Error(`${lastErr} (after ${attempts} attempts)`)
 }
 
 function row(name, slug, rent, value, extra = {}) {
