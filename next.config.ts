@@ -49,6 +49,11 @@ const nextConfig: NextConfig = {
         destination: '/blog/dscr-loans-explained',
         permanent: true,
       },
+      {
+        source: '/blog/dscr-investor-financing-guide',
+        destination: '/blog/dscr-loans-explained',
+        permanent: true,
+      },
     ]
   },
 }

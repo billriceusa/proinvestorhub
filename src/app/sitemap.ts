@@ -346,6 +346,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const REDIRECTED_POST_SLUGS = new Set([
     'dscr-loans-explained-real-estate-investors',
     'dscr-loans-explained-complete-guide-real-estate-investors-2026',
+    'dscr-investor-financing-guide',
   ])
   const postPages: MetadataRoute.Sitemap = (posts ?? [])
     .filter((post) => !REDIRECTED_POST_SLUGS.has(post.slug))
