@@ -15,6 +15,12 @@ import {
   fmtYield,
   fmtRent,
 } from '@/data/rental-yield'
+import {
+  nationalLenders,
+  nationalTotal,
+  lenderMeta,
+  fmtCount as fmtLenderCount,
+} from '@/data/hmda-lenders'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
@@ -50,6 +56,19 @@ const reports = [
       { label: 'U.S. gross rental yield', value: fmtYield(yieldNational.grossYield) },
       { label: 'Top state', value: statesByYield[0] ? `${statesByYield[0].abbr} ${fmtYield(statesByYield[0].grossYield)}` : '—' },
       { label: 'U.S. median rent', value: fmtRent(yieldNational.medianGrossRent) },
+    ],
+  },
+  {
+    title: `Most Active Investment-Property Lenders by State (${lenderMeta.year})`,
+    href: '/reports/investor-lenders',
+    source: 'CFPB HMDA',
+    year: lenderMeta.year,
+    blurb:
+      'Which lenders originate the most investment-property loans in each state, ranked by HMDA-reported volume — with DSCR/business-purpose focus flagged. A research starting point, not a "best lender" list.',
+    stats: [
+      { label: 'Most active', value: nationalLenders[0]?.name ?? '—' },
+      { label: 'Investor loans analyzed', value: fmtLenderCount(nationalTotal) },
+      { label: 'Reporting lenders', value: fmtLenderCount(lenderMeta.distinctLenders) },
     ],
   },
 ]
