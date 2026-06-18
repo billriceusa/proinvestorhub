@@ -6,6 +6,7 @@ import { lenders, getLenderBySlug, formatCurrency, type LenderData } from '@/dat
 import { loanTypes } from '@/data/loan-types'
 import { getComparisonsForLender } from '@/data/lender-comparisons'
 import { LenderOutboundLink } from '@/components/lender-outbound-link'
+import { normalizeTitle } from '@/lib/page-title'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!lender) return {}
 
   return {
-    title: lender.metaTitle,
+    title: normalizeTitle(lender.metaTitle),
     description: lender.metaDescription,
     alternates: { canonical: `/lenders/reviews/${slug}` },
     openGraph: {

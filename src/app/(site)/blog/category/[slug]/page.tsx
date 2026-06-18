@@ -18,6 +18,7 @@ import { CalculatorCTA } from '@/components/calculator-cta'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 import { Pagination } from '@/components/pagination'
 import { categoryHubContent } from '@/data/category-content'
+import { normalizeTitle } from '@/lib/page-title'
 
 const POSTS_PER_PAGE = 12
 
@@ -35,7 +36,7 @@ export async function generateMetadata({
   if (!category) return {}
 
   return {
-    title: category.metaTitle,
+    title: normalizeTitle(category.metaTitle),
     description: category.metaDescription,
     alternates: { canonical: `/blog/category/${slug}` },
     openGraph: {

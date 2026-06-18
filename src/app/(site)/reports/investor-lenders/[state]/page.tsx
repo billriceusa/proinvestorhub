@@ -236,6 +236,27 @@ export default async function StateLendersPage({
         </div>
       </section>
 
+      {/* Reverse link into the lender directory */}
+      <section className="mt-12 rounded-2xl border border-border bg-surface p-6">
+        <h2 className="text-lg font-bold text-text">Compare lenders serving {s.name}</h2>
+        <p className="mt-2 text-sm leading-6 text-text-muted">
+          This ranks reported volume. To compare rates, LTV, and terms from lenders that
+          actively lend in {s.name}, browse our directory:{' '}
+          <Link href={`/lenders/dscr-loans/${s.slug}`} className="font-semibold text-primary hover:underline">
+            DSCR lenders
+          </Link>
+          ,{' '}
+          <Link href={`/lenders/hard-money-loans/${s.slug}`} className="font-semibold text-primary hover:underline">
+            hard money
+          </Link>
+          , and{' '}
+          <Link href={`/lenders/fix-and-flip-loans/${s.slug}`} className="font-semibold text-primary hover:underline">
+            fix-and-flip
+          </Link>{' '}
+          lenders in {s.name}.
+        </p>
+      </section>
+
       <div className="mt-14">
         <CalculatorRelatedTools
           heading={`Run a ${s.name} deal`}

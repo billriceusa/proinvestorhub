@@ -9,6 +9,7 @@ import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 import { extractTocItems } from '@/lib/toc-utils'
 import { TableOfContents } from '@/components/table-of-contents'
+import { normalizeTitle } from '@/lib/page-title'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
@@ -63,7 +64,7 @@ export async function generateMetadata({
   const guide = data as GuideDetail | null
   if (!guide) return {}
 
-  const title = guide.seo?.metaTitle || guide.title || 'Guide'
+  const title = normalizeTitle(guide.seo?.metaTitle || guide.title) || 'Guide'
   const description = guide.seo?.metaDescription || guide.excerpt || ''
 
   return {

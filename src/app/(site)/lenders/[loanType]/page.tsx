@@ -6,6 +6,7 @@ import { loanTypes, getLoanTypeBySlug } from '@/data/loan-types'
 import { getLendersByLoanType } from '@/data/lenders'
 import { usStates } from '@/data/us-states'
 import { LenderCard } from '@/components/lender-card'
+import { normalizeTitle } from '@/lib/page-title'
 
 type Props = { params: Promise<{ loanType: string }> }
 
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!lt) return {}
 
   return {
-    title: lt.metaTitle,
+    title: normalizeTitle(lt.metaTitle),
     description: lt.metaDescription,
     alternates: { canonical: `/lenders/${slug}` },
     openGraph: {
@@ -289,6 +290,28 @@ export default async function LoanTypePage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* Investor data reports */}
+      <section className="mb-12 rounded-xl border border-border bg-surface p-6">
+        <h2 className="text-xl font-bold text-text mb-1">Research the market with our data reports</h2>
+        <p className="text-sm text-text-muted mb-4">
+          Original public-data analysis to pair with your {lt.shortName.toLowerCase()} financing.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <Link href="/reports/investor-lenders" className="rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary/40">
+            <p className="text-sm font-semibold text-text">Most active lenders by state</p>
+            <p className="mt-1 text-xs text-text-muted">Who originates the most investor loans (HMDA)</p>
+          </Link>
+          <Link href="/reports/investor-financing" className="rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary/40">
+            <p className="text-sm font-semibold text-text">Investor financing terms</p>
+            <p className="mt-1 text-xs text-text-muted">Rate premium, denials &amp; DSCR share by state</p>
+          </Link>
+          <Link href="/reports/rental-yield" className="rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary/40">
+            <p className="text-sm font-semibold text-text">Best cash-flow markets</p>
+            <p className="mt-1 text-xs text-text-muted">Gross rental yield by state &amp; metro</p>
+          </Link>
+        </div>
+      </section>
 
       {/* Browse by State */}
       <section className="mb-12">

@@ -17,6 +17,7 @@ import { ToolRecommendations } from '@/components/tool-recommendations'
 import { GlossaryProvider } from '@/lib/glossary-linker'
 import { TableOfContents } from '@/components/table-of-contents'
 import { extractTocItems } from '@/lib/toc-utils'
+import { normalizeTitle } from '@/lib/page-title'
 
 // Map post category slugs to glossary categories
 const postCategoryToGlossary: Record<string, string> = {
@@ -74,7 +75,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : `${baseUrl}/api/og?title=${encodeURIComponent(post.title || '')}&category=${encodeURIComponent(category)}&type=article`
 
   return {
-    title: post.seo?.metaTitle || post.title,
+    title: normalizeTitle(post.seo?.metaTitle || post.title),
     description: post.seo?.metaDescription || post.excerpt,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: { images: [{ url: ogImage, width: 1200, height: 630 }] },

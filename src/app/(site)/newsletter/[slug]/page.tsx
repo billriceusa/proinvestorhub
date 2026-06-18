@@ -8,6 +8,7 @@ import {
   NEWSLETTER_ISSUE_NEIGHBORS_QUERY,
 } from '@/sanity/lib/queries'
 import { markdownToHtml } from '@/lib/markdown'
+import { normalizeTitle } from '@/lib/page-title'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -64,7 +65,7 @@ export async function generateMetadata({
   const i = issue as IssueDetail | null
   if (!i) return {}
 
-  const title = i.seo?.metaTitle || i.subject || 'Newsletter'
+  const title = normalizeTitle(i.seo?.metaTitle || i.subject) || 'Newsletter'
   const description = i.seo?.metaDescription || i.previewText || i.excerpt || ''
 
   return {
