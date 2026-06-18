@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "year": 2025,
+    "source": "CFPB / FFIEC HMDA combined Modified LAR (loan-level public dataset, early release)",
+    "universe": "Investment-property (owner-occupancy = investor), single-family 1-4 unit, site-built originations",
+    "generatedAt": "2026-06-18",
+    "topPerState": 10,
+    "minOriginations": 10,
+    "distinctLenders": 4051,
+    "nameResolution": {
+      "viaFilers": 231,
+      "viaGleif": 1,
+      "unresolved": 0,
+      "of": 232
+    },
+    "nameNote": "Lender names resolved from the 2024 HMDA filers registry (LEIs are stable across years) with a GLEIF fallback. The 2025 HMDA institution registry was not yet published at build time."
+  },
+  "totalInvestorOriginations": 524314,
+  "lenders": [
+    {
+      "rank": 1,
+      "lei": "549300HW662MN1WU8550",
+      "name": "United Shore Financial Services, LLC",
+      "originations": 31205,
+      "volume": 8288155000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 2,
+      "lei": "5493006VAGP3GQ8FJT49",
+      "name": "Kiavi Funding, Inc.",
+      "originations": 25244,
+      "volume": 7726710000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 3,
+      "lei": "549300FGXN1K3HLB1R50",
+      "name": "Rocket Mortgage, LLC",
+      "originations": 11324,
+      "volume": 3425810000,
+      "businessPurposeShare": 0.0027375485694101026,
+      "resolved": true
+    },
+    {
+      "rank": 4,
+      "lei": "254900DTLHVWQ7NP7R34",
+      "name": "The Loan Store, Inc.",
+      "originations": 11170,
+      "volume": 3910870000,
+      "businessPurposeShare": 0.25299910474485227,
+      "resolved": true
+    },
+    {
+      "rank": 5,
+      "lei": "549300VZVN841I2ILS84",
+      "name": "Crosscountry Mortgage, Inc.",
+      "originations": 9794,
+      "volume": 3555570000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 6,
+      "lei": "254900RUCO27MVGTO768",
+      "name": "Loan Funder LLC",
+      "originations": 9296,
+      "volume": 3416740000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 7,
+      "lei": "984500U2F9A83N391A91",
+      "name": "Champions Funding, LLC",
+      "originations": 7467,
+      "volume": 2944915000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 8,
+      "lei": "5493005PD34O8ZT7QT17",
+      "name": "BPL Mortgage Trust, LLC",
+      "originations": 7140,
+      "volume": 1269270000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 9,
+      "lei": "RVDPPPGHCGZ40J4VQ731",
+      "name": "Pennymac Loan Services, LLC",
+      "originations": 6243,
+      "volume": 2517345000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 10,
+      "lei": "549300H3IZO24NSOO931",
+      "name": "Lennar Mortgage, LLC",
+      "originations": 6134,
+      "volume": 1567420000,
+      "businessPurposeShare": 0.020541245516791654,
+      "resolved": true
+    },
+    {
+      "rank": 11,
+      "lei": "549300J7I82PNDVU8H22",
+      "name": "OCMBC, Inc.",
+      "originations": 5999,
+      "volume": 1992135000,
+      "businessPurposeShare": 0.9141523587264544,
+      "resolved": true
+    },
+    {
+      "rank": 12,
+      "lei": "254900O2K17TNH5CL873",
+      "name": "RF Renovo Management Company, LLC",
+      "originations": 5969,
+      "volume": 2071705000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 13,
+      "lei": "549300R77W0P105C3S50",
+      "name": "Homexpress Mortgage Corp.",
+      "originations": 5810,
+      "volume": 1911510000,
+      "businessPurposeShare": 0.9944922547332186,
+      "resolved": true
+    },
+    {
+      "rank": 14,
+      "lei": "2549005SIVTHG14U2905",
+      "name": "A&D Mortgage LLC",
+      "originations": 5522,
+      "volume": 1731830000,
+      "businessPurposeShare": 0.9654110829409634,
+      "resolved": true
+    },
+    {
+      "rank": 15,
+      "lei": "549300RA3E0BUFO7YZ21",
+      "name": "Hometown Equity Mortgage, LLC",
+      "originations": 5405,
+      "volume": 2213975000,
+      "businessPurposeShare": 0.9544865864939871,
+      "resolved": true
+    },
+    {
+      "rank": 16,
+      "lei": "549300U3721PJGQZYY68",
+      "name": "Guaranteed Rate, Inc.",
+      "originations": 5310,
+      "volume": 2024100000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 17,
+      "lei": "549300FNXYY540N23N64",
+      "name": "Newrez LLC",
+      "originations": 5233,
+      "volume": 1747865000,
+      "businessPurposeShare": 0.6669214599656029,
+      "resolved": true
+    },
+    {
+      "rank": 18,
+      "lei": "549300O6Z0I6KYMESL47",
+      "name": "Amwest Funding Corp.",
+      "originations": 5001,
+      "volume": 1535215000,
+      "businessPurposeShare": 0.8634273145370925,
+      "resolved": true
+    },
+    {
+      "rank": 19,
+      "lei": "549300TA4MQM8WN2XG31",
+      "name": "Velocity Commercial Capital, LLC",
+      "originations": 4776,
+      "volume": 1422560000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 20,
+      "lei": "254900CTT87ZKAUTIJ37",
+      "name": "CV3 Financial Services, LLC",
+      "originations": 4725,
+      "volume": 1587015000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 21,
+      "lei": "549300GKFNPRWNS0GF29",
+      "name": "CMG Mortgage, Inc.",
+      "originations": 4552,
+      "volume": 1684190000,
+      "businessPurposeShare": 0.6775043936731108,
+      "resolved": true
+    },
+    {
+      "rank": 22,
+      "lei": "254900E6AIE4Z8YQM970",
+      "name": "Citadel Servicing Corporation",
+      "originations": 4122,
+      "volume": 1666730000,
+      "businessPurposeShare": 0.9970887918486172,
+      "resolved": true
+    },
+    {
+      "rank": 23,
+      "lei": "7H6GLXDRUGQFU57RNE97",
+      "name": "JPMorgan Chase Bank, National Association",
+      "originations": 4077,
+      "volume": 1793515000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 24,
+      "lei": "254900JXCS783CPF1D02",
+      "name": "RCN Capital, LLC",
+      "originations": 3988,
+      "volume": 899500000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 25,
+      "lei": "549300ZPSJZO10ZAX556",
+      "name": "American Heritage Lending, LLC",
+      "originations": 3734,
+      "volume": 972310000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 26,
+      "lei": "549300MZ8VZJOVC63092",
+      "name": "Kind Lending, LLC",
+      "originations": 3593,
+      "volume": 1224585000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 27,
+      "lei": "549300Y5Y88FQLI7VE83",
+      "name": "Deephaven Mortgage LLC",
+      "originations": 3488,
+      "volume": 1098380000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 28,
+      "lei": "5493001SXWZ4OFP8Z903",
+      "name": "DHI Mortgage Company, LTD.",
+      "originations": 3424,
+      "volume": 915180000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 29,
+      "lei": "549300AQ3T62GXDU7D76",
+      "name": "Guild Mortgage Company",
+      "originations": 3289,
+      "volume": 900535000,
+      "businessPurposeShare": 1,
+      "resolved": true
+    },
+    {
+      "rank": 30,
+      "lei": "549300DD4R4SYK5RAQ92",
+      "name": "Movement Mortgage, LLC",
+      "originations": 3174,
+      "volume": 1050860000,
+      "businessPurposeShare": 0.21676118462507876,
+      "resolved": true
+    }
+  ]
+}
