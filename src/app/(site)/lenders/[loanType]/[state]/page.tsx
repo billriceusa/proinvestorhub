@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const state = getStateBySlug(stateSlug)
   if (!lt || !state) return {}
 
-  const title = `Best ${lt.shortName} Lenders in ${state.name} 2026 | ProInvestorHub`
+  const title = `Best ${lt.shortName} Lenders in ${state.name} 2026`
   const description = `Compare ${lt.shortName} lenders serving ${state.name}. Side-by-side rates, LTV, credit requirements, and expert reviews for ${state.name} real estate investors.`
 
   return {
@@ -251,6 +251,45 @@ export default async function StateLoanTypePage({ params }: Props) {
             className="text-sm font-semibold text-primary hover:text-primary-light transition-colors"
           >
             Read our full guide to {lt.name} &rarr;
+          </Link>
+        </div>
+      </section>
+
+      {/* ProInvestorHub data reports for this state */}
+      <section className="mb-10 rounded-xl border border-border bg-surface p-6">
+        <h2 className="text-xl font-bold text-text mb-1">
+          {state.name} investor data
+        </h2>
+        <p className="text-sm text-text-muted mb-4">
+          Public-data research to size up the {state.name} market before you borrow.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <Link
+            href={`/reports/investor-lenders/${stateSlug}`}
+            className="rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary/40"
+          >
+            <p className="text-sm font-semibold text-text">Most active lenders</p>
+            <p className="mt-1 text-xs text-text-muted">
+              Who originates the most investor loans in {state.name} (HMDA)
+            </p>
+          </Link>
+          <Link
+            href={`/reports/investor-financing/${stateSlug}`}
+            className="rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary/40"
+          >
+            <p className="text-sm font-semibold text-text">Financing terms</p>
+            <p className="mt-1 text-xs text-text-muted">
+              Rate premium, denial rate &amp; DSCR share in {state.name}
+            </p>
+          </Link>
+          <Link
+            href={`/reports/rental-yield/${stateSlug}`}
+            className="rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary/40"
+          >
+            <p className="text-sm font-semibold text-text">Rental yield</p>
+            <p className="mt-1 text-xs text-text-muted">
+              Where {state.name} cash-flows best by metro
+            </p>
           </Link>
         </div>
       </section>

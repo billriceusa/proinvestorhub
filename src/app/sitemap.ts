@@ -341,12 +341,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ]
 
-  const postPages: MetadataRoute.Sitemap = (posts ?? []).map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.publishedAt ? new Date(post.publishedAt) : undefined,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
+  // Duplicate posts 301-redirected to a canonical URL (see next.config.ts).
+  // Keep them out of the sitemap so we don't advertise URLs that redirect.
+  const REDIRECTED_POST_SLUGS = new Set([
+    'dscr-loans-explained-real-estate-investors',
+    'dscr-loans-explained-complete-guide-real-estate-investors-2026',
+    'dscr-investor-financing-guide',
+  ])
+  const postPages: MetadataRoute.Sitemap = (posts ?? [])
+    .filter((post) => !REDIRECTED_POST_SLUGS.has(post.slug))
+    .map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: post.publishedAt ? new Date(post.publishedAt) : undefined,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
 
   const glossaryPages: MetadataRoute.Sitemap = (glossaryTerms ?? []).map(
     (term) => ({

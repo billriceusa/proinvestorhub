@@ -35,6 +35,25 @@ const nextConfig: NextConfig = {
         destination: '/markets/:strategy',
         permanent: true,
       },
+      // Consolidate the duplicate "DSCR Loans Explained" posts onto one
+      // canonical /blog/dscr-loans-explained. Multiple near-identical posts
+      // were splitting ranking signals for the same "DSCR loans explained"
+      // intent; these 301s transfer equity to the canonical guide.
+      {
+        source: '/blog/dscr-loans-explained-real-estate-investors',
+        destination: '/blog/dscr-loans-explained',
+        permanent: true,
+      },
+      {
+        source: '/blog/dscr-loans-explained-complete-guide-real-estate-investors-2026',
+        destination: '/blog/dscr-loans-explained',
+        permanent: true,
+      },
+      {
+        source: '/blog/dscr-investor-financing-guide',
+        destination: '/blog/dscr-loans-explained',
+        permanent: true,
+      },
     ]
   },
 }
