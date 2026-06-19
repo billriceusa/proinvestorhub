@@ -15,6 +15,11 @@
 ### Email Automation
 - [x] Connect drip to Resend automation — drip 1-2 scheduled at signup via `scheduledAt`, drip 3-5 via daily cron `/api/cron/send-drip` (11 AM UTC)
 
+### SEO Audit P0 — 2026-06-19 (/website-audit) <!-- added 2026-06-19 /website-audit -->
+Re-audit of the 2026-06-13 findings + new issues. Full report: `~/website-audits/proinvestorhub.com-2026-06-19.html`. **Snapshot (28d → 2026-06-18):** GSC 989 impressions → **1 click**, avg pos 34; GA4 ~71 *organic* sessions (Bing 39 > Yahoo 13 > Google 12) + 12 AI-assistant sessions; DR 13 (spam-inflated); 1,390 indexable URLs. Foundations are excellent (rich Dataset/FAQPage schema, clean robots/sitemap, self-canonicals, no thin content) — the binding constraints are **SERP CTR, mobile speed on the two hub pages, and trustworthy measurement.** Items below are ordered by impact on the primary goals (traffic, then conversion). Tags: `[Traffic]` `[Conversion]` `[Both]`.
+- [ ] **`[Traffic — sitewide CTR]` Stop Google doubling the brand in SERP titles.** Live results render "… **| ProInvestorHub | ProInvestorHub**". The raw `<title>` already ends in a *single* "| ProInvestorHub" (PR #64 fixed the in-app doubling); Google then auto-appends the site name on top. **Fix:** remove the brand from the Next.js metadata `title.template` (set template to `%s`, supply per-page brand only where intentional via `title.absolute`) so Google's auto-append provides it exactly once. Touches every one of 1,390 pages — highest-leverage single change. Effort **S**. Verify in live SERP after redeploy + reindex. *(Source: WebSearch SERP on Park Place/Griffin/BRRRR results + raw curl `<title>`.)*
+- [ ] **`[Traffic — top entry points]` Fix mobile LCP on `/` (6.1s) and `/calculators` (5.8s).** Google "poor" (>4s); mobile is what's indexed. `/calculators/cap-rate` renders at 2.3s on the same stack, so this is a per-page hero/render-blocking problem, not a platform limit. Preload/prioritize the LCP hero element, defer non-critical JS (~200–227 KiB unused on the hubs). Effort **M**. Target <2.5s mobile. *(Source: PageSpeed lab, mobile.)*
+
 ---
 
 ## P1 — Soon
@@ -36,22 +41,26 @@
 - [x] Start-here sticky step nav — horizontal sticky nav bar with numbered steps, scroll-aware active highlighting
 - [x] Calculator embed codes — collapsible embed code generator on all 9 calculators with iframe snippet + attribution backlink
 
-### SEO Audit — 2026-06-13 (/website-audit) <!-- added 2026-06-13 /website-audit -->
-Deep audit findings. Snapshot: GA4 781 sessions/28d (mostly Direct), GSC 1,049 impressions → **1 click**, avg pos 33.9, DR 13. Site is technically excellent (PageSpeed 89-99, SEO 100, clean canonicals/robots/sitemap) — the limiters are **attribution measurement** and **domain authority**, not on-page.
-- [x] Fix GA4 attribution — analytics load strategy `lazyOnload` → `afterInteractive` so the referrer-bearing pageview fires reliably on bounce. <!-- shipped 2026-06-13 -->
-- [ ] **Attribution, config side (the rest of the fix):** in GA4 Admin enable bot-traffic exclusion + review referral-exclusion list; in the GTM container (`GTM-5J446HT5`) confirm the GA4 page_view tag fires on all loads and isn't dropping `page_referrer`. 87% "Direct" is also inflated by bots on a new domain — verify in GA4 DebugView. (Fleet-wide BRSG pattern — agedleadsales shows it too.)
-- [ ] **Push "cap rate calculator" to page 1** (currently pos 19, **308 impressions ≈ 30% of all site impressions**, 0 clicks). On-page is already strong and the page is already internally linked (cash-on-cash 4 links, /calculators 2, blog 2) — the real blocker is authority. Add a few exact-anchor "cap rate calculator" links from the highest-traffic posts, then pursue 2-3 quality backlinks to that URL.
-- [ ] **Authority program (DR 13 = ranking ceiling)** — the 9 calculators are the natural linkable assets (embed codes already exist). Outreach/embeds to lift DR; this unlocks the page-3 cluster sitewide.
-- Note: FAQPage + HowTo + WebApplication schema already present on calculators (verified live 2026-06-13) — no schema work needed.
+### SEO Audit P1 — 2026-06-19 (/website-audit) <!-- added 2026-06-19 /website-audit; refreshes & supersedes the 2026-06-13 open items -->
+- [x] Fix GA4 attribution load strategy — `lazyOnload` → `afterInteractive` so the referrer-bearing pageview fires on bounce. <!-- shipped 2026-06-13 -->
+- [ ] **`[Both — unblocks all measurement]` Finish the GA4 attribution + key-event cleanup.** Sessions are still **91% "Direct"** (1,022 of 1,126) and the 8.5× MoM spike is **not corroborated by GSC** (impressions flat 895→989), so it's bot/referrer-loss, not real growth — session *and* conversion numbers are not decision-grade until this is fixed. Do: (a) GA4 Admin → enable bot-traffic exclusion + review referral-exclusion list; (b) confirm GTM (`GTM-5J446HT5`) GA4 page_view tag keeps `page_referrer` on all loads (DebugView); (c) **wire real key events** — email capture, calculator Save-Results, lender click-out, report dataset-download — only **3** key events fired in 28d, so the funnel is invisible. Fleet-wide BRSG pattern (agedleadsales too). Effort **S–M**.
+- [ ] **`[Traffic — biggest single unlock]` Push "cap rate calculator" to page 1.** 298 impr/28d at pos ~14–20 (Ahrefs vol 14,000); `/calculators/cap-rate` already pulls 672 impr — the one term with real ranked demand. On-page is strong and already internally linked; blockers are authority + CTR. Add exact-anchor "cap rate calculator" links from the highest-traffic posts + sibling calcs, fix the page's unlabeled form inputs (a11y), pursue 2–3 quality links to the URL. Effort **S–M**.
+- [ ] **`[Traffic]` Shorten the 3 over-60-char titles + trim 2 over-160 meta descriptions.** `/reports/investor-lenders` title 72 / meta 217, `/reports/rental-yield` title 87, `/financing` meta 235, `/blog/dscr-loans-explained` title 78 — all truncate in SERPs. Effort **S**. *(Source: raw curl `<title>`/`<meta>` on 5 pages.)*
+- [ ] **`[Traffic — authority, defense]` Disavow the PBN/spam backlink profile.** 200+ junk referring domains (`*-seoexpress.store`, `rank-forge`, `link-baron`, `.shop`/`.store` PBNs) inflate DR 13 with negative-SEO-style links. Export Ahrefs refdomains → build + submit a disavow file → document a recurring link-hygiene check. Effort **M**.
+- [ ] **`[Traffic — authority, offense]` Earn quality links to offset DR 13.** The HMDA "Most Active Lenders" + rental-yield reports carry Dataset/DataDownload schema and original data — distribute/pitch them (REI communities, journalists) as linkable data journalism; the 17 calculators are the other natural linkable assets (embed codes already shipped). Quality earned links are the right answer to the spam profile and unlock the page-2/3 cluster sitewide. Effort **M (ongoing)**.
+- [ ] **`[Traffic — proven template]` Expand the lender head-to-head compare set.** `/lenders/compare/lima-one-vs-civic-financial` already sits at **pos 7.3** and `/lenders/reviews/griffin-funding` at pos 23.6 — the 652-page lenders cluster is the second cluster gaining traction. Build more high-intent "X vs Y" investor-lender compares where the template already reaches page 1. Effort **M**.
+- Note: FAQPage + HowTo + WebApplication schema already present on calculators; Dataset/FAQPage/Article schema on reports (verified live 2026-06-19) — no schema *build* work needed, only the AEO content blocks in P2.
 
 ---
 
 ## P2 — Later
 
-### SEO Audit — 2026-06-13 (/website-audit) <!-- added 2026-06-13 /website-audit -->
-- [ ] **Audit the 1,231-URL programmatic surface** — large for a DR-13 site getting ~71 organic sessions. Prune/consolidate thin lenders/markets pages; focus crawl budget + topical authority on pages that can rank.
-- [ ] **Lean into AEO** — 8 sessions already from ChatGPT, robots.txt allows GPTBot/OAI/Perplexity. Calculators + definitional content are what assistants cite; a distribution front that doesn't require out-ranking high-DR sites.
-- [ ] Trim unused JavaScript on blog/calculator templates (~310-450ms lab savings; perf already strong — do opportunistically).
+### SEO Audit P2 — 2026-06-19 (/website-audit) <!-- added 2026-06-19 /website-audit; refreshes & supersedes the 2026-06-13 P2 audit items -->
+- [ ] **`[Both — AEO]` Lean into AI-engine citation.** 12 sessions already from ChatGPT/Copilot; robots allows GPTBot/OAI/Perplexity. Add TL;DR / key-takeaway blocks to the reports + top guides (the chunks assistants quote), keep Dataset+FAQPage+DataDownload schema on every data report, consider an `llms.txt` + clean canonical markdown for the report data. Track AI-assistant referrals as a first-class GA4 channel. A distribution front that doesn't require out-ranking high-DR sites. Effort **S–M**.
+- [ ] **`[Traffic]` Audit the 1,390-URL programmatic surface for thinness.** Large for a DR-13 site at ~71 organic sessions. Spot-check `/calculators/[metric]/[metro]`, `/lenders/*`, `/markets/*` for thin/near-duplicate pages; prune or consolidate to concentrate crawl budget + topical authority on pages that can rank. Effort **M**.
+- [ ] **`[Traffic — quality/a11y]` Site-wide color-contrast fix.** Lighthouse a11y 91–96 with color-contrast failing on every page checked — run a pass against the brand tokens. (The cap-rate-calc form-label fix is folded into the P1 cap-rate item.) Effort **S–M**.
+- [ ] **`[Technical]` Host + crawl hygiene.** Confirm the `www`→apex 308 consolidates cleanly (GSC shows some lender pages indexed under `www.`); add `<lastmod>` to the programmatic sitemap entries (only 82 of 1,390 carry it today). Effort **S**.
+- [ ] Trim unused JavaScript on hub/calculator templates (~200–227 KiB, ~0.9s mobile on the hubs) — opportunistic, do alongside the P0 LCP fix.
 
 ### Authority & Trust
 - [ ] Guest author system — recruit 2-3 guest contributors with cross-web presence (LinkedIn, personal sites) to build domain E-E-A-T signals
