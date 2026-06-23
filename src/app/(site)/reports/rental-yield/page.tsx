@@ -9,6 +9,7 @@ import {
 } from '@/components/json-ld'
 import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 import { BrandBarChart } from '@/components/reports/brand-bar-chart'
+import { KeyTakeaways } from '@/components/key-takeaways'
 import {
   national,
   statesByYield,
@@ -138,37 +139,38 @@ export default function RentalYieldReport() {
       </section>
 
       {topStates.length > 0 && (
-        <section className="mt-12 max-w-3xl">
-          <h2 className="text-2xl font-bold text-text">Key findings</h2>
-          <ul className="mt-4 space-y-3 leading-7 text-text-muted">
-            <li className="flex gap-2">
-              <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              <span>
-                Gross rental yield is highest in{' '}
-                <strong className="text-text">{topStates[0].name}</strong> ({fmtYield(topStates[0].grossYield)}),
-                {' '}{topStates[1]?.name} ({fmtYield(topStates[1]?.grossYield ?? null)}), and{' '}
-                {topStates[2]?.name} ({fmtYield(topStates[2]?.grossYield ?? null)}).
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              <span>
-                Lowest yields are in high-cost markets like{' '}
-                <strong className="text-text">{bottomStates[0]?.name}</strong> ({fmtYield(bottomStates[0]?.grossYield ?? null)}),
-                where home prices far outrun rents.
-              </span>
-            </li>
-            {topMetros.length > 0 && (
-              <li className="flex gap-2">
-                <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span>
-                  Among metros, <strong className="text-text">{topMetros[0].name}</strong>{' '}
-                  leads at {fmtYield(topMetros[0].grossYield)} gross yield.
-                </span>
-              </li>
-            )}
-          </ul>
-        </section>
+        <KeyTakeaways
+          title="Key findings"
+          className="mt-12 max-w-3xl"
+          points={[
+            <>
+              U.S. gross rental yield was{' '}
+              <strong>{fmtYield(national.grossYield)}</strong> in {yieldMeta.year} —
+              a {fmtRent(national.medianGrossRent)} median monthly rent against a{' '}
+              {fmtValue(national.medianHomeValue)} median home value (Census ACS).
+            </>,
+            <>
+              <strong>{topStates[0].name}</strong> has the highest gross rental yield
+              of any state at {fmtYield(topStates[0].grossYield)}, followed by{' '}
+              {topStates[1]?.name} ({fmtYield(topStates[1]?.grossYield ?? null)}) and{' '}
+              {topStates[2]?.name} ({fmtYield(topStates[2]?.grossYield ?? null)}).
+            </>,
+            <>
+              Gross yields are lowest in high-cost states like{' '}
+              <strong>{bottomStates[0]?.name}</strong> (
+              {fmtYield(bottomStates[0]?.grossYield ?? null)}), where home prices far
+              outrun rents.
+            </>,
+            topMetros.length > 0 ? (
+              <>
+                Among major U.S. metros,{' '}
+                <strong>{topMetros[0].name}</strong> leads with a{' '}
+                {fmtYield(topMetros[0].grossYield)} gross rental yield in{' '}
+                {yieldMeta.year}.
+              </>
+            ) : null,
+          ]}
+        />
       )}
 
       <section className="mt-14 grid gap-8 lg:grid-cols-2">
@@ -261,14 +263,17 @@ export default function RentalYieldReport() {
           </Link>
         </div>
         <div className="rounded-2xl border border-border bg-surface p-6">
-          <h2 className="text-lg font-bold text-text">Pair it with financing</h2>
+          <h2 className="text-lg font-bold text-text">Pair it with the trend</h2>
           <p className="mt-2 text-sm leading-6 text-text-muted">
-            Yield tells you where the numbers work; our{' '}
+            Yield shows where rent goes furthest today; see where rent is climbing in{' '}
+            <Link href="/reports/rent-growth" className="font-semibold text-primary hover:underline">
+              Where Rents Are Rising Fastest
+            </Link>
+            , and how investors borrow in each market in the{' '}
             <Link href="/reports/investor-financing" className="font-semibold text-primary hover:underline">
               Investor Financing Report
-            </Link>{' '}
-            shows how investors borrow there — the rate premium, denial rates, and
-            DSCR lending in each state.
+            </Link>
+            .
           </p>
         </div>
       </section>

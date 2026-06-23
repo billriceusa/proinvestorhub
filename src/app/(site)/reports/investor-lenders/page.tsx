@@ -9,6 +9,7 @@ import {
 } from '@/components/json-ld'
 import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 import { BrandBarChart } from '@/components/reports/brand-bar-chart'
+import { KeyTakeaways } from '@/components/key-takeaways'
 import {
   nationalLenders,
   nationalTotal,
@@ -156,6 +157,37 @@ export default function InvestorLendersReport() {
         <Stat label="Reporting lenders" value={fmtCount(lenderMeta.distinctLenders)} sub="distinct institutions" />
         <Stat label="Most active" value={nationalLenders[0]?.name ?? '—'} sub={`${fmtCount(nationalLenders[0]?.originations ?? 0)} investor originations`} />
       </section>
+
+      {nationalLenders.length > 0 && (
+        <KeyTakeaways
+          title="Key findings"
+          className="mt-12 max-w-3xl"
+          points={[
+            <>
+              The most active investment-property lender in {lenderMeta.year} was{' '}
+              <strong>{nationalLenders[0]?.name}</strong> with{' '}
+              {fmtCount(nationalLenders[0]?.originations ?? 0)} single-family 1–4 unit
+              investor originations, followed by {nationalLenders[1]?.name} (
+              {fmtCount(nationalLenders[1]?.originations ?? 0)}) and{' '}
+              {nationalLenders[2]?.name} ({fmtCount(nationalLenders[2]?.originations ?? 0)}).
+            </>,
+            <>
+              Across <strong>{fmtCount(lenderMeta.distinctLenders)}</strong> reporting
+              institutions, {fmtCount(nationalTotal)} investment-property loans were
+              originated in {lenderMeta.year} (CFPB HMDA data).
+            </>,
+            dscrLeaders.length > 0 ? (
+              <>
+                The most active DSCR / business-purpose investor lenders were{' '}
+                <strong>{dscrLeaders[0]?.name}</strong>
+                {dscrLeaders[1] ? <>, {dscrLeaders[1]?.name}</> : null}
+                {dscrLeaders[2] ? <>, and {dscrLeaders[2]?.name}</> : null} — the
+                lenders behind most LLC-held and no-income-verification investor loans.
+              </>
+            ) : null,
+          ]}
+        />
+      )}
 
       {/* Top lenders chart */}
       <section className="mt-14">

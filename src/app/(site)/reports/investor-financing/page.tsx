@@ -12,6 +12,7 @@ import { InvestorUsMap } from '@/components/reports/investor-us-map'
 import { InvestorRankingsTable } from '@/components/reports/investor-rankings-table'
 import { BrandBarChart } from '@/components/reports/brand-bar-chart'
 import { YearOverYear } from '@/components/reports/year-over-year'
+import { KeyTakeaways } from '@/components/key-takeaways'
 import {
   national,
   states,
@@ -150,47 +151,41 @@ export default function InvestorFinancingReport() {
       </section>
 
       {/* Key findings */}
-      <section className="mt-12 max-w-3xl">
-        <h2 className="text-2xl font-bold text-text">Key findings</h2>
-        <ul className="mt-4 space-y-3 leading-7 text-text-muted">
-          <li className="flex gap-2">
-            <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-            <span>
-              Investors paid a median{' '}
-              <strong className="text-text">{fmtBps(national.ratePremiumBps)}</strong>{' '}
-              more than owner-occupants nationally — widest in{' '}
-              <strong className="text-text">{premiumHigh[0].name}</strong> ({fmtBps(premiumHigh[0].ratePremiumBps)})
-              and tightest in{' '}
-              <strong className="text-text">{premiumHigh[premiumHigh.length - 1].name}</strong> ({fmtBps(premiumHigh[premiumHigh.length - 1].ratePremiumBps)}).
-            </span>
-          </li>
-          <li className="flex gap-2">
-            <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-            <span>
-              <strong className="text-text">{denialHigh[0].name}</strong> denied the
-              largest share of investor applications ({fmtPct(denialHigh[0].denialRate)}),
-              followed by {denialHigh[1].name} and {denialHigh[2].name}.
-            </span>
-          </li>
-          <li className="flex gap-2">
-            <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-            <span>
-              Business-purpose lending — the bucket that captures DSCR and LLC-held
-              investor loans — is most concentrated in{' '}
-              <strong className="text-text">{dscrHigh[0].name}</strong> ({fmtPct(dscrHigh[0].businessPurposeShare, 0)}),
-              {' '}{dscrHigh[1].name}, and {dscrHigh[2].name}.
-            </span>
-          </li>
-          <li className="flex gap-2">
-            <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-            <span>
-              The typical investor borrowed at a{' '}
-              <strong className="text-text">{national.investorMedianLtv?.toFixed(0)}% LTV</strong>{' '}
-              — meaning roughly {(100 - (national.investorMedianLtv ?? 0)).toFixed(0)}% down.
-            </span>
-          </li>
-        </ul>
-      </section>
+      <KeyTakeaways
+        title="Key findings"
+        className="mt-12 max-w-3xl"
+        points={[
+          <>
+            In {reportMeta.year}, real estate investors paid a median{' '}
+            <strong>{fmtBps(national.ratePremiumBps)}</strong> higher mortgage rate
+            than owner-occupants ({fmtRate(national.investorMedianRate)} vs{' '}
+            {fmtRate(national.ownerMedianRate)}) — the premium is widest in{' '}
+            <strong>{premiumHigh[0].name}</strong> ({fmtBps(premiumHigh[0].ratePremiumBps)})
+            and tightest in {premiumHigh[premiumHigh.length - 1].name} (
+            {fmtBps(premiumHigh[premiumHigh.length - 1].ratePremiumBps)}).
+          </>,
+          <>
+            <strong>{denialHigh[0].name}</strong> denied the largest share of
+            investment-property loan applications in {reportMeta.year} (
+            {fmtPct(denialHigh[0].denialRate)}), followed by {denialHigh[1].name} and{' '}
+            {denialHigh[2].name}; the national investor denial rate was{' '}
+            {fmtPct(national.denialRate)}.
+          </>,
+          <>
+            Business-purpose lending — the HMDA bucket that captures DSCR and
+            LLC-held investor loans — was most concentrated in{' '}
+            <strong>{dscrHigh[0].name}</strong> ({fmtPct(dscrHigh[0].businessPurposeShare, 0)}),{' '}
+            {dscrHigh[1].name}, and {dscrHigh[2].name}, versus{' '}
+            {fmtPct(national.businessPurposeShare, 0)} nationally.
+          </>,
+          <>
+            The typical investor financed at a{' '}
+            <strong>{national.investorMedianLtv?.toFixed(0)}% median LTV</strong> in{' '}
+            {reportMeta.year} — roughly {(100 - (national.investorMedianLtv ?? 0)).toFixed(0)}%
+            down on a financed purchase.
+          </>,
+        ]}
+      />
 
       {/* Year-over-year trend */}
       <YearOverYear />
