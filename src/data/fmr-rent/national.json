@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "curYear": 2026,
+    "prevYear": 2025,
+    "dataset": "HUD Fair Market Rents FY2026 vs FY2025",
+    "source": "U.S. Department of Housing and Urban Development, Fair Market Rents (FY2026 and FY2025)",
+    "universe": "Two-Bedroom Fair Market Rent (40th-percentile gross rent) for U.S. metropolitan FMR areas (MSAs and New England metro areas; single-county nonmetro areas excluded); state and national figures are the median across those areas",
+    "metric": "Two-Bedroom FMR year-over-year change, FY2026 vs FY2025",
+    "generatedAt": "2026-06-23",
+    "stateCount": 51,
+    "metroCount": 402
+  },
+  "name": "United States",
+  "slug": "united-states",
+  "fmr2br": 1344,
+  "fmrPrev2br": 1283,
+  "yoyPct": 0.03872419523014742
+}

@@ -1,0 +1,474 @@
+{
+  "meta": {
+    "curYear": 2026,
+    "prevYear": 2025,
+    "dataset": "HUD Fair Market Rents FY2026 vs FY2025",
+    "source": "U.S. Department of Housing and Urban Development, Fair Market Rents (FY2026 and FY2025)",
+    "universe": "Two-Bedroom Fair Market Rent (40th-percentile gross rent) for U.S. metropolitan FMR areas (MSAs and New England metro areas; single-county nonmetro areas excluded); state and national figures are the median across those areas",
+    "metric": "Two-Bedroom FMR year-over-year change, FY2026 vs FY2025",
+    "generatedAt": "2026-06-23",
+    "stateCount": 51,
+    "metroCount": 402
+  },
+  "states": [
+    {
+      "name": "Maine",
+      "slug": "maine",
+      "abbr": "ME",
+      "fmr2br": 1894.5,
+      "fmrPrev2br": 1697.5,
+      "yoyPct": 0.14111374052981718,
+      "metroCount": 4
+    },
+    {
+      "name": "Connecticut",
+      "slug": "connecticut",
+      "abbr": "CT",
+      "fmr2br": 1865.5,
+      "fmrPrev2br": 1639,
+      "yoyPct": 0.1382796779747778,
+      "metroCount": 2
+    },
+    {
+      "name": "South Dakota",
+      "slug": "south-dakota",
+      "abbr": "SD",
+      "fmr2br": 1156,
+      "fmrPrev2br": 1043,
+      "yoyPct": 0.12233009708737864,
+      "metroCount": 3
+    },
+    {
+      "name": "North Dakota",
+      "slug": "north-dakota",
+      "abbr": "ND",
+      "fmr2br": 1112,
+      "fmrPrev2br": 1012,
+      "yoyPct": 0.10670731707317073,
+      "metroCount": 3
+    },
+    {
+      "name": "Vermont",
+      "slug": "vermont",
+      "abbr": "VT",
+      "fmr2br": 2140,
+      "fmrPrev2br": 1936,
+      "yoyPct": 0.10537190082644628,
+      "metroCount": 1
+    },
+    {
+      "name": "Indiana",
+      "slug": "indiana",
+      "abbr": "IN",
+      "fmr2br": 1208,
+      "fmrPrev2br": 1128,
+      "yoyPct": 0.09987405700180099,
+      "metroCount": 16
+    },
+    {
+      "name": "New Jersey",
+      "slug": "new-jersey",
+      "abbr": "NJ",
+      "fmr2br": 2205,
+      "fmrPrev2br": 2040,
+      "yoyPct": 0.08609656777196044,
+      "metroCount": 9
+    },
+    {
+      "name": "Nebraska",
+      "slug": "nebraska",
+      "abbr": "NE",
+      "fmr2br": 1154,
+      "fmrPrev2br": 1125,
+      "yoyPct": 0.08485329103885805,
+      "metroCount": 3
+    },
+    {
+      "name": "Pennsylvania",
+      "slug": "pennsylvania",
+      "abbr": "PA",
+      "fmr2br": 1376.5,
+      "fmrPrev2br": 1284.5,
+      "yoyPct": 0.08417605141421132,
+      "metroCount": 16
+    },
+    {
+      "name": "Iowa",
+      "slug": "iowa",
+      "abbr": "IA",
+      "fmr2br": 1143,
+      "fmrPrev2br": 1043,
+      "yoyPct": 0.08388157894736842,
+      "metroCount": 9
+    },
+    {
+      "name": "Wisconsin",
+      "slug": "wisconsin",
+      "abbr": "WI",
+      "fmr2br": 1206.5,
+      "fmrPrev2br": 1143.5,
+      "yoyPct": 0.08068045221466502,
+      "metroCount": 14
+    },
+    {
+      "name": "Rhode Island",
+      "slug": "rhode-island",
+      "abbr": "RI",
+      "fmr2br": 1729,
+      "fmrPrev2br": 1614,
+      "yoyPct": 0.07125154894671623,
+      "metroCount": 3
+    },
+    {
+      "name": "Massachusetts",
+      "slug": "massachusetts",
+      "abbr": "MA",
+      "fmr2br": 2078,
+      "fmrPrev2br": 1899,
+      "yoyPct": 0.06117353308364544,
+      "metroCount": 13
+    },
+    {
+      "name": "Utah",
+      "slug": "utah",
+      "abbr": "UT",
+      "fmr2br": 1575,
+      "fmrPrev2br": 1485,
+      "yoyPct": 0.06060606060606061,
+      "metroCount": 5
+    },
+    {
+      "name": "Oregon",
+      "slug": "oregon",
+      "abbr": "OR",
+      "fmr2br": 1691.5,
+      "fmrPrev2br": 1519,
+      "yoyPct": 0.06050506931580717,
+      "metroCount": 8
+    },
+    {
+      "name": "Hawaii",
+      "slug": "hawaii",
+      "abbr": "HI",
+      "fmr2br": 2633,
+      "fmrPrev2br": 2498,
+      "yoyPct": 0.059837695991623856,
+      "metroCount": 2
+    },
+    {
+      "name": "Kansas",
+      "slug": "kansas",
+      "abbr": "KS",
+      "fmr2br": 1088,
+      "fmrPrev2br": 1015,
+      "yoyPct": 0.056838078422717576,
+      "metroCount": 6
+    },
+    {
+      "name": "Nevada",
+      "slug": "nevada",
+      "abbr": "NV",
+      "fmr2br": 1735,
+      "fmrPrev2br": 1722,
+      "yoyPct": 0.05385139740967962,
+      "metroCount": 3
+    },
+    {
+      "name": "Ohio",
+      "slug": "ohio",
+      "abbr": "OH",
+      "fmr2br": 1086,
+      "fmrPrev2br": 1040,
+      "yoyPct": 0.05303030303030303,
+      "metroCount": 13
+    },
+    {
+      "name": "Michigan",
+      "slug": "michigan",
+      "abbr": "MI",
+      "fmr2br": 1193,
+      "fmrPrev2br": 1152,
+      "yoyPct": 0.05144404332129964,
+      "metroCount": 15
+    },
+    {
+      "name": "Arkansas",
+      "slug": "arkansas",
+      "abbr": "AR",
+      "fmr2br": 1101,
+      "fmrPrev2br": 1037,
+      "yoyPct": 0.05110896817743491,
+      "metroCount": 7
+    },
+    {
+      "name": "Minnesota",
+      "slug": "minnesota",
+      "abbr": "MN",
+      "fmr2br": 1188.5,
+      "fmrPrev2br": 1162.5,
+      "yoyPct": 0.04850076871196528,
+      "metroCount": 8
+    },
+    {
+      "name": "North Carolina",
+      "slug": "north-carolina",
+      "abbr": "NC",
+      "fmr2br": 1330,
+      "fmrPrev2br": 1217,
+      "yoyPct": 0.04684512428298279,
+      "metroCount": 15
+    },
+    {
+      "name": "New York",
+      "slug": "new-york",
+      "abbr": "NY",
+      "fmr2br": 1405,
+      "fmrPrev2br": 1352,
+      "yoyPct": 0.046762589928057555,
+      "metroCount": 13
+    },
+    {
+      "name": "New Hampshire",
+      "slug": "new-hampshire",
+      "abbr": "NH",
+      "fmr2br": 2194,
+      "fmrPrev2br": 1963,
+      "yoyPct": 0.04568788501026694,
+      "metroCount": 5
+    },
+    {
+      "name": "New Mexico",
+      "slug": "new-mexico",
+      "abbr": "NM",
+      "fmr2br": 1274.5,
+      "fmrPrev2br": 1186,
+      "yoyPct": 0.042485725053170685,
+      "metroCount": 4
+    },
+    {
+      "name": "Oklahoma",
+      "slug": "oklahoma",
+      "abbr": "OK",
+      "fmr2br": 1027,
+      "fmrPrev2br": 980,
+      "yoyPct": 0.04054054054054054,
+      "metroCount": 5
+    },
+    {
+      "name": "Illinois",
+      "slug": "illinois",
+      "abbr": "IL",
+      "fmr2br": 1175,
+      "fmrPrev2br": 1080,
+      "yoyPct": 0.03888888888888889,
+      "metroCount": 11
+    },
+    {
+      "name": "Montana",
+      "slug": "montana",
+      "abbr": "MT",
+      "fmr2br": 1417,
+      "fmrPrev2br": 1373,
+      "yoyPct": 0.032046613255644577,
+      "metroCount": 3
+    },
+    {
+      "name": "California",
+      "slug": "california",
+      "abbr": "CA",
+      "fmr2br": 2228,
+      "fmrPrev2br": 2363,
+      "yoyPct": 0.031597323973217545,
+      "metroCount": 28
+    },
+    {
+      "name": "Florida",
+      "slug": "florida",
+      "abbr": "FL",
+      "fmr2br": 1704.5,
+      "fmrPrev2br": 1629.5,
+      "yoyPct": 0.027817786922725195,
+      "metroCount": 24
+    },
+    {
+      "name": "South Carolina",
+      "slug": "south-carolina",
+      "abbr": "SC",
+      "fmr2br": 1276,
+      "fmrPrev2br": 1298,
+      "yoyPct": 0.02526799387442573,
+      "metroCount": 9
+    },
+    {
+      "name": "Wyoming",
+      "slug": "wyoming",
+      "abbr": "WY",
+      "fmr2br": 1128,
+      "fmrPrev2br": 1101.5,
+      "yoyPct": 0.023877194980449636,
+      "metroCount": 2
+    },
+    {
+      "name": "Alabama",
+      "slug": "alabama",
+      "abbr": "AL",
+      "fmr2br": 1083,
+      "fmrPrev2br": 1094,
+      "yoyPct": 0.022316684378320937,
+      "metroCount": 13
+    },
+    {
+      "name": "Idaho",
+      "slug": "idaho",
+      "abbr": "ID",
+      "fmr2br": 1273,
+      "fmrPrev2br": 1259.5,
+      "yoyPct": 0.0198922605515469,
+      "metroCount": 6
+    },
+    {
+      "name": "Georgia",
+      "slug": "georgia",
+      "abbr": "GA",
+      "fmr2br": 1331,
+      "fmrPrev2br": 1264,
+      "yoyPct": 0.019090909090909092,
+      "metroCount": 13
+    },
+    {
+      "name": "Washington",
+      "slug": "washington",
+      "abbr": "WA",
+      "fmr2br": 1635,
+      "fmrPrev2br": 1572.5,
+      "yoyPct": 0.017228329936247434,
+      "metroCount": 14
+    },
+    {
+      "name": "Missouri",
+      "slug": "missouri",
+      "abbr": "MO",
+      "fmr2br": 1086,
+      "fmrPrev2br": 1021,
+      "yoyPct": 0.015119829631964352,
+      "metroCount": 8
+    },
+    {
+      "name": "West Virginia",
+      "slug": "west-virginia",
+      "abbr": "WV",
+      "fmr2br": 1013.5,
+      "fmrPrev2br": 1012.5,
+      "yoyPct": 0.013317886628171658,
+      "metroCount": 8
+    },
+    {
+      "name": "Colorado",
+      "slug": "colorado",
+      "abbr": "CO",
+      "fmr2br": 1732,
+      "fmrPrev2br": 1695,
+      "yoyPct": 0.008744038155802861,
+      "metroCount": 7
+    },
+    {
+      "name": "Tennessee",
+      "slug": "tennessee",
+      "abbr": "TN",
+      "fmr2br": 1267,
+      "fmrPrev2br": 1232.5,
+      "yoyPct": 0.006288144204908334,
+      "metroCount": 10
+    },
+    {
+      "name": "Arizona",
+      "slug": "arizona",
+      "abbr": "AZ",
+      "fmr2br": 1402,
+      "fmrPrev2br": 1377,
+      "yoyPct": 0.0058953574060427415,
+      "metroCount": 7
+    },
+    {
+      "name": "Alaska",
+      "slug": "alaska",
+      "abbr": "AK",
+      "fmr2br": 1631,
+      "fmrPrev2br": 1563,
+      "yoyPct": 0.004194128220491312,
+      "metroCount": 3
+    },
+    {
+      "name": "Texas",
+      "slug": "texas",
+      "abbr": "TX",
+      "fmr2br": 1276,
+      "fmrPrev2br": 1258,
+      "yoyPct": 0.0037509377344336083,
+      "metroCount": 25
+    },
+    {
+      "name": "Virginia",
+      "slug": "virginia",
+      "abbr": "VA",
+      "fmr2br": 1322,
+      "fmrPrev2br": 1392,
+      "yoyPct": 0.0009587727708533077,
+      "metroCount": 11
+    },
+    {
+      "name": "Delaware",
+      "slug": "delaware",
+      "abbr": "DE",
+      "fmr2br": 1640,
+      "fmrPrev2br": 1647,
+      "yoyPct": -0.005152898328636933,
+      "metroCount": 2
+    },
+    {
+      "name": "Kentucky",
+      "slug": "kentucky",
+      "abbr": "KY",
+      "fmr2br": 1212.5,
+      "fmrPrev2br": 1169,
+      "yoyPct": -0.006948857286850581,
+      "metroCount": 8
+    },
+    {
+      "name": "Mississippi",
+      "slug": "mississippi",
+      "abbr": "MS",
+      "fmr2br": 1140,
+      "fmrPrev2br": 1143,
+      "yoyPct": -0.024680073126142597,
+      "metroCount": 5
+    },
+    {
+      "name": "Louisiana",
+      "slug": "louisiana",
+      "abbr": "LA",
+      "fmr2br": 1019,
+      "fmrPrev2br": 1000,
+      "yoyPct": -0.02547065337763012,
+      "metroCount": 15
+    },
+    {
+      "name": "Maryland",
+      "slug": "maryland",
+      "abbr": "MD",
+      "fmr2br": 1810,
+      "fmrPrev2br": 1802,
+      "yoyPct": -0.029386343993085567,
+      "metroCount": 5
+    },
+    {
+      "name": "District of Columbia",
+      "slug": "district-of-columbia",
+      "abbr": "DC",
+      "fmr2br": 2246,
+      "fmrPrev2br": 2314,
+      "yoyPct": -0.029386343993085567,
+      "metroCount": 1
+    }
+  ]
+}

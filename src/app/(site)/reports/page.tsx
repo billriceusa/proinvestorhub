@@ -21,6 +21,13 @@ import {
   lenderMeta,
   fmtCount as fmtLenderCount,
 } from '@/data/hmda-lenders'
+import {
+  national as fmrNational,
+  metrosByGrowth,
+  fmrMeta,
+  fmtRent as fmtFmrRent,
+  fmtYoy,
+} from '@/data/fmr-rent'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
@@ -56,6 +63,19 @@ const reports = [
       { label: 'U.S. gross rental yield', value: fmtYield(yieldNational.grossYield) },
       { label: 'Top state', value: statesByYield[0] ? `${statesByYield[0].abbr} ${fmtYield(statesByYield[0].grossYield)}` : '—' },
       { label: 'U.S. median rent', value: fmtRent(yieldNational.medianGrossRent) },
+    ],
+  },
+  {
+    title: `Where Rents Are Rising Fastest (FY${fmrMeta.curYear})`,
+    href: '/reports/rent-growth',
+    source: 'HUD FMR',
+    year: fmrMeta.curYear,
+    blurb:
+      'Which metros and states had the fastest rent growth — and where rents are falling — from HUD Fair Market Rents, year-over-year. The demand signal behind every rental deal.',
+    stats: [
+      { label: 'U.S. median 2BR rent', value: fmtFmrRent(fmrNational.fmr2br) },
+      { label: 'Year-over-year', value: fmtYoy(fmrNational.yoyPct) },
+      { label: 'Fastest-rising metro', value: metrosByGrowth[0] ? `${metrosByGrowth[0].name.split(',')[0]} ${fmtYoy(metrosByGrowth[0].yoyPct)}` : '—' },
     ],
   },
   {

@@ -1,0 +1,454 @@
+type,name,state,fmr_2br_2026,fmr_2br_2025,yoy_pct
+state,"Alabama",AL,1083,1094,2.23
+state,"Alaska",AK,1631,1563,0.42
+state,"Arizona",AZ,1402,1377,0.59
+state,"Arkansas",AR,1101,1037,5.11
+state,"California",CA,2228,2363,3.16
+state,"Colorado",CO,1732,1695,0.87
+state,"Connecticut",CT,1865.5,1639,13.83
+state,"Delaware",DE,1640,1647,-0.52
+state,"District of Columbia",DC,2246,2314,-2.94
+state,"Florida",FL,1704.5,1629.5,2.78
+state,"Georgia",GA,1331,1264,1.91
+state,"Hawaii",HI,2633,2498,5.98
+state,"Idaho",ID,1273,1259.5,1.99
+state,"Illinois",IL,1175,1080,3.89
+state,"Indiana",IN,1208,1128,9.99
+state,"Iowa",IA,1143,1043,8.39
+state,"Kansas",KS,1088,1015,5.68
+state,"Kentucky",KY,1212.5,1169,-0.69
+state,"Louisiana",LA,1019,1000,-2.55
+state,"Maine",ME,1894.5,1697.5,14.11
+state,"Maryland",MD,1810,1802,-2.94
+state,"Massachusetts",MA,2078,1899,6.12
+state,"Michigan",MI,1193,1152,5.14
+state,"Minnesota",MN,1188.5,1162.5,4.85
+state,"Mississippi",MS,1140,1143,-2.47
+state,"Missouri",MO,1086,1021,1.51
+state,"Montana",MT,1417,1373,3.20
+state,"Nebraska",NE,1154,1125,8.49
+state,"Nevada",NV,1735,1722,5.39
+state,"New Hampshire",NH,2194,1963,4.57
+state,"New Jersey",NJ,2205,2040,8.61
+state,"New Mexico",NM,1274.5,1186,4.25
+state,"New York",NY,1405,1352,4.68
+state,"North Carolina",NC,1330,1217,4.68
+state,"North Dakota",ND,1112,1012,10.67
+state,"Ohio",OH,1086,1040,5.30
+state,"Oklahoma",OK,1027,980,4.05
+state,"Oregon",OR,1691.5,1519,6.05
+state,"Pennsylvania",PA,1376.5,1284.5,8.42
+state,"Rhode Island",RI,1729,1614,7.13
+state,"South Carolina",SC,1276,1298,2.53
+state,"South Dakota",SD,1156,1043,12.23
+state,"Tennessee",TN,1267,1232.5,0.63
+state,"Texas",TX,1276,1258,0.38
+state,"Utah",UT,1575,1485,6.06
+state,"Vermont",VT,2140,1936,10.54
+state,"Virginia",VA,1322,1392,0.10
+state,"Washington",WA,1635,1572.5,1.72
+state,"West Virginia",WV,1013.5,1012.5,1.33
+state,"Wisconsin",WI,1206.5,1143.5,8.07
+state,"Wyoming",WY,1128,1101.5,2.39
+metro,"Abilene, TX",TX,1276,1207,5.72
+metro,"Acadia Parish, LA",LA,880,903,-2.55
+metro,"Akron, OH",OH,1268,1131,12.11
+metro,"Albany-Schenectady-Troy, NY",NY,1702,1487,14.46
+metro,"Albany, GA",GA,1129,1080,4.54
+metro,"Albany, OR",OR,1695,1459,16.18
+metro,"Albuquerque, NM",NM,1464,1331,9.99
+metro,"Alexandria, LA",LA,994,1000,-0.60
+metro,"Allentown-Bethlehem-Easton, PA",PA,1634,1507,8.43
+metro,"Altoona, PA",PA,1138,1062,7.16
+metro,"Amarillo, TX",TX,1106,1158,-4.49
+metro,"Ames, IA",IA,1153,1056,9.19
+metro,"Anchorage, AK",AK,1631,1563,4.35
+metro,"Anderson, IN",IN,1206,1054,14.42
+metro,"Anderson, SC",SC,1173,947,23.86
+metro,"Ann Arbor, MI",MI,1656,1607,3.05
+metro,"Anniston-Oxford, AL",AL,962,941,2.23
+metro,"Appleton, WI",WI,1236,1106,11.75
+metro,"Asheville, NC",NC,1835,1512,21.36
+metro,"Assumption Parish, LA",LA,967,926,4.43
+metro,"Athens-Clarke County, GA",GA,1331,1225,8.65
+metro,"Atlanta-Sandy Springs-Roswell, GA",GA,1820,1830,-0.55
+metro,"Atlantic City-Hammonton, NJ",NJ,1867,1719,8.61
+metro,"Auburn-Opelika, AL",AL,1181,1168,1.11
+metro,"Austin-Round Rock-San Marcos, TX",TX,1852,1949,-4.98
+metro,"Bakersfield-Delano, CA",CA,1483,1380,7.46
+metro,"Baltimore-Columbia-Towson, MD",MD,1857,1965,-5.50
+metro,"Bangor, ME",ME,1659,1424,16.50
+metro,"Barnstable Town, MA",MA,2422,2346,3.24
+metro,"Baton Rouge, LA",LA,1204,1222,-1.47
+metro,"Battle Creek, MI",MI,1176,1090,7.89
+metro,"Bay City, MI",MI,1030,976,5.53
+metro,"Beaumont-Port Arthur, TX",TX,1103,1113,-0.90
+metro,"Bellingham, WA",WA,1794,1642,9.26
+metro,"Bend-Redmond, OR",OR,1784,1667,7.02
+metro,"Bergen-Passaic, NJ",NJ,2324,2072,12.16
+metro,"Billings, MT",MT,1417,1373,3.20
+metro,"Binghamton, NY",NY,1103,1188,-7.15
+metro,"Birmingham-Hoover, AL",AL,1266,1267,-0.08
+metro,"Bismarck, ND",ND,1175,1023,14.86
+metro,"Blacksburg-Christiansburg-Radford, VA",VA,1271,1231,3.25
+metro,"Bloomington, IL",IL,1302,1080,20.56
+metro,"Bloomington, IN",IN,1210,1223,-1.06
+metro,"Boise City, ID",ID,1655,1838,-9.96
+metro,"Boston-Cambridge-Quincy, MA-NH",MA-NH,2941,2837,3.67
+metro,"Boulder, CO",CO,2124,2059,3.16
+metro,"Bowling Green, KY",KY,1153,1173,-1.71
+metro,"Bremerton-Silverdale-Port Orchard, WA",WA,2031,2057,-1.26
+metro,"Brockton, MA",MA,2311,2155,7.24
+metro,"Brownsville-Harlingen, TX",TX,1047,948,10.44
+metro,"Brunswick-St. Simons, GA",GA,1293,1264,2.29
+metro,"Buffalo-Cheektowaga, NY",NY,1343,1176,14.20
+metro,"Burlington-South Burlington, VT",VT,2140,1936,10.54
+metro,"Burlington, NC",NC,1348,1217,10.76
+metro,"Canton-Massillon, OH",OH,1086,978,11.04
+metro,"Cape Coral-Fort Myers, FL",FL,1961,1843,6.40
+metro,"Cape Girardeau, MO-IL",MO-IL,992,985,0.71
+metro,"Carson City, NV",NV,1546,1467,5.39
+metro,"Casper, WY",WY,1082,1062,1.88
+metro,"Cedar Rapids, IA",IA,1071,993,7.85
+metro,"Chambersburg, PA",PA,1379,1193,15.59
+metro,"Champaign-Urbana, IL",IL,1122,1080,3.89
+metro,"Charleston-North Charleston, SC",SC,1787,1820,-1.81
+metro,"Charleston, WV",WV,1036,1054,-1.71
+metro,"Charlotte-Concord-Gastonia, NC-SC",NC-SC,1686,1824,-7.57
+metro,"Charlottesville, VA",VA,1824,1729,5.49
+metro,"Chattanooga, TN-GA",TN-GA,1390,1426,-2.52
+metro,"Cheyenne, WY",WY,1174,1141,2.89
+metro,"Chicago-Joliet-Naperville, IL",IL,1781,1761,1.14
+metro,"Chico, CA",CA,1625,1466,10.85
+metro,"Cincinnati, OH-KY-IN",OH-KY-IN,1353,1287,5.13
+metro,"Clarksville, TN-KY",TN-KY,1346,1229,9.52
+metro,"Cleveland, TN",TN,1233,1210,1.90
+metro,"Coeur d'Alene, ID",ID,1547,1460,5.96
+metro,"College Station-Bryan, TX",TX,1186,1206,-1.66
+metro,"Colorado Springs, CO",CO,1735,1778,-2.42
+metro,"Columbia, MO",MO,1160,1007,15.19
+metro,"Columbia, SC",SC,1276,1298,-1.69
+metro,"Columbus, GA-AL",GA-AL,1088,1108,-1.81
+metro,"Columbus, IN",IN,1415,1268,11.59
+metro,"Columbus, OH",OH,1430,1445,-1.04
+metro,"Corpus Christi, TX",TX,1366,1390,-1.73
+metro,"Corvallis, OR",OR,1824,1643,11.02
+metro,"Crestview-Fort Walton Beach-Destin, FL",FL,1785,1571,13.62
+metro,"Dallas, TX",TX,1931,1884,2.49
+metro,"Dalton, GA",GA,1121,1100,1.91
+metro,"Daphne-Fairhope-Foley, AL",AL,1345,1244,8.12
+metro,"Davenport-Moline-Rock Island, IA-IL",IA-IL,1143,1025,11.51
+metro,"Dayton-Kettering-Beavercreek, OH",OH,1273,1077,18.20
+metro,"Decatur, AL",AL,961,923,4.12
+metro,"Decatur, IL",IL,1063,1000,6.30
+metro,"Deltona-Daytona Beach-Ormond Beach, FL",FL,1700,1718,-1.05
+metro,"Denver-Aurora-Centennial, CO",CO,2089,2140,-2.38
+metro,"Des Moines-West Des Moines, IA",IA,1318,1216,8.39
+metro,"Detroit-Warren-Livonia, MI",MI,1411,1378,2.39
+metro,"Dothan, AL",AL,950,896,6.03
+metro,"Dover, DE",DE,1470,1492,-1.47
+metro,"Dubuque, IA",IA,1077,996,8.13
+metro,"Duluth, MN-WI",MN-WI,1232,1140,8.07
+metro,"Durham-Chapel Hill, NC",NC,1711,1872,-8.60
+metro,"Easton-Raynham, MA",MA,2550,2403,6.12
+metro,"Eau Claire, WI",WI,1181,1092,8.15
+metro,"El Centro, CA",CA,1362,1371,-0.66
+metro,"El Paso, TX",TX,1191,1192,-0.08
+metro,"Elizabethtown, KY",KY,1056,1075,-1.77
+metro,"Elkhart-Goshen, IN",IN,1183,1055,12.13
+metro,"Elmira, NY",NY,1283,1283,0.00
+metro,"Enid, OK",OK,1027,980,4.80
+metro,"Erie, PA",PA,1212,1118,8.41
+metro,"Eugene-Springfield, OR",OR,1688,1495,12.91
+metro,"Evansville, IN",IN,1113,1054,5.60
+metro,"Fairbanks-College, AK",AK,1676,1669,0.42
+metro,"Fargo, ND-MN",ND-MN,1112,1012,9.88
+metro,"Farmington, NM",NM,1085,1034,4.93
+metro,"Fayetteville-Springdale-Rogers, AR",AR,1347,1111,21.24
+metro,"Fayetteville, NC",NC,1251,1240,0.89
+metro,"Fitchburg-Leominster, MA",MA,1749,1661,5.30
+metro,"Flagstaff, AZ",AZ,1921,1942,-1.08
+metro,"Flint, MI",MI,1033,986,4.77
+metro,"Florence-Muscle Shoals, AL",AL,1000,974,2.67
+metro,"Florence, SC",SC,1117,1065,4.88
+metro,"Fond du Lac, WI",WI,1176,1074,9.50
+metro,"Fort Collins-Loveland, CO",CO,1732,1695,2.18
+metro,"Fort Lauderdale, FL",FL,2333,2388,-2.30
+metro,"Fort Smith, AR-OK",AR-OK,937,910,2.97
+metro,"Fort Wayne, IN",IN,1113,1199,-7.17
+metro,"Fort Worth-Arlington, TX",TX,1723,1705,1.06
+metro,"Fresno, CA",CA,1664,1505,10.56
+metro,"Gadsden, AL",AL,927,942,-1.59
+metro,"Gainesville, FL",FL,1493,1583,-5.69
+metro,"Gainesville, GA",GA,1514,1505,0.60
+metro,"Gary, IN",IN,1317,1197,10.03
+metro,"Gettysburg, PA",PA,1374,1289,6.59
+metro,"Glens Falls, NY",NY,1348,1352,-0.30
+metro,"Goldsboro, NC",NC,1244,1184,5.07
+metro,"Grand Forks, ND-MN",ND-MN,1089,984,10.67
+metro,"Grand Junction, CO",CO,1249,1245,0.32
+metro,"Grand Rapids-Wyoming, MI",MI,1531,1443,6.10
+metro,"Grants Pass, OR",OR,1363,1321,3.18
+metro,"Great Falls, MT",MT,1284,1244,3.22
+metro,"Greeley, CO",CO,1563,1528,2.29
+metro,"Green Bay, WI",WI,1164,1147,1.48
+metro,"Greensboro-High Point, NC",NC,1330,1150,15.65
+metro,"Greenville-Mauldin-Easley, SC",SC,1339,1306,2.53
+metro,"Greenville, NC",NC,1095,1096,-0.09
+metro,"Gulfport-Biloxi, MS",MS,1140,1117,2.06
+metro,"Hagerstown, MD",MD,1261,1242,1.53
+metro,"Hammond, LA",LA,1099,1099,0.00
+metro,"Hanford-Corcoran, CA",CA,1469,1445,1.66
+metro,"Harrisburg-Carlisle, PA",PA,1493,1371,8.90
+metro,"Harrisonburg, VA",VA,1322,1392,-5.03
+metro,"Hartford-West Hartford-East Hartford, CT",CT,1865,1653,12.83
+metro,"Hattiesburg, MS",MS,1047,1143,-8.40
+metro,"Hickory-Lenoir-Morganton, NC",NC,1095,1046,4.68
+metro,"Hinesville, GA",GA,1406,1430,-1.68
+metro,"Holland-Grand Haven, MI",MI,1519,1363,11.45
+metro,"Homosassa Springs, FL",FL,1225,1198,2.25
+metro,"Hot Springs, AR",AR,1090,1037,5.11
+metro,"Houma-Bayou Cane-Thibodaux, LA",LA,1102,1146,-3.84
+metro,"Houston-The Woodlands-Sugar Land, TX",TX,1573,1529,2.88
+metro,"Huntington-Ashland, WV-KY-OH",WV-KY-OH,973,971,0.21
+metro,"Huntsville, AL",AL,1310,1248,4.97
+metro,"Iberville Parish, LA",LA,866,903,-4.10
+metro,"Idaho Falls, ID",ID,1305,1311,-0.46
+metro,"Indianapolis-Carmel, IN",IN,1473,1283,14.81
+metro,"Iowa City, IA",IA,1141,1105,3.26
+metro,"Ithaca, NY",NY,1753,1702,3.00
+metro,"Jackson, MI",MI,1165,1108,5.14
+metro,"Jackson, MS",MS,1288,1232,4.55
+metro,"Jackson, TN",TN,1260,1236,1.94
+metro,"Jacksonville, FL",FL,1658,1730,-4.16
+metro,"Jacksonville, NC",NC,1173,1147,2.27
+metro,"Janesville-Beloit, WI",WI,1246,1153,8.07
+metro,"Jefferson City, MO",MO,910,891,2.13
+metro,"Jersey City, NJ",NJ,2763,2299,20.18
+metro,"Johnson City, TN",TN,1132,1119,1.16
+metro,"Johnstown, PA",PA,1035,935,10.70
+metro,"Jonesboro, AR",AR,1040,973,6.89
+metro,"Joplin, MO",MO,947,1036,-8.59
+metro,"Kahului-Wailuku-Lahaina, HI",HI,2624,2309,13.64
+metro,"Kalamazoo-Portage, MI",MI,1162,1181,-1.61
+metro,"Kankakee, IL",IL,1326,1251,6.00
+metro,"Kansas City, MO-KS",MO-KS,1358,1346,0.89
+metro,"Kennewick-Richland, WA",WA,1538,1503,2.33
+metro,"Killeen-Temple, TX",TX,1233,1172,5.20
+metro,"Kingsport-Bristol, TN-VA",TN-VA,1044,1043,0.10
+metro,"Kingston, NY",NY,1818,1799,1.06
+metro,"Knoxville, TN",TN,1471,1548,-4.97
+metro,"Kokomo, IN",IN,1123,1019,10.21
+metro,"La Crosse-Onalaska, WI-MN",WI-MN,1166,1197,-2.59
+metro,"Lafayette-West Lafayette, IN",IN,1242,1161,6.98
+metro,"Lafayette, LA",LA,1019,1052,-3.14
+metro,"Lake Charles, LA",LA,1217,1144,6.38
+metro,"Lake Havasu City-Kingman, AZ",AZ,1365,1357,0.59
+metro,"Lakeland-Winter Haven, FL",FL,1497,1337,11.97
+metro,"Lancaster, PA",PA,1526,1393,9.55
+metro,"Lansing-East Lansing, MI",MI,1268,1127,12.51
+metro,"Laredo, TX",TX,1161,1173,-1.02
+metro,"Las Cruces, NM",NM,1042,1041,0.10
+metro,"Las Vegas-Henderson-North Las Vegas, NV",NV,1735,1750,-0.86
+metro,"Lawrence, KS",KS,1182,1138,3.87
+metro,"Lawrence, MA-NH",MA-NH,2270,1963,15.64
+metro,"Lawton, OK",OK,1001,962,4.05
+metro,"Lebanon, PA",PA,1411,1269,11.19
+metro,"Lewiston-Auburn, ME",ME,1586,1268,25.08
+metro,"Lewiston, ID-WA",ID-WA,1220,1208,0.99
+metro,"Lexington-Fayette, KY",KY,1272,1165,9.18
+metro,"Lima, OH",OH,1108,1040,6.54
+metro,"Lincoln, NE",NE,1141,1125,1.42
+metro,"Little Rock-North Little Rock-Conway, AR",AR,1147,1032,11.14
+metro,"Logan, UT-ID",UT-ID,1241,1169,6.16
+metro,"Longview-Kelso, WA",WA,1451,1404,3.35
+metro,"Longview, TX",TX,1199,1193,0.50
+metro,"Los Angeles-Long Beach-Glendale, CA",CA,2903,2625,10.59
+metro,"Louisville, KY-IN",KY-IN,1272,1330,-4.36
+metro,"Lowell, MA",MA,2351,2242,4.86
+metro,"Lubbock, TX",TX,1175,1192,-1.43
+metro,"Lynchburg, VA",VA,1187,1200,-1.08
+metro,"Madison, WI",WI,1694,1472,15.08
+metro,"Manchester, NH",NH,2037,1948,4.57
+metro,"Manhattan, KS",KS,1068,995,7.34
+metro,"Mankato, MN",MN,1171,1174,-0.26
+metro,"Mansfield, OH",OH,973,924,5.30
+metro,"Martinsburg, WV",WV,1233,1204,2.41
+metro,"Matanuska-Susitna Borough, AK",AK,1376,1384,-0.58
+metro,"McAllen-Edinburg-Mission, TX",TX,1060,992,6.85
+metro,"Medford, OR",OR,1530,1456,5.08
+metro,"Memphis, TN-MS-AR",TN-MS-AR,1274,1355,-5.98
+metro,"Merced, CA",CA,1503,1509,-0.40
+metro,"Miami-Miami Beach-Kendall, FL",FL,2436,2329,4.59
+metro,"Michigan City-La Porte, IN",IN,1152,1036,11.20
+metro,"Middlesex-Somerset-Hunterdon, NJ",NJ,2486,2176,14.25
+metro,"Midland, MI",MI,1193,1137,4.93
+metro,"Midland, TX",TX,1780,1867,-4.66
+metro,"Milwaukee-Waukesha, WI",WI,1338,1257,6.44
+metro,"Minneapolis-St. Paul-Bloomington, MN-WI",MN-WI,1709,1685,1.42
+metro,"Missoula, MT",MT,1655,1604,3.18
+metro,"Mobile, AL",AL,1083,1094,-1.01
+metro,"Modesto, CA",CA,1758,1566,12.26
+metro,"Monmouth-Ocean, NJ",NJ,2328,2040,14.12
+metro,"Monroe, LA",LA,1026,995,3.12
+metro,"Monroe, MI",MI,1326,1264,4.91
+metro,"Montgomery, AL",AL,1016,1055,-3.70
+metro,"Morehouse Parish, LA",LA,834,903,-7.64
+metro,"Morgantown, WV",WV,1099,1065,3.19
+metro,"Morristown, TN",TN,1135,1069,6.17
+metro,"Mount Vernon-Anacortes, WA",WA,1720,1701,1.12
+metro,"Muncie, IN",IN,1043,982,6.21
+metro,"Muskegon-Norton Shores, MI",MI,1236,1153,7.20
+metro,"Myrtle Beach-North Myrtle Beach-Conway, SC",SC,1465,1406,4.20
+metro,"Napa, CA",CA,3315,2792,18.73
+metro,"Naples-Marco Island, FL",FL,1986,1860,6.77
+metro,"Nashua, NH",NH,2127,2126,0.05
+metro,"Nashville-Davidson--Murfreesboro--Franklin, TN",TN,1730,1827,-5.31
+metro,"Nassau-Suffolk, NY",NY,2747,2586,6.23
+metro,"New Bedford, MA",MA,1527,1448,5.46
+metro,"New Orleans-Metairie, LA",LA,1331,1478,-9.95
+metro,"New York, NY",NY,2910,2780,4.68
+metro,"Newark, NJ",NJ,2205,2140,3.04
+metro,"Newport-Middleton-Portsmouth, RI",RI,2314,2200,5.18
+metro,"Niles, MI",MI,1184,1152,2.78
+metro,"North Port-Bradenton-Sarasota, FL",FL,1958,1846,6.07
+metro,"Norwich-New London-Willimantic, CT",CT,1866,1625,14.83
+metro,"Oakland-Fremont, CA",CA,2912,2682,8.58
+metro,"Ocala, FL",FL,1373,1323,3.78
+metro,"Odessa, TX",TX,1595,1669,-4.43
+metro,"Ogden, UT",UT,1614,1532,5.35
+metro,"Oklahoma City, OK",OK,1244,1180,5.42
+metro,"Olympia-Lacey-Tumwater, WA",WA,1960,1843,6.35
+metro,"Omaha-Council Bluffs, NE-IA",NE-IA,1368,1261,8.49
+metro,"Orlando-Kissimmee-Sanford, FL",FL,1972,1958,0.72
+metro,"Oshkosh-Neenah, WI",WI,1149,1055,8.91
+metro,"Owensboro, KY",KY,1110,1128,-1.60
+metro,"Oxnard-Thousand Oaks-Ventura, CA",CA,2693,2569,4.83
+metro,"Palm Bay-Melbourne-Titusville, FL",FL,1709,1635,4.53
+metro,"Palm Coast, FL",FL,1806,1693,6.67
+metro,"Panama City, FL",FL,1682,1609,4.54
+metro,"Parkersburg-Vienna, WV",WV,928,933,-0.54
+metro,"Pascagoula, MS",MS,1067,1094,-2.47
+metro,"Pensacola-Ferry Pass-Brent, FL",FL,1471,1605,-8.35
+metro,"Peoria, IL",IL,1039,1003,3.59
+metro,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",PA-NJ-DE-MD,1810,1802,0.44
+metro,"Phoenix-Mesa-Chandler, AZ",AZ,1839,1950,-5.69
+metro,"Pittsburgh, PA",PA,1299,1280,1.48
+metro,"Pittsfield, MA",MA,1626,1571,3.50
+metro,"Pocatello, ID",ID,1173,1139,2.99
+metro,"Port St. Lucie, FL",FL,1757,1624,8.19
+metro,"Portland-Vancouver-Hillsboro, OR-WA",OR-WA,1922,1997,-3.76
+metro,"Portland, ME",ME,2130,2011,5.92
+metro,"Portsmouth-Rochester, NH",NH,2194,1961,11.88
+metro,"Prescott Valley-Prescott, AZ",AZ,1637,1606,1.93
+metro,"Providence-Fall River, RI-MA",RI-MA,1729,1614,7.13
+metro,"Provo-Orem-Lehi, UT",UT,1460,1355,7.75
+metro,"Pueblo, CO",CO,1269,1258,0.87
+metro,"Punta Gorda, FL",FL,1470,1461,0.62
+metro,"Racine-Mount Pleasant, WI",WI,1235,1149,7.48
+metro,"Raleigh-Cary, NC",NC,1750,1763,-0.74
+metro,"Rapid City, SD",SD,1336,1119,19.39
+metro,"Reading, PA",PA,1575,1353,16.41
+metro,"Redding, CA",CA,1590,1613,-1.43
+metro,"Reno, NV",NV,1870,1722,8.59
+metro,"Richmond, VA",VA,1655,1711,-3.27
+metro,"Riverside-San Bernardino-Ontario, CA",CA,2201,2306,-4.55
+metro,"Roanoke, VA",VA,1254,1141,9.90
+metro,"Rochester, MN",MN,1407,1341,4.92
+metro,"Rochester, NY",NY,1573,1427,10.23
+metro,"Rockford, IL",IL,1175,1181,-0.51
+metro,"Rocky Mount, NC",NC,1143,1072,6.62
+metro,"Rome, GA",GA,1192,1189,0.25
+metro,"Sacramento--Roseville--Arden-Arcade, CA",CA,2255,2206,2.22
+metro,"Saginaw, MI",MI,1117,1038,7.61
+metro,"Salem, OR",OR,1560,1543,1.10
+metro,"Salinas, CA",CA,2684,2982,-9.99
+metro,"Salisbury, MD",MD,1378,1491,-7.58
+metro,"Salt Lake City, UT",UT,1747,1748,-0.06
+metro,"San Angelo, TX",TX,1339,1258,6.44
+metro,"San Antonio-New Braunfels, TX",TX,1426,1501,-5.00
+metro,"San Diego-Chula Vista-Carlsbad, CA",CA,3001,2881,4.17
+metro,"San Francisco, CA",CA,3604,3318,8.62
+metro,"San Jose-Sunnyvale-Santa Clara, CA",CA,3483,3446,1.07
+metro,"San Luis Obispo-Paso Robles, CA",CA,2671,2434,9.74
+metro,"Santa Ana-Anaheim-Irvine, CA",CA,3236,2903,11.47
+metro,"Santa Cruz-Watsonville, CA",CA,4214,4223,-0.21
+metro,"Santa Fe, NM",NM,1685,1627,3.56
+metro,"Santa Maria-Santa Barbara, CA",CA,3124,3028,3.17
+metro,"Santa Rosa-Petaluma, CA",CA,2827,2740,3.18
+metro,"Savannah, GA",GA,1680,1584,6.06
+metro,"Scranton--Wilkes-Barre, PA",PA,1252,1123,11.49
+metro,"Seattle-Bellevue, WA",WA,2501,2671,-6.36
+metro,"Sebastian-Vero Beach-West Vero Corridor, FL",FL,1604,1567,2.36
+metro,"Sebring, FL",FL,1271,1240,2.50
+metro,"Sheboygan, WI",WI,1116,1055,5.78
+metro,"Sherman-Denison, TX",TX,1351,1342,0.67
+metro,"Shreveport-Bossier City, LA",LA,1111,1017,9.24
+metro,"Sierra Vista-Douglas, AZ",AZ,1257,1201,4.66
+metro,"Sioux City, IA-NE-SD",IA-NE-SD,1154,1043,10.64
+metro,"Sioux Falls, SD",SD,1156,1030,12.23
+metro,"South Bend-Mishawaka, IN",IN,1292,1095,17.99
+metro,"Spartanburg, SC",SC,1187,1211,-1.98
+metro,"Spokane, WA",WA,1531,1444,6.02
+metro,"Springfield, IL",IL,1203,1132,6.27
+metro,"Springfield, MA",MA,1734,1496,15.91
+metro,"Springfield, MO",MO,1095,998,9.72
+metro,"Springfield, OH",OH,1106,1061,4.24
+metro,"St. Cloud, MN",MN,1206,1151,4.78
+metro,"St. George, UT",UT,1575,1485,6.06
+metro,"St. James Parish, LA",LA,921,972,-5.25
+metro,"St. Joseph, MO-KS",MO-KS,1077,1035,4.06
+metro,"St. Louis, MO-IL",MO-IL,1218,1215,0.25
+metro,"State College, PA",PA,1406,1431,-1.75
+metro,"Staunton-Stuarts Draft, VA",VA,1261,1282,-1.64
+metro,"Stockton-Lodi, CA",CA,1742,1736,0.35
+metro,"Sumter, SC",SC,1276,1224,4.25
+metro,"Syracuse, NY",NY,1392,1321,5.37
+metro,"Tacoma, WA",WA,1971,2057,-4.18
+metro,"Tallahassee, FL",FL,1352,1321,2.35
+metro,"Tampa-St. Petersburg-Clearwater, FL",FL,1977,1978,-0.05
+metro,"Taunton-Mansfield-Norton, MA",MA,2078,1899,9.43
+metro,"Terre Haute, IN",IN,1094,995,9.95
+metro,"Texarkana, TX-Texarkana, AR",AR,1101,1071,2.80
+metro,"Toledo, OH",OH,1076,1056,1.89
+metro,"Topeka, KS",KS,1057,985,7.31
+metro,"Trenton-Princeton, NJ",NJ,1950,2028,-3.85
+metro,"Tucson, AZ",AZ,1402,1373,2.11
+metro,"Tulsa, OK",OK,1217,1179,3.22
+metro,"Tuscaloosa, AL",AL,1169,1138,2.72
+metro,"Tyler, TX",TX,1338,1333,0.38
+metro,"Urban Honolulu, HI",HI,2642,2687,-1.67
+metro,"Utica-Rome, NY",NY,1172,1159,1.12
+metro,"Valdosta, GA",GA,1192,1145,4.10
+metro,"Vallejo, CA",CA,2178,2420,-10.00
+metro,"Vermilion Parish, LA",LA,834,903,-7.64
+metro,"Victoria, TX",TX,1442,1392,3.59
+metro,"Vineland, NJ",NJ,1673,1591,5.15
+metro,"Virginia Beach-Norfolk-Newport News, VA-NC",VA-NC,1713,1696,1.00
+metro,"Visalia, CA",CA,1474,1429,3.15
+metro,"Waco, TX",TX,1240,1377,-9.95
+metro,"Walla Walla, WA",WA,1550,1487,4.24
+metro,"Warner Robins, GA",GA,1362,1302,4.61
+metro,"Washington-Arlington-Alexandria, DC-VA-MD",DC-VA-MD,2246,2314,-2.94
+metro,"Waterloo-Cedar Falls, IA",IA,1051,997,5.42
+metro,"Watertown-Fort Drum, NY",NY,1405,1282,9.59
+metro,"Wausau, WI",WI,1147,1054,8.82
+metro,"Weirton-Steubenville, WV-OH",WV-OH,973,899,8.23
+metro,"Wenatchee-East Wenatchee, WA",WA,1500,1488,0.81
+metro,"West Palm Beach-Boca Raton, FL",FL,2254,2187,3.06
+metro,"Westerly-Hopkinton-New Shoreham, RI",RI,1721,1576,9.20
+metro,"Wheeling, WV-OH",WV-OH,991,954,3.88
+metro,"Wichita Falls, TX",TX,1136,1102,3.09
+metro,"Wichita, KS",KS,1099,995,10.45
+metro,"Williamsport, PA",PA,1195,1125,6.22
+metro,"Wilmington, NC",NC,1659,1580,5.00
+metro,"Winchester, VA-WV",VA-WV,1573,1569,0.25
+metro,"Winston-Salem, NC",NC,1232,1163,5.93
+metro,"Worcester, MA",MA,2056,1854,10.90
+metro,"Yakima, WA",WA,1374,1335,2.92
+metro,"Yolo, CA",CA,2104,2116,-0.57
+metro,"York-Hanover, PA",PA,1335,1342,-0.52
+metro,"York-Kittery-South Berwick, ME",ME,2202,1971,11.72
+metro,"Youngstown-Warren, OH",OH,973,884,10.07
+metro,"Yuba City, CA",CA,1550,1522,1.84
+metro,"Yuma, AZ",AZ,1382,1377,0.36
