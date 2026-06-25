@@ -292,9 +292,15 @@ export default function LenderDirectoryPage() {
           We are not a lead generation company. We do not sell your information
           to lenders. Our directory is designed to help you make informed
           financing decisions with transparent, side-by-side comparisons and
-          honest editorial reviews. Some lenders in this directory may have
-          affiliate partnerships with ProInvestorHub — this is always disclosed
-          and never influences our ratings or editorial content.
+          honest editorial reviews. Listings are editorial and outbound links
+          go to each lender&apos;s own website; a lender cannot pay to be listed
+          or to rank higher. If a lender is ever a paid affiliate partner, that
+          listing is marked &quot;Affiliate partner&quot; and the relationship
+          never influences our ratings. See our{' '}
+          <Link href="/affiliate-disclosure" className="text-primary underline hover:opacity-80">
+            affiliate disclosure
+          </Link>
+          .
         </p>
       </section>
 

@@ -29,6 +29,7 @@ const footerLinks = {
     { name: 'All Calculators', href: '/calculators' },
   ],
   Company: [
+    { name: 'Affiliate Disclosure', href: '/affiliate-disclosure' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
   ],
 }

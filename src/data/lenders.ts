@@ -42,6 +42,13 @@ export type LenderData = {
    * lenders that draw search demand first; pages without it render unchanged.
    */
   editorReview?: string
+  /**
+   * Optional tracked affiliate link. Set this ONLY when the lender is a genuine
+   * paid affiliate partner. When present, the directory marks the listing with
+   * an "Affiliate partner" label and routes the outbound CTA through this link
+   * (FTC 16 CFR 255 disclosure). Leave undefined for editorial-only listings.
+   */
+  affiliateUrl?: string
   metaTitle: string
   metaDescription: string
 }

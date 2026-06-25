@@ -34,6 +34,13 @@ export function LenderCard({ lender }: { lender: LenderData }) {
         <StarRating rating={lender.editorRating} />
       </div>
 
+      {/* FTC disclosure: only renders for genuine paid affiliate partners */}
+      {lender.affiliateUrl && (
+        <span className="mb-3 inline-flex w-fit items-center rounded-full bg-primary/8 px-2.5 py-0.5 text-xs font-medium text-primary">
+          Affiliate partner
+        </span>
+      )}
+
       <p className="text-sm text-text-muted leading-6 line-clamp-3 mb-4">
         {lender.description}
       </p>
