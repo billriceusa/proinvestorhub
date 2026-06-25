@@ -28,6 +28,9 @@ const footerLinks = {
     { name: 'Mortgage / DSCR', href: '/calculators/mortgage' },
     { name: 'All Calculators', href: '/calculators' },
   ],
+  Company: [
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+  ],
 }
 
 export function Footer() {
