@@ -29,7 +29,7 @@ const url = `${baseUrl}/reports/investor-lenders`
 
 export const metadata: Metadata = {
   title: `Most Active Investment-Property Lenders by State (${lenderMeta.year})`,
-  description: `Which lenders originate the most investment-property (single-family 1-4 unit) mortgages in each state, ranked by ${lenderMeta.year} HMDA-reported volume — including which are DSCR/business-purpose focused. Free and downloadable.`,
+  description: `The lenders originating the most investment-property (1-4 unit) mortgages in each state, ranked by ${lenderMeta.year} HMDA volume. Free, downloadable public data.`,
   alternates: { canonical: '/reports/investor-lenders' },
   openGraph: {
     title: `Most Active Investment-Property Lenders by State (${lenderMeta.year})`,

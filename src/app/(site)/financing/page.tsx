@@ -7,7 +7,7 @@ import { JsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/json-ld'
 export const metadata: Metadata = {
   title: 'Real Estate Investment Financing: The Complete Guide',
   description:
-    'Every way to fund a real estate investment — DSCR, hard money, conventional, portfolio, BRRRR, commercial, SBA, plus creative finance like seller financing and subject-to. Compared, with an interactive matcher and calculators. Free.',
+    'Compare every way to fund a real estate investment — DSCR, hard money, conventional, portfolio, BRRRR, commercial, SBA. Free interactive matcher.',
   alternates: { canonical: '/financing' },
   openGraph: {
     title: 'Real Estate Investment Financing: The Complete Guide | ProInvestorHub',

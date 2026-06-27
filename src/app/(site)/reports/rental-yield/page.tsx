@@ -27,8 +27,8 @@ const csvHref = `/data/rental-yield-${yieldMeta.year}.csv`
 const url = `${baseUrl}/reports/rental-yield`
 
 export const metadata: Metadata = {
-  title: `Best Cash-Flow Markets: Gross Rental Yield by State & Metro (${yieldMeta.year})`,
-  description: `Where rentals cash-flow best — gross rental yield (annual rent ÷ home value) for every state and major metro, from Census ACS ${yieldMeta.year} data. Ranked, free, and downloadable.`,
+  title: `Best Cash-Flow Markets: Rental Yield by State & Metro (${yieldMeta.year})`,
+  description: `Where rentals cash-flow best — gross rental yield (annual rent ÷ home value) for every state and major metro, from Census ACS ${yieldMeta.year}. Ranked, free, downloadable.`,
   alternates: { canonical: '/reports/rental-yield' },
   openGraph: {
     title: `Best Cash-Flow Markets (${yieldMeta.year})`,

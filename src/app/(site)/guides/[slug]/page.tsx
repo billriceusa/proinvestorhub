@@ -9,6 +9,7 @@ import { LeadMagnetCTA } from '@/components/lead-magnet-cta'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 import { extractTocItems } from '@/lib/toc-utils'
 import { TableOfContents } from '@/components/table-of-contents'
+import { KeyTakeaways } from '@/components/key-takeaways'
 import { normalizeTitle } from '@/lib/page-title'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -156,23 +157,9 @@ export default async function GuidePage({
         )}
       </header>
 
-      {/* Key Takeaways */}
+      {/* Key Takeaways — answer-bearing AEO block (these are fact statements, not topic previews) */}
       {guide.keyTakeaways && guide.keyTakeaways.length > 0 && (
-        <div className="mb-8 rounded-xl border border-primary/20 bg-primary/5 p-6">
-          <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-3">
-            What You&apos;ll Learn
-          </h2>
-          <ul className="space-y-2">
-            {guide.keyTakeaways.map((takeaway, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-text">
-                <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-                {takeaway}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <KeyTakeaways points={guide.keyTakeaways} className="mb-8" />
       )}
 
       {/* Table of Contents */}
