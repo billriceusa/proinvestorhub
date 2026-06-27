@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { CalculatorComparison } from '@/components/calculators/calculator-comparison'
 
 export const metadata: Metadata = {
-  title: 'Compare Deals Side by Side | ProInvestorHub',
+  title: 'Compare Deals Side by Side',
   description:
     'Compare two real estate investment deals side by side. Run cap rate, cash-on-cash, or rental cash flow analysis on Deal A vs Deal B to make smarter investment decisions.',
   alternates: { canonical: '/calculators/compare' },

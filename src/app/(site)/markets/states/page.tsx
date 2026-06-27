@@ -4,12 +4,12 @@ import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { fetchStatesList, getStateAverages } from '@/data/city-strategy-helpers'
 
 export const metadata: Metadata = {
-  title: 'Best States for Real Estate Investing 2026 | ProInvestorHub',
+  title: 'Best States for Real Estate Investing 2026',
   description:
     'Compare real estate investment markets by state. Average cap rates, home prices, and top cities across 29 US states we track.',
   alternates: { canonical: '/markets/states' },
   openGraph: {
-    title: 'Best States for Real Estate Investing 2026 | ProInvestorHub',
+    title: 'Best States for Real Estate Investing 2026',
     description:
       'Compare real estate investment markets by state. Average cap rates, home prices, and top cities across 29 US states we track.',
   },

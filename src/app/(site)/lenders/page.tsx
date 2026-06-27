@@ -7,7 +7,7 @@ import { usStates } from '@/data/us-states'
 import { LenderCard } from '@/components/lender-card'
 
 export const metadata: Metadata = {
-  title: 'Real Estate Investor Lender Directory: Compare Financing Options | ProInvestorHub',
+  title: 'Real Estate Investor Lender Directory: Compare Financing Options',
   description:
     'Compare the best lenders for real estate investors. DSCR, hard money, bridge, fix-and-flip, construction, and portfolio loans — side-by-side rates, LTV, and expert reviews.',
   alternates: { canonical: '/lenders' },

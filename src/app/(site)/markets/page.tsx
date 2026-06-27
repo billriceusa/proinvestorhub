@@ -6,7 +6,7 @@ import { getDataFreshness } from '@/data/market-queries'
 import { getStatesList, getStateAverages } from '@/data/city-strategy-helpers'
 
 export const metadata: Metadata = {
-  title: 'Best Cities for Real Estate Investing 2026 — By Strategy | ProInvestorHub',
+  title: 'Best Cities for Real Estate Investing 2026 — By Strategy',
   description:
     'Compare the best US cities for real estate investing by strategy: cash flow, BRRRR, house hacking, and appreciation. Data-driven rankings for 50 markets.',
   alternates: { canonical: '/markets' },

@@ -18,7 +18,7 @@ const AUTHOR_POSTS_QUERY = `*[_type == "post" && author->slug.current == "bill-r
 }`
 
 export const metadata: Metadata = {
-  title: 'Bill Rice — Author | ProInvestorHub',
+  title: 'Bill Rice — Author',
   description:
     'Bill Rice is the founder and author at ProInvestorHub. With 30+ years in mortgage lending, he writes about real estate investing strategies, deal analysis, and market trends.',
   alternates: { canonical: '/authors/bill-rice' },

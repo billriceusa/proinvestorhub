@@ -7,7 +7,7 @@ import { EDUCATION_CURRICULUM, EDUCATION_PHASES } from '@/data/newsletter-educat
 import { StartHereNav } from '@/components/start-here-nav'
 
 export const metadata: Metadata = {
-  title: 'Start Here — Your Real Estate Investing Roadmap | ProInvestorHub',
+  title: 'Start Here — Your Real Estate Investing Roadmap',
   description:
     'New to real estate investing? Start here. A step-by-step learning path with free calculators, expert guides, and a 24-week education program to go from beginner to confident investor.',
   alternates: { canonical: '/start-here' },

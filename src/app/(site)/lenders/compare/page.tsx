@@ -5,7 +5,7 @@ import { lenders } from '@/data/lenders'
 import { LenderComparison } from '@/components/lender-comparison'
 
 export const metadata: Metadata = {
-  title: 'Compare Lenders Side by Side | ProInvestorHub',
+  title: 'Compare Lenders Side by Side',
   description:
     'Compare real estate investor lenders side by side. Select 2–3 lenders to see rates, LTV, credit requirements, fees, and more in a structured comparison table.',
   alternates: { canonical: '/lenders/compare' },

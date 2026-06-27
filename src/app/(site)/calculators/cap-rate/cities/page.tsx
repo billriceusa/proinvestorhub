@@ -4,7 +4,7 @@ import { JsonLd, breadcrumbJsonLd } from '@/components/json-ld'
 import { CapRateCitiesTable } from '@/components/cap-rate-cities-table'
 
 export const metadata: Metadata = {
-  title: 'Cap Rates by City — 2026 Market Data for 50 US Markets | ProInvestorHub',
+  title: 'Cap Rates by City — 2026 Market Data for 50 US Markets',
   description:
     'Compare average cap rates, median home prices, rents, and rent-to-price ratios across the top 50 US real estate investing markets. Sortable data for 2026.',
   alternates: { canonical: '/calculators/cap-rate/cities' },

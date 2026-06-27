@@ -5,7 +5,7 @@ import { lenders } from '@/data/lenders'
 import { LenderFinder } from '@/components/lender-finder'
 
 export const metadata: Metadata = {
-  title: 'Find Your Lender Match: Investor Loan Finder | ProInvestorHub',
+  title: 'Find Your Lender Match: Investor Loan Finder',
   description:
     'Tell us your credit score, experience level, property type, and strategy — we\'ll match you with the best lenders for your real estate investment scenario. Free, no registration required.',
   alternates: { canonical: '/lenders/finder' },

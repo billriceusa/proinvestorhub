@@ -23,7 +23,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 export const metadata: Metadata = {
   title: {
     default: 'ProInvestorHub - Smart Real Estate Investing Starts Here',
-    template: '%s | ProInvestorHub',
+    // Template carries NO brand suffix. Search engines (Google, and to a lesser
+    // extent Bing) auto-append the site name to SERP titles; including it here
+    // too produced the visible "… | ProInvestorHub | ProInvestorHub" doubling.
+    // Leaving the raw <title> brand-free lets the engine supply it exactly once.
+    // The homepage keeps its intentional brand-leading title via `default`.
+    // (normalizeTitle still strips any brand suffix from CMS/data titles so they
+    // don't re-introduce the doubling — see src/lib/page-title.ts.)
+    template: '%s',
   },
   description:
     'Expert guides, calculators, and education for real estate investors. Master cap rates, cash flow analysis, BRRRR, and more.',
