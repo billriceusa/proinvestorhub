@@ -1,0 +1,239 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-29 00:00:00",
+  "containerVersion": {
+    "path": "accounts/0/containers/0/versions/0",
+    "accountId": "0",
+    "containerId": "0",
+    "containerVersionId": "0",
+    "container": {
+      "path": "accounts/0/containers/0",
+      "accountId": "0",
+      "containerId": "0",
+      "name": "ProInvestorHub",
+      "publicId": "GTM-5J446HT5",
+      "usageContext": ["WEB"],
+      "fingerprint": "0",
+      "tagManagerUrl": "https://tagmanager.google.com/"
+    },
+    "tag": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "20",
+        "name": "GA4 - generate_lead",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName", "value": "generate_lead" },
+          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "lead_source" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - lead_source}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "email_domain" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - email_domain}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "source_event" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{Event}}" }
+                ]
+              }
+            ]
+          },
+          { "type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{CONST - GA4 Measurement ID}}" }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["10"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "21",
+        "name": "GA4 - partner_outbound_click",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName", "value": "partner_outbound_click" },
+          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "destination_url" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - destination_url}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "partner_vertical" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - bp_vertical}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "cta_placement" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - cta_placement}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "source_event" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{Event}}" }
+                ]
+              }
+            ]
+          },
+          { "type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{CONST - GA4 Measurement ID}}" }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["11"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "10",
+        "name": "CE - generate_lead group",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "^(newsletter_signup|lead_capture|lender_finder_email_capture|calculator_results_save)$" }
+            ]
+          }
+        ],
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName", "value": "^(newsletter_signup|lead_capture|lender_finder_email_capture|calculator_results_save)$" },
+          { "type": "BOOLEAN", "key": "useRegex", "value": "true" }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "11",
+        "name": "CE - partner_outbound_click group",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "^(bp_referral_click|lender_cta_click|tool_referral_click)$" }
+            ]
+          }
+        ],
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName", "value": "^(bp_referral_click|lender_cta_click|tool_referral_click)$" },
+          { "type": "BOOLEAN", "key": "useRegex", "value": "true" }
+        ],
+        "fingerprint": "0"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "1",
+        "name": "CONST - GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "G-W64237445E" }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "2",
+        "name": "DLV - lead_source",
+        "type": "v",
+        "parameter": [
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" },
+          { "type": "TEMPLATE", "key": "name", "value": "lead_source" }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "3",
+        "name": "DLV - email_domain",
+        "type": "v",
+        "parameter": [
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" },
+          { "type": "TEMPLATE", "key": "name", "value": "email_domain" }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "4",
+        "name": "DLV - destination_url",
+        "type": "v",
+        "parameter": [
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" },
+          { "type": "TEMPLATE", "key": "name", "value": "destination_url" }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "5",
+        "name": "DLV - bp_vertical",
+        "type": "v",
+        "parameter": [
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" },
+          { "type": "TEMPLATE", "key": "name", "value": "bp_vertical" }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "6",
+        "name": "DLV - cta_placement",
+        "type": "v",
+        "parameter": [
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" },
+          { "type": "TEMPLATE", "key": "name", "value": "cta_placement" }
+        ],
+        "fingerprint": "0"
+      }
+    ],
+    "builtInVariable": [
+      { "accountId": "0", "containerId": "0", "type": "EVENT", "name": "Event" }
+    ],
+    "fingerprint": "0"
+  }
+}
