@@ -216,7 +216,7 @@ export default async function LenderVsLenderPage({ params }: Props) {
           {comparison.angle}
         </p>
         <p className="mt-2 text-sm text-text-light">
-          Shared products: {sharedLoanTypeNames.join(', ')} &middot; Updated March 2026
+          Shared products: {sharedLoanTypeNames.join(', ')}
         </p>
       </div>
 

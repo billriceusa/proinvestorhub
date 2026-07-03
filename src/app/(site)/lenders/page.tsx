@@ -73,7 +73,7 @@ export default function LenderDirectoryPage() {
           30-year lending industry veteran.
         </p>
         <p className="mt-2 text-sm text-text-light">
-          {lenders.length} lenders &middot; {loanTypes.length} loan types &middot; Updated March 2026
+          {lenders.length} lenders &middot; {loanTypes.length} loan types
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
