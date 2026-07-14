@@ -22,6 +22,21 @@
 
 ---
 
+## 2026-07-14 — Active sprint (this session focus)
+<!-- added 2026-07-14 /brsg-session — Bill promoted these to the top of the queue -->
+
+Promoted to the top of the queue and being worked this session (in order). Detailed items still live in P1/P2 below — this is the running focus list.
+
+1. **`[Technical]` Host + crawl hygiene** — add real `<lastmod>` to the programmatic sitemap surface (only 82 of 1,390 carry it) + confirm the `www`→apex 308 consolidates cleanly. *Honest-freshness rule: `lastmod` must come from a real per-page change date (data-file vintage / content build date), never a blanket `new Date()` — same integrity line as the removed "Updated March 2026" stamp.* → P2 Technical.
+2. **`[Traffic — quality/a11y]` Color-contrast pass** — the remaining half of the site-wide a11y item (form labels shipped 2026-07-14). Audit brand tokens against WCAG AA, fix failing pairs. → P2.
+3. **`[Trust/freshness]` Real `lastReviewed` on lender/compare data** — add a maintained verification-date field + re-surface an honest "Updated {date}" stamp (populated only during a real rate-verification pass; no fabricated dates). → P2 (PARTIAL).
+4. **`[Traffic — proven template]` Expand lender head-to-head compares** — more high-intent "X vs Y" where the template already reaches page 1 (lima-one-vs-civic at pos 7.3). → P1.
+5. **`[Traffic — biggest single unlock]` Push "cap rate calculator" to page 1** — internal-linking + on-page + a11y are done; the remaining lever is **authority + external links**, which is exactly what the new **PR & Backlink Sourcing System** is built to supply. → P1.
+
+**New consolidated system:** the former "disavow the PBN profile" (defense) + "earn quality links" (offense) P1 items are now merged into one buildable **PR & Backlink Sourcing System** (P1 below) — sourcing → contact enrichment (Apollo/scrape) → outreach/tracking → disavow hygiene loop, with a path to a BRSG org-level app.
+
+---
+
 ## P0 — Do Next
 
 ### Conversion & Lead Capture
@@ -69,8 +84,29 @@ Re-audit of the 2026-06-13 findings + new issues. Full report: `~/website-audits
 - [ ] **`[Traffic — biggest single unlock]` Push "cap rate calculator" to page 1.** 298 impr/28d at pos ~14–20 (Ahrefs vol 14,000); `/calculators/cap-rate` already pulls 672 impr — the one term with real ranked demand. On-page is strong and already internally linked; blockers are authority + CTR. Add exact-anchor "cap rate calculator" links from the highest-traffic posts + sibling calcs, fix the page's unlabeled form inputs (a11y), pursue 2–3 quality links to the URL. Effort **S–M**. <!-- 2026-06-27 /brsg-session --> **Internal-linking lever is exhausted — verified live: 115 of 121 posts already link to `/calculators/cap-rate`, plus all sibling calculators, markets, hub, start-here, and resources (keyword-matched anchors).** The remaining blockers are purely **authority (DR 13) + external links** — internal links can't move this further (consistent with the 2026-06-05 "don't bulk-edit posts at DR 13" call). Open sub-items that *are* still actionable: the cap-rate form a11y labels, and 1 trivial gap (`cap-rate-compression-explained` post doesn't link the calculator — left unpatched; ~0 SEO value, not worth a fragile Portable-Text edit).
   - <!-- 2026-07-14 /brsg-session --> **Cap-rate form a11y labels — DONE (shipped in the site-wide calculator a11y sweep, see P2 below).** Every input on `/calculators/cap-rate` now carries a programmatic accessible name (8 text inputs via `useId`+`htmlFor`/`id`, the vacancy slider via `aria-label`) — verified 0 unlabeled controls post-hydration with Playwright. Removes the Lighthouse/axe "form elements without labels" hit on the page being pushed to page 1. The remaining lever stays **authority (DR 13) + external links**.
 - [x] **`[Traffic]` Shorten the over-60-char titles + over-160 meta descriptions.** <!-- shipped 2026-06-27 /brsg-session --> Re-measured first (the 2026-06-19 numbers predated PR #64's title fixes): titles were mostly already fine. Trimmed: `/reports/rental-yield` title 66→60 + meta 168→159; `/reports/investor-lenders` meta 214→148; `/financing` meta ~230→145. `/blog/dscr-loans-explained` needed nothing — its Sanity `seo.metaTitle` already renders at 60 char (the "78" was the old `title` field). *(Source: computed lengths in-repo + live Sanity query.)*
-- [ ] **`[Traffic — authority, defense]` Disavow the PBN/spam backlink profile.** 200+ junk referring domains (`*-seoexpress.store`, `rank-forge`, `link-baron`, `.shop`/`.store` PBNs) inflate DR 13 with negative-SEO-style links. Export Ahrefs refdomains → build + submit a disavow file → document a recurring link-hygiene check. Effort **M**.
-- [ ] **`[Traffic — authority, offense]` Earn quality links to offset DR 13.** The HMDA "Most Active Lenders" + rental-yield reports carry Dataset/DataDownload schema and original data — distribute/pitch them (REI communities, journalists) as linkable data journalism; the 17 calculators are the other natural linkable assets (embed codes already shipped). Quality earned links are the right answer to the spam profile and unlock the page-2/3 cluster sitewide. Effort **M (ongoing)**.
+- [ ] **`[Traffic — authority]` PR & Backlink Sourcing System** *(consolidates the former "disavow the PBN profile" defense + "earn quality links" offense into one buildable system)* <!-- consolidated 2026-07-14 /brsg-session -->
+
+  **Why one system:** link *hygiene* (disavow) and link *acquisition* (digital PR / outreach) are two halves of one authority function. They share a data model — referring domains, prospect domains, contacts, outreach state — and one goal: move DR 13 up honestly and defend it. Running them together removes duplicate refdomain pulls and lets a single contact-enrichment pipeline serve both.
+
+  **Grounding (live Ahrefs, 2026-07-14):**
+  - proinvestorhub: **369 live referring domains / 714 backlinks, DR 13.** Proven competitor **kiavi.com: 2,418 refdomains / 72,561 backlinks** (~6.5× our refdomains) — *the gap is the prospect pool.*
+  - **The profile is mostly spam:** the entire DR 0–39 tail (~285 of 369 domains) is Ahrefs `is_spam=true` PBN — recognizable networks on `*.store` (`*seoexpress*`, `*link-baron*`, `*rank-forge*`, `*outrank-hq*`) and `*.shop` SEO-tool clusters; only ~22 legitimate domains sit in that tail. **Programmatically filterable** via Ahrefs `is_spam` + TLD/name patterns — the disavow file can be auto-generated.
+
+  **System components:**
+  1. **Sourcing (opportunity discovery):**
+     - *Backlink-gap* — domains linking to competitors (kiavi, lima-one, civic, roc, rcn, new-silver) but not to us (Ahrefs `all-backlinks` / gap).
+     - *Unlinked brand mentions* — sites naming us with no link (Ahrefs Brand Radar / content search).
+     - *Data-journalism targets* — pitch the original-data reports (HMDA "Most Active Lenders", rental-yield, rent-growth — all carry Dataset/DataDownload schema) to journalists, REI newsletters, niche communities. Those + the 17 calculators (embed codes shipped) are our natural linkable assets.
+     - *Resource-page / roundup / broken-link* prospecting on REI + investor-financing keywords.
+  2. **Contact enrichment:** for each prospect domain, resolve the right human + verified email — **Apollo.io API** (by domain + role: editor / content lead / SEO) as primary; **web-scrape** the site (about/team/contact pages, author bylines) as fallback. Verify deliverability before outreach.
+  3. **Outreach & tracking:** per-opportunity-type templated-but-personalized pitches, follow-up cadence, response / link-won tracking. Candidate store: GHL (already our CRM) or a dedicated table; measure links acquired against GSC + Ahrefs.
+  4. **Disavow hygiene loop (defense):** recurring Ahrefs refdomains export → auto-classify spam (`is_spam` + `*.store`/`*.shop` PBN patterns + low-DR tail) → maintain + submit `disavow.txt` in GSC → re-check on a cadence. First pass: the ~285-domain spam tail above.
+
+  **Build path:**
+  - *Phase 1 (now, per-site script):* pull gap + refdomains via the Ahrefs MCP → emit (a) a disavow file for the spam tail and (b) a ranked prospect list; Apollo-enrich contacts; output to CSV / Sanity-backed tracker. Run proinvestorhub first.
+  - *Phase 2 (BRSG org-level app, `apps/brsg/`):* multi-tenant PR & backlink CRM across all BRSG-owned sites — shared prospect DB with cross-site dedupe, outreach queue, disavow management, reporting. This is **shared BRSG infrastructure** (lives in the BRSG scope, serves every owned site; ties into the "fleet disavow" note in the priority anchor). *Needs an Apollo API key; Ahrefs MCP + GHL + GSC already available.*
+
+  **Guardrails:** genuine value-first outreach only — no spam that would recreate the very profile we're disavowing; no fabricated data in pitches ([[shared/feedback_no_fabricated_data]]); the data reports are the honest hook. Effort **L (system build; ongoing operation)**.
 - [ ] **`[Traffic — proven template]` Expand the lender head-to-head compare set.** `/lenders/compare/lima-one-vs-civic-financial` already sits at **pos 7.3** and `/lenders/reviews/griffin-funding` at pos 23.6 — the 652-page lenders cluster is the second cluster gaining traction. Build more high-intent "X vs Y" investor-lender compares where the template already reaches page 1. Effort **M**. <!-- in progress 2026-06-27 /brsg-session --> **Added 9 brand-name matchups (17 → 26 compares), all data-grounded + build-verified** (`src/data/lender-comparisons.ts`). Batch 1: `kiavi-vs-corevest`, `lima-one-vs-roc-capital`, `roc-capital-vs-rcn-capital`, `kiavi-vs-civic-financial`. Batch 2: `kiavi-vs-griffin-funding`, `lima-one-vs-new-silver`, `new-silver-vs-rcn-capital`, `visio-lending-vs-lendency`, `angel-oak-vs-visio-lending`. Brought two prior orphans (**Roc Capital**, **Lendency**) into the link graph; `kiavi-vs-griffin-funding` targets our existing branded "griffin funding" demand (pos 24). metaTitles kept ≤60 char before brand. Remaining uncompared lenders are lower-brand (Upright/Fund-That-Flip — note its data slug is `arrived`, a mismatch worth cleaning — Aloha, OfferMarket).
 - Note: FAQPage + HowTo + WebApplication schema already present on calculators; Dataset/FAQPage/Article schema on reports (verified live 2026-06-19) — no schema *build* work needed, only the AEO content blocks in P2.
 
