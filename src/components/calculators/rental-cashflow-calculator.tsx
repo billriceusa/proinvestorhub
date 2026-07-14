@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useId } from 'react'
 import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
@@ -173,6 +173,7 @@ export function RentalCashFlowCalculator() {
             <div className="mt-1 flex items-center gap-3">
               <input
                 type="range"
+                aria-label="Vacancy Rate"
                 min="0"
                 max="20"
                 step="1"
@@ -361,9 +362,11 @@ function InputField({
     }
   }
 
+  const fieldId = useId()
+
   return (
     <div>
-      <label className="block text-sm font-medium text-text-muted">
+      <label htmlFor={fieldId} className="block text-sm font-medium text-text-muted">
         {label}
       </label>
       <div className="mt-1 relative">
@@ -378,6 +381,7 @@ function InputField({
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
+          id={fieldId}
           className={`block w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors ${prefix ? 'pl-7' : ''}`}
         />
       </div>

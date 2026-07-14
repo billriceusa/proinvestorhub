@@ -99,6 +99,7 @@ export default async function SearchPage({
           <input
             type="search"
             name="q"
+            aria-label="Search articles, glossary, and newsletters"
             defaultValue={query}
             placeholder="Search articles, glossary, newsletters..."
             className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-text placeholder:text-text-light focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all"

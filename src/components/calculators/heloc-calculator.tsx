@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useId } from 'react'
 import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
@@ -157,6 +157,7 @@ export function HelocCalculator() {
               <div className="mt-1 flex items-center gap-3">
                 <input
                   type="range"
+                  aria-label="Max Combined Loan-to-Value (CLTV)"
                   min="50"
                   max="85"
                   step="1"
@@ -189,6 +190,7 @@ export function HelocCalculator() {
                   Repayment
                 </label>
                 <select
+                  aria-label="Repayment"
                   value={repaymentType}
                   onChange={(e) => setRepaymentType(e.target.value)}
                   className="mt-1 block w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-text focus:border-primary focus:ring-1 focus:ring-primary outline-none"
@@ -204,6 +206,7 @@ export function HelocCalculator() {
                   Repayment Term
                 </label>
                 <select
+                  aria-label="Repayment Term"
                   value={loanTerm}
                   onChange={(e) => setLoanTerm(e.target.value)}
                   className="mt-1 block w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-text focus:border-primary focus:ring-1 focus:ring-primary outline-none"
@@ -238,6 +241,7 @@ export function HelocCalculator() {
               <div className="mt-1 flex items-center gap-3">
                 <input
                   type="range"
+                  aria-label="Down Payment on Next Deal"
                   min="5"
                   max="50"
                   step="5"
@@ -423,9 +427,11 @@ function InputField({
     }
   }
 
+  const fieldId = useId()
+
   return (
     <div>
-      <label className="block text-sm font-medium text-text-muted">
+      <label htmlFor={fieldId} className="block text-sm font-medium text-text-muted">
         {label}
       </label>
       <div className="mt-1 relative">
@@ -440,6 +446,8 @@ function InputField({
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
+          id={fieldId}
+          aria-describedby={hint ? `${fieldId}-hint` : undefined}
           className={`block w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors ${prefix ? 'pl-7' : ''} ${suffix ? 'pr-8' : ''}`}
         />
         {suffix && (
@@ -448,7 +456,11 @@ function InputField({
           </span>
         )}
       </div>
-      {hint && <p className="mt-1 text-xs text-text-light">{hint}</p>}
+      {hint && (
+        <p id={`${fieldId}-hint`} className="mt-1 text-xs text-text-light">
+          {hint}
+        </p>
+      )}
     </div>
   )
 }

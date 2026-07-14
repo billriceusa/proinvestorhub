@@ -104,6 +104,7 @@ export function CalculatorCTA({
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
+                  aria-label="Email address"
                   className="flex-1 min-w-0 rounded-md border border-border bg-white px-3 py-2 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                 />
                 <HoneypotInput value={website} onChange={setWebsite} />

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useId } from 'react'
 import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
@@ -222,6 +222,7 @@ export function Exchange1031Calculator() {
                 <div className="mt-2 flex items-center gap-3">
                   <input
                     type="range"
+                    aria-label="Selling costs percentage"
                     min="0"
                     max="10"
                     step="0.5"
@@ -237,6 +238,7 @@ export function Exchange1031Calculator() {
                 <div className="mt-2">
                   <InputField
                     label=""
+                    ariaLabel="Selling costs amount in dollars"
                     value={sellingCostsDollar}
                     onChange={setSellingCostsDollar}
                     placeholder="30,000"
@@ -318,6 +320,7 @@ export function Exchange1031Calculator() {
               <div className="mt-1 flex items-center gap-3">
                 <input
                   type="range"
+                  aria-label="State Tax Rate"
                   min="0"
                   max="13"
                   step="0.5"
@@ -508,6 +511,7 @@ function InputField({
   prefix,
   suffix,
   hint,
+  ariaLabel,
 }: {
   label: string
   value: string
@@ -516,6 +520,7 @@ function InputField({
   prefix?: string
   suffix?: string
   hint?: string
+  ariaLabel?: string
 }) {
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const raw = e.target.value.replace(/[^0-9.]/g, '')
@@ -529,10 +534,12 @@ function InputField({
     }
   }
 
+  const fieldId = useId()
+
   return (
     <div>
       {label && (
-        <label className="block text-sm font-medium text-text-muted">
+        <label htmlFor={fieldId} className="block text-sm font-medium text-text-muted">
           {label}
         </label>
       )}
@@ -548,6 +555,9 @@ function InputField({
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
+          id={fieldId}
+          aria-label={label ? undefined : ariaLabel}
+          aria-describedby={hint ? `${fieldId}-hint` : undefined}
           className={`block w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors ${prefix ? 'pl-7' : ''} ${suffix ? 'pr-8' : ''}`}
         />
         {suffix && (
@@ -556,7 +566,11 @@ function InputField({
           </span>
         )}
       </div>
-      {hint && <p className="mt-1 text-xs text-text-light">{hint}</p>}
+      {hint && (
+        <p id={`${fieldId}-hint`} className="mt-1 text-xs text-text-light">
+          {hint}
+        </p>
+      )}
     </div>
   )
 }

@@ -107,6 +107,7 @@ export function GlossarySearch({ terms }: { terms: GlossaryTermSummary[] }) {
           </div>
           <input
             type="text"
+            aria-label="Search glossary terms or definitions"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search terms or definitions..."

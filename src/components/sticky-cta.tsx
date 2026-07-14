@@ -118,6 +118,7 @@ export function StickyCTA() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
+              aria-label="Email address"
               className="w-52 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/50 focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"
             />
             <button
@@ -165,6 +166,7 @@ export function StickyCTA() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
+              aria-label="Email address"
               className="flex-1 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/50 focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none"
             />
             <button

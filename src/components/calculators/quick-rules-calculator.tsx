@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useId } from 'react'
 import Link from 'next/link'
 
 function formatCurrency(value: number): string {
@@ -203,14 +203,17 @@ function Field({
     if (!isNaN(n)) onChange(n.toLocaleString('en-US'))
   }
 
+  const fieldId = useId()
+
   return (
     <div>
-      <label className="block text-sm font-medium text-text-muted">{label}</label>
+      <label htmlFor={fieldId} className="block text-sm font-medium text-text-muted">{label}</label>
       <div className="mt-1 relative">
         {prefix && (
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-text-light text-sm">{prefix}</span>
         )}
         <input
+          id={fieldId}
           type="text"
           inputMode="decimal"
           value={value}

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useId } from 'react'
 import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
@@ -102,6 +102,7 @@ export function HardMoneyCalculator() {
               <div className="mt-1 flex items-center gap-3">
                 <input
                   type="range"
+                  aria-label="Max Loan (% of ARV)"
                   min="50"
                   max="80"
                   step="1"
@@ -234,9 +235,11 @@ function InputField({
     }
   }
 
+  const fieldId = useId()
+
   return (
     <div>
-      <label className="block text-sm font-medium text-text-muted">{label}</label>
+      <label htmlFor={fieldId} className="block text-sm font-medium text-text-muted">{label}</label>
       <div className="mt-1 relative">
         {prefix && (
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-text-light text-sm">{prefix}</span>
@@ -247,13 +250,19 @@ function InputField({
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
+          id={fieldId}
+          aria-describedby={hint ? `${fieldId}-hint` : undefined}
           className={`block w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors ${prefix ? 'pl-7' : ''} ${suffix ? 'pr-10' : ''}`}
         />
         {suffix && (
           <span className="absolute right-3 top-1/2 -translate-y-1/2 text-text-light text-sm">{suffix}</span>
         )}
       </div>
-      {hint && <p className="mt-1 text-xs text-text-light">{hint}</p>}
+      {hint && (
+        <p id={`${fieldId}-hint`} className="mt-1 text-xs text-text-light">
+          {hint}
+        </p>
+      )}
     </div>
   )
 }

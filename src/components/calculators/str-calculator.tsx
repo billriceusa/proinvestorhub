@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useId } from 'react'
 import { SaveResultsCTA } from '@/components/save-results-cta'
 import { CalculatorActions } from '@/components/calculators/calculator-actions'
 import { useCalculatorState } from '@/lib/use-calculator-state'
@@ -228,6 +228,7 @@ export function STRCalculator() {
               <div className="mt-1 flex items-center gap-3">
                 <input
                   type="range"
+                  aria-label="Occupancy Rate"
                   min="10"
                   max="100"
                   step="1"
@@ -249,6 +250,7 @@ export function STRCalculator() {
               </label>
               <div className="mt-1">
                 <select
+                  aria-label="Number of Bedrooms"
                   value={bedrooms}
                   onChange={(e) => setBedrooms(e.target.value)}
                   className="block w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-text focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
@@ -277,6 +279,7 @@ export function STRCalculator() {
               <div className="mt-1 flex items-center gap-3">
                 <input
                   type="range"
+                  aria-label="Average Stay Length (nights)"
                   min="1"
                   max="14"
                   step="1"
@@ -317,6 +320,7 @@ export function STRCalculator() {
               <div className="mt-1 flex items-center gap-3">
                 <input
                   type="range"
+                  aria-label="Platform Fees (Airbnb/VRBO)"
                   min="0"
                   max="15"
                   step="0.5"
@@ -339,6 +343,7 @@ export function STRCalculator() {
               <div className="mt-1 flex items-center gap-3">
                 <input
                   type="range"
+                  aria-label="Property Management"
                   min="0"
                   max="35"
                   step="1"
@@ -557,9 +562,11 @@ function InputField({
     }
   }
 
+  const fieldId = useId()
+
   return (
     <div>
-      <label className="block text-sm font-medium text-text-muted">
+      <label htmlFor={fieldId} className="block text-sm font-medium text-text-muted">
         {label}
       </label>
       <div className="mt-1 relative">
@@ -574,10 +581,16 @@ function InputField({
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
+          id={fieldId}
+          aria-describedby={hint ? `${fieldId}-hint` : undefined}
           className={`block w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors ${prefix ? 'pl-7' : ''}`}
         />
       </div>
-      {hint && <p className="mt-1 text-xs text-text-light">{hint}</p>}
+      {hint && (
+        <p id={`${fieldId}-hint`} className="mt-1 text-xs text-text-light">
+          {hint}
+        </p>
+      )}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useId } from 'react'
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat('en-US', {
@@ -245,6 +245,7 @@ function DealPanel({
       <div className={`${headerBg} px-6 py-4`}>
         <input
           type="text"
+          aria-label="Deal name"
           value={deal.label}
           onChange={(e) => update('label', e.target.value)}
           className={`bg-transparent ${headerText} font-bold text-lg outline-none placeholder:opacity-50 w-full`}
@@ -259,7 +260,7 @@ function DealPanel({
 
         <div className="flex items-center gap-3">
           <label className="text-xs text-text-muted w-24 shrink-0">Vacancy</label>
-          <input type="range" min="0" max="20" step="1" value={deal.vacancy} onChange={(e) => update('vacancy', e.target.value)} className="flex-1 accent-primary" />
+          <input type="range" aria-label="Vacancy rate" min="0" max="20" step="1" value={deal.vacancy} onChange={(e) => update('vacancy', e.target.value)} className="flex-1 accent-primary" />
           <span className="w-10 text-right text-xs font-medium text-text">{deal.vacancy}%</span>
         </div>
 
@@ -276,7 +277,7 @@ function DealPanel({
             <p className="text-xs font-semibold text-text uppercase tracking-wide">Financing</p>
             <div className="flex items-center gap-3">
               <label className="text-xs text-text-muted w-24 shrink-0">Down Payment</label>
-              <input type="range" min="0" max="100" step="5" value={deal.downPaymentPercent} onChange={(e) => update('downPaymentPercent', e.target.value)} className="flex-1 accent-primary" />
+              <input type="range" aria-label="Down payment percentage" min="0" max="100" step="5" value={deal.downPaymentPercent} onChange={(e) => update('downPaymentPercent', e.target.value)} className="flex-1 accent-primary" />
               <span className="w-10 text-right text-xs font-medium text-text">{deal.downPaymentPercent}%</span>
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -352,14 +353,17 @@ function CompactInput({
     }
   }
 
+  const fieldId = useId()
+
   return (
     <div>
-      <label className="block text-xs text-text-muted mb-1">{label}</label>
+      <label htmlFor={fieldId} className="block text-xs text-text-muted mb-1">{label}</label>
       <div className="relative">
         {prefix && (
           <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-text-light text-xs">{prefix}</span>
         )}
         <input
+          id={fieldId}
           type="text"
           inputMode="decimal"
           value={value}

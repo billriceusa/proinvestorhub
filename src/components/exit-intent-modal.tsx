@@ -177,6 +177,7 @@ export function ExitIntentModal() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
+                  aria-label="Email address"
                   className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all"
                 />
                 <HoneypotInput value={website} onChange={setWebsite} />

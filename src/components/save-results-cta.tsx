@@ -100,6 +100,7 @@ export function SaveResultsCTA({
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           placeholder="First name"
+          aria-label="First name"
           className="w-full rounded-lg border border-border bg-white px-3 py-2 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
         />
         <input
@@ -108,6 +109,7 @@ export function SaveResultsCTA({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@example.com"
+          aria-label="Email address"
           className="w-full rounded-lg border border-border bg-white px-3 py-2 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
         />
         <button

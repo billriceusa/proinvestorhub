@@ -448,6 +448,7 @@ export function LenderFinder({ allLenders }: { allLenders: LenderData[] }) {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="First name"
+                aria-label="First name"
                 className="w-full rounded-lg border border-border px-4 py-3 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
               />
               <input
@@ -456,6 +457,7 @@ export function LenderFinder({ allLenders }: { allLenders: LenderData[] }) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
+                aria-label="Email address"
                 className="w-full rounded-lg border border-border px-4 py-3 text-sm text-text placeholder:text-text-light focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
               />
               <button
