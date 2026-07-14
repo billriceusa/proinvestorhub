@@ -13,6 +13,7 @@ import { financingTypes } from '@/data/financing-types'
 import { states as investorFinancingStates } from '@/data/hmda-investor'
 import { states as rentalYieldStates } from '@/data/rental-yield'
 import { states as investorLenderStates } from '@/data/hmda-lenders'
+import { groupLastmod } from '@/data/sitemap-dates'
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
@@ -34,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ])
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: baseUrl, changeFrequency: 'weekly', priority: 1.0 },
+    { url: baseUrl, lastModified: groupLastmod('home'), changeFrequency: 'weekly', priority: 1.0 },
     {
       url: `${baseUrl}/blog`,
       changeFrequency: 'daily',
@@ -47,6 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/calculators`,
+      lastModified: groupLastmod('calculatorsHub'),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
@@ -172,6 +174,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...strategies.map((s) => ({
       url: `${baseUrl}/markets/${s.slug}`,
+      lastModified: groupLastmod('marketStrategies'),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
@@ -182,6 +185,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...cities.map((c) => ({
       url: `${baseUrl}/calculators/cap-rate/${c.slug}`,
+      lastModified: groupLastmod('capRateCities'),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
@@ -189,6 +193,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...strategies.flatMap((s) =>
       cities.map((c) => ({
         url: `${baseUrl}/markets/${s.slug}/${c.slug}`,
+        lastModified: groupLastmod('marketStrategies'),
         changeFrequency: 'monthly' as const,
         priority: 0.6,
       }))
@@ -201,12 +206,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...getStatesList().map((state) => ({
       url: `${baseUrl}/markets/states/${state.slug}`,
+      lastModified: groupLastmod('usStates'),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
     // Blog category hub pages
     ...categoryHubContent.map((cat) => ({
       url: `${baseUrl}/blog/category/${cat.slug}`,
+      lastModified: groupLastmod('categoryContent'),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     })),
@@ -229,18 +236,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Loan type pages (12)
     ...loanTypes.map((lt) => ({
       url: `${baseUrl}/lenders/${lt.slug}`,
+      lastModified: groupLastmod('loanTypes'),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
     // Lender review pages (20+)
     ...lenders.map((l) => ({
       url: `${baseUrl}/lenders/reviews/${l.slug}`,
+      lastModified: groupLastmod('lenders'),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
     // Lender-vs-lender comparison pages
     ...lenderComparisons.map((c) => ({
       url: `${baseUrl}/lenders/compare/${c.slug}`,
+      lastModified: groupLastmod('lenderComparisons'),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
@@ -248,6 +258,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...loanTypes.flatMap((lt) =>
       usStates.map((state) => ({
         url: `${baseUrl}/lenders/${lt.slug}/${state.slug}`,
+        lastModified: groupLastmod('loanTypes'),
         changeFrequency: 'monthly' as const,
         priority: 0.5,
       }))
@@ -285,17 +296,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...financingScenarios.map((s) => ({
       url: `${baseUrl}/how-to-finance/${s.slug}`,
+      lastModified: groupLastmod('financingScenarios'),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
     ...financingTypes.map((t) => ({
       url: `${baseUrl}/financing/${t.slug}`,
+      lastModified: groupLastmod('financingTypes'),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
     { url: `${baseUrl}/reports`, changeFrequency: 'monthly' as const, priority: 0.8 },
     {
       url: `${baseUrl}/reports/investor-financing`,
+      lastModified: groupLastmod('reportInvestorFinancing'),
       changeFrequency: 'yearly' as const,
       priority: 0.9,
     },
@@ -306,11 +320,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...investorFinancingStates.map((s) => ({
       url: `${baseUrl}/reports/investor-financing/${s.slug}`,
+      lastModified: groupLastmod('reportInvestorFinancing'),
       changeFrequency: 'yearly' as const,
       priority: 0.7,
     })),
     {
       url: `${baseUrl}/reports/rental-yield`,
+      lastModified: groupLastmod('reportRentalYield'),
       changeFrequency: 'yearly' as const,
       priority: 0.9,
     },
@@ -321,16 +337,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...rentalYieldStates.map((s) => ({
       url: `${baseUrl}/reports/rental-yield/${s.slug}`,
+      lastModified: groupLastmod('reportRentalYield'),
       changeFrequency: 'yearly' as const,
       priority: 0.7,
     })),
     {
       url: `${baseUrl}/reports/rent-growth`,
+      lastModified: groupLastmod('reportRentGrowth'),
       changeFrequency: 'yearly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/reports/investor-lenders`,
+      lastModified: groupLastmod('reportInvestorLenders'),
       changeFrequency: 'yearly' as const,
       priority: 0.9,
     },
@@ -341,10 +360,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...investorLenderStates.map((s) => ({
       url: `${baseUrl}/reports/investor-lenders/${s.slug}`,
+      lastModified: groupLastmod('reportInvestorLenders'),
       changeFrequency: 'yearly' as const,
       priority: 0.7,
     })),
   ]
+
+  // Individual calculator pages (/calculators/<tool>) share the calculators-
+  // components last-change date. Skips the hub and the /calculators/cap-rate/<city>
+  // pages (2 segments — dated from capRateCities above). Real git-derived date, so
+  // lastmod stays honest rather than a blanket "now".
+  const calcDate = groupLastmod('calculators')
+  for (const entry of staticPages) {
+    if (
+      !entry.lastModified &&
+      /\/calculators\/[^/]+$/.test(entry.url) &&
+      !entry.url.endsWith('/calculators')
+    ) {
+      entry.lastModified = calcDate
+    }
+  }
 
   // Duplicate posts 301-redirected to a canonical URL (see next.config.ts).
   // Keep them out of the sitemap so we don't advertise URLs that redirect.
