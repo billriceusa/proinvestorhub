@@ -5,6 +5,7 @@ import { loanTypes, loanTypeCategories } from '@/data/loan-types'
 import { lenders, getFeaturedLenders, formatCurrency } from '@/data/lenders'
 import { usStates } from '@/data/us-states'
 import { LenderCard } from '@/components/lender-card'
+import { freshnessStamp } from '@/lib/content-freshness'
 
 export const metadata: Metadata = {
   title: 'Real Estate Investor Lender Directory: Compare Financing Options',
@@ -49,6 +50,8 @@ const directoryFaqs = [
 export default function LenderDirectoryPage() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
   const featured = getFeaturedLenders()
+  // Honest freshness: real git change date of the lender data, "Updated {Month YYYY}".
+  const stamp = freshnessStamp('lenders')
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
@@ -74,6 +77,11 @@ export default function LenderDirectoryPage() {
         </p>
         <p className="mt-2 text-sm text-text-light">
           {lenders.length} lenders &middot; {loanTypes.length} loan types
+          {stamp && (
+            <>
+              {' '}&middot; {stamp.verb} {stamp.date}
+            </>
+          )}
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link

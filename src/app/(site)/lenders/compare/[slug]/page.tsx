@@ -7,6 +7,7 @@ import { loanTypes } from '@/data/loan-types'
 import { formatCurrency } from '@/data/lenders'
 import { LenderOutboundLink } from '@/components/lender-outbound-link'
 import { normalizeTitle } from '@/lib/page-title'
+import { freshnessStamp } from '@/lib/content-freshness'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -61,6 +62,10 @@ export default async function LenderVsLenderPage({ params }: Props) {
   const sharedLoanTypeNames = comparison.sharedLoanTypes
     .map((s) => loanTypes.find((lt) => lt.slug === s)?.shortName)
     .filter(Boolean)
+
+  // Honest freshness stamp: explicit lastReviewed ("Reviewed") or the data file's
+  // real git change date ("Updated") — never a frozen literal. See content-freshness.ts.
+  const stamp = freshnessStamp('lenderComparisons', comparison.lastReviewed)
 
   // Build comparison rows with winner determination
   const rows: ComparisonRow[] = [
@@ -217,6 +222,11 @@ export default async function LenderVsLenderPage({ params }: Props) {
         </p>
         <p className="mt-2 text-sm text-text-light">
           Shared products: {sharedLoanTypeNames.join(', ')}
+          {stamp && (
+            <>
+              {' '}&middot; {stamp.verb} {stamp.date}
+            </>
+          )}
         </p>
       </div>
 

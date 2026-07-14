@@ -20,6 +20,11 @@ export type LenderComparison = {
   metaDescription: string
   angle: string // editorial angle for the comparison
   sharedLoanTypes: string[] // loan type slugs they both offer
+  // Optional per-comparison verification date (ISO YYYY-MM-DD). Set this during a
+  // real lender-rate verification pass to surface a "Reviewed {date}" stamp that
+  // overrides the data-file's git-derived "Updated {date}" fallback. Never a
+  // fabricated/frozen literal — see content-freshness.ts.
+  lastReviewed?: string
 }
 
 export const lenderComparisons: LenderComparison[] = [
