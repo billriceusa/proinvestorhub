@@ -309,6 +309,29 @@ export const lenderComparisons: LenderComparison[] = [
     angle: 'Both are established non-QM lenders. Angel Oak adds bank-statement programs for self-employed borrowers, foreign national financing, and a lower 660 credit floor — but works largely through mortgage brokers. Visio is a direct DSCR specialist with multifamily (2-8 unit) eligibility and a lower rate ceiling, but requires 680 credit. Choose Angel Oak for self-employed or broker-sourced borrowers; Visio for direct DSCR with multifamily.',
     sharedLoanTypes: ['dscr-loans'],
   },
+  // ── Upright (formerly Fund That Flip) matchups — a recognized fix-and-flip brand
+  //    with real search demand that had no compares. Slug uses the "upright" brand
+  //    name; the data record's slug is 'arrived' (kept for URL stability). ──────
+  {
+    slug: 'kiavi-vs-upright',
+    lenderA: 'kiavi',
+    lenderB: 'arrived',
+    title: 'Kiavi vs Upright (Fund That Flip): Which Fix-and-Flip Lender Wins?',
+    metaTitle: 'Kiavi vs Upright 2026: Fix-and-Flip Rates & LTV | ProInvestorHub',
+    metaDescription: 'Kiavi vs Upright (formerly Fund That Flip) — two top fix-and-flip lenders compared. Broad product line and tech platform vs higher leverage for experienced flippers.',
+    angle: 'Both share the same 640 credit floor and both fund fix-and-flip and bridge loans. Kiavi is the broader platform — it also does DSCR and fix-and-rent, prices on volume, and runs a fast tech-driven origination flow, which suits investors who want one lender across flips and rental holds. Upright is the fix-and-flip specialist: it pushes higher leverage (up to ~85% of purchase price), carries no prepayment penalty, and is built around experienced flippers (it also lets accredited investors fund those loans as notes). Choose Kiavi for product breadth and a rental-transition path; choose Upright to stretch capital across more flips if you have a deal or two behind you.',
+    sharedLoanTypes: ['fix-and-flip-loans', 'bridge-loans'],
+  },
+  {
+    slug: 'groundfloor-vs-upright',
+    lenderA: 'groundfloor',
+    lenderB: 'arrived',
+    title: 'Groundfloor vs Upright (Fund That Flip): Fix-and-Flip Loans Compared',
+    metaTitle: 'Groundfloor vs Upright 2026: Fix-and-Flip Loans | ProInvestorHub',
+    metaDescription: 'Groundfloor vs Upright (formerly Fund That Flip) — both let flippers borrow and investors fund the notes. Lower-credit accessibility vs higher leverage for experienced flippers.',
+    angle: 'These two share an unusual model — both originate fix-and-flip loans and let outside investors fund them as notes. Groundfloor is the more accessible entry point: a 600 credit floor and a retail-investor notes product make it friendlier to newer flippers and small-dollar backers. Upright sets a 640 floor but pushes higher leverage (up to ~85% of purchase) and is built around experienced flippers and accredited note investors. Choose Groundfloor if credit or accessibility is the constraint; choose Upright to maximize leverage once you have flips under your belt.',
+    sharedLoanTypes: ['fix-and-flip-loans'],
+  },
 ]
 
 export function getComparisonBySlug(slug: string): LenderComparison | undefined {
