@@ -6,6 +6,22 @@
 
 ---
 
+## 2026-07-14 — Portfolio Performance Report priority anchor
+<!-- added 2026-07-14 — cross-portfolio prioritization from the BRSG Portfolio Performance Report (daily) -->
+
+**Report snapshot (2026-07-14 daily):** 405 sessions (+142.9%), **1 conv**.
+
+**Portfolio rank: TIER 3 (deferred).** Read the 405 sessions as **non-decision-grade** — they're the unidentified, non-organic Direct/referral traffic flagged in the Stability watch below (only 1 real GSC click). Lead capture is already built (exit-intent + drip + segmentation shipped), so **the "1 conv" is NOT a CRO gap** — it's a traffic-quality + measurement problem. Do not build conversion features against traffic that isn't real. Work these existing items, in order:
+
+1. **Measurement first — finish the GA4 attribution + key-event cleanup** (P1 below, "unblocks all measurement"): import the GTM container, mark Key Events, enable bot + referral exclusion. Fleet checklist: `../_shared-docs/ga4-attribution-cleanup-checklist.html`. Until this is done, every number in this report is non-decision-grade for PIH.
+2. **Fix mobile LCP on `/` (6.1s) and `/calculators` (5.8s)** (P0 Traffic below) — the two top entry points render "poor"; mobile is what's indexed.
+3. **Push "cap rate calculator" to page 1** (P1 below) — vol 14,000, currently pos ~14–20; the single biggest latent organic unlock on the site.
+4. **Run the broken-calculator-link remediation** (P2 below) — ~20 published posts link to dead calculator URLs (root cause fixed; needs the one-time script run). A real broken conversion mechanism.
+
+*Defensive, batch with the fleet disavow work: the PBN-disavow item (P1 below).*
+
+---
+
 ## P0 — Do Next
 
 ### Conversion & Lead Capture
