@@ -6,7 +6,14 @@ function getDataLayer(): DataLayer | null {
 }
 
 export function trackLeadCapture(
-  source: 'lender-finder' | 'calculator-save' | 'lead-magnet' | 'newsletter' | 'exit-intent' | 'sticky-cta',
+  source:
+    | 'lender-finder'
+    | 'calculator-save'
+    | 'lead-magnet'
+    | 'newsletter'
+    | 'exit-intent'
+    | 'sticky-cta'
+    | `report-${string}`,
   emailDomain: string,
   metadata?: Record<string, unknown>
 ) {

@@ -42,6 +42,16 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/studio/', '/api/'],
       },
+      {
+        userAgent: 'ClaudeBot',
+        allow: '/',
+        disallow: ['/studio/', '/api/'],
+      },
+      {
+        userAgent: 'Claude-Web',
+        allow: '/',
+        disallow: ['/studio/', '/api/'],
+      },
       // Block bulk-training / dataset scrapers that don't drive citations or referrals.
       {
         userAgent: 'CCBot',

@@ -10,6 +10,7 @@ import {
 import { CalculatorRelatedTools } from '@/components/calculator-related-tools'
 import { BrandBarChart } from '@/components/reports/brand-bar-chart'
 import { KeyTakeaways } from '@/components/key-takeaways'
+import { NewsletterSignup } from '@/components/newsletter-signup'
 import {
   rhfsMeta,
   current,
@@ -62,6 +63,10 @@ const faqs = [
   {
     question: 'Are individual "mom-and-pop" investors leaving the rental market?',
     answer: `Their share is shrinking, not necessarily their count. The individual-investor share of rental properties dropped ${fmtPp(previous.individual.propShare, ind.propShare)} between ${rhfsMeta.prevYear} and ${rhfsMeta.curYear}, while LLP/LP/LLC ownership rose from ${fmtPct(previous.llc.propShare)} to ${fmtPct(llc.propShare)}. Some of that shift is mom-and-pop owners re-titling their own properties into LLCs for liability protection, and some is genuine consolidation by larger operators. Part of the measured drop also reflects rising nonresponse (owners who didn't report an entity rose to ${fmtPct(current.nonreportedOwnershipShare)} of properties).`,
+  },
+  {
+    question: 'Do individuals or LLCs own more rental housing?',
+    answer: `It depends on what you count. By number of rental properties, individual investors still lead (${fmtPct(ind.propShare)} vs ${fmtPct(llc.propShare)} for LLP/LP/LLCs in ${rhfsMeta.curYear}). But by number of rental units, LLP/LP/LLCs are now ahead — ${fmtPct(llc.unitShare)} of units versus ${fmtPct(ind.unitShare)} for individuals — because business entities own the larger buildings. These figures cover all rental properties, not only single-family homes; a single-family-only view still shows individuals leading, which is why some analyses read as "individuals dominate." Source: ${rhfsMeta.source}, property- and unit-weighted.`,
   },
   {
     question: 'Do most landlords have a mortgage?',
@@ -232,7 +237,10 @@ export default function RentalOwnershipReport() {
         <p className="mt-2 max-w-3xl leading-7 text-text-muted">
           The headline flips depending on what you count. Individuals dominate the
           property count; business entities dominate the unit count, because they own the
-          larger buildings. Both charts are {rhfsMeta.curYear}.
+          larger buildings. Both charts are {rhfsMeta.curYear}. Note this covers{' '}
+          <em>all</em> rental properties — a single-family-only view still shows individuals
+          ahead even by units, which is why some analyses read as &ldquo;individuals still
+          dominate.&rdquo;
         </p>
         <div className="mt-6 grid gap-8 lg:grid-cols-2">
           <BrandBarChart
@@ -258,6 +266,16 @@ export default function RentalOwnershipReport() {
             }))}
           />
         </div>
+      </section>
+
+      {/* Contextual lead capture — non-blocking; the dataset stays a free download. */}
+      <section className="mt-14">
+        <NewsletterSignup
+          variant="banner"
+          source="report-rental-ownership"
+          heading="Get the next data report"
+          description="New investor-market data reports built on primary sources — like this one — the week they publish. Free, no spam."
+        />
       </section>
 
       {/* Full ownership table */}

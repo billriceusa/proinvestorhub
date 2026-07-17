@@ -2,6 +2,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { StickyCTA } from '@/components/sticky-cta'
 import { ExitIntentModal } from '@/components/exit-intent-modal'
+import { AiReferralTracker } from '@/components/ai-referral-tracker'
 
 export default function SiteLayout({
   children,
@@ -15,6 +16,7 @@ export default function SiteLayout({
       <Footer />
       <StickyCTA />
       <ExitIntentModal />
+      <AiReferralTracker />
     </div>
   )
 }
