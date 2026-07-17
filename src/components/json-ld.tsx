@@ -162,6 +162,10 @@ export function datasetJsonLd({
   downloadUrl,
   temporalCoverage,
   datePublished,
+  sourceOrganization = {
+    name: 'Consumer Financial Protection Bureau (HMDA)',
+    url: 'https://ffiec.cfpb.gov',
+  },
 }: {
   name: string
   description: string
@@ -169,6 +173,8 @@ export function datasetJsonLd({
   downloadUrl?: string
   temporalCoverage?: string
   datePublished?: string
+  /** The upstream government data source. Defaults to CFPB/HMDA for the lending reports. */
+  sourceOrganization?: { name: string; url: string }
 }) {
   return {
     '@context': 'https://schema.org',
@@ -199,8 +205,8 @@ export function datasetJsonLd({
     }),
     sourceOrganization: {
       '@type': 'GovernmentOrganization',
-      name: 'Consumer Financial Protection Bureau (HMDA)',
-      url: 'https://ffiec.cfpb.gov',
+      name: sourceOrganization.name,
+      url: sourceOrganization.url,
     },
   }
 }

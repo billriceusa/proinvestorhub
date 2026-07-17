@@ -156,10 +156,11 @@ Re-audit of the 2026-06-13 findings + new issues. Full report: `~/website-audits
 > housing/personal-finance reporters who already cite RHFS, HMDA, Eviction Lab). All stats →
 > `sources[]`; no fabrication.
 
-- [ ] **FLAGSHIP — The American Rental Ownership Report.** Authority anchor; timing is a gift.
+- [x] **FLAGSHIP — The American Rental Ownership Report.** Authority anchor; timing is a gift. <!-- shipped 2026-07-17 -->
   - **Spine:** Census Rental Housing Finance Survey — **fresh 2024 microdata released 2026-02-19**, almost nobody works the raw file. `census.gov/programs-surveys/rhfs/data.html` (public domain, national).
-  - **Headline (from the data):** individual-investor share of rentals fell **70.9% → 59.6%** while LLC/LP ownership rose 15.2% → 20.6% — "mom-and-pop are incorporating / institutions are creeping in." The only comprehensive view of *who owns rentals and how they finance them*.
-  - **Cadence:** ~triennial survey; build now while 2024 is fresh.
+  - **Headline (VERIFIED from the microdata):** individual-investor share of rental **properties** fell **71.6% (2018) → 58.9% (2024)** (property-weighted) while LLP/LP/LLC rose **16.2% → 21.4%**. On a per-**unit** basis LLCs (43.0%) now own more than individuals (31.6%) — "individuals own the properties, entities own the doors." **Correction:** the earlier backlog note's "70.9% → 59.6% / 15.2% → 20.6%" was wrong on every digit — killed and replaced with figures computed directly from the RHFS PUFs (2018/2021/2024) and validated to 0.0% drift against Census's published property/unit totals ([[shared/feedback_no_fabricated_data]]).
+  - **Cadence:** ~triennial survey; build now while 2024 is fresh. Recurring: re-run `scripts/build-rhfs.mjs` when the next RHFS wave lands.
+  - **SHIPPED 2026-07-17:** `/reports/rental-ownership` (build-verified static prerender; Dataset/Article/FAQPage schema, Census-attributed; property-vs-unit charts, full entity + size tables, CSV downloads). Pipeline `scripts/build-rhfs.mjs` downloads the PUFs (or reads a local `RHFS_DATA_DIR`), weights by `WEIGHT`, self-validates against Census control totals, emits `src/data/rhfs/national.json` + `public/data/rental-ownership-*.csv`. Parametrized `datasetJsonLd` `sourceOrganization` (was hardcoded CFPB/HMDA). Wired into /reports index + sitemap. **Still needed to earn links: digital-PR promotion** (this is the linkable asset the PR & Backlink System pitches — see P1).
 
 - [ ] **RECURRING FLAGSHIP — The Investor Mortgage Index.** The report we own forever.
   - **Spine:** HMDA (`ffiec.cfpb.gov/data-browser/`, 2024 data live). Occupancy Type lets us isolate **non-owner-occupied/investor lending down to census tract** — free, loan-level, authoritative, unowned.

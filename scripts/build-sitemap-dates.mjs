@@ -35,6 +35,7 @@ const GROUPS = {
   reportRentalYield: 'src/data/rental-yield',
   reportInvestorLenders: 'src/data/hmda-lenders',
   reportRentGrowth: 'src/data/fmr-rent',
+  reportRentalOwnership: 'src/data/rhfs',
 }
 
 const OUT = 'src/data/sitemap-dates.ts'
