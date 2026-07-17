@@ -1,0 +1,732 @@
+{
+  "meta": {
+    "curYear": 2024,
+    "prevYear": 2018,
+    "waves": [
+      2018,
+      2021,
+      2024
+    ],
+    "dataset": "U.S. Census Bureau Rental Housing Finance Survey (RHFS), 2018, 2021, 2024",
+    "source": "U.S. Census Bureau, Rental Housing Finance Survey (RHFS) Public Use Files",
+    "universe": "All rental properties in scope (national). Property-weighted by WEIGHT unless labeled \"units\"; unit estimates weight by WEIGHT × NUMUNITS_R.",
+    "metric": "Ownership entity, financing, size, and value of U.S. rental properties",
+    "note": "Ownership shares include the \"Not reported\" ownership category in the denominator (8.2% of properties in 2024), matching Census property totals; a reported-only base is provided in each entity record.",
+    "generatedAt": "2026-07-17"
+  },
+  "current": {
+    "year": 2024,
+    "propertyTotal": 18964574,
+    "unitTotal": 49895172,
+    "nonreportedOwnershipShare": 8.2,
+    "entities": [
+      {
+        "code": 1,
+        "label": "Individual investor",
+        "propShare": 58.9,
+        "unitShare": 31.6,
+        "propShareReported": 64.1,
+        "unitShareReported": 35.4
+      },
+      {
+        "code": 2,
+        "label": "Trustee for estate",
+        "propShare": 6.3,
+        "unitShare": 3.8,
+        "propShareReported": 6.9,
+        "unitShareReported": 4.2
+      },
+      {
+        "code": 3,
+        "label": "LLP, LP, or LLC",
+        "propShare": 21.4,
+        "unitShare": 43,
+        "propShareReported": 23.4,
+        "unitShareReported": 48.3
+      },
+      {
+        "code": 4,
+        "label": "Tenant in common",
+        "propShare": 0,
+        "unitShare": 0.1,
+        "propShareReported": 0,
+        "unitShareReported": 0.1
+      },
+      {
+        "code": 5,
+        "label": "General partnership",
+        "propShare": 0.3,
+        "unitShare": 1.4,
+        "propShareReported": 0.3,
+        "unitShareReported": 1.6
+      },
+      {
+        "code": 6,
+        "label": "Real Estate Investment Trust (REIT)",
+        "propShare": 1,
+        "unitShare": 1.3,
+        "propShareReported": 1.1,
+        "unitShareReported": 1.5
+      },
+      {
+        "code": 7,
+        "label": "Real estate corporation",
+        "propShare": 0.7,
+        "unitShare": 3,
+        "propShareReported": 0.8,
+        "unitShareReported": 3.4
+      },
+      {
+        "code": 8,
+        "label": "Housing cooperative",
+        "propShare": 0.1,
+        "unitShare": 0.4,
+        "propShareReported": 0.1,
+        "unitShareReported": 0.4
+      },
+      {
+        "code": 9,
+        "label": "Nonprofit organization",
+        "propShare": 0.6,
+        "unitShare": 2.1,
+        "propShareReported": 0.7,
+        "unitShareReported": 2.4
+      },
+      {
+        "code": 10,
+        "label": "Other institution",
+        "propShare": 2.4,
+        "unitShare": 2.4,
+        "propShareReported": 2.6,
+        "unitShareReported": 2.7
+      }
+    ],
+    "individual": {
+      "propShare": 58.9,
+      "unitShare": 31.6,
+      "propShareReported": 64.1
+    },
+    "llc": {
+      "propShare": 21.4,
+      "unitShare": 43,
+      "propShareReported": 23.4
+    },
+    "sizes": [
+      {
+        "code": 0,
+        "label": "1 unit",
+        "propShare": 82.9,
+        "unitShare": 31.5
+      },
+      {
+        "code": 1,
+        "label": "2–4 units",
+        "propShare": 14.6,
+        "unitShare": 15.4
+      },
+      {
+        "code": 2,
+        "label": "5–24 units",
+        "propShare": 1.7,
+        "unitShare": 8.2
+      },
+      {
+        "code": 3,
+        "label": "25–49 units",
+        "propShare": 0.4,
+        "unitShare": 5.4
+      },
+      {
+        "code": 4,
+        "label": "50+ units",
+        "propShare": 0.4,
+        "unitShare": 39.4
+      }
+    ],
+    "financing": {
+      "debtPropShare": 37.5,
+      "debtUnitShare": 52.7
+    },
+    "value": {
+      "medianMarketValue": 275000,
+      "medianPurchasePrice": 150000
+    }
+  },
+  "previous": {
+    "year": 2018,
+    "propertyTotal": 19955206,
+    "unitTotal": 48319720,
+    "nonreportedOwnershipShare": 3.5,
+    "entities": [
+      {
+        "code": 1,
+        "label": "Individual investor",
+        "propShare": 71.6,
+        "unitShare": 41.2,
+        "propShareReported": 74.1,
+        "unitShareReported": 43.8
+      },
+      {
+        "code": 2,
+        "label": "Trustee for estate",
+        "propShare": 3.6,
+        "unitShare": 2.5,
+        "propShareReported": 3.7,
+        "unitShareReported": 2.6
+      },
+      {
+        "code": 3,
+        "label": "LLP, LP, or LLC",
+        "propShare": 16.2,
+        "unitShare": 37.5,
+        "propShareReported": 16.8,
+        "unitShareReported": 40
+      },
+      {
+        "code": 4,
+        "label": "Tenant in common",
+        "propShare": 0.5,
+        "unitShare": 0.3,
+        "propShareReported": 0.5,
+        "unitShareReported": 0.4
+      },
+      {
+        "code": 5,
+        "label": "General partnership",
+        "propShare": 0.4,
+        "unitShare": 2.5,
+        "propShareReported": 0.4,
+        "unitShareReported": 2.6
+      },
+      {
+        "code": 6,
+        "label": "Real Estate Investment Trust (REIT)",
+        "propShare": 1,
+        "unitShare": 2.2,
+        "propShareReported": 1,
+        "unitShareReported": 2.3
+      },
+      {
+        "code": 7,
+        "label": "Real estate corporation",
+        "propShare": 1.2,
+        "unitShare": 2.8,
+        "propShareReported": 1.2,
+        "unitShareReported": 3
+      },
+      {
+        "code": 8,
+        "label": "Housing cooperative",
+        "propShare": 0.1,
+        "unitShare": 0.2,
+        "propShareReported": 0.1,
+        "unitShareReported": 0.2
+      },
+      {
+        "code": 9,
+        "label": "Nonprofit organization",
+        "propShare": 0.8,
+        "unitShare": 2.8,
+        "propShareReported": 0.8,
+        "unitShareReported": 3
+      },
+      {
+        "code": 10,
+        "label": "Other institution",
+        "propShare": 1.3,
+        "unitShare": 1.8,
+        "propShareReported": 1.4,
+        "unitShareReported": 1.9
+      }
+    ],
+    "individual": {
+      "propShare": 71.6,
+      "unitShare": 41.2,
+      "propShareReported": 74.1
+    },
+    "llc": {
+      "propShare": 16.2,
+      "unitShare": 37.5,
+      "propShareReported": 16.8
+    },
+    "sizes": [
+      {
+        "code": 0,
+        "label": "1 unit",
+        "propShare": 85.7,
+        "unitShare": 35.4
+      },
+      {
+        "code": 1,
+        "label": "2–4 units",
+        "propShare": 11.6,
+        "unitShare": 12.9
+      },
+      {
+        "code": 2,
+        "label": "5–24 units",
+        "propShare": 1.9,
+        "unitShare": 9.8
+      },
+      {
+        "code": 3,
+        "label": "25–49 units",
+        "propShare": 0.4,
+        "unitShare": 5.8
+      },
+      {
+        "code": 4,
+        "label": "50+ units",
+        "propShare": 0.4,
+        "unitShare": 36
+      }
+    ],
+    "financing": {
+      "debtPropShare": 41.5,
+      "debtUnitShare": 59.2
+    },
+    "value": {
+      "medianMarketValue": 125000,
+      "medianPurchasePrice": 75000
+    }
+  },
+  "byYear": {
+    "2018": {
+      "year": 2018,
+      "propertyTotal": 19955206,
+      "unitTotal": 48319720,
+      "nonreportedOwnershipShare": 3.5,
+      "entities": [
+        {
+          "code": 1,
+          "label": "Individual investor",
+          "propShare": 71.6,
+          "unitShare": 41.2,
+          "propShareReported": 74.1,
+          "unitShareReported": 43.8
+        },
+        {
+          "code": 2,
+          "label": "Trustee for estate",
+          "propShare": 3.6,
+          "unitShare": 2.5,
+          "propShareReported": 3.7,
+          "unitShareReported": 2.6
+        },
+        {
+          "code": 3,
+          "label": "LLP, LP, or LLC",
+          "propShare": 16.2,
+          "unitShare": 37.5,
+          "propShareReported": 16.8,
+          "unitShareReported": 40
+        },
+        {
+          "code": 4,
+          "label": "Tenant in common",
+          "propShare": 0.5,
+          "unitShare": 0.3,
+          "propShareReported": 0.5,
+          "unitShareReported": 0.4
+        },
+        {
+          "code": 5,
+          "label": "General partnership",
+          "propShare": 0.4,
+          "unitShare": 2.5,
+          "propShareReported": 0.4,
+          "unitShareReported": 2.6
+        },
+        {
+          "code": 6,
+          "label": "Real Estate Investment Trust (REIT)",
+          "propShare": 1,
+          "unitShare": 2.2,
+          "propShareReported": 1,
+          "unitShareReported": 2.3
+        },
+        {
+          "code": 7,
+          "label": "Real estate corporation",
+          "propShare": 1.2,
+          "unitShare": 2.8,
+          "propShareReported": 1.2,
+          "unitShareReported": 3
+        },
+        {
+          "code": 8,
+          "label": "Housing cooperative",
+          "propShare": 0.1,
+          "unitShare": 0.2,
+          "propShareReported": 0.1,
+          "unitShareReported": 0.2
+        },
+        {
+          "code": 9,
+          "label": "Nonprofit organization",
+          "propShare": 0.8,
+          "unitShare": 2.8,
+          "propShareReported": 0.8,
+          "unitShareReported": 3
+        },
+        {
+          "code": 10,
+          "label": "Other institution",
+          "propShare": 1.3,
+          "unitShare": 1.8,
+          "propShareReported": 1.4,
+          "unitShareReported": 1.9
+        }
+      ],
+      "individual": {
+        "propShare": 71.6,
+        "unitShare": 41.2,
+        "propShareReported": 74.1
+      },
+      "llc": {
+        "propShare": 16.2,
+        "unitShare": 37.5,
+        "propShareReported": 16.8
+      },
+      "sizes": [
+        {
+          "code": 0,
+          "label": "1 unit",
+          "propShare": 85.7,
+          "unitShare": 35.4
+        },
+        {
+          "code": 1,
+          "label": "2–4 units",
+          "propShare": 11.6,
+          "unitShare": 12.9
+        },
+        {
+          "code": 2,
+          "label": "5–24 units",
+          "propShare": 1.9,
+          "unitShare": 9.8
+        },
+        {
+          "code": 3,
+          "label": "25–49 units",
+          "propShare": 0.4,
+          "unitShare": 5.8
+        },
+        {
+          "code": 4,
+          "label": "50+ units",
+          "propShare": 0.4,
+          "unitShare": 36
+        }
+      ],
+      "financing": {
+        "debtPropShare": 41.5,
+        "debtUnitShare": 59.2
+      },
+      "value": {
+        "medianMarketValue": 125000,
+        "medianPurchasePrice": 75000
+      }
+    },
+    "2021": {
+      "year": 2021,
+      "propertyTotal": 19341245,
+      "unitTotal": 47787408,
+      "nonreportedOwnershipShare": 5,
+      "entities": [
+        {
+          "code": 1,
+          "label": "Individual investor",
+          "propShare": 68.7,
+          "unitShare": 38,
+          "propShareReported": 72.3,
+          "unitShareReported": 42
+        },
+        {
+          "code": 2,
+          "label": "Trustee for estate",
+          "propShare": 2.5,
+          "unitShare": 2,
+          "propShareReported": 2.6,
+          "unitShareReported": 2.2
+        },
+        {
+          "code": 3,
+          "label": "LLP, LP, or LLC",
+          "propShare": 16.2,
+          "unitShare": 38.7,
+          "propShareReported": 17.1,
+          "unitShareReported": 42.7
+        },
+        {
+          "code": 4,
+          "label": "Tenant in common",
+          "propShare": 2.1,
+          "unitShare": 1,
+          "propShareReported": 2.3,
+          "unitShareReported": 1.2
+        },
+        {
+          "code": 5,
+          "label": "General partnership",
+          "propShare": 0.9,
+          "unitShare": 1.8,
+          "propShareReported": 1,
+          "unitShareReported": 1.9
+        },
+        {
+          "code": 6,
+          "label": "Real Estate Investment Trust (REIT)",
+          "propShare": 0.5,
+          "unitShare": 1.5,
+          "propShareReported": 0.6,
+          "unitShareReported": 1.7
+        },
+        {
+          "code": 7,
+          "label": "Real estate corporation",
+          "propShare": 0.6,
+          "unitShare": 2.7,
+          "propShareReported": 0.6,
+          "unitShareReported": 3
+        },
+        {
+          "code": 8,
+          "label": "Housing cooperative",
+          "propShare": 0,
+          "unitShare": 0.1,
+          "propShareReported": 0,
+          "unitShareReported": 0.1
+        },
+        {
+          "code": 9,
+          "label": "Nonprofit organization",
+          "propShare": 1.9,
+          "unitShare": 2.8,
+          "propShareReported": 2,
+          "unitShareReported": 3
+        },
+        {
+          "code": 10,
+          "label": "Other institution",
+          "propShare": 1.4,
+          "unitShare": 1.9,
+          "propShareReported": 1.5,
+          "unitShareReported": 2
+        }
+      ],
+      "individual": {
+        "propShare": 68.7,
+        "unitShare": 38,
+        "propShareReported": 72.3
+      },
+      "llc": {
+        "propShare": 16.2,
+        "unitShare": 38.7,
+        "propShareReported": 17.1
+      },
+      "sizes": [
+        {
+          "code": 0,
+          "label": "1 unit",
+          "propShare": 85.6,
+          "unitShare": 34.6
+        },
+        {
+          "code": 1,
+          "label": "2–4 units",
+          "propShare": 11.5,
+          "unitShare": 12.7
+        },
+        {
+          "code": 2,
+          "label": "5–24 units",
+          "propShare": 2.2,
+          "unitShare": 11.4
+        },
+        {
+          "code": 3,
+          "label": "25–49 units",
+          "propShare": 0.4,
+          "unitShare": 5.7
+        },
+        {
+          "code": 4,
+          "label": "50+ units",
+          "propShare": 0.3,
+          "unitShare": 35.5
+        }
+      ],
+      "financing": {
+        "debtPropShare": 35.3,
+        "debtUnitShare": 55.4
+      },
+      "value": {
+        "medianMarketValue": 175000,
+        "medianPurchasePrice": 100000
+      }
+    },
+    "2024": {
+      "year": 2024,
+      "propertyTotal": 18964574,
+      "unitTotal": 49895172,
+      "nonreportedOwnershipShare": 8.2,
+      "entities": [
+        {
+          "code": 1,
+          "label": "Individual investor",
+          "propShare": 58.9,
+          "unitShare": 31.6,
+          "propShareReported": 64.1,
+          "unitShareReported": 35.4
+        },
+        {
+          "code": 2,
+          "label": "Trustee for estate",
+          "propShare": 6.3,
+          "unitShare": 3.8,
+          "propShareReported": 6.9,
+          "unitShareReported": 4.2
+        },
+        {
+          "code": 3,
+          "label": "LLP, LP, or LLC",
+          "propShare": 21.4,
+          "unitShare": 43,
+          "propShareReported": 23.4,
+          "unitShareReported": 48.3
+        },
+        {
+          "code": 4,
+          "label": "Tenant in common",
+          "propShare": 0,
+          "unitShare": 0.1,
+          "propShareReported": 0,
+          "unitShareReported": 0.1
+        },
+        {
+          "code": 5,
+          "label": "General partnership",
+          "propShare": 0.3,
+          "unitShare": 1.4,
+          "propShareReported": 0.3,
+          "unitShareReported": 1.6
+        },
+        {
+          "code": 6,
+          "label": "Real Estate Investment Trust (REIT)",
+          "propShare": 1,
+          "unitShare": 1.3,
+          "propShareReported": 1.1,
+          "unitShareReported": 1.5
+        },
+        {
+          "code": 7,
+          "label": "Real estate corporation",
+          "propShare": 0.7,
+          "unitShare": 3,
+          "propShareReported": 0.8,
+          "unitShareReported": 3.4
+        },
+        {
+          "code": 8,
+          "label": "Housing cooperative",
+          "propShare": 0.1,
+          "unitShare": 0.4,
+          "propShareReported": 0.1,
+          "unitShareReported": 0.4
+        },
+        {
+          "code": 9,
+          "label": "Nonprofit organization",
+          "propShare": 0.6,
+          "unitShare": 2.1,
+          "propShareReported": 0.7,
+          "unitShareReported": 2.4
+        },
+        {
+          "code": 10,
+          "label": "Other institution",
+          "propShare": 2.4,
+          "unitShare": 2.4,
+          "propShareReported": 2.6,
+          "unitShareReported": 2.7
+        }
+      ],
+      "individual": {
+        "propShare": 58.9,
+        "unitShare": 31.6,
+        "propShareReported": 64.1
+      },
+      "llc": {
+        "propShare": 21.4,
+        "unitShare": 43,
+        "propShareReported": 23.4
+      },
+      "sizes": [
+        {
+          "code": 0,
+          "label": "1 unit",
+          "propShare": 82.9,
+          "unitShare": 31.5
+        },
+        {
+          "code": 1,
+          "label": "2–4 units",
+          "propShare": 14.6,
+          "unitShare": 15.4
+        },
+        {
+          "code": 2,
+          "label": "5–24 units",
+          "propShare": 1.7,
+          "unitShare": 8.2
+        },
+        {
+          "code": 3,
+          "label": "25–49 units",
+          "propShare": 0.4,
+          "unitShare": 5.4
+        },
+        {
+          "code": 4,
+          "label": "50+ units",
+          "propShare": 0.4,
+          "unitShare": 39.4
+        }
+      ],
+      "financing": {
+        "debtPropShare": 37.5,
+        "debtUnitShare": 52.7
+      },
+      "value": {
+        "medianMarketValue": 275000,
+        "medianPurchasePrice": 150000
+      }
+    }
+  },
+  "trend": [
+    {
+      "year": 2018,
+      "individualPropShare": 71.6,
+      "llcPropShare": 16.2,
+      "individualUnitShare": 41.2,
+      "llcUnitShare": 37.5
+    },
+    {
+      "year": 2021,
+      "individualPropShare": 68.7,
+      "llcPropShare": 16.2,
+      "individualUnitShare": 38,
+      "llcUnitShare": 38.7
+    },
+    {
+      "year": 2024,
+      "individualPropShare": 58.9,
+      "llcPropShare": 21.4,
+      "individualUnitShare": 31.6,
+      "llcUnitShare": 43
+    }
+  ]
+}
