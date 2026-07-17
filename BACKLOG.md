@@ -144,6 +144,49 @@ Re-audit of the 2026-06-13 findings + new issues. Full report: `~/website-audits
 
 ---
 
+## Editorial — Data Reports (linkable assets / digital PR)
+
+> Original, data-meaty editorial studies engineered to earn backlinks. Each is anchored to a
+> **real, verified, ideally republishable public dataset** (catalogued 2026-06-14). Link thesis
+> (confirmed against iPropertyManagement's backlink profile — its single most-linked page is a
+> historical-rent *data series* with 2,357 referring domains; Airbnb-stats page 1,287): two
+> formats own the link graph — (a) **original studies on underused public data** and (b) evergreen
+> **"[Topic] Statistics [Year]" roundups** re-dated annually. Moat = republishable license +
+> granularity nobody else works. These only earn links if **promoted** (digital-PR push to
+> housing/personal-finance reporters who already cite RHFS, HMDA, Eviction Lab). All stats →
+> `sources[]`; no fabrication.
+
+- [x] **FLAGSHIP — The American Rental Ownership Report.** Authority anchor; timing is a gift. <!-- shipped 2026-07-17 -->
+  - **Spine:** Census Rental Housing Finance Survey — **fresh 2024 microdata released 2026-02-19**, almost nobody works the raw file. `census.gov/programs-surveys/rhfs/data.html` (public domain, national).
+  - **Headline (VERIFIED from the microdata):** individual-investor share of rental **properties** fell **71.6% (2018) → 58.9% (2024)** (property-weighted) while LLP/LP/LLC rose **16.2% → 21.4%**. On a per-**unit** basis LLCs (43.0%) now own more than individuals (31.6%) — "individuals own the properties, entities own the doors." **Correction:** the earlier backlog note's "70.9% → 59.6% / 15.2% → 20.6%" was wrong on every digit — killed and replaced with figures computed directly from the RHFS PUFs (2018/2021/2024) and validated to 0.0% drift against Census's published property/unit totals ([[shared/feedback_no_fabricated_data]]).
+  - **Cadence:** ~triennial survey; build now while 2024 is fresh. Recurring: re-run `scripts/build-rhfs.mjs` when the next RHFS wave lands.
+  - **SHIPPED 2026-07-17:** `/reports/rental-ownership` (build-verified static prerender; Dataset/Article/FAQPage schema, Census-attributed; property-vs-unit charts, full entity + size tables, CSV downloads). Pipeline `scripts/build-rhfs.mjs` downloads the PUFs (or reads a local `RHFS_DATA_DIR`), weights by `WEIGHT`, self-validates against Census control totals, emits `src/data/rhfs/national.json` + `public/data/rental-ownership-*.csv`. Parametrized `datasetJsonLd` `sourceOrganization` (was hardcoded CFPB/HMDA). Wired into /reports index + sitemap. **Still needed to earn links: digital-PR promotion** (this is the linkable asset the PR & Backlink System pitches — see P1).
+
+- [ ] **RECURRING FLAGSHIP — The Investor Mortgage Index.** The report we own forever.
+  - **Spine:** HMDA (`ffiec.cfpb.gov/data-browser/`, 2024 data live). Occupancy Type lets us isolate **non-owner-occupied/investor lending down to census tract** — free, loan-level, authoritative, unowned.
+  - **Angle:** county/metro index of investor-loan share, volume, avg loan size, YoY. Overlay against **Redfin investor-purchase + all-cash share** (`redfin.com/news/data-center/investor-home-purchases/`) for a "cash vs financed investor activity" cut nobody publishes.
+  - **Cadence:** annual (new HMDA each year) — recurring flagship.
+
+- [ ] **STR Supply & Commercial-Operator Report.** Proven linkbait format (STR/Airbnb stats).
+  - **Spine:** Inside Airbnb (`insideairbnb.com/get-the-data/` — **CC BY 4.0, explicitly republishable**, geocoded, refreshed Mar 2026). Map the share of a city's Airbnb supply that is high-availability *commercial* operators vs true hosts; estimate displaced LTR units.
+  - **Angle:** pair with **NYC Local Law 18** before/after supply for a "regulation killed X% of listings" piece. CC BY 4.0 maps travel further than citing AirDNA's paywalled stats.
+  - **Cadence:** quarterly data; annual flagship + reactive regulation pieces.
+
+- [ ] **Highest-Yield / Best-Markets Report.** On-topic, reproducible methodology.
+  - **Spine:** ATTOM SFR gross yields (county-level) + transparent **Zillow ZORI ÷ ZHVI** gross-yield proxy + **FHFA HPI** appreciation (free, ZIP/tract, redistributable). Companion: **ATTOM flip-rate/ROI** ("best markets to flip") — the canonical flip dataset journalists already cite.
+  - **Cadence:** annual + quarterly refreshes.
+
+- [ ] **The Eviction & Market-Health Report.** Authoritative, republishable, unused by investor publishers.
+  - **Spine:** Princeton Eviction Lab (`evictionlab.org/get-the-data/` — **ODC-BY, tract-granular, live monthly tracker**). Frame for a landlord audience as market-risk/turnover, not tenant-blame.
+  - **Caveat:** verify a target market has *direct court coverage* (not modeled) before headlining it.
+
+- [ ] **Evergreen statistics hub (do in parallel — highest link-ROI per hour).** "Rental Market Statistics 2026," "Short-Term Rental Statistics," "Real Estate Investing Statistics," "Average Rent by Year." Assembled from Census/BLS/Zillow/Redfin; compounding link magnets, multi-year payoff. Seed internal links to the flagships.
+
+- [ ] **Two proprietary-tracker gaps worth owning (no free dataset exists):** DSCR-loan data (cite S&P Global / HousingWire securitization figures; build our own origination tracker over time) and a **machine-readable national STR-ordinance database**.
+- [ ] **Promotion playbook (applies to all):** digital-PR pitch each flagship (Connectively/HARO + direct outreach to reporters who cite these datasets). Republishable-license picks (Inside Airbnb CC BY 4.0, Eviction Lab ODC-BY) travel furthest.
+
+---
+
 ## Completed
 
 - [x] **2026-06-23** "Where Rents Are Rising Fastest" data report — new HUD Fair Market Rents report at `/reports/rent-growth` ranking 2BR rent growth across 402 metros + 51 states (FY2026 vs FY2025). Pipeline `scripts/build-fmr.mjs` (HUD FMR API, reads `HUD_API_TOKEN` from `.env.local`); branded charts credit HUD, Dataset/Article/FAQPage schema, CSV download, wired into `/reports` + sitemap + reciprocal links. US median 2BR FMR +3.9% YoY. The press-friendly, link-bait companion to the rental-yield report.

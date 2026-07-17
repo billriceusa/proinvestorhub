@@ -348,6 +348,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/reports/rental-ownership`,
+      lastModified: groupLastmod('reportRentalOwnership'),
+      changeFrequency: 'yearly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/reports/investor-lenders`,
       lastModified: groupLastmod('reportInvestorLenders'),
       changeFrequency: 'yearly' as const,

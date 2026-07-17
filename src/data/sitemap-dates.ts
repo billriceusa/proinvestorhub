@@ -10,13 +10,14 @@ export const sitemapDates = {
   "financingScenarios": "2026-06-11",
   "financingTypes": "2026-06-13",
   "home": "2026-04-03",
-  "lenderComparisons": "2026-06-27",
+  "lenderComparisons": "2026-07-14",
   "lenders": "2026-06-25",
   "loanTypes": "2026-06-13",
   "marketStrategies": "2026-06-05",
   "reportInvestorFinancing": "2026-06-15",
   "reportInvestorLenders": "2026-06-18",
   "reportRentGrowth": "2026-06-23",
+  "reportRentalOwnership": "2026-07-17",
   "reportRentalYield": "2026-06-17",
   "usStates": "2026-03-28"
 } as const

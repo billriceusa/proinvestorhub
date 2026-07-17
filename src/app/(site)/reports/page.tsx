@@ -28,6 +28,12 @@ import {
   fmtRent as fmtFmrRent,
   fmtYoy,
 } from '@/data/fmr-rent'
+import {
+  current as rhfsCurrent,
+  previous as rhfsPrevious,
+  rhfsMeta,
+  fmtPct as fmtRhfsPct,
+} from '@/data/rhfs'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://proinvestorhub.com'
 
@@ -39,6 +45,19 @@ export const metadata: Metadata = {
 }
 
 const reports = [
+  {
+    title: `The American Rental Ownership Report (${rhfsMeta.curYear})`,
+    href: '/reports/rental-ownership',
+    source: 'Census RHFS',
+    year: rhfsMeta.curYear,
+    blurb:
+      "Who owns America's rental housing — and how they finance it. Individual investors' share of rental properties is falling toward LLCs and larger operators, from Census Rental Housing Finance Survey microdata. The macro backdrop behind every rental deal.",
+    stats: [
+      { label: 'Individual share of properties', value: fmtRhfsPct(rhfsCurrent.individual.propShare) },
+      { label: `Down from ${rhfsMeta.prevYear}`, value: fmtRhfsPct(rhfsPrevious.individual.propShare) },
+      { label: 'LLC share of units', value: fmtRhfsPct(rhfsCurrent.llc.unitShare) },
+    ],
+  },
   {
     title: `The ${reportMeta.year} Investor Financing Report`,
     href: '/reports/investor-financing',
