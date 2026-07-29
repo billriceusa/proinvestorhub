@@ -1,3 +1,5 @@
+import { BILL_RICE_NAME, billRicePersonRef } from '@/lib/identity'
+
 export function JsonLd({ data }: { data: Record<string, unknown> }) {
   return (
     <script
@@ -52,13 +54,13 @@ export function articleJsonLd({
     url,
     ...(imageUrl && { image: imageUrl }),
     datePublished: publishedAt,
-    author: {
-      '@type': 'Person',
-      name: authorName,
-      url: `${baseUrl}/authors/bill-rice`,
-      jobTitle: 'Real Estate Investor & Mortgage Lending Veteran',
-      sameAs: ['https://linkedin.com/in/billrice'],
-    },
+    // A Bill byline resolves to the canonical person rather than minting an
+    // anonymous Person per article. `url` here pointed at this site's author
+    // page and sameAs at a non-canonical LinkedIn form (no www, no slash).
+    author:
+      authorName === BILL_RICE_NAME
+        ? { ...billRicePersonRef, jobTitle: 'Real Estate Investor & Mortgage Lending Veteran' }
+        : { '@type': 'Person', name: authorName },
     publisher: {
       '@type': 'Organization',
       name: 'ProInvestorHub',
@@ -234,11 +236,8 @@ export function organizationJsonLd() {
     url: baseUrl,
     description:
       'Expert guides, calculators, and education for real estate investors.',
-    founder: {
-      '@type': 'Person',
-      name: 'Bill Rice',
-      url: `${baseUrl}/authors/bill-rice`,
-    },
+    // Reference the canonical person; billrice.com describes him.
+    founder: billRicePersonRef,
     sameAs: [],
   }
 }
@@ -246,13 +245,10 @@ export function organizationJsonLd() {
 export function personJsonLd() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Bill Rice',
-    url: `${baseUrl}/authors/bill-rice`,
+    ...billRicePersonRef,
     jobTitle: 'Real Estate Investor & Mortgage Lending Veteran',
     description:
       'Bill Rice has 30+ years of experience in mortgage lending. He founded ProInvestorHub to share real estate investing education, tools, and market analysis.',
-    sameAs: ['https://linkedin.com/in/billrice'],
     worksFor: {
       '@type': 'Organization',
       name: 'ProInvestorHub',
